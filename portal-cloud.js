@@ -300,7 +300,9 @@
     window.addEventListener('portal-local-write', schedulePush);
     pollTimer = setInterval(function () { if (API.user) pushChanged(); }, 4000); // catches pages that write localStorage directly (options calculator)
     window.addEventListener('pagehide', function () { if (API.user) pushChanged(); });
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderSlot); else renderSlot();
+    // the header is built by portal.js on DOMContentLoaded too, possibly after us: render now, on load, and when the header announces itself
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { renderSlot(); setTimeout(renderSlot, 0); }); else renderSlot();
+    window.addEventListener('portal-chrome', renderSlot);
   }
   if (configured) start();
   else API.ready = Promise.resolve();

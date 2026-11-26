@@ -347,3 +347,18 @@ body[data-page=options] .hint,body[data-page=options] .help,body[data-page=optio
 .chip,.chips a{min-height:44px;display:inline-flex;align-items:center}
 .portal-brand,.portal-subnav a,.subnav a{min-height:44px;display:inline-flex;align-items:center}
 input[type=file]{min-height:44px;font-size:16px}
+/* v8.4 UX: page header with back path + one primary action, folding cards, empty state */
+.top-header .back-link{display:inline-flex;align-items:center;min-height:44px;font-size:16px;font-weight:700;color:var(--muted);text-decoration:none;margin-bottom:2px}
+.top-header .back-link:hover,.top-header .back-link:focus-visible{color:var(--ink)}
+.top-header p{font-size:16px;max-width:60ch}
+.primary-action{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;font-size:16px;margin-top:10px;text-decoration:none;border-radius:14px}
+details.card.fold{padding:0}
+details.card.fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:56px;padding:12px 16px;margin:0;font-size:18px}
+details.card.fold>summary::-webkit-details-marker{display:none}
+details.card.fold>summary::after{content:'';width:10px;height:10px;border-inline-end:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg);transition:transform .15s;flex:0 0 auto;margin-inline-end:4px}
+details.card.fold[open]>summary::after{transform:rotate(-135deg)}
+details.card.fold>:not(summary){margin-inline:16px}
+details.card.fold[open]{padding-bottom:14px}
+.start-card{background:var(--card);border:1px solid var(--glass-border);border-radius:20px;padding:20px;text-align:start}
+.start-card h2{font-size:22px;margin:0 0 6px} .start-card p{font-size:16px;color:var(--muted);margin:0 0 4px}
+.edit-link{display:inline-flex;align-items:center;min-height:44px;font-size:16px;font-weight:700;color:var(--primary-dark,#a78bfa);text-decoration:underline;text-underline-offset:3px}

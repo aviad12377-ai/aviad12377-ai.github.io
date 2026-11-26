@@ -401,6 +401,7 @@
   var LEUMI = 'LUMI.TA';
   var STORAGE_KEY = 'options-calc-v5-private';  // נתונים אישיים נשמרים רק במכשיר הזה
   var LEUMI_BASE = { sell: null, strike: 69.2744, div: 2.0, years: 1.5 };
+  // מכתב הקצאה פרטי — לא ברירת מחדל פומבית של הבנק. ראו PLAN_PRESETS['LUMI.TA'].
   // נספח ג' (לאומי): מועדי הבשלה ופקיעה לכל חבילה. הכמויות לא נשמרות בקוד.
   var LEUMI_VESTING = [
     { vest: [2026, 6, 1], expire: [2029, 6, 1] },
@@ -409,6 +410,15 @@
   ];
   var GENERIC_SUBS = ['שכבה ראשונה', 'תוספת שנייה', 'תוספת שלישית'];
   var DEFAULT_TAX = 25;
+  var PLAN_PRESETS = {};
+  function planFor(symbol) {
+    if (!symbol) return null;
+    return PLAN_PRESETS[symbol] || null;
+  }
+  function useLeumiLetter(symbol) {
+    var v = (state.data[state.mode] || {})[symbol || activeSymbol()];
+    return symbol === LEUMI && state.mode === 'private' && v && v.useEmployeeLetter;
+  }
   var CUR = { ILS: '₪', USD: '$', EUR: '€', GBP: '£' };
   var FIELDS = ['sell', 'strike', 'div', 'years', 'tax', 't1', 't2', 't3'];
 
@@ -427,15 +437,18 @@
 
   function defaultsFor(mode, symbol) {
     var isLeumi = symbol === LEUMI;
+    var plan = planFor(symbol);
+    var tax = (plan && plan.tax_default_pct != null) ? plan.tax_default_pct : DEFAULT_TAX;
     return {
-      sell: isLeumi ? LEUMI_BASE.sell : null,
+      sell: null,
       sellEdited: false,
-      strike: isLeumi ? LEUMI_BASE.strike : null,
-      div: isLeumi ? LEUMI_BASE.div : 0,
-      years: isLeumi ? LEUMI_BASE.years : 0,
-      tax: DEFAULT_TAX,
+      strike: null,
+      div: 0,
+      years: 0,
+      tax: tax,
       t1: 0, t2: 0, t3: 0,
-      simQty: null, simEdited: false, targetNet: null
+      simQty: null, simEdited: false, targetNet: null,
+      useEmployeeLetter: false
     };
   }
   function activeSymbol() { return state.symbol || '__none'; }
@@ -560,25 +573,66 @@
 
   function applyTrancheLabels() {
     var isLeumi = state.symbol === LEUMI;
+    var plan = planFor(state.symbol);
+    var letter = useLeumiLetter(state.symbol);
     var today = new Date(); today.setHours(0, 0, 0, 0);
     function d(a) { return new Date(a[0], a[1] - 1, a[2]); }
     function f(a) { return a[2] + '.' + a[1] + '.' + a[0]; }
     [0, 1, 2].forEach(function (i) {
       var sub = $('t' + (i + 1) + '-sub'), badge = $('t' + (i + 1) + '-vest');
-      if (!isLeumi) { sub.textContent = GENERIC_SUBS[i]; badge.className = 'badge hidden'; return; }
+      if (!letter) { sub.textContent = GENERIC_SUBS[i]; badge.className = 'badge hidden'; return; }
       var v = LEUMI_VESTING[i];
       sub.textContent = 'הבשלה ' + f(v.vest) + ' · פקיעה ' + f(v.expire);
       var vested = today >= d(v.vest), expired = today >= d(v.expire);
       badge.textContent = expired ? 'פקעה' : (vested ? 'הבשילה' : 'טרם הבשילה');
       badge.className = 'badge ' + (vested && !expired ? 'green' : 'amber');
     });
-    $('tranche-note').classList.toggle('hidden', !isLeumi);
-    $('strike-help').textContent = isLeumi
-      ? 'המחיר המקורי נקבע בסעיף 10 בכתב ההקצאה (סכום קבוע בש"ח, לא צמוד) ומותאם לדיבידנדים לפי התוכנית. ברירת המחדל 69.2744 כבר כוללת התאמה לדיבידנדים.'
-      : 'מחיר המימוש מכתב ההקצאה, לפני הפחתת דיבידנדים.';
-    $('div-help').textContent = isLeumi
+    var note = $('tranche-note');
+    var parts = [];
+    if (plan) {
+      if (plan.current_grants_are_rsu_only) {
+        parts.push('במענקים השוטפים של החברה, לפי המקורות שנבדקו, מוענקות בעיקר יחידות RSU/PSU ולא אופציות חדשות. המחשבון עדיין מחשב מימוש נטו של אופציות — הזינו נתונים מכתב ההקצאה שלכם אם יש לכם אופציות.');
+      }
+      if (plan.vesting_schedule) parts.push('הבשלה: ' + plan.vesting_schedule);
+      if (plan.expiry_term) parts.push('פקיעה: ' + plan.expiry_term);
+      if (plan.tax_track) parts.push('מס: ' + plan.tax_track);
+      if (isLeumi) {
+        parts.push('ברירת המחדל הפומבית היא המתאר הציבורי (ממוצע 30 ימי מסחר, לא מחיר 69.2744). מכתב ההקצאה הפרטי הוא override ברמת עובד.');
+        if (state.mode === 'private') {
+          parts.push('<label><input type="checkbox" id="leumi-letter-toggle"' + (letter ? ' checked' : '') + '> השתמש בתנאי המכתב הפרטי (הבשלה 1.6.2026/27/28, פקיעה +36 חודשים, מחיר 69.2744)</label>');
+        }
+      }
+      if (plan.confidence) parts.push('רמת ביטחון במחקר: ' + plan.confidence + '.');
+    }
+    if (parts.length) {
+      note.classList.remove('hidden');
+      note.innerHTML = parts.join(' ');
+      var box = $('leumi-letter-toggle');
+      if (box) box.addEventListener('change', function () {
+        cur().useEmployeeLetter = box.checked;
+        if (box.checked) {
+          var v = cur();
+          if (v.strike == null) v.strike = LEUMI_BASE.strike;
+          if (!v.div) v.div = LEUMI_BASE.div;
+          if (!v.years) v.years = LEUMI_BASE.years;
+        }
+        applyTrancheLabels(); writeInputs(); render();
+      });
+    } else {
+      note.classList.add('hidden');
+      note.textContent = '';
+    }
+    $('strike-help').textContent = letter
+      ? 'המחיר המקורי נקבע בסעיף 10 בכתב ההקצאה הפרטי (סכום קבוע בש"ח, לא צמוד) ומותאם לדיבידנדים לפי התוכנית. 69.2744 כבר כוללת התאמה לדיבידנדים. זה override ברמת עובד, לא ברירת המחדל הפומבית של לאומי.'
+      : (plan && plan.strike_rule
+          ? plan.strike_rule
+          : 'מחיר המימוש מכתב ההקצאה, לפני הפחתת דיבידנדים.');
+    var divReduces = plan && plan.dividend_adjustment_code === 'reduces_strike';
+    $('div-help').textContent = letter
       ? 'התאמה לדיבידנדים לפי התוכנית. ההסכם לא מפרט נוסחה, ולכן זו הערכה: דיבידנד שנתי × שנים.'
-      : 'בתוכניות שבהן הדיבידנד מפחית את מחיר המימוש. אם לא רלוונטי, השאר 0.';
+      : (divReduces
+          ? 'בתוכנית זו הדיבידנד מפחית (או מתאים) את מחיר המימוש. ההערכה כאן: דיבידנד שנתי × שנים, אלא אם כתב ההקצאה קובע אחרת. ' + (plan.dividend_adjustment_rule || '')
+          : 'בתוכניות שבהן הדיבידנד מפחית את מחיר המימוש. אם לא רלוונטי, השאר 0.');
   }
 
   function applyStockUI() {
@@ -1391,10 +1445,22 @@
     render();
     if (state.symbol) refreshLive(state.symbol, true);
     registerSW();
+    fetch('./data/plans.json?ts=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!data || !data.presets) return;
+        PLAN_PRESETS = data.presets;
+        applyStockUI();
+        writeInputs();
+        render();
+      })
+      .catch(function () { /* המחשבון ממשיך בלי פרסטים */ });
   }
 
   // חשיפה לבדיקות בלבד
   window.__optionsCalc = { state: state, computeModel: computeModel, roundClause16: roundClause16, buildShareText: buildShareText, buildLink: buildLink, setView: setView, setStock: setStock, parseYahoo: parseYahoo, refreshLive: refreshLive, simulateQty: simulateQty, breakEvenSharePrice: breakEvenSharePrice, sweetSpotPrice: sweetSpotPrice, priceKindLabel: priceKindLabel, fxRate: fxRate, quoteFromPricesFile: quoteFromPricesFile, looksLikeRangeMaxGlitch: looksLikeRangeMaxGlitch };
+  window.__optionsCalc.planFor = planFor;
+  window.__optionsCalc.PLAN_PRESETS = PLAN_PRESETS;
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

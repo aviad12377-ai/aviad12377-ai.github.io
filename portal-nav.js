@@ -52,9 +52,13 @@
     { id: 'actions', href: 'actions.html', label: { he: 'צעדים לחיסכון בדמי ניהול', en: 'Fee actions', es: 'Comisiones' }, icon: 'bulb', group: 'tools', parent: 'wealth' },
     { id: 'cashflow', href: 'cashflow.html', label: { he: 'תחזית תזרים ל־12 חודשים', en: 'Cash-flow forecast', es: 'Flujo de caja' }, icon: 'pie', group: 'tools', parent: 'budget' },
     { id: 'retirement', href: 'retirement.html', label: { he: 'תחזית פרישה', en: 'Retirement', es: 'Jubilación' }, icon: 'umbrella', group: 'wealth', parent: 'wealth' },
+    { id: 'tax', href: 'tax.html', label: { he: 'מס הכנסה: נקודות זיכוי והחזר', en: 'Income tax helper', es: 'Impuestos' }, icon: 'shield', group: 'tools', parent: 'budget' },
+    { id: 'report', href: 'report.html', label: { he: 'דוח כספי להדפסה', en: 'Printable report', es: 'Informe' }, icon: 'chart', group: 'tools', parent: 'home' },
     { id: 'feedback', href: 'feedback.html', label: { he: 'משוב ודיווח על תקלה', en: 'Feedback', es: 'Comentarios' }, icon: 'chat', group: 'account', parent: 'me' },
     { id: 'compare-cards', href: 'compare-cards.html', label: { he: 'השוואת כרטיסים', en: 'Compare cards', es: 'Comparar tarjetas' }, icon: 'card', group: 'debts', parent: 'loans' },
-    { id: 'compare-savings', href: 'compare-savings.html', label: { he: 'השוואת פיקדונות', en: 'Compare deposits', es: 'Comparar depósitos' }, icon: 'piggy', group: 'wealth', parent: 'wealth' }
+    { id: 'compare-savings', href: 'compare-savings.html', label: { he: 'השוואת פיקדונות', en: 'Compare deposits', es: 'Comparar depósitos' }, icon: 'piggy', group: 'wealth', parent: 'wealth' },
+    { id: 'compare-funds', href: 'compare-funds.html', label: { he: 'השוואת קרנות', en: 'Compare funds', es: 'Comparar fondos' }, icon: 'umbrella', group: 'wealth', parent: 'wealth' },
+    { id: 'compare-mortgage', href: 'compare-mortgage.html', label: { he: 'בדיקת מחזור משכנתא', en: 'Refinance check', es: 'Revisión de refinanciación' }, icon: 'house', group: 'debts', parent: 'loans' }
   ];
   var extra = window.PORTAL_NAV || [];
   var seen = {}; window.PORTAL_NAV = base.concat(extra).filter(function (e) { if (!e || !e.id || seen[e.id]) return false; seen[e.id] = 1; return true; });

@@ -877,6 +877,7 @@
       return h('a', { href: p[1], class: p[0] === page ? 'active' : null, 'aria-current': p[0] === page ? 'page' : null, text: t(p[2]) });
     })));
     if (window.PortalNav) window.PortalNav.mount(page);
+    setTimeout(function () { try { window.dispatchEvent(new CustomEvent('portal-chrome')); } catch (e) {} }, 0); // lets portal-cloud.js put the sign-in button in the new header
     var mountAv = function () { if (window.PortalAvatar) window.PortalAvatar.mount(document.getElementById('avatar-slot')); };
     setTimeout(mountAv, 0); on('change', mountAv); on('quotes', mountAv);
     return out;
@@ -1262,7 +1263,7 @@
     items.forEach(function (it) { box.appendChild(h('div', { class: 'rec ' + (it.level || 'info') }, [h('strong', { text: it.title }), it.text ? h('p', { text: it.text }) : null])); });
     return section(t('recs_title'), [box, h('p', { class: 'help', text: t('recs_disclaimer') })]);
   }
-  function editLink(anchor) { return h('div', { class: 'toolbar' }, [h('a', { class: 'btn btn-primary btn-sm', href: 'me.html#' + anchor, text: t('edit_in_me') })]); }
+  function editLink(anchor) { return h('div', { class: 'toolbar' }, [h('a', { class: 'edit-link', href: 'me.html#' + anchor, text: t('edit_in_me') })]); }
   function compareBox(cfg) {
     // cfg: { title, cols:[labels], mine:[[cells]], sameTrack:boolean, otherTracks:[names], source }
     var head = h('tr', null, cfg.cols.map(function (c) { return h('th', { scope: 'col', text: c }); }));
@@ -1310,14 +1311,19 @@
     if (rows.some(function (r) { return r.derived; })) out.push({ level: 'info', title: t('fee_derived_note'), text: '' });
     return out;
   }
+  function foldCard(title, kids, open) {
+    var d = h('details', { class: 'card fold' }, [h('summary', { class: 'card-title' }, [h('span', { text: title })])].concat(kids));
+    if (open) d.open = true; return d;
+  }
   function maslakaLinkCard() {
-    return section(t('maslaka_get_title'), [
+    var hasFunds = (data.maslaka && data.maslaka.products && data.maslaka.products.length) || data.pension.funds.length || data.hishtalmut.funds.length;
+    return foldCard(t('maslaka_get_title'), [
       h('div', { class: 'toolbar' }, [
         h('a', { class: 'btn btn-primary', href: MASLAKA_URL, target: '_blank', rel: 'noopener', text: t('maslaka_open') }),
         h('a', { class: 'btn btn-soft', href: 'me.html#maslaka', text: t('maslaka_upload_btn') })]),
       h('ol', { class: 'steps' }, ['ms1', 'ms2', 'ms3', 'ms4', 'ms5'].map(function (k) { return h('li', { text: t(k) }); })),
       h('p', { class: 'help' }, [t('maslaka_official') + ' ', h('a', { href: MASLAKA_INFO_URL, target: '_blank', rel: 'noopener', text: 'swiftness.co.il' }), ' · ', h('a', { href: MASLAKA_REG_URL, target: '_blank', rel: 'noopener', text: t('maslaka_register') })])
-    ]);
+    ], !hasFunds);
   }
   function fundPage(kind) {
     return function (main) {
@@ -1585,6 +1591,10 @@
       var pillSel = 'all';
       function drawHero(s) {
         heroBox.innerHTML = '';
+        if (!(s.assets > 0) && !(s.liabs > 0)) { // empty state: one clear first step
+          heroBox.appendChild(h('div', { class: 'start-card' }, [h('h2', { text: t('start_title') }), h('p', { text: t('start_txt') }), h('a', { class: 'btn btn-primary primary-action', href: 'me.html#maslaka', text: t('start_btn') })]));
+          return;
+        }
         var hist = recordHistory(s), first = null, cutoff = new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10);
         hist.forEach(function (p) { if (!first && p[0] >= cutoff) first = p; });
         heroBox.appendChild(h('p', { class: 'big num', text: disp(s.net) }));
@@ -1894,6 +1904,27 @@
     ], h('span', { class: 'badge green', text: t('in_browser_only') }));
   }
   function anchor(id, el) { el.id = id; return el; }
+  // progressive disclosure: each card becomes <details>; only `openIds` start open. A link to #id opens that card.
+  function collapseSections(root, openIds) {
+    [].slice.call(root.children).forEach(function (sec) {
+      if (!sec.id || openIds.indexOf(sec.id) >= 0 || sec.tagName !== 'SECTION') return;
+      var title = sec.querySelector(':scope > .card-title');
+      var d = h('details', { class: 'card fold', id: sec.id });
+      var tSpan = title && title.querySelector('span'), sum = h('summary', { class: 'card-title' }, [h('span', { text: tSpan ? tSpan.textContent : title ? title.textContent : sec.id })]);
+      if (title) title.remove();
+      d.appendChild(sum);
+      while (sec.firstChild) d.appendChild(sec.firstChild);
+      sec.replaceWith(d);
+    });
+    openHash();
+  }
+  function openHash() {
+    var id = decodeURIComponent((location.hash || '').slice(1)); if (!id) return;
+    var el = document.getElementById(id); if (!el) return;
+    if (el.tagName === 'DETAILS') el.open = true;
+    setTimeout(function () { el.scrollIntoView({ block: 'start' }); }, 30);
+  }
+  window.addEventListener('hashchange', openHash);
   function meGuide() {
     return section(t('guide_title'), [h('div', { class: 'guide' }, [
       h('h3', { text: t('g_maslaka_h') }), h('ol', { class: 'steps' }, ['ms1', 'ms2', 'ms3', 'ms4', 'ms5'].map(function (k) { return h('li', { text: t(k) }); })),
@@ -1907,10 +1938,10 @@
     var C = window.PortalCloud, gate = h('div'), body = h('div');
     main.appendChild(gate); main.appendChild(body);
     function build() {
+      var wasOpen = [].slice.call(body.querySelectorAll('details.fold[open]')).map(function (d) { return d.id; }); // keep what the user opened across re-renders
       body.innerHTML = '';
       var idx = [['maslaka', 'maslaka_upload_title'], ['pension', 'nav_pension'], ['hishtalmut', 'nav_hishtalmut'], ['cash', 'cash_title'], ['standing', 'standing_title'], ['portfolios', 'portfolios_title'], ['j-trades', 'j_trades'], ['j-bank', 'j_bank'], ['mortgage', 'nav_mortgage'], ['loans', 'nav_loans'], ['cards', 'nav_cards'], ['j-cards', 'j_cards'], ['budget', 'nav_budget'], ['esop', 'esop_title'], ['land', 'land_title'], ['assets', 'other_assets'], ['goal', 'goal'], ['peer', 'peer_title'], ['guide', 'guide_title']];
-      if (window.PortalAvatar) body.appendChild(anchor('avatar', section(window.PortalAvatar.title(), [window.PortalAvatar.studio(function (v) { return disp(v); })])));
-      body.appendChild(anchor('top', section(t('me_index'), [h('div', { class: 'chips' }, idx.map(function (x) { return h('a', { class: 'chip', href: '#' + x[0], text: t(x[1]) }); }))])));
+      body.appendChild(h('span', { id: 'top', class: 'sr-only', text: t('me_index') })); // the folded cards below are the index
       if (window.PortalEsop) { var es = window.PortalEsop.render({ h: h, money: money, fmtDate: fmtDate, toast: toast }); body.appendChild(anchor('esop', section(window.PortalEsop.title, [es.el]))); on('quotes', es.refresh); }
       body.appendChild(anchor('maslaka', maslakaUpload()));
       [['pension', 'pension'], ['hishtalmut', 'hishtalmut']].forEach(function (x) { var box = h('div'); renderList(box, data[x[0]].funds, fundSchema(x[0])); body.appendChild(anchor(x[0], section(t('manual_funds') + ' · ' + t('nav_' + x[0]), [h('p', { class: 'help', text: t('manual_funds_help') }), box]))); });
@@ -1997,6 +2028,8 @@
       body.appendChild(anchor('goal', section(t('goal'), [h('div', { class: 'fields' }, [fieldInput(g, { k: 'amount', type: 'number', label: 'goal_amount' }, changed), fieldInput(g, { k: 'date', type: 'date', label: 'goal_date' }, changed), fieldInput(g, { k: 'base', type: 'select', label: 'goal_base', options: [['net', t('base_net')], ['liquid', t('base_liquid')]] }, changed), fieldInput(g, { k: 'ret', type: 'number', label: 'goal_ret' }, changed)])])));
       body.appendChild(anchor('peer', peerCard()));
       body.appendChild(anchor('guide', meGuide()));
+      if (window.PortalAvatar) body.appendChild(anchor('avatar', section(window.PortalAvatar.title(), [window.PortalAvatar.studio(function (v) { return disp(v); })])));
+      var s0 = calc.summary(); collapseSections(body, (!(s0.assets > 0) && !(s0.liabs > 0) ? ['maslaka'] : []).concat(wasOpen)); // empty account: the first step stays open
     }
     function checkPref(obj, key, label) {
       var id = 'cp-' + uid(), c = h('input', { type: 'checkbox', id: id }); c.checked = obj[key] !== false;
@@ -2049,7 +2082,14 @@
     var EXT = window.PORTAL_PAGES || {};
     if (EXT[page]) titles[page] = EXT[page].title;
     var tt = titles[page] || titles.home;
-    root.appendChild(h('header', { class: 'top-header' + (page === 'home' ? ' sr-only' : '') }, [h('h1', { text: t(tt[0]) }), h('p', { text: t(tt[1]) })]));
+    var navE = (window.PORTAL_NAV || []).filter(function (e) { return e.id === page; })[0], parentE = navE && navE.parent && (window.PORTAL_NAV || []).filter(function (e) { return e.id === navE.parent; })[0];
+    var PRIMARY = { wealth: ['pa_wealth', 'me.html#cash'], pension: ['pa_pension', 'me.html#pension'], hishtalmut: ['pa_hish', 'me.html#hishtalmut'], savings: ['pa_savings', 'me.html#cash'], portfolio: ['pa_portfolio', 'me.html#portfolios'], mortgage: ['pa_mortgage', 'me.html#mortgage'], loans: ['pa_loans', 'me.html#loans'], cards: ['pa_cards', 'me.html#cards'], budget: ['pa_budget', 'me.html#budget'], me: ['pa_me', '#maslaka'] };
+    var pa = PRIMARY[page];
+    root.appendChild(h('header', { class: 'top-header' + (page === 'home' ? ' sr-only' : '') }, [
+      parentE && !navE.tab ? h('a', { class: 'back-link', href: parentE.href }, [h('span', { 'aria-hidden': 'true', text: settings.lang === 'he' ? '→ ' : '← ' }), t('back_to').replace('{p}', (parentE.label && (parentE.label[settings.lang] || parentE.label.he)) || '')]) : null,
+      h('h1', { text: t(tt[0]) }), h('p', { text: t(tt[1]) }),
+      pa ? h('a', { class: 'btn btn-primary primary-action', href: pa[1], text: t(pa[0]) }) : null
+    ]));
     document.title = t(tt[0]) + ' · ' + t('brand');
     var main = h('main'); root.appendChild(main);
     (EXT[page] ? EXT[page].render : (pageRenderers[page] || pageRenderers.home))(main);
