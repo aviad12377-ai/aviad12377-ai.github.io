@@ -47,7 +47,7 @@
     return svg;
   }
   function render(main) {
-    var s = snapshot(), range = 'all', box = h('div'), status = T.live();
+    var s = snapshot(), range = 'all', box = h('div'), status = T.live(), nextBox = h('div');
     var seg = h('div', { class: 't13-seg', role: 'group', 'aria-label': 'טווח זמן' });
     [['3m', '3 חודשים'], ['1y', 'שנה'], ['all', 'הכול']].forEach(function (r) {
       var b = h('button', { type: 'button', class: 'btn', 'aria-pressed': String(r[0] === range), text: r[1] });
@@ -59,22 +59,32 @@
       var all = series(), from = null;
       if (range === '3m') from = T.ymd(T.addMonths(T.today(), -3)); else if (range === '1y') from = T.ymd(T.addMonths(T.today(), -12));
       var pts = from ? all.filter(function (p) { return p[0] >= from; }) : all;
-      if (!pts.length) { box.appendChild(h('p', { class: 'empty', text: 'עדיין אין נקודות. ברגע שיהיו נתונים בדף הבית, ההון יישמר כאן פעם ביום.' })); status.textContent = ''; return; }
+      drawNext(all);
+      if (!pts.length) { box.appendChild(all.length ? h('p', { class: 'empty', text: 'אין נקודות בטווח הזה. בוחרים טווח ארוך יותר.' }) : T.empty('עדיין אין נתונים לגרף', 'מזינים חסכונות, השקעות, נכסים והלוואות באתר. מהיום שיש נתונים, ההון נשמר כאן פעם ביום.', 'עו"ש 20,000 ₪ + קרן השתלמות 90,000 ₪ − הלוואה 30,000 ₪ = הון נטו של 80,000 ₪.')); status.textContent = ''; return; }
       var first = pts[0][1], last = pts[pts.length - 1][1], diff = last - first;
-      box.appendChild(h('div', { class: 'totals' }, [T.tot('הון נטו עכשיו', T.disp(last), 'big'), T.tot('שינוי בטווח', (diff >= 0 ? '+' : '') + T.disp(diff), diff >= 0 ? 'pos' : 'neg'), T.tot('מספר נקודות', String(pts.length))]));
+      box.appendChild(h('div', { class: 't13-kpi' }, [h('span', { class: 'v num', text: T.disp(last) }), h('span', { class: 'k', text: 'הון נטו עכשיו' })]));
+      box.appendChild(h('div', { class: 'totals' }, [T.tot('שינוי בטווח', (diff >= 0 ? '+' : '') + T.disp(diff), diff >= 0 ? 'pos' : 'neg'), T.tot('מאז', T.fmtDate(T.parseDate(pts[0][0])))]));
       if (pts.length >= 2) box.appendChild(chart(pts));
       else box.appendChild(h('p', { class: 'help', text: 'הגרף יופיע מהיום השני. בכל יום שבו נכנסים לאתר נשמרת נקודה אחת.' }));
       var rows = pts.slice(-12).reverse().map(function (p) { return h('tr', null, [h('td', { text: T.fmtDate(T.parseDate(p[0])) }), h('td', { class: 'num', text: T.disp(p[1]) })]); });
       box.appendChild(h('details', null, [h('summary', { text: 'טבלת הנקודות האחרונות' }), h('div', { class: 'tbl-wrap' }, [h('table', { class: 'cmp' }, [h('thead', null, [h('tr', null, [h('th', { text: 'תאריך' }), h('th', { text: 'הון נטו' })])]), h('tbody', null, rows)])])]));
       status.textContent = 'מוצג טווח ' + ({ '3m': 'של 3 חודשים', '1y': 'של שנה', all: 'מלא' })[range] + '. הון נטו אחרון: ' + T.disp(last) + '.';
     }
+    function drawNext(all) {
+      nextBox.innerHTML = ''; seg.hidden = all.length < 2;
+      if (!all.length) nextBox.appendChild(T.next('מתחילים מהחסכונות וההשקעות. ההון נטו מחושב מכל מה שמוזן באתר.', { label: 'להזנת חסכונות', href: 'wealth.html' }));
+      else if (all.length < 2) nextBox.appendChild(T.next('הנקודה הראשונה נשמרה. הגרף יופיע מהיום השני. בינתיים כדאי לוודא שהנכסים מעודכנים.', { label: 'לעדכון נכסים', href: 'assets.html' }));
+      else nextBox.appendChild(T.next('כדי שהגרף יהיה מדויק, מעדכנים יתרות פעם בחודש.', { label: 'לעדכון יתרות', href: 'wealth.html' }));
+    }
     draw();
     T.onRemote(draw);
     var note = s && s.missing ? h('p', { class: 'notice amber', text: 'חסרים כמה שערים או מחירים, ולכן הנקודה של היום לא נשמרה. היא תישמר אחרי שהמחירים יתעדכנו.' }) : null;
+    main.appendChild(nextBox);
     main.appendChild(T.card('ההון נטו לאורך זמן', [note, seg, status, box, h('p', { class: 't13-note', text: 'נכסים פחות התחייבויות, לפי הנתונים שהזנת באתר. נשמרת נקודה אחת ביום, בפעם הראשונה שנכנסים.' })]));
-    main.appendChild(T.card('מה נכנס לחישוב', [h('div', { class: 't13-hub' }, [h('a', { href: 'wealth.html', text: 'חסכונות והשקעות' }), h('a', { href: 'assets.html', text: 'דירה, רכב וקרקע' }), h('a', { href: 'loans.html', text: 'הלוואות ומשכנתא' })])]));
+    main.appendChild(h('section', { class: 'card t13-card-more' }, [T.more('מה נכנס לחישוב', [h('div', { class: 't13-hub' }, [h('a', { href: 'wealth.html', text: 'חסכונות והשקעות' }), h('a', { href: 'assets.html', text: 'דירה, רכב וקרקע' }), h('a', { href: 'loans.html', text: 'הלוואות ומשכנתא' })])])]));
+    main.appendChild(T.disc('הסכומים לפי מה שהזנת באתר.'));
   }
   window.T13Networth = { snapshot: snapshot, series: series };
-  if (document.body && document.body.getAttribute('data-page') === 'networth') T.page('networth', 'ההון לאורך זמן', 'גרף של ההון נטו, נקודה אחת ביום', render);
+  if (document.body && document.body.getAttribute('data-page') === 'networth') T.page('networth', 'ההון לאורך זמן', 'כמה שווה כל מה שיש לך פחות החובות, ואיך זה משתנה לאורך זמן.', render);
   else document.addEventListener('DOMContentLoaded', function () { if (document.body.getAttribute('data-page') === 'networth') return; setTimeout(snapshot, 1500); });
 })();

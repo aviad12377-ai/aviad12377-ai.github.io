@@ -64,7 +64,8 @@
     }
     function drawRef() {
       refOut.innerHTML = ''; var a = annual(st);
-      if (!(a.gross > 0)) { refOut.appendChild(h('p', { class: 'empty', text: 'מזינים את ההכנסה החייבת השנתית ואת המס שנוכה, כפי שמופיעים בטופס 106 מהמעסיק.' })); return; }
+      drawNext();
+      if (!(a.gross > 0)) { refOut.appendChild(h('p', { class: 't13-ex' }, [h('span', { class: 't13-ex-k', text: 'לדוגמה: ' }), 'הכנסה חייבת 180,000 ₪ ומס שנוכה 14,000 ₪. את טופס 106 מקבלים מהמעסיק בתחילת השנה.'])); return; }
       var items = [T.tot('מס משוער לשנה', T.disp(a.tax), 'big'), T.tot('מדרגת המס השולית', a.marginal + '%')];
       if (a.diff !== null) items.unshift(T.tot(a.diff >= 0 ? 'החזר אפשרי' : 'ייתכן חוב מס', T.disp(Math.abs(a.diff)), 'big ' + (a.diff >= 0 ? 'pos' : 'neg')));
       refOut.appendChild(h('div', { class: 'totals' }, items));
@@ -73,7 +74,7 @@
     }
     function drawOpt() {
       optOut.innerHTML = ''; var items = optionItems();
-      if (!items.length) { optOut.appendChild(h('p', { class: 'empty' }, ['לא נמצאו אופציות שמורות. אפשר להזין אותן ב', h('a', { href: 'options.html', text: 'מחשבון האופציות' }), '.'])); return; }
+      if (!items.length) { optOut.appendChild(T.empty('לא נמצאו אופציות שמורות', 'אם יש לך אופציות מהעבודה, מזינים אותן קודם במחשבון האופציות, והן יופיעו כאן.', null, { label: 'למחשבון האופציות', href: 'options.html' })); return; }
       items.forEach(function (it) {
         var o = st.opt[it.sym] = st.opt[it.sym] || {};
         var box = h('div', { class: 'row-card' }), res = h('div', { 'aria-live': 'polite' });
@@ -98,34 +99,55 @@
         box.appendChild(res); calc(); optOut.appendChild(box);
       });
     }
-    var kidsFields = CHILD.map(function (c) { return T.field(c[1], 'number', st.kids[c[0]], function (v) { st.kids[c[0]] = v; save(); drawPts(); drawRef(); }, { step: '1', min: 0, max: 15 }); });
+    var kidsN = function () { return CHILD.reduce(function (x, c) { return x + Math.max(0, Math.round(T.num(st.kids[c[0]]))); }, 0); };
+    var kidsFields = CHILD.map(function (c) { return T.field(c[1], 'number', st.kids[c[0]], function (v) { st.kids[c[0]] = v; save(); drawPts(); drawRef(); }, { step: '1', min: 0, max: 15, placeholder: '0' }); });
     var ptsForm = h('div', { class: 'fields' }, [
       T.field('אני אישה', 'check', st.woman, function (v) { st.woman = v; save(); drawPts(); drawRef(); }),
-      T.field('הורה יחיד', 'check', st.single, function (v) { st.single = v; save(); drawPts(); drawRef(); }),
-      T.field('נקודות הילדים לפי', 'select', st.parent, function (v) { st.parent = v; save(); drawPts(); drawRef(); }, { options: [['mother', 'אם, או ההורה שהילדים אצלו'], ['father', 'אב, או ההורה השני']] }),
       T.field('שירות צבאי או לאומי', 'select', st.soldier, function (v) { st.soldier = v; save(); drawPts(); drawRef(); }, { options: [['none', 'לא, או עברו 3 שנים מהשחרור'], ['full', 'שירות מלא, ב־3 השנים האחרונות'], ['part', 'שירות חלקי (שנה לפחות), ב־3 השנים האחרונות']] }),
-      T.field('סיום תואר', 'select', st.degree, function (v) { st.degree = v; save(); drawPts(); drawRef(); }, { options: [['none', 'לא בשנה הרלוונטית'], ['ba', 'תואר ראשון'], ['ma', 'תואר שני']] }),
-      T.field('נקודות נוספות', 'number', st.extraPoints, function (v) { st.extraPoints = v; save(); drawPts(); drawRef(); }, { help: 'למשל מילואים כלוחם, יישוב מזכה, עולה חדש. לפי אישור או מחשבון רשות המסים.' })
-    ].concat([h('p', { class: 'help wide', style: 'grid-column:1/-1;margin:6px 0 0', text: 'מספר ילדים לפי הגיל שהם מגיעים אליו בשנת 2026:' })]).concat(kidsFields));
-    var refForm = h('div', { class: 'fields' }, [
-      T.field('הכנסה חייבת בשנה (₪)', 'number', st.gross, function (v) { st.gross = v; save(); drawRef(); drawOpt(); }, { help: 'מטופס 106, משדה "הכנסה חייבת". אם עבדת בכמה מקומות, מחברים.' }),
-      T.field('מס הכנסה שנוכה בשנה (₪)', 'number', st.withheld, function (v) { st.withheld = v; save(); drawRef(); }),
+      T.field('סיום תואר', 'select', st.degree, function (v) { st.degree = v; save(); drawPts(); drawRef(); }, { options: [['none', 'לא בשנה הרלוונטית'], ['ba', 'תואר ראשון'], ['ma', 'תואר שני']] })
+    ]);
+    var kidsMore = T.more('ילדים' + (kidsN() ? ' (' + kidsN() + ')' : ''), [h('div', { class: 'fields' }, [
+      T.field('נקודות הילדים לפי', 'select', st.parent, function (v) { st.parent = v; save(); drawPts(); drawRef(); }, { options: [['mother', 'אם, או ההורה שהילדים אצלו'], ['father', 'אב, או ההורה השני']] }),
+      T.field('הורה יחיד', 'check', st.single, function (v) { st.single = v; save(); drawPts(); drawRef(); })
+    ]), h('p', { class: 'help', text: 'מספר ילדים לפי הגיל שהם מגיעים אליו בשנת ' + Y.year + ':' }), h('div', { class: 'fields compact' }, kidsFields)], kidsN() > 0);
+    var extraMore = T.more('נקודות נוספות', [h('div', { class: 'fields' }, [
+      T.field('נקודות נוספות', 'number', st.extraPoints, function (v) { st.extraPoints = v; save(); drawPts(); drawRef(); }, { max: 20, help: 'למשל מילואים כלוחם, יישוב מזכה, עולה חדש. לפי אישור או מחשבון רשות המסים.' })
+    ])], T.num(st.extraPoints) > 0);
+    var grossField = T.field('הכנסה חייבת בשנה (₪)', 'number', st.gross, function (v) { st.gross = v; save(); drawRef(); drawOpt(); withheldField.recheck(); }, { placeholder: 'למשל 180000', help: 'מטופס 106, משדה "הכנסה חייבת". אם עבדת בכמה מקומות, מחברים.' });
+    var withheldField = T.field('מס הכנסה שנוכה בשנה (₪)', 'number', st.withheld, function (v) { st.withheld = v; save(); drawRef(); }, { placeholder: 'למשל 14000', help: 'מטופס 106, משדה "מס הכנסה".', check: function (v) { return v !== null && T.num(st.gross) > 0 && v > T.num(st.gross) * 0.6 ? 'המס שנוכה גבוה מאוד ביחס להכנסה. כדאי לבדוק שהסכומים הוזנו נכון.' : ''; } });
+    var refForm = h('div', { class: 'fields' }, [grossField, withheldField]);
+    var refMore = T.more('ניכויים וזיכויים: פנסיה, ביטוח חיים, תרומות', [h('div', { class: 'fields' }, [
       T.field('חודשי עבודה בשנה', 'number', st.months, function (v) { st.months = v; save(); drawRef(); }, { step: '1', min: 1, max: 12 }),
       T.field('הפקדות שלך לפנסיה בשנה (₪)', 'number', st.pensionOwn, function (v) { st.pensionOwn = v; save(); drawRef(); }, { help: 'רק חלק העובד.' }),
       T.field('ביטוח חיים פרטי בשנה (₪)', 'number', st.lifeIns, function (v) { st.lifeIns = v; save(); drawRef(); }),
-      T.field('תרומות למוסד מוכר בשנה (₪)', 'number', st.donations, function (v) { st.donations = v; save(); drawRef(); })
-    ]);
+      T.field('תרומות למוסד מוכר בשנה (₪)', 'number', st.donations, function (v) { st.donations = v; save(); drawRef(); }, { help: 'זיכוי של 35% מתרומה של ' + Y.donationMin + ' ₪ ומעלה.' })
+    ])]);
+    var nextBox = h('div');
+    function drawNext() {
+      nextBox.innerHTML = '';
+      var a = annual(st);
+      if (!(a.gross > 0)) nextBox.appendChild(T.next('בודקים אם מגיע לך החזר מס: מזינים שני מספרים מטופס 106.', { label: 'להתחיל מטופס 106', onclick: function () { T.focusFirst(grossField); } }));
+      else if (a.withheld === null) nextBox.appendChild(T.next('מזינים כמה מס נוכה בשנה, ונראה אם מגיע החזר.', { label: 'הזנת המס שנוכה', onclick: function () { T.focusFirst(withheldField); } }));
+      else if (a.diff > 200) nextBox.appendChild(T.next('ייתכן שמגיע לך החזר של בערך ' + T.disp(a.diff) + '. בודקים בסימולטור של רשות המסים ומגישים בקשה.', { label: 'בקשה להחזר מס', href: 'https://www.gov.il/he/service/itc135' }));
+      else nextBox.appendChild(T.next('לפי ההערכה אין החזר משמעותי. כדאי לבדוק שכל נקודות הזיכוי שלך מסומנות.', { label: 'לנקודות הזיכוי', onclick: function () { T.focusFirst(ptsCard); } }));
+    }
     drawPts(); drawRef(); drawOpt();
-    main.appendChild(h('p', { class: 'notice blue', text: 'מידע בלבד, לא ייעוץ. החישוב מפושט ומיועד להערכה. הזכאות והמס בפועל נקבעים לפי החוק והאישורים.' }));
-    main.appendChild(T.card('נקודות זיכוי ' + Y.year, [ptsForm, ptsOut]));
-    main.appendChild(T.card('הערכת החזר מס שנתי', [refForm, refOut]));
-    main.appendChild(T.card('מיסוי אופציות לעובדים (סעיף 102, מסלול רווח הון)', [h('p', { class: 'help', text: 'בחברה נסחרת, במסלול ההוני עם נאמן: החלק שעד ממוצע 30 ימי המסחר שלפני ההענקה ממוסה כהכנסת עבודה, והרווח שמעליו ב־25%. המסלול מחייב החזקה אצל נאמן 24 חודשים לפחות מההענקה. ייתכן גם מס יסף על הכנסה גבוהה.' }), optOut, h('div', { class: 'toolbar' }, [h('a', { class: 'btn btn-soft', href: 'options.html', text: 'למחשבון האופציות' })])]));
+    var ptsCard = T.card('נקודות זיכוי ' + Y.year, [ptsOut, ptsForm, kidsMore, extraMore]);
+    var hasOpt = optionItems().length > 0;
+    main.appendChild(nextBox);
+    main.appendChild(T.card('הערכת החזר מס שנתי', [refForm, refOut, refMore]));
+    main.appendChild(ptsCard);
+    main.appendChild(h('section', { class: 'card' + (hasOpt ? '' : ' t13-card-more') }, [hasOpt ? h('h2', { class: 'card-title', text: 'מיסוי אופציות לעובדים (סעיף 102)' }) : null,
+      T.more(hasOpt ? 'איך זה מחושב' : 'מיסוי אופציות לעובדים (סעיף 102)', [h('p', { class: 'help', text: 'בחברה נסחרת, במסלול ההוני עם נאמן: החלק שעד ממוצע 30 ימי המסחר שלפני ההענקה ממוסה כהכנסת עבודה, והרווח שמעליו ב־25%. המסלול מחייב החזקה אצל נאמן 24 חודשים לפחות מההענקה. ייתכן גם מס יסף על הכנסה גבוהה.' })].concat(hasOpt ? [] : [optOut])),
+      hasOpt ? optOut : null, hasOpt ? h('div', { class: 'toolbar' }, [h('a', { class: 'btn btn-soft', href: 'options.html', text: 'למחשבון האופציות' })]) : null]));
     main.appendChild(T.card('מקורות', [h('ul', { class: 't13-list' }, [
       h('li', null, [h('a', { href: Y.src, target: '_blank', rel: 'noopener', text: 'רשות המסים: לוח ניכויים ' + Y.year }), h('span', { text: 'מעודכן ל' + Y.asOf })]),
-      h('li', null, [h('a', { href: 'https://secapp.taxes.gov.il/srsimulatorNZ/', target: '_blank', rel: 'noopener', text: 'רשות המסים: מחשבון נקודות זיכוי' }), h('span', { text: 'לבדיקה מדויקת' })])
-    ]), h('p', { class: 'help', text: 'מדרגות ' + Y.year + ': 10% עד 84,120 ₪, 14% עד 120,720, 20% עד 228,000, 31% עד 301,200, 35% עד 560,280, ו־47% מעל. נקודת זיכוי: 242 ₪ בחודש. מס יסף 3% מעל 721,560 ₪.' })]));
+      h('li', null, [h('a', { href: 'https://secapp.taxes.gov.il/srsimulatorNZ/', target: '_blank', rel: 'noopener', text: 'רשות המסים: מחשבון נקודות זיכוי' }), h('span', { text: 'לבדיקה מדויקת' })]),
+      h('li', null, [h('a', { href: 'https://www.gov.il/he/service/itc135', target: '_blank', rel: 'noopener', text: 'בקשה להחזר מס (טופס 135)' }), h('span', { text: 'עד 6 שנים אחורה' })])
+    ]), T.more('מדרגות המס ' + Y.year, [h('p', { class: 'help', text: 'מדרגות ' + Y.year + ': 10% עד 84,120 ₪, 14% עד 120,720, 20% עד 228,000, 31% עד 301,200, 35% עד 560,280, ו־47% מעל. נקודת זיכוי: 242 ₪ בחודש. מס יסף 3% מעל 721,560 ₪.' })])]));
+    main.appendChild(T.disc('החישוב מפושט ומיועד להערכה. הזכאות והמס בפועל נקבעים לפי החוק והאישורים.'));
     T.onRemote(function () { location.reload(); });
   }
   window.T13Tax = { bracketTax: bracketTax, annual: annual, points: points };
-  T.page('tax', 'מס הכנסה ' + Y.year, 'נקודות זיכוי, הערכת החזר מס ומיסוי אופציות', render);
+  T.page('tax', 'מס הכנסה ' + Y.year, 'בודקים אם מגיע לך החזר מס, כמה נקודות זיכוי יש לך, וכמה מס על אופציות מהעבודה.', render);
 })();

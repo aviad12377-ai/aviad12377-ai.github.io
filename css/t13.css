@@ -77,3 +77,45 @@ table.cmp tr.neg-row td{color:var(--danger,#f87171);font-weight:800}
   body[data-page=report] .t13-rgrid{grid-template-columns:1fr 1fr}
   body[data-page=report] .neg{color:#b00!important}body[data-page=report] .pos{color:#060!important}
 }
+/* ---- UX kit (round 1): next step, empty states, progressive disclosure, inline errors ---- */
+:is(body[data-page=goals],body[data-page=assets],body[data-page=subscriptions],body[data-page=debts-planner],body[data-page=actions],body[data-page=networth],body[data-page=cashflow],body[data-page=retirement],body[data-page=tax],body[data-page=report],body[data-page=feedback]) :is(.top-header p,.site-footer,.site-footer a,.site-footer span,.acct-btn){font-size:16px}
+:is(body[data-page=goals],body[data-page=assets],body[data-page=subscriptions],body[data-page=debts-planner],body[data-page=actions],body[data-page=networth],body[data-page=cashflow],body[data-page=retirement],body[data-page=tax],body[data-page=report],body[data-page=feedback]) .top-header p{color:var(--muted,#b4b4c0);line-height:1.45;max-width:60ch}
+.t13-next{display:flex;align-items:center;justify-content:space-between;gap:10px 14px;flex-wrap:wrap;padding:12px 14px;margin:0 0 12px;border-radius:var(--radius-sm,14px);background:var(--primary-soft,rgba(139,92,246,.14));border:1px solid rgba(139,92,246,.4)}
+.t13-next-t{margin:0;flex:1 1 220px;display:flex;flex-direction:column;gap:2px;color:var(--ink,#f4f4f6);font-size:17px;font-weight:700;line-height:1.4}
+.t13-next-k{font-size:16px;font-weight:700;color:var(--primary-dark,#c4b5fd)}
+.t13-next .btn{flex:0 0 auto}
+@media (max-width:480px){.t13-next .btn{width:100%;justify-content:center}}
+.t13 .btn-primary,.t13-next .btn-primary{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800}
+.t13-empty{padding:14px;border:1px dashed var(--glass-border,rgba(255,255,255,.18));border-radius:var(--radius-sm,14px);background:var(--card-alt,rgba(255,255,255,.04))}
+.t13-empty p{margin:0 0 6px;color:var(--muted,#b4b4c0)}
+.t13-empty .t13-empty-h{color:var(--ink,#f4f4f6);font-weight:800;font-size:17px}
+.t13-ex{color:var(--ink,#f4f4f6)!important}
+.t13-ex-k{font-weight:700;color:var(--primary-dark,#c4b5fd)}
+.t13-empty .toolbar{margin-top:8px}
+.t13 details.t13-more{margin-top:10px;border-top:1px solid var(--line,rgba(255,255,255,.1));padding-top:2px}
+.t13 details.t13-more>summary,.t13 details>summary{list-style:none;gap:8px;color:var(--primary-dark,#c4b5fd)}
+.t13 details>summary::-webkit-details-marker{display:none}
+.t13 details>summary::before{content:'';width:9px;height:9px;border-inline-end:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .15s;margin-top:-4px;flex:0 0 auto}
+.t13 details[open]>summary::before{transform:rotate(-135deg);margin-top:4px}
+.t13 details.t13-row>summary{color:var(--ink,#f4f4f6);justify-content:space-between;min-height:48px}
+.t13 details.t13-row>summary::before{order:2}
+.t13-row-sum{flex:1 1 auto;min-width:0;font-weight:700}
+.t13 details.t13-row[open]>summary{margin-bottom:8px;border-bottom:1px solid var(--line,rgba(255,255,255,.1))}
+.t13-err{margin:4px 0 0;font-size:16px;font-weight:700;color:#fca5a5}
+.t13-err:empty{display:none}
+.t13 .field.bad input,.t13 .field.bad select{border-color:var(--danger,#f87171);box-shadow:0 0 0 1px var(--danger,#f87171)}
+.t13-disc{margin:14px 2px 4px;font-size:16px;color:var(--muted,#b4b4c0)}
+.t13 .field label{color:var(--ink,#f4f4f6)}
+.t13 .help{color:var(--muted,#b4b4c0)}
+.t13 .empty{font-size:16px;color:var(--muted,#b4b4c0)}
+.t13 .notice{font-size:16px}
+@media (max-width:480px){.t13 .fields{grid-template-columns:1fr}.t13 .fields.compact{grid-template-columns:1fr 1fr}}
+.t13 .toolbar .btn{min-height:44px}
+.t13 a:not(.btn):not(.action){display:inline-flex;align-items:center;min-height:44px}
+.t13 p a:not(.btn),.t13 li a:not(.btn){min-height:44px;padding:0 2px}
+.t13-kpi{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin:0 0 6px}
+.t13-kpi .v{font-size:32px;font-weight:800;line-height:1.15;unicode-bidi:isolate}
+.t13-kpi .k{font-size:16px;color:var(--muted,#b4b4c0)}
+.insights .t13-top-badge{display:inline-block;font-size:16px;font-weight:700;color:var(--primary-dark,#c4b5fd);margin-bottom:2px}
+.insights .action .at span{font-size:16px}
+.t13 .t13-card-more details.t13-more{margin-top:0;border-top:0;padding-top:0}

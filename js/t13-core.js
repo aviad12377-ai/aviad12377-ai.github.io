@@ -13,7 +13,6 @@
     { id: 'networth', href: 'networth.html', label: { he: 'הון לאורך זמן', en: 'Net worth history', es: 'Patrimonio' }, icon: 'chart', group: 'wealth', parent: 'wealth' },
     { id: 'assets', href: 'assets.html', label: { he: 'נכסים: דירה, רכב, קרקע', en: 'Property & car', es: 'Bienes' }, icon: 'house', group: 'wealth', parent: 'wealth' },
     { id: 'goals', href: 'goals.html', label: { he: 'קרן חירום ויעדים', en: 'Goals', es: 'Metas' }, icon: 'piggy', group: 'tools', parent: 'budget' },
-    { id: 'subscriptions', href: 'subscriptions.html', label: { he: 'מנויים וחיובים', en: 'Subscriptions', es: 'Suscripciones' }, icon: 'card', group: 'tools', parent: 'budget' },
     { id: 'debts-planner', href: 'debts-planner.html', label: { he: 'תכנון החזר חובות', en: 'Debt payoff', es: 'Pago de deudas' }, icon: 'swap', group: 'debts', parent: 'loans' },
     { id: 'actions', href: 'actions.html', label: { he: 'צעדים לחיסכון בדמי ניהול', en: 'Fee actions', es: 'Comisiones' }, icon: 'bulb', group: 'tools', parent: 'wealth' },
     { id: 'cashflow', href: 'cashflow.html', label: { he: 'תחזית תזרים ל־12 חודשים', en: 'Cash-flow forecast', es: 'Flujo de caja' }, icon: 'pie', group: 'tools', parent: 'budget' },
@@ -115,9 +114,26 @@
   var seq = 0;
   function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
   function card(title, kids, badge) { return h('section', { class: 'card' }, [h('h2', { class: 'card-title' }, [h('span', { text: title }), badge || null])].concat(kids)); }
-  /* field(label, type, value, onChange, opts) -> wrapper with a real <label for> */
+  /* field(label, type, value, onChange, opts) -> wrapper with a real <label for>.
+     Numbers are checked as you type: min (default 0 unless opts.neg), max, whole numbers for step 1, and opts.check(value) -> message.
+     An invalid value shows a friendly message under the field and is not saved. */
+  function validMsg(inp, type, o, v) {
+    if (type === 'number') {
+      if (inp.validity && inp.validity.badInput) return 'צריך להקליד מספר, למשל 1500.';
+      if (v !== null) {
+        var mn = o.min === undefined ? (o.neg ? null : 0) : o.min;
+        if (mn !== null && v < mn) return mn === 0 ? 'המספר לא יכול להיות שלילי.' : 'המספר הנמוך ביותר כאן הוא ' + mn + '.';
+        if (o.max !== undefined && v > o.max) return 'המספר הגבוה ביותר כאן הוא ' + fmt(o.max) + '.';
+        if (String(o.step) === '1' && Math.round(v) !== v) return 'צריך מספר שלם, בלי נקודה עשרונית.';
+      }
+    }
+    if (type === 'date' && inp.value && !parseDate(inp.value)) return 'התאריך לא תקין. בוחרים תאריך מהלוח.';
+    if (o.check) { var m = o.check(v); if (m) return m; }
+    return '';
+  }
   function field(label, type, value, onChange, o) {
     o = o || {}; var id = 't13f' + (++seq), inp;
+    var wide = o.wide || label.length > 26 ? ' wide' : '';
     if (type === 'select') {
       inp = h('select', { id: id }, o.options.map(function (x) { return h('option', { value: x[0], text: x[1] }); }));
       inp.value = value === undefined || value === null ? o.options[0][0] : value;
@@ -125,18 +141,63 @@
     } else if (type === 'check') {
       inp = h('input', { id: id, type: 'checkbox' }); inp.checked = !!value;
       inp.addEventListener('change', function () { onChange(inp.checked); });
-      return h('div', { class: 'field check' + (o.wide || label.length > 26 ? ' wide' : '') }, [inp, h('label', { for: id, text: label })]);
+      var cw = h('div', { class: 'field check' + wide }, [inp, h('label', { for: id, text: label })]);
+      if (o.help) { inp.setAttribute('aria-describedby', id + 'h'); cw.appendChild(h('p', { class: 'help', id: id + 'h', text: o.help })); }
+      return cw;
     } else if (type === 'textarea') {
       inp = h('textarea', { id: id, rows: o.rows || 6, readonly: o.readonly || null }); inp.value = value || '';
     } else {
-      inp = h('input', { id: id, type: type, inputmode: type === 'number' ? 'decimal' : null, step: type === 'number' ? (o.step || 'any') : null, min: o.min === undefined ? null : o.min, max: o.max === undefined ? null : o.max, placeholder: o.placeholder || null, autocomplete: 'off' });
+      inp = h('input', { id: id, type: type, inputmode: type === 'number' ? (String(o.step) === '1' ? 'numeric' : 'decimal') : null, step: type === 'number' ? (o.step || 'any') : null, min: o.min === undefined ? (type === 'number' && !o.neg ? 0 : null) : o.min, max: o.max === undefined ? null : o.max, placeholder: o.placeholder || null, autocomplete: 'off' });
       inp.value = value === undefined || value === null ? '' : value;
-      inp.addEventListener('input', function () { onChange(type === 'number' ? numOrNull(inp.value) : inp.value); });
     }
-    var w = h('div', { class: 'field' + (o.wide || label.length > 26 ? ' wide' : '') }, [h('label', { for: id, text: label }), inp]);
-    if (o.help) { var hid = id + 'h'; inp.setAttribute('aria-describedby', hid); w.appendChild(h('p', { class: 'help', id: hid, text: o.help })); }
+    var w = h('div', { class: 'field' + wide }, [h('label', { for: id, text: label }), inp]);
+    var desc = [];
+    if (o.help) { desc.push(id + 'h'); w.appendChild(h('p', { class: 'help', id: id + 'h', text: o.help })); }
+    var err = h('p', { class: 't13-err', id: id + 'e', 'aria-live': 'polite' });
+    w.appendChild(err); desc.push(id + 'e');
+    inp.setAttribute('aria-describedby', desc.join(' '));
+    function check(commit) {
+      var v = type === 'number' ? numOrNull(inp.value) : inp.value;
+      var m = validMsg(inp, type, o, v);
+      err.textContent = m; inp.setAttribute('aria-invalid', m ? 'true' : 'false'); w.classList.toggle('bad', !!m);
+      if (!m && commit) onChange(v);
+      return !m;
+    }
+    if (type !== 'select' && type !== 'textarea') {
+      inp.addEventListener('input', function () { check(true); });
+      if (type === 'date') inp.addEventListener('change', function () { check(true); });
+      if (inp.value) setTimeout(function () { check(false); }, 0);
+    }
+    w.recheck = function () { return check(false); };
     return w;
   }
+  /* "The next step" strip at the top of a page: one short sentence and one primary action. */
+  function next(text, action) {
+    var kids = [h('p', { class: 't13-next-t' }, [h('span', { class: 't13-next-k', text: 'הצעד הבא' }), h('span', { text: text })])];
+    if (action) {
+      var ext = action.href && /^https?:/.test(action.href);
+      var b = action.href ? h('a', { class: 'btn btn-primary', href: action.href, text: action.label, target: ext ? '_blank' : null, rel: ext ? 'noopener' : null }) : h('button', { type: 'button', class: 'btn btn-primary', text: action.label });
+      if (action.onclick) b.addEventListener('click', function (ev) { if (!action.href) ev.preventDefault(); action.onclick(ev); });
+      kids.push(b);
+    }
+    return h('div', { class: 't13-next', role: 'region', 'aria-label': 'הצעד הבא' }, kids);
+  }
+  /* Empty state: what to enter first, with an example, and an optional button. */
+  function empty(title, text, example, action) {
+    var kids = [h('p', { class: 't13-empty-h', text: title })];
+    if (text) kids.push(h('p', { text: text }));
+    if (example) kids.push(h('p', { class: 't13-ex' }, [h('span', { class: 't13-ex-k', text: 'לדוגמה: ' }), example]));
+    if (action) {
+      var b = action.href ? h('a', { class: 'btn btn-primary', href: action.href, text: action.label }) : h('button', { type: 'button', class: 'btn btn-primary', text: action.label });
+      if (action.onclick) b.addEventListener('click', action.onclick);
+      kids.push(h('div', { class: 'toolbar' }, [b]));
+    }
+    return h('div', { class: 't13-empty' }, kids);
+  }
+  /* Collapsed section for advanced fields. */
+  function more(summary, kids, open) { var d = h('details', { class: 't13-more' }, [h('summary', { text: summary })].concat(kids)); if (open) d.open = true; return d; }
+  function disc(text) { return h('p', { class: 't13-disc', text: 'מידע בלבד, לא ייעוץ. ' + (text || '') }); }
+  function focusFirst(el) { if (!el) return; var x = el.querySelector('input:not([type=checkbox]),select,textarea') || el.querySelector('input,button'); if (el.tagName === 'DETAILS') el.open = true; var p = el.closest && el.closest('details'); if (p) p.open = true; el.scrollIntoView({ behavior: 'smooth', block: 'center' }); if (x) setTimeout(function () { x.focus({ preventScroll: true }); }, 250); }
   function curOptions() { return CURS.map(function (c) { return [c, c]; }); }
   function tot(k, v, cls) { return h('div', { class: 'tot' + (cls ? ' ' + cls : '') }, [h('span', { class: 'k', text: k }), h('span', { class: 'v num', text: v })]); }
   function live() { return h('div', { class: 't13-sr', 'aria-live': 'polite', 'aria-atomic': 'true' }); }
@@ -145,31 +206,46 @@
     var pctv = Math.max(0, Math.min(100, Math.round(ratio * 100)));
     return h('div', { class: 't13-bar' + (cls ? ' ' + cls : ''), role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': String(pctv), 'aria-label': label || 'התקדמות' }, [h('span', { style: 'width:' + pctv + '%' })]);
   }
-  /* list editor: rows array, fields [{k,label,type,options,step}], onChange */
+  /* list editor: rows array, fields [{k,label,type,options,step,adv}], onChange.
+     o.summary(r) -> one-line text: rows show as collapsible lines (new rows open). Fields with adv:true go under "פרטים נוספים".
+     o.empty = { title, text, example } for a helpful empty state. */
   function listEditor(rows, fields, onChange, o) {
-    o = o || {}; var box = h('div');
+    o = o || {}; var box = h('div', { class: 't13-listed' }), openId = null;
+    function addRow() {
+      var r = { id: uid() }; fields.forEach(function (f) { if (f.def !== undefined) r[f.k] = f.def; }); rows.push(r); openId = r.id; onChange(); draw();
+      var last = box.querySelectorAll('.row-card'); last = last[last.length - 1]; if (last) { last.scrollIntoView({ block: 'center' }); var x = last.querySelector('input,select'); if (x) x.focus({ preventScroll: true }); }
+    }
     function draw() {
       box.innerHTML = '';
-      if (!rows.length) box.appendChild(h('p', { class: 'empty', text: o.empty || 'עדיין אין שורות. אפשר להוסיף למטה.' }));
+      if (!rows.length) {
+        var em = o.empty && typeof o.empty === 'object' ? empty(o.empty.title, o.empty.text, o.empty.example, { label: o.addLabel || 'הוספה', onclick: addRow }) : h('p', { class: 'empty', text: o.empty || 'עדיין אין שורות. אפשר להוסיף למטה.' });
+        box.appendChild(em);
+        if (o.empty && typeof o.empty === 'object') return;
+      }
       rows.forEach(function (r, i) {
         var title = (r.name || '').trim() || (o.rowTitle || 'שורה') + ' ' + (i + 1);
         var del = h('button', { type: 'button', class: 'btn btn-danger', text: 'מחיקה', 'aria-label': 'מחיקת ' + title });
         del.addEventListener('click', function () { if (!confirm('למחוק את "' + title + '"?')) return; rows.splice(i, 1); onChange(); draw(); });
-        var fs = h('div', { class: 'fields' }, fields.map(function (f) {
-          return field(f.label, f.type, r[f.k] === undefined ? f.def : r[f.k], function (v) { r[f.k] = v; onChange(r); }, f);
-        }));
+        var sumEl = null;
+        function mk(f) { return field(f.label, f.type, r[f.k] === undefined ? f.def : r[f.k], function (v) { r[f.k] = v; onChange(r); if (sumEl) sumEl.textContent = o.summary(r) || title; }, f); }
+        var basic = fields.filter(function (f) { return !f.adv; }), adv = fields.filter(function (f) { return f.adv; });
+        var fs = h('div', { class: 'fields' }, basic.map(mk));
+        var advEl = adv.length ? more(o.advLabel || 'פרטים נוספים', [h('div', { class: 'fields' }, adv.map(mk))]) : null;
         var extra = o.extra ? o.extra(r) : null;
-        box.appendChild(h('div', { class: 'row-card', role: 'group', 'aria-label': title }, [fs, extra, h('div', { class: 'row-actions' }, [del])]));
+        var inner = [fs, advEl, extra, h('div', { class: 'row-actions' }, [del])];
+        if (o.summary) {
+          sumEl = h('span', { class: 't13-row-sum', text: o.summary(r) || title });
+          var d = h('details', { class: 'row-card t13-row', role: 'group', 'aria-label': title }, [h('summary', null, [sumEl, o.badge ? o.badge(r) : null])].concat(inner));
+          if (r.id === openId || (!r.name && !o.summary(r))) d.open = true;
+          box.appendChild(d);
+        } else box.appendChild(h('div', { class: 'row-card', role: 'group', 'aria-label': title }, inner));
       });
       var add = h('button', { type: 'button', class: 'btn btn-soft', text: o.addLabel || 'הוספה' });
-      add.addEventListener('click', function () {
-        var r = { id: uid() }; fields.forEach(function (f) { if (f.def !== undefined) r[f.k] = f.def; }); rows.push(r); onChange(); draw();
-        var last = box.querySelectorAll('.row-card'); last = last[last.length - 1]; if (last) { var x = last.querySelector('input,select'); if (x) x.focus(); }
-      });
+      add.addEventListener('click', addRow);
       box.appendChild(h('div', { class: 'toolbar' }, [add]));
     }
     draw();
-    return { el: box, redraw: draw };
+    return { el: box, redraw: draw, add: addRow };
   }
   function parseDate(s) { if (!s || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return null; var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
   function today() { var d = new Date(); d.setHours(0, 0, 0, 0); return d; }
@@ -189,8 +265,37 @@
   function portalData() { var P = window.Portal; return P && P.data ? P.data : null; }
   function saveData() { var P = window.Portal; if (P && P.saveNow) P.saveNow(); }
 
+  /* ---------- monthly basics: one total monthly expense (and net income) instead of itemized budget lines ----------
+     Stored in the cash-flow section (basics.expense / basics.income). Empty = fall back to older data (goals field, then the old budget lines), which is never deleted. */
+  function legacyBudget() {
+    var d = portalData(), inc = 0, exp = 0;
+    if (d && d.home) { (d.home.income || []).forEach(function (r) { inc += num(r.amount); }); (d.home.expenses || []).forEach(function (r) { exp += num(r.amount); }); }
+    return { income: inc, expense: exp };
+  }
+  function basics() {
+    var c = read('cashflow', {}), b = c.basics || {}, lb = legacyBudget();
+    var exp = numOrNull(b.expense), inc = numOrNull(b.income), expSrc = exp === null ? null : 'own', incSrc = inc === null ? null : 'own';
+    if (exp === null) { var g = read('goals', {}), gm = g.emergency ? numOrNull(g.emergency.monthly) : null; if (gm > 0) { exp = gm; expSrc = 'old'; } else if (lb.expense > 0) { exp = lb.expense; expSrc = 'old'; } }
+    if (inc === null && lb.income > 0) { inc = lb.income; incSrc = 'old'; }
+    return { expense: exp, income: inc, expSrc: expSrc, incSrc: incSrc, own: { expense: numOrNull(b.expense), income: numOrNull(b.income) } };
+  }
+  function setBasics(k, v) { var c = read('cashflow', {}); c.basics = c.basics || {}; c.basics[k] = v; write('cashflow', c); }
+  /* The shared field(s). which: ['expense'] or ['income','expense']. */
+  function basicsFields(which, onChange) {
+    var b = basics(), out = {};
+    var DEF = {
+      expense: ['הוצאה חודשית כוללת (₪)', 'כל מה שיוצא בחודש, בלי החזרי הלוואות ומשכנתא. הערכה כללית מספיקה.', 'למשל 12000'],
+      income: ['הכנסה חודשית נטו (₪)', 'מה שנכנס לחשבון בחודש, אחרי מסים. אם יש שתי משכורות, מחברים.', 'למשל 15000']
+    };
+    var els = which.map(function (k) {
+      var fb = b.own[k] === null && b[k] !== null ? b[k] : null;
+      var f = field(DEF[k][0], 'number', b.own[k], function (v) { setBasics(k, v); if (onChange) onChange(k, v); }, { placeholder: fb !== null ? String(Math.round(fb)) : DEF[k][2], help: DEF[k][1] + (fb !== null ? ' ריק = ' + disp(fb) + ' לפי מה שהזנת בעבר.' : '') + ' משותף לכל דפי התכנון.' });
+      out[k] = f; return f;
+    });
+    var box = h('div', { class: 'fields' }, els); box.fieldsBy = out; return box;
+  }
   window.T13 = { read: read, write: write, sync: sync, onRemote: onRemote, h: h, card: card, field: field, tot: tot, live: live, bar: bar, toast: toast, listEditor: listEditor,
     money: money, disp: disp, toILS: toILS, fromILS: fromILS, num: num, numOrNull: numOrNull, fmt: fmt, dispCur: dispCur, curOptions: curOptions, uid: uid,
-    parseDate: parseDate, today: today, ymd: ymd, fmtDate: fmtDate, monthsBetween: monthsBetween, addMonths: addMonths, page: page, portalData: portalData, saveData: saveData, hasContent: hasContent, NAV: NAV };
+    parseDate: parseDate, today: today, ymd: ymd, fmtDate: fmtDate, monthsBetween: monthsBetween, addMonths: addMonths, page: page, portalData: portalData, saveData: saveData, hasContent: hasContent, NAV: NAV, next: next, empty: empty, more: more, disc: disc, focusFirst: focusFirst, basics: basics, setBasics: setBasics, basicsFields: basicsFields, FROZEN: { subscriptions: true, once: true } };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startSync); else startSync();
 })();

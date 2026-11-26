@@ -18,9 +18,13 @@
   function list() {
     var d = data(), out = [], home = d.home || {}, sav = d.savings || {};
     var mPmt = home.includeMortgagePmt === false ? 0 : ((d.mortgage && d.mortgage.tracks) || []).reduce(function (s, r) { return s + pmt(r); }, 0);
-    var income = sum(home.income, 'amount'), expenses = sum(home.expenses, 'amount') + mPmt;
+    /* one total monthly income / expense (cash-flow page); older budget lines only as a fallback */
+    var B = (read('portal-cashflow-v1') || {}).basics || {}, gEm = ((read('portal-goals-v1') || {}).emergency || {});
+    var incOwn = B.income === null || B.income === undefined || B.income === '' ? null : num(B.income), expOwn = B.expense === null || B.expense === undefined || B.expense === '' ? null : num(B.expense);
+    var baseExp = expOwn !== null ? expOwn : (num(gEm.monthly) || sum(home.expenses, 'amount'));
+    var income = incOwn !== null ? incOwn : sum(home.income, 'amount'), expenses = baseExp + mPmt;
     var loanPmt = (home.loans || []).reduce(function (s, r) { return s + pmt(r); }, 0);
-    var subs = ((read('portal-subs-v1') || {}).items || []).filter(function (r) { return num(r.amount) > 0; });
+    var subs = []; // household expense tracking is paused
     var subsM = subs.reduce(function (s, r) { var v = ils(r.amount, r.currency); return v === null ? s : s + (r.cycle === 'yearly' ? v / 12 : v); }, 0);
 
     /* 1. spending more than earning */
@@ -28,12 +32,12 @@
 
     /* 2. emergency fund gap */
     var g = read('portal-goals-v1') || {}, e = g.emergency || {}, months = num(e.months) || 6;
-    var monthly = num(e.monthly) || expenses;
+    var monthly = baseExp;
     var liquid = e.useCash || e.current === null || e.current === undefined || e.current === '' ? (sav.cash || []).reduce(function (s, r) { var v = ils(r.balance, r.currency); return v === null ? s : s + v; }, 0) : num(e.current);
     if (monthly > 0) {
       var target = monthly * months, gap = target - liquid;
       if (gap > monthly * 0.25) out.push({ id: 'emergency', score: 60 + Math.min(30, gap / target * 30), icon: 'shield', href: 'goals.html', title: 'קרן חירום: חסרים ' + money(gap), text: 'היעד הוא ' + months + ' חודשי הוצאות (' + money(target) + '). היום יש בערך ' + (liquid / monthly).toFixed(1) + ' חודשים.' });
-    } else out.push({ id: 'budget', score: 40, icon: 'pie', href: 'budget.html', title: 'למלא הכנסות והוצאות', text: 'בלי תקציב אי אפשר לחשב קרן חירום ותזרים.' });
+    } else out.push({ id: 'budget', score: 40, icon: 'pie', href: 'cashflow.html', title: 'להזין הכנסה והוצאה חודשית', text: 'שני מספרים כלליים מספיקים כדי לחשב קרן חירום ותחזית לשנה.' });
 
     /* 3. high-rate debt */
     var debts = (home.loans || []).filter(function (r) { return num(r.balance) > 0 && num(r.rate) >= 7; }).sort(function (a, b) { return num(b.rate) - num(a.rate); });
@@ -53,9 +57,6 @@
     var multi = Object.keys(by).filter(function (k) { return by[k] > 1; });
     if (multi.length) out.push({ id: 'consolidate', score: 50, icon: 'umbrella', href: 'actions.html', title: 'יש כמה חשבונות מאותו סוג', text: 'איחוד לחשבון אחד עם דמי ניהול נמוכים יכול לחסוך. לפני כן כדאי לבדוק כיסוי ביטוחי ותאריכי נזילות.' });
 
-    /* 5. subscriptions */
-    if (subs.length) out.push({ id: 'subs', score: 30 + Math.min(25, subsM / 40), icon: 'card', href: 'subscriptions.html', title: 'מנויים: ' + money(subsM) + ' בחודש', text: subs.length + ' חיובים קבועים, ' + money(subsM * 12) + ' בשנה. שווה לעבור ולבדוק מה לא בשימוש.' });
-    else out.push({ id: 'subs-add', score: 20, icon: 'card', href: 'subscriptions.html', title: 'לרשום את המנויים והחיובים הקבועים', text: 'רואים כמה יוצא כל חודש ומה יורד בקרוב.' });
 
     if (funds.length) out.push({ id: 'retire', score: 18, icon: 'chart', href: 'retirement.html', title: 'תחזית פרישה', text: 'טווח הקצבה החודשית הצפויה לפי הקופות שהזנת.' });
     else out.push({ id: 'pension-add', score: 25, icon: 'umbrella', href: 'pension.html', title: 'להוסיף פנסיה וקרן השתלמות', text: 'אפשר גם להעלות את הדוח מהמסלקה הפנסיונית.' });
@@ -75,10 +76,12 @@
     target.innerHTML = '';
     var sec = el('section', 'insights'); if (opts.heading !== false) sec.setAttribute('aria-labelledby', 'insights-h');
     if (opts.heading !== false) { var hd = el('h2', 'sec-h', opts.title || 'הצעדים הבאים'); hd.id = 'insights-h'; sec.appendChild(hd); } else sec.setAttribute('aria-label', opts.title || 'הצעדים הבאים');
-    items.forEach(function (it) {
-      var a = el('a', 'action'); a.href = it.href;
+    if (!document.getElementById('pi-style')) { var css = el('style'); css.id = 'pi-style'; css.textContent = '.insights .action .at>span{font-size:16px;color:var(--muted,#b4b4c0)}.insights .action .at>span.pi-top{display:block;font-size:16px;font-weight:700;color:var(--primary-dark,#c4b5fd);margin-bottom:2px}.insights .action.pi-first{border-color:rgba(139,92,246,.55)}'; document.head.appendChild(css); }
+    if (!items.length) sec.appendChild(el('p', 'empty', 'אין כרגע צעדים דחופים. כדאי לעדכן יתרות פעם בחודש.'));
+    items.forEach(function (it, i) {
+      var a = el('a', 'action' + (i === 0 ? ' pi-first' : '')); a.href = it.href;
       var ai = el('span', 'ai'); ai.setAttribute('aria-hidden', 'true'); ai.appendChild(icon(it.icon));
-      var at = el('span', 'at'); at.appendChild(el('strong', null, it.title)); at.appendChild(el('span', null, it.text));
+      var at = el('span', 'at'); if (i === 0) at.appendChild(el('span', 'pi-top', 'הכי חשוב עכשיו')); at.appendChild(el('strong', null, it.title)); at.appendChild(el('span', null, it.text));
       var ch = el('span', 'chev', document.documentElement.dir === 'ltr' ? '›' : '‹'); ch.setAttribute('aria-hidden', 'true');
       a.appendChild(ai); a.appendChild(at); a.appendChild(ch); sec.appendChild(a);
     });

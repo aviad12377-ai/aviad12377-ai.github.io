@@ -7,36 +7,49 @@
   function render(main) {
     var d = T.portalData();
     if (!d || !d.home || !Array.isArray(d.home.assets)) { main.appendChild(T.card('נכסים', [h('p', { class: 'notice amber', text: 'לא הצלחנו לטעון את הנתונים. נסה לרענן את הדף.' })])); return; }
-    var rows = d.home.assets, sumBox = h('div'), status = T.live();
+    var rows = d.home.assets, sumBox = h('div'), status = T.live(), nextBox = h('div'), list;
+    function drawNext() {
+      nextBox.innerHTML = '';
+      if (!rows.length) { nextBox.appendChild(T.next('מוסיפים את הנכס הראשון, למשל דירה או רכב, עם שווי משוער.', { label: 'הוספת נכס', onclick: function () { list.add(); } })); return; }
+      var old = rows.filter(function (r) { var dt = T.parseDate(r.valuedAt); return !dt || T.monthsBetween(dt, T.today()) >= 6; });
+      nextBox.appendChild(old.length ? T.next('ל־' + old.length + ' נכסים אין הערכה מחצי השנה האחרונה. כדאי לעדכן את השווי.', { label: 'עדכון שווי', onclick: function () { T.focusFirst(listCard); } })
+        : T.next('השווי מעודכן. אפשר לראות איך ההון משתנה לאורך זמן.', { label: 'להון לאורך זמן', href: 'networth.html' }));
+    }
     function drawSum() {
       sumBox.innerHTML = '';
+      if (!rows.length) { status.textContent = ''; return; }
       var by = {}, total = 0, missing = 0;
       rows.forEach(function (r) { var v = T.toILS(r.value, r.currency || 'ILS'); if (v === null) { missing++; return; } var k = kindOf(r); by[k] = (by[k] || 0) + v; total += v; });
-      var items = [T.tot('שווי כל הנכסים', T.disp(total), 'big')];
+      sumBox.appendChild(h('div', { class: 't13-kpi' }, [h('span', { class: 'v num', text: T.disp(total) }), h('span', { class: 'k', text: 'שווי כל הנכסים' })]));
+      var items = [];
       KINDS.forEach(function (k) { if (by[k[0]]) items.push(T.tot(k[1], T.disp(by[k[0]]))); });
-      sumBox.appendChild(h('div', { class: 'totals' }, items));
+      if (items.length > 1) sumBox.appendChild(h('div', { class: 'totals' }, items));
       var P = window.Portal, s = null; try { s = P.calc.summary(); } catch (e) {}
       if (s && Number.isFinite(s.net)) sumBox.appendChild(h('p', { class: 't13-note', text: 'ההון נטו שלך כולל את הנכסים האלה: ' + T.disp(s.net) + (total && s.assets > 0 ? '. הנכסים כאן הם ' + Math.round(total / s.assets * 100) + '% מכלל הנכסים.' : '.') }));
       if (missing) sumBox.appendChild(h('p', { class: 'help', text: 'ל־' + missing + ' נכסים חסר שער מטבע, והם לא נכללו.' }));
-      status.textContent = rows.length ? 'שווי הנכסים: ' + T.disp(total) + '.' : '';
+      status.textContent = 'שווי הנכסים: ' + T.disp(total) + '.';
     }
-    function changed() { T.saveData(); drawSum(); }
+    function changed() { T.saveData(); drawSum(); drawNext(); }
     rows.forEach(function (r) { if (!r.kind13) r.kind13 = kindOf(r); });
-    var list = T.listEditor(rows, [
+    function summary(r) { var k = KINDS.filter(function (x) { return x[0] === r.kind13; })[0]; var n = (r.name || '').trim() || (k ? k[1] : 'נכס'); var v = T.toILS(r.value, r.currency || 'ILS'); return n + (T.num(r.value) > 0 ? ' · ' + (v === null ? T.money(T.num(r.value), r.currency) : T.disp(v)) : ''); }
+    list = T.listEditor(rows, [
       { k: 'name', label: 'שם', type: 'text', placeholder: 'למשל: הדירה, הרכב' },
       { k: 'kind13', label: 'סוג', type: 'select', options: KINDS.map(function (k) { return [k[0], k[1]]; }), def: 'home' },
-      { k: 'value', label: 'שווי משוער', type: 'number' },
-      { k: 'currency', label: 'מטבע', type: 'select', options: T.curOptions(), def: 'ILS' },
-      { k: 'valuedAt', label: 'נכון לתאריך', type: 'date' },
-      { k: 'liquid', label: 'אפשר למכור מהר (נזיל)', type: 'check', def: false }
+      { k: 'value', label: 'שווי משוער', type: 'number', placeholder: 'למשל 1800000' },
+      { k: 'valuedAt', label: 'נכון לתאריך', type: 'date', adv: true, check: function (v) { var dt = T.parseDate(v); return dt && dt > T.today() ? 'התאריך עוד לא הגיע. בוחרים את היום או תאריך שעבר.' : ''; } },
+      { k: 'currency', label: 'מטבע', type: 'select', options: T.curOptions(), def: 'ILS', adv: true },
+      { k: 'liquid', label: 'אפשר למכור מהר (נזיל)', type: 'check', def: false, adv: true }
     ], function () {
-      rows.forEach(function (r) { var k = KINDS.filter(function (x) { return x[0] === r.kind13; })[0] || KINDS[0]; r.kind13 = k[0]; r.type = k[2]; if (k[2] === 'a_realestate') r.sub = k[0]; else delete r.sub; if (!r.currency) r.currency = 'ILS'; });
+      rows.forEach(function (r) { var k = KINDS.filter(function (x) { return x[0] === r.kind13; })[0] || KINDS[0]; r.kind13 = k[0]; r.type = k[2]; if (k[2] === 'a_realestate') r.sub = k[0]; else delete r.sub; if (!r.currency) r.currency = 'ILS'; if (!r.valuedAt && T.num(r.value) > 0) r.valuedAt = T.ymd(T.today()); });
       changed();
-    }, { addLabel: 'הוספת נכס', rowTitle: 'נכס', empty: 'עדיין אין נכסים. מוסיפים דירה, רכב, קרקע או כל נכס אחר עם שווי משוער.' });
-    drawSum();
-    main.appendChild(T.card('סיכום', [status, sumBox]));
-    main.appendChild(T.card('הנכסים שלי', [list.el, h('p', { class: 't13-note', text: 'השווי הוא הערכה שלך. כדאי לעדכן פעם בכמה חודשים, למשל לפי מחירון רכב או עסקאות דומות באזור.' })]));
-    main.appendChild(T.card('גם חשוב', [h('div', { class: 't13-hub' }, [h('a', { href: 'mortgage.html', text: 'משכנתא על הדירה' }), h('a', { href: 'loans.html', text: 'הלוואת רכב והלוואות אחרות' }), h('a', { href: 'networth.html', text: 'ההון לאורך זמן' })])]));
+    }, { addLabel: 'הוספת נכס', rowTitle: 'נכס', summary: summary,
+      empty: { title: 'עדיין אין נכסים', text: 'מוסיפים נכס עם שווי משוער, והוא נכנס לחישוב ההון נטו בכל האתר.', example: 'דירה, 1,800,000 ₪. רכב, 85,000 ₪ לפי מחירון.' } });
+    drawSum(); drawNext();
+    var listCard = T.card('הנכסים שלי', [status, sumBox, list.el, rows.length ? h('p', { class: 't13-note', text: 'השווי הוא הערכה שלך. כדאי לעדכן פעם בכמה חודשים, למשל לפי מחירון רכב או עסקאות דומות באזור.' }) : null]);
+    main.appendChild(nextBox);
+    main.appendChild(listCard);
+    main.appendChild(T.more('קשור לנכסים: משכנתא, הלוואות והון', [h('div', { class: 't13-hub' }, [h('a', { href: 'mortgage.html', text: 'משכנתא על הדירה' }), h('a', { href: 'loans.html', text: 'הלוואת רכב והלוואות אחרות' }), h('a', { href: 'networth.html', text: 'ההון לאורך זמן' })])]));
+    main.appendChild(T.disc('השווי הוא הערכה שלך ולא שמאות.'));
   }
-  T.page('assets', 'נכסים: דירה, רכב וקרקע', 'שווי משוער שנכנס לחישוב ההון נטו', render);
+  T.page('assets', 'נכסים: דירה, רכב וקרקע', 'מזינים שווי משוער לדירה, לרכב או לקרקע, והוא נכנס לחישוב ההון נטו.', render);
 })();

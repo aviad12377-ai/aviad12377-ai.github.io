@@ -72,22 +72,48 @@
         return h('li', null, [h('span', null, [h('strong', { text: x[1].name || 'חיוב' }), ' · ' + T.fmtDate(x[0]) + (days === 0 ? ' (היום)' : days === 1 ? ' (מחר)' : ' (בעוד ' + days + ' ימים)')]), h('span', { class: 'num', text: T.money(T.num(x[1].amount), x[1].currency, 2) })]);
       })));
     }
-    function all() { drawSum(); drawCal(); drawUp(); }
-    var list = T.listEditor(st.items, [
+    var nextBox = h('div'), list, emptyHide = [];
+    function drawNext() {
+      nextBox.innerHTML = '';
+      var active = st.items.filter(function (r) { return T.num(r.amount) > 0; });
+      if (!active.length) { nextBox.appendChild(T.next('רושמים מנוי או חיוב קבוע אחד, למשל טלפון או סטרימינג, עם הסכום והיום בחודש.', { label: 'הוספת חיוב', onclick: function () { list.add(); } })); return; }
+      var m = 0; active.forEach(function (r) { var v = monthlyILS(r); if (v) m += v; });
+      nextBox.appendChild(T.next('יוצאים ' + T.disp(m) + ' בחודש על ' + active.length + ' חיובים. כדאי לעבור עליהם ולבטל את מה שלא משתמשים בו.', { label: 'מעבר על החיובים', onclick: function () { T.focusFirst(listCard); } }));
+    }
+    function all() { drawSum(); drawCal(); drawUp(); drawNext(); var has = st.items.some(function (r) { return T.num(r.amount) > 0; }); emptyHide.forEach(function (el) { el.hidden = !has; }); }
+    function summary(r) { var n = (r.name || '').trim() || 'חיוב חדש'; if (!(T.num(r.amount) > 0)) return n; return n + ' · ' + T.money(T.num(r.amount), r.currency) + (r.cycle === 'yearly' ? ' בשנה' : ' בחודש') + ' · ' + (r.cycle === 'yearly' ? MONTHS[(Math.round(T.num(r.month) || 1) - 1)] + ', ' : '') + 'ב־' + (Math.round(T.num(r.day)) || 1) + ' לחודש'; }
+    list = T.listEditor(st.items, [
       { k: 'name', label: 'שם', type: 'text', placeholder: 'למשל: נטפליקס' },
-      { k: 'amount', label: 'סכום', type: 'number' },
-      { k: 'currency', label: 'מטבע', type: 'select', options: T.curOptions(), def: 'ILS' },
+      { k: 'amount', label: 'סכום', type: 'number', placeholder: 'למשל 55' },
       { k: 'cycle', label: 'תדירות', type: 'select', options: [['monthly', 'כל חודש'], ['yearly', 'פעם בשנה']], def: 'monthly' },
       { k: 'day', label: 'יום החיוב בחודש', type: 'number', step: '1', min: 1, max: 31, def: 1 },
-      { k: 'month', label: 'חודש החיוב (לחיוב שנתי)', type: 'select', options: MONTHS.map(function (n, i) { return [String(i + 1), n]; }), def: '1' },
-      { k: 'cat', label: 'קטגוריה', type: 'select', options: CATS, def: 'other' }
-    ], function () { save(); all(); }, { addLabel: 'הוספת חיוב', rowTitle: 'חיוב', empty: 'עדיין אין חיובים. מוסיפים כל מנוי או חיוב קבוע עם הסכום והיום בחודש.' });
+      { k: 'month', label: 'חודש החיוב (לחיוב שנתי)', type: 'select', options: MONTHS.map(function (n, i) { return [String(i + 1), n]; }), def: '1', adv: true },
+      { k: 'currency', label: 'מטבע', type: 'select', options: T.curOptions(), def: 'ILS', adv: true },
+      { k: 'cat', label: 'קטגוריה', type: 'select', options: CATS, def: 'other', adv: true }
+    ], function () { save(); all(); }, { addLabel: 'הוספת חיוב', rowTitle: 'חיוב', summary: summary, advLabel: 'חיוב שנתי, מטבע וקטגוריה',
+      empty: { title: 'עדיין אין חיובים', text: 'מוסיפים כל מנוי או חיוב קבוע עם הסכום והיום בחודש, ונראה כמה יוצא כל חודש ומה יורד בקרוב.', example: 'נטפליקס, 55 ₪, כל חודש, ב־10 לחודש.' } });
     all();
-    main.appendChild(T.card('סיכום', [status, sumBox]));
-    main.appendChild(T.card('בחודש הקרוב', [upBox]));
-    main.appendChild(T.card('לוח חודשי', [calBox]));
-    main.appendChild(T.card('המנויים והחיובים שלי', [list.el, h('p', { class: 't13-note', text: 'סכומים במטבע זר מומרים לפי השער האחרון באתר.' })]));
+    var sumCard = T.card('סיכום', [status, sumBox]), upCard = T.card('בחודש הקרוב', [upBox]);
+    var listCard = T.card('המנויים והחיובים שלי', [list.el, h('p', { class: 't13-note', text: 'סכומים במטבע זר מומרים לפי השער האחרון באתר.' })]);
+    var calMore = T.more('לוח חיובים חודשי', [calBox]), calCard = h('section', { class: 'card t13-card-more' }, [calMore]);
+    emptyHide = [sumCard, upCard, calCard]; all();
+    main.appendChild(nextBox);
+    main.appendChild(sumCard);
+    main.appendChild(upCard);
+    main.appendChild(listCard);
+    main.appendChild(calCard);
+    main.appendChild(T.disc('הסכומים לפי מה שהזנת. את החיובים בפועל בודקים בפירוט כרטיס האשראי.'));
     T.onRemote(function () { location.reload(); });
   }
-  T.page('subscriptions', 'מנויים וחיובים קבועים', 'כמה יוצא כל חודש ומה יורד בקרוב', render);
+  /* Household expense tracking is paused (the site focuses on savings and investments). The page shows a "coming soon" notice; saved items are kept, not deleted. */
+  function frozen(main) {
+    var st = T.read('subscriptions', { items: [] }), n = (st.items || []).filter(function (r) { return T.num(r.amount) > 0; }).length;
+    main.appendChild(h('section', { class: 'card' }, [h('h2', { class: 'card-title' }, [h('span', { text: 'מעקב מנויים וחיובים' }), h('span', { class: 'badge amber', text: 'בקרוב' })]),
+      h('p', { text: 'מעקב אחרי הוצאות הבית מושהה כרגע. האתר מתמקד עכשיו בחיסכון ובהשקעות.' }),
+      h('p', { class: 'help', text: n ? 'שמרנו את ' + n + ' החיובים שכבר הזנת. הם לא נמחקו ויחזרו כשהדף ייפתח מחדש.' : 'כשהדף ייפתח מחדש אפשר יהיה לרשום כאן מנויים וחיובים קבועים.' }),
+      h('p', { class: 'help', text: 'בינתיים, לתכנון מספיק סכום אחד: הוצאה חודשית כוללת, בדף תחזית התזרים.' })]));
+    main.appendChild(T.next('מזינים הוצאה חודשית כוללת אחת, ונראה את התחזית לשנה הקרובה.', { label: 'לתחזית התזרים', href: 'cashflow.html' }));
+    main.appendChild(T.disc(''));
+  }
+  T.page('subscriptions', 'מנויים וחיובים', 'בקרוב. מעקב הוצאות הבית מושהה, והאתר מתמקד בחיסכון ובהשקעות.', T.FROZEN.subscriptions ? frozen : render);
 })();

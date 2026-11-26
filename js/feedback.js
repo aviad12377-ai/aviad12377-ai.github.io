@@ -3,7 +3,7 @@
   'use strict';
   var T = window.T13, h = T.h;
   var PAGES = [['', 'כללי / לא בטוח'], ['home', 'בית'], ['wealth', 'נכסים וחסכונות'], ['pension', 'פנסיה וגמל'], ['hishtalmut', 'קרן השתלמות'], ['savings', 'חסכונות'], ['portfolio', 'תיק השקעות'], ['options', 'אופציות'], ['budget', 'תקציב'], ['loans', 'הלוואות'], ['mortgage', 'משכנתא'], ['cards', 'כרטיסי אשראי'], ['me', 'פרופיל וחשבון'],
-    ['networth', 'הון לאורך זמן'], ['assets', 'נכסים: דירה, רכב, קרקע'], ['goals', 'קרן חירום ויעדים'], ['subscriptions', 'מנויים וחיובים'], ['debts-planner', 'תכנון החזר חובות'], ['actions', 'צעדים לחיסכון בדמי ניהול']];
+    ['networth', 'הון לאורך זמן'], ['assets', 'נכסים: דירה, רכב, קרקע'], ['goals', 'קרן חירום ויעדים'], ['debts-planner', 'תכנון החזר חובות'], ['actions', 'צעדים לחיסכון בדמי ניהול']];
   function shrink(file) {
     return new Promise(function (res, rej) {
       var url = URL.createObjectURL(file), img = new Image();
