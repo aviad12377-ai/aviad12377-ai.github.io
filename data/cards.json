@@ -1,0 +1,279 @@
+{
+  "schema": 1,
+  "checkedOn": "2026-11-26",
+  "disclaimer": "מידע בלבד, לא ייעוץ. התנאים משתנים, ההטבות כפופות לתקנון המנפיק, והחישוב הוא הערכה בלבד.",
+  "categories": [
+    {
+      "id": "supermarket",
+      "he": "סופרמרקט",
+      "en": "Supermarket"
+    },
+    {
+      "id": "fuel",
+      "he": "דלק",
+      "en": "Fuel"
+    },
+    {
+      "id": "dining",
+      "he": "מסעדות",
+      "en": "Dining"
+    },
+    {
+      "id": "online",
+      "he": "קניות באינטרנט",
+      "en": "Online"
+    },
+    {
+      "id": "abroad",
+      "he": "חוץ לארץ",
+      "en": "Abroad"
+    },
+    {
+      "id": "other",
+      "he": "אחר",
+      "en": "Other"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "general",
+      "he": "כללי",
+      "en": "General"
+    },
+    {
+      "id": "abroad",
+      "he": "נוסע לחוץ לארץ",
+      "en": "Travels abroad"
+    },
+    {
+      "id": "cashback",
+      "he": "מעדיף החזר כספי",
+      "en": "Prefers cashback"
+    },
+    {
+      "id": "crypto",
+      "he": "מעדיף החזר בקריפטו",
+      "en": "Prefers crypto cashback"
+    }
+  ],
+  "cards": [
+    {
+      "id": "isracard-cashback-plus",
+      "issuerId": "isracard",
+      "issuerHe": "ישראכרט",
+      "nameHe": "+CashBack",
+      "kind": "cashback",
+      "profiles": [
+        "general",
+        "cashback",
+        "abroad"
+      ],
+      "monthlyFee": 17.9,
+      "year1MonthlyFee": 0,
+      "year1FeeCycles": 12,
+      "fxFeePct": 2.9,
+      "cashAbroadPct": 3.5,
+      "rewards": {
+        "type": "cashback_giftcard",
+        "year1DefaultPct": 1.0,
+        "year2DefaultPct": 0.75,
+        "excluded": [
+          "government"
+        ],
+        "monthlyCapIls": 400,
+        "annualCapIls": null,
+        "redemptionHe": "מימוש בגיפטקארד דיגיטלי, החל מ-50 ש״ח"
+      },
+      "benefitsHe": [
+        "החזר על קניות בארץ, בחוץ לארץ ובאינטרנט, למעט עסקאות מול מוסדות המדינה",
+        "פטור מדמי כרטיס ב-12 מועדי החיוב הראשונים",
+        "מבצע: 0% עמלת עסקאות במט״ח עד פעמיים בשנה, 30 יום בכל פעם, עד 31.12.2026, עם תקרה ותנאים"
+      ],
+      "fxPromoHe": "מבצע 0% עמלת מט״ח פעמיים בשנה ל-30 יום, עד תקרה של 1,000 ש״ח הנחה, עד 31.12.2026. בחישוב השוטף נספרת עמלת התעריפון 2.9%.",
+      "sources": [
+        {
+          "label": "ישראכרט, עמוד +CashBack",
+          "url": "https://www.isracard.co.il/credit-cards/cashbackplus",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון דמי כרטיס ושירותים, ישראכרט, בתוקף מיוני 2026",
+          "url": "https://digital.isracard.co.il/globalassets/taarifon_2026.pdf",
+          "asOf": "2026-06"
+        }
+      ]
+    },
+    {
+      "id": "max-maxback",
+      "issuerId": "max",
+      "issuerHe": "מקס",
+      "nameHe": "MAXBack",
+      "kind": "cashback",
+      "profiles": [
+        "general",
+        "cashback"
+      ],
+      "monthlyFee": 15.9,
+      "monthlyFeePlatinum": 19.9,
+      "year1MonthlyFee": 0,
+      "year1FeeCycles": 12,
+      "fxFeePct": 3.0,
+      "cashAbroadPct": 3.0,
+      "rewards": {
+        "type": "cashback_giftcard",
+        "year1DefaultPct": 1.0,
+        "year2DefaultPct": 0.75,
+        "year1InstitutionPct": 0.5,
+        "year2InstitutionPct": 0.375,
+        "monthlyCapIls": null,
+        "annualCapIls": 2000,
+        "redemptionHe": "מימוש בגיפטקארד מקס, החל מ-75 ש״ח. לפי עמוד המוצר, 75 נקודות שוות 75 ש״ח"
+      },
+      "benefitsHe": [
+        "החזר 1% בשנה הראשונה ו-0.75% מהשנה השנייה",
+        "בעסקאות מול מוסדות: 0.5% / 0.375%",
+        "פטור מדמי כרטיס 12 חודשים",
+        "תקרת צבירה 2,000 נקודות בשנה קלנדרית"
+      ],
+      "feeNoteHe": "לאחר הפטור: 15.90 ש״ח לזהב או בינלאומי, 19.90 ש״ח לפלטינה. בחישוב ברירת המחדל נספר תעריף הזהב/בינלאומי.",
+      "sources": [
+        {
+          "label": "מקס, עמוד כרטיס MAXBack",
+          "url": "https://www.max.co.il/cards/card/72087",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון עמלות מקס, בתוקף מ-1 באוקטובר 2026",
+          "url": "https://www.max.co.il/SharedMedia/14648/%D7%AA%D7%A2%D7%A8%D7%99%D7%A4%D7%95%D7%9F-%D7%A2%D7%9E%D7%9C%D7%95%D7%AA-%D7%9B%D7%9C%D7%9C%D7%99-102026-30-12-117.pdf",
+          "asOf": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "cal-cashcal-pro",
+      "issuerId": "cal",
+      "issuerHe": "כאל",
+      "nameHe": "CashCal Pro",
+      "kind": "cashback",
+      "profiles": [
+        "general",
+        "cashback",
+        "abroad"
+      ],
+      "monthlyFee": null,
+      "year1MonthlyFee": 0,
+      "year1FeeCycles": 12,
+      "fxFeePct": 1.0,
+      "fxFeeStandardPct": 3.0,
+      "cashAbroadPct": null,
+      "rewards": {
+        "type": "cashback_buyme",
+        "year1DefaultPct": 1.0,
+        "year1HighPct": 1.25,
+        "year1HighThresholdMonthly": 10000,
+        "year2DefaultPct": 0.75,
+        "year2HighPct": 1.0,
+        "year2HighThresholdMonthly": 10000,
+        "monthlyCapIls": 450,
+        "annualCapIls": 5400,
+        "redemptionHe": "מימוש ב-BUYME"
+      },
+      "benefitsHe": [
+        "1.25% החזר בחודש עם קניות מעל 10,000 ש״ח בשנה הראשונה, אחרת 1%; מהשנה השנייה 1% / 0.75%",
+        "תקרה 450 ש״ח בחודש ו-5,400 ש״ח בשנה, החל מ-1.4.2025",
+        "עמלת מט״ח מוזלת 1% במקום 3%, לפי עמוד המוצר",
+        "פטור מדמי כרטיס בשנה הראשונה; דמי הכרטיס לאחר מכן לא פורטו בעמוד המוצר"
+      ],
+      "feeNoteHe": "דמי הכרטיס מהשנה השנייה לא צוינו בעמוד המוצר הרשמי, ולכן אינם נכללים בחישוב השוטף.",
+      "sources": [
+        {
+          "label": "כאל, עמוד CashCal Pro",
+          "url": "https://www.cal-online.co.il/cards/cashcal-pro/",
+          "asOf": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "isracard-international",
+      "issuerId": "isracard",
+      "issuerHe": "ישראכרט",
+      "nameHe": "כרטיס בינלאומי / זהב",
+      "kind": "standard",
+      "profiles": [
+        "general"
+      ],
+      "monthlyFee": 17.9,
+      "year1MonthlyFee": null,
+      "fxFeePct": 2.9,
+      "cashAbroadPct": 3.5,
+      "rewards": null,
+      "feeTiersHe": "הנחה לפי מחזור: מ-5,000 ש״ח בחודש דמי כרטיס 15.30 ש״ח, ומ-7,500 ש״ח פטור. לכרטיס עסקי/פלטינום היעדים שונים.",
+      "benefitsHe": [
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה; מוצג להשוואת דמי כרטיס ועמלת המרה."
+      ],
+      "sources": [
+        {
+          "label": "תעריפון דמי כרטיס ושירותים, ישראכרט, בתוקף מיוני 2026",
+          "url": "https://digital.isracard.co.il/globalassets/taarifon_2026.pdf",
+          "asOf": "2026-06"
+        }
+      ]
+    },
+    {
+      "id": "isracard-more",
+      "issuerId": "isracard",
+      "issuerHe": "ישראכרט",
+      "nameHe": "MORE",
+      "kind": "club",
+      "profiles": [
+        "general"
+      ],
+      "monthlyFee": 10.9,
+      "fxFeePct": 2.9,
+      "cashAbroadPct": 3.5,
+      "rewards": null,
+      "benefitsHe": [
+        "דמי כרטיס לפי התעריפון. ערך הנקודות לא פורסם כסכום שקלי קבוע, ולכן אינו נכלל בחישוב ההחזר."
+      ],
+      "sources": [
+        {
+          "label": "תעריפון דמי כרטיס ושירותים, ישראכרט, בתוקף מיוני 2026",
+          "url": "https://digital.isracard.co.il/globalassets/taarifon_2026.pdf",
+          "asOf": "2026-06"
+        }
+      ]
+    },
+    {
+      "id": "isracard-flycard",
+      "issuerId": "isracard",
+      "issuerHe": "ישראכרט",
+      "nameHe": "Fly Card",
+      "kind": "miles",
+      "profiles": [
+        "abroad"
+      ],
+      "monthlyFee": 19.9,
+      "fxFeePct": 2.9,
+      "cashAbroadPct": 3.5,
+      "rewards": null,
+      "benefitsHe": [
+        "כרטיס מועדון תעופה. דמי כרטיס: 19.90 ש״ח, פרימיום 38.90 ש״ח, פרימיום סלקט 27.90 ש״ח לחודש",
+        "ערך הנקודות תלוי במימוש לטיסות ולכן אינו מומר אוטומטית לשקלים בחישוב"
+      ],
+      "feeNoteHe": "בחישוב ברירת המחדל נספר תעריף Fly Card הרגיל, 19.90 ש״ח לחודש.",
+      "sources": [
+        {
+          "label": "תעריפון דמי כרטיס ושירותים, ישראכרט, בתוקף מיוני 2026",
+          "url": "https://digital.isracard.co.il/globalassets/taarifon_2026.pdf",
+          "asOf": "2026-06"
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    "לא נמצא כרטיס ישראלי עם החזר בקריפטו ותנאים פומביים שאומתו ב-26.11.2026. כרטיסים זרים לא נכללו בלי אישור זמינות בישראל.",
+    "כרטיסי מועדון של רשתות (שופרסל, רמי לוי, Super-Pharm וכדומה) וכרטיסי בנקים (הפועלים, לאומי, דיסקונט, מזרחי) לא הוכנסו בלי תעריף והטבה ממקור רשמי שנבדק במלואם.",
+    "דמי הכרטיס של CashCal Pro לאחר שנת הפטור לא הופיעו בעמוד המוצר הרשמי, ולכן חסרים בחישוב השוטף.",
+    "ערך נקודות תעופה ומועדונים לא הומר לשקלים."
+  ]
+}

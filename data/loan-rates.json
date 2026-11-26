@@ -1,0 +1,320 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-11-26T21:27:02Z",
+  "checkedOn": "2026-11-26",
+  "disclaimer": "מידע בלבד, לא ייעוץ. הממוצעים אינם הצעה אישית ואינם מחליפים בדיקה בבנק.",
+  "policyRate": {
+    "boiPolicyRatePct": 3.25,
+    "asOf": "2026-11-26",
+    "typicalPrimeMarginPct": 1.5,
+    "typicalPrimePct": 4.75,
+    "note": "ריבית הפריים הנהוגה במערכת הבנקאית היא בדרך כלל ריבית בנק ישראל בתוספת 1.5%. השיעור המדויק נקבע בכל בנק; יש לאמת בפרסום הבנק.",
+    "source": {
+      "label": "בנק ישראל, סדרת ריבית בנק ישראל (MNT_RIB_BOI_D)",
+      "url": "https://www.boi.org.il/information/bank-paymnts/guide/api-guide/",
+      "seriesUrl": "https://edge.boi.gov.il/FusionEdgeServer/sdmx/v2/data/dataflow/BOI.STATISTICS/BR/1.0/MNT_RIB_BOI_D?format=csv&lastNObservations=1&labels=id"
+    },
+    "primePage": "https://www.boi.org.il/information/interestrates/primerates"
+  },
+  "mortgageEarlyRepaymentAverages": {
+    "cpiIndexed": {
+      "linkage": "cpi",
+      "period": "2026-10",
+      "reportMonth": "2026-10-31",
+      "effectiveFrom": "2026-11-12",
+      "unit": "effective_annual_pct",
+      "ratesByRemainingTerm": {
+        "average": 3.5293,
+        "over_25y": 3.6181,
+        "20_to_25y": 3.5393,
+        "15_to_20y": 3.3804,
+        "10_to_15y": 3.2995,
+        "5_to_10y": 3.3666,
+        "up_to_5y": 3.5019
+      },
+      "source": {
+        "label": "בנק ישראל, ריבית ממוצעת על משכנתאות צמודות למדד",
+        "url": "https://www.boi.org.il/information/interestrates/mortgage/",
+        "file": "https://www.boi.org.il/boi_files/Pikuah/pribmash.xls"
+      },
+      "usedFor": "early_repayment_fee"
+    },
+    "unlinked": {
+      "linkage": "unlinked",
+      "period": "2026-10",
+      "reportMonth": "2026-10-31",
+      "effectiveFrom": "2026-11-12",
+      "unit": "effective_annual_pct",
+      "ratesByRemainingTerm": {
+        "average": 4.6115,
+        "over_25y": 4.9827,
+        "20_to_25y": 4.888,
+        "15_to_20y": 4.8553,
+        "10_to_15y": 4.708,
+        "5_to_10y": 4.6448,
+        "1_to_5y": 4.5989,
+        "up_to_1y": 4.368
+      },
+      "note": "התקופה עד שנה כוללת גם הלוואות שמועד שינוי הריבית בהן אינו ידוע מראש (למשל פריים).",
+      "source": {
+        "label": "בנק ישראל, ריבית ממוצעת על משכנתאות במגזר השקלי הלא צמוד",
+        "url": "https://www.boi.org.il/information/interestrates/mortgage/",
+        "file": "https://www.boi.org.il/boi_files/Pikuah/mashfix.xls"
+      },
+      "usedFor": "early_repayment_fee"
+    }
+  },
+  "consumerLoanAverages": {
+    "unlinked": {
+      "linkage": "unlinked",
+      "period": "2026-10",
+      "reportMonth": "2026-10-31",
+      "effectiveFrom": "2026-11-23",
+      "unit": "effective_annual_pct",
+      "ratesByRemainingTerm": {
+        "average": 7.11,
+        "over_5y": 6.95,
+        "2_to_5y": 4.71,
+        "1_to_2y": 6.81,
+        "3m_to_1y": 9.47,
+        "up_to_3m": 7.1
+      },
+      "source": {
+        "label": "בנק ישראל, ריבית ממוצעת אשראי לא לדיור — מגזר שקלי לא צמוד",
+        "url": "https://www.boi.org.il/information/interestrates/not-residence/",
+        "file": "https://www.boi.org.il/boi_files/Pikuah/nonhousingloans.xls"
+      }
+    },
+    "cpi": {
+      "linkage": "cpi",
+      "period": "2026-10",
+      "reportMonth": "2026-10-31",
+      "effectiveFrom": "2026-11-23",
+      "unit": "effective_annual_pct",
+      "average": 2.76,
+      "source": {
+        "label": "בנק ישראל, ריבית ממוצעת אשראי לא לדיור — מגזר צמוד מדד",
+        "url": "https://www.boi.org.il/information/interestrates/not-residence/",
+        "file": "https://www.boi.org.il/boi_files/Pikuah/nonhousingloans.xls"
+      }
+    }
+  },
+  "equatorHouseholdCredit": {
+    "period": "2026-10",
+    "workbookDate": "2026-11-16",
+    "unit": "average_annual_pct_actually_charged",
+    "systemAveragePct": 7.95,
+    "byLenderMean": [
+      {
+        "providerId": "hapoalim",
+        "providerHe": "הפועלים",
+        "providerEn": "Bank Hapoalim",
+        "averagePct": 8.16
+      },
+      {
+        "providerId": "leumi",
+        "providerHe": "לאומי",
+        "providerEn": "Bank Leumi",
+        "averagePct": 7.35
+      },
+      {
+        "providerId": "discount",
+        "providerHe": "דיסקונט",
+        "providerEn": "Israel Discount Bank",
+        "averagePct": 7.42
+      },
+      {
+        "providerId": "mizrahi",
+        "providerHe": "מזרחי-טפחות",
+        "providerEn": "Mizrahi-Tefahot",
+        "averagePct": 8.25
+      },
+      {
+        "providerId": "fibi",
+        "providerHe": "הבינלאומי",
+        "providerEn": "First International Bank",
+        "averagePct": 7.16
+      },
+      {
+        "providerId": "yahav",
+        "providerHe": "יהב",
+        "providerEn": "Bank Yahav",
+        "averagePct": 6.95
+      },
+      {
+        "providerId": "mercantile",
+        "providerHe": "מרכנתיל",
+        "providerEn": "Mercantile Discount Bank",
+        "averagePct": 8.54
+      },
+      {
+        "providerId": "massad",
+        "providerHe": "מסד",
+        "providerEn": "Bank Massad",
+        "averagePct": 6.36
+      },
+      {
+        "providerId": "jerusalem",
+        "providerHe": "ירושלים",
+        "providerEn": "Bank of Jerusalem",
+        "averagePct": 10.16
+      },
+      {
+        "providerId": "onezero",
+        "providerHe": "One Zero",
+        "providerEn": "One Zero",
+        "averagePct": 6.21
+      },
+      {
+        "providerId": "max",
+        "providerHe": "מקס",
+        "providerEn": "Max",
+        "averagePct": 7.85
+      },
+      {
+        "providerId": "cal",
+        "providerHe": "כאל",
+        "providerEn": "Cal",
+        "averagePct": 10.04
+      },
+      {
+        "providerId": "isracard",
+        "providerHe": "ישראכרט",
+        "providerEn": "Isracard",
+        "averagePct": 9.2663
+      }
+    ],
+    "byLenderPercentiles": [
+      {
+        "providerId": "hapoalim",
+        "providerHe": "הפועלים",
+        "p25": 5.41,
+        "median": 8.84,
+        "p75": 13.36
+      },
+      {
+        "providerId": "leumi",
+        "providerHe": "לאומי",
+        "p25": 5.2,
+        "median": 6.82,
+        "p75": 12.63
+      },
+      {
+        "providerId": "discount",
+        "providerHe": "דיסקונט",
+        "p25": 5.72,
+        "median": 8.14,
+        "p75": 12.17
+      },
+      {
+        "providerId": "mizrahi",
+        "providerHe": "מזרחי-טפחות",
+        "p25": 6.28,
+        "median": 9.98,
+        "p75": 11.38
+      },
+      {
+        "providerId": "fibi",
+        "providerHe": "הבינלאומי",
+        "p25": 5.56,
+        "median": 7.87,
+        "p75": 10.63
+      },
+      {
+        "providerId": "yahav",
+        "providerHe": "יהב",
+        "p25": 4.06,
+        "median": 7.03,
+        "p75": 8.8
+      },
+      {
+        "providerId": "mercantile",
+        "providerHe": "מרכנתיל",
+        "p25": 6.36,
+        "median": 11.296,
+        "p75": 14.0
+      },
+      {
+        "providerId": "massad",
+        "providerHe": "מסד",
+        "p25": 4.694,
+        "median": 6.28,
+        "p75": 8.6357
+      },
+      {
+        "providerId": "jerusalem",
+        "providerHe": "ירושלים",
+        "p25": 8.33,
+        "median": 10.01,
+        "p75": 13.75
+      },
+      {
+        "providerId": "onezero",
+        "providerHe": "One Zero",
+        "p25": 4.81,
+        "median": 6.01,
+        "p75": 8.45
+      },
+      {
+        "providerId": "max",
+        "providerHe": "מקס",
+        "p25": 5.94,
+        "median": 11.0,
+        "p75": 13.91
+      },
+      {
+        "providerId": "cal",
+        "providerHe": "כאל",
+        "p25": 7.12,
+        "median": 10.65,
+        "p75": 16.35
+      },
+      {
+        "providerId": "isracard",
+        "providerHe": "ישראכרט",
+        "p25": 6.632,
+        "median": 10.1999,
+        "p75": 14.841
+      }
+    ],
+    "source": {
+      "label": "בנק ישראל, קו המשווה — ריבית ממוצעת על אשראי למשקי בית שניתן בפועל",
+      "url": "https://www.boi.org.il/information/bank-paymnts/financial-education/campaigns/boi-equator/loans/",
+      "file": "https://www.boi.org.il/boi_files/Pikuah/g060a.xls"
+    },
+    "notes": [
+      "אשראי במטבע ישראלי שאינו צמוד למדד, משקי בית ללא בנקאות פרטית.",
+      "ממוצעים, לא הצעה אישית. הפער בין הרבע הזול ליקר בתוך אותו גוף גדול לעיתים מהפער בין הגופים."
+    ]
+  },
+  "trackNotes": {
+    "t_prime": "בנק ישראל אינו מפרסם ממוצע נפרד למסלול פריים. להשוואה משתמשים בריבית הפריים הטיפוסית (ריבית בנק ישראל + 1.5%) או בממוצע 'עד שנה' הלא צמוד המשמש גם לחישוב עמלת פירעון מוקדם.",
+    "t_var_unlinked": "אין סדרת ממוצע נפרדת למסלול משתנה לא צמוד. להשוואת מחזור ניתן להיעזר בממוצע לפי תקופה שנותרה במגזר הלא צמוד, ולסמן שזו הערכה.",
+    "t_fixed_unlinked": "השוואת מסלול קבועה לא צמודה מול הממוצע הלא צמוד לפי התקופה שנותרה (קובץ הריבית לעמלת פירעון מוקדם כולל גם מסלולים משתנים).",
+    "t_fixed_linked": "השוואת מסלול קבועה צמודה מול הממוצע הצמוד לפי התקופה שנותרה.",
+    "t_var_linked": "אין בקבצי עמלת הפירעון פירוט נפרד למשתנה צמודה; הממוצע הצמוד כולל קבועה ומשתנה יחד."
+  },
+  "earlyRepaymentRules": {
+    "source": {
+      "label": "צו הבנקאות (פירעון מוקדם של הלוואה לדיור), התשס\"ב–2002",
+      "url": "https://www.boi.org.il/information/interestrates/mortgage/",
+      "formulaCircular": "https://boi.org.il/media/lqvg1b4g/h2103.pdf"
+    },
+    "operationalFeeMaxIls": 60,
+    "noNoticeFeePct": 0.1,
+    "noticeDays": 10,
+    "capitalization": "If current average A is below the loan rate R, fee is PV(future payments at A) minus PV(future payments at R), using monthly equivalent of effective annual rates. Bank may charge the lower of this and the same calculation versus the average at origination.",
+    "variableRate": "If rate-change dates are unknown, or change at least once a year (e.g. prime), no capitalization fee. If the rate changes every 5 years, treat remaining principal on the next change date as the final payment.",
+    "holdingDiscounts": [
+      {
+        "afterYears": 3,
+        "reductionPct": 20
+      },
+      {
+        "afterYears": 5,
+        "reductionPct": 30
+      }
+    ],
+    "estimateOnly": true
+  }
+}

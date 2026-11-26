@@ -1,0 +1,22 @@
+/* Page-scoped styles for comparison features. Uses design-system tokens when present. */
+.cmp-page{font-size:16px;margin-top:8px}
+.cmp-page .help,.cmp-page .stamp,.cmp-page .field label{font-size:14px}
+.cmp-page .card-title{font-size:18px}
+.cmp-page input[type=text],.cmp-page input[type=number],.cmp-page input[type=search],.cmp-page select,.cmp-page textarea{
+  min-height:var(--tap,44px);font-size:16px;width:100%}
+.cmp-page .btn,.cmp-page .btn-sm{min-height:var(--tap,44px);min-width:var(--tap,44px)}
+.cmp-page table.cmp{font-size:14px}
+.cmp-page table.cmp th,.cmp-page table.cmp td{padding:10px 8px;white-space:normal}
+.cmp-page caption,.cmp-page .sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.cmp-page .cmp-rank{display:flex;flex-direction:column;gap:10px;margin:12px 0}
+.cmp-page .cmp-rank-item{display:grid;grid-template-columns:auto 1fr auto;gap:10px 12px;align-items:center}
+.cmp-page .cmp-rank-item .place{font-weight:800;font-size:20px;min-width:2ch}
+.cmp-page .drop{border:1.5px dashed var(--line,#e2e8f0);border-radius:var(--radius,16px);padding:16px;text-align:center;min-height:var(--tap,44px)}
+.cmp-page .src-line{font-size:14px;color:var(--muted,#b4b4c0);margin:8px 0;display:flex;flex-wrap:wrap;gap:6px 12px}
+.cmp-page .src-line a{color:var(--primary-dark,var(--primary,#8b5cf6))}
+.cmp-page .warn-fee{color:var(--warn,#fbbf24);font-weight:700}
+@media (max-width:420px){
+  .cmp-page .cmp-rank-item{grid-template-columns:auto 1fr; }
+  .cmp-page .cmp-rank-item .net{grid-column:1/-1;text-align:start}
+}

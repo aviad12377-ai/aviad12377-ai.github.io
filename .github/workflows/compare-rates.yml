@@ -1,0 +1,39 @@
+name: Update comparison rates
+
+on:
+  schedule:
+    - cron: "27 5 * * 1"   # weekly, Monday 07:27/08:27 Israel time
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-data-commits
+  cancel-in-progress: false
+
+jobs:
+  fetch-compare-rates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Python packages
+        run: python3 -m pip install --user xlrd openpyxl
+
+      - name: Fetch Bank of Israel rate workbooks
+        run: python3 scripts/fetch_compare_rates.py data
+
+      - name: Commit rate files if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/loan-rates.json data/savings.json
+          if git diff --cached --quiet; then
+            echo "No rate changes"
+          else
+            git commit -m "chore: update official BOI comparison rates"
+            git pull --rebase origin main
+            git push
+          fi
