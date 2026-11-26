@@ -1,0 +1,55 @@
+name: News hub and breaking alerts
+
+on:
+  schedule:
+    - cron: "4,19,34,49 * * * *"   # every 15 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-data-commits
+  cancel-in-progress: false
+
+jobs:
+  hub:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull public news feeds into data/news-hub.json and flag breaking items
+        timeout-minutes: 5
+        run: python3 scripts/fetch_news_hub.py
+
+      - name: Breaking alerts (gated; prints what it would send unless enabled)
+        continue-on-error: true
+        env:
+          EMAIL_SENDING_ENABLED: ${{ vars.EMAIL_SENDING_ENABLED }}
+          PUSH_ENABLED: ${{ vars.PUSH_ENABLED }}
+          MAIL_FOOTER_ADDRESS: ${{ vars.MAIL_FOOTER_ADDRESS }}
+          MAIL_FROM: ${{ vars.MAIL_FROM }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SUPABASE_URL: https://pohjziqikvzudziqomzz.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ vars.VAPID_SUBJECT }}
+        run: |
+          if [ "${PUSH_ENABLED}" = "true" ]; then pip install --quiet pywebpush; fi
+          python3 scripts/notify.py --breaking data/breaking.json
+          python3 scripts/notify.py --confirmations
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news-hub.json data/breaking.json
+          if git diff --cached --quiet; then echo "No changes"; else
+            git commit -m "chore: update news hub"
+            git pull --rebase origin main
+            git push
+          fi

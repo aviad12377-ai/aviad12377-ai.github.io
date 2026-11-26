@@ -4,35 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d0d10">
-<meta name="description" content="חדשות שוק, מבזקי דסק ותשואות קרנות. מידע בלבד, לא ייעוץ.">
+<meta name="description" content="כל חדשות השוק במקום אחד: גלובס, כלכליסט, TheMarker, ביזפורטל, רויטרס, בלומברג, CNBC ועוד. מידע בלבד, לא ייעוץ.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="stylesheet" href="portal.css">
-<link rel="stylesheet" href="news.css">
-<title>חדשות שוק</title>
+<link rel="stylesheet" href="css/t16.css">
+<title>חדשות שוק מכל המקורות</title>
 </head>
 <body data-page="news">
-<div id="app" class="app-wrap">
-  <header class="top-header">
-    <h1>חדשות שוק</h1>
-    <p>מבזקי דסק, סיכום תשואות חודשי וכתבות ממקורות פומביים</p>
+<main id="t16-news" class="app-wrap t16" aria-busy="true">
+  <header class="t16-top">
+    <div>
+      <h1>חדשות שוק מכל המקורות</h1>
+      <p class="lead" id="t16-updated">טוען…</p>
+    </div>
+    <a class="btn btn-soft" href="alerts.html">התראות</a>
   </header>
-  <p class="notice blue" role="note">מידע בלבד, לא ייעוץ. אין כאן המלצה לקנייה, למכירה או לבחירת מסלול.</p>
-  <div id="news-filters" class="pills" role="tablist" aria-label="סינון כתבות"></div>
-  <p id="news-status" class="stamp" role="status" aria-live="polite"></p>
-  <div id="news-root"></div>
-  <footer class="site-footer">
-    <a href="index.html">חזרה לסיכום</a>
-    <a href="scanner.html">סורק מניות</a>
-    <a href="privacy.html">פרטיות</a>
-    <a href="support.html">תמיכה</a>
-    <span>מידע בלבד, לא ייעוץ</span>
-  </footer>
-</div>
+
+  <section id="t16-brief" class="card t16-latest" hidden aria-labelledby="t16-brief-h">
+    <div class="t16-brief-head"><span class="t16-badge ed">מבזק</span><time class="small muted"></time></div>
+    <h2 id="t16-brief-h"></h2>
+    <p class="sum"></p>
+    <a class="btn btn-primary btn-block" href="briefs.html">לקריאת המבזק המלא</a>
+  </section>
+
+  <section id="t16-breaking" class="card t16-breaking" hidden aria-labelledby="t16-br-h">
+    <h2 id="t16-br-h">חדשות חמות</h2>
+    <ul class="t16-list"></ul>
+  </section>
+
+  <section class="card" aria-labelledby="t16-all-h">
+    <h2 id="t16-all-h">כל הכותרות</h2>
+    <div class="t16-search">
+      <label class="sr-only" for="t16-q">חיפוש בכותרות</label>
+      <input id="t16-q" type="search" placeholder="למשל: ריבית, אנבידיה, שקל" autocomplete="off">
+    </div>
+    <div id="t16-cats" class="t16-chips" role="group" aria-label="נושא"></div>
+    <div class="row" style="margin:0 0 6px">
+      <label class="sr-only" for="t16-src">מקור</label>
+      <select id="t16-src"><option value="">כל המקורות</option></select>
+      <label class="sr-only" for="t16-lang">שפה</label>
+      <select id="t16-lang"><option value="all">כל השפות</option><option value="he">עברית</option><option value="en">אנגלית</option></select>
+    </div>
+    <p id="t16-status" class="small muted" role="status" aria-live="polite"></p>
+    <ul id="t16-list" class="t16-list"></ul>
+    <button id="t16-more" type="button" class="btn btn-soft btn-block t16-more" hidden>עוד כתבות</button>
+  </section>
+
+  <p class="t16-disc">מוצגות כאן כותרות ותקצירים קצרים בלבד. הכתבה המלאה נפתחת באתר המקור. מידע כללי בלבד, לא ייעוץ.</p>
+  <p class="t16-disc" id="t16-sources"></p>
+</main>
 <noscript><p style="padding:16px;font-size:16px">כדי לקרוא את החדשות צריך להפעיל JavaScript בדפדפן.</p></noscript>
-<script src="portal-tools-nav.js"></script>
+<script src="js/t16-common.js"></script>
 <script src="portal-nav.js"></script>
-<script src="scripts/news.js"></script>
+<script src="js/news-hub.js"></script>
 </body>
 </html>

@@ -1,0 +1,81 @@
+name: Market briefs
+
+# Israel time slots (Mon-Fri): 08:00 morning, 10:15 TASE open, 13:00 midday, 16:45 Wall St open,
+# 19:45 evening, 23:20 close (+ weekly review on Friday, monthly review on the last trading day).
+# Sunday 09:00: the week ahead. Each slot has a winter (UTC+2) and a summer (UTC+3) cron; the script
+# checks the Israel clock and skips anything that is not due or already written.
+on:
+  schedule:
+    - cron: "0 5,6,10,11 * * 1-5"
+    - cron: "15 7,8 * * 1-5"
+    - cron: "45 13,14,16,17 * * 1-5"
+    - cron: "20 20,21 * * 1-5"
+    - cron: "0 6,7 * * 0"
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: "morning | open | midday | us_open | evening | close | week | month | week_ahead | auto"
+        default: "auto"
+      force:
+        description: "Overwrite an existing brief for today"
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-data-commits
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refresh headlines
+        continue-on-error: true
+        timeout-minutes: 5
+        run: python3 scripts/fetch_news_hub.py
+
+      - name: Write the brief
+        id: brief
+        run: |
+          before=$(ls data/briefs/*.json 2>/dev/null | wc -l)
+          FORCE=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then FORCE="--force"; fi
+          python3 scripts/make_brief.py --slot "${{ github.event.inputs.slot || 'auto' }}" $FORCE
+          made=$(python3 -c "import json;print(' '.join(json.load(open('data/briefs/.last-run.json'))['made']))" 2>/dev/null || true)
+          echo "made=$made" >> "$GITHUB_OUTPUT"
+
+      - name: Alerts for the new brief (gated; prints what it would send unless enabled)
+        if: steps.brief.outputs.made != ''
+        continue-on-error: true
+        env:
+          EMAIL_SENDING_ENABLED: ${{ vars.EMAIL_SENDING_ENABLED }}
+          PUSH_ENABLED: ${{ vars.PUSH_ENABLED }}
+          MAIL_FOOTER_ADDRESS: ${{ vars.MAIL_FOOTER_ADDRESS }}
+          MAIL_FROM: ${{ vars.MAIL_FROM }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SUPABASE_URL: https://pohjziqikvzudziqomzz.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ vars.VAPID_SUBJECT }}
+        run: |
+          if [ "${PUSH_ENABLED}" = "true" ]; then pip install --quiet pywebpush; fi
+          for id in ${{ steps.brief.outputs.made }}; do python3 scripts/notify.py --brief "data/briefs/$id.json"; done
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/briefs data/news-hub.json data/breaking.json
+          if git diff --cached --quiet; then echo "No changes"; else
+            git commit -m "chore: market brief"
+            git pull --rebase origin main
+            git push
+          fi

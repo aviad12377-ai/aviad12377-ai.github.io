@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0d10">
+<meta name="description" content="בוחרים אילו מבזקי שוק לקבל ומתי: בוקר, צהריים, ערב, סגירה, סיכומי שבוע וחודש וחדשות חמות.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="stylesheet" href="portal.css">
+<link rel="stylesheet" href="css/t16.css">
+<title>התראות שוק</title>
+</head>
+<body data-page="alerts">
+<main id="t16-alerts" class="app-wrap t16" aria-busy="true">
+  <h1>התראות שוק</h1>
+  <p class="lead">בוחרים מה לקבל, ומקבלים התראה כשהמבזק יוצא. בלי עלות.</p>
+  <p id="t16-token" class="t16-status notice blue" role="status" aria-live="polite" hidden></p>
+
+  <section class="card" aria-labelledby="h-what">
+    <div class="t16-step"><b class="n">1</b><h2 id="h-what">מה לקבל</h2></div>
+    <div id="t16-topics" role="group" aria-labelledby="h-what"></div>
+    <p id="t16-saved" class="small muted" role="status" aria-live="polite">הבחירה נשמרת במכשיר הזה.</p>
+  </section>
+
+  <section class="card" aria-labelledby="h-push">
+    <div class="t16-step"><b class="n">2</b><h2 id="h-push">התראות בדפדפן</h2></div>
+    <p>ההתראה קופצת בטלפון או במחשב, גם כשהאתר סגור. לחיצה עליה פותחת את המבזק.</p>
+    <button id="t16-push" type="button" class="btn btn-primary btn-block">הפעלת התראות בדפדפן</button>
+    <button id="t16-push-off" type="button" class="btn btn-soft btn-block" style="margin-top:8px" hidden>כיבוי ההתראות בדפדפן</button>
+    <p id="t16-push-note" class="small muted" style="margin-top:8px"></p>
+    <p id="t16-push-st" class="t16-status" role="status" aria-live="polite" hidden></p>
+  </section>
+
+  <section class="card" aria-labelledby="h-mail">
+    <div class="t16-step"><b class="n">3</b><h2 id="h-mail">או במייל</h2></div>
+    <form id="t16-mail" novalidate>
+      <label class="lbl" for="t16-email">כתובת מייל</label>
+      <input id="t16-email" type="email" inputmode="email" autocomplete="email" placeholder="name@gmail.com" required>
+      <label class="t16-opt" for="t16-consent"><input id="t16-consent" type="checkbox"><span class="tx"><b>אני מאשר לקבל מיילים עם המבזקים שבחרתי</b><span>אפשר לבטל בקליק מכל מייל. הכתובת לא תועבר לאף אחד.</span></span></label>
+      <button type="submit" class="btn btn-soft btn-block">הרשמה במייל</button>
+    </form>
+    <p id="t16-mail-st" class="t16-status" role="status" aria-live="polite" hidden></p>
+  </section>
+
+  <p class="t16-disc">המבזקים הם מידע כללי בלבד ולא ייעוץ. <a href="briefs.html">לקריאת המבזקים</a> · <a href="privacy.html">פרטיות</a></p>
+</main>
+<noscript><p style="padding:16px;font-size:16px">כדי לבחור התראות צריך להפעיל JavaScript בדפדפן.</p></noscript>
+<script src="auth-config.js"></script>
+<script src="js/t16-common.js"></script>
+<script src="portal-nav.js"></script>
+<script src="js/alerts.js"></script>
+</body>
+</html>
