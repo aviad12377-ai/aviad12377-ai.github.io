@@ -18,6 +18,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Pull public news feeds into data/news-hub.json and flag breaking items
         timeout-minutes: 5
@@ -45,11 +47,4 @@ jobs:
 
       - name: Commit if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news-hub.json data/breaking.json
-          if git diff --cached --quiet; then echo "No changes"; else
-            git commit -m "chore: update news hub"
-            git pull --rebase origin main
-            git push
-          fi
+          bash scripts/commit_data.sh "chore: update news hub" data/news-hub.json data/breaking.json

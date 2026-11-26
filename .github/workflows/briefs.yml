@@ -33,6 +33,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Refresh headlines
         continue-on-error: true
@@ -71,11 +73,4 @@ jobs:
 
       - name: Commit if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/briefs data/news-hub.json data/breaking.json
-          if git diff --cached --quiet; then echo "No changes"; else
-            git commit -m "chore: market brief"
-            git pull --rebase origin main
-            git push
-          fi
+          bash scripts/commit_data.sh "chore: market brief" data/briefs data/news-hub.json data/breaking.json

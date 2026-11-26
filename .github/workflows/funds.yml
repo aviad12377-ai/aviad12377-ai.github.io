@@ -18,19 +18,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Fetch gemelnet / pensianet / bituachnet from data.gov.il
         run: python3 scripts/fetch_funds.py funds.json
 
       - name: Commit funds.json if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add funds.json
-          if git diff --cached --quiet; then
-            echo "No changes"
-          else
-            git commit -m "chore: update funds.json"
-            git pull --rebase origin main
-            git push
-          fi
+          bash scripts/commit_data.sh "chore: update funds.json" funds.json

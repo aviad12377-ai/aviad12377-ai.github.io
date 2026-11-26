@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Pull public market RSS into data/news.json
         continue-on-error: true
@@ -38,14 +40,4 @@ jobs:
 
       - name: Commit data/news.json if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          mkdir -p data
-          git add data/news.json
-          if git diff --cached --quiet; then
-            echo "No news changes"
-          else
-            git commit -m "chore: update data/news.json"
-            git pull --rebase origin main
-            git push
-          fi
+          bash scripts/commit_data.sh "chore: update data/news.json" data/news.json
