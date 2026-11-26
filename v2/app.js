@@ -280,7 +280,7 @@
     drawBar('חסכונות');
     var tot = savingsTotal(), mgain = D.accounts.reduce(function (s, a) { return s + a.bal * a.m / 100; }, 0);
     main().innerHTML =
-      '<section class="hero"><div class="lbl">כל החסכונות ' + DEMO + '</div><div class="big">' + ils(tot) + '</div><div class="chg"><span class="gain">▲ ' + ils(mgain) + '</span> <span class="muted">החודש</span></div></section>' +
+      '<section class="hero"><div class="lbl">כל החסכונות ' + DEMO + '</div><div class="big">' + ils(tot) + '</div><div class="chg"><span class="gain">▲ ' + ils(mgain) + '</span> <span class="muted">החודש</span></div>' + feeLine() + '</section>' +
       '<section class="card" style="margin-top:12px"><div class="alloc" role="img" aria-label="חלוקת החסכונות">' + D.accounts.map(function (a, i) { return '<i style="width:' + (a.bal / tot * 100).toFixed(1) + '%;background:' + a.color + ';animation-delay:' + i * 60 + 'ms"></i>'; }).join('') + '</div>' +
       '<div class="list">' + D.accounts.map(function (a) {
         return '<button class="row" data-acc="' + a.id + '"><span class="ic" style="background:color-mix(in srgb,' + a.color + ' 15%,transparent);color:' + a.color + '">' + ic(a.ic) + '</span><span class="tx"><span class="t">' + a.name + '</span><span class="s">' + a.sub + (a.flag ? ' · <b class="loss">דמי ניהול גבוהים</b>' : '') + '</span></span><span class="v"><b>' + ils(a.bal) + '</b><small class="' + cls(a.m) + '">' + pct(a.m, true) + '</small></span>' + ic('chev').replace('<svg', '<svg class="chev"') + '</button>';
@@ -293,6 +293,11 @@
         tile('../cashflow.html', 'תחזית ל־12 חודשים', 'כמה יישאר לחיסכון') + '</div>';
     $$('[data-acc]').forEach(function (b) { b.addEventListener('click', function () { accSheet(D.accounts.filter(function (a) { return a.id === b.dataset.acc; })[0]); }); });
   });
+  /* v2b merge: fees in shekels (percent is hard to feel; shekels are not) */
+  function feeLine() {
+    var y = D.accounts.reduce(function (s, a) { var m = /([\d.]+)%\s*מצבירה/.exec(a.fee || ''); return s + (m ? a.bal * parseFloat(m[1]) / 100 : 0); }, 0);
+    return y ? '<p class="help">דמי ניהול מהצבירה: כ־' + ils(y) + ' בשנה (' + ils(y / 12) + ' בחודש)</p>' : '';
+  }
   function tile(href, k, d) { return '<a class="tile" href="' + href + '"><span class="k">' + k + '</span><span class="d muted" style="font-weight:500">' + d + '</span></a>'; }
   function accSheet(a) {
     var type = a.group === 'pension' ? 'pension' : a.group === 'gemel' ? 'gemel' : 'hishtalmut';
@@ -316,13 +321,41 @@
         }).join('') + '</div></section>' +
         '<a class="card cardlink" href="#/invest/options" style="margin-top:12px;display:block"><div class="card-h"><h2>אופציות עובדים</h2>' + ic('chev').replace('<svg', '<svg class="chev" style="width:20px;height:20px;color:var(--muted)"') + '</div>' +
           '<div class="kv"><div><span>שווי הבשילו</span><b>' + ils(oi) + '</b></div><div><span>שווי כל המנות</span><b>' + ils(oa) + '</b></div></div><div class="prog"><i style="width:' + (optVested() / optTotal() * 100) + '%"></i></div><div class="muted" style="font-size:14px">' + n(optVested()) + ' מתוך ' + n(optTotal()) + ' הבשילו ' + DEMO + '</div></a>' +
-        '<h2 class="sec">הוראת קבע להשקעה</h2><section class="card"><div style="display:flex;align-items:center;gap:12px"><span class="ic" style="width:40px;height:40px;border-radius:999px;display:grid;place-items:center;background:var(--primary-soft);color:var(--primary)">' + ic('repeat') + '</span><div style="flex:1"><b>' + ils(D.standing.amt) + ' בחודש</b><div class="muted" style="font-size:15px">ב־' + D.standing.day + ' לחודש · ' + D.standing.split.map(function (x) { return x[0] + ' ' + x[1] + '%'; }).join(' · ') + '</div></div>' + DEMO + '</div>' +
-        '<p class="help">בעוד 10 שנים, בתשואה שנתית של 6%: כ־' + ils(fv(D.standing.amt, 0.06, 10)) + '</p></section>' +
+        '<div class="card-h" style="margin-top:20px"><h2 class="sec" style="margin:0">הוראת קבע להשקעה</h2><button class="more" id="so-edit" style="border:0;background:none;cursor:pointer">עריכה</button></div><section class="card"><div style="display:flex;align-items:center;gap:12px"><span class="ic" style="width:40px;height:40px;border-radius:999px;display:grid;place-items:center;background:var(--primary-soft);color:var(--primary)">' + ic('repeat') + '</span><div style="flex:1"><b>' + ils(ST().amt) + ' בחודש</b><div class="muted" style="font-size:15px">ב־' + ST().day + ' לחודש · ' + ST().split.map(function (x) { return x[0] + ' ' + x[1] + '%'; }).join(' · ') + '</div></div>' + DEMO + '</div>' +
+        '<p class="help">בעוד 10 שנים, בתשואה שנתית של 6%: כ־' + ils(fv(ST().amt, 0.06, 10)) + '</p></section>' +
         '<h2 class="sec">נכסים נוספים</h2><section class="card"><div class="list"><div class="row" style="cursor:default"><span class="ic">' + ic('house') + '</span><span class="tx"><span class="t">' + D.realEstate.name + '</span><span class="s">שווי משוער</span></span><span class="v"><b>' + ils(D.realEstate.val) + '</b></span></div>' +
         '<div class="row" style="cursor:default"><span class="ic" style="background:var(--loss-soft);color:var(--loss)">' + ic('bank') + '</span><span class="tx"><span class="t">הלוואות</span><span class="s">יתרה לסילוק</span></span><span class="v"><b class="loss">' + ils(-D.debts) + '</b></span></div></div></section>';
     }
     draw(); loadPrices().then(draw, function () {});
+    $('#inv').addEventListener('click', function (e) { if (e.target.closest('#so-edit')) soSheet(draw); });
   });
+  /* v2b merge: standing order into the portfolio, edited in a bottom sheet (amount stepper, day, split, assumption shown) */
+  function ST() { try { var s = JSON.parse(localStorage.getItem('v2-standing') || 'null'); if (s && s.amt) return s; } catch (e) {} return D.standing; }
+  function soSheet(redraw) {
+    var s = JSON.parse(JSON.stringify(ST())), syms = D.holdings.map(function (h) { return h.sym; });
+    function body() {
+      return '<h2 id="sheet-title">הוראת קבע לתיק</h2><p class="muted" style="margin:0 0 12px">' + DEMO.replace('נתוני דוגמה', 'אב־טיפוס: נשמר במכשיר בלבד, לא נשלח לבנק') + '</p>' +
+        '<div class="field"><label for="so-amt">סכום חודשי</label><div class="stepper" data-step="100"><button type="button" data-k="-1" aria-label="פחות 100">−</button><input id="so-amt" inputmode="numeric" value="' + s.amt + '"><button type="button" data-k="1" aria-label="יותר 100">+</button></div></div>' +
+        '<div class="field"><span class="lbl">יום בחודש</span><div class="chips" id="so-day" style="margin:0;padding:0">' + [1, 10, 15, 25].map(function (d) { return '<button type="button" class="chip" data-v="' + d + '" aria-pressed="' + (d === s.day) + '">' + d + '</button>'; }).join('') + '</div></div>' +
+        '<div class="field"><span class="lbl">חלוקה</span><div id="so-split">' + s.split.map(function (x, i) { return '<div class="splitrow"><label for="sp' + i + '">' + esc(x[0]) + '</label><input type="range" id="sp' + i + '" min="0" max="100" step="5" value="' + x[1] + '"><span class="num" id="spv' + i + '">' + x[1] + '%</span></div>'; }).join('') + '</div>' +
+        '<p class="help">בישראל הוראת קבע אפשרית בעיקר לקרנות סל ולקרנות נאמנות.</p></div>' +
+        '<p class="help" id="so-proj"></p><button class="btn pri block" id="so-save" style="margin-top:12px">שמירה</button><button class="btn sec block" style="margin-top:8px" data-close>ביטול</button>';
+    }
+    openSheet(body());
+    function proj() { $('#so-proj').innerHTML = 'בעוד 10 שנים: כ־' + ils(fv(+$('#so-amt').value || 0, 0.06, 10)) + ', בהנחת תשואה של 6% בשנה. הנחה בלבד, לא תחזית ולא ייעוץ.'; }
+    proj();
+    $('#so-amt').addEventListener('input', proj);
+    $$('.stepper button').forEach(function (b) {
+      var t, iv, k = +b.dataset.k;
+      function bump() { var i = $('#so-amt'); i.value = Math.max(100, (Math.round((+i.value || 0) / 100) + k) * 100); proj(); }
+      b.addEventListener('pointerdown', function () { bump(); t = setTimeout(function () { iv = setInterval(bump, 70); }, 400); });
+      ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) { b.addEventListener(ev, function () { clearTimeout(t); clearInterval(iv); }); });
+      b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); bump(); } });
+    });
+    $$('#so-day .chip').forEach(function (c) { c.addEventListener('click', function () { $$('#so-day .chip').forEach(function (x) { x.setAttribute('aria-pressed', x === c); }); s.day = +c.dataset.v; }); });
+    $$('#so-split input').forEach(function (r, i) { r.addEventListener('input', function () { var v = +r.value; s.split[i][1] = v; if (s.split.length === 2) { s.split[1 - i][1] = 100 - v; $('#sp' + (1 - i)).value = 100 - v; $('#spv' + (1 - i)).textContent = (100 - v) + '%'; } $('#spv' + i).textContent = v + '%'; }); });
+    $('#so-save').addEventListener('click', function () { s.amt = +$('#so-amt').value || s.amt; localStorage.setItem('v2-standing', JSON.stringify(s)); closeSheet(); redraw(); toast('הוראת הקבע עודכנה'); });
+  }
   function fv(m, r, y) { var i = r / 12, k = y * 12; return m * ((Math.pow(1 + i, k) - 1) / i); }
 
   /* --- OPTIONS --- */
@@ -349,6 +382,43 @@
       }).join('');
     }
     calc(); $$('#op-p,#op-k').forEach(function (i) { i.addEventListener('input', calc); });
+  });
+
+  /* --- FUND detail (v2b merge): real monthly returns chart, peers median, cheaper alternatives --- */
+  route(/^\/fund\/(pensianet|gemelnet)\/(\d+)$/, 'compare', function (m) {
+    var set = m[1], id = m[2];
+    drawBar('פרטי מסלול', true);
+    main().innerHTML = '<section class="hero"><div class="skel l" style="width:40%"></div><div class="skel h"></div><div class="skel" style="height:44px;width:35%;margin:8px 0"></div><div class="chart" style="height:168px"><div class="skel" style="height:168px"></div></div></section>' +
+      '<section class="card" style="margin-top:12px"><div class="skel r"></div><div class="skel r"></div></section>';
+    load('../funds.json').then(function (F) {
+      var S = F.sets[set], f = S && S.funds.filter(function (x) { return String(x.id) === id; })[0];
+      if (!f) { main().innerHTML = '<div class="card empty"><b>לא מצאנו את המסלול</b>ייתכן שהוא נסגר. <a href="#/compare">להשוואות</a></div>'; return; }
+      $('#page-title').textContent = f.cls === 'קרנות השתלמות' ? 'קרן השתלמות' : set === 'pensianet' ? 'קרן פנסיה' : 'קופת גמל';
+      var peers = S.funds.filter(function (x) { return x.cls === f.cls && trackOf(x) === trackOf(f) && x.ytd != null && x.assets >= 20; });
+      function med(k) { var a = peers.map(function (x) { return x[k]; }).filter(function (v) { return v != null; }).sort(function (a, b) { return a - b; }); return a.length ? a[Math.floor(a.length / 2)] : null; }
+      var mo = S.monthly && S.monthly[String(f.id)], keys = mo ? Object.keys(mo).sort() : [], ser = [100], v = 100;
+      keys.forEach(function (k) { v *= 1 + mo[k] / 100; ser.push(v); });
+      var HM = ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
+      var per = function (p) { return HM[+String(p).slice(4, 6) - 1] + ' ' + String(p).slice(0, 4); };
+      var dv = f.ytd - (med('ytd') || 0);
+      main().innerHTML =
+        '<section class="hero"><div class="lbl">' + esc(f.mgr || f.parent || '') + '</div><h2 style="font-size:20px;margin:4px 0 0">' + esc(f.name) + '</h2>' +
+        '<div class="big" id="fv">' + pct(f.ytd, true) + '</div><div class="chg" id="fvl"><span class="' + cls(dv) + '">' + arrow(dv) + ' ' + pct(dv, true) + '</span> <span class="muted">מול חציון המסלול · תשואה מתחילת השנה</span></div>' +
+        (ser.length > 2 ? '<div class="chart" id="fc"></div><p class="help" style="text-align:center">שווי של 100 ₪ מ' + per(keys[0]) + ' עד ' + per(keys[keys.length - 1]) + ' · גרור על הגרף</p>' : '') + '</section>' +
+        '<section class="card" style="margin-top:12px"><div class="kv">' + [['דמי ניהול מצבירה', pct(f.feeAcc)], ['דמי ניהול מהפקדה', f.feeDep != null ? pct(f.feeDep) : '—'], ['תשואה 5 שנים (מצטבר)', f.c5 != null ? pct(f.c5, true) : '—'], ['תשואה 3 שנים (מצטבר)', f.c3 != null ? pct(f.c3, true) : '—'], ['סטיית תקן', f.sd != null ? pct(f.sd) : '—'], ['גודל', n(f.assets / 1000, true) + ' מיליארד ₪']].map(function (r) { return '<div><span>' + r[0] + '</span><b>' + r[1] + '</b></div>'; }).join('') + '</div></section>' +
+        '<h2 class="sec">מול ' + n(peers.length) + ' מסלולים דומים</h2><section class="card"><div class="mbars">' + [['מתחילת השנה', 'ytd'], ['3 שנים (שנתי)', 'y3'], ['5 שנים (שנתי)', 'y5']].map(function (r) {
+          var a = f[r[1]], b = med(r[1]), mx = Math.max(Math.abs(a || 0), Math.abs(b || 0)) || 1;
+          return '<div class="mb-h">' + r[0] + '</div><div class="mb"><span>המסלול</span><i><b class="me" style="width:' + Math.max(2, Math.abs(a || 0) / mx * 100) + '%"></b></i>' + (a == null ? '—' : pct(a)) + '</div><div class="mb"><span>חציון</span><i><b style="width:' + Math.max(2, Math.abs(b || 0) / mx * 100) + '%"></b></i>' + (b == null ? '—' : pct(b)) + '</div>';
+        }).join('') + '</div></section>' +
+        '<h2 class="sec">אותו מסלול, דמי ניהול נמוכים יותר</h2><section class="card" style="padding:8px 16px"><div class="list" id="alts"></div></section>' +
+        '<p class="help" style="text-align:center">מקור: רשות שוק ההון · נתוני ' + per(S.period) + ' · מידע בלבד, לא ייעוץ. תשואות עבר אינן מבטיחות תשואות בעתיד.</p>';
+      var alts = peers.filter(function (x) { return x.id !== f.id && x.feeAcc < f.feeAcc && x.y5 != null; }).sort(function (a, b) { return b.y5 - a.y5; }).slice(0, 5);
+      $('#alts').innerHTML = alts.length ? alts.map(function (x) { return '<a class="row" href="#/fund/' + set + '/' + x.id + '"><span class="tx"><span class="t wrap">' + esc(x.name) + '</span><span class="s">דמי ניהול ' + pct(x.feeAcc) + '</span></span><span class="v"><b class="' + cls(x.y5) + '">' + pct(x.y5, true) + '</b><small class="muted">לשנה, 5 שנים</small></span>' + ic('chev').replace('<svg', '<svg class="chev"') + '</a>'; }).join('') : '<div class="empty"><b>דמי הניהול כאן כבר מהנמוכים</b>אין במסלול הזה מסלול זול יותר עם נתוני 5 שנים.</div>';
+      if (ser.length > 2) chart($('#fc'), ser, { label: 'תשואה מצטברת', onScrub: function (i) {
+        if (i < 0) { $('#fv').innerHTML = pct(f.ytd, true); $('#fvl').innerHTML = '<span class="' + cls(dv) + '">' + arrow(dv) + ' ' + pct(dv, true) + '</span> <span class="muted">מול חציון המסלול · תשואה מתחילת השנה</span>'; return; }
+        $('#fv').innerHTML = pct(ser[i] - 100, true); $('#fvl').innerHTML = '<span class="muted">' + (i ? 'מצטבר עד סוף ' + per(keys[i - 1]) : 'נקודת ההתחלה') + '</span>';
+      } });
+    }).catch(function () { main().innerHTML = '<div class="card empty"><b>הנתונים לא נטענו</b>בדוק חיבור ונסה שוב.</div>'; });
   });
 
   /* --- COMPARE hub --- */
@@ -417,7 +487,7 @@
       $('#fl').innerHTML = shown.length ? shown.map(function (f) {
         var on = picked.some(function (p) { return p.id === f.id; });
         var main_ = sort === 'fee' ? pct(f.feeAcc) : sort === 'sharpe' ? '<span class="num">' + NF2.format(f.sharpe || 0) + '</span>' : pct(f[sort == 'y5' ? 'c5' : sort] != null ? f[sort == 'y5' ? 'c5' : sort] : 0, true);
-        return '<div class="row" style="cursor:default"><span class="tx"><span class="t wrap">' + esc(f.name) + '</span><span class="s">דמי ניהול ' + pct(f.feeAcc) +  + '</span></span>' +
+        return '<div class="row" style="cursor:default"><span class="tx"><a class="t wrap fundlink" href="#/fund/' + (type === 'pension' ? 'pensianet' : 'gemelnet') + '/' + f.id + '">' + esc(f.name) + '</a><span class="s">דמי ניהול ' + pct(f.feeAcc) + '</span></span>' +
           '<span class="v"><b class="' + (sort === 'fee' ? '' : cls(f[sort] || 0)) + '">' + main_ + '</b><small class="muted">' + (sort === 'y5' ? 'מצטבר 5 שנים' : lbl) + '</small></span>' +
           '<button class="add" data-id="' + f.id + '" aria-pressed="' + on + '" aria-label="' + (on ? 'הסר מההשוואה: ' : 'הוסף להשוואה: ') + esc(f.name) + '">' + ic(on ? 'check' : 'plus') + '</button></div>';
       }).join('') + (list.length > limit ? '<button class="btn sec block" id="moreb" style="margin:8px 0">הצג עוד ' + Math.min(40, list.length - limit) + '</button>' : '') : '<div class="empty"><b>אין מסלולים מתאימים</b>נסה מסלול אחר או "כל המסלולים".</div>';
