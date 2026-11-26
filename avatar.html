@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0d10">
+<meta name="description" content="צלמו סלפי והאווטאר יתעדכן לפי תווי הפנים. התמונה נשארת במכשיר ולא נשלחת לשום מקום.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="stylesheet" href="portal.css">
+<link rel="stylesheet" href="css/avatar.css">
+<title>האווטאר שלי</title>
+</head>
+<body data-page="avatar">
+<div class="app-wrap av-page">
+  <header class="av-header">
+    <a class="av-back" href="me.html">חזרה לפרופיל</a>
+    <a class="avatar-btn" id="avatar-slot" href="avatar.html" aria-label="האווטאר שלי"></a>
+    <h1>האווטאר שלי</h1>
+    <span id="account-slot"></span>
+  </header>
+  <div id="avatar-studio"></div>
+</div>
+<noscript><p style="padding:16px;font-size:16px">כדי להשתמש בעמוד צריך להפעיל JavaScript בדפדפן.</p></noscript>
+<script>window.PORTAL_NAV = window.PORTAL_NAV || []; window.PORTAL_NAV.push({ id: 'avatar', href: 'avatar.html', label: { he: 'אווטאר', en: 'Avatar', es: 'Avatar' }, icon: 'user', group: 'account', parent: 'me' });</script>
+<script src="auth-config.js"></script>
+<script src="portal-cloud.js"></script>
+<script src="portal-nav.js"></script>
+<script src="js/avatar.js"></script>
+<script>
+(function () {
+  var slot = document.getElementById('avatar-slot');
+  var studio = document.getElementById('avatar-studio');
+  if (window.PortalNav) window.PortalNav.mount('avatar');
+  if (window.PortalAvatar) {
+    window.PortalAvatar.render(slot);
+    window.PortalAvatar.studio(studio);
+  }
+})();
+</script>
+</body>
+</html>

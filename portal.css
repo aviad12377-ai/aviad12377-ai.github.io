@@ -362,3 +362,26 @@ details.card.fold[open]{padding-bottom:14px}
 .start-card{background:var(--card);border:1px solid var(--glass-border);border-radius:20px;padding:20px;text-align:start}
 .start-card h2{font-size:22px;margin:0 0 6px} .start-card p{font-size:16px;color:var(--muted);margin:0 0 4px}
 .edit-link{display:inline-flex;align-items:center;min-height:44px;font-size:16px;font-weight:700;color:var(--primary-dark,#a78bfa);text-decoration:underline;text-underline-offset:3px}
+/* t463: frozen pages */
+.more-sheet .soon{display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 12px;border-radius:14px;color:var(--muted);opacity:.75;cursor:default}
+.more-sheet .soon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
+.soon-badge{margin-inline-start:auto;font-style:normal;font-size:13px;font-weight:800;padding:2px 8px;border-radius:999px;background:rgba(251,191,36,.16);color:#fbbf24}
+.soon-banner{margin-top:10px}
+.field-err{color:#fca5a5;font-size:15px;margin:4px 0 0;min-height:0}
+/* smoothness: stable header/tab bar, skeletons (cross-document view transitions left out: Chrome threw on reloads) */
+#account-slot{min-width:62px;min-height:44px;justify-content:center}
+#avatar-slot,.avatar-btn{width:44px;height:44px;flex:0 0 44px}
+.skel{display:grid;gap:10px;padding:4px 0}
+.skel-row{height:44px;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,.05) 0,rgba(255,255,255,.11) 40%,rgba(255,255,255,.05) 80%);background-size:200% 100%;animation:skel 1.2s linear infinite}
+@keyframes skel{from{background-position:200% 0}to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.skel-row{animation:none}}
+/* t460: standing order instruments */
+.instr-field{grid-column:1/-1}
+.instr-field h4{font-size:16px;margin:8px 0 4px}
+.instr-row{display:grid;grid-template-columns:1fr 92px auto;gap:8px;align-items:end;padding:8px 0;border-bottom:1px solid var(--glass-border,rgba(255,255,255,.1))}
+.instr-name{display:flex;flex-direction:column;gap:2px;min-width:0}
+.instr-name .help{font-size:14px}
+
+/* UX (t13e): 16px minimum for chrome text */
+.top-header p,.site-footer,.site-footer a,.site-footer span,.acct-btn{font-size:16px}
+.tabbar a span,.tabbar button span{font-size:16px;white-space:nowrap}

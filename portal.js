@@ -23,6 +23,7 @@
       fx: { USD: null, EUR: null, GBP: null },
       maslaka: { products: [], files: [], reportDate: '', importedAt: '', include: true },
       journals: { bank: [], trades: [], cardTx: [], includeBank: true, includeTrades: true },
+      avatar: null,
       // Bank of Israel average mortgage rates by track, Oct 2026 (TamInt010 as quoted by hosech.co.il, checked 26.11.2026). User-editable.
       insights: { boi: { t_prime: 4.18, t_fixed_unlinked: 4.81, t_var_unlinked: 4.53, t_var_linked: 3.35, t_fixed_linked: 3.33, t_other: null }, boiDate: '2026-10', refiFee: null, refiCost: null, consolidationRate: null },
       prefs: { peerOptIn: false, ageBand: '' },
@@ -489,7 +490,7 @@
   var calc = {
     fv: function (pv, pmt, r, nper) { if (nper <= 0) return pv; if (r === 0) return pv + pmt * nper; var g = Math.pow(1 + r, nper); return pv * g + pmt * (g - 1) / r; },
     standing: function (row) {
-      var M = n(row.monthly), r = n(row.ret) / 1200, S = parseDate(row.start), T = today(), G = parseDate(row.target);
+      var M = n(row.monthly) * ({ quarterly: 1 / 3, yearly: 1 / 12 }[row.freq] || 1), r = n(row.ret) / 1200, S = parseDate(row.start), T = today(), G = parseDate(row.target);
       var n0 = S && S <= T ? monthsBetween(S, T) + 1 : 0;
       var nG = S && G && S <= G ? monthsBetween(S, G) + 1 : null;
       return { invested: M * n0, valueToday: calc.fv(0, M, r, n0), investedTarget: nG === null ? null : M * nG, projected: nG === null ? null : calc.fv(0, M, r, nG) };
@@ -587,7 +588,7 @@
       function add(k, v, bucket) { if (v === null) { missing++; return; } c[k] = (c[k] || 0) + v; if (bucket === 'liquid') liquid += v; else if (bucket === 'locked') locked += v; else if (bucket === 'illiquid') illiquid += v; }
       data.savings.portfolios.forEach(function (p) { var x = calc.portfolio(p); add('cat_portfolio', x.valueILS, 'liquid'); missing += x.missing; });
       data.savings.cash.forEach(function (r) { add('cat_cash', toILS(r.balance, r.currency), 'liquid'); });
-      data.savings.standing.forEach(function (r) { if (r.include !== false) add('cat_standing', calc.standing(r).valueToday, 'liquid'); });
+      data.savings.standing.forEach(function (r) { if (r.include !== false) add(r.dest === 'portfolio' ? 'cat_portfolio' : 'cat_standing', calc.standing(r).valueToday, 'liquid'); });
       data.pension.funds.forEach(function (r) { add('cat_pension', n(r.balance), 'locked'); });
       data.hishtalmut.funds.forEach(function (r) { var f = calc.fund(r, 'hishtalmut'); add('cat_hish', n(r.balance), f.liquid ? 'liquid' : 'locked'); });
       if (data.maslaka.include !== false) data.maslaka.products.forEach(function (p) {
@@ -753,6 +754,8 @@
       if (row[f.k] === undefined) row[f.k] = input.checked;
       input.addEventListener('change', function () { row[f.k] = input.checked; onInput(); });
       return h('div', { class: 'field check' }, [input, h('label', { for: id, text: t(f.label) })]);
+    } else if (f.type === 'custom') {
+      return f.render(row, onInput);
     } else if (f.type === 'track') {
       return trackField(row, f, onInput);
     } else if (f.type === 'security') {
@@ -878,7 +881,7 @@
     })));
     if (window.PortalNav) window.PortalNav.mount(page);
     setTimeout(function () { try { window.dispatchEvent(new CustomEvent('portal-chrome')); } catch (e) {} }, 0); // lets portal-cloud.js put the sign-in button in the new header
-    var mountAv = function () { if (window.PortalAvatar) window.PortalAvatar.mount(document.getElementById('avatar-slot')); };
+    var mountAv = function () { var av = window.PortalAvatar; if (!av) return; (av.render || av.mount)(document.getElementById('avatar-slot')); };
     setTimeout(mountAv, 0); on('change', mountAv); on('quotes', mountAv);
     return out;
   }
@@ -1191,7 +1194,7 @@
     search.addEventListener('input', renderTable);
     trackSel.addEventListener('change', renderTable);
     provSel.addEventListener('change', renderTable);
-    tblHost.appendChild(h('div', { class: 'empty', text: t('loading') }));
+    tblHost.appendChild(skeleton(5, t('loading')));
     loadFunds().then(draw);
     return section(cfg.title || t('compare'), [filters, rankEl, tblHost, meta], h('span', { class: 'badge green', text: t('official_data') }));
   }
@@ -1433,6 +1436,11 @@
       var pfBox = h('div'), trBox = h('div'), recBox = h('div');
       main.appendChild(section(t('portfolios_title'), [pfBox]));
       main.appendChild(section(t('trades_positions'), [trBox]));
+      var stPf = data.savings.standing.filter(function (r) { return r.dest === 'portfolio'; });
+      main.appendChild(section(t('st_pf_title'), [stPf.length ? table([[t('name'), function (r) { return r.name || '—'; }], [t('st_amount'), function (r) { return disp(n(r.monthly)) + ' · ' + t('st_' + (r.freq || 'monthly')); }, 'num'],
+        [t('st_instruments'), function (r) { return (r.instruments || []).map(function (x) { return (x.name || x.sym) + ' ' + fmt(n(x.pct), 0) + '%'; }).join(', ') || '—'; }],
+        [t('value_today'), function (r) { return disp(calc.standing(r).valueToday); }, 'num'], [t('st_projected'), function (r) { var p = calc.standing(r).projected; return p === null ? '—' : disp(p); }, 'num']], stPf, { caption: t('st_pf_title') })
+        : h('div', { class: 'empty', text: t('st_pf_empty') }), editLink('standing')]));
       var perfBox = h('div');
       main.appendChild(section(t('perf_title'), [perfBox]));
       var pf0 = portfolioPerf();
@@ -1555,6 +1563,7 @@
     },
     budget: function (main) {
       var box = h('div'), goalOut = h('div'), recBox = h('div');
+      main.appendChild(section(t('exp_total'), [expenseField(), h('div', { class: 'hub' }, [['cashflow.html', 'nav_cashflow'], ['goals.html', 'nav_goals'], ['retirement.html', 'nav_retirement']].map(function (x) { return h('a', { class: 'hub-card', href: x[0] }, [h('span', { class: 'k', text: t(x[1]) })]); }))]));
       main.appendChild(section(t('cashflow'), [box]));
       main.appendChild(section(t('goal'), [goalOut]));
       main.appendChild(recBox);
@@ -1562,8 +1571,6 @@
         var s = calc.summary();
         box.innerHTML = '';
         box.appendChild(table([[t('income'), function (r) { return r.name || '—'; }], [t('amount'), function (r) { return disp(n(r.amount)); }, 'num']], data.home.income));
-        var byCat = {}; data.home.expenses.forEach(function (r) { var k = r.category || 'e_other'; byCat[k] = (byCat[k] || 0) + n(r.amount); });
-        box.appendChild(table([[t('category'), function (k) { return t(k); }], [t('amount'), function (k) { return disp(byCat[k]); }, 'num'], [t('share'), function (k) { return s.expenses ? pct(byCat[k] / s.expenses * 100, 0) : '—'; }, 'num']], Object.keys(byCat)));
         var items = [[t('income'), disp(s.income)], [t('expenses'), disp(-s.expenses)], [t('surplus'), disp(s.surplus), 'big'], [t('savings_rate'), pct(s.savingsRate)]];
         if (data.home.includeMortgagePmt && s.mortgagePmt > 0) items.splice(2, 0, [t('mortgage_pmt_line'), disp(-s.mortgagePmt)]);
         if (s.loanPmt > 0) items.splice(2, 0, [t('loan_pmt_line'), disp(-s.loanPmt)]);
@@ -1576,7 +1583,6 @@
         var rec = [];
         if (s.income > 0 && s.savingsRate !== null && s.savingsRate < 10) rec.push({ level: 'warn', title: t('rec_low_savings'), text: pct(s.savingsRate) });
         if (s.income > 0 && s.surplus < 0) rec.push({ level: 'bad', title: t('rec_deficit'), text: disp(s.surplus) });
-        var top = Object.keys(byCat).sort(function (a, b) { return byCat[b] - byCat[a]; })[0]; if (top && s.expenses > 0) rec.push({ level: 'info', title: t('rec_top_expense'), text: t(top) + ' · ' + pct(byCat[top] / s.expenses * 100, 0) });
         recBox.innerHTML = ''; recBox.appendChild(recsBox(rec));
       }
       on('change', draw); draw();
@@ -1637,7 +1643,7 @@
       }
       function drawActions() {
         actBox.innerHTML = '';
-        if (window.PortalInsights) { try { window.PortalInsights.mount(actBox, { max: 5, heading: false }); return; } catch (e) { console.error(e); actBox.innerHTML = ''; } }
+        if (window.PortalInsights) { try { window.PortalInsights.mount(actBox, { max: 6, heading: false }); [].slice.call(actBox.querySelectorAll('a[href*="budget.html"],a[href*="subscriptions.html"]')).forEach(function (a) { a.remove(); }); return; } catch (e) { console.error(e); actBox.innerHTML = ''; } }
         var pen = fundRows('pension').filter(function (r) { return r.type === 'pension' && r.balance > 0; }), hish = fundRows('hishtalmut').filter(function (r) { return r.balance > 0; });
         var acts = [];
         if (pen.length > 1 || hish.length > 1) acts.push(['act_merge', 'act_merge_txt', 'pension.html', 'swap']);
@@ -1680,7 +1686,7 @@
         // insights digest: count per category with links
         insBox.innerHTML = '';
         var digest = [['pension.html', 'nav_pension', fundRecs('pension', fundRows('pension')).filter(function (x) { return x.level !== 'info'; }).length], ['hishtalmut.html', 'nav_hishtalmut', fundRecs('hishtalmut', fundRows('hishtalmut')).filter(function (x) { return x.level !== 'info'; }).length]];
-        insBox.appendChild(h('div', { class: 'hub' }, digest.concat([['mortgage.html', 'nav_mortgage', null], ['loans.html', 'nav_loans', null], ['cards.html', 'nav_cards', null], ['budget.html', 'nav_budget', null], ['savings.html', 'nav_savings', null], ['portfolio.html', 'nav_portfolio', null]]).map(function (x) {
+        insBox.appendChild(h('div', { class: 'hub' }, digest.concat([['mortgage.html', 'nav_mortgage', null], ['loans.html', 'nav_loans', null], ['cards.html', 'nav_cards', null], ['savings.html', 'nav_savings', null], ['portfolio.html', 'nav_portfolio', null]]).map(function (x) {
           return h('a', { class: 'hub-card', href: x[0] }, [h('span', { class: 'k', text: t(x[1]) }), h('span', { class: 'v', text: x[2] === null ? t('see_recs') : x[2] ? t('items_to_check').replace('{n}', x[2]) : t('looks_ok') })]);
         })));
       }
@@ -1690,7 +1696,7 @@
         if (!C || !C.configured) { peerBox.appendChild(h('div', { class: 'empty', text: t('peer_need_cloud') })); return; }
         if (!C.user) { peerBox.appendChild(h('div', { class: 'empty', text: t('peer_need_signin') })); return; }
         if (!data.prefs.peerOptIn) { peerBox.appendChild(h('div', { class: 'empty' }, [t('peer_need_optin') + ' ', h('a', { href: 'me.html#peer', text: t('edit_in_me') })])); return; }
-        peerBox.appendChild(h('div', { class: 'empty', text: t('loading') }));
+        peerBox.appendChild(skeleton(3, t('loading')));
         C.peerCompare().then(function (rows) {
           peerBox.innerHTML = '';
           var ok = (rows || []).filter(function (r) { return r.p50 !== null && r.p50 !== undefined; });
@@ -1904,6 +1910,106 @@
     ], h('span', { class: 'badge green', text: t('in_browser_only') }));
   }
   function anchor(id, el) { el.id = id; return el; }
+  // placeholder rows with the final layout's height, so content does not jump in when data arrives
+  function skeleton(rows, label) { var b = h('div', { class: 'skel', role: 'status', 'aria-label': label }); for (var i = 0; i < rows; i++) b.appendChild(h('div', { class: 'skel-row' })); return b; }
+  /* ---------- t460: standing orders into an investment portfolio ----------
+     Allowed: foreign stocks / ETFs (S&P 100 and the large US ETF list in scripts/universe.json; other foreign tickers
+     with a live quote are allowed with a "market cap not verified" note), Israeli ETFs and mutual funds only (tase_securities.json types etf/fund).
+     Not allowed: individual Israeli stocks. Each row: instruments [{ sym, name, kind, pct }]. */
+  var UNIVERSE = null, universeP = null;
+  function loadUniverse() {
+    if (!universeP) universeP = fetchJSON('scripts/universe.json', 10000).then(function (u) { UNIVERSE = { list: (u.sp100 || []).map(function (x) { return { sym: x.symbol, name: x.name, kind: 'stock_us' }; }).concat((u.us_etfs || []).map(function (x) { return { sym: x.symbol, name: x.name, kind: 'etf_us' }; })) }; return UNIVERSE; }).catch(function () { universeP = null; UNIVERSE = { list: [] }; return UNIVERSE; });
+    return universeP;
+  }
+  function instrumentRule(sym) {
+    sym = String(sym || '').trim();
+    var tase = taseSecurities && taseSecurities.filter(function (r) { return r && (r.id === sym || r.symbol === sym || (r.id && sym === r.id + '.TA')); })[0];
+    if (tase) return tase.type === 'stock' ? { ok: false, why: t('st_rule_il_stock') } : { ok: true, name: tase.he || tase.en || sym, kind: tase.type === 'etf' ? 'etf_il' : 'fund_il' };
+    if (/\.TA$/i.test(sym)) return { ok: false, why: t('st_rule_il_stock') };
+    var u = UNIVERSE && UNIVERSE.list.filter(function (x) { return x.sym === sym.toUpperCase(); })[0];
+    if (u) return { ok: true, name: u.name, kind: u.kind };
+    if (/^[A-Z][A-Z0-9.\-]{0,9}$/i.test(sym)) return { ok: true, name: sym.toUpperCase(), kind: 'foreign', note: t('st_rule_unverified') };
+    return { ok: false, why: t('st_rule_unknown') };
+  }
+  function searchInstruments(q) {
+    var out = [], fq = foldSearch(q || '');
+    if (!fq) return out;
+    (UNIVERSE ? UNIVERSE.list : []).forEach(function (x) { if (out.length < 6 && (foldSearch(x.sym).indexOf(fq) === 0 || foldSearch(x.name).indexOf(fq) >= 0)) out.push({ sym: x.sym, name: x.name, kind: x.kind }); });
+    searchTase(q, 12).forEach(function (r) { if (r.type !== 'stock' && out.length < 12) out.push({ sym: r.id, name: r.he || r.en || r.id, kind: r.type === 'etf' ? 'etf_il' : 'fund_il' }); });
+    return out;
+  }
+  function instrumentsField(row, onInput) {
+    var wrap = h('div', { class: 'instr-field' });
+    if (row.dest !== 'portfolio') return wrap;
+    loadUniverse(); taseReady.then(function () {}); // warm caches for search
+    if (!Array.isArray(row.instruments)) row.instruments = [];
+    var list = h('div'), err = h('p', { class: 'field-err', 'aria-live': 'polite' }), sug = h('div', { class: 'ac-list hidden', role: 'listbox' });
+    function total() { return row.instruments.reduce(function (s, x) { return s + n(x.pct); }, 0); }
+    function check() { var tt = total(); err.textContent = row.instruments.length && Math.abs(tt - 100) > 0.01 ? t('st_pct_err').replace('{p}', fmt(tt, 0)) : ''; }
+    function add(it) {
+      var r = instrumentRule(it.sym); if (!r.ok) { err.textContent = r.why; return; }
+      if (row.instruments.some(function (x) { return x.sym === it.sym; })) return;
+      var left = Math.max(0, 100 - total());
+      row.instruments.push({ sym: it.sym, name: it.name || r.name, kind: it.kind || r.kind, pct: row.instruments.length ? left : 100 });
+      onInput(); draw();
+    }
+    function draw() {
+      list.innerHTML = '';
+      row.instruments.forEach(function (x, i) {
+        var id = 'ip-' + uid(), pin = h('input', { id: id, type: 'number', inputmode: 'decimal', min: '0', max: '100', step: 'any', value: x.pct === null || x.pct === undefined ? '' : x.pct });
+        pin.addEventListener('input', function () { x.pct = nn(pin.value); check(); onInput(); });
+        var amt = n(row.monthly) * n(x.pct) / 100, r = instrumentRule(x.sym);
+        list.appendChild(h('div', { class: 'instr-row' }, [
+          h('div', { class: 'instr-name' }, [h('strong', { text: x.name || x.sym }), h('span', { class: 'help', text: x.sym + ' · ' + t('st_k_' + (x.kind || 'foreign')) + (r.note ? ' · ' + r.note : '') + (amt ? ' · ' + money(amt, 'ILS', 0) : '') })]),
+          h('div', { class: 'field' }, [h('label', { for: id, text: '%' }), pin]),
+          h('button', { type: 'button', class: 'btn btn-danger btn-sm', text: t('del'), 'aria-label': t('del') + ' ' + (x.name || x.sym), onclick: function () { row.instruments.splice(i, 1); onInput(); draw(); } })
+        ]));
+      });
+      check();
+    }
+    // quick picks: what is already in the user's portfolios and allowed
+    var held = []; data.savings.portfolios.forEach(function (p) { (p.rows || []).forEach(function (r) { var s = r.securityNo || r.ticker; if (s && held.every(function (x) { return x.sym !== s; })) held.push({ sym: s, name: r.name || r.ticker }); }); });
+    var picks = held.filter(function (x) { return instrumentRule(x.sym).ok; });
+    var sid = 'is-' + uid(), search = h('input', { id: sid, type: 'text', autocomplete: 'off', 'aria-autocomplete': 'list', placeholder: t('st_search_ph') });
+    search.addEventListener('input', function () {
+      var items = searchInstruments(search.value); sug.innerHTML = '';
+      items.forEach(function (it) { var b = h('button', { type: 'button', class: 'ac-item', role: 'option' }, [h('span', { class: 'ac-title', text: it.name }), h('span', { class: 'ac-meta', text: it.sym + ' · ' + t('st_k_' + it.kind) })]); b.addEventListener('mousedown', function (e) { e.preventDefault(); add(it); search.value = ''; sug.classList.add('hidden'); }); sug.appendChild(b); });
+      sug.classList.toggle('hidden', !items.length);
+    });
+    search.addEventListener('blur', function () { setTimeout(function () { sug.classList.add('hidden'); }, 150); });
+    search.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); var v = search.value.trim(); if (v) { add({ sym: /^\d+$/.test(v) ? v : v.toUpperCase() }); search.value = ''; } } });
+    wrap.appendChild(h('h4', { text: t('st_instruments') }));
+    wrap.appendChild(h('p', { class: 'help', text: t('st_rule') }));
+    if (picks.length) wrap.appendChild(h('div', { class: 'chips', 'aria-label': t('st_from_holdings') }, picks.map(function (x) { return h('button', { type: 'button', class: 'chip', text: '+ ' + (x.name || x.sym), onclick: function () { add(x); } }); })));
+    wrap.appendChild(h('div', { class: 'ac-wrap field' }, [h('label', { for: sid, text: t('st_search') }), search, sug]));
+    wrap.appendChild(list); wrap.appendChild(err);
+    draw();
+    return wrap;
+  }
+  function standingOutputs(r) {
+    var c = calc.standing(r), out = [[t('value_today'), disp(c.valueToday)]];
+    var M = n(r.monthly) * ({ quarterly: 1 / 3, yearly: 1 / 12 }[r.freq] || 1);
+    if (M) out.push([t('st_monthly_eq'), disp(M)]);
+    if (c.projected !== null) out.push([t('st_projected'), disp(c.projected), 'pos', t('st_invested') + ' ' + disp(c.investedTarget)]);
+    if (r.include !== false) out.push([t('st_feeds'), r.dest === 'portfolio' ? t('st_feeds_pf') : t('st_feeds_sav')]);
+    return out;
+  }
+  // t463: expense tracking is frozen. One total monthly expense feeds cashflow / goals / retirement.
+  // Earlier per-expense rows are kept in data.home.expensesDetail the first time the total is edited.
+  function totalExpense() { return data.home.expenses.reduce(function (s, r) { return s + n(r.amount); }, 0); }
+  function expenseField() {
+    var id = 'f-exp-total', inp = h('input', { id: id, type: 'number', inputmode: 'decimal', min: '0', step: 'any', autocomplete: 'off' }), err = h('p', { class: 'field-err', 'aria-live': 'polite' });
+    var cur = totalExpense(); inp.value = cur ? String(Math.round(cur)) : '';
+    inp.addEventListener('input', function () {
+      var v = inp.value === '' ? 0 : nn(inp.value);
+      if (v === null || v < 0) { err.textContent = t('exp_err'); inp.setAttribute('aria-invalid', 'true'); return; }
+      err.textContent = ''; inp.removeAttribute('aria-invalid');
+      if (!data.home.expensesDetail && data.home.expenses.some(function (r) { return r.id !== 'total'; })) data.home.expensesDetail = data.home.expenses.slice();
+      data.home.expenses.length = 0; if (v > 0) data.home.expenses.push({ id: 'total', category: 'e_other', name: t('exp_total'), amount: v });
+      changed();
+    });
+    return h('div', { class: 'field' }, [h('label', { for: id, text: t('exp_total') }), inp, h('p', { class: 'help', text: t('exp_total_help') }), err]);
+  }
   // progressive disclosure: each card becomes <details>; only `openIds` start open. A link to #id opens that card.
   function collapseSections(root, openIds) {
     [].slice.call(root.children).forEach(function (sec) {
@@ -1947,7 +2053,13 @@
       [['pension', 'pension'], ['hishtalmut', 'hishtalmut']].forEach(function (x) { var box = h('div'); renderList(box, data[x[0]].funds, fundSchema(x[0])); body.appendChild(anchor(x[0], section(t('manual_funds') + ' · ' + t('nav_' + x[0]), [h('p', { class: 'help', text: t('manual_funds_help') }), box]))); });
       var cashBox = h('div'); renderList(cashBox, data.savings.cash, { fields: [{ k: 'name', type: 'text', label: 'name' }, { k: 'kind', type: 'select', label: 'kind', options: opts(['c_checking', 'c_savings', 'c_deposit', 'c_mmf']) }, { k: 'balance', type: 'number', label: 'balance' }, { k: 'currency', type: 'select', label: 'row_currency', options: CUR_OPTS }, { k: 'rate', type: 'number', label: 'rate' }, { k: 'maturity', type: 'date', label: 'maturity' }] });
       body.appendChild(anchor('cash', section(t('cash_title'), [cashBox])));
-      var stBox = h('div'); renderList(stBox, data.savings.standing, { fields: [{ k: 'name', type: 'text', label: 'name' }, { k: 'monthly', type: 'number', label: 'monthly_amount' }, { k: 'start', type: 'date', label: 'start_date' }, { k: 'ret', type: 'number', label: 'exp_ret' }, { k: 'target', type: 'date', label: 'target_date' }, { k: 'include', type: 'check', label: 'include_nw', def: true }] });
+      var stBox = h('div'), stList = null;
+      stList = renderList(stBox, data.savings.standing, { fields: [{ k: 'name', type: 'text', label: 'name' },
+        { k: 'dest', type: 'select', label: 'st_dest', options: [['savings', t('st_dest_savings')], ['portfolio', t('st_dest_portfolio')]], onChange: function () { setTimeout(function () { if (stList) stList.redraw(); }, 0); } },
+        { k: 'monthly', type: 'number', label: 'st_amount', min: 0 }, { k: 'freq', type: 'select', label: 'st_freq', options: [['monthly', t('st_monthly')], ['quarterly', t('st_quarterly')], ['yearly', t('st_yearly')]] },
+        { k: 'day', type: 'number', label: 'st_day', min: 1, step: 1 }, { k: 'start', type: 'date', label: 'start_date' }, { k: 'ret', type: 'number', label: 'exp_ret' }, { k: 'target', type: 'date', label: 'target_date' },
+        { k: 'instruments', type: 'custom', render: instrumentsField }, { k: 'include', type: 'check', label: 'include_nw', def: true }],
+        outputs: standingOutputs });
       body.appendChild(anchor('standing', section(t('standing_title'), [stBox, h('p', { class: 'help', text: t('standing_help') })])));
       var pfWrap = h('div'), pfLists = [];
       function drawPf() {
@@ -1994,8 +2106,7 @@
       body.appendChild(anchor('j-cards', section(t('j_cards'), [h('p', { class: 'help', text: t('j_cards_help') }), journalEditor('cardTx', data.journals.cardTx)])));
       var iBox = h('div'), eBox = h('div');
       renderList(iBox, data.home.income, { fields: [{ k: 'name', type: 'text', label: 'name' }, { k: 'amount', type: 'number', label: 'amount' }] });
-      renderList(eBox, data.home.expenses, { fields: [{ k: 'category', type: 'select', label: 'category', options: opts(['e_housing', 'e_food', 'e_car', 'e_insurance', 'e_telecom', 'e_leisure', 'e_other']) }, { k: 'name', type: 'text', label: 'name' }, { k: 'amount', type: 'number', label: 'amount' }] });
-      body.appendChild(anchor('budget', section(t('nav_budget'), [h('h3', { class: 'card-title', style: 'font-size:14px', text: t('income') }), iBox, h('h3', { class: 'card-title', style: 'font-size:14px', text: t('expenses') }), eBox, checkPref(data.home, 'includeMortgagePmt', 'incl_mortgage_pmt')])));
+      body.appendChild(anchor('budget', section(t('inc_exp_title'), [expenseField(), h('h3', { class: 'card-title', style: 'font-size:16px', text: t('income') }), iBox, checkPref(data.home, 'includeMortgagePmt', 'incl_mortgage_pmt')])));
       // real estate and other assets are two views of the same list (data.home.assets), so assets.html and net worth see both
       var isRE = function (r) { return r && r.type === 'a_realestate'; };
       var reRows = data.home.assets.filter(isRE), otherRows = data.home.assets.filter(function (r) { return !isRE(r); });
@@ -2068,7 +2179,7 @@
         h('button', { type: 'button', class: 'btn btn-primary', id: 'gate-signin', text: t('sign_in'), onclick: function () { C2.openDialog(); } }),
         h('button', { type: 'button', class: 'btn', id: 'gate-local', text: t('continue_local'), onclick: function () { sessionStorage.setItem('me-local', '1'); showGate(); } })])]));
     }
-    if (C && C.configured && C.ready) { gate.appendChild(h('div', { class: 'empty', text: t('loading') })); C.ready.then(showGate, showGate); }
+    if (C && C.configured && C.ready) { gate.appendChild(skeleton(4, t('loading'))); C.ready.then(showGate, showGate); }
     else showGate();
     on('cloud', showGate);
     setTimeout(function () { if (location.hash) { var el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); } }, 50);
@@ -2083,11 +2194,12 @@
     if (EXT[page]) titles[page] = EXT[page].title;
     var tt = titles[page] || titles.home;
     var navE = (window.PORTAL_NAV || []).filter(function (e) { return e.id === page; })[0], parentE = navE && navE.parent && (window.PORTAL_NAV || []).filter(function (e) { return e.id === navE.parent; })[0];
-    var PRIMARY = { wealth: ['pa_wealth', 'me.html#cash'], pension: ['pa_pension', 'me.html#pension'], hishtalmut: ['pa_hish', 'me.html#hishtalmut'], savings: ['pa_savings', 'me.html#cash'], portfolio: ['pa_portfolio', 'me.html#portfolios'], mortgage: ['pa_mortgage', 'me.html#mortgage'], loans: ['pa_loans', 'me.html#loans'], cards: ['pa_cards', 'me.html#cards'], budget: ['pa_budget', 'me.html#budget'], me: ['pa_me', '#maslaka'] };
+    var PRIMARY = { wealth: ['pa_wealth', 'me.html#cash'], pension: ['pa_pension', 'me.html#pension'], hishtalmut: ['pa_hish', 'me.html#hishtalmut'], savings: ['pa_savings', 'me.html#cash'], portfolio: ['pa_portfolio', 'me.html#portfolios'], mortgage: ['pa_mortgage', 'me.html#mortgage'], loans: ['pa_loans', 'me.html#loans'], cards: ['pa_cards', 'me.html#cards'], me: ['pa_me', '#maslaka'] };
     var pa = PRIMARY[page];
     root.appendChild(h('header', { class: 'top-header' + (page === 'home' ? ' sr-only' : '') }, [
       parentE && !navE.tab ? h('a', { class: 'back-link', href: parentE.href }, [h('span', { 'aria-hidden': 'true', text: settings.lang === 'he' ? '→ ' : '← ' }), t('back_to').replace('{p}', (parentE.label && (parentE.label[settings.lang] || parentE.label.he)) || '')]) : null,
       h('h1', { text: t(tt[0]) }), h('p', { text: t(tt[1]) }),
+      navE && navE.soon ? h('div', { class: 'notice amber soon-banner', role: 'status', text: t('soon_banner') }) : null,
       pa ? h('a', { class: 'btn btn-primary primary-action', href: pa[1], text: t(pa[0]) }) : null
     ]));
     document.title = t(tt[0]) + ' · ' + t('brand');
