@@ -76,3 +76,11 @@ table.cmp tr.placeholder td{color:var(--muted);font-style:italic}
 .toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(90px);background:#0f172a;color:#fff;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:700;z-index:100;opacity:0;transition:all .25s ease;max-width:92vw;text-align:center}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .hidden{display:none!important}
+
+.ac-wrap{position:relative;min-width:0}
+.ac-list{position:absolute;inset-inline:0;top:100%;z-index:30;max-height:240px;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);margin-top:2px;padding:4px}
+.ac-list.hidden{display:none}
+.ac-item{display:flex;flex-direction:column;align-items:flex-start;gap:1px;width:100%;text-align:start;border:0;background:transparent;padding:7px 8px;border-radius:8px;cursor:pointer;font-family:inherit}
+.ac-item:hover,.ac-item:focus{background:var(--primary-soft)}
+.ac-title{font-size:13px;font-weight:700;color:var(--ink)}
+.ac-meta{font-size:11px;color:var(--muted);direction:ltr}

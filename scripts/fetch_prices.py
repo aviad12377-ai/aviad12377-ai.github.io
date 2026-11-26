@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
-"""Fetch Yahoo Finance chart quotes server-side and write prices.json.
+"""Fetch Yahoo Finance quotes server-side and write prices.json.
 
 Standard library only. No secrets. Tolerates per-symbol failures.
-Symbol universe: scripts/universe.json (TA-35, S&P 100, Israeli banks, FX).
+
+Symbol universe: every list in scripts/universe.json (TA-35, S&P 100,
+Israeli banks, US ETFs, crypto, FX, …) plus the optional
+scripts/extra_tickers.json list that can be appended between releases.
+
+Uses the Yahoo spark endpoint in batches for speed, then falls back to
+the per-symbol chart endpoint for any symbol the batch missed.
 """
 from __future__ import annotations
 
@@ -23,26 +29,51 @@ except ImportError:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parent.parent
 UNIVERSE_PATH = Path(__file__).resolve().parent / "universe.json"
+EXTRA_PATH = Path(__file__).resolve().parent / "extra_tickers.json"
 USER_AGENT = (
-    "Mozilla/5.0 (compatible; options-calc-prices/1.0; "
+    "Mozilla/5.0 (compatible; options-calc-prices/1.1; "
     "+https://aviad12377-ai.github.io/)"
 )
-RETRIES = 3
+RETRIES = 4
 TIMEOUT = 20
-BATCH_SIZE = 8
-BATCH_PAUSE = 0.25
+SPARK_BATCH = 20
+SPARK_PAUSE = 0.3
+CHART_BATCH = 8
+CHART_PAUSE = 0.25
+
+
+def _add_symbol(sym, seen: set[str], symbols: list[str]) -> None:
+    if not isinstance(sym, str):
+        return
+    sym = sym.strip()
+    if not sym or sym in seen:
+        return
+    seen.add(sym)
+    symbols.append(sym)
 
 
 def load_symbols() -> list[str]:
     data = json.loads(UNIVERSE_PATH.read_text(encoding="utf-8"))
     seen: set[str] = set()
     symbols: list[str] = []
-    for key in ("banks", "ta35", "sp100", "fx"):
-        for item in data.get(key) or []:
-            sym = item["symbol"] if isinstance(item, dict) else item
-            if sym not in seen:
-                seen.add(sym)
-                symbols.append(sym)
+    for key, val in data.items():
+        if key == "sources" or not isinstance(val, list):
+            continue
+        for item in val:
+            if isinstance(item, dict):
+                _add_symbol(item.get("symbol") or item.get("ticker"), seen, symbols)
+            else:
+                _add_symbol(item, seen, symbols)
+    if EXTRA_PATH.exists():
+        extra = json.loads(EXTRA_PATH.read_text(encoding="utf-8"))
+        if isinstance(extra, dict):
+            extra = extra.get("symbols") or extra.get("tickers") or []
+        if isinstance(extra, list):
+            for item in extra:
+                if isinstance(item, dict):
+                    _add_symbol(item.get("symbol") or item.get("ticker"), seen, symbols)
+                else:
+                    _add_symbol(item, seen, symbols)
     return symbols
 
 
@@ -51,6 +82,14 @@ def chart_url(symbol: str) -> str:
         "https://query1.finance.yahoo.com/v8/finance/chart/"
         + quote(symbol, safe="")
         + "?range=1d&interval=1d"
+    )
+
+
+def spark_url(symbols: list[str]) -> str:
+    joined = ",".join(quote(s, safe="") for s in symbols)
+    return (
+        "https://query1.finance.yahoo.com/v7/finance/spark"
+        f"?symbols={joined}&range=1d&interval=1d"
     )
 
 
@@ -68,7 +107,18 @@ def http_json(url: str) -> dict:
             with urlopen(req, timeout=TIMEOUT) as resp:
                 raw = resp.read().decode("utf-8", "replace")
             return json.loads(raw)
-        except (HTTPError, URLError, TimeoutError, ValueError, OSError) as exc:
+        except HTTPError as exc:
+            last_err = exc
+            # Honor Retry-After on 429; otherwise back off.
+            delay = 1.5 * (attempt + 1)
+            if exc.code == 429:
+                retry_after = exc.headers.get("Retry-After") if exc.headers else None
+                try:
+                    delay = max(delay, float(retry_after))
+                except (TypeError, ValueError):
+                    delay = max(delay, 8 * (attempt + 1))
+            time.sleep(delay)
+        except (URLError, TimeoutError, ValueError, OSError) as exc:
             last_err = exc
             time.sleep(1.5 * (attempt + 1))
     raise RuntimeError(f"fetch failed after {RETRIES} tries: {last_err}")
@@ -123,6 +173,9 @@ def infer_hours(symbol: str, exchange: str | None, tz_name: str | None) -> str:
         if wd == 6 and minutes < 17 * 60:
             return "closed"
         return "open"
+    # 24/7 crypto
+    if symbol.endswith("-USD") and exchange in {"CCC", "CCY"}:
+        return "open"
     now = local(tz_name or "America/New_York")
     if now.weekday() >= 5:
         return "closed"
@@ -142,11 +195,7 @@ def market_state(meta: dict, symbol: str) -> str:
     return infer_hours(symbol, meta.get("exchangeName"), meta.get("exchangeTimezoneName"))
 
 
-def parse_quote(payload: dict, symbol: str) -> dict:
-    result = (payload.get("chart") or {}).get("result") or []
-    if not result:
-        raise RuntimeError("no chart result")
-    meta = result[0].get("meta") or {}
+def quote_from_meta(meta: dict, symbol: str) -> dict:
     raw_price = meta.get("regularMarketPrice")
     if not isinstance(raw_price, (int, float)) or raw_price <= 0:
         raise RuntimeError("no regularMarketPrice")
@@ -170,6 +219,30 @@ def parse_quote(payload: dict, symbol: str) -> dict:
         "exchange": meta.get("exchangeName") or None,
         "state": market_state(meta, symbol),
     }
+
+
+def parse_quote(payload: dict, symbol: str) -> dict:
+    result = (payload.get("chart") or {}).get("result") or []
+    if not result:
+        raise RuntimeError("no chart result")
+    meta = result[0].get("meta") or {}
+    return quote_from_meta(meta, symbol)
+
+
+def parse_spark(payload: dict) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    results = (payload.get("spark") or {}).get("result") or []
+    for item in results:
+        symbol = item.get("symbol")
+        responses = item.get("response") or []
+        if not symbol or not responses:
+            continue
+        meta = responses[0].get("meta") or {}
+        try:
+            out[symbol] = quote_from_meta(meta, symbol)
+        except Exception:
+            continue
+    return out
 
 
 def fetch_one(symbol: str) -> tuple[str, dict | None, str | None]:
@@ -210,11 +283,27 @@ def load_existing(path: Path) -> dict:
 def main(argv: list[str]) -> int:
     out_path = Path(argv[1]) if len(argv) > 1 else ROOT / "prices.json"
     symbols = load_symbols()
+    if not symbols:
+        print("ERROR: no symbols in universe.json / extra_tickers.json", file=sys.stderr)
+        return 1
     fetched: dict[str, dict] = {}
     errors: dict[str, str] = {}
 
-    for i in range(0, len(symbols), BATCH_SIZE):
-        batch = symbols[i : i + BATCH_SIZE]
+    remaining = list(symbols)
+    for i in range(0, len(remaining), SPARK_BATCH):
+        batch = remaining[i : i + SPARK_BATCH]
+        try:
+            payload = http_json(spark_url(batch))
+            got = parse_spark(payload)
+            fetched.update(got)
+        except Exception as exc:  # noqa: BLE001
+            print(f"WARN spark batch {batch[0]}…: {exc}", file=sys.stderr)
+        if i + SPARK_BATCH < len(remaining):
+            time.sleep(SPARK_PAUSE)
+
+    missing = [s for s in symbols if s not in fetched]
+    for i in range(0, len(missing), CHART_BATCH):
+        batch = missing[i : i + CHART_BATCH]
         with concurrent.futures.ThreadPoolExecutor(max_workers=min(6, len(batch))) as pool:
             for symbol, quote, err in pool.map(fetch_one, batch):
                 if quote:
@@ -222,8 +311,8 @@ def main(argv: list[str]) -> int:
                 else:
                     errors[symbol] = err or "unknown error"
                     print(f"WARN {symbol}: {err}", file=sys.stderr)
-        if i + BATCH_SIZE < len(symbols):
-            time.sleep(BATCH_PAUSE)
+        if i + CHART_BATCH < len(missing):
+            time.sleep(CHART_PAUSE)
 
     old_quotes = load_existing(out_path)
     quotes = dict(old_quotes)
@@ -244,7 +333,10 @@ def main(argv: list[str]) -> int:
         "quotes": {k: quotes[k] for k in sorted(quotes)},
     }
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {out_path} with {len(payload['quotes'])} quotes ({len(fetched)} fresh, {len(errors)} failed).")
+    print(
+        f"Wrote {out_path} with {len(payload['quotes'])} quotes "
+        f"({len(fetched)} fresh, {len(errors)} failed, {len(symbols)} requested)."
+    )
     return 0
 
 

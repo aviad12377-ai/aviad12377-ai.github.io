@@ -1,0 +1,6093 @@
+{
+  "generatedAt": "2026-11-26T19:33:30Z",
+  "source": "Wikidata SPARQL: items with P414 = Tel Aviv Stock Exchange (Q1507974). Security numbers derived from Israeli ISINs. Official TASE APIs were not reachable without a key (HTTP 403 / Data Hub). data.gov.il has no matching dataset. Mutual-fund names and numbers: Fair public fund pages.",
+  "count": 676,
+  "withSecurityNumber": 132,
+  "withYahooSymbol": 305,
+  "securities": [
+    {
+      "id": "5133236",
+      "he": "ATF מחקה (40) אינדקס בנקים וביטוח ישראל",
+      "en": "ATF 40 iNDEX Israel Banks & Insurance Index IL",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "fund"
+    },
+    {
+      "id": null,
+      "he": "GoTo",
+      "en": "GoTo",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "IBI בית השקעות",
+      "en": "I.b.i Investment House Ltd",
+      "symbol": "IBI.TA",
+      "ticker": "IBI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "Terminal X",
+      "en": "Terminal X Online Ltd",
+      "symbol": "TRX.TA",
+      "ticker": "TRX",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "373019",
+      "he": "אאורה השקעות",
+      "en": "Aura Investments Ltd.",
+      "symbol": "AURA.TA",
+      "ticker": "AURA",
+      "isin": "IL0003730194",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אב-גד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אבגול",
+      "en": "Avgol Industries 1953 Ltd.",
+      "symbol": "AVGL.TA",
+      "ticker": "AVGL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1105055",
+      "he": "אבוג'ן",
+      "en": "Evogene Ltd",
+      "symbol": "EVGN.TA",
+      "ticker": "EVGN",
+      "isin": "IL0011050551",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אביב ארלון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אביב בניה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אביליטי",
+      "en": "Ability Inc",
+      "symbol": "ABIL.TA",
+      "ticker": "ABIL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אברא טכנולוגיות מידע",
+      "en": "Abra Information Technologies Ltd.",
+      "symbol": "ABRA.TA",
+      "ticker": "ABRA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אברבוך",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אברות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אדגר השקעות ופיתוח",
+      "en": "Adgar Investment & Development Ltd",
+      "symbol": "ADGR.TA",
+      "ticker": "ADGR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אדמה פתרונות לחקלאות",
+      "en": "Adama Agricultural Solutions Ltd.",
+      "symbol": "ADAMA.TA",
+      "ticker": "ADAMA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "או.אר.טי.",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1141571",
+      "he": "או.פי.סי אנרגיה",
+      "en": "Opc Energy Ltd",
+      "symbol": "OPCE.TA",
+      "ticker": "OPCE",
+      "isin": "IL0011415713",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אוברסיז",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1082965",
+      "he": "אודיוקודס",
+      "en": "Audiocodes Ltd.",
+      "symbol": "AUDC.TA",
+      "ticker": "AUDC",
+      "isin": "IL0010829658",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אוטומקס מוטורס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אול-יר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אולמד סולושנס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אוסטרליה ישראל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אופל בלאנס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אופקו הלת'",
+      "en": "Opko Health Inc.",
+      "symbol": "OPK.TA",
+      "ticker": "OPK",
+      "isin": "US68375N1037",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אורביט טכנולוג'יס",
+      "en": "Orbit Technologies Ltd.",
+      "symbol": "ORBI.TA",
+      "ticker": "ORBI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אורד",
+      "en": "Orad",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אורה סמארט אייר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אורון קבוצה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אוריין ש.מ.",
+      "en": "Orian Sh.m. Ltd.",
+      "symbol": "ORIN.TA",
+      "ticker": "ORIN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אורמד פארמסוטיקלס",
+      "en": "Oramed Pharmaceuticals",
+      "symbol": "ORMP.TA",
+      "ticker": "ORMP",
+      "isin": "US68403P2039",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אורמת טכנולוגיות",
+      "en": "Ormat Technologies",
+      "symbol": "ORA.TA",
+      "ticker": "ORA",
+      "isin": "US6866881021",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אורשי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "715011",
+      "he": "אזורים",
+      "en": "Azorim-investment  Development & Construction Co. Ltd.",
+      "symbol": "AZRM.TA",
+      "ticker": "AZRM",
+      "isin": "IL0007150118",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אטראו שוקי הון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אי די בי חברה לפיתוח",
+      "en": "Idb Development Corporation Ltd.",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אי.טי.ג'י.איי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איביאי טכ עילית",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "etf"
+    },
+    {
+      "id": null,
+      "he": "אידומו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איי ארגנטו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איי ספאק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איי.אי. מערכות שיחה",
+      "en": "Ai Conversation Systems Ltd",
+      "symbol": "AICS.TA",
+      "ticker": "AICS",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "431015",
+      "he": "איי.אי.אס החזקות",
+      "en": "Ies Holdings Ltd.",
+      "symbol": "IES.TA",
+      "ticker": "IES",
+      "isin": "IL0004310152",
+      "type": "stock"
+    },
+    {
+      "id": "1129501",
+      "he": "איי.די.איי. חברה לביטוח",
+      "en": "I.d.i. Insurance Company Ltd",
+      "symbol": "IDIN.TA",
+      "ticker": "IDIN",
+      "isin": "IL0011295016",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איידיאיי הנפקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איידנטי הלת'",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איילון ביטוח הנ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איילון חברה לביטוח",
+      "en": "Ayalon Insurance Company",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אייסקיור מדיקל",
+      "en": "IceCure Medical",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אייקון גרופ",
+      "en": "Icon Group Ltd",
+      "symbol": "ICON.TA",
+      "ticker": "ICON",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אייראנג'י",
+      "en": "Airengy Ltd.",
+      "symbol": "AUGN.TA",
+      "ticker": "AUGN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איירטאצ'",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1095835",
+      "he": "איירפורט סיטי",
+      "en": "Airport City Ltd",
+      "symbol": "ARPT.TA",
+      "ticker": "ARPT",
+      "isin": "IL0010958358",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אילקס מדיקל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אימאג'סאט אינטרנשיונל",
+      "en": "Imagesat International (I.s.i) Ltd.",
+      "symbol": "ISI.TA",
+      "ticker": "ISI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אימד אינפיניטי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אימפקס אי או",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אימקו",
+      "en": "IMCO",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "5136262",
+      "he": "אינווסטור 360 (4D) גמישה",
+      "en": "Investor 360 4D Flexible",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "fund"
+    },
+    {
+      "id": null,
+      "he": "אינטליקנה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אינטר תעשיות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אינטרגאמא",
+      "en": "Inter-gamma Investment Ltd.",
+      "symbol": "INTR.TA",
+      "ticker": "INTR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אינטרנט גולד - קווי זהב",
+      "en": "Internet Gold Golden Lines Ltd",
+      "symbol": "IGLD.TA",
+      "ticker": "IGLD",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1106376",
+      "he": "אינטרקיור",
+      "en": "InterCure",
+      "symbol": null,
+      "ticker": null,
+      "isin": "IL0011063760",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אינפימר-ש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1132356",
+      "he": "אינרום",
+      "en": "Inrom Construction Industries Ltd",
+      "symbol": "INRM.TA",
+      "ticker": "INRM",
+      "isin": "IL0011323560",
+      "type": "stock"
+    },
+    {
+      "id": "1081074",
+      "he": "איסתא ליינס",
+      "en": "Issta Lines Ltd.",
+      "symbol": "ISTA.TA",
+      "ticker": "ISTA",
+      "isin": "IL0010810740",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אירובוטיקס",
+      "en": "Airobotics",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אירודרום קבוצה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "איתמר מדיקל (ישראל)",
+      "en": "Itamar Medical Ltd",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1087824",
+      "he": "אל על",
+      "en": "EL AL Israel Airlines Ltd.",
+      "symbol": "ELAL.TA",
+      "ticker": "ELAL",
+      "isin": "IL0010878242",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלביט הדמיה",
+      "en": "Elbit Imaging Ltd.",
+      "symbol": "EMIT.TA",
+      "ticker": "EMIT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלביט טכנ-ש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1081124",
+      "he": "אלביט מערכות",
+      "en": "Elbit Systems Ltd.",
+      "symbol": "ESLT.TA",
+      "ticker": "ESLT",
+      "isin": "IL0010811243",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלדן תחבורה",
+      "en": "Eldan Transportation",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלה השקעות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלוט תקשורת",
+      "en": "Allot Ltd",
+      "symbol": "ALLT.TA",
+      "ticker": "ALLT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלומה",
+      "en": "Aluma",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלומיי קפיטל בע\"מ",
+      "en": "Ellomay Capital Ltd",
+      "symbol": "ELLO.TA",
+      "ticker": "ELLO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלון גז",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלון רבוע כחול ישראל",
+      "en": "Alon Blue Square Israel Ltd",
+      "symbol": "BSI.TA",
+      "ticker": "BSI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "390013",
+      "he": "אלוני חץ",
+      "en": "Alony Hetz Properties & Investments Ltd.",
+      "symbol": "ALHE.TA",
+      "ticker": "ALHE",
+      "isin": "IL0003900136",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלטיטיוד השקעות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1184936",
+      "he": "אלטשולר שחם",
+      "en": "Altshuler Shaham",
+      "symbol": "ALTF.TA",
+      "ticker": "ALTF",
+      "isin": "IL0011849366",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלמדה ונצ'רס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלמוגים החזקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלמור חשמל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלספק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלעד מגורים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלעד מערכות תוכנה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "694034",
+      "he": "אלקו",
+      "en": "Supergas Energy Ltd",
+      "symbol": "ELCO.TA",
+      "ticker": "ELCO",
+      "isin": "IL0006940345",
+      "type": "stock"
+    },
+    {
+      "id": "739037",
+      "he": "אלקטרה (חברה)",
+      "en": "Electra Ltd.",
+      "symbol": "ELTR.TA",
+      "ticker": "ELTR",
+      "isin": "IL0007390375",
+      "type": "stock"
+    },
+    {
+      "id": "5010129",
+      "he": "אלקטרה מוצרי צריכה",
+      "en": "Electra Consumer Products (1970) Ltd",
+      "symbol": "ECP.TA",
+      "ticker": "ECP",
+      "isin": "IL0050101299",
+      "type": "stock"
+    },
+    {
+      "id": "1094044",
+      "he": "אלקטרה נדל\"ן",
+      "en": "Electra Real Estate Ltd",
+      "symbol": "ELCRE.TA",
+      "ticker": "ELCRE",
+      "isin": "IL0010940448",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלקטרה פאוור",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלקטריאון וירלס",
+      "en": "Electreon Wireless",
+      "symbol": "ELWS.TA",
+      "ticker": "ELWS",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלרוב נדל\"ן ומלונאות",
+      "en": "Alrov Properties & Lodgings Ltd.",
+      "symbol": "אלרנ.TA",
+      "ticker": "אלרנ",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלרוב נדל\"ן ומלונאות",
+      "en": "Alrov Properties & Lodgings Ltd.",
+      "symbol": "ALRP.TA",
+      "ticker": "ALRP",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אלרון",
+      "en": "Elron Ventures Ltd",
+      "symbol": "ELRN.TA",
+      "ticker": "ELRN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אם.אר.פי השקעות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אמ אר אר",
+      "en": "MRR Thirteen Limited",
+      "symbol": "MRR.TA",
+      "ticker": "MRR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אמ.ג'י.ג'י",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אמ.די.ג'י.",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אמ.וו.אל ישראל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1097278",
+      "he": "אמות השקעות",
+      "en": "Amot Investments Ltd.",
+      "symbol": "AMOT.TA",
+      "ticker": "AMOT",
+      "isin": "IL0010972789",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אמיליה פיתוח",
+      "en": "Emilia Development (O.f.g) Ltd.",
+      "symbol": "EMDV.TA",
+      "ticker": "EMDV",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אמנת ניהול ומערכות",
+      "en": "Amanet Management & Systems Ltd.",
+      "symbol": "AMAN.TA",
+      "ticker": "AMAN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אנדימד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אנויז'ן מדיקל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1131952",
+      "he": "אנלייבקס תרפיוטיקס בע\"מ",
+      "en": "Enlivex",
+      "symbol": "ENLV.TA",
+      "ticker": "ENLV",
+      "isin": "IL0011319527",
+      "type": "stock"
+    },
+    {
+      "id": "720011",
+      "he": "אנלייט אנרגיה מתחדשת",
+      "en": "Enlight Renewable Energy Ltd.",
+      "symbol": "ENLT.TA",
+      "ticker": "ENLT",
+      "isin": "IL0007200111",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אנליסט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אנקור הזדמנויות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אנקור פרופרטיס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אנרג'יאן",
+      "en": "Energean Plc",
+      "symbol": "ENOG.TA",
+      "ticker": "ENOG",
+      "isin": "GB00BG12Y042",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אנרג'ין טכנו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1123355",
+      "he": "אנרג'יקס אנרגיות מתחדשות",
+      "en": "Energix-renewable Energies Ltd",
+      "symbol": "ENRG.TA",
+      "ticker": "ENRG",
+      "isin": "IL0011233553",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אס.אר אקורד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אסטיגי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אספן גרופ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אפולו פאוור",
+      "en": "Apollo Power Ltd",
+      "symbol": "APLP.TA",
+      "ticker": "APLP",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אפי קפיטל נדל''ן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1182591",
+      "he": "אפיטומי מדיקל",
+      "en": "Epitomee Medical Ltd",
+      "symbol": "EPIT.TA",
+      "ticker": "EPIT",
+      "isin": "IL0011825911",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אפסלון ברנדס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אפקון החזקות",
+      "en": "Afcon Holdings Ltd.",
+      "symbol": "AFHL.TA",
+      "ticker": "AFHL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1097948",
+      "he": "אפריקה ישראל מגורים",
+      "en": "Africa Israel Residences Ltd.",
+      "symbol": "AFRE.TA",
+      "ticker": "AFRE",
+      "isin": "IL0010979487",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אפריקה ישראל נכסים",
+      "en": "Afi Properties Ltd",
+      "symbol": "AFPR.TA",
+      "ticker": "AFPR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אקוואריוס מנועים",
+      "en": "Aquarius Engines (A.m) Ltd",
+      "symbol": "AQUA.TA",
+      "ticker": "AQUA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "755017",
+      "he": "אקויטל",
+      "en": "Equital Ltd.",
+      "symbol": "EQTL.TA",
+      "ticker": "EQTL",
+      "isin": "IL0007550176",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אקונרג'י",
+      "en": "Econergy",
+      "symbol": "ECNR.TA",
+      "ticker": "ECNR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אקופיה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אקס טי אל",
+      "en": "XTL Bio",
+      "symbol": "XTLB.TA",
+      "ticker": "XTLB",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אקסטל לימיטד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אקסיליון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אקסל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אר פי אופטיקל לאב",
+      "en": null,
+      "symbol": "ארפי.TA",
+      "ticker": "ארפי",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אראסאל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ארגו פרופרטיז",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ארד",
+      "en": "Arad Ltd.",
+      "symbol": "ARD.TA",
+      "ticker": "ARD",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ארזים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ארי נדל''ן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אריקה בי-קיור",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ארית תעשיות",
+      "en": "ARYT Industries",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ארן מו''פ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אשדר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1132315",
+      "he": "אשטרום",
+      "en": "Ashtrom Group Ltd",
+      "symbol": "ASHG.TA",
+      "ticker": "ASHG",
+      "isin": "IL0011323156",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "אשטרום נכסים",
+      "en": "Ashtrom Properties",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ב. יאיר",
+      "en": "Themis G.r.e.n. Ltd",
+      "symbol": "TMIS.TA",
+      "ticker": "TMIS",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "באבלס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "באטמ תקשורת מתקדמת",
+      "en": "Batm Advanced Communications Ltd",
+      "symbol": "BVC.TA",
+      "ticker": "BVC",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "באפ טכנולוגיות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בגירה מ. החזקות",
+      "en": "Bagira M. holdings",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בול מסחר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בוליגו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "485011",
+      "he": "בונוס ביוגרופ",
+      "en": "Bonus Biogroup Ltd.",
+      "symbol": "BONS.TA",
+      "ticker": "BONS",
+      "isin": "IL0004850116",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בוני התיכון",
+      "en": "Bonei Hatichon Civil Engineering & Infrastructures Ltd.",
+      "symbol": "BOTI.TA",
+      "ticker": "BOTI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "230011",
+      "he": "בזק",
+      "en": "Bezeq The Israeli Telecommunication Corp. Ltd.",
+      "symbol": "BEZQ.TA",
+      "ticker": "BEZQ",
+      "isin": "IL0002300114",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בי קומיוניקיישנס",
+      "en": "B Communications Ltd",
+      "symbol": "BCOM.TA",
+      "ticker": "BCOM",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1097260",
+      "he": "ביג מרכזי קניות",
+      "en": "BIG Shopping Centers Ltd",
+      "symbol": "BIG.TA",
+      "ticker": "BIG",
+      "isin": "IL0010972607",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ביג-טק 50 מו''פ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ביו דבש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ביו ויו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ביו מיט פודטק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ביולייט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1101518",
+      "he": "ביוליין",
+      "en": "Bioline Rx Ltd.",
+      "symbol": "BLRX.TA",
+      "ticker": "BLRX",
+      "isin": "IL0011015182",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ביומילק",
+      "en": "Wilk Technologies Ltd",
+      "symbol": "WILK.TA",
+      "ticker": "WILK",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ביומיקס",
+      "en": "Biomx",
+      "symbol": "PHGE.TA",
+      "ticker": "PHGE",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ביונ תלת מימד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בינלאומי הנפקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בירמן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בית בכפר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בית הזהב",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בית וגג",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בכורי שדה אחז'",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בלייד ריינג'ר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בליץ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בלנדר טכנו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בנק אגוד לישראל",
+      "en": "Union Bank Of Israel Ltd.",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "691212",
+      "he": "בנק דיסקונט לישראל",
+      "en": "Israel Discount Bank Ltd.",
+      "symbol": "DSCT.TA",
+      "ticker": "DSCT",
+      "isin": "IL0006912120",
+      "type": "stock"
+    },
+    {
+      "id": "662577",
+      "he": "בנק הפועלים",
+      "en": "Bank Hapoalim B.M.",
+      "symbol": "POLI.TA",
+      "ticker": "POLI",
+      "isin": "IL0006625771",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בנק ירושלים",
+      "en": "Bank Of Jerusalem L.t.d.",
+      "symbol": "JBNK.TA",
+      "ticker": "JBNK",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "604611",
+      "he": "בנק לאומי לישראל",
+      "en": "Bank Leumi Le- Israel B.m.",
+      "symbol": "LUMI.TA",
+      "ticker": "LUMI",
+      "isin": "IL0006046119",
+      "type": "stock"
+    },
+    {
+      "id": "695437",
+      "he": "בנק מזרחי טפחות",
+      "en": "Mizrahi Tefahot Bank Ltd.",
+      "symbol": "MZTF.TA",
+      "ticker": "MZTF",
+      "isin": "IL0006954379",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בראק קפיטל פרופרטיז",
+      "en": "Brack Capital Properties N.v",
+      "symbol": "BCNV.TA",
+      "ticker": "BCNV",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1100718",
+      "he": "בריינסוויי",
+      "en": "Brainsway Ltd.",
+      "symbol": "BWAY.TA",
+      "ticker": "BWAY",
+      "isin": "IL0011007189",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "בריל",
+      "en": "Brill Shoe Industries Ltd.",
+      "symbol": "BRIL.TA",
+      "ticker": "BRIL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ברימאג דיגיטל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ברם תעשיות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ברנד תעשיות",
+      "en": "Brand Group(M.g) Ltd",
+      "symbol": "BRND.TA",
+      "ticker": "BRND",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ברנמילר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ברקת קפיטל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "2590248",
+      "he": "בתי זיקוק לנפט",
+      "en": "Oil Refineries Ltd.",
+      "symbol": "ORL.TA",
+      "ticker": "ORL",
+      "isin": "IL0025902482",
+      "type": "stock"
+    },
+    {
+      "id": "126011",
+      "he": "ג'י סיטי",
+      "en": "G City Ltd",
+      "symbol": "GCT.TA",
+      "ticker": "GCT",
+      "isin": "IL0001260111",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ג'י.אף.איי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ג'י.אף.סי גרין",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ג'י.פי. גלובל-ש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ג'נגו קונקטיביטי",
+      "en": "Jungo Connectivity Ltd",
+      "symbol": "JNGO.TA",
+      "ticker": "JNGO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ג'נסל",
+      "en": "GenCell",
+      "symbol": "גנסל.TA",
+      "ticker": "גנסל",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ג'נסל",
+      "en": "GenCell",
+      "symbol": "GNCL.TA",
+      "ticker": "GNCL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ג'נריישן קפיטל",
+      "en": "Generation Capital",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "fund"
+    },
+    {
+      "id": null,
+      "he": "גאון אחזקות",
+      "en": "B.gaon Holdings Ltd.",
+      "symbol": "GAON.TA",
+      "ticker": "GAON",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גב-ים",
+      "en": "Gav-yam Lands Corp.ltd",
+      "symbol": "GVYM.TA",
+      "ticker": "GVYM",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גבאי מניבים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גבעות עולם חיפושי נפט",
+      "en": "Givot Olam Oil Exploration-limited Partnership(1993)",
+      "symbol": "GIVO.TA",
+      "ticker": "GIVO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גדסדן נכסים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גולד בונד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גולן פלסטיק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גיבוי אחזקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גילת סאטקום",
+      "en": "Gilat Telecom Global Ltd",
+      "symbol": "GLTL.TA",
+      "ticker": "GLTL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1082510",
+      "he": "גילת רשתות לווין",
+      "en": "Gilat Satellite Networks Ltd.",
+      "symbol": "GILT.TA",
+      "ticker": "GILT",
+      "isin": "IL0010825102",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גיקס אינטרנט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גירון פיתוח",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גלאסבוקס",
+      "en": "Glassbox Ltd",
+      "symbol": "GLBX.TA",
+      "ticker": "GLBX",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גלוב אנרגיה יהש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גלובל כנפיים ליסינג",
+      "en": "Global Knafaim Leasing Ltd",
+      "symbol": "GKL.TA",
+      "ticker": "GKL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גלוברנדס גרופ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גלילאו טק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גלעד מאי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גלעם",
+      "en": "Galam",
+      "symbol": "GLAM.TA",
+      "ticker": "GLAM",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גמא ניהול וסליקה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גמלא הראל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גן שמואל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גניגר",
+      "en": "Ginegar",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גרופ 107",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "גרייס ברידינג",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דה זראסאי גרופ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דה לסר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דוניץ",
+      "en": "Dunietz Brothers",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דור אלון",
+      "en": "Dor Alon Energy In Israel (1988) Ltd",
+      "symbol": "DRAL.TA",
+      "ticker": "DRAL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דורסל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דורסל החזקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "די.אן.איי קבוצה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "די.אס.איי.טי פתרונות",
+      "en": "DSIT Solutions",
+      "symbol": "DSIT.TA",
+      "ticker": "DSIT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דיסקונט מנפיקים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1173491",
+      "he": "דיפלומט",
+      "en": "Diplomat Holdings Ltd",
+      "symbol": "DIPL.TA",
+      "ticker": "DIPL",
+      "isin": "IL0011734915",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דליה אנרגיה",
+      "en": "Dalia Energy Companies",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דלק ישראל נכסים",
+      "en": null,
+      "symbol": "דלנכ.TA",
+      "ticker": "דלנכ",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "829010",
+      "he": "דלק מערכות רכב",
+      "en": "Delek Automotive Systems Ltd.",
+      "symbol": "DLEA.TA",
+      "ticker": "DLEA",
+      "isin": "IL0008290103",
+      "type": "stock"
+    },
+    {
+      "id": "475020",
+      "he": "דלק קידוחים",
+      "en": "Newmed Energy-limited Partnership",
+      "symbol": "NWMD.TA",
+      "ticker": "NWMD",
+      "isin": "IL0004750209",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דלשה קפיטל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "627034",
+      "he": "דלתא גליל תעשיות",
+      "en": "Delta Galil Industries Ltd.",
+      "symbol": "DELT.TA",
+      "ticker": "DELT",
+      "isin": "IL0006270347",
+      "type": "stock"
+    },
+    {
+      "id": "1173699",
+      "he": "דלתא ישראל מותגים",
+      "en": "Delta Israel Brands Ltd",
+      "symbol": "DLTI.TA",
+      "ticker": "DLTI",
+      "isin": "IL0011736993",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "דקמא קפיטל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "האב אבטחת מידע",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1159029",
+      "he": "הבורסה לניירות ערך בתל אביב",
+      "en": "Tel Aviv Stock Exchange",
+      "symbol": "TASE.TA",
+      "ticker": "TASE",
+      "isin": "IL0011590291",
+      "type": "stock"
+    },
+    {
+      "id": "593038",
+      "he": "הבנק הבינלאומי",
+      "en": "First International Bank Of Israel Ltd.",
+      "symbol": "FIBI.TA",
+      "ticker": "FIBI",
+      "isin": "IL0005930388",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הדסית ביו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הולמס פלייס",
+      "en": "Holmes Place International Ltd",
+      "symbol": "HLMS.TA",
+      "ticker": "HLMS",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הום ביוגז",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הזדמנות ישראלית",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "576017",
+      "he": "החברה לישראל",
+      "en": "The Israel Corporation Ltd.",
+      "symbol": "ILCO.TA",
+      "ticker": "ILCO",
+      "isin": "IL0005760173",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הייב 2040 מו''פ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הייפר גלובל",
+      "en": "Hiper Global Ltd",
+      "symbol": "HIPR.TA",
+      "ticker": "HIPR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הייקון מערכות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הילה משרדים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הכשרה חברה לביטוח",
+      "en": "Hachshara Insurance Company Ltd",
+      "symbol": "ILDN.TA",
+      "ticker": "ILDN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "612010",
+      "he": "הכשרת הישוב",
+      "en": "Israel Land Development Company",
+      "symbol": "ILDC.TA",
+      "ticker": "ILDC",
+      "isin": "IL0006120104",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הכשרת הישוב התחדשות עירונית בישראל",
+      "en": "Israel Land Development Urban Renewal Ltd",
+      "symbol": "ILDR.TA",
+      "ticker": "ILDR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "המשביר לצרכן",
+      "en": "Hamashbir 365 Ltd",
+      "symbol": "MSBI.TA",
+      "ticker": "MSBI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "767012",
+      "he": "הפניקס אחזקות",
+      "en": "The Phoenix Holdings Ltd",
+      "symbol": "PHOE.TA",
+      "ticker": "PHOE",
+      "isin": "IL0007670123",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הפניקס גיוסי הו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "הראל הנפקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "585018",
+      "he": "הראל השקעות",
+      "en": "Harel Insurance Investments & Financial Services Ltd.",
+      "symbol": "HARL.TA",
+      "ticker": "HARL",
+      "isin": "IL0005850180",
+      "type": "stock"
+    },
+    {
+      "id": "5129283",
+      "he": "הראל מחקה (4D)יNASDAQ 100",
+      "en": "Harel Htf 4D NASDAQ 100",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "fund"
+    },
+    {
+      "id": null,
+      "he": "הרץ פרופרטיס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "השקעות דיסקונט",
+      "en": "Discount Investment Corp. Ltd.",
+      "symbol": "DISI.TA",
+      "ticker": "DISI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "התעשייה האווירית לישראל",
+      "en": "Israel Aerospace Industries Ltd",
+      "symbol": "ARSP.TA",
+      "ticker": "ARSP",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "161018",
+      "he": "וואן טכנולוגיות",
+      "en": "One Software Technologies Ltd",
+      "symbol": "ONE.TA",
+      "ticker": "ONE",
+      "isin": "IL0001610182",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ווטרסטון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "וויי-בוקס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ווינד באז",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ווישור גלובלטק",
+      "en": "Wesure Global Tech Ltd.",
+      "symbol": "WESR.TA",
+      "ticker": "WESR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "וונטייז-ש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ווסטדייל אמריקה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "וורטון פרופרטיז",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ויז'ן סיגמא",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "וילאר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "וילי פוד",
+      "en": "G.willi-food International",
+      "symbol": "WILC.TA",
+      "ticker": "WILC",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ויליפוד אינטרנש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ויקטורי",
+      "en": "Victory",
+      "symbol": "VCTR.TA",
+      "ticker": "VCTR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ויתניה",
+      "en": "Vitania Ltd",
+      "symbol": "VTNA.TA",
+      "ticker": "VTNA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1176387",
+      "he": "ורידיס",
+      "en": "Veridis Environment Ltd",
+      "symbol": "VRDS.TA",
+      "ticker": "VRDS",
+      "isin": "IL0011763872",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "זוז פאוור",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "זנלכל",
+      "en": "Zanlakol Ltd.",
+      "symbol": "ZNKL.TA",
+      "ticker": "ZNKL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ח.מר תעשיות",
+      "en": "C. Mer Industries Ltd.",
+      "symbol": "CMER.TA",
+      "ticker": "CMER",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "699017",
+      "he": "חברה לנכסים ולבנין",
+      "en": "Property And Building Corp. Ltd.",
+      "symbol": "PTBL.TA",
+      "ticker": "PTBL",
+      "isin": "IL0006990175",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "חברת החשמל לישראל",
+      "en": "Israel Electric Corporation",
+      "symbol": "ELEC.TA",
+      "ticker": "ELEC",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "חברת השמירה",
+      "en": "G 1 Secure Solutions Ltd.",
+      "symbol": "GOSS.TA",
+      "ticker": "GOSS",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "חברת נמלי ישראל",
+      "en": "Israel Ports-development & Assets Company",
+      "symbol": "IPC.TA",
+      "ticker": "IPC",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "חג'ג' אירופה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "חד-אסף",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1084698",
+      "he": "חילן",
+      "en": "Hilan Ltd.",
+      "symbol": "HLAN.TA",
+      "ticker": "HLAN",
+      "isin": "IL0010846983",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "חירון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "חלל תקשורת",
+      "en": "Spacecom",
+      "symbol": "SCC.TA",
+      "ticker": "SCC",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "חממה סחר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "חנן מור",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1082379",
+      "he": "טאואר סמיקונדקטור",
+      "en": "Tower Semiconductor Ltd.",
+      "symbol": "TSEM.TA",
+      "ticker": "TSEM",
+      "isin": "IL0010823792",
+      "type": "stock"
+    },
+    {
+      "id": "629014",
+      "he": "טבע תעשיות פרמצבטיות",
+      "en": "Teva Pharmaceutical Industries Ltd.",
+      "symbol": "TEVA.TA",
+      "ticker": "TEVA",
+      "isin": "IL0006290147",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טוגדר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טונדו סמארט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טופ גאם תעשיות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טופ גרופ",
+      "en": "Top Group",
+      "symbol": "TOPS.TA",
+      "ticker": "TOPS",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טורבוג'ן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טי.ג'י.איי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "103010",
+      "he": "טיב טעם",
+      "en": "Tiv Taam Holdings 1 Ltd",
+      "symbol": "TTAM.TA",
+      "ticker": "TTAM",
+      "isin": "IL0001030100",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טכנ גילוי אש גז",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טכנופלס ונצ'ר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טלסיס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טלרד",
+      "en": "Telrad Networks Ltd",
+      "symbol": "TELRAD.TA",
+      "ticker": "TELRAD",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טמפו משקאות",
+      "en": "Tempo Beverages Ltd",
+      "symbol": "TMBV.TA",
+      "ticker": "TMBV",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טקטונה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טראלייט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טראקנט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "טריא ישראל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "י.ד. ברזאני",
+      "en": null,
+      "symbol": "BRZN.TA",
+      "ticker": "BRZN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1090315",
+      "he": "י.ח. דמרי בניה ופיתוח",
+      "en": "Y.h.dimri Contruction & Development Ltd",
+      "symbol": "DIMRI.TA",
+      "ticker": "DIMRI",
+      "isin": "IL0010903156",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יו.אמ.איץ'",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יוזרוואי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יוטרון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1170000",
+      "he": "יומן אקסטנשנס",
+      "en": "Human Xtensions Ltd",
+      "symbol": "HUMX.TA",
+      "ticker": "HUMX",
+      "isin": "IL0011700007",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יונט קרדיט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יוניבו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יוניברסל מוטורס ישראל",
+      "en": "Universal Motors Israel",
+      "symbol": "UNMI.TA",
+      "ticker": "UNMI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יוניטרוניקס",
+      "en": "Unitronics (1989)(Rg) Ltd.",
+      "symbol": "UNIT.TA",
+      "ticker": "UNIT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יוניק-טק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יוניקורן טכנו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יסודות איתנים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יעקב פיננסים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יעקובי קבוצה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "יצוא",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ירושלים הנפקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ישראייר גרופ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1157403",
+      "he": "ישראכרט",
+      "en": "Isracard Ltd",
+      "symbol": "ISCD.TA",
+      "ticker": "ISCD",
+      "isin": "IL0011574030",
+      "type": "stock"
+    },
+    {
+      "id": "434019",
+      "he": "ישראל קנדה",
+      "en": "Israel Canada",
+      "symbol": "ISCN.TA",
+      "ticker": "ISCN",
+      "isin": "IL0004340191",
+      "type": "stock"
+    },
+    {
+      "id": "232017",
+      "he": "ישראמקו",
+      "en": "Isramco Negev 2 Limited Partnership",
+      "symbol": "ISRA.TA",
+      "ticker": "ISRA",
+      "isin": "IL0002320179",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ישרוטל",
+      "en": "Isrotel Ltd.",
+      "symbol": "ISRO.TA",
+      "ticker": "ISRO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "613034",
+      "he": "ישרס",
+      "en": "Isras Investment Company Ltd.",
+      "symbol": "ISRS.TA",
+      "ticker": "ISRS",
+      "isin": "IL0006130343",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "כהן פיתוח",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "כיטוב פארמה",
+      "en": "Kitov Pharma",
+      "symbol": "KTOV.TA",
+      "ticker": "KTOV",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "281014",
+      "he": "כימיקלים לישראל",
+      "en": "Icl Group Ltd",
+      "symbol": "ICL.TA",
+      "ticker": "ICL",
+      "isin": "IL0002810146",
+      "type": "stock"
+    },
+    {
+      "id": "1104280",
+      "he": "כלל ביוטכנולוגיה",
+      "en": "Clal Biotechnology Industries Ltd",
+      "symbol": "CBI.TA",
+      "ticker": "CBI",
+      "isin": "IL0011042806",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "כללביט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "כן פייט ביופרמה",
+      "en": "Can Fite Biopharma",
+      "symbol": "CANF.TA",
+      "ticker": "CANF",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "כנפיים אחזקות",
+      "en": "Knafaim Holdings Ltd.",
+      "symbol": "KNFM.TA",
+      "ticker": "KNFM",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "כפרית תעשיות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "כרמית תעשיות ממתקים",
+      "en": "Carmit Candy Industries Ltd",
+      "symbol": "CRMT.TA",
+      "ticker": "CRMT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "כרמל קורפ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לאונרדו DRS",
+      "en": "Leonardo DRS",
+      "symbol": null,
+      "ticker": null,
+      "isin": "US52661A1088",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "להב אל.אר",
+      "en": "Lahav L.r. Real Estate Ltd",
+      "symbol": "LAHAV.TA",
+      "ticker": "LAHAV",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לודז'יה",
+      "en": "Lodzia-rotex Investment Ltd.",
+      "symbol": "LODZ.TA",
+      "ticker": "LODZ",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לודן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לוי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לוינסקי עופר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1119080",
+      "he": "לוינשטין נכסים",
+      "en": "Levinstein Properties Ltd",
+      "symbol": "LVPR.TA",
+      "ticker": "LVPR",
+      "isin": "IL0011190803",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ליבנטל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ליברה חברה לביטוח",
+      "en": "Libra Insurance Company Ltd",
+      "symbol": "LBRA.TA",
+      "ticker": "LBRA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לייבפרסון",
+      "en": "Liveperson Inc.",
+      "symbol": "LPSN.TA",
+      "ticker": "LPSN",
+      "isin": "US5381461012",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לייטסטון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ליניאג תרפיוטיק",
+      "en": "Lineage Cell Therapeutics",
+      "symbol": "LCTX.TA",
+      "ticker": "LCTX",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לכיש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לסיכו",
+      "en": "Lesico Ltd",
+      "symbol": "LSCO.TA",
+      "ticker": "LSCO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לפידות חברת מחפשי נפט לישראל",
+      "en": "Lapidoth Capital Ltd",
+      "symbol": "LAPD.TA",
+      "ticker": "LAPD",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "לפידות חלץ יהש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מאסיבית",
+      "en": "Massivit",
+      "symbol": "MSVT.TA",
+      "ticker": "MSVT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מאפיית אנג'ל",
+      "en": "Salomon A.angel Ltd.",
+      "symbol": "ANGL.TA",
+      "ticker": "ANGL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מבטח שמיר אחזקות",
+      "en": "Mivtach Shamir Holdings Ltd.",
+      "symbol": "MISH.TA",
+      "ticker": "MISH",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "226019",
+      "he": "מבני תעשייה",
+      "en": "Mivne Real Estate (K.d) Ltd",
+      "symbol": "MVNE.TA",
+      "ticker": "MVNE",
+      "isin": "IL0002260193",
+      "type": "stock"
+    },
+    {
+      "id": "1082312",
+      "he": "מג'יק תעשיות תוכנה",
+      "en": "Magic Software Enterprises Ltd.",
+      "symbol": "MGIC.TA",
+      "ticker": "MGIC",
+      "isin": "IL0010823123",
+      "type": "stock"
+    },
+    {
+      "id": "1081165",
+      "he": "מגדל אחזקות ביטוח ופיננסים",
+      "en": "Migdal Insurance & Financial Holdings Ltd.",
+      "symbol": "MGDL.TA",
+      "ticker": "MGDL",
+      "isin": "IL0010811656",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מגדל ביטוח הון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מגדלור",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1131523",
+      "he": "מגדלי הים התיכון",
+      "en": "Mediterranean Towers",
+      "symbol": "MDTR.TA",
+      "ticker": "MDTR",
+      "isin": "IL0011315236",
+      "type": "stock"
+    },
+    {
+      "id": "1104488",
+      "he": "מגה אור",
+      "en": "Mega Or Holdings Ltd",
+      "symbol": "MGOR.TA",
+      "ticker": "MGOR",
+      "isin": "IL0011044885",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מגוריט",
+      "en": "Megureit Israel Ltd",
+      "symbol": "MGRT.TA",
+      "ticker": "MGRT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מדיגוס",
+      "en": "Medigus",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מדיפאואר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מדיפרס בריאות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מדלי",
+      "en": "MEDLEY",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מהדרין",
+      "en": "Mehadrin Ltd.",
+      "symbol": "MEDN.TA",
+      "ticker": "MEDN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מודיעין יהש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מויניאן לימיטד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מולטי ריטייל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "5124805",
+      "he": "מור (3B) תיק השקעות 50%",
+      "en": "MORE 3B Portfolio IL 50%",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "fund"
+    },
+    {
+      "id": null,
+      "he": "מור בית השקעות",
+      "en": "Y.d. More Investments Ltd",
+      "symbol": "MRIN.TA",
+      "ticker": "MRIN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מור גמל פנסיה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מזרחי טפחות הנפ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מחלבות גד",
+      "en": "Gad dairies",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1131697",
+      "he": "מטומי מדיה",
+      "en": "Matomy Media",
+      "symbol": "מטומי.TA",
+      "ticker": "מטומי",
+      "isin": "IL0011316978",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מטעי הדר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מטריסלף",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "445015",
+      "he": "מטריקס (חברה)",
+      "en": "Matrix It Ltd.",
+      "symbol": "MTRX.TA",
+      "ticker": "MTRX",
+      "isin": "IL0004450156",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מידאס השקעות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מיה דיינמיקס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מיחשוב ישיר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מיט טק",
+      "en": "Meat tech",
+      "symbol": "MEAT.TA",
+      "ticker": "MEAT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "5140504",
+      "he": "מיטב (4A) ת\"א 125 מומנטום",
+      "en": "Meitav 4A TA 125 Momentum",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "fund"
+    },
+    {
+      "id": null,
+      "he": "מיטב דש",
+      "en": "Meitav Investment House Ltd",
+      "symbol": "MTAV.TA",
+      "ticker": "MTAV",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מיטב טרייד השקעות",
+      "en": "Meitav Trade Investments LTD",
+      "symbol": "MEITAV TRA.TA",
+      "ticker": "MEITAV TRA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1091065",
+      "he": "מיטרוניקס",
+      "en": "Maytronics Ltd.",
+      "symbol": "MTRN.TA",
+      "ticker": "MTRN",
+      "isin": "IL0010910656",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מיי סייז",
+      "en": "My Size Inc.",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מיילן",
+      "en": "Mylan",
+      "symbol": "MYL.TA",
+      "ticker": "MYL",
+      "isin": "NL0011031208",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מיכמן",
+      "en": "Michman Basad Ltd",
+      "symbol": "MCMN.TA",
+      "ticker": "MCMN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מיכפל טכנולוגיות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מילניום פוד-טק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1168186",
+      "he": "מימון ישיר",
+      "en": "Direct Finance Of Direct Group (2006) Ltd",
+      "symbol": "DIFI.TA",
+      "ticker": "DIFI",
+      "isin": "IL0011681868",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מיקרונט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מירלנד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מישורים",
+      "en": "Mishorim Development",
+      "symbol": "MSHR.TA",
+      "ticker": "MSHR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מכלול מימון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "822015",
+      "he": "מלונות דן",
+      "en": "Dan Hotels  Ltd.",
+      "symbol": "DANH.TA",
+      "ticker": "DANH",
+      "isin": "IL0008220159",
+      "type": "stock"
+    },
+    {
+      "id": "1143429",
+      "he": "מלונות פתאל",
+      "en": "Fattal Holdings (1998) Ltd",
+      "symbol": "FTAL.TA",
+      "ticker": "FTAL",
+      "isin": "IL0011434292",
+      "type": "stock"
+    },
+    {
+      "id": "323014",
+      "he": "מליסרון",
+      "en": "Melisron Ltd.",
+      "symbol": "MLSR.TA",
+      "ticker": "MLSR",
+      "isin": "IL0003230146",
+      "type": "stock"
+    },
+    {
+      "id": "156018",
+      "he": "מלם תים",
+      "en": "Malam-team Ltd.",
+      "symbol": "MLTM.TA",
+      "ticker": "MLTM",
+      "isin": "IL0001560189",
+      "type": "stock"
+    },
+    {
+      "id": "731018",
+      "he": "מלם-תים אחזקות",
+      "en": "Malam-Team Holdings Ltd.",
+      "symbol": "ARAD.TA",
+      "ticker": "ARAD",
+      "isin": "IL0007310183",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מלרן פרוייקטים",
+      "en": "MLRN Projects and Trade",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ממן - מסופי מטען וניטול",
+      "en": "Maman- Cargo Terminals & Handling Ltd.",
+      "symbol": "MMAN.TA",
+      "ticker": "MMAN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מנדלסון תשתיות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מנועי בית שמש",
+      "en": "Bet Shemesh Engines Holdings (1997) Ltd.",
+      "symbol": "BSEN.TA",
+      "ticker": "BSEN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מנורה מב הון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "566018",
+      "he": "מנורה מבטחים החזקות",
+      "en": "Menora Mivtachim Holdings Ltd",
+      "symbol": "MMHD.TA",
+      "ticker": "MMHD",
+      "isin": "IL0005660183",
+      "type": "stock"
+    },
+    {
+      "id": "1140573",
+      "he": "מניבים קרן הריט החדשה בע\"מ",
+      "en": "Menivim-the New Reit Ltd",
+      "symbol": "MNRT.TA",
+      "ticker": "MNRT",
+      "isin": "IL0011405730",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מניף-פיננסים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מנרה ונצ'רס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1168533",
+      "he": "מספנות ישראל",
+      "en": "Israel Shipyards Industries Ltd",
+      "symbol": "ISHI.TA",
+      "ticker": "ISHI",
+      "isin": "IL0011685331",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מעבדות רפא",
+      "en": "Rafa Laboratories, Ltd.",
+      "symbol": "RAFA.TA",
+      "ticker": "RAFA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מעריב החזקות",
+      "en": "Maariv Holdings",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מפעלים פטרוכימיים בישראל",
+      "en": "Israel Petrochemical Enterprises Ltd.",
+      "symbol": "PTCH.TA",
+      "ticker": "PTCH",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מצלאוי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מקורות",
+      "en": "Mekorot",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מקס סטוק",
+      "en": "Max Stock Ltd.",
+      "symbol": "MAXO.TA",
+      "ticker": "MAXO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מרחביה אחזקות והשקעות",
+      "en": "Merchavia Holdings and Investments",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "מרכנתיל הנפקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "משק אנרגיה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1141969",
+      "he": "נאוויטס פטרוליום",
+      "en": "Navitas Petroleum Limited Partnership",
+      "symbol": "NVPT.TA",
+      "ticker": "NVPT",
+      "isin": "IL0011419699",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נאייקס",
+      "en": "Nayax",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נובה",
+      "en": "Nova",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1084557",
+      "he": "נובה בע\"מ",
+      "en": "Nova Ltd.",
+      "symbol": "NVMI.TA",
+      "ticker": "NVMI",
+      "isin": "IL0010845571",
+      "type": "stock"
+    },
+    {
+      "id": "1140151",
+      "he": "נובולוג",
+      "en": "Novolog (Pharm-up 1966) Ltd",
+      "symbol": "NVLG.TA",
+      "ticker": "NVLG",
+      "isin": "IL0011401515",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נובל אסטס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נוסטרומו אנרגיה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נופר אנרג'י",
+      "en": "Nofar Energy",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נור אינק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נורסטאר החזקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נטו אחזקות",
+      "en": "Neto M.E Holdings",
+      "symbol": "NTO.TA",
+      "ticker": "NTO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1105097",
+      "he": "נטו מלינדה",
+      "en": "Neto Malinda Trading Ltd",
+      "symbol": "NTML.TA",
+      "ticker": "NTML",
+      "isin": "IL0011050973",
+      "type": "stock"
+    },
+    {
+      "id": "273011",
+      "he": "נייס מערכות",
+      "en": "Nice Ltd",
+      "symbol": "NICE.TA",
+      "ticker": "NICE",
+      "isin": "IL0002730112",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ניסן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נלה דיגיטל",
+      "en": "Nala Digital Commerce Ltd",
+      "symbol": "NALA.TA",
+      "ticker": "NALA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נמקו ריאלטי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "643015",
+      "he": "נפטא",
+      "en": "Naphtha Israel Petroleum Corp. Ltd.",
+      "symbol": "NFTA.TA",
+      "ticker": "NFTA",
+      "isin": "IL0006430156",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נקסט ג'ן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נקסט ויז'ן",
+      "en": "NextVision Stabilized Systems",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נקסטייג'",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נקסטפרם",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נקסטקום",
+      "en": "Nextcom Ltd",
+      "symbol": "NXTM.TA",
+      "ticker": "NXTM",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נתיבי הגז הטבעי לישראל",
+      "en": "Israel Natural Gas Lines Company Ltd.",
+      "symbol": "INGL.TA",
+      "ticker": "INGL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נתנאל גרופ",
+      "en": "Netanel Group Ltd.",
+      "symbol": "NTGR.TA",
+      "ticker": "NTGR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סאותרן פרופרטיס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סאמיט אחזקות נדל\"ן",
+      "en": "Summit Real Estate Holdings",
+      "symbol": "SMT.TA",
+      "ticker": "SMT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סאני תקשורת סלולרית",
+      "en": "Suny Cellular Communication Ltd",
+      "symbol": "SNCM.TA",
+      "ticker": "SNCM",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סאנפלאואר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סבוריט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סולאיר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סולגרין",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סונוביה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1175439",
+      "he": "סופווייב מדיקל",
+      "en": "Sofwave Medical",
+      "symbol": "SOFW.TA",
+      "ticker": "SOFW",
+      "isin": "IL0011754392",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סופרין",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סטורג' דרופ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סטרוברי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סי-לאב",
+      "en": "CompuLab Ltd.",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סיאי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סייברוואן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סייפ-טי גרופ",
+      "en": "Safe-T Group",
+      "symbol": "SFET.TA",
+      "ticker": "SFET",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סילבר קסטל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סילברסטין נכסים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סים קומרשייל",
+      "en": "CIM Commercial Trust Corporation",
+      "symbol": "CMCT.TA",
+      "ticker": "CMCT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סינאל תעשיות",
+      "en": "Synel Payway M.l.l Ltd",
+      "symbol": "SNEL.TA",
+      "ticker": "SNEL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סיפיה וויז'ן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1109644",
+      "he": "סלע קפיטל",
+      "en": "Sella Capital Real Estate Ltd",
+      "symbol": "SLARL.TA",
+      "ticker": "SLARL",
+      "isin": "IL0011096448",
+      "type": "stock"
+    },
+    {
+      "id": "1101534",
+      "he": "סלקום",
+      "en": "Cellcom Israel Ltd.",
+      "symbol": "CEL.TA",
+      "ticker": "CEL",
+      "isin": "IL0011015349",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סמארט אגרו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סמארט שוּטר",
+      "en": "Smart Shooter",
+      "symbol": "SMSH.TA",
+      "ticker": "SMSH",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סנו",
+      "en": "Sano Bruno's Enterprises Ltd.",
+      "symbol": "SANO1.TA",
+      "ticker": "SANO1",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ספאנטק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ספידווליו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ספיר קורפ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ספנסר אקוויטי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ספרינג",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סקודיקס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "288019",
+      "he": "סקופ מתכות",
+      "en": "Scope Metals Group Ltd",
+      "symbol": "SCOP.TA",
+      "ticker": "SCOP",
+      "isin": "IL0002880198",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "סקייליין",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "עדיקה",
+      "en": "Adika Style Ltd",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "עילדב השקעות",
+      "en": "Eldav Investments Ltd.",
+      "symbol": "ELDAV.TA",
+      "ticker": "ELDAV",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "עין שלישית",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "עלבד משואות יצחק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "עמידר",
+      "en": "Amidar The Israeli National Public Housing Company",
+      "symbol": "AMDR.TA",
+      "ticker": "AMDR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "עמיעד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "עמיר שיווק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "עמרם",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ערך פיננסים",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "עשות אשקלון",
+      "en": "Ashot - Ashkelon Industries Ltd.",
+      "symbol": "ASHO.TA",
+      "ticker": "ASHO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "763011",
+      "he": "פ.י.ב.י. אחזקות",
+      "en": "F.i.b.i. Holdings Ltd.",
+      "symbol": "FIBIH.TA",
+      "ticker": "FIBIH",
+      "isin": "IL0007630119",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פאי סיאם",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פארמוקן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פוורפליט",
+      "en": "PowerFleet",
+      "symbol": "PWFL.TA",
+      "ticker": "PWFL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פוטומיין",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פוליגון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1170216",
+      "he": "פולירם",
+      "en": "Polyram Plastic Industries Ltd",
+      "symbol": "POLP.TA",
+      "ticker": "POLP",
+      "isin": "IL0011702169",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פוםוום",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פועלים אי.בי.אי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פועלים הנפקות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1087022",
+      "he": "פוקס נס",
+      "en": "Fox-Wizel Ltd.",
+      "symbol": "FOX.TA",
+      "ticker": "FOX",
+      "isin": "IL0010870223",
+      "type": "stock"
+    },
+    {
+      "id": "256016",
+      "he": "פורמולה מערכות",
+      "en": "Formula Systems (1985) Ltd.",
+      "symbol": "FORTY.TA",
+      "ticker": "FORTY",
+      "isin": "IL0002560162",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פורסייט",
+      "en": "foresight automotive LTD",
+      "symbol": "FRSX.TA",
+      "ticker": "FRSX",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1100007",
+      "he": "פז קמעונאות ואנרגיה",
+      "en": "Paz Retail And Energy",
+      "symbol": "PZOL.TA",
+      "ticker": "PZOL",
+      "isin": "IL0011000077",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פטרוטקס יהש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פיט השקעות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פייטון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פיימנט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פינרג'י",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פיסיבי טכנ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פיקס סולושנז בע\"מ",
+      "en": "PEAX SOLUTIONS LTD",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פלאזה סנטר -ס",
+      "en": "Plaza Centers",
+      "symbol": "PLAZ.L",
+      "ticker": "PLAZ.L",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פלאזה סנטרס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פלורי",
+      "en": "Pluri Inc.",
+      "symbol": "PSTI.TA",
+      "ticker": "PSTI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פליינג ספארק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פלנטארק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1081603",
+      "he": "פלסאון תעשיות",
+      "en": "Plasson Industries Ltd.",
+      "symbol": "PLSN.TA",
+      "ticker": "PLSN",
+      "isin": "IL0010816036",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פלסאנמור",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פלסטופיל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פלרם",
+      "en": "Palram Industries (1990) Ltd.",
+      "symbol": "PLRM.TA",
+      "ticker": "PLRM",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פמס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פנאקסיה",
+      "en": "Panaxia",
+      "symbol": "PNAX.TA",
+      "ticker": "PNAX",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פנאקסיה ישראל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פנינסולה",
+      "en": "Peninsula Group Ltd",
+      "symbol": "PEN.TA",
+      "ticker": "PEN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פננטפארק",
+      "en": "PennantPark Investment Corporation",
+      "symbol": "PFLT.TA",
+      "ticker": "PFLT",
+      "isin": "US7080621045",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פסגות קבוצה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פסיפיק אוק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פרודלים השקעות",
+      "en": "Prodalim group",
+      "symbol": "PRDM.TA",
+      "ticker": "PRDM",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פרוטליקס",
+      "en": "Protalix Biotherapeutics Inc",
+      "symbol": "PLX.TA",
+      "ticker": "PLX",
+      "isin": "US74365A3095",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פרופדו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1083484",
+      "he": "פרטנר תקשורת",
+      "en": "Partner Communications Company Ltd.",
+      "symbol": "PTNR.TA",
+      "ticker": "PTNR",
+      "isin": "IL0010834849",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פריגו",
+      "en": "Perrigo Company Plc",
+      "symbol": "PRGO.TA",
+      "ticker": "PRGO",
+      "isin": "IE00BGH1M568",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פרידנזון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1095819",
+      "he": "פריון נטוורק",
+      "en": "Perion Network Ltd.",
+      "symbol": "PERI.TA",
+      "ticker": "PERI",
+      "isin": "IL0010958192",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פריורטק",
+      "en": "Priortech",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פריים אנרג'י",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פרימוטק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פרפל ביוטק",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פרקומט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פרשמרקט",
+      "en": "Freshmarket Ltd",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1102128",
+      "he": "פרשקובסקי",
+      "en": "Prashkovsky Investments And Construction Ltd",
+      "symbol": "PRSK.TA",
+      "ticker": "PRSK",
+      "isin": "IL0011021289",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "פתאל אירופה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "צאם",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "צור שמיר אחזקות",
+      "en": "Zur Shamir Holdings Ltd.",
+      "symbol": "ZUR.TA",
+      "ticker": "ZUR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "צמח המרמן",
+      "en": "Z.m.h Hammerman Ltd",
+      "symbol": "ZMH.TA",
+      "ticker": "ZMH",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "צרפתי",
+      "en": "Zvi Sarfati & Sons",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קאנומד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת אחים נאוי",
+      "en": "Nawi Brothers Group Ltd",
+      "symbol": "NAWI.TA",
+      "ticker": "NAWI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת אלבר",
+      "en": "Albar Mimunit Services Ltd",
+      "symbol": "ALBR.TA",
+      "ticker": "ALBR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת אלעזרא",
+      "en": "El'ezra Holdings Ltd",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1184902",
+      "he": "קבוצת אקרו",
+      "en": "Kvutzat Acro Ltd",
+      "symbol": "ACRO.TA",
+      "ticker": "ACRO",
+      "isin": "IL0011849028",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת אקרשטיין",
+      "en": "Ackerstein Group",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת בסט",
+      "en": "BST Group E.A.W.",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת ברן",
+      "en": "Baran Group Ltd.",
+      "symbol": "BRAN.TA",
+      "ticker": "BRAN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת גאון",
+      "en": "Gaon Group Ltd.",
+      "symbol": "GAGR.TA",
+      "ticker": "GAGR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת גולף א.ק.",
+      "en": "Golf & Co Group Ltd",
+      "symbol": "GOLF.TA",
+      "ticker": "GOLF",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1166768",
+      "he": "קבוצת דוראל אנרגיה",
+      "en": "Doral Group Renewable Energy Resources Ltd",
+      "symbol": "DORL.TA",
+      "ticker": "DORL",
+      "isin": "IL0011667685",
+      "type": "stock"
+    },
+    {
+      "id": "1084128",
+      "he": "קבוצת דלק",
+      "en": "Delek Group Ltd.",
+      "symbol": "DLEKG.TA",
+      "ticker": "DLEKG",
+      "isin": "IL0010841281",
+      "type": "stock"
+    },
+    {
+      "id": "314013",
+      "he": "קבוצת דנאל",
+      "en": "Danel (Adir Yeoshua) Ltd.",
+      "symbol": "DANE.TA",
+      "ticker": "DANE",
+      "isin": "IL0003140139",
+      "type": "stock"
+    },
+    {
+      "id": "1173137",
+      "he": "קבוצת דניה",
+      "en": "Danya Group",
+      "symbol": "DNYA.TA",
+      "ticker": "DNYA",
+      "isin": "IL0011731374",
+      "type": "stock"
+    },
+    {
+      "id": "823013",
+      "he": "קבוצת חג'ג'",
+      "en": "Hagag Group Real Estate Entrepreneurship Ltd",
+      "symbol": "HGG.TA",
+      "ticker": "HGG",
+      "isin": "IL0008230133",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת חמת",
+      "en": "Hamat Group Ltd.",
+      "symbol": "HAMAT.TA",
+      "ticker": "HAMAT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת יובלים",
+      "en": "Yuvalim Group",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת לוינשטין",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת מנרב",
+      "en": "Minrav Group Ltd.",
+      "symbol": "מנרב.TA",
+      "ticker": "מנרב",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת מנרב",
+      "en": "Minrav Group Ltd.",
+      "symbol": "MNRV.TA",
+      "ticker": "MNRV",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת סוגת",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1119478",
+      "he": "קבוצת עזריאלי",
+      "en": "Azrieli Group Ltd",
+      "symbol": "AZRG.TA",
+      "ticker": "AZRG",
+      "isin": "IL0011194789",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת עמוס לוזון יזמות קבוצת עמוס לוזון יזמות ואנרגיה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת שגריר",
+      "en": "Shagrir Group Vehicle Services Ltd.",
+      "symbol": "SHGR.TA",
+      "ticker": "SHGR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבוצת תיגבור",
+      "en": "Tigbur - Temporary Professional Personnel Ltd",
+      "symbol": "TIGBUR.TA",
+      "ticker": "TIGBUR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קבסיר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1128461",
+      "he": "קדימהסטם",
+      "en": "Kadimastem",
+      "symbol": null,
+      "ticker": null,
+      "isin": "IL0011284614",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קווינקו",
+      "en": "(Y.Z) Queenco Ltd",
+      "symbol": "QNCO.TA",
+      "ticker": "QNCO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קוויקליזארד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קווליטאו",
+      "en": "QualiTau",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1085208",
+      "he": "קומפיוג'ן",
+      "en": "Compugen Ltd.",
+      "symbol": "CGEN.TA",
+      "ticker": "CGEN",
+      "isin": "IL0010852080",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קונטיניואל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קופיקס",
+      "en": "Cofix Group Ltd",
+      "symbol": "CFX.TA",
+      "ticker": "CFX",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קופרליין",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קיסטון ריט",
+      "en": "Keystone Reit Ltd",
+      "symbol": "KSTN.TA",
+      "ticker": "KSTN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קליין קבוצה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קליל תעשיות",
+      "en": "Klil Industries Ltd.",
+      "symbol": "KLIL.TA",
+      "ticker": "KLIL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1094119",
+      "he": "קמהדע",
+      "en": "Kamada Ltd.",
+      "symbol": "KMDA.TA",
+      "ticker": "KMDA",
+      "isin": "IL0010941198",
+      "type": "stock"
+    },
+    {
+      "id": "1095264",
+      "he": "קמטק",
+      "en": "Camtek Ltd.",
+      "symbol": "CAMT.TA",
+      "ticker": "CAMT",
+      "isin": "IL0010952641",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קנאשור",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1176908",
+      "he": "קנבוטק",
+      "en": "Cannabotech Ltd",
+      "symbol": "CNTC.TA",
+      "ticker": "CNTC",
+      "isin": "IL0011769085",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קנון הולדינגס",
+      "en": "Kenon Holdings Ltd",
+      "symbol": "KEN.TA",
+      "ticker": "KEN",
+      "isin": "SG9999012629",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קנזון",
+      "en": "Canzon Israel Ltd",
+      "symbol": "CNZN.TA",
+      "ticker": "CNZN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קסטרו מודל",
+      "en": "Castro Model Ltd.",
+      "symbol": "CAST.TA",
+      "ticker": "CAST",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קפיטל פוינט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קרגל",
+      "en": "Plasto-cargal Group Ltd",
+      "symbol": "PLCR.TA",
+      "ticker": "PLCR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קרדן אן.וי-ש",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קרדן אן.וי.-ס",
+      "en": "KARDAN N.V",
+      "symbol": "KARD.TA",
+      "ticker": "KARD",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קרדן ישראל",
+      "en": "Kardan Israel Ltd.",
+      "symbol": "KRDI.TA",
+      "ticker": "KRDI",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קרדן נדל\"ן",
+      "en": "Kardan Real Estate Enterprise And Development Ltd",
+      "symbol": "KARE.TA",
+      "ticker": "KARE",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קרור",
+      "en": "Kerur Holdings Ltd",
+      "symbol": "KRUR.TA",
+      "ticker": "KRUR",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קריאטיב מדיה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1123850",
+      "he": "קרסו מוטורס",
+      "en": "Carasso Motors Ltd",
+      "symbol": "CRSM.TA",
+      "ticker": "CRSM",
+      "isin": "IL0011238503",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קרסו נדל''ן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "קשרי תעופה",
+      "en": "Kishrey Teufa",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ראלקו",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רב-בריח",
+      "en": "Rav Bariach(08)lndustries Ltd.",
+      "symbol": "BRIH.TA",
+      "ticker": "BRIH",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רבד",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1098565",
+      "he": "רבוע כחול נדל\"ן",
+      "en": "Blue Square Real Estate Ltd",
+      "symbol": "BLSR.TA",
+      "ticker": "BLSR",
+      "isin": "IL0010985658",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רבל",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רובוגרופ",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רוטשטיין",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רותם אנרגיה מחצבים",
+      "en": "Rotem Energy Mineral (Rem)- Limited Partnership",
+      "symbol": "RTEN.TA",
+      "ticker": "RTEN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רותם שני",
+      "en": "Rotem Shani",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1098920",
+      "he": "ריט 1",
+      "en": "Reit 1 Ltd",
+      "symbol": "RIT1.TA",
+      "ticker": "RIT1",
+      "isin": "IL0010989205",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ריט אזורים ליוי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ריטיילורס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רייזור",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רימון",
+      "en": "Rimon Group",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רימוני תעשיות",
+      "en": "Rimoni Industries Ltd.",
+      "symbol": "רימוני.TA",
+      "ticker": "רימוני",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רימוני תעשיות",
+      "en": "Rimoni Industries Ltd.",
+      "symbol": "RIMO.TA",
+      "ticker": "RIMO",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רכבת ישראל",
+      "en": "Israel Railways",
+      "symbol": "RAIL.TA",
+      "ticker": "RAIL",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רם און",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רמות בעיר",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רמי לוי השקמה נדל\"ן",
+      "en": null,
+      "symbol": "RLRE.TA",
+      "ticker": "RLRE",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1104249",
+      "he": "רמי לוי שיווק השקמה",
+      "en": "Rami Levi Chain Stores Hashikma Marketing 2006 Ltd",
+      "symbol": "RMLI.TA",
+      "ticker": "RMLI",
+      "isin": "IL0011042491",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רני צים",
+      "en": "Rani Zim Shopping Centers",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רפק תקשורת ותשתיות",
+      "en": "Rapac Communication & Infrastructure Ltd",
+      "symbol": "RPAC.TA",
+      "ticker": "RPAC",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "394015",
+      "he": "רציו חיפושי נפט (1992)",
+      "en": "Ratio Energies - Limited Partnership",
+      "symbol": "RATI.TA",
+      "ticker": "RATI",
+      "isin": "IL0003940157",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רציו מימון",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רציו פטרוליום",
+      "en": "Ratio Petroleum Energy-limited Partnership",
+      "symbol": "RTPT.TA",
+      "ticker": "RTPT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "רקח",
+      "en": "Rekah Pharmaceutical Industries",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1161264",
+      "he": "רשת יוחננוף",
+      "en": "Yochananof",
+      "symbol": "YHNF.TA",
+      "ticker": "YHNF",
+      "isin": "IL0011612640",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ש. שלמה החזקות",
+      "en": "השכרת רכב",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "ש. שלמה חברה לביטוח",
+      "en": "S.SHLOMO INSURANCE COMPANY LTD",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שוב אנרגיה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שוהם ביזנס",
+      "en": "E.N. Shoham Business Ltd",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "777037",
+      "he": "שופרסל",
+      "en": "Shufersal Ltd.",
+      "symbol": "SAE.TA",
+      "ticker": "SAE",
+      "isin": "IL0007770378",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שור-טק השקעות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "746016",
+      "he": "שטראוס גרופ",
+      "en": "Strauss Group Ltd.",
+      "symbol": "STRS.TA",
+      "ticker": "STRS",
+      "isin": "IL0007460160",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שיח מדיקל גרופ",
+      "en": "Seach Medical Group",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שיח מדיקל גרופ",
+      "en": null,
+      "symbol": "249.TA",
+      "ticker": "249",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1081942",
+      "he": "שיכון ובינוי",
+      "en": "Shikun & Binui Ltd.",
+      "symbol": "SKBN.TA",
+      "ticker": "SKBN",
+      "isin": "IL0010819428",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שירותי בנק אוטומטיים",
+      "en": "Automatic Bank Services",
+      "symbol": "SHVA.TA",
+      "ticker": "SHVA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שלא''ג תעשיות",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שלוש 3 דיאם",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שלמה נדל''ן",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שמוס",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שמיים אימפרוב",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שמן תעשיות",
+      "en": "Shemen Industries Ltd.",
+      "symbol": "SMNIN.TA",
+      "ticker": "SMNIN",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שניב תעשיות נייר",
+      "en": "Shaniv Paper Industry",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שנפ",
+      "en": "E.schnapp Co. Works Ltd.",
+      "symbol": "SHNP.TA",
+      "ticker": "SHNP",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1133875",
+      "he": "שפיר הנדסה ותעשייה",
+      "en": "Shapir Engineering And Industry Ltd",
+      "symbol": "SPEN.TA",
+      "ticker": "SPEN",
+      "isin": "IL0011338758",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "שרין טכנו'",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תאת טכנולוגיות",
+      "en": "Tat Technologies Ltd",
+      "symbol": "TATT.TA",
+      "ticker": "TATT",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תדאה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "258012",
+      "he": "תדיראן הולדינגס",
+      "en": "Tadiran Group Ltd",
+      "symbol": "TDRN.TA",
+      "ticker": "TDRN",
+      "isin": "IL0002580129",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תומר אנרגיה",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "1175611",
+      "he": "תורפז תעשיות",
+      "en": "Turpaz Industries Ltd",
+      "symbol": "TRPZ.TA",
+      "ticker": "TRPZ",
+      "isin": "IL0011756116",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תיא",
+      "en": "Taya Investment Co. Ltd.",
+      "symbol": "TAYA.TA",
+      "ticker": "TAYA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תיגי",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תיקון עולם קנבט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": "5131925",
+      "he": "תכלית TTFי (40) אינדקס בנקים ישראל",
+      "en": "Tachlit TTF 40 INDEX ISRAEL BANKS IL",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "fund"
+    },
+    {
+      "id": null,
+      "he": "תמר פטרוליום",
+      "en": "Tamar Petroleum Ltd",
+      "symbol": "TMRP.TA",
+      "ticker": "TMRP",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תנופורט",
+      "en": null,
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תעוזה",
+      "en": "Teuza - A Fairchild  Technology Venture Ltd.",
+      "symbol": "TUZA.TA",
+      "ticker": "TUZA",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תפרון",
+      "en": "Tefron Ltd.",
+      "symbol": "TFRLF.TA",
+      "ticker": "TFRLF",
+      "isin": null,
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "תשתיות נפט ואנרגיה",
+      "en": null,
+      "symbol": "PTEN.TA",
+      "ticker": "PTEN",
+      "isin": null,
+      "type": "stock"
+    }
+  ]
+}

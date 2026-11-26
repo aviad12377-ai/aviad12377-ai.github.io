@@ -83,6 +83,35 @@
 
   /* ---------- FX and quotes ---------- */
   var FX_SYM = { USD: 'ILS=X', EUR: 'EURILS=X' };
+  var PENDING_KEY = 'portal-pending-tickers-v1';
+  var CRYPTO_COINS = [
+    { code: 'BTC', symbol: 'BTC-USD', gecko: 'bitcoin', binance: 'BTCUSDT', he: 'ביטקוין', en: 'Bitcoin', es: 'Bitcoin' },
+    { code: 'ETH', symbol: 'ETH-USD', gecko: 'ethereum', binance: 'ETHUSDT', he: 'אתריום', en: 'Ethereum', es: 'Ethereum' },
+    { code: 'SOL', symbol: 'SOL-USD', gecko: 'solana', binance: 'SOLUSDT', he: 'סולנה', en: 'Solana', es: 'Solana' },
+    { code: 'XRP', symbol: 'XRP-USD', gecko: 'ripple', binance: 'XRPUSDT', he: 'ריפל', en: 'XRP', es: 'XRP' },
+    { code: 'BNB', symbol: 'BNB-USD', gecko: 'binancecoin', binance: 'BNBUSDT', he: 'BNB', en: 'BNB', es: 'BNB' },
+    { code: 'DOGE', symbol: 'DOGE-USD', gecko: 'dogecoin', binance: 'DOGEUSDT', he: 'דוג׳קוין', en: 'Dogecoin', es: 'Dogecoin' },
+    { code: 'ADA', symbol: 'ADA-USD', gecko: 'cardano', binance: 'ADAUSDT', he: 'קרדנו', en: 'Cardano', es: 'Cardano' },
+    { code: 'AVAX', symbol: 'AVAX-USD', gecko: 'avalanche-2', binance: 'AVAXUSDT', he: 'אוולאנש', en: 'Avalanche', es: 'Avalanche' },
+    { code: 'DOT', symbol: 'DOT-USD', gecko: 'polkadot', binance: 'DOTUSDT', he: 'פולקאדוט', en: 'Polkadot', es: 'Polkadot' },
+    { code: 'LINK', symbol: 'LINK-USD', gecko: 'chainlink', binance: 'LINKUSDT', he: 'צ׳ייןלינק', en: 'Chainlink', es: 'Chainlink' },
+    { code: 'TON', symbol: 'TON-USD', gecko: 'the-open-network', binance: 'TONUSDT', he: 'טון', en: 'Toncoin', es: 'Toncoin' },
+    { code: 'TRX', symbol: 'TRX-USD', gecko: 'tron', binance: 'TRXUSDT', he: 'טרון', en: 'TRON', es: 'TRON' },
+    { code: 'LTC', symbol: 'LTC-USD', gecko: 'litecoin', binance: 'LTCUSDT', he: 'לייטקוין', en: 'Litecoin', es: 'Litecoin' },
+    { code: 'BCH', symbol: 'BCH-USD', gecko: 'bitcoin-cash', binance: 'BCHUSDT', he: 'ביטקוין קאש', en: 'Bitcoin Cash', es: 'Bitcoin Cash' },
+    { code: 'SHIB', symbol: 'SHIB-USD', gecko: 'shiba-inu', binance: 'SHIBUSDT', he: 'שיבה אינו', en: 'Shiba Inu', es: 'Shiba Inu' },
+    { code: 'XLM', symbol: 'XLM-USD', gecko: 'stellar', binance: 'XLMUSDT', he: 'סטלר', en: 'Stellar', es: 'Stellar' },
+    { code: 'NEAR', symbol: 'NEAR-USD', gecko: 'near', binance: 'NEARUSDT', he: 'ניר', en: 'NEAR', es: 'NEAR' },
+    { code: 'APT', symbol: 'APT-USD', gecko: 'aptos', binance: 'APTUSDT', he: 'אפטוס', en: 'Aptos', es: 'Aptos' },
+    { code: 'SUI', symbol: 'SUI-USD', gecko: 'sui', binance: 'SUIUSDT', he: 'סוי', en: 'Sui', es: 'Sui' },
+    { code: 'UNI', symbol: 'UNI-USD', gecko: 'uniswap', binance: 'UNIUSDT', he: 'יוניסוואפ', en: 'Uniswap', es: 'Uniswap' },
+    { code: 'ATOM', symbol: 'ATOM-USD', gecko: 'cosmos', binance: 'ATOMUSDT', he: 'קוסמוס', en: 'Cosmos', es: 'Cosmos' },
+    { code: 'POL', symbol: 'POL-USD', gecko: 'polygon-ecosystem-token', binance: 'POLUSDT', he: 'פוליגון', en: 'Polygon', es: 'Polygon' },
+    { code: 'MATIC', symbol: 'MATIC-USD', gecko: 'matic-network', binance: 'MATICUSDT', he: 'פוליגון (MATIC)', en: 'Polygon (MATIC)', es: 'Polygon (MATIC)' },
+    { code: 'PEPE', symbol: 'PEPE-USD', gecko: 'pepe', binance: 'PEPEUSDT', he: 'פפה', en: 'Pepe', es: 'Pepe' }
+  ];
+  var taseSecurities = [];
+  function priceProxyBase() { return String(window.PORTAL_PRICE_PROXY || '').replace(/\/+$/, ''); }
   function rateILS(cur) {
     if (cur === 'ILS' || !cur) return 1;
     var m = nn(data.fx[cur]); if (m && m > 0) return m;
@@ -94,14 +123,14 @@
     var price = nn(o.price !== undefined ? o.price : o.regularMarketPrice), cur = o.currency || 'USD';
     if (!(price > 0)) return null;
     if (cur === 'ILA' || cur === 'ILX') { price = price / 100; cur = 'ILS'; }
-    if (cur === 'GBp') { price = price / 100; cur = 'GBP'; }
+    if (cur === 'GBp' || cur === 'GBX') { price = price / 100; cur = 'GBP'; }
     var tp = o.currentTradingPeriod && o.currentTradingPeriod.regular;
     var state = o.state || o.marketState || null;
     var now = Date.now() / 1000, live;
-    if (state) live = /^REGULAR$/i.test(state);
+    if (state) live = /^(REGULAR|open)$/i.test(state);
     else if (tp) live = now >= tp.start && now <= tp.end;
     else live = false;
-    var time = o.regularMarketTime;
+    var time = o.regularMarketTime || o.last_updated_at;
     if (typeof time === 'string') time = Date.parse(time) / 1000;
     return { price: price, currency: cur, time: Number.isFinite(time) ? time : null, live: !!live, source: src, fetchedAt: Date.now() };
   }
@@ -114,58 +143,267 @@
   function anyOf(ps) {
     return new Promise(function (res, rej) { var left = ps.length; if (!left) rej(new Error('none')); ps.forEach(function (p) { p.then(res, function () { if (--left === 0) rej(new Error('all failed')); }); }); });
   }
-  // 1) ./prices.json written by the site build (same origin, never cached). 2) Yahoo spark via public CORS routes. 3) manual.
+  function coinLangName(c) { return (settings.lang === 'he' ? c.he : settings.lang === 'es' ? c.es : c.en) || c.en || c.code; }
+  function findCrypto(q) {
+    if (!q) return null;
+    var u = String(q).trim().toUpperCase().replace(/^CRYPTO:\s*/, '');
+    var raw = String(q).trim();
+    for (var i = 0; i < CRYPTO_COINS.length; i++) {
+      var c = CRYPTO_COINS[i];
+      if (c.code === u || c.symbol === u || c.gecko === raw.toLowerCase()) return c;
+      if (c.he === raw || c.en.toLowerCase() === raw.toLowerCase() || (c.es && c.es.toLowerCase() === raw.toLowerCase())) return c;
+    }
+    return null;
+  }
+  function findTase(q) {
+    if (!q || !taseSecurities.length) return null;
+    var raw = String(q).trim(), u = raw.toUpperCase(), digits = raw.replace(/\s+/g, '');
+    var i, r, exact = [];
+    for (i = 0; i < taseSecurities.length; i++) {
+      r = taseSecurities[i];
+      if (r.id && (r.id === digits || ('0' + r.id) === digits)) exact.push(r);
+      else if (r.ticker && r.ticker.toUpperCase() === u) exact.push(r);
+      else if (r.symbol && r.symbol.toUpperCase() === u) exact.push(r);
+    }
+    if (exact.length) {
+      for (i = 0; i < exact.length; i++) if (exact[i].symbol) return exact[i];
+      return exact[0];
+    }
+    var hits = searchTase(raw, 4).filter(function (x) { return (x.he && x.he === raw) || (x.en && x.en.toLowerCase() === raw.toLowerCase()); });
+    if (hits.length === 1) return hits[0];
+    return null;
+  }
+  function searchTase(q, limit) {
+    var raw = String(q || '').trim(); if (raw.length < 1) return [];
+    var u = raw.toUpperCase(), out = [], scored = [];
+    taseSecurities.forEach(function (r) {
+      if (!r) return;
+      var id = r.id || '', he = r.he || '', en = r.en || '', tick = (r.ticker || '').toUpperCase(), sym = (r.symbol || '').toUpperCase();
+      var score = 0;
+      if (id && (id === raw || id.indexOf(raw) === 0)) score = 100;
+      else if (tick === u || sym === u) score = 95;
+      else if (he === raw || en.toLowerCase() === raw.toLowerCase()) score = 90;
+      else if (tick.indexOf(u) === 0 || sym.indexOf(u) === 0) score = 80;
+      else if (he.indexOf(raw) === 0) score = 75;
+      else if (en.toLowerCase().indexOf(raw.toLowerCase()) === 0) score = 70;
+      else if (id.indexOf(raw) >= 0 || he.indexOf(raw) >= 0 || en.toLowerCase().indexOf(raw.toLowerCase()) >= 0 || tick.indexOf(u) >= 0) score = 40;
+      if (score) scored.push({ score: score, row: r, hasSym: !!r.symbol });
+    });
+    scored.sort(function (a, b) { return b.score - a.score || (b.hasSym ? 1 : 0) - (a.hasSym ? 1 : 0); });
+    for (var i = 0; i < scored.length && out.length < (limit || 8); i++) out.push(scored[i].row);
+    return out;
+  }
+  function searchCrypto(q, limit) {
+    var raw = String(q || '').trim(); if (!raw) return CRYPTO_COINS.slice(0, limit || 8);
+    var u = raw.toUpperCase(), out = [];
+    CRYPTO_COINS.forEach(function (c) {
+      if (c.code.indexOf(u) === 0 || c.symbol.indexOf(u) === 0 || (c.en && c.en.toLowerCase().indexOf(raw.toLowerCase()) >= 0) || (c.he && c.he.indexOf(raw) >= 0) || (c.es && c.es.toLowerCase().indexOf(raw.toLowerCase()) >= 0)) out.push(c);
+    });
+    return out.slice(0, limit || 8);
+  }
+  function resolveHolding(row) {
+    var raw = ((row && row.ticker) || '').trim(), kind = (row && row.kind) || 'auto';
+    var coin = findCrypto(raw);
+    if (kind === 'crypto' || (kind === 'auto' && coin)) {
+      if (!coin && raw) {
+        var code = raw.toUpperCase().replace(/-USD$/, '').replace(/^CRYPTO:\s*/, '');
+        if (/^[A-Z0-9]{2,10}$/.test(code)) coin = { code: code, symbol: code + '-USD', gecko: null, binance: code + 'USDT', he: code, en: code, es: code };
+      }
+      if (coin) return { symbol: coin.symbol, kind: 'crypto', name: coinLangName(coin), coin: coin, currency: 'USD' };
+    }
+    var ts = findTase(raw);
+    if (ts) {
+      var sym = ts.symbol || ts.id || raw.toUpperCase();
+      var alts = [];
+      if (ts.id && ts.id !== sym) alts.push(ts.id);
+      if (ts.id) alts.push(ts.id + '.TA');
+      if (ts.symbol && ts.symbol !== sym) alts.push(ts.symbol);
+      return { symbol: sym, altSymbols: alts, kind: ts.type || 'stock', name: ts.he || ts.en || ts.symbol, securityNo: ts.id, currency: 'ILS', tase: ts };
+    }
+    if (/^\d{4,9}$/.test(raw)) {
+      return { symbol: raw, altSymbols: [raw + '.TA'], kind: kind === 'fund' ? 'fund' : (kind === 'auto' ? 'fund' : kind), securityNo: raw, currency: 'ILS' };
+    }
+    var sym = raw.toUpperCase();
+    if (kind === 'fund') return { symbol: sym, kind: 'fund', currency: /\.TA$/.test(sym) ? 'ILS' : null };
+    return { symbol: sym, kind: kind === 'auto' ? 'stock' : kind, currency: /\.TA$/.test(sym) ? 'ILS' : (/-USD$/.test(sym) ? 'USD' : null) };
+  }
   function fromPricesJson(symbols) {
     return fetchJSON('prices.json?t=' + Date.now(), 8000).then(function (j) {
       var table = j.symbols || j.quotes || j.prices || j;
       var out = {};
-      symbols.forEach(function (s) { var o = table[s] || table[s.toUpperCase()]; if (o && typeof o === 'object') { var q = normQuote(s, o, 'prices.json'); if (q) { if (!o.regularMarketTime && j.generatedAt) q.time = Date.parse(j.generatedAt) / 1000; out[s] = q; } } });
+      symbols.forEach(function (s) {
+        var o = table[s] || table[s.toUpperCase()];
+        if (o && typeof o === 'object') {
+          var q = normQuote(s, o, 'prices.json');
+          if (q) { if (!o.regularMarketTime && j.generatedAt) q.time = Date.parse(j.generatedAt) / 1000; out[s] = q; }
+        }
+      });
       return out;
     });
   }
-  function fromYahoo(symbols) {
-    var path = '/v7/finance/spark?symbols=' + symbols.map(encodeURIComponent).join(',') + '&range=1d&interval=1d';
-    var y1 = 'https://query1.finance.yahoo.com' + path, y2 = 'https://query2.finance.yahoo.com' + path;
-    var routes = [
-      ['Yahoo Finance', y1],
-      ['Yahoo Finance / allorigins', 'https://api.allorigins.win/raw?url=' + encodeURIComponent(y1)],
-      ['Yahoo Finance / allorigins', 'https://api.allorigins.win/raw?url=' + encodeURIComponent(y2)],
-      ['Yahoo Finance / codetabs', 'https://api.codetabs.com/v1/proxy/?quest=' + encodeURIComponent(y1)]
-    ];
-    return anyOf(routes.map(function (r) {
-      return fetchJSON(r[1], 20000).then(function (j) {
-        var res = (j && j.spark && j.spark.result) || [], out = {};
-        res.forEach(function (x) { var m = x.response && x.response[0] && x.response[0].meta; if (m) { var q = normQuote(x.symbol, m, r[0]); if (q) out[x.symbol] = q; } });
-        if (!Object.keys(out).length) throw new Error('empty');
+  function fromCrypto(symbols) {
+    var wanted = [];
+    symbols.forEach(function (s) {
+      var c = findCrypto(s) || (/^[A-Z0-9]{2,10}-USD$/.test(s) ? { symbol: s, gecko: null, binance: s.replace(/-USD$/, '') + 'USDT', code: s.replace(/-USD$/, '') } : null);
+      if (c) wanted.push(c);
+    });
+    if (!wanted.length) return Promise.reject(new Error('no crypto'));
+    var byGecko = {};
+    wanted.forEach(function (c) { if (c.gecko) byGecko[c.gecko] = c; });
+    var ids = Object.keys(byGecko);
+    var gecko = ids.length
+      ? fetchJSON('https://api.coingecko.com/api/v3/simple/price?ids=' + ids.map(encodeURIComponent).join(',') + '&vs_currencies=usd&include_last_updated_at=true', 8000).then(function (j) {
+          var out = {};
+          ids.forEach(function (id) {
+            var row = j[id], c = byGecko[id];
+            if (row && row.usd > 0) out[c.symbol] = normQuote(c.symbol, { price: row.usd, currency: 'USD', regularMarketTime: row.last_updated_at, state: 'REGULAR' }, 'CoinGecko');
+          });
+          if (!Object.keys(out).length) throw new Error('empty');
+          return out;
+        })
+      : Promise.reject(new Error('no gecko ids'));
+    function binanceOne(c) {
+      if (!c.binance) return Promise.reject(new Error('no binance'));
+      return fetchJSON('https://api.binance.com/api/v3/ticker/price?symbol=' + encodeURIComponent(c.binance), 6000).then(function (j) {
+        var px = parseFloat(j && j.price);
+        if (!(px > 0)) throw new Error('empty');
+        var out = {}; out[c.symbol] = normQuote(c.symbol, { price: px, currency: 'USD', regularMarketTime: Date.now() / 1000, state: 'REGULAR' }, 'Binance');
         return out;
       });
-    }));
+    }
+    function coinbaseOne(c) {
+      var pair = c.code ? c.code + '-USD' : c.symbol;
+      return fetchJSON('https://api.coinbase.com/v2/prices/' + encodeURIComponent(pair) + '/spot', 6000).then(function (j) {
+        var px = parseFloat(j && j.data && j.data.amount);
+        if (!(px > 0)) throw new Error('empty');
+        var out = {}; out[c.symbol] = normQuote(c.symbol, { price: px, currency: 'USD', regularMarketTime: Date.now() / 1000, state: 'REGULAR' }, 'Coinbase');
+        return out;
+      });
+    }
+    return gecko.catch(function () { return {}; }).then(function (found) {
+      var missing = wanted.filter(function (c) { return !found[c.symbol]; });
+      if (!missing.length) return found;
+      return Promise.all(missing.map(function (c) {
+        return binanceOne(c).catch(function () { return coinbaseOne(c); }).catch(function () { return {}; });
+      })).then(function (parts) {
+        parts.forEach(function (p) { Object.keys(p).forEach(function (k) { found[k] = p[k]; }); });
+        if (!Object.keys(found).length) throw new Error('empty');
+        return found;
+      });
+    });
+  }
+  function fromFx(symbols) {
+    var need = symbols.filter(function (s) { return s === 'ILS=X' || s === 'EURILS=X'; });
+    if (!need.length) return Promise.reject(new Error('no fx'));
+    var routes = [
+      need.indexOf('ILS=X') >= 0 ? fetchJSON('https://api.frankfurter.app/latest?from=USD&to=ILS', 6000).then(function (j) {
+        var px = j && j.rates && j.rates.ILS, out = {};
+        if (!(px > 0)) throw new Error('empty');
+        out['ILS=X'] = normQuote('ILS=X', { price: px, currency: 'ILS', regularMarketTime: j.date ? Date.parse(j.date + 'T00:00:00Z') / 1000 : null }, 'Frankfurter');
+        return out;
+      }) : Promise.reject(),
+      need.indexOf('EURILS=X') >= 0 ? fetchJSON('https://api.frankfurter.app/latest?from=EUR&to=ILS', 6000).then(function (j) {
+        var px = j && j.rates && j.rates.ILS, out = {};
+        if (!(px > 0)) throw new Error('empty');
+        out['EURILS=X'] = normQuote('EURILS=X', { price: px, currency: 'ILS', regularMarketTime: j.date ? Date.parse(j.date + 'T00:00:00Z') / 1000 : null }, 'Frankfurter');
+        return out;
+      }) : Promise.reject()
+    ];
+    return Promise.all(routes.map(function (p) { return p.catch(function () { return {}; }); })).then(function (parts) {
+      var out = {};
+      parts.forEach(function (p) { Object.keys(p).forEach(function (k) { out[k] = p[k]; }); });
+      if (!Object.keys(out).length) throw new Error('empty');
+      return out;
+    });
+  }
+  function fromProxy(symbols) {
+    var base = priceProxyBase();
+    if (!base || !symbols.length) return Promise.reject(new Error('no proxy'));
+    return fetchJSON(base + '/quote?symbols=' + symbols.map(encodeURIComponent).join(','), 12000).then(function (j) {
+      var table = (j && j.quotes) || j || {}, out = {};
+      symbols.forEach(function (s) {
+        var o = table[s] || table[s.toUpperCase()];
+        if (o && typeof o === 'object') { var q = normQuote(s, o, 'Yahoo'); if (q) out[s] = q; }
+      });
+      if (!Object.keys(out).length) throw new Error('empty');
+      return out;
+    });
+  }
+  var taseReady = fetchJSON('tase_securities.json?t=' + Date.now(), 8000).then(function (j) {
+    taseSecurities = j.securities || (Array.isArray(j) ? j : []);
+    return taseSecurities;
+  }).catch(function () { taseSecurities = taseSecurities || []; return taseSecurities; });
+  function pendingList() { return readJSON(PENDING_KEY) || []; }
+  function queuePending(syms) {
+    var cur = pendingList();
+    (syms || []).forEach(function (s) { if (s && cur.indexOf(s) < 0) cur.push(s); });
+    writeJSON(PENDING_KEY, cur);
+  }
+  function clearPending(syms) {
+    var drop = {};
+    (syms || []).forEach(function (s) { drop[s] = true; });
+    writeJSON(PENDING_KEY, pendingList().filter(function (s) { return !drop[s]; }));
   }
   var fetching = false;
-  function refreshQuotes(extra, silent) {
+  function collectHoldingSymbols(extra) {
     var syms = ['ILS=X', 'EURILS=X'];
-    data.savings.portfolios.forEach(function (p) { p.rows.forEach(function (r) { var s = (r.ticker || '').trim().toUpperCase(); if (s && syms.indexOf(s) < 0) syms.push(s); }); });
-    (extra || []).forEach(function (s) { if (syms.indexOf(s) < 0) syms.push(s); });
+    data.savings.portfolios.forEach(function (p) {
+      (p.rows || []).forEach(function (r) {
+        var res = resolveHolding(r);
+        [res && res.symbol].concat((res && res.altSymbols) || []).forEach(function (s) {
+          if (s && syms.indexOf(s) < 0) syms.push(s);
+        });
+      });
+    });
+    (extra || []).forEach(function (s) { if (s && syms.indexOf(s) < 0) syms.push(s); });
+    return syms;
+  }
+  function refreshQuotes(extra, silent) {
     fetching = true; emit('quotes');
-    function apply(found) { Object.keys(found).forEach(function (s) { quotes[s] = found[s]; }); writeJSON(QUOTES_KEY, quotes); }
-    return fromPricesJson(syms).catch(function () { return {}; }).then(function (found) {
+    function apply(found) { Object.keys(found || {}).forEach(function (s) { quotes[s] = found[s]; }); writeJSON(QUOTES_KEY, quotes); }
+    function mergeFill(found, missing) {
       apply(found);
-      var missing = syms.filter(function (s) { return !found[s]; });
-      if (!missing.length) return true;
-      var attempt = function () { return fromYahoo(missing).then(function (f) { apply(f); return true; }); };
-      return attempt().catch(function () { return new Promise(function (r) { setTimeout(r, 2000); }).then(attempt); })
-        .catch(function () { return Object.keys(found).length > 0; });
+      return missing.filter(function (s) { return !quotes[s] || !(quotes[s].price > 0); });
+    }
+    return taseReady.then(function () {
+      var syms = collectHoldingSymbols(extra);
+      return fromPricesJson(syms).catch(function () { return {}; }).then(function (found) {
+        var missing = mergeFill(found, syms);
+        if (!missing.length) return true;
+        var chain = Promise.resolve(missing);
+        function next(fn) {
+          return function (left) {
+            if (!left.length) return left;
+            return fn(left).then(function (f) { return mergeFill(f, left); }, function () { return left; });
+          };
+        }
+        return chain
+          .then(next(fromCrypto))
+          .then(next(fromFx))
+          .then(next(fromProxy))
+          .then(function (left) {
+            if (left.length) queuePending(left);
+            var got = syms.filter(function (s) { return quotes[s] && quotes[s].price > 0; });
+            if (got.length) clearPending(got);
+            return got.length > 0 || missing.length < syms.length;
+          });
+      });
     }).then(function (ok) {
       fetching = false; emit('quotes');
       if (!ok && !silent) toast(t('fetch_fail'));
       return ok;
+    }).catch(function () {
+      fetching = false; emit('quotes');
+      if (!silent) toast(t('fetch_fail'));
+      return false;
     });
   }
   function quoteLabel(q) {
     if (!q) return '';
     var time = q.time ? new Date(q.time * 1000).toLocaleString(settings.lang === 'he' ? 'he-IL' : settings.lang === 'es' ? 'es-ES' : 'en-GB', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '';
-    return (q.live ? t('live') : t('last_close')) + (time ? ' · ' + time : '') + ' · ' + q.source;
+    return (q.live ? t('live') : t('last_close')) + (time ? ' · ' + time : '') + (q.source ? ' · ' + q.source : '');
   }
+  function priceDecimals(px) { return px >= 100 ? 2 : px >= 1 ? 4 : px >= 0.01 ? 6 : 8; }
 
   /* ---------- events ---------- */
   var listeners = {};
@@ -197,17 +435,22 @@
       return { pmt: pmt, interest: pmt * N - P };
     },
     portfolioRow: function (row) {
-      var sym = (row.ticker || '').trim().toUpperCase(), q = quotes[sym], cur = row.currency || 'ILS', price = null, src = null, warn = null;
+      var res = resolveHolding(row), sym = res.symbol, q = (sym && quotes[sym]) || null, cur = row.currency || res.currency || 'ILS', price = null, src = null, warn = null, ai;
+      if (!q && res.altSymbols) {
+        for (ai = 0; ai < res.altSymbols.length; ai++) { if (quotes[res.altSymbols[ai]] && quotes[res.altSymbols[ai]].price > 0) { q = quotes[res.altSymbols[ai]]; break; } }
+      }
+      if (!q) q = quotes[((row.ticker || '').trim().toUpperCase())];
+      if (res.kind === 'crypto' && !row.currency) cur = 'USD';
       if (q && q.price > 0) {
         if (q.currency === cur) price = q.price;
         else { var a = toILS(q.price, q.currency), b = rateILS(cur); price = (a !== null && b) ? a / b : null; warn = q.currency; }
         src = q;
       }
-      if (price === null && nn(row.manual) !== null && n(row.manual) > 0) { price = n(row.manual); src = null; }
+      if (nn(row.manual) !== null && n(row.manual) > 0) { price = n(row.manual); src = null; }
       var qty = n(row.qty), value = price === null ? null : qty * price, cost = qty * n(row.entry);
       var valueILS = value === null ? null : toILS(value, cur), costILS = toILS(cost, cur);
       var pl = valueILS === null || costILS === null ? null : valueILS - costILS;
-      return { price: price, quote: src, manual: price !== null && !src, value: value, cost: cost, valueILS: valueILS, costILS: costILS, pl: pl, plPct: pl !== null && costILS ? pl / costILS * 100 : null, convertedFrom: warn };
+      return { price: price, quote: src, manual: price !== null && !src, value: value, cost: cost, valueILS: valueILS, costILS: costILS, pl: pl, plPct: pl !== null && costILS ? pl / costILS * 100 : null, convertedFrom: warn, pending: price === null, resolved: res, needsManual: res.kind === 'fund' && price === null };
     },
     portfolio: function (p) {
       var v = 0, c = 0, missing = 0;
@@ -265,6 +508,106 @@
 
   /* ---------- list editor ---------- */
   function opts(list) { return list.map(function (k) { return [k, t(k)]; }); }
+  function applySecurityChoice(row, item, onInput) {
+    if (item.kind === 'crypto' || item.coin) {
+      var c = item.coin || item;
+      row.ticker = c.symbol;
+      row.kind = 'crypto';
+      row.currency = 'USD';
+      row.securityNo = null;
+    } else {
+      var r = item.tase || item;
+      row.ticker = r.symbol || r.id || row.ticker;
+      row.kind = r.type || item.kind || 'stock';
+      if (r.id) row.securityNo = r.id;
+      if (row.kind === 'crypto') row.currency = 'USD';
+      else if (/\.TA$/i.test(String(row.ticker || '')) || /^\d{4,9}$/.test(String(row.ticker || '')) || row.kind === 'fund') row.currency = row.currency && row.currency !== 'USD' ? row.currency : 'ILS';
+    }
+    onInput();
+    refreshQuotes([row.ticker].concat(row.securityNo ? [row.securityNo, row.securityNo + '.TA'] : []), true);
+  }
+  function securityField(row, f, onInput) {
+    var id = 'f-' + uid();
+    var input = h('input', { id: id, type: 'text', autocomplete: 'off', 'aria-autocomplete': 'list', 'data-k': f.k, placeholder: f.ph || t('security_ph') });
+    input.value = row[f.k] === undefined || row[f.k] === null ? '' : row[f.k];
+    input.style.direction = 'ltr';
+    var list = h('div', { class: 'ac-list hidden', role: 'listbox' });
+    var wrap = h('div', { class: 'ac-wrap field' }, [h('label', { for: id, text: t(f.label) }), input, list]);
+    var blurTimer = null;
+    function hide() { list.classList.add('hidden'); list.innerHTML = ''; }
+    function showItems(items) {
+      list.innerHTML = '';
+      if (!items.length) { hide(); return; }
+      items.forEach(function (it) {
+        var title, meta, apply;
+        if (it.coin || it.code) {
+          var c = it.coin || it;
+          title = coinLangName(c) + ' (' + c.code + ')';
+          meta = c.symbol;
+          apply = function () { applySecurityChoice(row, { kind: 'crypto', coin: c }, function () { input.value = row.ticker; onInput(); }); hide(); };
+        } else {
+          var r = it.tase || it;
+          title = r.he || r.en || r.symbol || r.id;
+          meta = [r.id, r.symbol || r.ticker, r.type ? t('hk_' + r.type) : ''].filter(Boolean).join(' · ');
+          apply = function () { applySecurityChoice(row, { tase: r, kind: r.type }, function () { input.value = row.ticker; onInput(); }); hide(); };
+        }
+        var btn = h('button', { type: 'button', class: 'ac-item', role: 'option' }, [
+          h('span', { class: 'ac-title', text: title }),
+          meta ? h('span', { class: 'ac-meta', text: meta }) : null
+        ]);
+        btn.addEventListener('mousedown', function (e) { e.preventDefault(); apply(); });
+        list.appendChild(btn);
+      });
+      list.classList.remove('hidden');
+    }
+    function suggest(q) {
+      var kind = row.kind || 'auto';
+      var items = [];
+      if (kind === 'crypto' || kind === 'auto') {
+        searchCrypto(q, kind === 'crypto' ? 24 : 6).forEach(function (c) { items.push({ coin: c }); });
+      }
+      if (kind !== 'crypto') {
+        searchTase(q, 8).forEach(function (r) { items.push({ tase: r }); });
+      }
+      showItems(items);
+    }
+    input.addEventListener('input', function () {
+      row[f.k] = input.value;
+      onInput();
+      suggest(input.value);
+    });
+    input.addEventListener('focus', function () { suggest(input.value); });
+    input.addEventListener('blur', function () {
+      clearTimeout(blurTimer);
+      blurTimer = setTimeout(function () {
+        hide();
+        var raw = input.value.trim();
+        if (!raw) return;
+        var res = resolveHolding(row);
+        if (res && res.symbol) {
+          row.ticker = res.symbol;
+          if (res.kind) row.kind = res.kind;
+          if (res.securityNo) row.securityNo = res.securityNo;
+          if (res.kind === 'crypto') row.currency = 'USD';
+          else if (res.currency && (row.currency === undefined || row.currency === null || row.currency === '')) row.currency = res.currency;
+          input.value = row.ticker;
+          var card = input.closest('.row-card');
+          if (card && row.currency) {
+            var curSel = card.querySelector('[data-k="currency"]');
+            if (curSel) curSel.value = row.currency;
+          }
+          if (card && row.kind) {
+            var kindSel = card.querySelector('[data-k="kind"]');
+            if (kindSel) kindSel.value = row.kind;
+          }
+          onInput();
+        }
+        refreshQuotes([resolveHolding(row).symbol].concat((resolveHolding(row).altSymbols) || []), true);
+      }, 150);
+    });
+    return wrap;
+  }
+
   function fieldInput(row, f, onInput) {
     var id = 'f-' + uid();
     var input;
@@ -272,15 +615,27 @@
       input = h('select', { id: id }, (typeof f.options === 'function' ? f.options() : f.options).map(function (o) { return h('option', { value: o[0], text: o[1] }); }));
       input.value = row[f.k] !== undefined ? row[f.k] : f.options[0][0];
       if (row[f.k] === undefined) row[f.k] = input.value;
-      input.addEventListener('change', function () { row[f.k] = input.value; onInput(); });
+      input.setAttribute('data-k', f.k);
+      input.addEventListener('change', function () {
+        row[f.k] = input.value;
+        if (f.onChange) f.onChange(row, input.value);
+        if (f.k === 'kind' && input.value === 'crypto') {
+          row.currency = 'USD';
+          var card = input.closest('.row-card');
+          if (card) { var curSel = card.querySelector('[data-k="currency"]'); if (curSel) curSel.value = 'USD'; }
+        }
+        onInput();
+      });
     } else if (f.type === 'check') {
       input = h('input', { id: id, type: 'checkbox' });
       input.checked = row[f.k] !== false && (row[f.k] !== undefined || f.def !== false);
       if (row[f.k] === undefined) row[f.k] = input.checked;
       input.addEventListener('change', function () { row[f.k] = input.checked; onInput(); });
       return h('div', { class: 'field check' }, [input, h('label', { for: id, text: t(f.label) })]);
+    } else if (f.type === 'security') {
+      return securityField(row, f, onInput);
     } else {
-      input = h('input', { id: id, type: f.type === 'text' ? 'text' : f.type === 'date' ? 'date' : 'number', inputmode: f.type === 'number' ? 'decimal' : null, step: f.step || (f.type === 'number' ? 'any' : null), min: f.min, autocomplete: 'off', placeholder: f.ph || null });
+      input = h('input', { id: id, type: f.type === 'text' ? 'text' : f.type === 'date' ? 'date' : 'number', inputmode: f.type === 'number' ? 'decimal' : null, step: f.step || (f.type === 'number' ? 'any' : null), min: f.min, autocomplete: 'off', placeholder: f.ph || null, 'data-k': f.k });
       if (f.upper) { input.setAttribute('autocapitalize', 'characters'); input.style.direction = 'ltr'; }
       input.value = row[f.k] === undefined || row[f.k] === null ? '' : row[f.k];
       input.addEventListener('input', function () {
@@ -508,13 +863,23 @@
           nameIn.addEventListener('input', function () { p.name = nameIn.value; changed(); });
           var tot = h('div'), box = h('div');
           var l = renderList(box, p.rows, {
-            fields: [{ k: 'ticker', type: 'text', label: 'ticker', upper: true, ph: 'LUMI.TA' }, { k: 'qty', type: 'number', label: 'qty' }, { k: 'entry', type: 'number', label: 'entry' },
-                     { k: 'currency', type: 'select', label: 'row_currency', options: CUR_OPTS }, { k: 'manual', type: 'number', label: 'manual_price' }],
+            fields: [
+              { k: 'kind', type: 'select', label: 'holding_kind', options: [['auto', t('hk_auto')], ['stock', t('hk_stock')], ['etf', t('hk_etf')], ['fund', t('hk_fund')], ['bond', t('hk_bond')], ['crypto', t('hk_crypto')]] },
+              { k: 'ticker', type: 'security', label: 'security_or_ticker', ph: t('security_ph') },
+              { k: 'qty', type: 'number', label: 'qty', step: 'any' },
+              { k: 'entry', type: 'number', label: 'entry' },
+              { k: 'currency', type: 'select', label: 'row_currency', options: CUR_OPTS },
+              { k: 'manual', type: 'number', label: 'manual_price' }
+            ],
             outputs: function (r) {
-              var x = calc.portfolioRow(r), cur = r.currency || 'ILS';
-              return [[t('price'), x.price === null ? '—' : money(x.price, cur, 2), '', x.quote ? quoteLabel(x.quote) + (x.convertedFrom ? ' · ' + x.convertedFrom + '→' + cur : '') : (x.manual ? t('manual') : '')],
-                      [t('value'), x.valueILS === null ? '—' : disp(x.valueILS)], [t('cost'), disp(x.costILS)],
-                      [t('pl'), x.pl === null ? '—' : disp(x.pl) + ' (' + pct(x.plPct) + ')', x.pl === null ? '' : x.pl >= 0 ? 'pos' : 'neg']];
+              var x = calc.portfolioRow(r), cur = r.currency || (x.resolved && x.resolved.currency) || 'ILS';
+              var priceText = x.price === null ? t('price_pending') : money(x.price, cur, priceDecimals(x.price));
+              var stamp = x.quote ? quoteLabel(x.quote) + (x.convertedFrom ? ' · ' + x.convertedFrom + '→' + cur : '')
+                : (x.manual ? t('manual') : (x.needsManual ? t('fund_manual') : t('price_pending')));
+              if (x.resolved && x.resolved.name && x.resolved.name !== r.ticker) stamp = x.resolved.name + (stamp ? ' · ' + stamp : '');
+              return [[t('price'), priceText, '', stamp],
+                      [t('value'), x.valueILS === null ? t('price_pending') : disp(x.valueILS)], [t('cost'), disp(x.costILS)],
+                      [t('pl'), x.pl === null ? t('price_pending') : disp(x.pl) + ' (' + pct(x.plPct) + ')', x.pl === null ? '' : x.pl >= 0 ? 'pos' : 'neg']];
             },
             totals: function () { var s = calc.portfolio(p); tot.innerHTML = ''; tot.appendChild(totalsBox([[t('value'), disp(s.valueILS), 'big'], [t('cost'), disp(s.costILS)], [t('pl'), disp(s.pl) + ' (' + pct(s.plPct) + ')']])); grand(); }
           });

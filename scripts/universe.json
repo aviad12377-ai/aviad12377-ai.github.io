@@ -2,7 +2,12 @@
   "sources": {
     "ta35": "Tel Aviv Stock Exchange TA-35 constituents as of 2026-11-26, cross-checked against the Bizportal TA-35 composition page dated 26/11/2026 (35 names), Finsights (updated 2026-11-06, source: TASE composition lists; last reconstitution 06-11-2026: Doral and El Al entered, Shufersal exited), and whichindex.com members as of 2026-11-25 (tickers from TASE TA-35 components). Yahoo Finance symbols use the .TA suffix. The TASE listing of Palo Alto Networks uses ticker CYBR (Yahoo: CYBR.TA), not PANW.TA; confirmed by company/TASE announcements of the 23.2.2026 dual listing under CYBR and Yahoo Finance search (CYBR.TA, TLV). NASDAQ PANW remains in the S&P 100 group.",
     "sp100": "S&P 100 components as of 2026-09-21 from the Wikipedia S&P 100 components table, cited there to the iShares S&P 100 ETF (OEF). 101 tickers because Alphabet has GOOGL and GOOG. Yahoo Finance uses BRK-B for Berkshire Hathaway Class B (Wikipedia lists BRK.B).",
-    "banks": "The five major Israeli banks requested for the picker, all of which are also TA-35 constituents: LUMI, POLI, DSCT, MZTF, FIBI (.TA)."
+    "banks": "The five major Israeli banks requested for the picker, all of which are also TA-35 constituents: LUMI, POLI, DSCT, MZTF, FIBI (.TA).",
+    "us_etfs": "Broad US ETF universe (~300) for the prices.json cache: the largest AUM equity, bond, international, sector, dividend, commodity, real-estate, thematic, leveraged, and crypto ETFs commonly held by retail investors, including IBIT, FBTC, ETHA, SPY, QQQ, VOO, VTI, TQQQ and SOXL. Compiled 2026-11-26 from standard issuer families (SPDR, iShares, Vanguard, Invesco, Schwab, Direxion, ProShares, ARK, VanEck, Grayscale). This is a speed cache; any ticker a user enters is still fetched on demand or queued for the next Actions run.",
+    "crypto": "Major cryptocurrencies as Yahoo Finance symbols (CODE-USD). Live browser quotes also come from CoinGecko, Binance and Coinbase, which were verified to send Access-Control-Allow-Origin: * without an API key.",
+    "tase_etfs": "Israeli ETFs and funds are not hardcoded here with guessed tickers. They are resolved from tase_securities.json (Wikidata list + ISIN-derived TASE security numbers) and from extra_tickers.json / on-demand quotes.",
+    "fx": " Extended 2026-11-26 with GBP, JPY, AUD, CAD, CHF and CNY pairs versus USD/ILS/EUR.",
+    "mutual_funds": "Israeli mutual funds (קרנות נאמנות) by TASE security number (מספר נייר). Daily purchase/redemption prices are not on Yahoo. The Actions job tries Maya first (https://mayaapi.tase.co.il/api/fund/details?fundId={id}, header X-Maya-With: allow). Verified 2026-11-26: the public page https://maya.tase.co.il/fund/{id} returns 200 but is an empty SPA shell; the JSON API timed out behind Incapsula from this environment. Fallback (verified the same day): Fair public fund pages embed ng-state JSON with sellPrice/buyPrice in agorot and factor 100 (divide by 100 for ILS). Official TASE Data Hub / most tase.co.il APIs returned HTTP 403 without a key. Seed funds: 5133236, 5131925, 5140504, 5136262, 5129283, 5124805."
   },
   "fx": [
     {
@@ -19,6 +24,46 @@
       "symbol": "EURUSD=X",
       "name": "EUR/USD",
       "currency": "USD"
+    },
+    {
+      "symbol": "GBPILS=X",
+      "name": "GBP/ILS",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "GBPUSD=X",
+      "name": "GBP/USD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "USDJPY=X",
+      "name": "USD/JPY",
+      "currency": "JPY"
+    },
+    {
+      "symbol": "AUDUSD=X",
+      "name": "AUD/USD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "USDCAD=X",
+      "name": "USD/CAD",
+      "currency": "CAD"
+    },
+    {
+      "symbol": "USDCHF=X",
+      "name": "USD/CHF",
+      "currency": "CHF"
+    },
+    {
+      "symbol": "EURGBP=X",
+      "name": "EUR/GBP",
+      "currency": "GBP"
+    },
+    {
+      "symbol": "USDCNY=X",
+      "name": "USD/CNY",
+      "currency": "CNY"
     }
   ],
   "banks": [
@@ -730,6 +775,1769 @@
       "symbol": "XOM",
       "name": "ExxonMobil",
       "currency": "USD"
+    }
+  ],
+  "us_etfs": [
+    {
+      "symbol": "SPY",
+      "name": "SPDR S&P 500",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IVV",
+      "name": "iShares Core S&P 500",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VOO",
+      "name": "Vanguard S&P 500",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VTI",
+      "name": "Vanguard Total Stock Market",
+      "currency": "USD"
+    },
+    {
+      "symbol": "QQQ",
+      "name": "Invesco QQQ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "QQQM",
+      "name": "Invesco NASDAQ 100",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VUG",
+      "name": "VUG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VTV",
+      "name": "VTV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWF",
+      "name": "IWF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWD",
+      "name": "IWD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWM",
+      "name": "iShares Russell 2000",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IJH",
+      "name": "IJH",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IJR",
+      "name": "IJR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VB",
+      "name": "VB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VO",
+      "name": "VO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWB",
+      "name": "IWB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ITOT",
+      "name": "ITOT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHB",
+      "name": "SCHB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHX",
+      "name": "SCHX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHA",
+      "name": "SCHA",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHG",
+      "name": "SCHG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHV",
+      "name": "SCHV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPLG",
+      "name": "SPLG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPYG",
+      "name": "SPYG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPYV",
+      "name": "SPYV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VONG",
+      "name": "VONG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VONV",
+      "name": "VONV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "RSP",
+      "name": "RSP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DIA",
+      "name": "SPDR Dow Jones Industrial Average",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MDY",
+      "name": "MDY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "OEF",
+      "name": "OEF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MGC",
+      "name": "MGC",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VV",
+      "name": "VV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VXF",
+      "name": "VXF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWO",
+      "name": "IWO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWN",
+      "name": "IWN",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWP",
+      "name": "IWP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWS",
+      "name": "IWS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWR",
+      "name": "IWR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IWV",
+      "name": "IWV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPTM",
+      "name": "SPTM",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPMD",
+      "name": "SPMD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPSM",
+      "name": "SPSM",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VONE",
+      "name": "VONE",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VTHR",
+      "name": "VTHR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VTWO",
+      "name": "VTWO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VIOO",
+      "name": "VIOO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VIOG",
+      "name": "VIOG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VIOV",
+      "name": "VIOV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VBK",
+      "name": "VBK",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VBR",
+      "name": "VBR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VOE",
+      "name": "VOE",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VOT",
+      "name": "VOT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MGK",
+      "name": "MGK",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MGV",
+      "name": "MGV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "QUAL",
+      "name": "QUAL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VLUE",
+      "name": "VLUE",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MTUM",
+      "name": "MTUM",
+      "currency": "USD"
+    },
+    {
+      "symbol": "USMV",
+      "name": "USMV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPLV",
+      "name": "SPLV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MOAT",
+      "name": "MOAT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "COWZ",
+      "name": "COWZ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CALF",
+      "name": "CALF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AVUV",
+      "name": "AVUV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AVDV",
+      "name": "AVDV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DFAC",
+      "name": "DFAC",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DFSV",
+      "name": "DFSV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XMMO",
+      "name": "XMMO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPMO",
+      "name": "SPMO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DGRO",
+      "name": "DGRO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DGRW",
+      "name": "DGRW",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VIG",
+      "name": "Vanguard Dividend Appreciation",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VYM",
+      "name": "Vanguard High Dividend Yield",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHD",
+      "name": "Schwab US Dividend Equity",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DVY",
+      "name": "DVY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SDY",
+      "name": "SDY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "NOBL",
+      "name": "NOBL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPHD",
+      "name": "SPHD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "HDV",
+      "name": "HDV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FVD",
+      "name": "FVD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "JEPI",
+      "name": "JPMorgan Equity Premium Income",
+      "currency": "USD"
+    },
+    {
+      "symbol": "JEPQ",
+      "name": "JPMorgan Nasdaq Equity Premium Income",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XYLD",
+      "name": "XYLD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "RYLD",
+      "name": "RYLD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "QYLD",
+      "name": "QYLD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DIVO",
+      "name": "DIVO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VEA",
+      "name": "Vanguard FTSE Developed Markets",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IEFA",
+      "name": "iShares Core MSCI EAFE",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EFA",
+      "name": "iShares MSCI EAFE",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VEU",
+      "name": "VEU",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VXUS",
+      "name": "VXUS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IXUS",
+      "name": "IXUS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VWO",
+      "name": "Vanguard FTSE Emerging Markets",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IEMG",
+      "name": "iShares Core MSCI Emerging Markets",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EEM",
+      "name": "iShares MSCI Emerging Markets",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHE",
+      "name": "SCHE",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHF",
+      "name": "SCHF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IDEV",
+      "name": "IDEV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IEUR",
+      "name": "IEUR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VSS",
+      "name": "VSS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VIGI",
+      "name": "VIGI",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IQLT",
+      "name": "IQLT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EFV",
+      "name": "EFV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EFG",
+      "name": "EFG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCZ",
+      "name": "SCZ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EFAV",
+      "name": "EFAV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EEMV",
+      "name": "EEMV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWJ",
+      "name": "EWJ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWZ",
+      "name": "EWZ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWG",
+      "name": "EWG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWU",
+      "name": "EWU",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWC",
+      "name": "EWC",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWA",
+      "name": "EWA",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWT",
+      "name": "EWT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWY",
+      "name": "EWY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FXI",
+      "name": "FXI",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MCHI",
+      "name": "MCHI",
+      "currency": "USD"
+    },
+    {
+      "symbol": "KWEB",
+      "name": "KWEB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ASHR",
+      "name": "ASHR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "INDA",
+      "name": "INDA",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EPI",
+      "name": "EPI",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWW",
+      "name": "EWW",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWP",
+      "name": "EWP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWI",
+      "name": "EWI",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWN",
+      "name": "EWN",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWL",
+      "name": "EWL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWD",
+      "name": "EWD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EIDO",
+      "name": "EIDO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWM",
+      "name": "EWM",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EWS",
+      "name": "EWS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "THD",
+      "name": "THD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EPOL",
+      "name": "EPOL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ARGT",
+      "name": "ARGT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ECH",
+      "name": "ECH",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BND",
+      "name": "Vanguard Total Bond Market",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AGG",
+      "name": "iShares Core US Aggregate Bond",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BNDX",
+      "name": "BNDX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IUSB",
+      "name": "IUSB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VCIT",
+      "name": "VCIT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VCSH",
+      "name": "VCSH",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VCLT",
+      "name": "VCLT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VMBS",
+      "name": "VMBS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MBB",
+      "name": "MBB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LQD",
+      "name": "iShares iBoxx Investment Grade",
+      "currency": "USD"
+    },
+    {
+      "symbol": "HYG",
+      "name": "iShares iBoxx High Yield Corporate",
+      "currency": "USD"
+    },
+    {
+      "symbol": "JNK",
+      "name": "JNK",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SJNK",
+      "name": "SJNK",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SHYG",
+      "name": "SHYG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "USHY",
+      "name": "USHY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FLOT",
+      "name": "FLOT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BIL",
+      "name": "BIL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SGOV",
+      "name": "SGOV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SHV",
+      "name": "SHV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SHY",
+      "name": "SHY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IEI",
+      "name": "IEI",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IEF",
+      "name": "IEF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TLT",
+      "name": "iShares 20+ Year Treasury",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TLH",
+      "name": "TLH",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GOVT",
+      "name": "GOVT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MUB",
+      "name": "MUB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VTEB",
+      "name": "VTEB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SUB",
+      "name": "SUB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "HYD",
+      "name": "HYD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EMB",
+      "name": "EMB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VWOB",
+      "name": "VWOB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PCY",
+      "name": "PCY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TIP",
+      "name": "TIP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VTIP",
+      "name": "VTIP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "STIP",
+      "name": "STIP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHP",
+      "name": "SCHP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LMBS",
+      "name": "LMBS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BOND",
+      "name": "BOND",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TOTL",
+      "name": "TOTL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "JCPB",
+      "name": "JCPB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FBND",
+      "name": "FBND",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BIV",
+      "name": "BIV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BLV",
+      "name": "BLV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BSV",
+      "name": "BSV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IGIB",
+      "name": "IGIB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IGSB",
+      "name": "IGSB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IGLB",
+      "name": "IGLB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LQDH",
+      "name": "LQDH",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ANGL",
+      "name": "ANGL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FALN",
+      "name": "FALN",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLK",
+      "name": "Technology Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLF",
+      "name": "Financial Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLV",
+      "name": "Health Care Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLE",
+      "name": "Energy Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLI",
+      "name": "Industrial Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLY",
+      "name": "Consumer Discretionary Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLP",
+      "name": "Consumer Staples Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLU",
+      "name": "Utilities Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLB",
+      "name": "Materials Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLRE",
+      "name": "Real Estate Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLC",
+      "name": "Communication Services Select Sector SPDR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VGT",
+      "name": "VGT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VHT",
+      "name": "VHT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VFH",
+      "name": "VFH",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VDE",
+      "name": "VDE",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VIS",
+      "name": "VIS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VCR",
+      "name": "VCR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VDC",
+      "name": "VDC",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VPU",
+      "name": "VPU",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VAW",
+      "name": "VAW",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VOX",
+      "name": "VOX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VNQ",
+      "name": "Vanguard Real Estate",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SMH",
+      "name": "VanEck Semiconductor",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SOXX",
+      "name": "SOXX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XBI",
+      "name": "SPDR S&P Biotech",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IBB",
+      "name": "iShares Biotechnology",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IGV",
+      "name": "IGV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FDN",
+      "name": "FDN",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SKYY",
+      "name": "SKYY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "HACK",
+      "name": "HACK",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BOTZ",
+      "name": "BOTZ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ROBO",
+      "name": "ROBO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ARKK",
+      "name": "ARK Innovation",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ARKW",
+      "name": "ARKW",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ARKF",
+      "name": "ARKF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ARKG",
+      "name": "ARKG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ARKQ",
+      "name": "ARKQ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ARKX",
+      "name": "ARKX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CIBR",
+      "name": "CIBR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TAN",
+      "name": "TAN",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ICLN",
+      "name": "ICLN",
+      "currency": "USD"
+    },
+    {
+      "symbol": "QCLN",
+      "name": "QCLN",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LIT",
+      "name": "LIT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XME",
+      "name": "XME",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GDX",
+      "name": "GDX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GDXJ",
+      "name": "GDXJ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SIL",
+      "name": "SIL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "COPX",
+      "name": "COPX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "URA",
+      "name": "URA",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XOP",
+      "name": "XOP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "OIH",
+      "name": "OIH",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AMLP",
+      "name": "AMLP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AMJ",
+      "name": "AMJ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PICK",
+      "name": "PICK",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TQQQ",
+      "name": "ProShares UltraPro QQQ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SQQQ",
+      "name": "ProShares UltraPro Short QQQ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "QLD",
+      "name": "QLD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "QID",
+      "name": "QID",
+      "currency": "USD"
+    },
+    {
+      "symbol": "UPRO",
+      "name": "ProShares UltraPro S&P 500",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPXU",
+      "name": "SPXU",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPXL",
+      "name": "Direxion Daily S&P 500 Bull 3X",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SPXS",
+      "name": "SPXS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TNA",
+      "name": "TNA",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TZA",
+      "name": "TZA",
+      "currency": "USD"
+    },
+    {
+      "symbol": "UDOW",
+      "name": "UDOW",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SDOW",
+      "name": "SDOW",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SOXL",
+      "name": "Direxion Daily Semiconductors Bull 3X",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SOXS",
+      "name": "Direxion Daily Semiconductors Bear 3X",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TECL",
+      "name": "TECL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TECS",
+      "name": "TECS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FNGU",
+      "name": "FNGU",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FNGD",
+      "name": "FNGD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TMF",
+      "name": "TMF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TMV",
+      "name": "TMV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LABU",
+      "name": "LABU",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LABD",
+      "name": "LABD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CURE",
+      "name": "CURE",
+      "currency": "USD"
+    },
+    {
+      "symbol": "WANT",
+      "name": "WANT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "NAIL",
+      "name": "NAIL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DRN",
+      "name": "DRN",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DRV",
+      "name": "DRV",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ERX",
+      "name": "ERX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ERY",
+      "name": "ERY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "NUGT",
+      "name": "NUGT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DUST",
+      "name": "DUST",
+      "currency": "USD"
+    },
+    {
+      "symbol": "JNUG",
+      "name": "JNUG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "JDST",
+      "name": "JDST",
+      "currency": "USD"
+    },
+    {
+      "symbol": "UVXY",
+      "name": "UVXY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SVXY",
+      "name": "SVXY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VIXY",
+      "name": "VIXY",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BOIL",
+      "name": "BOIL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "KOLD",
+      "name": "KOLD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IBIT",
+      "name": "iShares Bitcoin Trust",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SOLT",
+      "name": "2x Solana ETF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BITU",
+      "name": "ProShares Ultra Bitcoin ETF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FBTC",
+      "name": "Fidelity Wise Origin Bitcoin",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ETHA",
+      "name": "iShares Ethereum Trust",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ETHW",
+      "name": "Bitwise Ethereum ETF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ARKB",
+      "name": "ARK 21Shares Bitcoin",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BITB",
+      "name": "Bitwise Bitcoin ETF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "HODL",
+      "name": "VanEck Bitcoin ETF",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BRRR",
+      "name": "BRRR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EZBC",
+      "name": "EZBC",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BTCO",
+      "name": "BTCO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GBTC",
+      "name": "Grayscale Bitcoin Trust",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ETHE",
+      "name": "Grayscale Ethereum Trust",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BITO",
+      "name": "ProShares Bitcoin Strategy",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BITX",
+      "name": "BITX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ETHU",
+      "name": "ETHU",
+      "currency": "USD"
+    },
+    {
+      "symbol": "WGMI",
+      "name": "WGMI",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BLOK",
+      "name": "BLOK",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BITQ",
+      "name": "BITQ",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GLD",
+      "name": "SPDR Gold Shares",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IAU",
+      "name": "iShares Gold Trust",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GLDM",
+      "name": "GLDM",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SGOL",
+      "name": "SGOL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SLV",
+      "name": "iShares Silver Trust",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SIVR",
+      "name": "SIVR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PPLT",
+      "name": "PPLT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PALL",
+      "name": "PALL",
+      "currency": "USD"
+    },
+    {
+      "symbol": "USO",
+      "name": "United States Oil Fund",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BNO",
+      "name": "BNO",
+      "currency": "USD"
+    },
+    {
+      "symbol": "UNG",
+      "name": "UNG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DBC",
+      "name": "DBC",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PDBC",
+      "name": "PDBC",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GSG",
+      "name": "GSG",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DJP",
+      "name": "DJP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CPER",
+      "name": "CPER",
+      "currency": "USD"
+    },
+    {
+      "symbol": "WEAT",
+      "name": "WEAT",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CORN",
+      "name": "CORN",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SOYB",
+      "name": "SOYB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IYR",
+      "name": "IYR",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHH",
+      "name": "SCHH",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VNQI",
+      "name": "VNQI",
+      "currency": "USD"
+    },
+    {
+      "symbol": "REM",
+      "name": "REM",
+      "currency": "USD"
+    },
+    {
+      "symbol": "RWR",
+      "name": "RWR",
+      "currency": "USD"
+    }
+  ],
+  "crypto": [
+    {
+      "symbol": "BTC-USD",
+      "name": "Bitcoin",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ETH-USD",
+      "name": "Ethereum",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SOL-USD",
+      "name": "Solana",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XRP-USD",
+      "name": "XRP",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BNB-USD",
+      "name": "BNB",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DOGE-USD",
+      "name": "Dogecoin",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ADA-USD",
+      "name": "Cardano",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AVAX-USD",
+      "name": "Avalanche",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DOT-USD",
+      "name": "Polkadot",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LINK-USD",
+      "name": "Chainlink",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TON-USD",
+      "name": "Toncoin",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TRX-USD",
+      "name": "TRON",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LTC-USD",
+      "name": "Litecoin",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BCH-USD",
+      "name": "Bitcoin Cash",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SHIB-USD",
+      "name": "Shiba Inu",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XLM-USD",
+      "name": "Stellar",
+      "currency": "USD"
+    },
+    {
+      "symbol": "NEAR-USD",
+      "name": "NEAR Protocol",
+      "currency": "USD"
+    },
+    {
+      "symbol": "APT-USD",
+      "name": "Aptos",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SUI-USD",
+      "name": "Sui",
+      "currency": "USD"
+    },
+    {
+      "symbol": "UNI-USD",
+      "name": "Uniswap",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ATOM-USD",
+      "name": "Cosmos",
+      "currency": "USD"
+    },
+    {
+      "symbol": "POL-USD",
+      "name": "Polygon",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PEPE-USD",
+      "name": "Pepe",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MATIC-USD",
+      "name": "Polygon (legacy)",
+      "currency": "USD"
+    }
+  ],
+  "tase_etfs": [],
+  "mutual_funds": [
+    {
+      "id": "5133236",
+      "he": "ATF מחקה (40) אינדקס בנקים וביטוח ישראל",
+      "en": "ATF 40 iNDEX Israel Banks & Insurance Index IL",
+      "currency": "ILS"
+    },
+    {
+      "id": "5131925",
+      "he": "תכלית TTFי (40) אינדקס בנקים ישראל",
+      "en": "Tachlit TTF 40 INDEX ISRAEL BANKS IL",
+      "currency": "ILS"
+    },
+    {
+      "id": "5140504",
+      "he": "מיטב (4A) ת\"א 125 מומנטום",
+      "en": "Meitav 4A TA 125 Momentum",
+      "currency": "ILS"
+    },
+    {
+      "id": "5136262",
+      "he": "אינווסטור 360 (4D) גמישה",
+      "en": "Investor 360 4D Flexible",
+      "currency": "ILS"
+    },
+    {
+      "id": "5129283",
+      "he": "הראל מחקה (4D)יNASDAQ 100",
+      "en": "Harel Htf 4D NASDAQ 100",
+      "currency": "ILS"
+    },
+    {
+      "id": "5124805",
+      "he": "מור (3B) תיק השקעות 50%",
+      "en": "MORE 3B Portfolio IL 50%",
+      "currency": "ILS"
     }
   ]
 }

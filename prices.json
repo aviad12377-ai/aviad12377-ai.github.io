@@ -1,6 +1,138 @@
 {
-  "generatedAt": "2026-11-26T19:01:01Z",
+  "generatedAt": "2026-11-26T19:33:30Z",
   "quotes": {
+    "5124805": {
+      "price": 2.1882,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 218.82,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5124805.TA": {
+      "price": 2.1882,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 218.82,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5129283": {
+      "price": 3.5205,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 352.05,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5129283.TA": {
+      "price": 3.5205,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 352.05,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5131925": {
+      "price": 3.8176,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 381.76,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5131925.TA": {
+      "price": 3.8176,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 381.76,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5133236": {
+      "price": 3.9842,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 398.42,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5133236.TA": {
+      "price": 3.9842,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 398.42,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5136262": {
+      "price": 2.2923,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 229.23,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5136262.TA": {
+      "price": 2.2923,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 229.23,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5140504": {
+      "price": 1.6794,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 167.94,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
+    "5140504.TA": {
+      "price": 1.6794,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-25T22:00:00.000Z",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 167.94,
+      "factor": 100,
+      "source": "fair.co.il"
+    },
     "AAPL": {
       "price": 355.58,
       "currency": "USD",
@@ -33,12 +165,28 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "ADA-USD": {
+      "price": 0.15082,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:25+00:00",
+      "previousClose": 0.145763,
+      "exchange": "CCC",
+      "state": "open"
+    },
     "ADBE": {
       "price": 232.83,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:01-05:00",
       "previousClose": 232.08,
       "exchange": "NMS",
+      "state": "closed"
+    },
+    "AGG": {
+      "price": 96.55,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 96.18,
+      "exchange": "PCX",
       "state": "closed"
     },
     "AMAT": {
@@ -65,6 +213,14 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "AMLP": {
+      "price": 48.88,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 48.78,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "AMT": {
       "price": 184.59,
       "currency": "USD",
@@ -89,12 +245,132 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "ANGL": {
+      "price": 27.09,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 27.07,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "ARGT": {
+      "price": 67.46,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 66.31,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "ARKB": {
+      "price": 19.95,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 19.79,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "ARKF": {
+      "price": 37.91,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 37.47,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "ARKG": {
+      "price": 40.97,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 41.79,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "ARKK": {
+      "price": 67.36,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 67.46,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "ARKQ": {
+      "price": 96.23,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 95.79,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "ARKW": {
+      "price": 129.07,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 129.03,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "ARKX": {
+      "price": 25.98,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 25.8,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "ASHR": {
+      "price": 29.5,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 29.68,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "ATOM-USD": {
+      "price": 1.2161,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:26:45+00:00",
+      "previousClose": 1.236665,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "AUDUSD=X": {
+      "price": 0.6633,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:25:43+00:00",
+      "previousClose": 0.6629,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "AVAX-USD": {
+      "price": 6.661,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:08+00:00",
+      "previousClose": 6.623868,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "AVDV": {
+      "price": 97.74,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 97.6,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "AVGO": {
       "price": 300.86,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 301.08,
       "exchange": "NMS",
+      "state": "closed"
+    },
+    "AVUV": {
+      "price": 118.23,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 117.29,
+      "exchange": "PCX",
       "state": "closed"
     },
     "AXP": {
@@ -129,6 +405,14 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "BCH-USD": {
+      "price": 209.25,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:03+00:00",
+      "previousClose": 205.64748,
+      "exchange": "CCC",
+      "state": "open"
+    },
     "BEZQ.TA": {
       "price": 7.042,
       "currency": "ILS",
@@ -143,6 +427,62 @@
       "regularMarketTime": "2026-11-26T17:24:09+02:00",
       "previousClose": 690.5,
       "exchange": "TLV",
+      "state": "closed"
+    },
+    "BIL": {
+      "price": 91.64,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 91.61,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "BITB": {
+      "price": 32.65,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 32.38,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "BITO": {
+      "price": 16.0,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 15.85,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "BITQ": {
+      "price": 14.92,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 14.75,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "BITU": {
+      "price": 7.51,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 7.38,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "BITX": {
+      "price": 9.67,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 9.52,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "BIV": {
+      "price": 74.46,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 74.2,
+      "exchange": "PCX",
       "state": "closed"
     },
     "BKNG": {
@@ -161,12 +501,60 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "BLOK": {
+      "price": 43.86,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 43.52,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "BLV": {
+      "price": 65.36,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 64.85,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "BMY": {
       "price": 61.56,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 62.02,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "BNB-USD": {
+      "price": 553.53,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:00+00:00",
+      "previousClose": 553.5615,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "BND": {
+      "price": 71.6,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 71.36,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "BNDX": {
+      "price": 47.6,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 47.52,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "BNO": {
+      "price": 59.4,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 57.75,
+      "exchange": "PCX",
       "state": "closed"
     },
     "BNY": {
@@ -177,6 +565,30 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "BOIL": {
+      "price": 18.91,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 19.03,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "BOND": {
+      "price": 89.06,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:01:04-05:00",
+      "previousClose": 88.76,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "BOTZ": {
+      "price": 29.23,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 29.47,
+      "exchange": "NGM",
+      "state": "closed"
+    },
     "BRK-B": {
       "price": 579.32,
       "currency": "USD",
@@ -185,12 +597,52 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "BRRR": {
+      "price": 16.96,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 16.81,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "BSV": {
+      "price": 76.98,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 76.89,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "BTC-USD": {
+      "price": 60533.39,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:29+00:00",
+      "previousClose": 60378.57,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "BTCO": {
+      "price": 59.82,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 59.31,
+      "exchange": "BTS",
+      "state": "closed"
+    },
     "C": {
       "price": 113.33,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:01:42-05:00",
       "previousClose": 113.85,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "CALF": {
+      "price": 56.91,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 56.0,
+      "exchange": "BTS",
       "state": "closed"
     },
     "CAMT.TA": {
@@ -207,6 +659,14 @@
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 540.63,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "CIBR": {
+      "price": 94.83,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 94.36,
+      "exchange": "NGM",
       "state": "closed"
     },
     "CLIS.TA": {
@@ -241,12 +701,44 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "COPX": {
+      "price": 58.66,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 57.58,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "CORN": {
+      "price": 17.22,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 17.0,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "COST": {
       "price": 1086.81,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:01-05:00",
       "previousClose": 1091.71,
       "exchange": "NMS",
+      "state": "closed"
+    },
+    "COWZ": {
+      "price": 68.38,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 67.77,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "CPER": {
+      "price": 32.51,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 32.5,
+      "exchange": "PCX",
       "state": "closed"
     },
     "CRM": {
@@ -263,6 +755,14 @@
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 93.99,
       "exchange": "NMS",
+      "state": "closed"
+    },
+    "CURE": {
+      "price": 161.01,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 164.06,
+      "exchange": "PCX",
       "state": "closed"
     },
     "CVS": {
@@ -289,6 +789,14 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "DBC": {
+      "price": 29.27,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 29.03,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "DE": {
       "price": 641.02,
       "currency": "USD",
@@ -305,12 +813,52 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "DFAC": {
+      "price": 42.97,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 42.86,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "DFSV": {
+      "price": 37.9,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 37.53,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "DGRO": {
+      "price": 79.6,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 79.21,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "DGRW": {
+      "price": 93.53,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 93.55,
+      "exchange": "NGM",
+      "state": "closed"
+    },
     "DHR": {
       "price": 227.35,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:02:13-05:00",
       "previousClose": 229.09,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "DIA": {
+      "price": 501.27,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 499.74,
+      "exchange": "PCX",
       "state": "closed"
     },
     "DIS": {
@@ -321,6 +869,22 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "DIVO": {
+      "price": 45.33,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 45.26,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "DJP": {
+      "price": 46.11,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 45.51,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "DLEKG.TA": {
       "price": 78.16,
       "currency": "ILS",
@@ -329,12 +893,44 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "DOGE-USD": {
+      "price": 0.05703,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:20+00:00",
+      "previousClose": 0.055969,
+      "exchange": "CCC",
+      "state": "open"
+    },
     "DORL.TA": {
       "price": 51.41,
       "currency": "ILS",
       "regularMarketTime": "2026-11-26T17:29:11+02:00",
       "previousClose": 47.75,
       "exchange": "TLV",
+      "state": "closed"
+    },
+    "DOT-USD": {
+      "price": 0.676,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:18+00:00",
+      "previousClose": 0.658613,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "DRN": {
+      "price": 9.9,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 9.61,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "DRV": {
+      "price": 18.81,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 19.3,
+      "exchange": "PCX",
       "state": "closed"
     },
     "DSCT.TA": {
@@ -353,12 +949,100 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "DUST": {
+      "price": 49.94,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 53.67,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "DVY": {
+      "price": 160.36,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 158.46,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "ECH": {
+      "price": 33.3,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 33.36,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "EEM": {
+      "price": 56.4,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 56.69,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EEMV": {
+      "price": 67.9,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 67.89,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "EFA": {
+      "price": 99.18,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 98.88,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EFAV": {
+      "price": 95.25,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 94.16,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "EFG": {
+      "price": 37.46,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 37.42,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "EFV": {
+      "price": 38.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 38.27,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "EIDO": {
+      "price": 10.5,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 10.61,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "ELAL.TA": {
       "price": 20.7,
       "currency": "ILS",
       "regularMarketTime": "2026-11-26T17:27:54+02:00",
       "previousClose": 21.52,
       "exchange": "TLV",
+      "state": "closed"
+    },
+    "EMB": {
+      "price": 90.73,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 90.39,
+      "exchange": "NGM",
       "state": "closed"
     },
     "EMR": {
@@ -377,6 +1061,38 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "EPI": {
+      "price": 45.33,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 45.11,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EPOL": {
+      "price": 40.55,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 40.91,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "ERX": {
+      "price": 96.26,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 94.81,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "ERY": {
+      "price": 9.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 9.65,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "ESLT.TA": {
       "price": 2230.0,
       "currency": "ILS",
@@ -385,21 +1101,237 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "ETH-USD": {
+      "price": 1701.31,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:30+00:00",
+      "previousClose": 1690.7516,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "ETHA": {
+      "price": 38.17,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 37.83,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "ETHE": {
+      "price": 13.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 13.4,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "ETHU": {
+      "price": 11.13,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 10.94,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "ETHW": {
+      "price": 12.08,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 11.95,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EURGBP=X": {
+      "price": 0.837,
+      "currency": "GBP",
+      "regularMarketTime": "2026-11-26T19:27:22+00:00",
+      "previousClose": 0.8366,
+      "exchange": "CCY",
+      "state": "open"
+    },
     "EURILS=X": {
-      "price": 3.6388,
+      "price": 3.6379,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T19:00:25+00:00",
+      "regularMarketTime": "2026-11-26T19:27:13+00:00",
       "previousClose": 3.6857,
       "exchange": "CCY",
       "state": "open"
     },
     "EURUSD=X": {
-      "price": 1.0973,
+      "price": 1.0972,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:00:43+00:00",
+      "regularMarketTime": "2026-11-26T19:26:43+00:00",
       "previousClose": 1.0982,
       "exchange": "CCY",
       "state": "open"
+    },
+    "EWA": {
+      "price": 27.37,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 27.29,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWC": {
+      "price": 56.89,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 56.4,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWD": {
+      "price": 50.34,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 49.97,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWG": {
+      "price": 40.08,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 40.07,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWI": {
+      "price": 54.54,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 54.83,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWJ": {
+      "price": 87.25,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 86.64,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWL": {
+      "price": 64.06,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 63.55,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWM": {
+      "price": 25.69,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 25.57,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWN": {
+      "price": 59.85,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 60.33,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWP": {
+      "price": 56.23,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 56.57,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWS": {
+      "price": 28.1,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 28.14,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWT": {
+      "price": 83.48,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 84.55,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWU": {
+      "price": 46.12,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 45.87,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWW": {
+      "price": 73.34,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 71.89,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWY": {
+      "price": 129.19,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 130.7,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EWZ": {
+      "price": 30.16,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 29.3,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "EZBC": {
+      "price": 34.77,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 34.46,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "FALN": {
+      "price": 25.34,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 25.32,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "FBND": {
+      "price": 44.32,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 44.17,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "FBTC": {
+      "price": 52.35,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 51.9,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "FDN": {
+      "price": 250.51,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 250.87,
+      "exchange": "PCX",
+      "state": "closed"
     },
     "FDX": {
       "price": 308.87,
@@ -417,12 +1349,92 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "FLOT": {
+      "price": 50.97,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 50.97,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "FNGD": {
+      "price": 36.94,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 36.08,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "FNGU": {
+      "price": 18.48,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 18.94,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "FVD": {
+      "price": 51.47,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 51.04,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "FXI": {
+      "price": 31.3,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 31.43,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "GBPILS=X": {
+      "price": 4.3526,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T19:26:43+00:00",
+      "previousClose": 4.4038,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "GBPUSD=X": {
+      "price": 1.3105,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:26:43+00:00",
+      "previousClose": 1.3116,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "GBTC": {
+      "price": 46.41,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 46.03,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "GD": {
       "price": 360.27,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 351.55,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "GDX": {
+      "price": 73.89,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 71.37,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "GDXJ": {
+      "price": 87.66,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 84.17,
+      "exchange": "PCX",
       "state": "closed"
     },
     "GE": {
@@ -449,6 +1461,22 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "GLD": {
+      "price": 327.45,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 325.45,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "GLDM": {
+      "price": 70.69,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 70.26,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "GM": {
       "price": 83.99,
       "currency": "USD",
@@ -473,12 +1501,36 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "GOVT": {
+      "price": 22.35,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 22.26,
+      "exchange": "BTS",
+      "state": "closed"
+    },
     "GS": {
       "price": 801.03,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 806.02,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "GSG": {
+      "price": 32.42,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 32.0,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "HACK": {
+      "price": 120.4,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 119.39,
+      "exchange": "PCX",
       "state": "closed"
     },
     "HARL.TA": {
@@ -497,6 +1549,62 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "HDV": {
+      "price": 30.49,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 30.32,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "HODL": {
+      "price": 17.0,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 16.86,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "HYD": {
+      "price": 49.3,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 49.02,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "HYG": {
+      "price": 76.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 76.43,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IAU": {
+      "price": 67.16,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 66.73,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IBB": {
+      "price": 218.26,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 219.49,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "IBIT": {
+      "price": 34.07,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 33.76,
+      "exchange": "NGM",
+      "state": "closed"
+    },
     "IBM": {
       "price": 243.47,
       "currency": "USD",
@@ -513,13 +1621,125 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "ICLN": {
+      "price": 14.2,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 14.06,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "IDEV": {
+      "price": 85.3,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 84.97,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IEF": {
+      "price": 92.06,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 91.64,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "IEFA": {
+      "price": 92.3,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 92.02,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "IEI": {
+      "price": 115.43,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 115.15,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "IEMG": {
+      "price": 68.78,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 69.07,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IEUR": {
+      "price": 72.09,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 71.96,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IGIB": {
+      "price": 51.23,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 51.04,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "IGLB": {
+      "price": 47.01,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 46.67,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IGSB": {
+      "price": 51.55,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 51.47,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "IGV": {
+      "price": 95.02,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 95.35,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "IJH": {
+      "price": 71.67,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 70.83,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IJR": {
+      "price": 136.39,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 135.4,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "ILS=X": {
       "price": 3.3173,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T18:59:58+00:00",
+      "regularMarketTime": "2026-11-26T19:27:16+00:00",
       "previousClose": 3.3519,
       "exchange": "CCY",
       "state": "open"
+    },
+    "INDA": {
+      "price": 53.2,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 52.74,
+      "exchange": "BTS",
+      "state": "closed"
     },
     "INTC": {
       "price": 54.47,
@@ -537,6 +1757,14 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "IQLT": {
+      "price": 48.33,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 48.18,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "ISRG": {
       "price": 427.18,
       "currency": "USD",
@@ -545,12 +1773,180 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "ITOT": {
+      "price": 156.64,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 156.83,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IUSB": {
+      "price": 44.905,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 44.76,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "IVV": {
+      "price": 720.01,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 721.98,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWB": {
+      "price": 392.64,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 393.38,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWD": {
+      "price": 254.78,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 253.95,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWF": {
+      "price": 107.01,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 107.89,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWM": {
+      "price": 268.87,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 267.14,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWN": {
+      "price": 206.44,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 205.27,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWO": {
+      "price": 338.61,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 336.42,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWP": {
+      "price": 122.93,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 122.33,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWR": {
+      "price": 107.27,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 106.28,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWS": {
+      "price": 167.88,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 166.23,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IWV": {
+      "price": 407.98,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 408.37,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "IXUS": {
+      "price": 87.35,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 87.29,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "IYR": {
+      "price": 101.51,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 100.47,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "JCPB": {
+      "price": 45.59,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 45.44,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "JDST": {
+      "price": 36.46,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 39.76,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "JEPI": {
+      "price": 56.07,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 56.03,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "JEPQ": {
+      "price": 52.72,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 53.06,
+      "exchange": "NGM",
+      "state": "closed"
+    },
     "JNJ": {
       "price": 273.94,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 276.46,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "JNK": {
+      "price": 91.75,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 91.69,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "JNUG": {
+      "price": 82.22,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 75.9,
+      "exchange": "PCX",
       "state": "closed"
     },
     "JPM": {
@@ -569,6 +1965,38 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "KOLD": {
+      "price": 26.93,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 26.81,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "KWEB": {
+      "price": 21.17,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 21.15,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "LABD": {
+      "price": 6.26,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 6.24,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "LABU": {
+      "price": 235.12,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 236.35,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "LIN": {
       "price": 524.61,
       "currency": "USD",
@@ -577,12 +2005,36 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "LINK-USD": {
+      "price": 9.272,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:26+00:00",
+      "previousClose": 9.047612,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "LIT": {
+      "price": 52.86,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 53.69,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "LLY": {
       "price": 1392.22,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:02:16-05:00",
       "previousClose": 1407.59,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "LMBS": {
+      "price": 48.93,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 48.84,
+      "exchange": "NGM",
       "state": "closed"
     },
     "LMT": {
@@ -601,6 +2053,22 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "LQD": {
+      "price": 104.29,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 103.79,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "LQDH": {
+      "price": 91.55,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 91.61,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "LRCX": {
       "price": 185.01,
       "currency": "USD",
@@ -608,6 +2076,14 @@
       "previousClose": 196.16,
       "exchange": "NMS",
       "state": "closed"
+    },
+    "LTC-USD": {
+      "price": 43.446,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:31+00:00",
+      "previousClose": 42.72778,
+      "exchange": "CCC",
+      "state": "open"
     },
     "LUMI.TA": {
       "price": 72.49,
@@ -625,12 +2101,28 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "MBB": {
+      "price": 92.03,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 91.67,
+      "exchange": "NGM",
+      "state": "closed"
+    },
     "MCD": {
       "price": 283.5,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 280.7,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "MCHI": {
+      "price": 46.43,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 46.61,
+      "exchange": "NGM",
       "state": "closed"
     },
     "MDLZ": {
@@ -649,12 +2141,28 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "MDY": {
+      "price": 653.71,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 646.19,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "META": {
       "price": 609.89,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 589.82,
       "exchange": "NMS",
+      "state": "closed"
+    },
+    "MGC": {
+      "price": 261.14,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 262.65,
+      "exchange": "PCX",
       "state": "closed"
     },
     "MGDL.TA": {
@@ -665,12 +2173,28 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "MGK": {
+      "price": 80.31,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 81.1,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "MGOR.TA": {
       "price": 433.9,
       "currency": "ILS",
       "regularMarketTime": "2026-11-26T17:24:09+02:00",
       "previousClose": 419.0,
       "exchange": "TLV",
+      "state": "closed"
+    },
+    "MGV": {
+      "price": 163.77,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 163.03,
+      "exchange": "PCX",
       "state": "closed"
     },
     "MLSR.TA": {
@@ -705,6 +2229,14 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "MOAT": {
+      "price": 114.32,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 113.28,
+      "exchange": "BTS",
+      "state": "closed"
+    },
     "MRK": {
       "price": 140.29,
       "currency": "USD",
@@ -729,12 +2261,28 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "MTUM": {
+      "price": 61.51,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 61.89,
+      "exchange": "BTS",
+      "state": "closed"
+    },
     "MU": {
       "price": 601.25,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 630.073,
       "exchange": "NMS",
+      "state": "closed"
+    },
+    "MUB": {
+      "price": 104.19,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 103.77,
+      "exchange": "PCX",
       "state": "closed"
     },
     "MZTF.TA": {
@@ -744,6 +2292,22 @@
       "previousClose": 201.8,
       "exchange": "TLV",
       "state": "closed"
+    },
+    "NAIL": {
+      "price": 37.33,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 34.43,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "NEAR-USD": {
+      "price": 3.0822,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:21+00:00",
+      "previousClose": 3.048042,
+      "exchange": "CCC",
+      "state": "open"
     },
     "NEE": {
       "price": 85.41,
@@ -769,12 +2333,28 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "NOBL": {
+      "price": 60.78,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 60.19,
+      "exchange": "BTS",
+      "state": "closed"
+    },
     "NOW": {
       "price": 92.16,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 91.74,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "NUGT": {
+      "price": 98.68,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 92.23,
+      "exchange": "PCX",
       "state": "closed"
     },
     "NVDA": {
@@ -817,6 +2397,22 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "OEF": {
+      "price": 350.96,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 353.19,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "OIH": {
+      "price": 346.83,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 337.72,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "OPCE.TA": {
       "price": 90.35,
       "currency": "ILS",
@@ -841,12 +2437,36 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "PALL": {
+      "price": 15.7,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 15.46,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "PANW": {
       "price": 356.14,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:01-05:00",
       "previousClose": 352.99,
       "exchange": "NMS",
+      "state": "closed"
+    },
+    "PCY": {
+      "price": 20.01,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 19.92,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "PDBC": {
+      "price": 17.45,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 17.28,
+      "exchange": "NGM",
       "state": "closed"
     },
     "PEP": {
@@ -881,6 +2501,14 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "PICK": {
+      "price": 47.99,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 47.52,
+      "exchange": "BTS",
+      "state": "closed"
+    },
     "PLTR": {
       "price": 163.59,
       "currency": "USD",
@@ -905,12 +2533,100 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "PPLT": {
+      "price": 11.56,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 11.52,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "QCLN": {
+      "price": 38.8,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 38.49,
+      "exchange": "NGM",
+      "state": "closed"
+    },
     "QCOM": {
       "price": 168.66,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 164.96,
       "exchange": "NMS",
+      "state": "closed"
+    },
+    "QID": {
+      "price": 68.71,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 67.79,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "QLD": {
+      "price": 68.15,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 69.07,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "QQQ": {
+      "price": 633.93,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 638.1,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "QQQM": {
+      "price": 261.05,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 262.78,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "QUAL": {
+      "price": 54.03,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 54.06,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "QYLD": {
+      "price": 16.24,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 16.33,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "REM": {
+      "price": 16.55,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 16.26,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "ROBO": {
+      "price": 65.34,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 65.89,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "RSP": {
+      "price": 215.74,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 213.96,
+      "exchange": "PCX",
       "state": "closed"
     },
     "RTX": {
@@ -921,6 +2637,22 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "RWR": {
+      "price": 111.58,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 110.63,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "RYLD": {
+      "price": 14.82,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 14.77,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "SBUX": {
       "price": 107.74,
       "currency": "USD",
@@ -929,12 +2661,212 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "SCHA": {
+      "price": 31.96,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 31.67,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SCHB": {
+      "price": 27.61,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 27.66,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SCHD": {
+      "price": 35.29,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 34.89,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SCHE": {
+      "price": 32.54,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 32.57,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SCHF": {
+      "price": 25.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 25.47,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SCHG": {
+      "price": 31.84,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 32.09,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SCHH": {
+      "price": 23.49,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 23.29,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SCHP": {
+      "price": 25.5,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 25.39,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SCHV": {
+      "price": 33.79,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 33.57,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "SCHW": {
       "price": 93.45,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 93.91,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "SCHX": {
+      "price": 28.21,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 28.27,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SCZ": {
+      "price": 78.5,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 78.55,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "SDOW": {
+      "price": 26.8,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 27.06,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SDY": {
+      "price": 163.38,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 161.47,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SGOL": {
+      "price": 34.02,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 33.8,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SGOV": {
+      "price": 100.68,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:11-05:00",
+      "previousClose": 100.66,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "SHIB-USD": {
+      "price": 4e-06,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:01+00:00",
+      "previousClose": 4e-06,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "SHV": {
+      "price": 110.32,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:21-05:00",
+      "previousClose": 110.29,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "SHY": {
+      "price": 81.64,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 81.57,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "SHYG": {
+      "price": 40.71,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 40.69,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SIL": {
+      "price": 65.45,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 62.43,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SIVR": {
+      "price": 39.05,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 38.77,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SJNK": {
+      "price": 23.85,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 23.84,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SKYY": {
+      "price": 142.19,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 142.72,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "SLV": {
+      "price": 37.1,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 36.84,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SMH": {
+      "price": 422.46,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 426.75,
+      "exchange": "NGM",
       "state": "closed"
     },
     "SNDK": {
@@ -953,12 +2885,172 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "SOL-USD": {
+      "price": 71.33,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:28+00:00",
+      "previousClose": 70.39324,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "SOLT": {
+      "price": 24.82,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 23.83,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "SOXL": {
+      "price": 32.02,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 32.6,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SOXS": {
+      "price": 62.13,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 60.96,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SOXX": {
+      "price": 127.98,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 128.62,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "SOYB": {
+      "price": 25.98,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 25.8867,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "SPEN.TA": {
       "price": 39.26,
       "currency": "ILS",
       "regularMarketTime": "2026-11-26T17:25:45+02:00",
       "previousClose": 38.3,
       "exchange": "TLV",
+      "state": "closed"
+    },
+    "SPHD": {
+      "price": 52.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 51.99,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPLV": {
+      "price": 78.07,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 77.39,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPMD": {
+      "price": 62.79,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 62.05,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPMO": {
+      "price": 120.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 121.52,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPSM": {
+      "price": 53.04,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 52.65,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPTM": {
+      "price": 87.02,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 87.15,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPXL": {
+      "price": 223.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 225.65,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPXS": {
+      "price": 29.03,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 28.76,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPXU": {
+      "price": 40.79,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 40.4,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPY": {
+      "price": 716.7,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 718.78,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPYG": {
+      "price": 106.76,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 107.87,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SPYV": {
+      "price": 63.12,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 62.79,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SQQQ": {
+      "price": 49.6,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 48.66,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "STIP": {
+      "price": 100.39,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 100.25,
+      "exchange": "PCX",
       "state": "closed"
     },
     "STRS.TA": {
@@ -969,12 +3061,36 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "SUB": {
+      "price": 105.78,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 105.53,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "SVXY": {
+      "price": 50.15,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 51.1,
+      "exchange": "BTS",
+      "state": "closed"
+    },
     "T": {
       "price": 22.97,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:02:11-05:00",
       "previousClose": 22.88,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "TAN": {
+      "price": 35.16,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 34.48,
+      "exchange": "PCX",
       "state": "closed"
     },
     "TASE.TA": {
@@ -985,12 +3101,68 @@
       "exchange": "TLV",
       "state": "closed"
     },
+    "TECL": {
+      "price": 103.24,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 105.63,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "TECS": {
+      "price": 85.93,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 83.66,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "TEVA.TA": {
       "price": 131.1,
       "currency": "ILS",
       "regularMarketTime": "2026-11-26T17:28:37+02:00",
       "previousClose": 132.9,
       "exchange": "TLV",
+      "state": "closed"
+    },
+    "THD": {
+      "price": 64.5,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 65.23,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "TIP": {
+      "price": 105.84,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 105.45,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "TLH": {
+      "price": 96.36,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 95.64,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "TLT": {
+      "price": 82.24,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 81.49,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "TMF": {
+      "price": 30.33,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 29.53,
+      "exchange": "PCX",
       "state": "closed"
     },
     "TMO": {
@@ -1008,6 +3180,54 @@
       "previousClose": 166.13,
       "exchange": "NMS",
       "state": "closed"
+    },
+    "TMV": {
+      "price": 41.87,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 43.03,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "TNA": {
+      "price": 50.03,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 49.13,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "TON-USD": {
+      "price": 0.001515,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:26:03+00:00",
+      "previousClose": 0.001488,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "TOTL": {
+      "price": 38.15,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 38.0,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "TQQQ": {
+      "price": 45.28,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 46.19,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "TRX-USD": {
+      "price": 0.303197,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:26:03+00:00",
+      "previousClose": 0.303614,
+      "exchange": "CCC",
+      "state": "open"
     },
     "TSEM.TA": {
       "price": 413.8,
@@ -1033,12 +3253,36 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "TZA": {
+      "price": 50.92,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 51.85,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "UBER": {
       "price": 66.35,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 64.7,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "UDOW": {
+      "price": 58.46,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 57.91,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "UNG": {
+      "price": 10.3,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 10.32,
+      "exchange": "PCX",
       "state": "closed"
     },
     "UNH": {
@@ -1057,12 +3301,28 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "UPRO": {
+      "price": 116.8,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 117.92,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "UPS": {
       "price": 111.47,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:02:38-05:00",
       "previousClose": 110.83,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "URA": {
+      "price": 27.71,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 27.6,
+      "exchange": "PCX",
       "state": "closed"
     },
     "USB": {
@@ -1073,12 +3333,468 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "USDCAD=X": {
+      "price": 1.4249,
+      "currency": "CAD",
+      "regularMarketTime": "2026-11-26T19:27:22+00:00",
+      "previousClose": 1.421,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "USDCHF=X": {
+      "price": 0.8342,
+      "currency": "CHF",
+      "regularMarketTime": "2026-11-26T19:27:22+00:00",
+      "previousClose": 0.8303,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "USDCNY=X": {
+      "price": 6.6592,
+      "currency": "CNY",
+      "regularMarketTime": "2026-11-26T19:15:33+00:00",
+      "previousClose": 6.6593,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "USDJPY=X": {
+      "price": 159.277,
+      "currency": "JPY",
+      "regularMarketTime": "2026-11-26T19:27:14+00:00",
+      "previousClose": 159.123,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "USHY": {
+      "price": 35.31,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 35.28,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "USMV": {
+      "price": 101.54,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 101.0,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "USO": {
+      "price": 139.89,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 135.43,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "UVXY": {
+      "price": 25.82,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 24.58,
+      "exchange": "BTS",
+      "state": "closed"
+    },
     "V": {
       "price": 424.39,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:00:02-05:00",
       "previousClose": 416.78,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "VAW": {
+      "price": 221.8,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 217.44,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VB": {
+      "price": 283.09,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 280.06,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VBK": {
+      "price": 314.31,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 311.33,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VBR": {
+      "price": 241.39,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 238.61,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VCIT": {
+      "price": 79.67,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 79.39,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VCLT": {
+      "price": 70.6,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 70.09,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VCR": {
+      "price": 390.42,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 391.02,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VCSH": {
+      "price": 77.77,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 77.64,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VDC": {
+      "price": 251.96,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 251.02,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VDE": {
+      "price": 168.62,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 167.34,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VEA": {
+      "price": 65.67,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 65.53,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VEU": {
+      "price": 76.42,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 76.35,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VFH": {
+      "price": 136.64,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 135.65,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VGT": {
+      "price": 102.56,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 103.32,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VHT": {
+      "price": 340.37,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 342.07,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VIG": {
+      "price": 243.03,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 242.11,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VIGI": {
+      "price": 96.83,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 95.89,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VIOG": {
+      "price": 137.808,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T15:50:29-05:00",
+      "previousClose": 136.875,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VIOO": {
+      "price": 126.98,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 126.11,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VIOV": {
+      "price": 110.93,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 109.81,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VIS": {
+      "price": 312.37,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 309.26,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VIXY": {
+      "price": 23.28,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 22.29,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "VLUE": {
+      "price": 176.95,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 176.63,
+      "exchange": "BTS",
+      "state": "closed"
+    },
+    "VMBS": {
+      "price": 45.58,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 45.43,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VNQ": {
+      "price": 95.66,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 94.78,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VNQI": {
+      "price": 42.934,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 42.42,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VO": {
+      "price": 79.17,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 78.62,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VOE": {
+      "price": 206.99,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 204.88,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VONE": {
+      "price": 324.63,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 325.48,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VONG": {
+      "price": 110.23,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 111.11,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VONV": {
+      "price": 111.77,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 111.37,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VOO": {
+      "price": 658.87,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 660.71,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VOT": {
+      "price": 275.7,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 274.77,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VOX": {
+      "price": 177.48,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 175.55,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VPU": {
+      "price": 188.18,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 187.23,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VSS": {
+      "price": 139.02,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 138.92,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VTEB": {
+      "price": 48.92,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 48.73,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VTHR": {
+      "price": 316.65,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 317.15,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VTI": {
+      "price": 353.2,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 353.84,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VTIP": {
+      "price": 48.72,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 48.69,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VTV": {
+      "price": 221.04,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 220.1,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VTWO": {
+      "price": 108.62,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 107.95,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VUG": {
+      "price": 79.1,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 79.77,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VV": {
+      "price": 330.15,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 331.12,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VWO": {
+      "price": 52.78,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 52.87,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VWOB": {
+      "price": 63.08,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 62.83,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VXF": {
+      "price": 221.75,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 219.73,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "VXUS": {
+      "price": 78.02,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 77.94,
+      "exchange": "NGM",
+      "state": "closed"
+    },
+    "VYM": {
+      "price": 158.36,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 157.32,
+      "exchange": "PCX",
       "state": "closed"
     },
     "VZ": {
@@ -1089,12 +3805,36 @@
       "exchange": "NYQ",
       "state": "closed"
     },
+    "WANT": {
+      "price": 39.267,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T15:50:00-05:00",
+      "previousClose": 39.36,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "WEAT": {
+      "price": 21.3,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 21.35,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "WFC": {
       "price": 80.94,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:03:29-05:00",
       "previousClose": 81.19,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "WGMI": {
+      "price": 20.89,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 20.94,
+      "exchange": "NGM",
       "state": "closed"
     },
     "WMT": {
@@ -1105,12 +3845,156 @@
       "exchange": "NMS",
       "state": "closed"
     },
+    "XBI": {
+      "price": 156.6,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 156.82,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLB": {
+      "price": 51.21,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 50.17,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLC": {
+      "price": 105.38,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 104.45,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLE": {
+      "price": 60.9,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 60.45,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLF": {
+      "price": 56.51,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 56.11,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLI": {
+      "price": 162.95,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 161.61,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLK": {
+      "price": 155.79,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 157.09,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLM-USD": {
+      "price": 0.127575,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:27+00:00",
+      "previousClose": 0.127895,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "XLP": {
+      "price": 92.3,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 91.88,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLRE": {
+      "price": 43.86,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 43.46,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLU": {
+      "price": 43.61,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 43.4,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLV": {
+      "price": 183.68,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 184.72,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XLY": {
+      "price": 117.49,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 117.72,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XME": {
+      "price": 84.89,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 83.36,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XMMO": {
+      "price": 127.6,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 126.89,
+      "exchange": "PCX",
+      "state": "closed"
+    },
     "XOM": {
       "price": 158.08,
       "currency": "USD",
       "regularMarketTime": "2026-11-25T16:03:33-05:00",
       "previousClose": 158.23,
       "exchange": "NYQ",
+      "state": "closed"
+    },
+    "XOP": {
+      "price": 167.93,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 166.26,
+      "exchange": "PCX",
+      "state": "closed"
+    },
+    "XRP-USD": {
+      "price": 0.954,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T19:27:27+00:00",
+      "previousClose": 0.936943,
+      "exchange": "CCC",
+      "state": "open"
+    },
+    "XYLD": {
+      "price": 38.45,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:00-05:00",
+      "previousClose": 38.53,
+      "exchange": "PCX",
       "state": "closed"
     }
   }

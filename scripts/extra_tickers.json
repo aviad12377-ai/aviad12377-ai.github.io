@@ -1,0 +1,7 @@
+{
+  "comment": "Optional extra Yahoo Finance symbols for the Actions price job, on top of scripts/universe.json. Add tickers users hold that are not in the built-in universe. Accepts this object shape or a bare JSON array of strings.",
+  "symbols": [
+    "BITU",
+    "SOLT"
+  ]
+}
