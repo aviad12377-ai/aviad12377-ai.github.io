@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12">
+<meta name="robots" content="noindex">
+<title>פרטי קרן · פורטל החיסכון</title>
+<link rel="icon" type="image/png" href="../icon-192.png">
+<link rel="stylesheet" href="v2.css">
+<script type="speculationrules">{"prefetch":[{"where":{"href_matches":"/v2b/*"},"eagerness":"moderate"}]}</script>
+<script src="v2.js" defer></script>
+</head>
+<body data-tab="savings">
+<header class="appbar"><a class="appbar-back" href="savings.html" aria-label="חזרה"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></a><h1 class="appbar-title">פרטי קרן</h1></header>
+<main id="main" class="page">
+
+<section class="hero">
+  <div class="hero-label" id="mgr"><span class="sk sk-line" style="width:160px"></span></div>
+  <h2 id="fname" style="font-size:20px;line-height:26px;margin-top:4px;min-height:52px"><span class="sk sk-line" style="width:90%;height:20px"></span></h2>
+  <div class="hero-value" id="ytd"><span class="sk sk-val" style="width:40%"></span></div>
+  <div class="hero-sub"><span class="muted">תשואה מתחילת השנה</span><span id="vs" class="delta up" style="visibility:hidden">0</span></div>
+  <div class="chart" id="chart"><div class="sk sk-chart"></div></div>
+  <p class="help" id="chart-l" style="text-align:center">&nbsp;</p>
+</section>
+<section class="sec">
+  <div class="stats" id="stats"><div class="stat sk" style="height:70px"></div><div class="stat sk" style="height:70px"></div><div class="stat sk" style="height:70px"></div><div class="stat sk" style="height:70px"></div><div class="stat sk" style="height:70px"></div><div class="stat sk" style="height:70px"></div><div class="stat sk" style="height:70px"></div><div class="stat sk" style="height:70px"></div></div>
+</section>
+<section class="sec">
+  <div class="sec-h"><h2>מול קרנות דומות</h2><span class="faint" id="peer-n" style="font-size:13px">&nbsp;</span></div>
+  <div class="card"><div class="bars" id="bars" style="min-height:208px"></div>
+  <p class="help">ירוק: הקרן הזו. סגול: חציון הקרנות באותו מסלול.</p></div>
+</section>
+<section class="sec">
+  <div class="sec-h"><h2>אותו מסלול, דמי ניהול נמוכים יותר</h2></div>
+  <div class="list" id="alts"><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div></div>
+</section>
+<p class="disc" id="disc">מידע בלבד, לא ייעוץ. תשואות עבר אינן מבטיחות תשואות בעתיד.</p>
+
+</main>
+
+<nav class="tabbar" aria-label="ניווט ראשי"><a class="rail-brand" href="index.html" aria-hidden="true" tabindex="-1"><i></i>פורטל החיסכון</a><a href="index.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>בית</span></a><a href="savings.html" aria-current="page"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 9.5c.9.4 1.6 1.2 2 2.2M5 11a7 6 0 0 1 12.5-3.2L20 7l-.6 3.3A6 6 0 0 1 19 16l-1 4h-3l-.4-1.6a8 8 0 0 1-3.2 0L11 20H8l-.8-3A6 6 0 0 1 5 13H3v-2z"/><circle cx="15" cy="11" r=".8" fill="currentColor"/></svg><span>חסכונות</span></a><a href="invest.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></svg><span>השקעות</span></a><a href="compare.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>השוואות</span></a><a href="more.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg><span>עוד</span></a></nav>
+<noscript><p style="padding:16px">כדי להשתמש באתר צריך להפעיל JavaScript בדפדפן.</p></noscript>
+<script>document.addEventListener('v2:ready',function(){
+
+var u = new URLSearchParams(location.search), set = u.get('set') || 'gemelnet', id = u.get('id') || '880';
+V2.data('../funds.json').then(function (F) {
+  var S = F.sets[set], f = S && S.funds.filter(function (x) { return String(x.id) === id; })[0];
+  if (!f) { document.getElementById('main').innerHTML = '<div class="empty"><h3>לא מצאנו את הקרן</h3><p>ייתכן שהמסלול נסגר או שהקישור שגוי.</p><a class="btn btn-primary" href="savings.html">לחסכונות</a></div>'; return; }
+  document.title = f.name + ' · פורטל החיסכון';
+  document.querySelector('.appbar-title').textContent = f.cls === 'קרנות השתלמות' ? 'קרן השתלמות' : set === 'pensianet' ? 'קרן פנסיה' : 'קופת גמל';
+  V2.swap(document.getElementById('mgr'), V2.esc(f.mgr || f.parent || ''));
+  V2.swap(document.getElementById('fname'), V2.esc(f.name));
+  V2.swap(document.getElementById('ytd'), V2.pct(f.ytd, true));
+  var peers = S.funds.filter(function (x) { return x.cls === f.cls && (x.spec || '') === (f.spec || '') && x.ytd != null; });
+  if (set === 'pensianet') peers = S.funds.filter(function (x) { return /כללי/.test(x.name) === /כללי/.test(f.name) && x.ytd != null; });
+  function med(k) { var a = peers.map(function (x) { return x[k]; }).filter(function (v) { return v != null; }).sort(function (a, b) { return a - b; }); return a.length ? a[Math.floor(a.length / 2)] : null; }
+  var dv = f.ytd - med('ytd'), vs = document.getElementById('vs');
+  vs.className = 'delta ' + (dv >= 0 ? 'up' : 'down'); vs.innerHTML = V2.pct(dv, true) + ' מול החציון'; vs.style.visibility = 'visible';
+  var m = S.monthly && S.monthly[String(f.id)];
+  if (m) {
+    var keys = Object.keys(m).sort(), v = 100, s = [100];
+    keys.forEach(function (k) { v *= 1 + m[k] / 100; s.push(v); });
+    document.getElementById('chart-l').textContent = 'שווי של 100 ₪ מ' + V2.period(keys[0]) + ' עד ' + V2.period(keys[keys.length - 1]);
+    V2.chart(document.getElementById('chart'), s, { label: 'תשואה מצטברת', tip: function (i) { return i ? V2.period(keys[i - 1]) + ' · ₪' + s[i].toFixed(1) : 'נקודת התחלה'; } });
+  } else document.getElementById('chart').innerHTML = '';
+  document.getElementById('stats').innerHTML = [
+    ['דמי ניהול מהצבירה', V2.pct(f.feeAcc)], ['דמי ניהול מהפקדה', f.feeDep != null ? V2.pct(f.feeDep) : '—'],
+    ['תשואה שנתית, 5 שנים', V2.pct(f.y5, true)], ['גודל הקרן', V2.num(f.assets / 1000, 1) + ' מיליארד ₪'],
+    ['תשואה שנתית, 3 שנים', V2.pct(f.y3, true)], ['סטיית תקן', V2.pct(f.sd)], ['מדד שארפ', V2.num(f.sharpe, 1)], ['מסלול', V2.esc(f.spec || f.cls)]
+  ].map(function (r) { return '<div class="stat fade-in"><div class="k">' + r[0] + '</div><div class="v" style="font-size:18px">' + r[1] + '</div></div>'; }).join('');
+  document.getElementById('peer-n').textContent = peers.length + ' קרנות';
+  var rows = [['מתחילת השנה', 'ytd'], ['3 שנים', 'y3'], ['5 שנים', 'y5']], mx = 0;
+  rows.forEach(function (r) { mx = Math.max(mx, Math.abs(f[r[1]] || 0), Math.abs(med(r[1]) || 0)); });
+  document.getElementById('bars').innerHTML = rows.map(function (r) {
+    var a = f[r[1]], b = med(r[1]);
+    return '<div class="muted" style="font-size:14px;font-weight:600">' + r[0] + '</div>' +
+      '<div class="bar"><span>הקרן</span><span class="track"><span class="fill mine" style="width:' + Math.max(2, Math.abs(a || 0) / mx * 100) + '%"></span></span><span class="num">' + (a == null ? '—' : a.toFixed(2) + '%') + '</span></div>' +
+      '<div class="bar"><span>חציון</span><span class="track"><span class="fill" style="width:' + Math.max(2, Math.abs(b || 0) / mx * 100) + '%"></span></span><span class="num">' + (b == null ? '—' : b.toFixed(2) + '%') + '</span></div>';
+  }).join('');
+  var alts = peers.filter(function (x) { return x.id !== f.id && x.feeAcc < f.feeAcc && x.y5 != null; }).sort(function (a, b) { return b.y5 - a.y5; }).slice(0, 5);
+  document.getElementById('alts').innerHTML = alts.length ? alts.map(function (x) {
+    return '<a class="row" href="fund.html?set=' + set + '&id=' + x.id + '"><span class="row-main"><span class="row-t">' + V2.esc(x.name) + '</span><span class="row-s">דמי ניהול ' + V2.pct(x.feeAcc) + ' · ' + V2.num(x.assets / 1000, 1) + ' מיליארד ₪</span></span><span class="row-end"><span class="v ' + V2.cls(x.y5) + '">' + V2.pct(x.y5, true) + '</span><br><span class="d muted">לשנה, 5 שנים</span></span></a>';
+  }).join('') : '<div class="empty" style="padding:24px"><h3>דמי הניהול כאן כבר מהנמוכים</h3><p>אין במסלול הזה קרן עם דמי ניהול נמוכים יותר ונתוני 5 שנים.</p></div>';
+  document.getElementById('alts').classList.add('fade-in');
+  document.getElementById('disc').textContent = 'מידע בלבד, לא ייעוץ. נתונים: רשות שוק ההון, ' + V2.period(S.period) + '. תשואות עבר אינן מבטיחות תשואות בעתיד.';
+});
+
+});</script>
+</body>
+</html>

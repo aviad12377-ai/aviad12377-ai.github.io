@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12">
+<meta name="robots" content="noindex">
+<title>השוואות · פורטל החיסכון</title>
+<link rel="icon" type="image/png" href="../icon-192.png">
+<link rel="stylesheet" href="v2.css">
+<script type="speculationrules">{"prefetch":[{"where":{"href_matches":"/v2b/*"},"eagerness":"moderate"}]}</script>
+<script src="v2.js" defer></script>
+</head>
+<body data-tab="compare">
+<header class="appbar"><h1 class="appbar-title">השוואות</h1></header>
+<main id="main" class="page">
+
+<div class="chips" role="group" aria-label="סוג השוואה" style="margin-bottom:8px">
+  <a class="chip" aria-pressed="true" href="compare.html" style="display:inline-flex;align-items:center">פיקדונות</a>
+  <a class="chip" aria-pressed="false" href="../compare-funds.html" style="display:inline-flex;align-items:center">קרנות</a>
+  <a class="chip" aria-pressed="false" href="../compare-cards.html" style="display:inline-flex;align-items:center">כרטיסי אשראי</a>
+  <a class="chip" aria-pressed="false" href="../compare-mortgage.html" style="display:inline-flex;align-items:center">משכנתא</a>
+</div>
+<section class="hero" style="padding-top:8px">
+  <div class="hero-label">הריבית הגבוהה ביותר ששולמה, <span id="term-l">3 חודשים</span></div>
+  <div class="hero-value" id="best"><span class="sk sk-val" style="width:30%"></span></div>
+  <div class="hero-sub"><span class="muted" id="best-s">&nbsp;</span></div>
+</section>
+<div class="card">
+  <div class="field" style="margin-bottom:12px"><label for="amt">סכום להפקדה (₪)</label>
+    <div class="stepper" data-step="5000" data-min="1000"><button type="button" data-k="-" aria-label="פחות">−</button><input id="amt" inputmode="numeric" value="50000"><button type="button" data-k="+" aria-label="יותר">+</button></div></div>
+  <span class="lbl" style="font-size:14px;font-weight:600;color:var(--ink-2)">לכמה זמן?</span>
+  <div class="chips" id="terms" style="margin-top:6px;min-height:40px"></div>
+</div>
+<section class="sec">
+  <div class="sec-h"><h2>כל הבנקים</h2><span class="faint" style="font-size:13px" id="per">&nbsp;</span></div>
+  <div class="list feed-sk" id="list"><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div></div>
+</section>
+<p class="disc" id="disc">מידע בלבד, לא ייעוץ.</p>
+
+</main>
+
+<nav class="tabbar" aria-label="ניווט ראשי"><a class="rail-brand" href="index.html" aria-hidden="true" tabindex="-1"><i></i>פורטל החיסכון</a><a href="index.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>בית</span></a><a href="savings.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 9.5c.9.4 1.6 1.2 2 2.2M5 11a7 6 0 0 1 12.5-3.2L20 7l-.6 3.3A6 6 0 0 1 19 16l-1 4h-3l-.4-1.6a8 8 0 0 1-3.2 0L11 20H8l-.8-3A6 6 0 0 1 5 13H3v-2z"/><circle cx="15" cy="11" r=".8" fill="currentColor"/></svg><span>חסכונות</span></a><a href="invest.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></svg><span>השקעות</span></a><a href="compare.html" aria-current="page"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>השוואות</span></a><a href="more.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg><span>עוד</span></a></nav>
+<noscript><p style="padding:16px">כדי להשתמש באתר צריך להפעיל JavaScript בדפדפן.</p></noscript>
+<script>document.addEventListener('v2:ready',function(){
+
+var S, term = null;
+function render() {
+  var amt = +document.getElementById('amt').value || 0;
+  var L = S.deposits.products.filter(function (p) { return p.termId === term && p.ratePct != null; }).sort(function (a, b) { return b.ratePct - a.ratePct; });
+  if (!L.length) { document.getElementById('list').innerHTML = '<div class="empty"><h3>אין נתונים לתקופה הזו</h3><p>נסה תקופה אחרת.</p></div>'; return; }
+  var t = L[0], days = Math.max(1, t.termMaxDays || 365), yrs = Math.min(days, 3650) / 365;
+  document.getElementById('term-l').textContent = t.termHe;
+  V2.swap(document.getElementById('best'), V2.pct(t.ratePct));
+  document.getElementById('best-s').innerHTML = V2.esc(t.providerHe) + ' · על ' + V2.ils(amt) + ' זה כ־' + V2.ils(amt * t.ratePct / 100 * yrs) + ' ריבית לתקופה';
+  document.getElementById('list').innerHTML = L.map(function (p, i) {
+    return '<div class="row"><span class="row-ico"' + (i < 3 ? ' style="background:var(--gain-soft);color:var(--gain)"' : '') + '>' + (i + 1) + '</span><span class="row-main"><span class="row-t">' + V2.esc(p.providerHe) + '</span><span class="row-s">' + V2.esc(p.rateTypeHe || '') + ' · ממוצע במערכת ' + V2.pct(p.systemAvgPct) + '</span></span><span class="row-end"><span class="v">' + V2.pct(p.ratePct) + '</span><br><span class="d muted">' + V2.ils(amt * p.ratePct / 100 * yrs) + '</span></span></div>';
+  }).join('');
+  document.getElementById('list').classList.add('fade-in');
+}
+V2.data('../data/savings.json').then(function (s) {
+  S = s; var seen = {}, T = [];
+  s.deposits.products.forEach(function (p) { if (!seen[p.termId]) { seen[p.termId] = 1; T.push(p); } });
+  T.sort(function (a, b) { return (a.termMinDays || 0) - (b.termMinDays || 0); });
+  term = (T.filter(function (p) { return /3/.test(p.termHe) && /חודש/.test(p.termHe); })[0] || T[0]).termId;
+  var box = document.getElementById('terms');
+  box.innerHTML = T.map(function (p) { return '<button type="button" class="chip" data-v="' + p.termId + '" aria-pressed="' + (p.termId === term) + '">' + V2.esc(p.termHe) + '</button>'; }).join('');
+  V2.chips(box, function (v) { term = v; render(); });
+  document.getElementById('amt').addEventListener('input', render);
+  document.getElementById('per').textContent = 'ממוצע ששולם בפועל, ' + s.deposits.period.split('-').reverse().join('/');
+  document.getElementById('disc').textContent = s.disclaimer;
+  render();
+});
+
+});</script>
+</body>
+</html>

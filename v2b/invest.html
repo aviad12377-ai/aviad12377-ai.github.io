@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12">
+<meta name="robots" content="noindex">
+<title>השקעות · פורטל החיסכון</title>
+<link rel="icon" type="image/png" href="../icon-192.png">
+<link rel="stylesheet" href="v2.css">
+<script type="speculationrules">{"prefetch":[{"where":{"href_matches":"/v2b/*"},"eagerness":"moderate"}]}</script>
+<script src="v2.js" defer></script>
+</head>
+<body data-tab="invest">
+<header class="appbar"><h1 class="appbar-title">השקעות</h1></header>
+<main id="main" class="page">
+<div class="seg" role="tablist" aria-label="השקעות"><a href="invest.html" role="tab" aria-current="page" aria-selected="true">תיק השקעות</a><a href="options.html" role="tab" aria-selected="false">אופציות</a></div>
+<section class="hero">
+  <div class="hero-label">שווי התיק <span class="demo">נתוני הדגמה</span></div>
+  <div class="hero-value" id="total"><span class="sk sk-val"></span></div>
+  <div class="hero-sub"><span class="muted" id="asof">&nbsp;</span><span id="day" class="delta up" style="visibility:hidden">0</span></div>
+</section>
+<section class="sec">
+  <div class="sec-h"><h2>אחזקות</h2></div>
+  <div class="list" id="list"><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div></div>
+</section>
+<section class="sec">
+  <div class="sec-h"><h2>הוראת קבע לתיק</h2><button class="btn btn-ghost" id="edit-so" type="button">עריכה</button></div>
+  <div class="card" id="so" style="min-height:178px"></div>
+</section>
+<p class="disc">מידע בלבד, לא ייעוץ ולא המלצה לקנייה או למכירה. מחירים מתעדכנים כל 15 דקות בשעות המסחר.</p>
+
+</main>
+
+<dialog class="sheet" id="sh-so" aria-labelledby="sh-so-h">
+  <div class="sheet-grip"></div>
+  <div class="sheet-h"><h2 id="sh-so-h">הוראת קבע לתיק</h2><button class="icon-btn" data-close aria-label="סגירה">✕</button></div>
+  <div class="sheet-b">
+    <div class="field"><label for="so-amt">סכום חודשי (₪)</label>
+      <div class="stepper" data-step="100" data-min="100"><button type="button" data-k="-" aria-label="פחות">−</button><input id="so-amt" inputmode="numeric" value="1500"><button type="button" data-k="+" aria-label="יותר">+</button></div></div>
+    <div class="field"><span class="lbl">יום בחודש</span><div class="chips" id="so-day" style="margin:0;padding:0">
+      <button type="button" class="chip" aria-pressed="false" data-v="1">1</button><button type="button" class="chip" aria-pressed="true" data-v="10">10</button><button type="button" class="chip" aria-pressed="false" data-v="15">15</button><button type="button" class="chip" aria-pressed="false" data-v="25">25</button></div></div>
+    <div class="field"><span class="lbl">חלוקה</span><div id="so-split"></div><p class="help">בישראל הוראת קבע אפשרית בעיקר לקרנות סל ולקרנות נאמנות.</p></div>
+    <div class="note" id="so-proj"></div>
+  </div>
+  <div class="sheet-f"><button class="btn btn-primary btn-block" id="so-save" type="button">שמירה</button></div>
+</dialog>
+<nav class="tabbar" aria-label="ניווט ראשי"><a class="rail-brand" href="index.html" aria-hidden="true" tabindex="-1"><i></i>פורטל החיסכון</a><a href="index.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>בית</span></a><a href="savings.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 9.5c.9.4 1.6 1.2 2 2.2M5 11a7 6 0 0 1 12.5-3.2L20 7l-.6 3.3A6 6 0 0 1 19 16l-1 4h-3l-.4-1.6a8 8 0 0 1-3.2 0L11 20H8l-.8-3A6 6 0 0 1 5 13H3v-2z"/><circle cx="15" cy="11" r=".8" fill="currentColor"/></svg><span>חסכונות</span></a><a href="invest.html" aria-current="page"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/></svg><span>השקעות</span></a><a href="compare.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>השוואות</span></a><a href="more.html"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg><span>עוד</span></a></nav>
+<noscript><p style="padding:16px">כדי להשתמש באתר צריך להפעיל JavaScript בדפדפן.</p></noscript>
+<script>document.addEventListener('v2:ready',function(){
+
+var D = V2.DEMO, so = JSON.parse(localStorage.getItem('v2.standing') || 'null') || JSON.parse(JSON.stringify(D.standing)), Q;
+function nameOf(sym) { var h = D.holdings.filter(function (x) { return x.sym === sym; })[0]; return h ? h.name : sym; }
+function proj(amt) { var r = 0.06 / 12, n = 120; return amt * ((Math.pow(1 + r, n) - 1) / r); }
+function renderSO() {
+  document.getElementById('so').innerHTML = '<div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:24px;font-weight:700">' + V2.ils(so.amount) + '</span><span class="muted">בכל חודש, ב־' + so.day + ' לחודש</span></div>' +
+    '<div style="display:flex;height:10px;border-radius:5px;overflow:hidden;gap:2px;margin:14px 0 8px">' + so.split.map(function (s, i) { return '<span style="flex:' + s.pct + ';background:var(--chart-' + (i + 1) + ')"></span>'; }).join('') + '</div>' +
+    so.split.map(function (s, i) { return '<div style="display:flex;justify-content:space-between;font-size:14px;padding:4px 0"><span><i class="dotc" style="background:var(--chart-' + (i + 1) + ')"></i> ' + nameOf(s.sym) + '</span><span class="num">' + s.pct + '% · ₪' + Math.round(so.amount * s.pct / 100).toLocaleString('he-IL') + '</span></div>'; }).join('') +
+    '<p class="help">בעוד 10 שנים: כ־' + V2.ils(proj(so.amount)) + ', בהנחת תשואה של 6% בשנה. הנחה בלבד, לא תחזית.</p>';
+}
+function renderSplit() {
+  document.getElementById('so-split').innerHTML = so.split.map(function (s, i) {
+    return '<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px"><label for="sp' + i + '" style="flex:1;font-size:15px;color:var(--ink)">' + nameOf(s.sym) + '</label><input id="sp' + i + '" type="range" min="0" max="100" step="5" value="' + s.pct + '" style="flex:1.3;accent-color:var(--brand)"><span class="num" style="width:44px;text-align:left">' + s.pct + '%</span></div>';
+  }).join('');
+  document.getElementById('so-proj').innerHTML = 'בעוד 10 שנים: כ־' + V2.ils(proj(+document.getElementById('so-amt').value || 0)) + ' (הנחה: 6% בשנה)';
+}
+document.getElementById('so-split').addEventListener('input', function (e) {
+  var i = +e.target.id.slice(2), v = +e.target.value; so.split[i].pct = v; so.split[1 - i].pct = 100 - v; renderSplit();
+  document.getElementById('sp' + i).focus();
+});
+document.getElementById('so-amt').addEventListener('input', renderSplit);
+V2.chips(document.getElementById('so-day'), function (v) { so.dayDraft = +v; });
+document.getElementById('edit-so').addEventListener('click', function () { document.getElementById('so-amt').value = so.amount; renderSplit(); V2.sheet('sh-so'); });
+document.getElementById('so-save').addEventListener('click', function () {
+  so.amount = +document.getElementById('so-amt').value || so.amount; if (so.dayDraft) so.day = so.dayDraft; delete so.dayDraft;
+  localStorage.setItem('v2.standing', JSON.stringify(so)); document.getElementById('sh-so').close(); renderSO(); V2.toast('הוראת הקבע עודכנה (הדגמה, לא נשלח לבנק)');
+});
+renderSO();
+V2.data('../prices.json').then(function (p) {
+  Q = p.quotes; var h = V2.holdingsValue(Q);
+  V2.swap(document.getElementById('total'), V2.ils(h.total));
+  var d = document.getElementById('day'); d.className = 'delta ' + (h.dayPct >= 0 ? 'up' : 'down'); d.innerHTML = V2.pct(h.dayPct, true) + ' ביום המסחר האחרון'; d.style.visibility = 'visible';
+  document.getElementById('asof').textContent = 'עודכן ' + V2.when(p.generatedAt);
+  document.getElementById('list').innerHTML = h.rows.map(function (r) {
+    var q = r.q, unit = q.currency === 'USD' ? '$' : '₪';
+    return '<div class="row"><span class="row-ico">' + V2.esc(r.h.sym.replace(/\..*/, '').slice(0, 4)) + '</span><span class="row-main"><span class="row-t">' + V2.esc(r.h.name) + '</span><span class="row-s"><span class="num">' + r.h.qty + '</span> יח׳ · <span class="num">' + unit + (q.price || 0).toLocaleString('he-IL', { maximumFractionDigits: 2 }) + '</span></span></span><span class="row-end"><span class="v">' + V2.ils(r.value) + '</span><br><span class="d ' + V2.cls(r.dayPct) + '">' + (r.dayPct == null ? '<span class="faint">ללא שינוי יומי</span>' : V2.pct(r.dayPct, true)) + '</span></span></div>';
+  }).join('');
+  document.getElementById('list').classList.add('fade-in');
+});
+
+});</script>
+</body>
+</html>
