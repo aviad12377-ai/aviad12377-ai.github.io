@@ -1,161 +1,161 @@
 {
-  "generatedAt": "2026-11-26T19:50:34Z",
+  "generatedAt": "2026-11-26T19:53:12Z",
   "quotes": {
     "5124805": {
-      "price": 2.1814,
+      "price": 2.1882,
       "currency": "ILS",
       "regularMarketTime": "2026-11-25T12:00:00+02:00",
       "navDate": "2026-11-25",
-      "previousClose": 2.1882,
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 218.14,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 218.14
+      "agorot": 218.82,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 218.82
     },
     "5124805.TA": {
-      "price": 2.1814,
+      "price": 2.1882,
       "currency": "ILS",
       "regularMarketTime": "2026-11-25T12:00:00+02:00",
       "navDate": "2026-11-25",
-      "previousClose": 2.1882,
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 218.14,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 218.14
+      "agorot": 218.82,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 218.82
     },
     "5129283": {
-      "price": 3.5357,
+      "price": 3.5205,
       "currency": "ILS",
       "regularMarketTime": "2026-11-25T12:00:00+02:00",
       "navDate": "2026-11-25",
-      "previousClose": 3.5205,
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 353.57,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 353.57
+      "agorot": 352.05,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 352.05
     },
     "5129283.TA": {
-      "price": 3.5357,
+      "price": 3.5205,
       "currency": "ILS",
       "regularMarketTime": "2026-11-25T12:00:00+02:00",
       "navDate": "2026-11-25",
-      "previousClose": 3.5205,
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 353.57,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 353.57
+      "agorot": 352.05,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 352.05
     },
     "5131925": {
-      "price": 3.8914,
+      "price": 3.8176,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T12:00:00+02:00",
-      "navDate": "2026-11-26",
-      "previousClose": 3.8176,
+      "regularMarketTime": "2026-11-25T12:00:00+02:00",
+      "navDate": "2026-11-25",
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 389.14,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 389.14
+      "agorot": 381.76,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 381.76
     },
     "5131925.TA": {
-      "price": 3.8914,
+      "price": 3.8176,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T12:00:00+02:00",
-      "navDate": "2026-11-26",
-      "previousClose": 3.8176,
+      "regularMarketTime": "2026-11-25T12:00:00+02:00",
+      "navDate": "2026-11-25",
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 389.14,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 389.14
+      "agorot": 381.76,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 381.76
     },
     "5133236": {
-      "price": 4.0913,
+      "price": 3.9842,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T12:00:00+02:00",
-      "navDate": "2026-11-26",
-      "previousClose": 3.9842,
+      "regularMarketTime": "2026-11-25T12:00:00+02:00",
+      "navDate": "2026-11-25",
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 409.13,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 409.13
+      "agorot": 398.42,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 398.42
     },
     "5133236.TA": {
-      "price": 4.0913,
+      "price": 3.9842,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T12:00:00+02:00",
-      "navDate": "2026-11-26",
-      "previousClose": 3.9842,
+      "regularMarketTime": "2026-11-25T12:00:00+02:00",
+      "navDate": "2026-11-25",
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 409.13,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 409.13
+      "agorot": 398.42,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 398.42
     },
     "5136262": {
-      "price": 2.2794,
+      "price": 2.2923,
       "currency": "ILS",
       "regularMarketTime": "2026-11-25T12:00:00+02:00",
       "navDate": "2026-11-25",
-      "previousClose": 2.2923,
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 227.94,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 227.94
+      "agorot": 229.23,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 229.23
     },
     "5136262.TA": {
-      "price": 2.2794,
+      "price": 2.2923,
       "currency": "ILS",
       "regularMarketTime": "2026-11-25T12:00:00+02:00",
       "navDate": "2026-11-25",
-      "previousClose": 2.2923,
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 227.94,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 227.94
+      "agorot": 229.23,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 229.23
     },
     "5140504": {
-      "price": 1.7513,
+      "price": 1.6794,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T12:00:00+02:00",
-      "navDate": "2026-11-26",
-      "previousClose": 1.6794,
+      "regularMarketTime": "2026-11-25T12:00:00+02:00",
+      "navDate": "2026-11-25",
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 175.13,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 175.13
+      "agorot": 167.94,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 167.94
     },
     "5140504.TA": {
-      "price": 1.7513,
+      "price": 1.6794,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T12:00:00+02:00",
-      "navDate": "2026-11-26",
-      "previousClose": 1.6794,
+      "regularMarketTime": "2026-11-25T12:00:00+02:00",
+      "navDate": "2026-11-25",
+      "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
-      "agorot": 175.13,
-      "factor": 100,
-      "source": "funder.co.il",
-      "buyAgorot": 175.13
+      "agorot": 167.94,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 167.94
     },
     "AAPL": {
       "price": 355.58,
@@ -190,9 +190,9 @@
       "state": "closed"
     },
     "ADA-USD": {
-      "price": 0.15082,
+      "price": 0.15044,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:25+00:00",
+      "regularMarketTime": "2026-11-26T19:51:30+00:00",
       "previousClose": 0.145763,
       "exchange": "CCC",
       "state": "open"
@@ -350,25 +350,25 @@
       "state": "closed"
     },
     "ATOM-USD": {
-      "price": 1.2161,
+      "price": 1.2162,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:26:45+00:00",
+      "regularMarketTime": "2026-11-26T19:51:07+00:00",
       "previousClose": 1.236665,
       "exchange": "CCC",
       "state": "open"
     },
     "AUDUSD=X": {
-      "price": 0.6633,
+      "price": 0.6635,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:25:43+00:00",
+      "regularMarketTime": "2026-11-26T19:49:44+00:00",
       "previousClose": 0.6629,
       "exchange": "CCY",
       "state": "open"
     },
     "AVAX-USD": {
-      "price": 6.661,
+      "price": 6.657,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:08+00:00",
+      "regularMarketTime": "2026-11-26T19:51:33+00:00",
       "previousClose": 6.623868,
       "exchange": "CCC",
       "state": "open"
@@ -430,9 +430,9 @@
       "state": "closed"
     },
     "BCH-USD": {
-      "price": 209.25,
+      "price": 209.44,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:03+00:00",
+      "regularMarketTime": "2026-11-26T19:51:33+00:00",
       "previousClose": 205.64748,
       "exchange": "CCC",
       "state": "open"
@@ -550,9 +550,9 @@
       "state": "closed"
     },
     "BNB-USD": {
-      "price": 553.53,
+      "price": 554.29,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:00+00:00",
+      "regularMarketTime": "2026-11-26T19:51:29+00:00",
       "previousClose": 553.5615,
       "exchange": "CCC",
       "state": "open"
@@ -638,9 +638,9 @@
       "state": "closed"
     },
     "BTC-USD": {
-      "price": 60533.39,
+      "price": 60641.01,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:29+00:00",
+      "regularMarketTime": "2026-11-26T19:51:37+00:00",
       "previousClose": 60378.57,
       "exchange": "CCC",
       "state": "open"
@@ -918,9 +918,9 @@
       "state": "closed"
     },
     "DOGE-USD": {
-      "price": 0.05703,
+      "price": 0.05706,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:20+00:00",
+      "regularMarketTime": "2026-11-26T19:51:02+00:00",
       "previousClose": 0.055969,
       "exchange": "CCC",
       "state": "open"
@@ -934,9 +934,9 @@
       "state": "closed"
     },
     "DOT-USD": {
-      "price": 0.676,
+      "price": 0.6749,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:18+00:00",
+      "regularMarketTime": "2026-11-26T19:51:34+00:00",
       "previousClose": 0.658613,
       "exchange": "CCC",
       "state": "open"
@@ -1126,9 +1126,9 @@
       "state": "closed"
     },
     "ETH-USD": {
-      "price": 1701.31,
+      "price": 1704.54,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:30+00:00",
+      "regularMarketTime": "2026-11-26T19:51:33+00:00",
       "previousClose": 1690.7516,
       "exchange": "CCC",
       "state": "open"
@@ -1168,23 +1168,23 @@
     "EURGBP=X": {
       "price": 0.837,
       "currency": "GBP",
-      "regularMarketTime": "2026-11-26T19:27:22+00:00",
+      "regularMarketTime": "2026-11-26T19:51:30+00:00",
       "previousClose": 0.8366,
       "exchange": "CCY",
       "state": "open"
     },
     "EURILS=X": {
-      "price": 3.6379,
+      "price": 3.6389,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T19:27:13+00:00",
+      "regularMarketTime": "2026-11-26T19:51:26+00:00",
       "previousClose": 3.6857,
       "exchange": "CCY",
       "state": "open"
     },
     "EURUSD=X": {
-      "price": 1.0972,
+      "price": 1.0975,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:26:43+00:00",
+      "regularMarketTime": "2026-11-26T19:50:44+00:00",
       "previousClose": 1.0982,
       "exchange": "CCY",
       "state": "open"
@@ -1414,17 +1414,17 @@
       "state": "closed"
     },
     "GBPILS=X": {
-      "price": 4.3526,
+      "price": 4.353,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T19:26:43+00:00",
+      "regularMarketTime": "2026-11-26T19:46:44+00:00",
       "previousClose": 4.4038,
       "exchange": "CCY",
       "state": "open"
     },
     "GBPUSD=X": {
-      "price": 1.3105,
+      "price": 1.3107,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:26:43+00:00",
+      "regularMarketTime": "2026-11-26T19:50:44+00:00",
       "previousClose": 1.3116,
       "exchange": "CCY",
       "state": "open"
@@ -1750,9 +1750,9 @@
       "state": "closed"
     },
     "ILS=X": {
-      "price": 3.3173,
+      "price": 3.3166,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T19:27:16+00:00",
+      "regularMarketTime": "2026-11-26T19:51:01+00:00",
       "previousClose": 3.3519,
       "exchange": "CCY",
       "state": "open"
@@ -2030,9 +2030,9 @@
       "state": "closed"
     },
     "LINK-USD": {
-      "price": 9.272,
+      "price": 9.262,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:26+00:00",
+      "regularMarketTime": "2026-11-26T19:51:14+00:00",
       "previousClose": 9.047612,
       "exchange": "CCC",
       "state": "open"
@@ -2102,9 +2102,9 @@
       "state": "closed"
     },
     "LTC-USD": {
-      "price": 43.446,
+      "price": 43.545,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:31+00:00",
+      "regularMarketTime": "2026-11-26T19:51:30+00:00",
       "previousClose": 42.72778,
       "exchange": "CCC",
       "state": "open"
@@ -2326,9 +2326,9 @@
       "state": "closed"
     },
     "NEAR-USD": {
-      "price": 3.0822,
+      "price": 3.0748,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:21+00:00",
+      "regularMarketTime": "2026-11-26T19:51:30+00:00",
       "previousClose": 3.048042,
       "exchange": "CCC",
       "state": "open"
@@ -2816,7 +2816,7 @@
     "SHIB-USD": {
       "price": 4e-06,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:01+00:00",
+      "regularMarketTime": "2026-11-26T19:51:03+00:00",
       "previousClose": 4e-06,
       "exchange": "CCC",
       "state": "open"
@@ -2910,9 +2910,9 @@
       "state": "closed"
     },
     "SOL-USD": {
-      "price": 71.33,
+      "price": 71.31,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:28+00:00",
+      "regularMarketTime": "2026-11-26T19:51:35+00:00",
       "previousClose": 70.39324,
       "exchange": "CCC",
       "state": "open"
@@ -3224,7 +3224,7 @@
     "TON-USD": {
       "price": 0.001515,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:26:03+00:00",
+      "regularMarketTime": "2026-11-26T19:50:05+00:00",
       "previousClose": 0.001488,
       "exchange": "CCC",
       "state": "open"
@@ -3246,9 +3246,9 @@
       "state": "closed"
     },
     "TRX-USD": {
-      "price": 0.303197,
+      "price": 0.3032,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:26:03+00:00",
+      "regularMarketTime": "2026-11-26T19:50:05+00:00",
       "previousClose": 0.303614,
       "exchange": "CCC",
       "state": "open"
@@ -3358,17 +3358,17 @@
       "state": "closed"
     },
     "USDCAD=X": {
-      "price": 1.4249,
+      "price": 1.4248,
       "currency": "CAD",
-      "regularMarketTime": "2026-11-26T19:27:22+00:00",
+      "regularMarketTime": "2026-11-26T19:51:26+00:00",
       "previousClose": 1.421,
       "exchange": "CCY",
       "state": "open"
     },
     "USDCHF=X": {
-      "price": 0.8342,
+      "price": 0.8341,
       "currency": "CHF",
-      "regularMarketTime": "2026-11-26T19:27:22+00:00",
+      "regularMarketTime": "2026-11-26T19:51:30+00:00",
       "previousClose": 0.8303,
       "exchange": "CCY",
       "state": "open"
@@ -3376,15 +3376,15 @@
     "USDCNY=X": {
       "price": 6.6592,
       "currency": "CNY",
-      "regularMarketTime": "2026-11-26T19:15:33+00:00",
+      "regularMarketTime": "2026-11-26T19:41:26+00:00",
       "previousClose": 6.6593,
       "exchange": "CCY",
       "state": "open"
     },
     "USDJPY=X": {
-      "price": 159.277,
+      "price": 159.264,
       "currency": "JPY",
-      "regularMarketTime": "2026-11-26T19:27:14+00:00",
+      "regularMarketTime": "2026-11-26T19:51:26+00:00",
       "previousClose": 159.123,
       "exchange": "CCY",
       "state": "open"
@@ -3926,9 +3926,9 @@
       "state": "closed"
     },
     "XLM-USD": {
-      "price": 0.127575,
+      "price": 0.127469,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:27+00:00",
+      "regularMarketTime": "2026-11-26T19:51:28+00:00",
       "previousClose": 0.127895,
       "exchange": "CCC",
       "state": "open"
@@ -4006,9 +4006,9 @@
       "state": "closed"
     },
     "XRP-USD": {
-      "price": 0.954,
+      "price": 0.9534,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T19:27:27+00:00",
+      "regularMarketTime": "2026-11-26T19:51:37+00:00",
       "previousClose": 0.936943,
       "exchange": "CCC",
       "state": "open"
