@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0d10">
+<meta name="description" content="מפת חום של ת״א 35 ו־S&amp;P 100 לפי שינוי יומי, שבועי וחודשי. מידע כללי בלבד, לא ייעוץ.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="stylesheet" href="portal.css">
+<link rel="stylesheet" href="css/heatmap.css">
+<title>מפת חום</title>
+</head>
+<body data-page="heatmap">
+<main class="app-wrap hm-page">
+  <header>
+    <h1>מפת חום</h1>
+    <p class="lead">שינוי יומי, שבועי וחודשי במניות ת״א 35 ו־S&amp;P 100.</p>
+  </header>
+  <p class="hm-disclaimer" role="note">מידע כללי בלבד, לא ייעוץ.</p>
+  <div id="hm-app"></div>
+</main>
+<noscript><p style="padding:16px;font-size:16px">כדי לראות את מפת החום צריך להפעיל JavaScript בדפדפן.</p></noscript>
+<script>window.PORTAL_NAV = window.PORTAL_NAV || []; window.PORTAL_NAV.push({ id: 'heatmap', href: 'heatmap.html', label: { he: 'מפת חום', en: 'Heatmap', es: 'Mapa de calor' }, icon: 'chart', group: 'tools', parent: 'home' });</script>
+<script src="portal-nav.js"></script>
+<script src="js/heatmap.js"></script>
+</body>
+</html>

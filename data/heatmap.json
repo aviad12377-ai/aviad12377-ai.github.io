@@ -1,0 +1,1366 @@
+{
+"generatedAt": "2026-11-26T22:39:40Z",
+"source": "Yahoo Finance chart, range=2mo interval=1d",
+"items": [
+{
+"symbol": "MMM",
+"name": "3M",
+"market": "sp100",
+"currency": "USD",
+"price": 189.8300018310547,
+"day": 1.4374278348720848,
+"week": 4.849488335433438,
+"month": 9.855323193597387
+},
+{
+"symbol": "AMD",
+"name": "AMD",
+"market": "sp100",
+"currency": "USD",
+"price": 406.0299987792969,
+"day": -1.7518790202149193,
+"week": -23.410799494440017,
+"month": -29.806030519055227
+},
+{
+"symbol": "T",
+"name": "AT&T",
+"market": "sp100",
+"currency": "USD",
+"price": 22.969999313354492,
+"day": 0.3933573246900135,
+"week": 4.646918063607597,
+"month": 10.96617616787321
+},
+{
+"symbol": "ABBV",
+"name": "AbbVie",
+"market": "sp100",
+"currency": "USD",
+"price": 294.4800109863281,
+"day": -1.9315265141024884,
+"week": 2.9614352405511912,
+"month": 2.968642624518214
+},
+{
+"symbol": "ABT",
+"name": "Abbott",
+"market": "sp100",
+"currency": "USD",
+"price": 108.0,
+"day": 2.4765163919413746,
+"week": 3.3690625286841636,
+"month": 5.222136245347775
+},
+{
+"symbol": "ACN",
+"name": "Accenture",
+"market": "sp100",
+"currency": "USD",
+"price": 240.49000549316406,
+"day": 3.5167002028988037,
+"week": 5.714536764733014,
+"month": -1.1955581250170044
+},
+{
+"symbol": "ADBE",
+"name": "Adobe",
+"market": "sp100",
+"currency": "USD",
+"price": 232.8300018310547,
+"day": 0.3231644235102804,
+"week": 2.931036680928667,
+"month": -6.778504583654554
+},
+{
+"symbol": "GOOGL",
+"name": "Alphabet (A)",
+"market": "sp100",
+"currency": "USD",
+"price": 273.1000061035156,
+"day": -2.1322278981311005,
+"week": -3.3068957148972733,
+"month": -15.94078186766179
+},
+{
+"symbol": "GOOG",
+"name": "Alphabet (C)",
+"market": "sp100",
+"currency": "USD",
+"price": 270.9800109863281,
+"day": -2.0247219096868108,
+"week": -2.944126382991652,
+"month": -15.815962392530992
+},
+{
+"symbol": "MO",
+"name": "Altria",
+"market": "sp100",
+"currency": "USD",
+"price": 76.27999877929688,
+"day": 1.9513486907614341,
+"week": 0.0262216660192216,
+"month": 4.507468162511641
+},
+{
+"symbol": "AMZN",
+"name": "Amazon",
+"market": "sp100",
+"currency": "USD",
+"price": 244.42999267578125,
+"day": -3.1154626895713577,
+"week": -8.706206920448667,
+"month": -3.9945063566099948
+},
+{
+"symbol": "AXP",
+"name": "American Express",
+"market": "sp100",
+"currency": "USD",
+"price": 312.3900146484375,
+"day": 1.2182904144568463,
+"week": -0.9543371294530756,
+"month": -1.745608526876563
+},
+{
+"symbol": "AMT",
+"name": "American Tower",
+"market": "sp100",
+"currency": "USD",
+"price": 184.58999633789062,
+"day": 0.9626398781433343,
+"week": -0.12445134574885497,
+"month": 0.45714086415815647
+},
+{
+"symbol": "AMGN",
+"name": "Amgen",
+"market": "sp100",
+"currency": "USD",
+"price": 469.239990234375,
+"day": -0.9916892819386569,
+"week": 5.710868627223964,
+"month": 3.853220056107287
+},
+{
+"symbol": "AAPL",
+"name": "Apple",
+"market": "sp100",
+"currency": "USD",
+"price": 355.5799865722656,
+"day": 0.4264634724240324,
+"week": 0.888061925614525,
+"month": 3.417386632602626
+},
+{
+"symbol": "AMAT",
+"name": "Applied Materials",
+"market": "sp100",
+"currency": "USD",
+"price": 311.17999267578125,
+"day": -3.8855994287097517,
+"week": -11.671869583302941,
+"month": -25.197117145244896
+},
+{
+"symbol": "ANET",
+"name": "Arista Networks",
+"market": "sp100",
+"currency": "USD",
+"price": 163.99000549316406,
+"day": -2.711196091374579,
+"week": -15.442918722913168,
+"month": -12.173305258643497
+},
+{
+"symbol": "BNY",
+"name": "BNY Mellon",
+"market": "sp100",
+"currency": "USD",
+"price": 147.16000366210938,
+"day": 1.335905815382743,
+"week": -0.4330171694410079,
+"month": -0.9623747971091334
+},
+{
+"symbol": "BAC",
+"name": "Bank of America",
+"market": "sp100",
+"currency": "USD",
+"price": 48.540000915527344,
+"day": -0.04118710296139305,
+"week": -0.7564893335495371,
+"month": -4.542768196481594
+},
+{
+"symbol": "BRK-B",
+"name": "Berkshire Hathaway",
+"market": "sp100",
+"currency": "USD",
+"price": 579.3200073242188,
+"day": 0.3655489806555057,
+"week": 0.8179339819305742,
+"month": 7.2139724120745985
+},
+{
+"symbol": "BLK",
+"name": "BlackRock",
+"market": "sp100",
+"currency": "USD",
+"price": 1141.8599853515625,
+"day": -0.36386864555991716,
+"week": -2.339184278246109,
+"month": -1.3835647445066046
+},
+{
+"symbol": "BA",
+"name": "Boeing",
+"market": "sp100",
+"currency": "USD",
+"price": 164.52999877929688,
+"day": 0.5746087550883683,
+"week": 0.9944110740722323,
+"month": -1.5615655258361838
+},
+{
+"symbol": "BKNG",
+"name": "Booking",
+"market": "sp100",
+"currency": "USD",
+"price": 149.5,
+"day": 1.9503550342714115,
+"week": -2.466074379827976,
+"month": 1.0544798789033472
+},
+{
+"symbol": "BMY",
+"name": "Bristol Myers Squibb",
+"market": "sp100",
+"currency": "USD",
+"price": 61.560001373291016,
+"day": -0.7416947453683487,
+"week": 3.3579582838909605,
+"month": 1.634475290498294
+},
+{
+"symbol": "AVGO",
+"name": "Broadcom",
+"market": "sp100",
+"currency": "USD",
+"price": 300.8599853515625,
+"day": -0.07307068902446812,
+"week": -15.023303001074861,
+"month": -14.482252511469795
+},
+{
+"symbol": "CVS",
+"name": "CVS Health",
+"market": "sp100",
+"currency": "USD",
+"price": 81.05999755859375,
+"day": 0.458538983755985,
+"week": -0.35648545908651963,
+"month": -9.883268139257195
+},
+{
+"symbol": "COF",
+"name": "Capital One",
+"market": "sp100",
+"currency": "USD",
+"price": 182.52000427246094,
+"day": 0.639613838887021,
+"week": -0.9658159250257814,
+"month": -10.913705621561787
+},
+{
+"symbol": "CAT",
+"name": "Caterpillar",
+"market": "sp100",
+"currency": "USD",
+"price": 543.6900024414062,
+"day": 0.5660058692556369,
+"week": -2.6987877951101136,
+"month": -23.78676179314577
+},
+{
+"symbol": "SCHW",
+"name": "Charles Schwab",
+"market": "sp100",
+"currency": "USD",
+"price": 93.44999694824219,
+"day": -0.4898378191127595,
+"week": 0.9615378274886455,
+"month": 5.283905699791935
+},
+{
+"symbol": "CVX",
+"name": "Chevron",
+"market": "sp100",
+"currency": "USD",
+"price": 210.9499969482422,
+"day": 1.063575559883101,
+"week": 2.4625956601834753,
+"month": -7.962478291010278
+},
+{
+"symbol": "CSCO",
+"name": "Cisco",
+"market": "sp100",
+"currency": "USD",
+"price": 94.19999694824219,
+"day": 0.22342705526712248,
+"week": -3.066478027964026,
+"month": -14.588814791658866
+},
+{
+"symbol": "C",
+"name": "Citigroup",
+"market": "sp100",
+"currency": "USD",
+"price": 113.33000183105469,
+"day": -0.4567383838697259,
+"week": -3.4174148900506296,
+"month": -8.68584217732874
+},
+{
+"symbol": "KO",
+"name": "Coca-Cola",
+"market": "sp100",
+"currency": "USD",
+"price": 97.58999633789062,
+"day": -0.030737971570538036,
+"week": -0.5097359758049591,
+"month": 6.3883056431983665
+},
+{
+"symbol": "CMCSA",
+"name": "Comcast",
+"market": "sp100",
+"currency": "USD",
+"price": 25.729999542236328,
+"day": 1.3790401617143067,
+"week": 1.941362026789184,
+"month": 19.2860449989265
+},
+{
+"symbol": "COP",
+"name": "ConocoPhillips",
+"market": "sp100",
+"currency": "USD",
+"price": 135.02000427246094,
+"day": 0.28223773361195637,
+"week": 0.46131726498002124,
+"month": -9.419021545746276
+},
+{
+"symbol": "COST",
+"name": "Costco",
+"market": "sp100",
+"currency": "USD",
+"price": 1086.81005859375,
+"day": -0.4488282161996815,
+"week": -0.8945611576587353,
+"month": 10.590913088390263
+},
+{
+"symbol": "DHR",
+"name": "Danaher",
+"market": "sp100",
+"currency": "USD",
+"price": 227.35000610351562,
+"day": -0.75952257287073,
+"week": -0.5381029476271393,
+"month": -2.870936476451258
+},
+{
+"symbol": "DE",
+"name": "Deere",
+"market": "sp100",
+"currency": "USD",
+"price": 641.02001953125,
+"day": 4.441477015753237,
+"week": -0.5785157764637505,
+"month": 0.054636026414689454
+},
+{
+"symbol": "DELL",
+"name": "Dell",
+"market": "sp100",
+"currency": "USD",
+"price": 297.05999755859375,
+"day": 0.6028172536763465,
+"week": -5.125990400768499,
+"month": -39.840824557395
+},
+{
+"symbol": "DIS",
+"name": "Disney",
+"market": "sp100",
+"currency": "USD",
+"price": 125.5999984741211,
+"day": 2.5222400489835595,
+"week": 2.6479223991564993,
+"month": 15.187084940894934
+},
+{
+"symbol": "DUK",
+"name": "Duke Energy",
+"market": "sp100",
+"currency": "USD",
+"price": 131.89999389648438,
+"day": 0.7177665962334157,
+"week": 1.4225227230408422,
+"month": 6.7411137187281645
+},
+{
+"symbol": "LLY",
+"name": "Eli Lilly",
+"market": "sp100",
+"currency": "USD",
+"price": 1392.219970703125,
+"day": -1.0919369624967645,
+"week": 0.6848649938980378,
+"month": 8.066437781286172
+},
+{
+"symbol": "EMR",
+"name": "Emerson",
+"market": "sp100",
+"currency": "USD",
+"price": 157.22999572753906,
+"day": 0.15925596050716528,
+"week": -2.9444470817660107,
+"month": -6.248888299317912
+},
+{
+"symbol": "XOM",
+"name": "ExxonMobil",
+"market": "sp100",
+"currency": "USD",
+"price": 158.0800018310547,
+"day": -0.09479485592772674,
+"week": -1.5568563778136202,
+"month": -13.152401867638186
+},
+{
+"symbol": "FDX",
+"name": "FedEx",
+"market": "sp100",
+"currency": "USD",
+"price": 308.8699951171875,
+"day": 0.18813018787182667,
+"week": -2.9656631943106193,
+"month": 1.4084998141872473
+},
+{
+"symbol": "GE",
+"name": "GE Aerospace",
+"market": "sp100",
+"currency": "USD",
+"price": 316.9800109863281,
+"day": -0.3301536952485473,
+"week": -3.3892090552656517,
+"month": 5.263509396774935
+},
+{
+"symbol": "GEV",
+"name": "GE Vernova",
+"market": "sp100",
+"currency": "USD",
+"price": 715.0,
+"day": -0.7840177926388581,
+"week": -7.409801983109143,
+"month": -18.567705415204216
+},
+{
+"symbol": "GD",
+"name": "General Dynamics",
+"market": "sp100",
+"currency": "USD",
+"price": 360.2699890136719,
+"day": 2.480444182475239,
+"week": 3.217390612487536,
+"month": 1.6706597455022676
+},
+{
+"symbol": "GM",
+"name": "General Motors",
+"market": "sp100",
+"currency": "USD",
+"price": 83.98999786376953,
+"day": 2.028666393508649,
+"week": 2.264703120118705,
+"month": 1.8307401132143575
+},
+{
+"symbol": "GILD",
+"name": "Gilead",
+"market": "sp100",
+"currency": "USD",
+"price": 176.74000549316406,
+"day": -0.8693633133303291,
+"week": 4.592265334257162,
+"month": 11.017593518311642
+},
+{
+"symbol": "GS",
+"name": "Goldman Sachs",
+"market": "sp100",
+"currency": "USD",
+"price": 801.030029296875,
+"day": -0.6190901110963654,
+"week": -8.262896995361658,
+"month": -13.418069750036032
+},
+{
+"symbol": "HD",
+"name": "Home Depot",
+"market": "sp100",
+"currency": "USD",
+"price": 361.260009765625,
+"day": 2.140294402433063,
+"week": 6.995614883437762,
+"month": 13.761182939601223
+},
+{
+"symbol": "IBM",
+"name": "IBM",
+"market": "sp100",
+"currency": "USD",
+"price": 243.47000122070312,
+"day": 3.331638344025678,
+"week": 6.537436013306319,
+"month": -3.850406742357615
+},
+{
+"symbol": "INTC",
+"name": "Intel",
+"market": "sp100",
+"currency": "USD",
+"price": 54.470001220703125,
+"day": -0.602186169619956,
+"week": -0.36582578185596626,
+"month": -42.98126042423044
+},
+{
+"symbol": "INTU",
+"name": "Intuit",
+"market": "sp100",
+"currency": "USD",
+"price": 271.7200012207031,
+"day": -2.7557124890850715,
+"week": -13.255009037193954,
+"month": -17.20649648088688
+},
+{
+"symbol": "ISRG",
+"name": "Intuitive Surgical",
+"market": "sp100",
+"currency": "USD",
+"price": 427.17999267578125,
+"day": -1.6756430793350985,
+"week": 1.479981063805269,
+"month": -3.82727729306096
+},
+{
+"symbol": "JPM",
+"name": "JPMorgan Chase",
+"market": "sp100",
+"currency": "USD",
+"price": 316.739990234375,
+"day": -0.11353385752477241,
+"week": -2.273917944611692,
+"month": -6.648982720376406
+},
+{
+"symbol": "JNJ",
+"name": "Johnson & Johnson",
+"market": "sp100",
+"currency": "USD",
+"price": 273.94000244140625,
+"day": -0.9115203253854398,
+"week": 0.45470853643878595,
+"month": 1.0699504888791012
+},
+{
+"symbol": "LRCX",
+"name": "Lam Research",
+"market": "sp100",
+"currency": "USD",
+"price": 185.00999450683594,
+"day": -5.684139960804457,
+"week": -12.595079081935168,
+"month": -27.10976709156259
+},
+{
+"symbol": "LIN",
+"name": "Linde",
+"market": "sp100",
+"currency": "USD",
+"price": 524.6099853515625,
+"day": 1.5053243821878004,
+"week": 2.430883485601454,
+"month": 3.23716576883355
+},
+{
+"symbol": "LMT",
+"name": "Lockheed Martin",
+"market": "sp100",
+"currency": "USD",
+"price": 599.239990234375,
+"day": 2.149563651126485,
+"week": 3.6406696248785453,
+"month": -4.844781225188566
+},
+{
+"symbol": "LOW",
+"name": "Lowe's",
+"market": "sp100",
+"currency": "USD",
+"price": 235.64999389648438,
+"day": 1.9953258069230762,
+"week": 5.776997570566245,
+"month": 18.775202190497687
+},
+{
+"symbol": "MA",
+"name": "Mastercard",
+"market": "sp100",
+"currency": "USD",
+"price": 659.969970703125,
+"day": 1.9353095598773518,
+"week": 2.580160049725966,
+"month": 8.136844119084508
+},
+{
+"symbol": "MCD",
+"name": "McDonald's",
+"market": "sp100",
+"currency": "USD",
+"price": 283.5,
+"day": 0.9975018422527127,
+"week": 3.455826465309819,
+"month": 13.173652694610771
+},
+{
+"symbol": "MDT",
+"name": "Medtronic",
+"market": "sp100",
+"currency": "USD",
+"price": 96.05999755859375,
+"day": -0.07281774349757741,
+"week": -4.626691427354257,
+"month": 1.350494614668074
+},
+{
+"symbol": "MRK",
+"name": "Merck",
+"market": "sp100",
+"currency": "USD",
+"price": 140.2899932861328,
+"day": -0.9041562279180293,
+"week": 1.8217408397982249,
+"month": -0.45412575243709563
+},
+{
+"symbol": "META",
+"name": "Meta",
+"market": "sp100",
+"currency": "USD",
+"price": 609.8900146484375,
+"day": 3.4027342367154434,
+"week": -1.0529203061362957,
+"month": -0.4244927472108695
+},
+{
+"symbol": "MU",
+"name": "Micron",
+"market": "sp100",
+"currency": "USD",
+"price": 601.25,
+"day": -4.531665955806085,
+"week": -14.748963751555156,
+"month": -38.84950500458122
+},
+{
+"symbol": "MSFT",
+"name": "Microsoft",
+"market": "sp100",
+"currency": "USD",
+"price": 489.92999267578125,
+"day": -1.2496749130292417,
+"week": -3.6121142577049126,
+"month": -7.736203900935024
+},
+{
+"symbol": "MDLZ",
+"name": "Mondelez",
+"market": "sp100",
+"currency": "USD",
+"price": 67.80999755859375,
+"day": 1.1938447945978314,
+"week": 1.862697715869066,
+"month": 9.60077376637516
+},
+{
+"symbol": "MS",
+"name": "Morgan Stanley",
+"market": "sp100",
+"currency": "USD",
+"price": 167.5500030517578,
+"day": -0.7346349213208203,
+"week": -7.517798341249926,
+"month": -11.87608544215416
+},
+{
+"symbol": "NFLX",
+"name": "Netflix",
+"market": "sp100",
+"currency": "USD",
+"price": 59.40999984741211,
+"day": 0.9172769242821843,
+"week": -0.685389250257018,
+"month": -4.16196444781013
+},
+{
+"symbol": "NEE",
+"name": "NextEra Energy",
+"market": "sp100",
+"currency": "USD",
+"price": 85.41000366210938,
+"day": 0.9813216045000628,
+"week": 0.7431055577773238,
+"month": 5.4184240939716855
+},
+{
+"symbol": "NVDA",
+"name": "Nvidia",
+"market": "sp100",
+"currency": "USD",
+"price": 149.3000030517578,
+"day": -3.912988569951603,
+"week": -1.0996314177805888,
+"month": -30.680657597258666
+},
+{
+"symbol": "ORCL",
+"name": "Oracle",
+"market": "sp100",
+"currency": "USD",
+"price": 103.87999725341797,
+"day": -5.132422599618291,
+"week": -8.7891844673592,
+"month": -28.130619843204162
+},
+{
+"symbol": "PLTR",
+"name": "Palantir",
+"market": "sp100",
+"currency": "USD",
+"price": 163.58999633789062,
+"day": 1.4952250723557103,
+"week": 4.416926182307801,
+"month": -16.87922444631551
+},
+{
+"symbol": "PANW",
+"name": "Palo Alto Networks",
+"market": "sp100",
+"currency": "USD",
+"price": 356.1400146484375,
+"day": 0.8923834956257481,
+"week": 4.771711161441061,
+"month": -9.721406508477681
+},
+{
+"symbol": "PEP",
+"name": "PepsiCo",
+"market": "sp100",
+"currency": "USD",
+"price": 143.92999267578125,
+"day": 0.8760863920426631,
+"week": 1.452031880942939,
+"month": 8.519933180243067
+},
+{
+"symbol": "PFE",
+"name": "Pfizer",
+"market": "sp100",
+"currency": "USD",
+"price": 28.459999084472656,
+"day": 0.0,
+"week": 1.42551541747451,
+"month": -3.3616354934450032
+},
+{
+"symbol": "PM",
+"name": "Philip Morris",
+"market": "sp100",
+"currency": "USD",
+"price": 184.32000732421875,
+"day": 0.2011472585567109,
+"week": -4.3636115756519045,
+"month": -9.040659356795056
+},
+{
+"symbol": "PG",
+"name": "Procter & Gamble",
+"market": "sp100",
+"currency": "USD",
+"price": 173.22999572753906,
+"day": 0.44065315791550486,
+"week": 1.7264681175165997,
+"month": 9.459119006892491
+},
+{
+"symbol": "QCOM",
+"name": "Qualcomm",
+"market": "sp100",
+"currency": "USD",
+"price": 168.66000366210938,
+"day": 2.242966050953221,
+"week": 5.5378300724088225,
+"month": -7.820952868297059
+},
+{
+"symbol": "RTX",
+"name": "RTX",
+"market": "sp100",
+"currency": "USD",
+"price": 196.19000244140625,
+"day": 0.4402808592073759,
+"week": -0.6381334648317138,
+"month": 0.17872044018616418
+},
+{
+"symbol": "CRM",
+"name": "Salesforce",
+"market": "sp100",
+"currency": "USD",
+"price": 197.2100067138672,
+"day": 2.0438850870874603,
+"week": 3.576687518742916,
+"month": -18.545286763575618
+},
+{
+"symbol": "SNDK",
+"name": "Sandisk",
+"market": "sp100",
+"currency": "USD",
+"price": 94.3949966430664,
+"day": -2.713148122112463,
+"week": -19.446167789056112,
+"month": -40.110875228797724
+},
+{
+"symbol": "NOW",
+"name": "ServiceNow",
+"market": "sp100",
+"currency": "USD",
+"price": 92.16000366210938,
+"day": 0.457821896795263,
+"week": 1.7330912768367845,
+"month": -38.61320144893951
+},
+{
+"symbol": "SO",
+"name": "Southern Company",
+"market": "sp100",
+"currency": "USD",
+"price": 95.0,
+"day": 0.9457011835897644,
+"week": 0.6249298962027527,
+"month": 3.802451359898784
+},
+{
+"symbol": "SBUX",
+"name": "Starbucks",
+"market": "sp100",
+"currency": "USD",
+"price": 107.73999786376953,
+"day": 1.2784364029562623,
+"week": -1.2556161111890396,
+"month": 4.399225823431263
+},
+{
+"symbol": "TMUS",
+"name": "T-Mobile",
+"market": "sp100",
+"currency": "USD",
+"price": 166.25,
+"day": -0.6276168754360212,
+"week": 1.3595876536100615,
+"month": 12.270392993157554
+},
+{
+"symbol": "TSLA",
+"name": "Tesla",
+"market": "sp100",
+"currency": "USD",
+"price": 380.1400146484375,
+"day": -1.18019603664965,
+"week": -0.9329684563944673,
+"month": -5.957148706037929
+},
+{
+"symbol": "TXN",
+"name": "Texas Instruments",
+"market": "sp100",
+"currency": "USD",
+"price": 270.19000244140625,
+"day": 4.546509785250441,
+"week": -7.6052357115887865,
+"month": -12.794108333220876
+},
+{
+"symbol": "TMO",
+"name": "Thermo Fisher",
+"market": "sp100",
+"currency": "USD",
+"price": 685.52001953125,
+"day": -1.4519386528324296,
+"week": -1.042233854679342,
+"month": -2.6457436962123104
+},
+{
+"symbol": "USB",
+"name": "U.S. Bancorp",
+"market": "sp100",
+"currency": "USD",
+"price": 58.54999923706055,
+"day": 0.8265878160132134,
+"week": 0.46328150895498244,
+"month": -1.7617437314473516
+},
+{
+"symbol": "UPS",
+"name": "UPS",
+"market": "sp100",
+"currency": "USD",
+"price": 111.47000122070312,
+"day": 0.5774604160198704,
+"week": 0.39629149441033906,
+"month": 5.538722137848473
+},
+{
+"symbol": "UBER",
+"name": "Uber",
+"market": "sp100",
+"currency": "USD",
+"price": 66.3499984741211,
+"day": 2.550234317937994,
+"week": -3.5049499523495675,
+"month": 1.654668127165304
+},
+{
+"symbol": "UNP",
+"name": "Union Pacific",
+"market": "sp100",
+"currency": "USD",
+"price": 298.3800048828125,
+"day": 2.5960247082949417,
+"week": -0.8374839032196157,
+"month": 0.194767331638368
+},
+{
+"symbol": "UNH",
+"name": "UnitedHealth",
+"market": "sp100",
+"currency": "USD",
+"price": 346.19000244140625,
+"day": 1.2606755285589522,
+"week": -1.0631308570118292,
+"month": -14.961926491993582
+},
+{
+"symbol": "VZ",
+"name": "Verizon",
+"market": "sp100",
+"currency": "USD",
+"price": 47.279998779296875,
+"day": 0.25445066215654677,
+"week": 2.492949673865308,
+"month": 9.495133036461901
+},
+{
+"symbol": "V",
+"name": "Visa",
+"market": "sp100",
+"currency": "USD",
+"price": 424.3900146484375,
+"day": 1.825907167193619,
+"week": 2.208471027593917,
+"month": 5.938594154383137
+},
+{
+"symbol": "WMT",
+"name": "Walmart",
+"market": "sp100",
+"currency": "USD",
+"price": 131.94000244140625,
+"day": -0.2796425999657681,
+"week": 3.596106948104416,
+"month": 11.08866394761212
+},
+{
+"symbol": "WFC",
+"name": "Wells Fargo",
+"market": "sp100",
+"currency": "USD",
+"price": 80.94000244140625,
+"day": -0.30791968528443014,
+"week": 0.024721049077602864,
+"month": -3.262813179494395
+},
+{
+"symbol": "OPCE.TA",
+"name": "או.פי.סי אנרגיה",
+"market": "ta35",
+"currency": "ILS",
+"price": 8920.0,
+"day": -5.658381808566892,
+"week": -3.4109366540335695,
+"month": -4.075707065275836
+},
+{
+"symbol": "ORA.TA",
+"name": "אורמת",
+"market": "ta35",
+"currency": "ILS",
+"price": 27310.0,
+"day": -2.114695340501793,
+"week": -7.8920741989881975,
+"month": -4.510489510489513
+},
+{
+"symbol": "ICL.TA",
+"name": "איי.סי.אל",
+"market": "ta35",
+"currency": "ILS",
+"price": 1404.0,
+"day": -2.092050209205021,
+"week": 1.6654598117306296,
+"month": -3.438789546079779
+},
+{
+"symbol": "ELAL.TA",
+"name": "אל על",
+"market": "ta35",
+"currency": "ILS",
+"price": 2152.0,
+"day": 2.5738798856053346,
+"week": -1.4200641319285334,
+"month": 15.265131226566675
+},
+{
+"symbol": "ESLT.TA",
+"name": "אלביט מערכות",
+"market": "ta35",
+"currency": "ILS",
+"price": 220080.0,
+"day": -0.6410835214446964,
+"week": -4.90018148820327,
+"month": -9.264069264069263
+},
+{
+"symbol": "ENLT.TA",
+"name": "אנלייט אנרגיה",
+"market": "ta35",
+"currency": "ILS",
+"price": 20000.0,
+"day": -1.7681728880157177,
+"week": -6.103286384976525,
+"month": -4.988123515439435
+},
+{
+"symbol": "BEZQ.TA",
+"name": "בזק",
+"market": "ta35",
+"currency": "ILS",
+"price": 680.7000122070312,
+"day": -2.701538598979647,
+"week": 0.2208480525678791,
+"month": -0.13203688543746983
+},
+{
+"symbol": "BIG.TA",
+"name": "ביג",
+"market": "ta35",
+"currency": "ILS",
+"price": 69050.0,
+"day": 1.024140453547906,
+"week": -0.6474820143884896,
+"month": -0.13017066820942835
+},
+{
+"symbol": "FIBI.TA",
+"name": "בינלאומי",
+"market": "ta35",
+"currency": "ILS",
+"price": 20350.0,
+"day": -0.7317073170731714,
+"week": -3.0952380952380953,
+"month": -9.15178571428571
+},
+{
+"symbol": "DORL.TA",
+"name": "דוראל אנרגיה",
+"market": "ta35",
+"currency": "ILS",
+"price": 4775.0,
+"day": 0.9300359332065078,
+"week": -4.9562101910828,
+"month": -6.077891424075532
+},
+{
+"symbol": "DSCT.TA",
+"name": "דיסקונט",
+"market": "ta35",
+"currency": "ILS",
+"price": 2911.0,
+"day": -0.6484641638225264,
+"week": -2.93431143714572,
+"month": -11.841308298001207
+},
+{
+"symbol": "DLEKG.TA",
+"name": "דלק קבוצה",
+"market": "ta35",
+"currency": "ILS",
+"price": 8004.0,
+"day": 0.20030045067600533,
+"week": 2.5496476617552943,
+"month": -5.3341218214074555
+},
+{
+"symbol": "TASE.TA",
+"name": "הבורסה לניירות ערך",
+"market": "ta35",
+"currency": "ILS",
+"price": 12060.0,
+"day": -1.631321370309946,
+"week": -3.597122302158273,
+"month": -19.760479041916167
+},
+{
+"symbol": "PHOE.TA",
+"name": "הפניקס",
+"market": "ta35",
+"currency": "ILS",
+"price": 16200.0,
+"day": 0.8717310087173136,
+"week": -5.704307334109426,
+"month": -9.59821428571429
+},
+{
+"symbol": "HARL.TA",
+"name": "הראל השקעות",
+"market": "ta35",
+"currency": "ILS",
+"price": 17270.0,
+"day": 1.4092777451556016,
+"week": -5.3698630136986285,
+"month": -8.672659968270757
+},
+{
+"symbol": "TSEM.TA",
+"name": "טאואר",
+"market": "ta35",
+"currency": "ILS",
+"price": 38450.0,
+"day": -7.34939759036145,
+"week": -13.20541760722348,
+"month": -35.312920592193805
+},
+{
+"symbol": "TEVA.TA",
+"name": "טבע",
+"market": "ta35",
+"currency": "ILS",
+"price": 13290.0,
+"day": -1.4825796886582698,
+"week": -4.525862068965514,
+"month": 5.392545598731169
+},
+{
+"symbol": "CLIS.TA",
+"name": "כלל ביטוח",
+"market": "ta35",
+"currency": "ILS",
+"price": 24380.0,
+"day": -0.44916292364229893,
+"week": -5.905055962948669,
+"month": -14.665733286664329
+},
+{
+"symbol": "LUMI.TA",
+"name": "לאומי",
+"market": "ta35",
+"currency": "ILS",
+"price": 7126.0,
+"day": -1.3156072566126609,
+"week": -3.663647424631611,
+"month": -0.028058361391691822
+},
+{
+"symbol": "MGDL.TA",
+"name": "מגדל ביטוח",
+"market": "ta35",
+"currency": "ILS",
+"price": 1753.0,
+"day": 2.514619883040936,
+"week": -2.502780867630705,
+"month": -8.027282266526758
+},
+{
+"symbol": "MGOR.TA",
+"name": "מגה אור",
+"market": "ta35",
+"currency": "ILS",
+"price": 41900.0,
+"day": 2.220053671627231,
+"week": -8.315098468271332,
+"month": -11.341515023275495
+},
+{
+"symbol": "MZTF.TA",
+"name": "מזרחי טפחות",
+"market": "ta35",
+"currency": "ILS",
+"price": 20180.0,
+"day": -0.5911330049261032,
+"week": -4.676428908833252,
+"month": -9.587813620071683
+},
+{
+"symbol": "MLSR.TA",
+"name": "מליסרון",
+"market": "ta35",
+"currency": "ILS",
+"price": 39180.0,
+"day": -0.2545824847250522,
+"week": -0.10198878123406363,
+"month": -1.4339622641509453
+},
+{
+"symbol": "MMHD.TA",
+"name": "מנורה מבטחים",
+"market": "ta35",
+"currency": "ILS",
+"price": 46420.0,
+"day": -0.6208520659387706,
+"week": -5.284635788614567,
+"month": -10.919209364805216
+},
+{
+"symbol": "NVPT.TA",
+"name": "נאוויטס פטרוליום",
+"market": "ta35",
+"currency": "ILS",
+"price": 10600.0,
+"day": -1.1194029850746245,
+"week": -11.592994161801506,
+"month": -9.940526762956669
+},
+{
+"symbol": "NVMI.TA",
+"name": "נובה",
+"market": "ta35",
+"currency": "ILS",
+"price": 93230.0,
+"day": -5.713996763754048,
+"week": -9.132553606237813,
+"month": -10.493471582181257
+},
+{
+"symbol": "NWMD.TA",
+"name": "ניו-מד אנרג'י",
+"market": "ta35",
+"currency": "ILS",
+"price": 1724.0,
+"day": 0.0,
+"week": 0.936768149882905,
+"month": 7.213930348258701
+},
+{
+"symbol": "NICE.TA",
+"name": "נייס",
+"market": "ta35",
+"currency": "ILS",
+"price": 30290.0,
+"day": -0.36184210526315486,
+"week": 0.664672648720499,
+"month": -18.179362506753105
+},
+{
+"symbol": "NXSN.TA",
+"name": "נקסט ויז'ן",
+"market": "ta35",
+"currency": "ILS",
+"price": 16670.0,
+"day": -1.2440758293838838,
+"week": -5.337876206700742,
+"month": -15.380710659898478
+},
+{
+"symbol": "AZRG.TA",
+"name": "עזריאלי",
+"market": "ta35",
+"currency": "ILS",
+"price": 32330.0,
+"day": -2.4441762220881125,
+"week": -0.4311672312904191,
+"month": -11.083608360836084
+},
+{
+"symbol": "CYBR.TA",
+"name": "פאלו אלטו",
+"market": "ta35",
+"currency": "ILS",
+"price": 115130.0,
+"day": -2.017021276595743,
+"week": 7.5981308411214865,
+"month": -7.310200466951134
+},
+{
+"symbol": "POLI.TA",
+"name": "פועלים",
+"market": "ta35",
+"currency": "ILS",
+"price": 6982.0,
+"day": -1.244695898161241,
+"week": -4.942137508509193,
+"month": -4.264363087892498
+},
+{
+"symbol": "CAMT.TA",
+"name": "קמטק",
+"market": "ta35",
+"currency": "ILS",
+"price": 30030.0,
+"day": -3.842459173871282,
+"week": -6.797020484171323,
+"month": -25.520833333333336
+},
+{
+"symbol": "STRS.TA",
+"name": "שטראוס",
+"market": "ta35",
+"currency": "ILS",
+"price": 11570.0,
+"day": 1.938325991189438,
+"week": 0.6086956521739184,
+"month": 3.9532794249775405
+},
+{
+"symbol": "SPEN.TA",
+"name": "שפיר הנדסה",
+"market": "ta35",
+"currency": "ILS",
+"price": 3830.0,
+"day": -0.15641293013556323,
+"week": -3.9136979427997987,
+"month": -5.033473840813285
+}
+]
+}
