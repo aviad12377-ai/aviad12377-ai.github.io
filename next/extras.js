@@ -151,6 +151,7 @@
       $('#alts').innerHTML = alts.length ? alts.map(function (x) { return '<a class="row" href="#/fund/' + set + '/' + x.id + '"><span class="tx"><span class="t wrap">' + esc(x.name) + '</span><span class="s">דמי ניהול ' + P(x.feeAcc) + '</span></span><span class="v"><b class="' + cls(x.y5) + '">' + pct(+x.y5, true) + '</b><small class="muted">לשנה, 5 שנים</small></span>' + ic('chev').replace('<svg', '<svg class="chev"') + '</a>'; }).join('')
         : '<div class="empty"><b>דמי הניהול כאן כבר מהנמוכים</b>אין במסלול הזה מסלול זול יותר עם נתוני 5 שנים.</div>';
       if (ser.length > 2 && api.chart) api.chart($('#fc'), ser, { label: 'שווי של 100 ₪ לאורך הזמן', onScrub: function (i) {
+        var L = $('#fvl'); if (L && !L.style.minHeight) L.style.minHeight = L.offsetHeight + 'px'; // keep the hero height while scrubbing (no layout shift)
         if (i < 0) { $('#fv').innerHTML = P(f.ytd, true); $('#fvl').innerHTML = base(); return; }
         $('#fv').innerHTML = pct(ser[i] - 100, true); $('#fvl').innerHTML = '<span class="muted">' + (i ? 'מצטבר עד סוף ' + per(keys[i - 1]) : 'נקודת ההתחלה') + '</span>';
       } });
