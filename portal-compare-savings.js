@@ -2,34 +2,8 @@
 (function () {
   'use strict';
   var PAGE = 'compare-savings';
-  function h(tag, attrs, kids) {
-    if (window.Portal && window.Portal.ui && window.Portal.ui.h) return window.Portal.ui.h(tag, attrs, kids);
-    var e = document.createElement(tag);
-    if (attrs) Object.keys(attrs).forEach(function (k) {
-      var v = attrs[k];
-      if (v == null || v === false) return;
-      if (k === 'class') e.className = v;
-      else if (k === 'text') e.textContent = v;
-      else if (k.slice(0, 2) === 'on') e.addEventListener(k.slice(2), v);
-      else e.setAttribute(k, v === true ? '' : v);
-    });
-    (kids || []).forEach(function (c) { if (c != null) e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
-    return e;
-  }
-  function money(v) {
-    if (v == null || !Number.isFinite(v)) return '—';
-    var sign = v < 0 ? '−' : '';
-    return sign + '₪' + Math.abs(Math.round(v)).toLocaleString('en-US');
-  }
-  function pct(v) {
-    if (v == null || !Number.isFinite(v)) return '—';
-    return (Math.round(v * 100) / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
-  }
-  function ensureCss() {
-    if (document.querySelector('link[href="compare.css"]')) return;
-    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'compare.css'; document.head.appendChild(l);
-  }
-  function uid(p) { return p + '-' + Math.random().toString(36).slice(2, 7); }
+  function U() { return window.CompareUx; }
+  function h(tag, attrs, kids) { return U().h(tag, attrs, kids); }
 
   function stripBoiPlaceholder(main) {
     if (!main) return;
@@ -43,9 +17,13 @@
     });
   }
 
+  function liqHe(p) {
+    return p.liquidity === 'high' ? 'נזיל יותר' : p.liquidity === 'medium' ? 'בינוני' : 'עד סוף התקופה';
+  }
+  function linkHe(p) { return p.linkage === 'cpi' ? 'צמוד מדד' : 'לא צמוד'; }
 
   function render(main, data) {
-    ensureCss();
+    U().ensureCss();
     var wrap = h('div', { class: 'cmp-page', id: 'savings-compare' });
     var products = (data.deposits && data.deposits.products) || [];
     var filters = { rateType: '', termId: '', linkage: '', liquidity: '', providerId: '', minAmount: null, maxAmount: null };
@@ -53,32 +31,27 @@
     var amount = 100000;
 
     var form = h('div', { class: 'fields' });
-    function addSelect(label, key, options, extra) {
-      var id = uid(key);
+    function addSelect(label, key, options) {
+      var id = U().uid(key);
       var sel = h('select', { id: id });
       sel.appendChild(h('option', { value: '', text: 'הכול' }));
       options.forEach(function (o) { sel.appendChild(h('option', { value: o.v, text: o.t })); });
       sel.addEventListener('change', function () { filters[key] = sel.value; draw(); });
       form.appendChild(h('div', { class: 'field' }, [h('label', { for: id, text: label }), sel]));
-      return sel;
     }
     var types = {}, terms = {}, liqs = {}, provs = {};
     products.forEach(function (p) {
       types[p.rateType] = p.rateTypeHe;
       terms[p.termId] = p.termHe;
-      liqs[p.liquidity] = p.liquidity === 'high' ? 'נזיל יותר' : p.liquidity === 'medium' ? 'בינוני' : 'עד סוף התקופה';
+      liqs[p.liquidity] = liqHe(p);
       provs[p.providerId] = p.providerHe;
     });
-    var linkages = [
-      { v: 'unlinked', t: 'לא צמוד' },
-      { v: 'cpi', t: 'צמוד מדד' }
-    ];
     addSelect('סוג ריבית', 'rateType', Object.keys(types).map(function (k) { return { v: k, t: types[k] }; }));
     addSelect('תקופה', 'termId', Object.keys(terms).map(function (k) { return { v: k, t: terms[k] }; }));
-    addSelect('הצמדה', 'linkage', linkages);
-    addSelect('נזילות', 'liquidity', Object.keys(liqs).map(function (k) { return { v: k, t: liqs[k] }; }));
+    addSelect('הצמדה', 'linkage', [{ v: 'unlinked', t: 'לא צמוד' }, { v: 'cpi', t: 'צמוד מדד' }]);
+    addSelect('כמה נזיל', 'liquidity', Object.keys(liqs).map(function (k) { return { v: k, t: liqs[k] }; }));
     addSelect('בנק', 'providerId', Object.keys(provs).map(function (k) { return { v: k, t: provs[k] }; }));
-    var aid = uid('amt'), minid = uid('min'), maxid = uid('max');
+    var aid = U().uid('amt'), minid = U().uid('min'), maxid = U().uid('max');
     var ainp = h('input', { type: 'number', id: aid, min: '0', step: '1000', value: '100000' });
     ainp.addEventListener('input', function () { amount = Number(ainp.value) || 0; draw(); });
     form.appendChild(h('div', { class: 'field' }, [h('label', { for: aid, text: 'סכום להערכה (₪)' }), ainp]));
@@ -89,15 +62,24 @@
     form.appendChild(h('div', { class: 'field' }, [h('label', { for: minid, text: 'סכום מינימום לסינון (₪)' }), mininp]));
     form.appendChild(h('div', { class: 'field' }, [h('label', { for: maxid, text: 'סכום מקסימום לסינון (₪)' }), maxinp]));
 
-    var out = h('div');
     var dep = data.deposits || {};
+    var filt = U().filters({ id: 'deposit-filters', buttonId: 'deposit-filters-btn', label: 'סינון לפי תקופה, בנק וסכום', form: form, open: !U().isNarrow() });
+    filt.setAttribute('data-collapse', 'mobile');
+
+    wrap.appendChild(U().hero({
+      id: 'deposit-hero',
+      actionId: 'deposit-primary',
+      lead: 'הריביות הן ממוצעים ששולמו בפועל בחודש הדיווח, לא הצעה שתקבלו היום. שלושת המובילים מוצגים מיד; אפשר לסנן לפי תקופה ובנק.',
+      action: 'סנן לפי תקופה וקבל את 3 המובילים',
+      onAction: function () { U().openFilters(filt); U().scrollTo('deposit-top3'); }
+    }));
     wrap.appendChild(h('div', { class: 'notice amber', text: (data.disclaimer || 'מידע בלבד, לא ייעוץ.') }));
-    wrap.appendChild(h('p', { class: 'help', text: 'הריביות הן ממוצעים ששולמו בפועל בחודש הדיווח, לא הצעה שתקבלו היום. אין בנתונים סכום מינימום או מקסימום רשמי, לכן סינון לפי סכום משמש רק להערכת הריבית על הסכום שהוזן.' }));
     wrap.appendChild(h('div', { class: 'src-line' }, [
-      h('a', { href: dep.source && dep.source.url, target: '_blank', rel: 'noopener', text: dep.source ? dep.source.label : 'בנק ישראל, קו המשווה' }),
-      h('span', { class: 'stamp', text: 'חודש הדיווח: ' + (dep.period || '') + (dep.workbookDate ? ' · קובץ מ־' + dep.workbookDate : '') })
+      h('a', { href: dep.source && dep.source.url, target: '_blank', rel: 'noopener', text: dep.source ? dep.source.label : 'בנק ישראל' }),
+      h('span', { class: 'stamp', text: 'חודש הדיווח: ' + (dep.period || '') + (dep.workbookDate ? ' · הקובץ מ־' + dep.workbookDate : '') })
     ]));
-    wrap.appendChild(form);
+    wrap.appendChild(filt);
+    var out = h('div');
     wrap.appendChild(out);
 
     var mm = data.moneyMarketFunds;
@@ -110,14 +92,37 @@
     }
     if (data.gaps && data.gaps.length) {
       var g = h('ul'); data.gaps.forEach(function (t) { g.appendChild(h('li', { text: t })); });
-      wrap.appendChild(h('div', { class: 'card' }, [h('h3', { class: 'card-title', text: 'מה חסר בנתונים' }), g]));
+      wrap.appendChild(h('details', { class: 'card' }, [h('summary', { class: 'card-title', text: 'מה חסר בנתונים' }), g]));
     }
+    main.appendChild(wrap);
+
+    var cols = [
+      { key: 'bank', label: 'בנק' },
+      { key: 'type', label: 'סוג ריבית', tip: 'ריבית קבועה או משתנה, כפי שסווג בקובץ הרשמי.' },
+      { key: 'link', label: 'הצמדה' },
+      { key: 'term', label: 'תקופה' },
+      { key: 'liq', label: 'כמה נזיל', tip: 'האם אפשר למשוך לפני סוף התקופה, לפי הסיווג בקובץ.' },
+      { key: 'rate', label: 'ריבית ממוצעת ששולמה', num: true, tip: 'ממוצע הריבית ששולמה בפועל בחודש הדיווח, לא הצעה אישית.' },
+      { key: 'sys', label: 'ממוצע במערכת', num: true, tip: 'הממוצע לכלל הבנקים באותה קבוצה, אם פורסם.' },
+      { key: 'est', label: 'ריבית מוערכת על הסכום', num: true, tip: 'סכום × שיעור × אמצע התקופה ÷ 365. בלי מס ובלי פירעון מוקדם. הערכה בלבד.' }
+    ];
 
     function draw() {
       var Lib = window.CompareLib;
       var vis = Lib.visibleDeposits(products, filters, { limit: 20, showAll: showAll });
       var list = vis.list;
       out.innerHTML = '';
+      var topItems = list.slice(0, 3).map(function (p, i) {
+        var mid = (p.termMinDays + p.termMaxDays) / 2;
+        return {
+          title: p.providerHe + ' · ' + p.termHe,
+          value: U().pct(p.ratePct),
+          sub: linkHe(p) + ' · ' + p.rateTypeHe + ' · ריבית מוערכת על הסכום: ' + U().money(Lib.depositInterest(amount, p.ratePct, mid)),
+          mine: i === 0
+        };
+      });
+      out.appendChild(U().top3(topItems, { id: 'deposit-top3', title: 'שלושת הפיקדונות המובילים עבורכם', empty: 'אין פיקדונות לפי הסינון שנבחר.' }));
+
       var bar = h('div', { class: 'cmp-toolbar' });
       var status = vis.total === 0
         ? 'אין תוצאות לפי הסינון.'
@@ -127,9 +132,7 @@
       bar.appendChild(h('p', { class: 'help', id: 'deposit-count', text: status }));
       if (vis.total > 20) {
         var btn = h('button', {
-          type: 'button',
-          class: 'cmp-toggle',
-          id: 'deposit-show-all',
+          type: 'button', class: 'cmp-toggle', id: 'deposit-show-all',
           'aria-pressed': showAll ? 'true' : 'false',
           text: showAll ? 'הצג 20 המובילים' : 'הצג את כל המסלולים'
         });
@@ -137,47 +140,56 @@
         bar.appendChild(btn);
       }
       out.appendChild(bar);
-      var tbl = document.createElement('table');
-      tbl.className = 'cmp data';
-      var cap = document.createElement('caption'); cap.className = 'sr-only'; cap.textContent = 'פיקדונות לפי ריבית ממוצעת';
-      tbl.appendChild(cap);
-      var thead = document.createElement('thead'), hr = document.createElement('tr');
-      ['בנק', 'סוג', 'הצמדה', 'תקופה', 'נזילות', 'ריבית ממוצעת', 'ממוצע מערכת', 'ריבית מוערכת על הסכום'].forEach(function (label) {
-        var th = document.createElement('th'); th.scope = 'col'; th.textContent = label; hr.appendChild(th);
-      });
-      thead.appendChild(hr); tbl.appendChild(thead);
-      var tb = document.createElement('tbody');
       if (!list.length) {
-        var tr0 = document.createElement('tr'); var td0 = document.createElement('td'); td0.colSpan = 8; td0.textContent = 'אין תוצאות לפי הסינון.'; tr0.appendChild(td0); tb.appendChild(tr0);
+        out.appendChild(U().empty('אין תוצאות לפי הסינון. נסו להרחיב את הבחירה.', 'נסו סינון אחר', function () { U().openFilters(filt); }, 'deposit-empty-action'));
+        return;
       }
-      list.forEach(function (p, i) {
-        var tr = document.createElement('tr');
-        if (i === 0) tr.className = 'mine';
-        function td(text, num) { var e = document.createElement('td'); if (num) e.className = 'num'; e.textContent = text; tr.appendChild(e); }
-        td(p.providerHe);
-        td(p.rateTypeHe);
-        td(p.linkage === 'cpi' ? 'צמוד מדד' : 'לא צמוד');
-        td(p.termHe);
-        td(p.liquidity === 'high' ? 'נזיל יותר' : p.liquidity === 'medium' ? 'בינוני' : 'עד סוף התקופה');
-        td(pct(p.ratePct), true);
-        td(pct(p.systemAvgPct), true);
+      var rows = list.map(function (p, i) {
         var mid = (p.termMinDays + p.termMaxDays) / 2;
-        td(money(Lib.depositInterest(amount, p.ratePct, mid)), true);
-        tb.appendChild(tr);
+        var est = U().money(Lib.depositInterest(amount, p.ratePct, mid));
+        return {
+          title: p.providerHe,
+          value: U().pct(p.ratePct),
+          mine: i === 0,
+          fields: [
+            { k: 'סוג ריבית', v: p.rateTypeHe },
+            { k: 'הצמדה', v: linkHe(p) },
+            { k: 'תקופה', v: p.termHe },
+            { k: 'כמה נזיל', v: liqHe(p) },
+            { k: 'ממוצע במערכת', v: U().pct(p.systemAvgPct) },
+            { k: 'ריבית מוערכת על הסכום', v: est }
+          ],
+          cells: [
+            p.providerHe, p.rateTypeHe, linkHe(p), p.termHe, liqHe(p),
+            { text: U().pct(p.ratePct), num: true },
+            { text: U().pct(p.systemAvgPct), num: true },
+            { text: est, num: true }
+          ]
+        };
       });
-      tbl.appendChild(tb);
-      out.appendChild(h('div', { class: 'tbl-wrap' }, [tbl]));
-      out.appendChild(h('p', { class: 'help', text: 'ברירת המחדל היא 20 המסלולים עם הריבית הממוצעת הגבוהה ביותר לפי הסינון. הריבית המוערכת היא סכום × שיעור × אמצע התקופה / 365, בלי מס ובלי פירעון מוקדם. הערכה בלבד.' }));
+      out.appendChild(U().results(cols, rows, { caption: 'פיקדונות לפי ריבית ממוצעת ששולמה', empty: 'אין תוצאות לפי הסינון.' }));
+      out.appendChild(h('p', { class: 'help', text: 'ברירת המחדל היא 20 המסלולים עם הריבית הממוצעת הגבוהה ביותר לפי הסינון. אין בנתונים סכום מינימום או מקסימום רשמי, לכן סינון לפי סכום משמש רק להערכת הריבית. הערכה בלבד.' }));
     }
     draw();
-    main.appendChild(wrap);
   }
 
-  function load() { return fetch('data/savings.json', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('savings'); return r.json(); }); }
   function boot(main) {
-    load().then(function (data) { render(main, data); }).catch(function (err) {
-      main.appendChild(h('div', { class: 'notice red', text: 'לא ניתן לטעון את נתוני הפיקדונות כרגע.' }));
-      console.warn(err);
+    if (!main) return;
+    if (document.getElementById('savings-compare')) return;
+    U().ensureCss();
+    var shell = h('div', { class: 'cmp-page', id: 'savings-compare' });
+    shell.appendChild(U().hero({ lead: 'משווים ממוצעי ריבית ששולמו בפועל, לפי בנק ישראל.', action: 'טוענים…', actionId: 'deposit-primary' }));
+    var skel = U().skeleton('טוענים את נתוני הפיקדונות…');
+    shell.appendChild(skel);
+    main.appendChild(shell);
+    U().afterPaint(function () {
+      U().fetchJson('data/savings.json').then(function (data) {
+        shell.parentNode && shell.parentNode.removeChild(shell);
+        render(main, data);
+      }).catch(function (err) {
+        skel.parentNode && skel.parentNode.replaceChild(h('div', { class: 'notice red', text: 'לא ניתן לטעון את נתוני הפיקדונות כרגע. הנתונים לא הומצאו.' }), skel);
+        console.warn(err);
+      });
     });
   }
 
@@ -200,6 +212,15 @@
       if (++n > 24) clearInterval(id);
     }, 50);
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hook);
-  else hook();
+  function start() {
+    if (window.CompareUx && window.CompareUx.hero) hook();
+    else {
+      var s = document.createElement('script');
+      s.src = 'compare-ux.js';
+      s.onload = hook;
+      document.head.appendChild(s);
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
 })();

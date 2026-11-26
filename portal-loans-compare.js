@@ -61,6 +61,18 @@
     var parsed = null;
     var noticeOk = true, extraCosts = 0, expectedCpi = 0;
 
+    if (window.CompareUx && window.CompareUx.hero) {
+      wrap.appendChild(window.CompareUx.hero({
+        id: 'loans-hero', actionId: 'loans-primary',
+        lead: 'הוסיפו מסלול או העלו לוח סילוקין כדי לראות כמה עולה ההלוואה ומה החיסכון המשוער מול הממוצע בשוק.',
+        action: 'הוסיפו מסלול וקבלו אומדן מחזור',
+        onAction: function () {
+          if (!tracks.length) { tracks.push(emptyTrack()); drawTracks(); drawCompare(); }
+          var box = document.getElementById('loans-top3') || document.getElementById('loans-tracks') || wrap;
+          if (box && box.scrollIntoView) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }));
+    }
     wrap.appendChild(h('div', { class: 'notice amber', text: 'מידע בלבד, לא ייעוץ. כל חישוב מחזור ועמלת פירעון מוקדם הוא הערכה לפי כללי בנק ישראל וממוצעים מפורסמים, לא אישור של הבנק.' }));
 
     /* ---- upload ---- */
@@ -69,8 +81,7 @@
     var paste = h('textarea', { id: pasteId, rows: '6', 'aria-describedby': 'sched-help' });
     paste.placeholder = 'אפשר גם להדביק כאן טבלה מהלוח סילוקין';
     var parseMsg = h('p', { class: 'help', id: 'parse-msg' });
-    wrap.appendChild(h('div', { class: 'card' }, [
-      h('h3', { class: 'card-title', text: 'העלאת לוח סילוקין' }),
+    var uploadCard = h('div', { class: 'fields' }, [
       h('p', { class: 'help', id: 'sched-help', text: 'הקובץ מעובד רק במכשיר שלכם ולא נשלח לשום שרת. מתאימים קבצי CSV, אקסל, טקסט, או PDF פשוט. אפשר גם קובץ דוגמה מסומן FAKE.' }),
       h('div', { class: 'field' }, [h('label', { for: fileId, text: 'בחירת קובץ לוח סילוקין' }), fileInp]),
       h('div', { class: 'field' }, [h('label', { for: pasteId, text: 'הדבקת טבלה' }), paste]),
@@ -79,7 +90,14 @@
         h('a', { class: 'btn btn-soft', href: 'samples/amortization-sample-FAKE.csv', download: 'amortization-sample-FAKE.csv', text: 'קובץ דוגמה' })
       ]),
       parseMsg
-    ]));
+    ]);
+    if (window.CompareUx && window.CompareUx.filters) {
+      var up = window.CompareUx.filters({ id: 'loans-upload', buttonId: 'loans-upload-btn', label: 'העלאת לוח סילוקין', form: uploadCard, open: false });
+      up.setAttribute('data-collapse', 'mobile');
+      wrap.appendChild(up);
+    } else {
+      wrap.appendChild(h('div', { class: 'card' }, [h('h3', { class: 'card-title', text: 'העלאת לוח סילוקין' }), uploadCard]));
+    }
     fileInp.addEventListener('change', function () {
       var f = fileInp.files && fileInp.files[0];
       if (!f) return;
@@ -152,7 +170,7 @@
 
     /* ---- manual tracks ---- */
     var trackBox = h('div');
-    wrap.appendChild(h('div', { class: 'card' }, [
+    wrap.appendChild(h('div', { class: 'card', id: 'loans-tracks' }, [
       h('h3', { class: 'card-title', text: 'מסלולים להשוואה' }),
       h('p', { class: 'help', text: 'אפשר להוסיף מסלול ידנית, כמו במשכנתא: פריים, קבועה לא צמודה, קבועה צמודה, משתנה כל חמש שנים, או הלוואה שאינה לדיור.' }),
       trackBox,
@@ -227,15 +245,19 @@
     ex.addEventListener('input', function () { extraCosts = Number(ex.value) || 0; drawCompare(); });
     var cpi = h('input', { type: 'number', id: cid, step: '0.1', value: '0' });
     cpi.addEventListener('input', function () { expectedCpi = Number(cpi.value) || 0; drawCompare(); });
-    wrap.appendChild(h('div', { class: 'card' }, [
-      h('h3', { class: 'card-title', text: 'הנחות לחישוב' }),
-      h('div', { class: 'fields' }, [
-        h('div', { class: 'field check' }, [nchk, h('label', { for: nid, text: 'ניתנה הודעה מוקדמת של לפחות 10 ימים (בלי עמלת אי-הודעה)' })]),
-        h('div', { class: 'field' }, [h('label', { for: eid, text: 'עלויות נוספות למחזור (₪)' }), ex]),
-        h('div', { class: 'field' }, [h('label', { for: cid, text: 'אינפלציה שנתית צפויה למסלול צמוד (%)' }), cpi])
-      ]),
+    var assumeFields = h('div', { class: 'fields' }, [
+      h('div', { class: 'field check' }, [nchk, h('label', { for: nid, text: 'ניתנה הודעה מוקדמת של לפחות 10 ימים (בלי עמלת אי-הודעה)' })]),
+      h('div', { class: 'field' }, [h('label', { for: eid, text: 'עלויות נוספות למחזור (₪)' }), ex]),
+      h('div', { class: 'field' }, [h('label', { for: cid, text: 'אינפלציה שנתית צפויה למסלול צמוד (%)' }), cpi]),
       h('p', { class: 'help', text: 'במסלול צמוד, בלי אינפלציה מוצגת עלות נומינלית בלבד. הזנת אינפלציה היא הנחה שלכם, לא תחזית של האתר.' })
-    ]));
+    ]);
+    if (window.CompareUx && window.CompareUx.filters) {
+      var ass = window.CompareUx.filters({ id: 'loans-assumptions', buttonId: 'loans-assumptions-btn', label: 'הנחות לחישוב', form: assumeFields, open: !window.CompareUx.isNarrow() });
+      ass.setAttribute('data-collapse', 'mobile');
+      wrap.appendChild(ass);
+    } else {
+      wrap.appendChild(h('div', { class: 'card' }, [h('h3', { class: 'card-title', text: 'הנחות לחישוב' }), assumeFields]));
+    }
     wrap.appendChild(h('div', { class: 'card' }, [h('h3', { class: 'card-title', text: 'יתרה, עלות ומחזור — הערכה' }), resBox]));
 
     var policy = rates.policyRate || {};
@@ -274,19 +296,26 @@
 
     function drawCompare() {
       resBox.innerHTML = '';
-      if (!tracks.length) { resBox.appendChild(h('p', { class: 'empty', text: 'הוסיפו מסלול כדי לראות יתרה, עלות והשוואה.' })); return; }
+      if (!tracks.length) {
+        resBox.appendChild(h('div', { class: 'cmp-empty card' }, [
+          h('p', { class: 'empty', text: 'הוסיפו מסלול כדי לראות יתרה, עלות והשוואה לריבית בשוק.' }),
+          h('button', { type: 'button', class: 'btn btn-primary', id: 'loans-empty-action', text: 'הוסיפו מסלול לדוגמה', onclick: function () { tracks.push(emptyTrack()); drawTracks(); drawCompare(); } })
+        ]));
+        return;
+      }
       var tbl = document.createElement('table'); tbl.className = 'cmp data';
       var cap = document.createElement('caption'); cap.className = 'sr-only'; cap.textContent = 'השוואת מחזור לפי מסלול, הערכה בלבד';
       tbl.appendChild(cap);
       var thead = document.createElement('thead'), hr = document.createElement('tr');
-      ['מסלול', 'יתרה', 'ריבית נוכחית', 'ריבית אפקטיבית מחושבת', 'החזר נוכחי', 'עלות נותרת', 'ממוצע שוק', 'החזר חדש מוערך', 'עמלת פירעון מוקדם (הערכה)', 'חיסכון נטו (הערכה)'].forEach(function (label) {
+      ['מסלול', 'יתרה', 'הריבית שלכם', 'ריבית מחושבת מההחזר', 'תשלום היום', 'מה נשאר לשלם', 'ריבית ממוצעת בשוק', 'תשלום לפי הממוצע', 'עמלת יציאה משוערת', 'כמה נשאר אחרי עמלה'].forEach(function (label) {
         var th = document.createElement('th'); th.scope = 'col'; th.textContent = label; hr.appendChild(th);
       });
       thead.appendChild(hr); tbl.appendChild(thead);
       var tb = document.createElement('tbody');
+      var summaries = [];
       var Lib = window.CompareLib;
       tracks.forEach(function (tr) {
-        var sum = summarize(tr);
+        var sum = summarize(tr), netNum = null;
         var row = document.createElement('tr');
         function td(text, num, cls) { var e = document.createElement('td'); e.className = (num ? 'num ' : '') + (cls || ''); e.textContent = text; row.appendChild(e); }
         td((tr.name || trackLabel(tr.type)) + ' · ' + trackLabel(tr.type));
@@ -309,6 +338,7 @@
             var net = sum.totalPaid - neu.totalPaid - fee;
             saveTxt = money(net);
             saveCls = net >= 0 ? 'pos' : 'neg';
+            netNum = net;
           }
         } else {
           var ref = Lib.refinanceTrack(tr, rates, { noticeGiven: noticeOk, extraCosts: extraCosts, operationalFeeIls: 60 });
@@ -318,16 +348,44 @@
             feeTxt = money(ref.fee.total);
             saveTxt = money(ref.netSaving);
             saveCls = ref.netSaving >= 0 ? 'pos' : 'neg';
+            netNum = ref.netSaving;
           }
         }
         td(marketTxt, true);
         td(newPmt, true);
         td(feeTxt, true);
         td(saveTxt, true, saveCls);
+        row.setAttribute('data-cmp-row', '1');
         tb.appendChild(row);
+        summaries.push({
+          title: (tr.name || trackLabel(tr.type)) + ' · ' + trackLabel(tr.type),
+          net: saveTxt,
+          netNum: netNum,
+          netCls: saveCls,
+          fields: [
+            { k: 'יתרה', v: money(tr.balance) },
+            { k: 'הריבית שלכם', v: pct(tr.rate) },
+            { k: 'תשלום היום', v: money(sum.pmt) },
+            { k: 'ריבית ממוצעת בשוק', v: marketTxt },
+            { k: 'תשלום לפי הממוצע', v: newPmt },
+            { k: 'עמלת יציאה משוערת', v: feeTxt }
+          ]
+        });
       });
       tbl.appendChild(tb);
-      resBox.appendChild(h('div', { class: 'tbl-wrap' }, [tbl]));
+      var topItems = summaries.slice().sort(function (a, b) {
+        var na = a.netNum == null ? -Infinity : a.netNum, nb = b.netNum == null ? -Infinity : b.netNum;
+        return nb - na;
+      }).slice(0, 3).map(function (s) {
+        return { title: s.title, value: s.net, valueClass: s.netCls, sub: 'חיסכון נטו משוער ליתרת התקופה, אחרי אומדן עמלת יציאה.' };
+      });
+      if (window.CompareUx && window.CompareUx.top3) {
+        resBox.appendChild(window.CompareUx.top3(topItems, { id: 'loans-top3', title: 'המסלולים עם החיסכון המשוער הגבוה ביותר' }));
+        resBox.appendChild(window.CompareUx.buildList(summaries.map(function (s) {
+          return { title: s.title, value: s.net, valueClass: s.netCls, fields: s.fields };
+        }), { listId: 'loans-list', empty: 'אין מסלולים.' }));
+      }
+      resBox.appendChild(h('div', { class: 'tbl-wrap' }, [tbl, h('p', { class: 'cmp-scroll-hint help', text: 'אפשר לגלול את הטבלה הצידה כדי לראות את כל העמודות.' })]));
       resBox.appendChild(h('p', { class: 'help', text: 'החיסכון הנטו הוא הערכה: עלות נותרת נוכחית פחות עלות בממוצע השוק, פחות עמלת פירעון מוקדם מוערכת ועלויות נוספות. הממוצע אינו הצעה אישית, ובמסלול פריים אין עמלת היוון.' }));
       if (rates.equatorHouseholdCredit && rates.equatorHouseholdCredit.byLenderMean) {
         var t2 = document.createElement('table'); t2.className = 'cmp data';
@@ -361,13 +419,18 @@
   }
 
   function boot(main) {
-    fetch('data/loan-rates.json', { cache: 'no-store' }).then(function (r) {
-      if (!r.ok) throw new Error('rates');
-      return r.json();
-    }).then(function (rates) { render(main, rates); }).catch(function (err) {
-      main.appendChild(h('div', { class: 'notice red', text: 'לא ניתן לטעון את נתוני הריביות הרשמיים כרגע.' }));
-      console.warn(err);
-    });
+    ensureCss();
+    function go() {
+      var load = (window.CompareUx && window.CompareUx.fetchJson)
+        ? window.CompareUx.fetchJson('data/loan-rates.json')
+        : fetch('data/loan-rates.json', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('rates'); return r.json(); });
+      load.then(function (rates) { render(main, rates); }).catch(function (err) {
+        main.appendChild(h('div', { class: 'notice red', text: 'לא ניתן לטעון את נתוני הריביות הרשמיים כרגע.' }));
+        console.warn(err);
+      });
+    }
+    if (window.CompareUx && window.CompareUx.afterPaint) window.CompareUx.afterPaint(go);
+    else go();
   }
 
   function hook() {
@@ -377,7 +440,15 @@
     if (!main) { setTimeout(hook, 40); return; }
     if (document.getElementById('loans-compare')) return;
     main.appendChild(h('h2', { class: 'sec-h', text: 'לוח סילוקין והשוואה לשוק' }));
-    boot(main);
+    function start() { boot(main); }
+    if (window.CompareUx && window.CompareUx.hero) start();
+    else {
+      var s = document.createElement('script');
+      s.src = 'compare-ux.js';
+      s.onload = start;
+      s.onerror = start;
+      document.head.appendChild(s);
+    }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hook);
   else hook();

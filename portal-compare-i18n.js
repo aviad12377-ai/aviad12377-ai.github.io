@@ -3,14 +3,14 @@
   'use strict';
   var HE = {
     compare_cards_title: 'השוואת כרטיסי אשראי',
-    compare_cards_sub: 'דמי כרטיס, החזרים ועמלת המרה לפי הוצאה חודשית',
+    compare_cards_sub: 'הזינו הוצאה חודשית וקבלו את 3 הכרטיסים המשתלמים ביותר',
     compare_savings_title: 'השוואת פיקדונות וחסכונות',
-    compare_savings_sub: 'ממוצעי ריבית ששולמו בפועל, לפי בנק ישראל',
+    compare_savings_sub: 'ראו את 3 הפיקדונות עם הריבית הממוצעת הגבוהה ביותר, לפי בנק ישראל',
     compare_loans_extra: 'לוח סילוקין והשוואה לשוק',
     compare_funds_title: 'השוואת קרנות פנסיה, גמל והשתלמות',
-    compare_funds_sub: 'תשואות ודמי ניהול לפי מסלול, מנתוני רשות שוק ההון',
+    compare_funds_sub: 'סננו לפי סוג ומסלול וקבלו את 3 הקרנות המובילות בתשואה',
     compare_mortgage_title: 'בדיקת מחזור משכנתא',
-    compare_mortgage_sub: 'השוואה לממוצעי בנק ישראל לפי הצמדה ותקופה',
+    compare_mortgage_sub: 'הזינו מסלול והשוו לריבית הממוצעת במשק, כולל אומדן עמלת יציאה',
     not_advice_short: 'מידע בלבד, לא ייעוץ'
   };
   var EN = {

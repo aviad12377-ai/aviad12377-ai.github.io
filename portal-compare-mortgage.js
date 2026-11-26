@@ -70,8 +70,24 @@
     var extraCosts = 0;
     var savedLoaded = false;
 
+    if (window.CompareUx && window.CompareUx.hero) {
+      wrap.appendChild(window.CompareUx.hero({
+        id: 'mortgage-hero', actionId: 'mortgage-primary',
+        lead: 'הזינו יתרה, ריבית וחודשים שנותרו לכל מסלול. מיד תראו כמה אפשר לחסוך לפי הממוצע במשק, בניכוי אומדן עמלת יציאה.',
+        action: 'הזן מסלול והשווה לריבית במשק',
+        onAction: function () {
+          var box = document.getElementById('mortgage-tracks');
+          if (box && box.scrollIntoView) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          var first = box && box.querySelector('input, select');
+          if (first && first.focus) first.focus();
+        }
+      }));
+    }
     wrap.appendChild(h('div', { class: 'notice amber', text: (loanRates && loanRates.disclaimer) || 'מידע בלבד, לא ייעוץ. הממוצעים אינם הצעה אישית ואינם מחליפים בדיקה בבנק.' }));
-    wrap.appendChild(h('p', { class: 'help', text: 'כל מסלול מושווה לממוצע בנק ישראל לפי הצמדה ולפי התקופה שנותרה. החיסכון המשוער הוא ההפרש בין יתרת התשלומים במסלול הנוכחי לבין יתרת התשלומים לפי הממוצע, בניכוי אומדן עמלת פירעון מוקדם לפי צו הבנקאות (עמלות פירעון מוקדם), תשס״ב־2002. זה אומדן בלבד: הריבית שתקבלו בפועל, עמלות נלוות ותנאי ההצמדה עשויים להיות שונים. במסלול פריים אין עמלת היוון. במסלול משתנה האומדן מחושב עד מועד השינוי הבא (ברירת מחדל: 60 חודשים) אם לא הוזן מועד אחר.' }));
+    wrap.appendChild(h('details', { class: 'card' }, [
+      h('summary', { class: 'card-title', text: 'איך מחשבים את האומדן' }),
+      h('p', { class: 'help', text: 'כל מסלול מושווה לממוצע בנק ישראל לפי הצמדה ולפי התקופה שנותרה. החיסכון המשוער הוא ההפרש בין יתרת התשלומים במסלול הנוכחי לבין יתרת התשלומים לפי הממוצע, בניכוי אומדן עמלת פירעון מוקדם לפי צו הבנקאות (עמלות פירעון מוקדם), תשס״ב־2002. זה אומדן בלבד: הריבית שתקבלו בפועל, עמלות נלוות ותנאי ההצמדה עשויים להיות שונים. במסלול פריים אין עמלת היוון. במסלול משתנה האומדן מחושב עד מועד השינוי הבא (ברירת מחדל: 60 חודשים) אם לא הוזן מועד אחר.' })
+    ]));
 
     var src = h('div', { class: 'src-line' });
     var un = loanRates && loanRates.mortgageEarlyRepaymentAverages && loanRates.mortgageEarlyRepaymentAverages.unlinked;
@@ -103,7 +119,13 @@
     var extraInp = h('input', { type: 'number', id: extraId, min: '0', step: '100', value: '0' });
     extraInp.addEventListener('input', function () { extraCosts = Number(extraInp.value) || 0; drawResults(); });
     form.appendChild(h('div', { class: 'field' }, [h('label', { for: extraId, text: 'עלויות נוספות ידועות (₪), אם יש' }), extraInp]));
-    wrap.appendChild(form);
+    if (window.CompareUx && window.CompareUx.filters) {
+      var filt = window.CompareUx.filters({ id: 'mortgage-filters', buttonId: 'mortgage-filters-btn', label: 'הודעה מוקדמת ועלויות נוספות', form: form, open: !window.CompareUx.isNarrow() });
+      filt.setAttribute('data-collapse', 'mobile');
+      wrap.appendChild(filt);
+    } else {
+      wrap.appendChild(form);
+    }
 
     var tracksWrap = h('div', { id: 'mortgage-tracks' });
     wrap.appendChild(tracksWrap);
@@ -193,9 +215,19 @@
       out.innerHTML = '';
       var ready = tracks.filter(function (t) { return Number(t.balance) > 0 && Number(t.months) > 0 && t.rate !== '' && t.rate != null; });
       if (!ready.length) {
-        out.appendChild(h('p', { class: 'help', id: 'mortgage-empty', text: tracks.length ? 'יש להזין יתרה, ריבית וחודשים שנותרו כדי לחשב אומדן לכל מסלול.' : 'אין מסלולים להשוואה. הוסיפו מסלול ידנית או טענו מסלולים שמורים.' }));
+        out.appendChild(h('div', { class: 'cmp-empty card', id: 'mortgage-empty' }, [
+          h('p', { class: 'empty', text: tracks.length ? 'יש להזין יתרה, ריבית וחודשים שנותרו כדי לחשב אומדן לכל מסלול.' : 'אין מסלולים להשוואה. הוסיפו מסלול ידנית או טענו מסלולים שמורים.' }),
+          h('button', { type: 'button', class: 'btn btn-primary', id: 'mortgage-empty-action', text: 'הוסיפו מסלול', onclick: function () {
+            if (!tracks.length) { tracks.push(blankTrack()); drawTracks(); }
+            var box = document.getElementById('mortgage-tracks');
+            if (box && box.scrollIntoView) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            var first = box && box.querySelector('input[type=number], input[type=text]');
+            if (first && first.focus) first.focus();
+          } })
+        ]));
         return;
       }
+      var summaries = [];
       var tbl = document.createElement('table');
       tbl.className = 'cmp data';
       var cap = document.createElement('caption');
@@ -203,7 +235,7 @@
       cap.textContent = 'השוואת מסלולי משכנתא לממוצעי בנק ישראל';
       tbl.appendChild(cap);
       var thead = document.createElement('thead'), hr = document.createElement('tr');
-      ['מסלול', 'סוג', 'יתרה', 'ריבית נוכחית', 'חודשים שנותרו', 'ממוצע בנק ישראל', 'תשלום נוכחי', 'תשלום לפי הממוצע', 'חיסכון חודשי משוער', 'עמלת פירעון מוקדם משוערת', 'חיסכון נטו משוער ליתרת התקופה'].forEach(function (label) {
+      ['מסלול', 'סוג', 'יתרה', 'הריבית שלכם', 'חודשים שנותרו', 'ריבית ממוצעת במשק', 'תשלום היום', 'תשלום לפי הממוצע', 'כמה חוסכים בחודש', 'עמלת יציאה משוערת', 'כמה נשאר אחרי עמלה'].forEach(function (label) {
         var th = document.createElement('th'); th.scope = 'col'; th.textContent = label; hr.appendChild(th);
       });
       thead.appendChild(hr); tbl.appendChild(thead);
@@ -247,6 +279,13 @@
           td(money(cmp.netSaving), 'num ' + (cmp.netSaving >= 0 ? 'saving-pos' : 'saving-neg'));
         }
         tb.appendChild(row);
+        summaries.push({
+          name: name,
+          type: typeLabel(tr.type),
+          cmp: cmp,
+          monthly: (cmp && cmp.marketPct != null) ? (cmp.current.pmt - cmp.newPmt) : null,
+          net: cmp && cmp.netSaving
+        });
 
         var card = h('div', { class: 'track-card' });
         card.appendChild(h('h3', { text: name + ' · ' + typeLabel(tr.type) }));
@@ -281,7 +320,23 @@
         cards.appendChild(card);
       });
       tbl.appendChild(tb);
-      out.appendChild(tbl);
+      var ranked = summaries.slice().sort(function (a, b) {
+        var na = a.net == null ? -Infinity : a.net, nb = b.net == null ? -Infinity : b.net;
+        return nb - na;
+      }).slice(0, 3);
+      if (window.CompareUx && window.CompareUx.top3) {
+        out.appendChild(window.CompareUx.top3(ranked.map(function (s) {
+          return {
+            title: s.name + ' · ' + s.type,
+            value: s.net == null ? 'אין ממוצע מתאים' : money(s.net),
+            valueClass: s.net == null ? '' : (s.net >= 0 ? 'pos' : 'neg'),
+            sub: s.monthly == null ? 'לא פורסם ממוצע מתאים למסלול זה.' : ('חיסכון חודשי משוער: ' + money(s.monthly)),
+            note: 'חיסכון נטו משוער ליתרת התקופה, אחרי אומדן עמלת יציאה.'
+          };
+        }), { id: 'mortgage-top3', title: 'המסלולים עם החיסכון המשוער הגבוה ביותר' }));
+      }
+      var tw = h('div', { class: 'tbl-wrap' }, [tbl, h('p', { class: 'cmp-scroll-hint help', text: 'אפשר לגלול את הטבלה הצידה כדי לראות את כל העמודות.' })]);
+      out.appendChild(tw);
       out.appendChild(cards);
     }
 
@@ -295,18 +350,29 @@
   function boot(main) {
     if (!main) return;
     if (document.getElementById('mortgage-compare')) return;
-    fetch('data/loan-rates.json', { cache: 'no-store' }).then(function (r) {
-      if (!r.ok) throw new Error('loan-rates.json HTTP ' + r.status);
-      return r.json();
-    }).then(function (data) {
-      render(main, data);
-    }).catch(function (err) {
-      main.appendChild(h('div', { class: 'cmp-page', id: 'mortgage-compare' }, [
-        h('div', { class: 'notice amber', text: 'מידע בלבד, לא ייעוץ.' }),
-        h('p', { class: 'help', text: 'לא ניתן לטעון את ממוצעי בנק ישראל כרגע. הנתונים לא הומצאו.' })
-      ]));
-      console.warn(err);
-    });
+    ensureCss();
+    var shell = h('div', { class: 'cmp-page', id: 'mortgage-compare' });
+    if (window.CompareUx && window.CompareUx.hero) {
+      shell.appendChild(window.CompareUx.hero({ lead: 'הזינו מסלול והשוו לריבית הממוצעת במשק, כולל אומדן עמלת יציאה.', action: 'טוענים…', actionId: 'mortgage-primary' }));
+      shell.appendChild(window.CompareUx.skeleton('טוענים את ממוצעי בנק ישראל…'));
+    }
+    main.appendChild(shell);
+    function go() {
+      var load = (window.CompareUx && window.CompareUx.fetchJson)
+        ? window.CompareUx.fetchJson('data/loan-rates.json')
+        : fetch('data/loan-rates.json', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('loan-rates'); return r.json(); });
+      load.then(function (data) {
+        if (shell.parentNode) shell.parentNode.removeChild(shell);
+        render(main, data);
+      }).catch(function (err) {
+        shell.innerHTML = '';
+        shell.appendChild(h('div', { class: 'notice amber', text: 'מידע בלבד, לא ייעוץ.' }));
+        shell.appendChild(h('p', { class: 'help', text: 'לא ניתן לטעון את ממוצעי בנק ישראל כרגע. הנתונים לא הומצאו.' }));
+        console.warn(err);
+      });
+    }
+    if (window.CompareUx && window.CompareUx.afterPaint) window.CompareUx.afterPaint(go);
+    else go();
   }
 
   window.PORTAL_PAGES = window.PORTAL_PAGES || {};
