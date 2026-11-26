@@ -46,6 +46,7 @@
     { id: 'news', href: 'news.html', label: { he: 'חדשות', en: 'News', es: 'Noticias' }, icon: 'news', group: 'tools', parent: 'home' },
     { id: 'briefs', href: 'briefs.html', label: { he: 'מבזקי שוק', en: 'Market briefs', es: 'Resúmenes' }, icon: 'M13 2 4 14h7l-1 8 9-12h-7z', group: 'tools', parent: 'home' },
     { id: 'alerts', href: 'alerts.html', label: { he: 'התראות', en: 'Alerts', es: 'Alertas' }, icon: 'M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21h4', group: 'account', parent: 'home' },
+    { id: 'heatmap', href: 'heatmap.html', label: { he: 'מפת חום', en: 'Heatmap', es: 'Mapa de calor' }, icon: 'chart', group: 'tools', parent: 'home' },
     { id: 'scanner', href: 'scanner.html', label: { he: 'סורק', en: 'Scanner', es: 'Escáner' }, icon: 'scan', group: 'tools', parent: 'home' },
     // pages owned by other workers, listed here too so every page's "עוד" sheet shows them
     { id: 'networth', href: 'networth.html', label: { he: 'הון לאורך זמן', en: 'Net worth history', es: 'Patrimonio' }, icon: 'chart', group: 'wealth', parent: 'wealth' },
