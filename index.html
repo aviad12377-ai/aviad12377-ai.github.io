@@ -2,6 +2,8 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<script>/* cutover 27.11.2026: new design at /next/. Old design: ?classic=1 (back: ?classic=0) */
+(function(){try{var q=location.search;if(/[?&]classic=1/.test(q))localStorage.setItem('portal-classic','1');if(/[?&]classic=0/.test(q))localStorage.removeItem('portal-classic');if(localStorage.getItem('portal-classic')!=='1'){location.replace('next/'+q.replace(/[?&]classic=0/,'')+location.hash);}}catch(e){location.replace('next/'+location.hash);}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d0d10">
 <link rel="manifest" href="manifest.webmanifest">

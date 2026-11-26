@@ -1,6 +1,6 @@
 // Service worker: offline shell. Network-first so updates show up.
 // Never caches prices.json / funds.json, cross-origin requests (Supabase, quotes) or anything but GET.
-const CACHE = 'options-calc-v8.7';
+const CACHE = 'options-calc-v8.8';
 const SHELL = ['./', './index.html', './options.html', './wealth.html', './savings.html', './pension.html', './hishtalmut.html', './portfolio.html',
   './mortgage.html', './loans.html', './cards.html', './budget.html', './me.html', './privacy.html', './support.html', './news.html', './scanner.html', './compare-cards.html', './compare-savings.html', './compare-funds.html', './compare-mortgage.html', './networth.html', './assets.html', './goals.html', './subscriptions.html', './debts-planner.html', './actions.html', './feedback.html',
   './cashflow.html', './retirement.html', './js/cashflow.js', './js/retirement.js', './portal-insights.js', './tax.html', './report.html', './js/tax.js', './js/report.js',
