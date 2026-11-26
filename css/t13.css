@@ -55,3 +55,10 @@
 table.cmp tr.neg-row td{color:var(--danger,#f87171);font-weight:800}
 .t13 table.cmp td,.t13 table.cmp th{white-space:nowrap}
 .t13 .tot .v{white-space:normal;overflow:visible;text-overflow:clip}
+.t13 .t13-label{font-weight:700;font-size:16px;color:var(--muted,#b4b4c0)}
+.t13-file{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+.t13-file-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.t13 .t13-file-btn{min-height:44px;cursor:pointer}
+.t13-file:focus-visible+.t13-file-btn{outline:3px solid var(--primary-dark,#c4b5fd);outline-offset:2px}
+.t13-file-name{font-size:16px;color:var(--muted,#b4b4c0);word-break:break-all}
+.t13-shot-prev img{max-width:100%;max-height:240px;border-radius:var(--radius-sm,14px);margin-top:8px;border:1px solid var(--glass-border,rgba(255,255,255,.1))}
