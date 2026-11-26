@@ -15,7 +15,7 @@
   ],
   "shortcuts": [
     { "name": "מחשבון אופציות", "url": "./options.html", "icons": [{ "src": "icon-192.png", "sizes": "192x192" }] },
-    { "name": "חסכונות והשקעות", "url": "./savings.html", "icons": [{ "src": "icon-192.png", "sizes": "192x192" }] },
+    { "name": "האזור האישי", "url": "./me.html", "icons": [{ "src": "icon-192.png", "sizes": "192x192" }] },
     { "name": "פנסיה וגמל", "url": "./pension.html", "icons": [{ "src": "icon-192.png", "sizes": "192x192" }] }
   ]
 }

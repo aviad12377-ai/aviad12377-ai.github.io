@@ -155,13 +155,20 @@
   .portal-nav::-webkit-scrollbar { display: none; }
   .portal-nav a { flex: 0 0 auto; padding: 7px 11px; border-radius: 9px; color: var(--muted); font-weight: 700; font-size: 13px; text-decoration: none; white-space: nowrap; }
   .portal-nav a.active { background: #fff; color: var(--primary-dark); box-shadow: 0 1px 4px rgba(15, 23, 42, 0.12); }
+  .portal-subnav { display: flex; gap: 6px; overflow-x: auto; margin: -4px 0 12px; scrollbar-width: none; }
+  .portal-subnav a { flex: 0 0 auto; padding: 5px 10px; border-radius: 999px; border: 1px solid #cbd5e1; color: var(--muted); font-weight: 700; font-size: 12px; text-decoration: none; white-space: nowrap; background: #fff; }
+  .portal-subnav a.active { background: var(--primary-dark); border-color: var(--primary-dark); color: #fff; }
+  .portal-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 </style>
 </head>
 <body>
 <div class="app-wrap">
-  <div class="portal-bar"><a class="portal-brand" href="index.html">פורטל היתרות</a></div>
+  <div class="portal-bar"><a class="portal-brand" href="index.html">פורטל היתרות</a><span id="account-slot"></span></div>
   <nav class="portal-nav" aria-label="פורטל היתרות">
-    <a href="index.html">סיכום</a><a href="options.html" class="active" aria-current="page">מחשבון אופציות</a><a href="savings.html">חסכונות והשקעות</a><a href="pension.html">פנסיה וגמל</a><a href="hishtalmut.html">קרן השתלמות</a><a href="mortgage.html">משכנתא</a><a href="cards.html">כרטיסי אשראי</a>
+    <a href="index.html">סיכום</a><a href="wealth.html" class="active">חיסכון, השקעות ופנסיה</a><a href="mortgage.html">משכנתא</a><a href="loans.html">הלוואות</a><a href="cards.html">כרטיסי אשראי</a><a href="budget.html">תקציב</a><a href="me.html">האזור האישי</a>
+  </nav>
+  <nav class="portal-subnav" aria-label="חיסכון, השקעות ופנסיה">
+    <a href="pension.html">פנסיה וגמל</a><a href="hishtalmut.html">קרן השתלמות</a><a href="savings.html">חסכונות ופיקדונות</a><a href="portfolio.html">תיק השקעות</a><a href="options.html" class="active" aria-current="page">מחשבון אופציות</a>
   </nav>
   <header class="top-header">
     <h1 id="app-title">מחשבון אופציות</h1>
@@ -1393,5 +1400,7 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
 </script>
+<script src="auth-config.js"></script>
+<script src="portal-cloud.js"></script>
 </body>
 </html>
