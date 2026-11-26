@@ -397,6 +397,7 @@
   var fetching = false;
   function collectHoldingSymbols(extra) {
     var syms = ['ILS=X', 'EURILS=X'];
+    try { var oc = readJSON(OPTIONS_KEY); if (oc && oc.data) Object.keys(oc.data).forEach(function (k) { if (k && k !== '__none' && syms.indexOf(k) < 0) syms.push(k); }); } catch (e) {}
     data.savings.portfolios.forEach(function (p) {
       (p.rows || []).forEach(function (r) {
         var res = resolveHolding(r);
@@ -456,10 +457,18 @@
       return false;
     });
   }
+  var refreshedMissing = false;
+  function quotesStale() {
+    if (!quotes['ILS=X'] || Date.now() - (quotes['ILS=X'].fetchedAt || 0) > 10 * 60 * 1000) return true;
+    if (refreshedMissing) return false; // a holding without any quote yet: fetch once per page load
+    var miss = collectHoldingSymbols(null).some(function (s) { return !/=X$/.test(s) && !/\.TA$/.test(s) && !quotes[s] && !quotes[s + '.TA']; });
+    if (miss) refreshedMissing = true;
+    return miss;
+  }
   function quoteLabel(q) {
     if (!q) return '';
     var time = q.time ? new Date(q.time * 1000).toLocaleString(settings.lang === 'he' ? 'he-IL' : settings.lang === 'es' ? 'es-ES' : 'en-GB', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '';
-    return (q.live ? t('live') : t('last_close')) + (time ? ' · ' + time : '') + (q.source ? ' · ' + q.source : '');
+    return (q.live ? t('live') : t('last_close')) + (time ? ' · ' + t('updated_on') + time : '');
   }
   function priceDecimals(px) { return px >= 100 ? 2 : px >= 1 ? 4 : px >= 0.01 ? 6 : 8; }
 
@@ -504,7 +513,7 @@
         else { var a = toILS(q.price, q.currency), b = rateILS(cur); price = (a !== null && b) ? a / b : null; warn = q.currency; }
         src = q;
       }
-      if (nn(row.manual) !== null && n(row.manual) > 0) { price = n(row.manual); src = null; }
+      if (price === null && nn(row.manual) !== null && n(row.manual) > 0) { price = n(row.manual); src = null; } // live / daily NAV wins; manual price is only a fallback
       var qty = n(row.qty), value = price === null ? null : qty * price, cost = qty * n(row.entry);
       var valueILS = value === null ? null : toILS(value, cur), costILS = toILS(cost, cur);
       var pl = valueILS === null || costILS === null ? null : valueILS - costILS;
@@ -520,8 +529,10 @@
       var items = [];
       Object.keys(o.data).forEach(function (sym) {
         var d = o.data[sym]; if (!d) return;
-        var q = n(d.t1) + n(d.t2) + n(d.t3); if (!(q > 0) || nn(d.strike) === null || !(n(d.sell) > 0)) return;
-        var eff = Math.max(0, n(d.strike) - n(d.div) * n(d.years)), gross = q * Math.max(0, n(d.sell) - eff), net = gross * (1 - n(d.tax) / 100);
+        var q = n(d.t1) + n(d.t2) + n(d.t3); if (!(q > 0) || nn(d.strike) === null) return;
+        var sell = n(d.sell) > 0 ? n(d.sell) : (quotes[sym] && quotes[sym].price > 0 ? quotes[sym].price : null);
+        if (sell === null) { items.push({ symbol: sym, qty: q, net: null, currency: /\.TA$/i.test(sym) ? 'ILS' : 'USD', netILS: null, pending: true }); return; }
+        var eff = Math.max(0, n(d.strike) - n(d.div) * n(d.years)), gross = q * Math.max(0, sell - eff), net = gross * (1 - n(d.tax) / 100);
         var cur = /\.TA$/i.test(sym) ? 'ILS' : 'USD';
         items.push({ symbol: sym, qty: q, net: net, currency: cur, netILS: toILS(net, cur) });
       });
@@ -733,6 +744,8 @@
       if (row[f.k] === undefined) row[f.k] = input.checked;
       input.addEventListener('change', function () { row[f.k] = input.checked; onInput(); });
       return h('div', { class: 'field check' }, [input, h('label', { for: id, text: t(f.label) })]);
+    } else if (f.type === 'track') {
+      return trackField(row, f, onInput);
     } else if (f.type === 'security') {
       return securityField(row, f, onInput);
     } else {
@@ -906,6 +919,60 @@
   function loadFunds() {
     if (!fundsP) fundsP = fetchJSON('funds.json?d=' + new Date().toISOString().slice(0, 10), 20000).catch(function () { fundsP = null; return null; });
     return fundsP;
+  }
+  var FUNDS = null; // loaded funds.json, for track lists and monthly returns
+  function fundsLoaded() { return loadFunds().then(function (j) { if (j && !FUNDS) { FUNDS = j; emit('change'); } return j; }); }
+  // which public dataset + classification a personal product belongs to
+  function productSet(kind, row) {
+    if (kind === 'hishtalmut') return ['gemelnet', /השתלמות/];
+    var k = row.kind || 'k_pension';
+    if (k === 'k_gemel') return ['gemelnet', /^תגמולים|לפיצויים/];
+    if (k === 'k_gemel_inv') return ['gemelnet', /להשקעה/];
+    if (k === 'k_insurance') return ['bituachnet', /./];
+    return ['pensianet', /חדשות/];
+  }
+  var PROVIDERS = ['אלטשולר', 'הראל', 'מגדל', 'כלל', 'מנורה', 'הפניקס', 'מיטב', 'אנליסט', 'מור', 'ילין', 'אינפיניטי', 'סלייס', 'הכשרה', 'איילון', 'פסגות', 'ברק', 'גלובל נט', 'אקסלנס', 'עמיתים', 'מדיטריינים', 'ביטוח ישיר', 'אומגה'];
+  function providerKey(name) { var s = String(name || ''); for (var i = 0; i < PROVIDERS.length; i++) if (s.indexOf(PROVIDERS[i]) >= 0) return PROVIDERS[i]; return ''; }
+  function trackList(kind, row) {
+    if (!FUNDS || !FUNDS.sets) return [];
+    var ps = productSet(kind, row), set = FUNDS.sets[ps[0]], pk = providerKey(row.name);
+    if (!set) return [];
+    return (set.funds || []).filter(function (f) { return ps[1].test(f.cls || '') && (!pk || (String(f.mgr || '') + ' ' + String(f.name || '')).indexOf(pk) >= 0); })
+      .sort(function (a, b) { return String(a.name).localeCompare(String(b.name), 'he'); }).map(function (f) { return { set: ps[0], id: String(f.id), name: f.name }; });
+  }
+  function trackField(row, f, onInput) {
+    var id = 'f-' + uid(), sel = h('select', { id: id, 'data-k': 'trackId' });
+    function fill() {
+      var list = trackList(f.kind, row), cur = row.trackId ? String(row.trackId) : '';
+      sel.innerHTML = '';
+      sel.appendChild(h('option', { value: '', text: t('pick_track') }));
+      var found = false;
+      list.forEach(function (x) { if (x.id === cur) found = true; sel.appendChild(h('option', { value: x.set + ':' + x.id, text: x.name + ' (' + x.id + ')' })); });
+      if (cur && !found) sel.appendChild(h('option', { value: (row.trackSet || '') + ':' + cur, text: (row.trackName || cur) }));
+      sel.value = cur ? (row.trackSet || (list[0] && list[0].set) || '') + ':' + cur : '';
+      if (!FUNDS) sel.appendChild(h('option', { value: '__l', text: t('loading'), disabled: 'disabled' }));
+    }
+    fill(); fundsLoaded().then(fill);
+    sel.addEventListener('focus', fill);
+    sel.addEventListener('change', function () {
+      var v = sel.value; if (v === '__l') return;
+      if (!v) { delete row.trackSet; delete row.trackId; delete row.trackName; }
+      else { var i = v.indexOf(':'); row.trackSet = v.slice(0, i); row.trackId = v.slice(i + 1); row.trackName = sel.options[sel.selectedIndex].text.replace(/ \(\d+\)$/, ''); }
+      onInput();
+    });
+    return h('div', { class: 'field' }, [h('label', { for: id, text: t(f.label) }), sel]);
+  }
+  // estimate: baseline balance compounded by the track's published monthly returns for every month after the baseline month
+  function estimateFund(row) {
+    var B = nn(row.balance), d = String(row.baseDate || '');
+    if (B === null || !row.trackId) return { status: row.trackId ? 'no_base' : 'no_track' };
+    if (!/^\d{4}-\d{2}/.test(d)) return { status: 'no_base' };
+    if (!FUNDS) return { status: 'loading' };
+    var set = FUNDS.sets && FUNDS.sets[row.trackSet], m = set && set.monthly && set.monthly[String(row.trackId)];
+    if (!m) return { status: 'no_data' };
+    var base = +(d.slice(0, 4) + d.slice(5, 7)), v = B, last = null, used = 0;
+    Object.keys(m).map(Number).filter(function (p) { return p > base; }).sort().forEach(function (p) { v *= 1 + m[p] / 100; last = p; used++; });
+    return { status: 'ok', value: v, asOf: last, months: used, baseMonth: base };
   }
   function trackOf(name, sub, spec) {
     var s = String(name || '') + ' ' + String(sub || '') + ' ' + String(spec || '');
@@ -1228,7 +1295,27 @@
       main.appendChild(maslakaLinkCard());
       var box = h('div'), recBox = h('div'), cmpBox = h('div');
       main.appendChild(section(t('my_products'), [box]));
+      var estBox = h('div');
+      main.appendChild(section(t('est_title'), [estBox]));
       main.appendChild(cmpBox); main.appendChild(recBox);
+      fundsLoaded();
+      function drawEst() {
+        estBox.innerHTML = '';
+        var list = data[kind].funds.filter(function (r) { return nn(r.balance) !== null; });
+        if (!list.length) { estBox.appendChild(h('div', { class: 'empty', text: t('no_products') })); return; }
+        var tot = 0, any = false, asOf = null;
+        estBox.appendChild(table([
+          [t('name'), function (r) { return r.name || '—'; }],
+          [t('track'), function (r) { return r.trackId ? (r.trackName || r.trackId) : h('a', { href: 'me.html#' + kind, class: 'btn btn-soft btn-sm', text: t('pick_track') }); }],
+          [t('balance_base'), function (r) { return disp(n(r.balance)) + (r.baseDate ? ' · ' + fmtDate(parseDate(r.baseDate)) : ''); }, 'num'],
+          [t('est_balance'), function (r) { var e = estimateFund(r); if (e.status !== 'ok') return t('est_' + e.status); return disp(e.value); }, 'num'],
+          [t('est_asof'), function (r) { var e = estimateFund(r); return e.status === 'ok' ? (e.asOf ? periodLabel(e.asOf) : t('est_no_new')) : '—'; }]
+        ], list, {}));
+        list.forEach(function (r) { var e = estimateFund(r); if (e.status === 'ok') { any = true; tot += e.value; if (e.asOf && (!asOf || e.asOf > asOf)) asOf = e.asOf; } else tot += n(r.balance); });
+        if (any) estBox.appendChild(totalsBox([[t('est_total'), disp(tot), 'big']]));
+        estBox.appendChild(h('p', { class: 'help', text: t('est_note') + (asOf ? ' · ' + t('est_asof') + ': ' + periodLabel(asOf) : '') }));
+      }
+      on('change', drawEst); drawEst();
       function draw() {
         var rows = fundRows(kind);
         box.innerHTML = '';
@@ -1342,7 +1429,7 @@
         perfBox.appendChild(h('p', { class: 'help', text: t('perf_help') }));
       }
       on('change', draw); on('quotes', draw); draw();
-      var stale = Object.keys(quotes).length === 0 || Object.keys(quotes).some(function (k) { return Date.now() - (quotes[k].fetchedAt || 0) > 10 * 60 * 1000; });
+      var stale = quotesStale() || Object.keys(quotes).some(function (k) { return Date.now() - (quotes[k].fetchedAt || 0) > 10 * 60 * 1000; });
       if (stale) refreshQuotes(null, true);
     },
     mortgage: function (main) {
@@ -1493,7 +1580,7 @@
         catBox.appendChild(h('table', { class: 'cat-table' }, [h('tbody', null, rows.map(function (r) { return h('tr', null, [h('td', null, [links[r[0]] ? h('a', { href: links[r[0]], text: t(r[0]) }) : t(r[0])]), h('td', { class: 'num ' + (r[1] < 0 ? 'neg' : ''), text: disp(r[1]) })]); }))]));
         optBox.innerHTML = '';
         if (!s.options || !s.options.length) optBox.appendChild(h('div', { class: 'empty', text: t('options_none') }));
-        else s.options.forEach(function (o) { optBox.appendChild(h('div', { class: 'fx-line' }, [h('strong', { class: 'num', text: o.symbol }), h('span', { text: t('options_net') + ': ' }), h('span', { class: 'num', text: o.netILS === null ? t('missing_rate') : disp(o.netILS) })])); });
+        else s.options.forEach(function (o) { optBox.appendChild(h('div', { class: 'fx-line' }, [h('strong', { class: 'num', text: o.symbol }), h('span', { text: t('options_net') + ': ' }), h('span', { class: 'num', text: o.pending ? t('price_pending') : o.netILS === null ? t('missing_rate') : disp(o.netILS) })])); });
         // insights digest: count per category with links
         insBox.innerHTML = '';
         var digest = [['pension.html', 'nav_pension', fundRecs('pension', fundRows('pension')).filter(function (x) { return x.level !== 'info'; }).length], ['hishtalmut.html', 'nav_hishtalmut', fundRecs('hishtalmut', fundRows('hishtalmut')).filter(function (x) { return x.level !== 'info'; }).length]];
@@ -1517,7 +1604,7 @@
       }
       function peerFmt(m, v) { if (v === null || v === undefined) return '—'; return m === 'net_worth' ? disp(n(v)) : pct(n(v), m === 'pension_fee_acc' ? 2 : 0); }
       on('change', draw); on('quotes', draw); on('cloud', drawPeer); draw(); drawPeer();
-      var stale = !quotes['ILS=X'] || Date.now() - (quotes['ILS=X'].fetchedAt || 0) > 10 * 60 * 1000;
+      var stale = quotesStale();
       if (stale) refreshQuotes(null, true);
     }
   };
@@ -1525,7 +1612,8 @@
   function fundSchema(kind) {
     var fields = [{ k: 'name', type: 'text', label: 'provider_track' }];
     if (kind === 'pension') fields.push({ k: 'kind', type: 'select', label: 'kind', options: opts(['k_pension', 'k_gemel', 'k_gemel_inv', 'k_insurance']) });
-    fields = fields.concat([{ k: 'balance', type: 'number', label: 'balance' }, { k: 'deposit', type: 'number', label: 'monthly_deposit' }, { k: 'feeBal', type: 'number', label: 'fee_bal' }, { k: 'feeDep', type: 'number', label: 'fee_dep' }, { k: 'ret', type: 'number', label: 'exp_ret' }]);
+    fields.push({ k: 'trackId', type: 'track', label: 'track_pick', kind: kind });
+    fields = fields.concat([{ k: 'balance', type: 'number', label: 'balance' }, { k: 'baseDate', type: 'date', label: 'balance_date' }, { k: 'deposit', type: 'number', label: 'monthly_deposit' }, { k: 'feeBal', type: 'number', label: 'fee_bal' }, { k: 'feeDep', type: 'number', label: 'fee_dep' }, { k: 'ret', type: 'number', label: 'exp_ret' }]);
     if (kind === 'pension') fields.push({ k: 'age', type: 'number', label: 'age' }, { k: 'retireAge', type: 'number', label: 'retire_age' });
     else fields.push({ k: 'openDate', type: 'date', label: 'open_date' });
     fields.push({ k: 'target', type: 'date', label: 'target_date' });

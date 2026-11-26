@@ -710,7 +710,7 @@
       var label = priceKindLabel(lv, state.symbol);
       if (kind) kind.textContent = label + ' (לתצוגה בלבד)';
       var t = israelTime(lv);
-      meta.textContent = label + ' · מקור: ' + lv.source + (t ? ' · ' + t : '') + (lv.converted ? ' · הומר מאגורות לשקלים' : '');
+      meta.textContent = label + (t ? ' · עודכן ב־' + t : '') + (lv.converted ? ' · הומר מאגורות לשקלים' : '');
     } else {
       $('live-price').textContent = '—';
       if (kind) kind.textContent = 'שער שוק (לתצוגה בלבד)';

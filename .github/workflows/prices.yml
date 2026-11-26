@@ -30,9 +30,13 @@ jobs:
         run: python3 scripts/fetch_tase_securities.py
 
       - name: Refresh Funder fund and ETF lists
+        continue-on-error: true   # Funder may block runner IPs; prices still commit
+        timeout-minutes: 3
         run: python3 scripts/fetch_funder_list.py
 
-      - name: Fetch Israeli mutual-fund NAVs
+      - name: Fetch Israeli mutual-fund NAVs (agorot -> ILS, public prices only)
+        continue-on-error: true
+        timeout-minutes: 8
         run: python3 scripts/fetch_fund_nav.py
 
       - name: Commit prices and TASE lookup if changed

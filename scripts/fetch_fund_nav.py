@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """Fetch daily NAVs for Israeli mutual funds (קרנות נאמנות) and merge into prices.json.
 
-Verified 2026-11-26 against a bank screenshot (agorot, same calendar date):
-
-  26.11  5133236=409.13  5131925=389.14  5140504=175.13
-  25.11  5136262=227.94  5129283=353.57  5124805=218.14
+Prices are compared to the official daily NAV (agorot, same calendar date).
 
 Sources, tried in this order for each security number:
 
@@ -12,14 +9,14 @@ Sources, tried in this order for each security number:
    Public page https://www.funder.co.il/fund/{id} embeds
      var fundData = {"x":[{buyPrice, sellPrice, lastUpdate, ...}]}
    Prices are in agorot (divide by 100 for ILS). For the six seed funds,
-   buyPrice == sellPrice and both equal the bank figure. lastUpdate's
+   buyPrice == sellPrice (the official daily price). lastUpdate's
    calendar date is the official NAV date (stored as navDate).
 
 2. Fallback: Fair public fund pages
      https://funds.fair.co.il/search/funds/{id}
    <script id="ng-state"> fund-summary sellPrice / buyPrice (also equal
    to each other; no separate פדיון field). On 2026-11-26 those values
-   were the previous trading day's Funder/bank NAV, so Fair is kept only
+   were the previous trading day's NAV, so Fair is kept only
    as a fallback. dataAsOf 22:00Z is treated as that UTC calendar date.
 
 3. Last resort: Maya / TASE JSON
@@ -29,9 +26,8 @@ Sources, tried in this order for each security number:
    Incapsula from datacenter IPs. Short timeout so Actions is not stalled.
 
 Other keyless sources checked the same day and not used as primary:
-  bizportal pages had no exact bank figures; Fair lagged one session;
-  investing.com / Globes were skipped (differences vs the bank, per
-  the requirement to match to the agora).
+  bizportal pages had no exact official figures; Fair lagged one session;
+  investing.com / Globes were skipped (differences vs the official NAV).
 
 Fund IDs are collected from:
   - scripts/universe.json key "mutual_funds" (and "tase_funds")
@@ -65,6 +61,8 @@ USER_AGENT = (
 RETRIES = 3
 PAUSE = 0.15
 MAX_WORKERS = 6
+MAX_PER_RUN = int(__import__('os').environ.get('FUND_NAV_MAX', '150'))  # keeps each Action run short; the rest follow on later runs
+FUNDER_FAILS = {'n': 0}  # after repeated Funder errors (e.g. blocked runner IP) go straight to the fallback
 FUNDER_URL = "https://www.funder.co.il/fund/{id}"
 FAIR_URL = "https://funds.fair.co.il/search/funds/{id}"
 MAYA_API = "https://mayaapi.tase.co.il/api/fund/details?fundId={id}"
@@ -146,17 +144,20 @@ def needed_ids(prices: dict) -> list[str]:
     """
     requested = load_fund_ids()
     seen = set(requested)
-    ids = list(requested)
+    stale, missing = [], []
     quotes = (prices or {}).get("quotes") or {}
     for fid, list_date in tase_fund_updates().items():
         if fid in seen:
             continue
         q = quotes.get(fid) or quotes.get(fid + ".TA")
         stored = (q or {}).get("navDate")
-        if not q or not stored or (list_date and str(stored) < str(list_date)):
-            ids.append(fid)
-            seen.add(fid)
-    return ids
+        if q and stored and (not list_date or str(stored) >= str(list_date)):
+            continue
+        (stale if q else missing).append(fid)
+        seen.add(fid)
+    # funds that already have a NAV are refreshed first, then the backfill continues, capped per run
+    ids = list(requested) + stale + missing
+    return ids[:max(MAX_PER_RUN, len(requested))]
 
 
 def http_text(url: str, timeout: int = 25) -> str:
@@ -426,13 +427,17 @@ def fetch_fair(fund_id: str) -> dict | None:
 
 def fetch_one(fund_id: str) -> tuple[str, dict | None, str | None]:
     errors = []
-    try:
-        quote = fetch_funder(fund_id)
-        if quote:
-            return fund_id, quote, None
-        errors.append("Funder: no fundData / sellPrice")
-    except Exception as exc:  # noqa: BLE001
-        errors.append(f"Funder: {exc}")
+    if FUNDER_FAILS['n'] < 5:
+        try:
+            quote = fetch_funder(fund_id)
+            if quote:
+                return fund_id, quote, None
+            errors.append("Funder: no fundData / sellPrice")
+        except Exception as exc:  # noqa: BLE001
+            FUNDER_FAILS['n'] += 1
+            errors.append(f"Funder: {exc}")
+    else:
+        errors.append("Funder: skipped (blocked earlier in this run)")
     try:
         quote = fetch_fair(fund_id)
         if quote:
@@ -548,15 +553,15 @@ def main(argv: list[str]) -> int:
                 print(f"WARN {fid}: {err}", file=sys.stderr)
 
     if not fetched and errors:
-        print(f"ERROR: no fund NAVs fetched ({len(errors)} failed).", file=sys.stderr)
-        return 1
+        print(f"WARN: no fund NAVs fetched ({len(errors)} failed); prices.json left unchanged.", file=sys.stderr)
+        return 0
 
     prices = load_prices(prices_path)
     quotes = dict(prices.get("quotes") or {})
     for fid, q in fetched.items():
         pub = public_quote(q)
         quotes[fid] = pub
-        quotes[fid + ".TA"] = dict(pub)
+        quotes.pop(fid + ".TA", None)  # the site looks funds up by security number; no duplicate entry (keeps the file small)
 
     prices["quotes"] = {k: quotes[k] for k in sorted(quotes)}
     prices["generatedAt"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
@@ -572,7 +577,7 @@ def main(argv: list[str]) -> int:
     tase["withSecurityNumber"] = sum(1 for r in rows if r.get("id"))
     tase["withYahooSymbol"] = sum(1 for r in rows if r.get("symbol"))
     tase["generatedAt"] = prices["generatedAt"]
-    src_note = "Mutual-fund NAVs: funder.co.il (primary, matches bank official daily price); Fair public pages as fallback."
+    src_note = "Mutual-fund NAVs: funder.co.il (primary, official daily price); Fair public pages as fallback."
     existing = tase.get("source") or "Wikidata SPARQL for listed companies."
     if "funder.co.il" not in existing:
         tase["source"] = existing.rstrip() + " " + src_note

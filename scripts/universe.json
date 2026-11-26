@@ -7,7 +7,7 @@
     "crypto": "Major cryptocurrencies as Yahoo Finance symbols (CODE-USD). Live browser quotes also come from CoinGecko, Binance and Coinbase, which were verified to send Access-Control-Allow-Origin: * without an API key.",
     "tase_etfs": "Israeli ETFs and funds are not hardcoded here with guessed tickers. They are resolved from tase_securities.json (Wikidata list + ISIN-derived TASE security numbers) and from extra_tickers.json / on-demand quotes.",
     "fx": " Extended 2026-11-26 with GBP, JPY, AUD, CAD, CHF and CNY pairs versus USD/ILS/EUR.",
-    "mutual_funds": "Israeli mutual funds (קרנות נאמנות) by TASE security number (מספר נייר). Daily purchase/redemption prices are not on Yahoo. Primary source (verified 2026-11-26, exact agora match to a bank screenshot on the same NAV date): funder.co.il public fund pages (var fundData buyPrice/sellPrice in agorot, lastUpdate date). Fair ng-state sellPrice/buyPrice lagged one trading session that day and is the fallback. Maya/TASE JSON is last resort (often blocked by Incapsula / 403 without a key). Seed funds: 5133236, 5131925, 5140504, 5136262, 5129283, 5124805."
+    "mutual_funds": "Israeli mutual funds (קרנות נאמנות) by TASE security number (מספר נייר). Daily NAVs are not on Yahoo; scripts/fetch_fund_nav.py fetches them from funder.co.il (primary) or Fair (fallback) for every fund in the Funder list, capped per run. Optional always-refresh IDs can be listed here."
   },
   "fx": [
     {
@@ -2502,42 +2502,5 @@
     }
   ],
   "tase_etfs": [],
-  "mutual_funds": [
-    {
-      "id": "5133236",
-      "he": "ATF מחקה (40) אינדקס בנקים וביטוח ישראל",
-      "en": "ATF 40 iNDEX Israel Banks & Insurance Index IL",
-      "currency": "ILS"
-    },
-    {
-      "id": "5131925",
-      "he": "תכלית TTFי (40) אינדקס בנקים ישראל",
-      "en": "Tachlit TTF 40 INDEX ISRAEL BANKS IL",
-      "currency": "ILS"
-    },
-    {
-      "id": "5140504",
-      "he": "מיטב (4A) ת\"א 125 מומנטום",
-      "en": "Meitav 4A TA 125 Momentum",
-      "currency": "ILS"
-    },
-    {
-      "id": "5136262",
-      "he": "אינווסטור 360 (4D) גמישה",
-      "en": "Investor 360 4D Flexible",
-      "currency": "ILS"
-    },
-    {
-      "id": "5129283",
-      "he": "הראל מחקה (4D)יNASDAQ 100",
-      "en": "Harel Htf 4D NASDAQ 100",
-      "currency": "ILS"
-    },
-    {
-      "id": "5124805",
-      "he": "מור (3B) תיק השקעות 50%",
-      "en": "MORE 3B Portfolio IL 50%",
-      "currency": "ILS"
-    }
-  ]
+  "mutual_funds": []
 }

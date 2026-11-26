@@ -14,7 +14,7 @@ Each row has a security number (מספר נייר) and a Hebrew name. Search mat
 ## Prices (`prices.json`)
 
 - **ETFs:** last price comes from the ETF list page itself (intragday, agorot).
-- **Mutual funds:** official daily NAV from the individual Funder fund page (`buyPrice` / `sellPrice` in agorot), which matches the bank. The job always refreshes IDs in `universe.json` → `mutual_funds` and in `extra_tickers.json`. It also fetches any fund in the Funder list whose official `lastUpdate` is missing from `prices.json` or newer than the stored `navDate`. After the first backfill, only funds with a new official date are re-fetched.
+- **Mutual funds:** official daily NAV from the individual Funder fund page (`buyPrice` / `sellPrice` in agorot), the official daily price. The job always refreshes IDs in `universe.json` → `mutual_funds` and in `extra_tickers.json`. It also fetches any fund in the Funder list whose official `lastUpdate` is missing from `prices.json` or newer than the stored `navDate`. After the first backfill, only funds with a new official date are re-fetched.
 
 ## How a fund you added gets a NAV
 

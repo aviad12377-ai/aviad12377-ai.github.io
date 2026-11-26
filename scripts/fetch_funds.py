@@ -4,7 +4,8 @@ Datasets (Israel Capital Market Authority, published on data.gov.il CKAN):
   gemelnet   (gemel, hishtalmut, gemel lehashkaa)  resource a30dcbea-a1d2-482c-ae29-8f781f5025fb  "נתוני הגמל נט לשנים 2024-היום"
   pensianet  (new/old pension funds)               resource 6d47d6b5-cb08-488b-b333-f1e717b1e1bd  "נתוני הפנסיה נט לשנים 2024-היום"
   bituachnet (insurance savings policies)          resource c6c62cc7-fe02-4b18-8f3e-813abfbb4647  "נתוני הביטוח נט לשנים 2024-היום"
-Only the latest REPORT_PERIOD of each dataset is kept. Standard library only. Public data, no keys."""
+Only the latest REPORT_PERIOD of each dataset is kept for the statistics. "monthly" adds MONTHLY_YIELD (%) per track (FUND_ID)
+for the last MONTHS periods, used by the site to roll a balance forward per track. Standard library only. Public data, no keys."""
 import json, sys, time, urllib.parse, urllib.request, datetime
 
 API = 'https://data.gov.il/api/3/action/datastore_search'
@@ -46,6 +47,28 @@ def fetch(rid):
         if not recs or offset >= res.get('total', 0): break
     return latest, out
 
+MONTHS = 15
+
+def prev_period(p):
+    y, m = divmod(int(p), 100)
+    return (y - 1) * 100 + 12 if m == 1 else y * 100 + m - 1
+
+def fetch_monthly(rid, latest):
+    # {fund_id: {period: monthly_yield_pct}} for the last MONTHS periods (one filtered query per period, minimal fields)
+    out, p = {}, int(latest)
+    for _ in range(MONTHS):
+        offset = 0
+        while True:
+            res = get({'resource_id': rid, 'limit': 5000, 'offset': offset, 'fields': 'FUND_ID,REPORT_PERIOD,MONTHLY_YIELD', 'filters': json.dumps({'REPORT_PERIOD': p})})
+            recs = res['records']
+            for r in recs:
+                if r.get('MONTHLY_YIELD') in (None, ''): continue
+                out.setdefault(str(r['FUND_ID']), {})[str(p)] = round(float(r['MONTHLY_YIELD']), 4)
+            offset += len(recs)
+            if not recs or offset >= res.get('total', 0): break
+        p = prev_period(p)
+    return out
+
 def main():
     dst = sys.argv[1] if len(sys.argv) > 1 else 'funds.json'
     result = {'generatedAt': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'source': 'data.gov.il (Capital Market Authority)', 'sets': {}}
@@ -53,6 +76,8 @@ def main():
         try:
             period, rows = fetch(rid)
             result['sets'][name] = {'resource': rid, 'period': period, 'funds': rows}
+            try: result['sets'][name]['monthly'] = fetch_monthly(rid, period)
+            except Exception as e: print('monthly skip', name, e, file=sys.stderr)
             print(name, period, len(rows))
         except Exception as e:
             print('skip', name, e, file=sys.stderr)
