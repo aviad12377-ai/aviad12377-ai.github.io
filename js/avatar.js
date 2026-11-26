@@ -26,7 +26,8 @@
       noFace: 'לא זיהינו פנים ברורים. האווטאר עודכן בצבעים שדגמנו, ואפשר לתקן ידנית למטה.',
       fail: 'לא הצלחנו לקרוא את התמונה.', busy: 'מזהים תווי פנים…',
       hair: 'תסרוקת', hairColor: 'צבע שיער', skin: 'גוון עור', beard: 'זקן', glasses: 'משקפיים', brows: 'גבות', face: 'צורת פנים',
-      reset: 'איפוס לברירת מחדל', hint: 'אם הזיהוי לא מדויק, בחרו ידנית:',
+      reset: 'איפוס לברירת מחדל', hint: 'זיהוי אוטומטי ניסיוני — אפשר לתקן כל פרט ידנית',
+      trial: 'זיהוי אוטומטי ניסיוני — אפשר לתקן כל פרט ידנית',
       styles: { short: 'קצר', side: 'צד', long: 'ארוך', curly: 'מתולתל', bald: 'קירח' },
       beards: { none: 'בלי', stubble: 'זיפים', mustache: 'שפם', full: 'מלא' },
       glassesN: { none: 'בלי', round: 'עגולים', square: 'מרובעים' },
@@ -40,7 +41,8 @@
       noFace: 'We could not clearly find a face. Colours were sampled and you can correct the features below.',
       fail: 'Could not read the photo.', busy: 'Reading facial features…',
       hair: 'Hair style', hairColor: 'Hair colour', skin: 'Skin tone', beard: 'Beard', glasses: 'Glasses', brows: 'Eyebrows', face: 'Face shape',
-      reset: 'Reset', hint: 'If detection is off, pick the features by hand:',
+      reset: 'Reset', hint: 'Experimental auto-detect — you can fix every detail by hand',
+      trial: 'Experimental auto-detect — you can fix every detail by hand',
       styles: { short: 'Short', side: 'Side', long: 'Long', curly: 'Curly', bald: 'Bald' },
       beards: { none: 'None', stubble: 'Stubble', mustache: 'Mustache', full: 'Full' },
       glassesN: { none: 'None', round: 'Round', square: 'Square' },
@@ -431,9 +433,9 @@
     var eCheek = (edgeDensity(ctx, w, h, (lm(face, I.lCheek).x - 0.08 * faceW) * w, (lm(face, I.lCheek).y - 0.08 * faceH) * h, 0.18 * faceW * w, 0.18 * faceH * h)
       + edgeDensity(ctx, w, h, (lm(face, I.rCheek).x - 0.10 * faceW) * w, (lm(face, I.rCheek).y - 0.08 * faceH) * h, 0.18 * faceW * w, 0.18 * faceH * h)) / 2;
     var base = Math.max(6, eCheek);
-    var bothEyes = eL > base * 1.22 && eR > base * 1.22;
-    var oneStrong = Math.max(eL, eR) > base * 1.35 && Math.min(eL, eR) > base * 0.70;
-    var bridgeHit = eBr > base * 1.18;
+    var bothEyes = eL > base * 1.55 && eR > base * 1.55;
+    var oneStrong = Math.max(eL, eR) > base * 1.80 && Math.min(eL, eR) > base * 1.05;
+    var bridgeHit = eBr > base * 1.50;
     var glasses = 'none';
     if ((bothEyes && bridgeHit) || (oneStrong && bridgeHit)) {
       var bandRatio = ((rOut.x - lOut.x) * w) / Math.max(8, 0.28 * faceH * h);
@@ -636,12 +638,22 @@
     function setStatus(kind, text) { status.className = 'av-status' + (kind ? ' ' + kind : ''); status.textContent = text || ''; }
     function redraw() { preview.innerHTML = svgString(p); }
 
+    function openPickers() {
+      wrap.classList.add('is-open');
+      controls.classList.add('is-open');
+      wrap.open = true;
+      try { wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } catch (e) { try { wrap.scrollIntoView(true); } catch (e2) {} }
+      var first = controls.querySelector('button');
+      if (first) try { first.focus(); } catch (e3) {}
+    }
     function onDetected(result) {
       p = Object.assign(p, result.params);
       p = save(p);
       redraw();
       paintControls();
-      setStatus(result.faceFound ? 'ok' : 'err', result.faceFound ? L.done : L.noFace);
+      setStatus(result.faceFound ? 'ok' : 'err', result.faceFound ? (L.done + ' ' + (L.trial || L.hint)) : L.noFace);
+      if (wrap.parentNode === root) root.insertBefore(wrap, root.querySelector('.av-privacy') || wrap);
+      openPickers();
     }
     function handleFile(f) {
       if (!f) return;
@@ -662,7 +674,11 @@
     } });
     var uploadBtn = el('button', { type: 'button', class: 'btn btn-secondary', text: L.upload, onclick: function () { file.click(); } });
 
+    var wrap = el('details', { class: 'av-controls-wrap', id: 'av-manual' });
+    var summary = el('summary', { class: 'av-controls-sum', text: L.hint });
     var controls = el('div', { class: 'av-controls' });
+    wrap.appendChild(summary);
+    wrap.appendChild(controls);
     function swatches(key, list) {
       return list.map(function (c) {
         var b = el('button', { type: 'button', class: 'av-swatch', style: 'background:' + c, 'aria-label': c, 'aria-pressed': p[key] === c ? 'true' : 'false' });
@@ -699,10 +715,11 @@
     root.appendChild(el('div', { class: 'av-preview-wrap' }, [preview, status]));
     root.appendChild(el('p', { class: 'av-privacy', role: 'note', text: L.privacy }));
     root.appendChild(el('div', { class: 'av-cta' }, [cta, uploadBtn, file]));
-    root.appendChild(controls);
+    root.appendChild(wrap);
     root.appendChild(el('div', { class: 'av-actions' }, [reset]));
     paintControls();
     redraw();
+    wrap.open = true;
     return root;
   }
 
