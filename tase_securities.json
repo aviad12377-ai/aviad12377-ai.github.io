@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T21:35:43Z",
+  "generatedAt": "2026-11-26T21:42:22Z",
   "source": "Wikidata SPARQL: items with P414 = Tel Aviv Stock Exchange (Q1507974). Security numbers derived from Israeli ISINs. Official TASE APIs were not reachable without a key (HTTP 403 / Data Hub). data.gov.il has no matching dataset. Mutual-fund NAVs: funder.co.il (primary, official daily price); Fair public pages as fallback.",
   "count": 3190,
   "withSecurityNumber": 2646,
@@ -4938,30 +4938,6 @@
       "source": "funder.co.il/fundlist"
     },
     {
-      "id": "5111638",
-      "he": "אי.בי.אי. (!) מדינה צמוד ללא מניות",
-      "en": null,
-      "symbol": null,
-      "ticker": null,
-      "isin": null,
-      "type": "fund",
-      "manager": "אי.בי.אי",
-      "lastUpdate": "2026-11-26",
-      "source": "funder.co.il/fundlist"
-    },
-    {
-      "id": "5126479",
-      "he": "אי.בי.אי. (!) נוגה 25/75",
-      "en": null,
-      "symbol": null,
-      "ticker": null,
-      "isin": null,
-      "type": "fund",
-      "manager": "אי.בי.אי",
-      "lastUpdate": "2026-11-26",
-      "source": "funder.co.il/fundlist"
-    },
-    {
       "id": "5113048",
       "he": "אי.בי.אי. (!) קונצרני ריבית משתנה",
       "en": null,
@@ -5001,6 +4977,18 @@
       "id": "5107305",
       "he": "אי.בי.אי. (00) מק\"מ",
       "en": "I.B.I MAKAM 00",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "fund",
+      "manager": "אי.בי.אי",
+      "lastUpdate": "2026-11-26",
+      "source": "funder.co.il/fundlist"
+    },
+    {
+      "id": "5111638",
+      "he": "אי.בי.אי. (00)(!) מדינה צמוד ללא מניות",
+      "en": "I.B.I. 00! State CPI- linked Bonds",
       "symbol": null,
       "ticker": null,
       "isin": null,
@@ -5085,6 +5073,18 @@
       "id": "5139597",
       "he": "אי.בי.אי. (1B)(!) הזדמנויות אג\"ח תשואה גבוהה",
       "en": "I.B.I. 1B! High Yield Opportunities Bonds IL",
+      "symbol": null,
+      "ticker": null,
+      "isin": null,
+      "type": "fund",
+      "manager": "אי.בי.אי",
+      "lastUpdate": "2026-11-26",
+      "source": "funder.co.il/fundlist"
+    },
+    {
+      "id": "5126479",
+      "he": "אי.בי.אי. (2B)(!) נוגה 25/75",
+      "en": "I.B.I. 2B! NOGA 75/25 IL",
       "symbol": null,
       "ticker": null,
       "isin": null,
