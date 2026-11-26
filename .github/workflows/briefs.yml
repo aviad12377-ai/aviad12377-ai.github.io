@@ -23,8 +23,10 @@ on:
 permissions:
   contents: write
 
+# Own group: a burst of push-triggered price runs in the shared data group would otherwise cancel this
+# pending run. Commits go through scripts/commit_data.sh, which retries on a moved main, so overlap is safe.
 concurrency:
-  group: repo-data-commits
+  group: market-briefs
   cancel-in-progress: false
 
 jobs:

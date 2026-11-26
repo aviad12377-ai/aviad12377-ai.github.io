@@ -334,15 +334,9 @@ def calendar_week(start, end):
         out.append({"when": iso_il(when), "day": DAYS_HE[when.weekday()], "hm": when.strftime("%H:%M"), "title": title,
                     "country": COUNTRY_HE[r["country"]], "impact": "גבוהה" if r["impact"] == "High" else "בינונית",
                     "forecast": r.get("forecast") or "", "previous": r.get("previous") or ""})
-    # Israeli CPI: published on the 15th at 18:30 (earlier if it falls on a weekend)
-    for k in range((end - start).days + 1):
-        d = start + dt.timedelta(days=k)
-        target = d.replace(day=15)
-        while target.weekday() in (4, 5):
-            target -= dt.timedelta(days=1)
-        if d == target:
-            out.append({"when": iso_il(dt.datetime.combine(d, dt.time(18, 30), IL)), "day": DAYS_HE[d.weekday()], "hm": "18:30",
-                        "title": "מדד המחירים לצרכן בישראל", "country": "ישראל", "impact": "גבוהה", "forecast": "", "previous": ""})
+    # Israeli events (Bank of Israel, CBS) from the official-source file data/il-calendar.json
+    for e in il_events(start, end):
+        out.append(e)
     out.sort(key=lambda x: x["when"])
     seen, uniq = set(), []
     for e in out:
@@ -351,6 +345,45 @@ def calendar_week(start, end):
             seen.add(k)
             uniq.append(e)
     return uniq[:20]
+
+
+def load_il_calendar():
+    try:
+        return json.load(open(os.path.join(ROOT, "data", "il-calendar.json"), encoding="utf-8")).get("items", [])
+    except Exception:
+        return []
+
+
+def il_events(start, end):
+    out = []
+    for r in load_il_calendar():
+        try:
+            d = dt.date.fromisoformat(r["date"])
+        except Exception:
+            continue
+        if not (start <= d <= end):
+            continue
+        hm = r.get("hm") or ""
+        when = dt.datetime.combine(d, dt.time.fromisoformat(hm) if hm else dt.time(23, 59), IL)
+        out.append({"when": iso_il(when), "day": DAYS_HE[d.weekday()], "hm": hm or "במהלך היום", "title": r["title"],
+                    "country": "ישראל", "impact": r.get("impact", "גבוהה"), "forecast": "", "previous": "", "note": r.get("note", ""),
+                    "source": r.get("source", ""), "url": r.get("url", "")})
+    return out
+
+
+def next_il(today):
+    """Next Bank of Israel decision and next CPI release from the official-source calendar."""
+    nxt = {}
+    for r in load_il_calendar():
+        if r.get("kind") in ("boi", "cpi") and r["date"] >= today.isoformat() and r["kind"] not in nxt:
+            nxt[r["kind"]] = r
+    parts = []
+    for k in ("boi", "cpi"):
+        r = nxt.get(k)
+        if r:
+            d = dt.date.fromisoformat(r["date"])
+            parts.append(f"{r['title']}: יום {DAYS_HE[d.weekday()]}, {d.day}.{d.month}.{d.year}" + (f" ב־{r['hm']}" if r.get("hm") else ""))
+    return ("בקרוב בישראל: " + ". ".join(parts) + ".") if parts else ""
 
 
 def earnings_week(start, end, n=10):
@@ -371,7 +404,14 @@ def earnings_week(start, end, n=10):
                 found.append({"day": DAYS_HE[d.weekday()], "date": d.strftime("%d.%m"), "symbol": r.get("symbol"), "name": r.get("name", "")[:40], "cap": cap, "when": when})
         d += dt.timedelta(days=1)
     found.sort(key=lambda r: r["cap"], reverse=True)
-    return found[:n]
+    seen, uniq = set(), []
+    for r in found:
+        r["name"] = r["name"].rstrip(". ")
+        if r["name"] in seen:
+            continue
+        seen.add(r["name"])
+        uniq.append(r)
+    return uniq[:n]
 
 
 # ---------- stats ----------
@@ -574,6 +614,11 @@ def week_review(now, qs, ta_q, sp_q, ta, sp):
     earn = earnings_week(nxt_mon, nxt_mon + dt.timedelta(days=4), 8)
     if earn:
         stories.append({"title": "מה בשבוע הבא", "text": "דוחות בולטים בוול סטריט: " + ", ".join(f"{e['name']} ({e['day']}{', ' + e['when'] if e['when'] else ''})" for e in earn[:6]) + ". לוח נתוני המאקרו המלא יופיע בסקירת \"השבוע שמחכה לנו\" ביום ראשון בבוקר."})
+    il_next = next_il(today)
+    il_week = il_events(nxt_mon - dt.timedelta(days=1), nxt_mon + dt.timedelta(days=4))
+    if il_week or il_next:
+        txt = " ".join(f"{e['day']} {e['hm']}: {e['title']}." for e in il_week)
+        stories.append({"title": "בישראל בשבוע הבא" if il_week else "בקרוב בישראל", "text": (txt + " " + (il_next if not il_week else "")).strip()})
     charts = [norm_series(qs[s], monday, BYSYM[s][1]) for s in ("TA35.TA", "^GSPC", "^IXIC") if s in qs]
     return {"title": "סיכום השבוע: " + ", ".join(lead[:3]), "summary": " ".join(s["text"] for s in stories[:2])[:420],
             "stories": stories, "table": {"columns": ["נכס", "רמה", "שינוי שבועי", "ימי עלייה", "היום הטוב", "היום החלש"], "rows": rows},
@@ -651,6 +696,9 @@ def week_ahead(now):
         stories.append({"title": "נתוני מאקרו", "text": " ".join(f"{e['day']} {e['hm']}: {e['title']} ({e['country']})." for e in cal[:10])})
     if earn:
         stories.append({"title": "דוחות כספיים", "text": " ".join(f"{e['day']} {e['date']}: {e['name']}{' (' + e['when'] + ')' if e['when'] else ''}." for e in earn)})
+    il = next_il(today)
+    if il:
+        stories.append({"title": "בנק ישראל והלמ״ס", "text": il})
     if not stories:
         stories.append({"title": "השבוע", "text": "לא מצאנו כרגע אירועים בולטים בלוח. נעדכן במבזקים היומיים."})
     return {"title": "; ".join(lead) or "השבוע שמחכה לנו", "summary": stories[0]["text"][:420], "stories": stories, "calendar": cal, "earnings": earn}

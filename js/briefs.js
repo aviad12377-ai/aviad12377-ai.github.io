@@ -111,7 +111,7 @@
     if (b.calendar && b.calendar.length) {
       view.appendChild(el('section', { class: 'card' }, [el('h2', { text: 'לוח אירועים' }), el('ul', { class: 't16-list' }, b.calendar.map(function (e) {
         return el('li', { class: 't16-item' }, [el('div', { class: 't16-meta' }, [el('span', { class: 't16-src', text: 'יום ' + e.day + ' ' + e.hm }), el('span', { text: e.country }), el('span', { class: 't16-tag', text: 'חשיבות ' + e.impact })]),
-          el('b', { text: e.title }), (e.forecast || e.previous) ? el('p', { class: 'small muted', text: (e.forecast ? 'תחזית ' + e.forecast : '') + (e.forecast && e.previous ? ' · ' : '') + (e.previous ? 'קודם ' + e.previous : '') }) : null]);
+          el('b', { text: e.title }), (e.note || e.source) ? el('p', { class: 'small muted', text: [e.note, e.source ? 'מקור: ' + e.source : ''].filter(Boolean).join(' · ') }) : null, (e.forecast || e.previous) ? el('p', { class: 'small muted', text: (e.forecast ? 'תחזית ' + e.forecast : '') + (e.forecast && e.previous ? ' · ' : '') + (e.previous ? 'קודם ' + e.previous : '') }) : null]);
       }))]));
     }
     if (b.earnings && b.earnings.length) {
