@@ -54,14 +54,14 @@
   },
   "us_close_date": "2026-11-25",
   "us_close_date_source": "prices.json regularMarketTime (US exchanges)",
-  "compared_to": "2026-11-06 scan (radar-2026-11-06)",
+  "compared_to": "2026-11-25 scan (radar-2026-11-25)",
   "entered": [
-    "WRBY",
-    "DLO"
+    "DLO",
+    "WRBY"
   ],
   "exited": [
-    "PATH",
-    "EZPW"
+    "EZPW",
+    "PATH"
   ],
   "top": [
     {

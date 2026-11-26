@@ -7,6 +7,10 @@
     compare_savings_title: 'השוואת פיקדונות וחסכונות',
     compare_savings_sub: 'ממוצעי ריבית ששולמו בפועל, לפי בנק ישראל',
     compare_loans_extra: 'לוח סילוקין והשוואה לשוק',
+    compare_funds_title: 'השוואת קרנות פנסיה, גמל והשתלמות',
+    compare_funds_sub: 'תשואות ודמי ניהול לפי מסלול, מנתוני רשות שוק ההון',
+    compare_mortgage_title: 'בדיקת מחזור משכנתא',
+    compare_mortgage_sub: 'השוואה לממוצעי בנק ישראל לפי הצמדה ותקופה',
     not_advice_short: 'מידע בלבד, לא ייעוץ'
   };
   var EN = {
@@ -15,6 +19,10 @@
     compare_savings_title: 'Deposit and savings comparison',
     compare_savings_sub: 'Average rates actually paid, per the Bank of Israel',
     compare_loans_extra: 'Amortization schedule and market comparison',
+    compare_funds_title: 'Pension, gemel and study-fund comparison',
+    compare_funds_sub: 'Returns and fees by track, from the Capital Market Authority',
+    compare_mortgage_title: 'Mortgage refinance check',
+    compare_mortgage_sub: 'Compare tracks to Bank of Israel averages by linkage and term',
     not_advice_short: 'Information only, not advice'
   };
   var ES = {
@@ -23,6 +31,10 @@
     compare_savings_title: 'Comparación de depósitos y ahorros',
     compare_savings_sub: 'Tipos medios realmente pagados, según el Banco de Israel',
     compare_loans_extra: 'Cuadro de amortización y comparación de mercado',
+    compare_funds_title: 'Comparación de fondos de pensión y previsión',
+    compare_funds_sub: 'Rentabilidades y comisiones por trayectoria, de la Autoridad del Mercado de Capitales',
+    compare_mortgage_title: 'Comprobación de refinanciación hipotecaria',
+    compare_mortgage_sub: 'Comparar tramos con promedios del Banco de Israel según indexación y plazo',
     not_advice_short: 'Solo información, no es asesoramiento'
   };
   var I = window.PORTAL_I18N;
@@ -39,4 +51,6 @@
   }
   add({ id: 'compare-cards', href: 'compare-cards.html', label: { he: 'השוואת כרטיסים', en: 'Compare cards', es: 'Comparar tarjetas' }, icon: 'card', group: 'debts', parent: 'loans' });
   add({ id: 'compare-savings', href: 'compare-savings.html', label: { he: 'השוואת פיקדונות', en: 'Compare deposits', es: 'Comparar depósitos' }, icon: 'piggy', group: 'wealth', parent: 'wealth' });
+  add({ id: 'compare-funds', href: 'compare-funds.html', label: { he: 'השוואת קרנות', en: 'Compare funds', es: 'Comparar fondos' }, icon: 'umbrella', group: 'wealth', parent: 'wealth' });
+  add({ id: 'compare-mortgage', href: 'compare-mortgage.html', label: { he: 'בדיקת מחזור משכנתא', en: 'Refinance check', es: 'Revisión de refinanciación' }, icon: 'house', group: 'debts', parent: 'loans' });
 })();

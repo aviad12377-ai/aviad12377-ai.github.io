@@ -166,6 +166,28 @@ def rows_from_csv(path: str, limit: int = 15) -> list[dict]:
         return rows
 
 
+
+def liquid_tickers(folder: str) -> list[str]:
+    liquid = load_json(os.path.join(folder, "liquid_top15.json"))
+    if isinstance(liquid, dict):
+        liquid = liquid.get("top15") or liquid.get("items") or liquid.get("rows") or []
+    if liquid:
+        return [str(x.get("ticker")) for x in liquid if x.get("ticker")]
+    return [str(r.get("ticker")) for r in rows_from_csv(os.path.join(folder, "filtered.csv")) if r.get("ticker")]
+
+
+def prior_radar_date(root: str, current: str) -> str | None:
+    found: list[str] = []
+    if not os.path.isdir(root):
+        return None
+    for name in os.listdir(root):
+        m = re.fullmatch(r"radar-(\d{4}-\d{2}-\d{2})", name)
+        if m and m.group(1) < current and os.path.isdir(os.path.join(root, name)):
+            found.append(m.group(1))
+    found.sort()
+    return found[-1] if found else None
+
+
 def build(folder: str, prices_path: str | None = None) -> dict:
     date = os.path.basename(folder).replace("radar-", "", 1)
     summary = load_json(os.path.join(folder, "summary.json")) or {}
@@ -175,12 +197,18 @@ def build(folder: str, prices_path: str | None = None) -> dict:
     top = [row_from_liquid(x) for x in (liquid or []) if x.get("ticker")]
     if not top:
         top = rows_from_csv(os.path.join(folder, "filtered.csv"))
-    diffs = []
-    for name in os.listdir(folder):
-        if name.startswith("diff_vs_") and name.endswith(".json"):
-            diffs.append(name)
-    diff = load_json(os.path.join(folder, diffs[-1])) if diffs else {}
     counts = summary.get("counts") or {}
+    root = os.path.dirname(os.path.abspath(folder))
+    prior = prior_radar_date(root, date)
+    if prior:
+        compared_to = f"{prior} scan (radar-{prior})"
+        prev = set(liquid_tickers(os.path.join(root, f"radar-{prior}")))
+        cur = set(x.get("ticker") for x in top if x.get("ticker"))
+        entered = sorted(cur - prev)
+        exited = sorted(prev - cur)
+    else:
+        compared_to = None
+        entered, exited = [], []
     source_url = summary.get("source_url") or "https://finviz.com/screener.ashx"
     assumed = summary.get("us_close_date_assumed") or summary.get("us_close_date")
     real = last_us_close_from_prices(prices_path) if prices_path else None
@@ -210,9 +238,9 @@ def build(folder: str, prices_path: str | None = None) -> dict:
         },
         "us_close_date": us_close,
         "us_close_date_source": us_close_source,
-        "compared_to": (diff or {}).get("compared_to"),
-        "entered": (diff or {}).get("new_entries") or (diff or {}).get("entered") or [],
-        "exited": (diff or {}).get("drops") or (diff or {}).get("exited") or [],
+        "compared_to": compared_to,
+        "entered": entered,
+        "exited": exited,
         "top": top,
     }
 

@@ -510,6 +510,194 @@
     return { list: list.slice(0, limit), total: list.length, limited: list.length > limit, hidden: Math.max(0, list.length - limit) };
   }
 
+
+  function fixFundText(o) {
+    if (typeof o === 'string') return o.replace(/S1;P/g, 'S&P').replace(/&amp;/g, '&').replace(/&quot;/g, '"');
+    if (Array.isArray(o)) return o.map(fixFundText);
+    if (o && typeof o === 'object') {
+      var out = Array.isArray(o) ? [] : {};
+      Object.keys(o).forEach(function (k) { out[k] = fixFundText(o[k]); });
+      return out;
+    }
+    return o;
+  }
+  function fundProductType(setName, fund) {
+    var cls = String((fund && fund.cls) || '');
+    if (setName === 'pensianet') return /כלליות/.test(cls) ? 'pension_general' : 'pension';
+    if (setName === 'bituachnet') return 'policy';
+    if (setName === 'gemelnet') {
+      if (/השתלמות/.test(cls)) return 'hishtalmut';
+      if (/להשקעה/.test(cls) && /ילד/.test(cls)) return 'gemel_child';
+      if (/להשקעה/.test(cls)) return 'gemel_invest';
+      if (/תגמולים|לפיצויים/.test(cls)) return 'gemel';
+      return 'gemel_other';
+    }
+    return 'other';
+  }
+  function fundTrack(fund) {
+    var s = [fund && fund.name, fund && fund.sub, fund && fund.spec, fund && fund.cls].join(' ');
+    if (/s&p|S&P|500/i.test(s)) return 'sp500';
+    if (/הלכ/.test(s)) return 'halacha';
+    if (/כספי|שקלי/.test(s) && !/מניות/.test(s)) return 'cash';
+    if (/לבני|גיל|\d\d\s*-\s*\d\d|ומעלה|ומטה|מדרגות/.test(s)) return 'age';
+    if (/אג["״]?ח|אשראי|ממשלתי/.test(s) && !/מניות/.test(s)) return 'bonds';
+    if (/מניות/.test(s)) return 'equity';
+    if (/כללי/.test(s)) return 'general';
+    if (/מדד/.test(s)) return 'index';
+    return 'other';
+  }
+  function trailing12m(monthlyMap, fundId) {
+    var m = monthlyMap && monthlyMap[String(fundId)];
+    if (!m || typeof m !== 'object') return null;
+    var periods = Object.keys(m).filter(function (p) { return /^\d{6}$/.test(p) && Number.isFinite(Number(m[p])); }).sort();
+    if (periods.length < 12) return null;
+    var last12 = periods.slice(-12);
+    var i, prod = 1, a, b;
+    for (i = 1; i < last12.length; i++) {
+      a = Number(last12[i - 1]); b = Number(last12[i]);
+      var expected = (a % 100 === 12) ? a + 100 - 11 : a + 1;
+      if (b !== expected) return null;
+    }
+    for (i = 0; i < last12.length; i++) prod *= 1 + Number(m[last12[i]]) / 100;
+    return (prod - 1) * 100;
+  }
+  function flattenFunds(data) {
+    data = fixFundText(data || {});
+    var out = [];
+    Object.keys(data.sets || {}).forEach(function (setName) {
+      var set = data.sets[setName] || {};
+      (set.funds || []).forEach(function (f) {
+        var row = {
+          id: f.id,
+          name: f.name,
+          mgr: f.mgr || '',
+          parent: f.parent || '',
+          provider: f.mgr || f.parent || '',
+          cls: f.cls || '',
+          spec: f.spec || '',
+          sub: f.sub || '',
+          setName: setName,
+          period: set.period,
+          resource: set.resource,
+          productType: fundProductType(setName, f),
+          track: fundTrack(f),
+          feeAcc: nn(f.feeAcc),
+          feeDep: nn(f.feeDep),
+          ytd: nn(f.ytd),
+          y3: nn(f.y3),
+          y5: nn(f.y5),
+          sharpe: nn(f.sharpe),
+          sd: nn(f.sd),
+          assets: nn(f.assets),
+          y1: trailing12m(set.monthly, f.id)
+        };
+        out.push(row);
+      });
+    });
+    return out;
+  }
+  function filterFunds(rows, f) {
+    f = f || {};
+    var q = String(f.q || '').trim().toLowerCase();
+    var types = f.productTypes || (f.productType ? [f.productType] : null);
+    return (rows || []).filter(function (r) {
+      if (types && types.length && types.indexOf(r.productType) === -1) return false;
+      if (f.track && r.track !== f.track) return false;
+      if (f.provider && r.provider !== f.provider) return false;
+      if (q) {
+        var hay = ((r.name || '') + ' ' + (r.provider || '') + ' ' + (r.sub || '')).toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+  }
+  function sortFunds(rows, key, dir) {
+    key = key || 'y5';
+    dir = dir == null ? -1 : dir;
+    return (rows || []).slice().sort(function (a, b) {
+      var va = a[key], vb = b[key];
+      if (key === 'name' || key === 'provider' || key === 'track' || key === 'productType') {
+        return String(va || '').localeCompare(String(vb || ''), 'he') * (dir === -1 ? -1 : 1);
+      }
+      if (va == null || !Number.isFinite(Number(va))) return 1;
+      if (vb == null || !Number.isFinite(Number(vb))) return -1;
+      return (Number(va) - Number(vb)) * dir;
+    });
+  }
+  function readPortalData() {
+    try {
+      var key = (typeof window !== 'undefined' && window.Portal && window.Portal.keys && window.Portal.keys.data) || 'portal-data-v1';
+      var raw = (typeof localStorage !== 'undefined') ? localStorage.getItem(key) : null;
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+  function readSavedFunds() {
+    var data = readPortalData();
+    if (!data) return [];
+    var list = [];
+    function add(kind, arr) {
+      (arr || []).forEach(function (r) {
+        if (!r) return;
+        if (!(r.name || r.trackId || r.trackName)) return;
+        list.push({
+          kind: kind,
+          name: r.name || '',
+          trackId: r.trackId != null ? String(r.trackId) : '',
+          trackSet: r.trackSet || '',
+          trackName: r.trackName || '',
+          feeAcc: nn(r.feeBal != null ? r.feeBal : r.feeAcc),
+          feeDep: nn(r.feeDep),
+          balance: nn(r.balance)
+        });
+      });
+    }
+    add('pension', data.pension && data.pension.funds);
+    add('hishtalmut', data.hishtalmut && data.hishtalmut.funds);
+    return list;
+  }
+  function readSavedMortgageTracks() {
+    var data = readPortalData();
+    if (!data || !data.mortgage) return [];
+    return (data.mortgage.tracks || []).filter(function (r) { return r && (n(r.balance) > 0 || r.name); }).map(function (r, i) {
+      return {
+        id: r.id || ('saved-' + i),
+        name: r.name || '',
+        type: r.type || 't_prime',
+        balance: n(r.balance),
+        rate: n(r.rate),
+        months: n(r.months),
+        payment: nn(r.payment),
+        yearsHeld: r.yearsHeld,
+        monthsToReset: r.monthsToReset,
+        originationAveragePct: r.originationAveragePct,
+        source: 'saved'
+      };
+    });
+  }
+  function matchSavedFund(saved, rows) {
+    if (!saved) return null;
+    if (saved.trackId) {
+      var hit = null;
+      (rows || []).forEach(function (r) {
+        if (String(r.id) === String(saved.trackId) && (!saved.trackSet || r.setName === saved.trackSet)) hit = r;
+      });
+      if (hit) return hit;
+      (rows || []).forEach(function (r) { if (String(r.id) === String(saved.trackId) && !hit) hit = r; });
+      if (hit) return hit;
+    }
+    var q = String(saved.trackName || saved.name || '').replace(/[״"'׳]/g, '').replace(/[-–]/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
+    if (q.length < 2) return null;
+    var exact = null, contains = null;
+    (rows || []).forEach(function (r) {
+      var hay = String(r.name || '').replace(/[״"'׳]/g, '').replace(/[-–]/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
+      if (hay === q) exact = r;
+      else if (hay.indexOf(q) >= 0 || (q.length >= 6 && q.indexOf(hay) >= 0)) {
+        if (!contains || hay.length < String(contains.name || '').length) contains = r;
+      }
+    });
+    return exact || contains;
+  }
+
   var api = {
     n: n, nn: nn, round: round,
     monthlyNominal: monthlyNominal, monthlyEffective: monthlyEffective, effectiveFromNominal: effectiveFromNominal,
@@ -519,7 +707,10 @@
     parseCsvText: parseCsvText, rowsToSchedule: rowsToSchedule, parseAmortizationMatrixOrText: parseAmortizationMatrixOrText,
     extractPdfText: extractPdfText,
     rewardPctFor: rewardPctFor, cardAnnualValue: cardAnnualValue, rankCards: rankCards,
-    filterDeposits: filterDeposits, visibleDeposits: visibleDeposits, depositInterest: depositInterest
+    filterDeposits: filterDeposits, visibleDeposits: visibleDeposits, depositInterest: depositInterest,
+    fixFundText: fixFundText, fundProductType: fundProductType, fundTrack: fundTrack, trailing12m: trailing12m,
+    flattenFunds: flattenFunds, filterFunds: filterFunds, sortFunds: sortFunds,
+    readSavedFunds: readSavedFunds, readSavedMortgageTracks: readSavedMortgageTracks, matchSavedFund: matchSavedFund
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.CompareLib = api;
