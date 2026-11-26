@@ -155,6 +155,31 @@
     }
     return null;
   }
+  function foldSearch(s) {
+    s = String(s || '').toLowerCase();
+    s = s.replace(/[״""׳'']/g, '"');
+    s = s.replace(/נאסד"?ק|נסדק/g, 'nasdaq');
+    s = s.replace(/s\s*&\s*p/g, 'sp');
+    s = s.replace(/ת["\"]א/g, 'ta');
+    s = s.replace(/([א-ת])([a-z0-9])/gi, '$1 $2');
+    s = s.replace(/([a-z0-9])([א-ת])/gi, '$1 $2');
+    s = s.replace(/[^\u0590-\u05ffa-z0-9]+/gi, ' ');
+    return s.replace(/\s+/g, ' ').trim();
+  }
+  function searchTokens(s) {
+    return foldSearch(s).split(' ').filter(Boolean);
+  }
+  function taseHaystack(r) {
+    return foldSearch([r.id, r.he, r.en, r.ticker, r.symbol, r.manager].filter(Boolean).join(' '));
+  }
+  function tokenMatches(tok, hay, hayTokens, id) {
+    if (/^\d+$/.test(tok)) {
+      if (id && String(id).indexOf(tok) === 0) return true;
+      return hayTokens.indexOf(tok) >= 0;
+    }
+    if (hayTokens.some(function (ht) { return ht === tok || (tok.length >= 2 && ht.indexOf(tok) === 0); })) return true;
+    return hay.indexOf(tok) >= 0;
+  }
   function findTase(q) {
     if (!q || !taseSecurities.length) return null;
     var raw = String(q).trim(), u = raw.toUpperCase(), digits = raw.replace(/\s+/g, '');
@@ -169,27 +194,40 @@
       for (i = 0; i < exact.length; i++) if (exact[i].symbol) return exact[i];
       return exact[0];
     }
-    var hits = searchTase(raw, 4).filter(function (x) { return (x.he && x.he === raw) || (x.en && x.en.toLowerCase() === raw.toLowerCase()); });
+    var folded = foldSearch(raw);
+    var nameHits = searchTase(raw, 8).filter(function (x) {
+      return foldSearch(x.he || '') === folded || foldSearch(x.en || '') === folded;
+    });
+    if (nameHits.length === 1) return nameHits[0];
+    var hits = searchTase(raw, 4);
     if (hits.length === 1) return hits[0];
     return null;
   }
   function searchTase(q, limit) {
-    var raw = String(q || '').trim(); if (raw.length < 1) return [];
-    var u = raw.toUpperCase(), out = [], scored = [];
+    var tokens = searchTokens(q); if (!tokens.length) return [];
+    var raw = String(q || '').trim();
+    var out = [], scored = [];
     taseSecurities.forEach(function (r) {
       if (!r) return;
-      var id = r.id || '', he = r.he || '', en = r.en || '', tick = (r.ticker || '').toUpperCase(), sym = (r.symbol || '').toUpperCase();
+      var id = r.id || '', hay = taseHaystack(r), hayTokens = hay ? hay.split(' ') : [];
+      if (!tokens.every(function (tok) { return tokenMatches(tok, hay, hayTokens, id); })) return;
       var score = 0;
-      if (id && (id === raw || id.indexOf(raw) === 0)) score = 100;
-      else if (tick === u || sym === u) score = 95;
-      else if (he === raw || en.toLowerCase() === raw.toLowerCase()) score = 90;
-      else if (tick.indexOf(u) === 0 || sym.indexOf(u) === 0) score = 80;
-      else if (he.indexOf(raw) === 0) score = 75;
-      else if (en.toLowerCase().indexOf(raw.toLowerCase()) === 0) score = 70;
-      else if (id.indexOf(raw) >= 0 || he.indexOf(raw) >= 0 || en.toLowerCase().indexOf(raw.toLowerCase()) >= 0 || tick.indexOf(u) >= 0) score = 40;
-      if (score) scored.push({ score: score, row: r, hasSym: !!r.symbol });
+      if (id && id === raw) score = 100;
+      else if (id && /^\d+$/.test(raw) && id.indexOf(raw) === 0) score = 95;
+      else if (foldSearch(r.he || '') === foldSearch(raw) || foldSearch(r.en || '') === foldSearch(raw)) score = 90;
+      else {
+        score = 50;
+        tokens.forEach(function (tok) {
+          if (id && id.indexOf(tok) === 0) score += 20;
+          else if (hayTokens.indexOf(tok) === 0) score += 12;
+          else if (hayTokens.indexOf(tok) >= 0) score += 8;
+          else score += 3;
+        });
+        if ((r.type === 'fund' || r.type === 'etf') && tokens.length > 1) score += 5;
+      }
+      scored.push({ score: score, row: r, hasSym: !!r.symbol, len: (r.he || r.en || '').length });
     });
-    scored.sort(function (a, b) { return b.score - a.score || (b.hasSym ? 1 : 0) - (a.hasSym ? 1 : 0); });
+    scored.sort(function (a, b) { return b.score - a.score || a.len - b.len || (b.hasSym ? 1 : 0) - (a.hasSym ? 1 : 0); });
     for (var i = 0; i < scored.length && out.length < (limit || 8); i++) out.push(scored[i].row);
     return out;
   }

@@ -25,6 +25,9 @@ jobs:
       - name: Refresh TASE securities lookup
         run: python3 scripts/fetch_tase_securities.py
 
+      - name: Refresh Funder fund and ETF lists
+        run: python3 scripts/fetch_funder_list.py
+
       - name: Fetch Israeli mutual-fund NAVs
         run: python3 scripts/fetch_fund_nav.py
 

@@ -1,7 +1,8 @@
 {
-  "comment": "Optional extra Yahoo Finance symbols for the Actions price job, on top of scripts/universe.json. Add tickers users hold that are not in the built-in universe. Accepts this object shape or a bare JSON array of strings.",
+  "comment": "Optional extras for the Actions price job, on top of scripts/universe.json. Accepts this object or a bare JSON array. Put Yahoo tickers in symbols, and Israeli fund/ETF security numbers (מספר נייר) there too, or under funds. The browser cannot write this file (static GitHub Pages). Search already covers the full Funder fund+ETF list in tase_securities.json. NAVs: the 15-minute Action always fetches universe + this file, then any listed fund whose official lastUpdate is newer than prices.json navDate (full backfill on first run). To bump a fund to the front of the queue, add its number here and push, or run the workflow manually. See scripts/FUNDS.md.",
   "symbols": [
     "BITU",
     "SOLT"
-  ]
+  ],
+  "funds": []
 }

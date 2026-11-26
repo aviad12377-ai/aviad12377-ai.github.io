@@ -47,6 +47,7 @@ import json
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -62,7 +63,8 @@ USER_AGENT = (
     "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
 )
 RETRIES = 3
-PAUSE = 0.25
+PAUSE = 0.15
+MAX_WORKERS = 6
 FUNDER_URL = "https://www.funder.co.il/fund/{id}"
 FAIR_URL = "https://funds.fair.co.il/search/funds/{id}"
 MAYA_API = "https://mayaapi.tase.co.il/api/fund/details?fundId={id}"
@@ -109,19 +111,51 @@ def load_fund_ids() -> list[str]:
                 _add_id(item.get("id") or item.get("symbol") or item.get("ticker"), seen, ids)
             else:
                 _add_id(item, seen, ids)
-    if TASE_PATH.exists():
-        try:
-            blob = json.loads(TASE_PATH.read_text(encoding="utf-8"))
-            rows = blob.get("securities") if isinstance(blob, dict) else blob
-            for row in rows or []:
-                if not isinstance(row, dict):
-                    continue
-                if row.get("type") == "fund" or (
-                    isinstance(row.get("id"), str) and re.fullmatch(r"51\d{5}", str(row["id"]))
-                ):
-                    _add_id(row.get("id"), seen, ids)
-        except Exception:
-            pass
+    return ids
+
+
+def tase_fund_updates() -> dict[str, str | None]:
+    """id -> official lastUpdate (YYYY-MM-DD) from the Funder list rows."""
+    out: dict[str, str | None] = {}
+    if not TASE_PATH.exists():
+        return out
+    try:
+        blob = json.loads(TASE_PATH.read_text(encoding="utf-8"))
+        rows = blob.get("securities") if isinstance(blob, dict) else blob
+        for row in rows or []:
+            if not isinstance(row, dict):
+                continue
+            if row.get("type") not in ("fund",) and not (
+                isinstance(row.get("id"), str) and re.fullmatch(r"51\d{5}", str(row["id"]))
+            ):
+                continue
+            fid = str(row.get("id") or "").strip()
+            if fid:
+                out[fid] = row.get("lastUpdate")
+    except Exception:
+        pass
+    return out
+
+
+def needed_ids(prices: dict) -> list[str]:
+    """Universe + extra_tickers always; every listed fund whose NAV is missing or stale.
+
+    A browser cannot write extra_tickers.json (static GitHub Pages). After the
+    first backfill, lastUpdate on the Funder list is compared to prices.json
+    navDate so only funds with a new official date are re-fetched.
+    """
+    requested = load_fund_ids()
+    seen = set(requested)
+    ids = list(requested)
+    quotes = (prices or {}).get("quotes") or {}
+    for fid, list_date in tase_fund_updates().items():
+        if fid in seen:
+            continue
+        q = quotes.get(fid) or quotes.get(fid + ".TA")
+        stored = (q or {}).get("navDate")
+        if not q or not stored or (list_date and str(stored) < str(list_date)):
+            ids.append(fid)
+            seen.add(fid)
     return ids
 
 
@@ -489,23 +523,29 @@ def public_quote(q: dict) -> dict:
 
 def main(argv: list[str]) -> int:
     prices_path = Path(argv[1]) if len(argv) > 1 else PRICES_PATH
-    ids = load_fund_ids()
+    prices_preview = load_prices(prices_path)
+    ids = needed_ids(prices_preview)
     if not ids:
-        print("No mutual-fund IDs found; nothing to do.")
+        print("No mutual-fund IDs to fetch; nothing to do.")
         return 0
+    print(f"Fetching {len(ids)} fund NAVs (universe/extra + missing/stale vs Funder lastUpdate).")
 
     fetched: dict[str, dict] = {}
     errors: dict[str, str] = {}
-    for i, fund_id in enumerate(ids):
-        fid, quote, err = fetch_one(fund_id)
-        if quote:
-            fetched[fid] = quote
-            print(f"OK {fid} {quote.get('agorot')} agorot  navDate={quote.get('navDate')}  src={quote.get('source')}")
-        else:
-            errors[fid] = err or "unknown error"
-            print(f"WARN {fid}: {err}", file=sys.stderr)
-        if i + 1 < len(ids):
-            time.sleep(PAUSE)
+    def _run(fid: str):
+        time.sleep(PAUSE)
+        return fetch_one(fid)
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        futs = [pool.submit(_run, fid) for fid in ids]
+        for fut in as_completed(futs):
+            fid, quote, err = fut.result()
+            if quote:
+                fetched[fid] = quote
+                print(f"OK {fid} {quote.get('agorot')} agorot  navDate={quote.get('navDate')}  src={quote.get('source')}")
+            else:
+                errors[fid] = err or "unknown error"
+                print(f"WARN {fid}: {err}", file=sys.stderr)
 
     if not fetched and errors:
         print(f"ERROR: no fund NAVs fetched ({len(errors)} failed).", file=sys.stderr)

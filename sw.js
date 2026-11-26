@@ -1,5 +1,5 @@
 // Service worker: offline shell. Network-first so updates show up. Never caches prices.json or cross-origin price requests.
-const CACHE = 'options-calc-v6.2';
+const CACHE = 'options-calc-v6.3';
 const SHELL = ['./', './index.html', './options.html', './savings.html', './pension.html', './hishtalmut.html', './mortgage.html', './cards.html',
   './portal.css', './portal.js', './portal-i18n.js', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
