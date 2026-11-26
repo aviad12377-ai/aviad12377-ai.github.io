@@ -1,0 +1,1117 @@
+{
+  "generatedAt": "2026-11-26T18:48:44Z",
+  "quotes": {
+    "AAPL": {
+      "price": 355.58,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 354.07,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "ABBV": {
+      "price": 294.48,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:26-05:00",
+      "previousClose": 300.28,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "ABT": {
+      "price": 108.0,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:44-05:00",
+      "previousClose": 105.39,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "ACN": {
+      "price": 240.49,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 232.32,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "ADBE": {
+      "price": 232.83,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 232.08,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "AMAT": {
+      "price": 311.18,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 323.76,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "AMD": {
+      "price": 406.03,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 413.27,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "AMGN": {
+      "price": 469.24,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 473.935,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "AMT": {
+      "price": 184.59,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:03-05:00",
+      "previousClose": 182.83,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "AMZN": {
+      "price": 244.43,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 252.29,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "ANET": {
+      "price": 163.99,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:03-05:00",
+      "previousClose": 168.56,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "AVGO": {
+      "price": 300.86,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 301.08,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "AXP": {
+      "price": 312.39,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:01:24-05:00",
+      "previousClose": 308.63,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "AZRG.TA": {
+      "price": 333.6,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 323.3,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "BA": {
+      "price": 164.53,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 163.59,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "BAC": {
+      "price": 48.54,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:03-05:00",
+      "previousClose": 48.56,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "BEZQ.TA": {
+      "price": 7.042,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 6.807,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "BIG.TA": {
+      "price": 720.4,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 690.5,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "BKNG": {
+      "price": 149.5,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 146.64,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "BLK": {
+      "price": 1141.86,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 1146.03,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "BMY": {
+      "price": 61.56,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 62.02,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "BNY": {
+      "price": 147.16,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:33-05:00",
+      "previousClose": 145.22,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "BRK-B": {
+      "price": 579.32,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 577.21,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "C": {
+      "price": 113.33,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:01:42-05:00",
+      "previousClose": 113.85,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "CAMT.TA": {
+      "price": 319.3,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:28:08+02:00",
+      "previousClose": 300.3,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "CAT": {
+      "price": 543.69,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 540.63,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "CLIS.TA": {
+      "price": 251.6,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 243.8,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "CMCSA": {
+      "price": 25.73,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 25.38,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "COF": {
+      "price": 182.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:03-05:00",
+      "previousClose": 181.36,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "COP": {
+      "price": 135.02,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 134.64,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "COST": {
+      "price": 1086.81,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 1091.71,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "CRM": {
+      "price": 197.21,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 193.26,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "CSCO": {
+      "price": 94.2,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 93.99,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "CVS": {
+      "price": 81.06,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 80.69,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "CVX": {
+      "price": 210.95,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:53-05:00",
+      "previousClose": 208.73,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "CYBR.TA": {
+      "price": 1131.0,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:27:21+02:00",
+      "previousClose": 1151.3,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "DE": {
+      "price": 641.02,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 613.76,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "DELL": {
+      "price": 297.06,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:03:52-05:00",
+      "previousClose": 295.28,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "DHR": {
+      "price": 227.35,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:13-05:00",
+      "previousClose": 229.09,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "DIS": {
+      "price": 125.6,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:01-05:00",
+      "previousClose": 122.51,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "DLEKG.TA": {
+      "price": 78.16,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:25:45+02:00",
+      "previousClose": 78.672993,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "DORL.TA": {
+      "price": 51.41,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:29:11+02:00",
+      "previousClose": 47.75,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "DSCT.TA": {
+      "price": 29.7,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:28:45+02:00",
+      "previousClose": 29.11,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "DUK": {
+      "price": 131.9,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:13-05:00",
+      "previousClose": 130.96,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "ELAL.TA": {
+      "price": 20.7,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:27:54+02:00",
+      "previousClose": 21.52,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "EMR": {
+      "price": 157.23,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:03:01-05:00",
+      "previousClose": 156.98,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "ENLT.TA": {
+      "price": 207.5,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:29:29+02:00",
+      "previousClose": 200.0,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "ESLT.TA": {
+      "price": 2230.0,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 2200.8,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "EURILS=X": {
+      "price": 3.6387,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T18:48:02+00:00",
+      "previousClose": 3.6857,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "EURUSD=X": {
+      "price": 1.0973,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-26T18:48:43+00:00",
+      "previousClose": 1.0982,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "FDX": {
+      "price": 308.87,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 308.29,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "FIBI.TA": {
+      "price": 206.7,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 203.5,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "GD": {
+      "price": 360.27,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 351.55,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "GE": {
+      "price": 316.98,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 318.03,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "GEV": {
+      "price": 715.0,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 720.65,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "GILD": {
+      "price": 176.74,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 178.29,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "GM": {
+      "price": 83.99,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 82.32,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "GOOG": {
+      "price": 270.98,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 276.58,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "GOOGL": {
+      "price": 273.1,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 279.05,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "GS": {
+      "price": 801.03,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 806.02,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "HARL.TA": {
+      "price": 179.2,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:28:48+02:00",
+      "previousClose": 172.7,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "HD": {
+      "price": 361.26,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 353.69,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "IBM": {
+      "price": 243.47,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 235.62,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "ICL.TA": {
+      "price": 14.24,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:30:00+02:00",
+      "previousClose": 14.04,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "ILS=X": {
+      "price": 3.3174,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T18:48:28+00:00",
+      "previousClose": 3.3519,
+      "exchange": "CCY",
+      "state": "open"
+    },
+    "INTC": {
+      "price": 54.47,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 54.8,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "INTU": {
+      "price": 271.72,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 279.42,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "ISRG": {
+      "price": 427.18,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 434.46,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "JNJ": {
+      "price": 273.94,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 276.46,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "JPM": {
+      "price": 316.74,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 317.1,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "KO": {
+      "price": 97.59,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 97.62,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "LIN": {
+      "price": 524.61,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 516.83,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "LLY": {
+      "price": 1392.22,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:16-05:00",
+      "previousClose": 1407.59,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "LMT": {
+      "price": 599.24,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 586.63,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "LOW": {
+      "price": 235.65,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:07-05:00",
+      "previousClose": 231.04,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "LRCX": {
+      "price": 185.01,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 196.16,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "LUMI.TA": {
+      "price": 72.49,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:25:07+02:00",
+      "previousClose": 71.26,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "MA": {
+      "price": 659.97,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 647.44,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "MCD": {
+      "price": 283.5,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 280.7,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "MDLZ": {
+      "price": 67.81,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 67.01,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "MDT": {
+      "price": 96.06,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 96.13,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "META": {
+      "price": 609.89,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 589.82,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "MGDL.TA": {
+      "price": 18.16,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:28:49+02:00",
+      "previousClose": 17.53,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "MGOR.TA": {
+      "price": 433.9,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 419.0,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "MLSR.TA": {
+      "price": 412.0,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 391.8,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "MMHD.TA": {
+      "price": 481.0,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:27:01+02:00",
+      "previousClose": 464.2,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "MMM": {
+      "price": 189.83,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:01:49-05:00",
+      "previousClose": 187.14,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "MO": {
+      "price": 76.28,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:06-05:00",
+      "previousClose": 74.82,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "MRK": {
+      "price": 140.29,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:58-05:00",
+      "previousClose": 141.57,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "MS": {
+      "price": 167.55,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:48-05:00",
+      "previousClose": 168.79,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "MSFT": {
+      "price": 489.93,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 496.13,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "MU": {
+      "price": 601.25,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 630.073,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "MZTF.TA": {
+      "price": 204.9,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:28:22+02:00",
+      "previousClose": 201.8,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "NEE": {
+      "price": 85.41,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 84.58,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "NFLX": {
+      "price": 59.41,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 58.87,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "NICE.TA": {
+      "price": 303.0,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:29:26+02:00",
+      "previousClose": 302.9,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "NOW": {
+      "price": 92.16,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 91.74,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "NVDA": {
+      "price": 149.3,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 155.38,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "NVMI.TA": {
+      "price": 985.5,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:28:20+02:00",
+      "previousClose": 932.3,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "NVPT.TA": {
+      "price": 106.4,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:29:52+02:00",
+      "previousClose": 106.0,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "NWMD.TA": {
+      "price": 16.83,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 17.24,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "NXSN.TA": {
+      "price": 174.8,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:56+02:00",
+      "previousClose": 166.7,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "OPCE.TA": {
+      "price": 90.35,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:26:29+02:00",
+      "previousClose": 89.2,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "ORA.TA": {
+      "price": 276.0,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:27:56+02:00",
+      "previousClose": 273.1,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "ORCL": {
+      "price": 103.88,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:32-05:00",
+      "previousClose": 109.5,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "PANW": {
+      "price": 356.14,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 352.99,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "PEP": {
+      "price": 143.93,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 142.68,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "PFE": {
+      "price": 28.46,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:01:18-05:00",
+      "previousClose": 28.46,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "PG": {
+      "price": 173.23,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:03:03-05:00",
+      "previousClose": 172.47,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "PHOE.TA": {
+      "price": 167.1,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:10+02:00",
+      "previousClose": 162.0,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "PLTR": {
+      "price": 163.59,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 161.18,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "PM": {
+      "price": 184.32,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 183.95,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "POLI.TA": {
+      "price": 71.71,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 69.82,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "QCOM": {
+      "price": 168.66,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 164.96,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "RTX": {
+      "price": 196.19,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 195.33,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "SBUX": {
+      "price": 107.74,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 106.38,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "SCHW": {
+      "price": 93.45,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 93.91,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "SNDK": {
+      "price": 73.61,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 77.95,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "SO": {
+      "price": 95.0,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:01:28-05:00",
+      "previousClose": 94.11,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "SPEN.TA": {
+      "price": 39.26,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:25:45+02:00",
+      "previousClose": 38.3,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "STRS.TA": {
+      "price": 114.3,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:26:34+02:00",
+      "previousClose": 115.7,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "T": {
+      "price": 22.97,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:11-05:00",
+      "previousClose": 22.88,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "TASE.TA": {
+      "price": 127.0,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:24:09+02:00",
+      "previousClose": 120.6,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "TEVA.TA": {
+      "price": 131.1,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:28:37+02:00",
+      "previousClose": 132.9,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "TMO": {
+      "price": 685.52,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 695.62,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "TMUS": {
+      "price": 166.25,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 166.13,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "TSEM.TA": {
+      "price": 413.8,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T17:29:28+02:00",
+      "previousClose": 384.5,
+      "exchange": "TLV",
+      "state": "closed"
+    },
+    "TSLA": {
+      "price": 380.14,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 384.68,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "TXN": {
+      "price": 270.19,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 258.44,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "UBER": {
+      "price": 66.35,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 64.7,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "UNH": {
+      "price": 346.19,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 341.88,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "UNP": {
+      "price": 298.38,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 290.83,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "UPS": {
+      "price": 111.47,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:02:38-05:00",
+      "previousClose": 110.83,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "USB": {
+      "price": 58.55,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 58.07,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "V": {
+      "price": 424.39,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 416.78,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "VZ": {
+      "price": 47.28,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:02-05:00",
+      "previousClose": 47.16,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "WFC": {
+      "price": 80.94,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:03:29-05:00",
+      "previousClose": 81.19,
+      "exchange": "NYQ",
+      "state": "closed"
+    },
+    "WMT": {
+      "price": 131.94,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:00:01-05:00",
+      "previousClose": 132.31,
+      "exchange": "NMS",
+      "state": "closed"
+    },
+    "XOM": {
+      "price": 158.08,
+      "currency": "USD",
+      "regularMarketTime": "2026-11-25T16:03:33-05:00",
+      "previousClose": 158.23,
+      "exchange": "NYQ",
+      "state": "closed"
+    }
+  }
+}

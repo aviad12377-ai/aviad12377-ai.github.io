@@ -1,0 +1,735 @@
+{
+  "sources": {
+    "ta35": "Tel Aviv Stock Exchange TA-35 constituents as of 2026-11-26, cross-checked against the Bizportal TA-35 composition page dated 26/11/2026 (35 names), Finsights (updated 2026-11-06, source: TASE composition lists; last reconstitution 06-11-2026: Doral and El Al entered, Shufersal exited), and whichindex.com members as of 2026-11-25 (tickers from TASE TA-35 components). Yahoo Finance symbols use the .TA suffix. The TASE listing of Palo Alto Networks uses ticker CYBR (Yahoo: CYBR.TA), not PANW.TA; confirmed by company/TASE announcements of the 23.2.2026 dual listing under CYBR and Yahoo Finance search (CYBR.TA, TLV). NASDAQ PANW remains in the S&P 100 group.",
+    "sp100": "S&P 100 components as of 2026-09-21 from the Wikipedia S&P 100 components table, cited there to the iShares S&P 100 ETF (OEF). 101 tickers because Alphabet has GOOGL and GOOG. Yahoo Finance uses BRK-B for Berkshire Hathaway Class B (Wikipedia lists BRK.B).",
+    "banks": "The five major Israeli banks requested for the picker, all of which are also TA-35 constituents: LUMI, POLI, DSCT, MZTF, FIBI (.TA)."
+  },
+  "fx": [
+    {
+      "symbol": "ILS=X",
+      "name": "USD/ILS",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "EURILS=X",
+      "name": "EUR/ILS",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "EURUSD=X",
+      "name": "EUR/USD",
+      "currency": "USD"
+    }
+  ],
+  "banks": [
+    {
+      "symbol": "LUMI.TA",
+      "name": "לאומי",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "POLI.TA",
+      "name": "פועלים",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "DSCT.TA",
+      "name": "דיסקונט",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "MZTF.TA",
+      "name": "מזרחי טפחות",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "FIBI.TA",
+      "name": "בינלאומי",
+      "currency": "ILS"
+    }
+  ],
+  "ta35": [
+    {
+      "symbol": "OPCE.TA",
+      "name": "או.פי.סי אנרגיה",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "ORA.TA",
+      "name": "אורמת",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "ICL.TA",
+      "name": "איי.סי.אל",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "ELAL.TA",
+      "name": "אל על",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "ESLT.TA",
+      "name": "אלביט מערכות",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "ENLT.TA",
+      "name": "אנלייט אנרגיה",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "BEZQ.TA",
+      "name": "בזק",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "BIG.TA",
+      "name": "ביג",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "FIBI.TA",
+      "name": "בינלאומי",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "DORL.TA",
+      "name": "דוראל אנרגיה",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "DSCT.TA",
+      "name": "דיסקונט",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "DLEKG.TA",
+      "name": "דלק קבוצה",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "TASE.TA",
+      "name": "הבורסה לניירות ערך",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "PHOE.TA",
+      "name": "הפניקס",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "HARL.TA",
+      "name": "הראל השקעות",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "TSEM.TA",
+      "name": "טאואר",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "TEVA.TA",
+      "name": "טבע",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "CLIS.TA",
+      "name": "כלל ביטוח",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "LUMI.TA",
+      "name": "לאומי",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "MGDL.TA",
+      "name": "מגדל ביטוח",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "MGOR.TA",
+      "name": "מגה אור",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "MZTF.TA",
+      "name": "מזרחי טפחות",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "MLSR.TA",
+      "name": "מליסרון",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "MMHD.TA",
+      "name": "מנורה מבטחים",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "NVPT.TA",
+      "name": "נאוויטס פטרוליום",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "NVMI.TA",
+      "name": "נובה",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "NWMD.TA",
+      "name": "ניו-מד אנרג'י",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "NICE.TA",
+      "name": "נייס",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "NXSN.TA",
+      "name": "נקסט ויז'ן",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "AZRG.TA",
+      "name": "עזריאלי",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "CYBR.TA",
+      "name": "פאלו אלטו",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "POLI.TA",
+      "name": "פועלים",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "CAMT.TA",
+      "name": "קמטק",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "STRS.TA",
+      "name": "שטראוס",
+      "currency": "ILS"
+    },
+    {
+      "symbol": "SPEN.TA",
+      "name": "שפיר הנדסה",
+      "currency": "ILS"
+    }
+  ],
+  "sp100": [
+    {
+      "symbol": "AAPL",
+      "name": "Apple",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ABBV",
+      "name": "AbbVie",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ABT",
+      "name": "Abbott",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ACN",
+      "name": "Accenture",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ADBE",
+      "name": "Adobe",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AMAT",
+      "name": "Applied Materials",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AMD",
+      "name": "AMD",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AMGN",
+      "name": "Amgen",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AMT",
+      "name": "American Tower",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ANET",
+      "name": "Arista Networks",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AVGO",
+      "name": "Broadcom",
+      "currency": "USD"
+    },
+    {
+      "symbol": "AXP",
+      "name": "American Express",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BA",
+      "name": "Boeing",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BKNG",
+      "name": "Booking",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BLK",
+      "name": "BlackRock",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BMY",
+      "name": "Bristol Myers Squibb",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BNY",
+      "name": "BNY Mellon",
+      "currency": "USD"
+    },
+    {
+      "symbol": "BRK-B",
+      "name": "Berkshire Hathaway",
+      "currency": "USD"
+    },
+    {
+      "symbol": "C",
+      "name": "Citigroup",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CAT",
+      "name": "Caterpillar",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CMCSA",
+      "name": "Comcast",
+      "currency": "USD"
+    },
+    {
+      "symbol": "COF",
+      "name": "Capital One",
+      "currency": "USD"
+    },
+    {
+      "symbol": "COP",
+      "name": "ConocoPhillips",
+      "currency": "USD"
+    },
+    {
+      "symbol": "COST",
+      "name": "Costco",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CRM",
+      "name": "Salesforce",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CSCO",
+      "name": "Cisco",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CVS",
+      "name": "CVS Health",
+      "currency": "USD"
+    },
+    {
+      "symbol": "CVX",
+      "name": "Chevron",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DE",
+      "name": "Deere",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DELL",
+      "name": "Dell",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DHR",
+      "name": "Danaher",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DIS",
+      "name": "Disney",
+      "currency": "USD"
+    },
+    {
+      "symbol": "DUK",
+      "name": "Duke Energy",
+      "currency": "USD"
+    },
+    {
+      "symbol": "EMR",
+      "name": "Emerson",
+      "currency": "USD"
+    },
+    {
+      "symbol": "FDX",
+      "name": "FedEx",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GD",
+      "name": "General Dynamics",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GE",
+      "name": "GE Aerospace",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GEV",
+      "name": "GE Vernova",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GILD",
+      "name": "Gilead",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GM",
+      "name": "General Motors",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GOOG",
+      "name": "Alphabet (C)",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet (A)",
+      "currency": "USD"
+    },
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "currency": "USD"
+    },
+    {
+      "symbol": "HD",
+      "name": "Home Depot",
+      "currency": "USD"
+    },
+    {
+      "symbol": "IBM",
+      "name": "IBM",
+      "currency": "USD"
+    },
+    {
+      "symbol": "INTC",
+      "name": "Intel",
+      "currency": "USD"
+    },
+    {
+      "symbol": "INTU",
+      "name": "Intuit",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ISRG",
+      "name": "Intuitive Surgical",
+      "currency": "USD"
+    },
+    {
+      "symbol": "JNJ",
+      "name": "Johnson & Johnson",
+      "currency": "USD"
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan Chase",
+      "currency": "USD"
+    },
+    {
+      "symbol": "KO",
+      "name": "Coca-Cola",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LIN",
+      "name": "Linde",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LLY",
+      "name": "Eli Lilly",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LMT",
+      "name": "Lockheed Martin",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LOW",
+      "name": "Lowe's",
+      "currency": "USD"
+    },
+    {
+      "symbol": "LRCX",
+      "name": "Lam Research",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MA",
+      "name": "Mastercard",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MCD",
+      "name": "McDonald's",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MDLZ",
+      "name": "Mondelez",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MDT",
+      "name": "Medtronic",
+      "currency": "USD"
+    },
+    {
+      "symbol": "META",
+      "name": "Meta",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MMM",
+      "name": "3M",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MO",
+      "name": "Altria",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MRK",
+      "name": "Merck",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MS",
+      "name": "Morgan Stanley",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "currency": "USD"
+    },
+    {
+      "symbol": "MU",
+      "name": "Micron",
+      "currency": "USD"
+    },
+    {
+      "symbol": "NEE",
+      "name": "NextEra Energy",
+      "currency": "USD"
+    },
+    {
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "currency": "USD"
+    },
+    {
+      "symbol": "NOW",
+      "name": "ServiceNow",
+      "currency": "USD"
+    },
+    {
+      "symbol": "NVDA",
+      "name": "Nvidia",
+      "currency": "USD"
+    },
+    {
+      "symbol": "ORCL",
+      "name": "Oracle",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PEP",
+      "name": "PepsiCo",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PFE",
+      "name": "Pfizer",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PG",
+      "name": "Procter & Gamble",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PLTR",
+      "name": "Palantir",
+      "currency": "USD"
+    },
+    {
+      "symbol": "PM",
+      "name": "Philip Morris",
+      "currency": "USD"
+    },
+    {
+      "symbol": "QCOM",
+      "name": "Qualcomm",
+      "currency": "USD"
+    },
+    {
+      "symbol": "RTX",
+      "name": "RTX",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SBUX",
+      "name": "Starbucks",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SCHW",
+      "name": "Charles Schwab",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SNDK",
+      "name": "Sandisk",
+      "currency": "USD"
+    },
+    {
+      "symbol": "SO",
+      "name": "Southern Company",
+      "currency": "USD"
+    },
+    {
+      "symbol": "T",
+      "name": "AT&T",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TMO",
+      "name": "Thermo Fisher",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TMUS",
+      "name": "T-Mobile",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "currency": "USD"
+    },
+    {
+      "symbol": "TXN",
+      "name": "Texas Instruments",
+      "currency": "USD"
+    },
+    {
+      "symbol": "UBER",
+      "name": "Uber",
+      "currency": "USD"
+    },
+    {
+      "symbol": "UNH",
+      "name": "UnitedHealth",
+      "currency": "USD"
+    },
+    {
+      "symbol": "UNP",
+      "name": "Union Pacific",
+      "currency": "USD"
+    },
+    {
+      "symbol": "UPS",
+      "name": "UPS",
+      "currency": "USD"
+    },
+    {
+      "symbol": "USB",
+      "name": "U.S. Bancorp",
+      "currency": "USD"
+    },
+    {
+      "symbol": "V",
+      "name": "Visa",
+      "currency": "USD"
+    },
+    {
+      "symbol": "VZ",
+      "name": "Verizon",
+      "currency": "USD"
+    },
+    {
+      "symbol": "WFC",
+      "name": "Wells Fargo",
+      "currency": "USD"
+    },
+    {
+      "symbol": "WMT",
+      "name": "Walmart",
+      "currency": "USD"
+    },
+    {
+      "symbol": "XOM",
+      "name": "ExxonMobil",
+      "currency": "USD"
+    }
+  ]
+}
