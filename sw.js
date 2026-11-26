@@ -11,6 +11,7 @@ self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Pr
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== self.location.origin) return;
+  if (/^\/(next|v2)(\/|$)/.test(url.pathname)) return; // /next/ and /v2/ have their own service worker / no offline copy here
   if (/\/(prices|funds)\.json$/.test(url.pathname)) return; // always live from network
   if (/\/data\/(news-hub|breaking)\.json$|\/data\/briefs\//.test(url.pathname)) return; // news and briefs always live
   if (/\/admin\.html$/.test(url.pathname)) return;           // never keep the admin page offline
