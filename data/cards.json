@@ -268,12 +268,740 @@
           "asOf": "2026-06"
         }
       ]
+    },
+    {
+      "id": "leumi-international",
+      "issuerId": "leumi",
+      "issuerHe": "לאומי",
+      "bankHe": "לאומי",
+      "bankId": "leumi",
+      "nameHe": "כרטיס בינלאומי (ויזה / מאסטרקארד)",
+      "kind": "standard",
+      "profiles": [
+        "general",
+        "abroad"
+      ],
+      "monthlyFee": 18.4,
+      "fxFeePct": 3.0,
+      "cashAbroadPct": 3.0,
+      "rewards": null,
+      "feeTiersHe": "הטבת PAYBACK: החזר 30% מדמי הכרטיס במחזור 5,000 ש״ח ומעלה במועד החיוב הקודם, והחזר מלא מ־10,000 ש״ח. ההטבה אינה חלה על מסלול תעופה, מועדון ייעודי, דביט, כרטיסים נטענים, UNITED, FLYCARD ו־FIRST.",
+      "benefitsHe": [
+        "דמי כרטיס 18.40 ש״ח לחודש לפי תעריפון לאומי ליחידים, מעודכן ל־23.11.2026.",
+        "עמלת עסקאות במט״ח לפי התעריפון: 3%. משיכת מזומן בחו״ל: 3%.",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה; מוצג להשוואת דמי כרטיס ועמלת המרה."
+      ],
+      "sources": [
+        {
+          "label": "תעריפון לאומי ליחידים ועסקים קטנים, חלק 6, מעודכן ל־23.11.2026",
+          "url": "https://www.bankleumi.co.il/static-files/Commissions_Leumi/AmlotYechidimL.pdf",
+          "asOf": "2026-11-23"
+        },
+        {
+          "label": "דף תעריפי עמלות, בנק לאומי",
+          "url": "https://www.leumi.co.il/he/economic-info/commissions_and_fees",
+          "asOf": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "leumi-gold",
+      "issuerId": "leumi",
+      "issuerHe": "לאומי",
+      "bankHe": "לאומי",
+      "bankId": "leumi",
+      "nameHe": "כרטיס זהב (ויזה / מאסטרקארד)",
+      "kind": "standard",
+      "profiles": [
+        "general",
+        "abroad"
+      ],
+      "monthlyFee": 19.7,
+      "fxFeePct": 3.0,
+      "cashAbroadPct": 3.0,
+      "rewards": null,
+      "feeTiersHe": "הטבת PAYBACK: החזר 30% מדמי הכרטיס במחזור 5,000 ש״ח, והחזר מלא מ־10,000 ש״ח, באותם סייגים שבתעריפון.",
+      "benefitsHe": [
+        "דמי כרטיס 19.70 ש״ח לחודש לפי תעריפון לאומי, מעודכן ל־23.11.2026.",
+        "עמלת עסקאות במט״ח ומשיכת מזומן בחו״ל: 3% לפי התעריפון.",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה."
+      ],
+      "sources": [
+        {
+          "label": "תעריפון לאומי ליחידים ועסקים קטנים, חלק 6, מעודכן ל־23.11.2026",
+          "url": "https://www.bankleumi.co.il/static-files/Commissions_Leumi/AmlotYechidimL.pdf",
+          "asOf": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "leumi-debit",
+      "issuerId": "leumi",
+      "issuerHe": "לאומי",
+      "bankHe": "לאומי",
+      "bankId": "leumi",
+      "nameHe": "דביט (חיוב מיידי)",
+      "kind": "debit",
+      "profiles": [
+        "general"
+      ],
+      "monthlyFee": 7.0,
+      "fxFeePct": 3.0,
+      "cashAbroadPct": 3.0,
+      "rewards": null,
+      "benefitsHe": [
+        "דמי כרטיס 7 ש״ח לחודש, עמלה בפיקוח, לפי תעריפון לאומי מעודכן ל־23.11.2026.",
+        "עמלת עסקאות במט״ח ומשיכת מזומן בחו״ל: 3% לפי התעריפון, אלא אם פורסם אחרת למוצר מסוים.",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה. הטבת PAYBACK אינה חלה על דביט."
+      ],
+      "sources": [
+        {
+          "label": "תעריפון לאומי ליחידים ועסקים קטנים, חלק 6, מעודכן ל־23.11.2026",
+          "url": "https://www.bankleumi.co.il/static-files/Commissions_Leumi/AmlotYechidimL.pdf",
+          "asOf": "2026-11-23"
+        },
+        {
+          "label": "דף כרטיסי אשראי, בנק לאומי",
+          "url": "https://www.leumi.co.il/he/credit-cards",
+          "asOf": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "leumi-flyall",
+      "issuerId": "leumi",
+      "issuerHe": "לאומי",
+      "bankHe": "לאומי",
+      "bankId": "leumi",
+      "nameHe": "FlyAll",
+      "kind": "miles",
+      "profiles": [
+        "abroad",
+        "general"
+      ],
+      "monthlyFee": 17.9,
+      "year1MonthlyFee": 0,
+      "year1FeeCycles": 12,
+      "fxFeePct": 2.5,
+      "fxFeeYear1Pct": 1.0,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "feeNoteHe": "פטור מדמי כרטיס בשנה הראשונה לפי עמוד המוצר של לאומי. מהשנה השנייה: 17.90 ש״ח לחודש לפי סעיף דיינרס FLYALL בתעריפון לאומי, מעודכן ל־23.11.2026. עמלת מט״ח בחישוב השוטף: 2.5% לפי עמוד המוצר; בשנה הראשונה 1%. משיכת מזומן בחו״ל לא פורטה בנפרד בעמוד המוצר.",
+      "benefitsHe": [
+        "צבירה לפי עמוד המוצר: 1% מהרכישות בשנה הראשונה ו־0.75% מהשנה השנייה, למימוש באתר FlyAll לטיסות ומלונות. הערך לא הומר אוטומטית לשקלים בחישוב.",
+        "עמלת מט״ח: 1% בשנה הראשונה ו־2.5% מהשנה השנייה, לפי עמוד כרטיסי לאומי.",
+        "פטור מדמי כרטיס בשנה הראשונה."
+      ],
+      "sources": [
+        {
+          "label": "בנק לאומי, עמוד כרטיסי אשראי — FlyAll",
+          "url": "https://www.leumi.co.il/he/credit-cards",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון לאומי ליחידים, חלק 6 — דיינרס FLYALL 17.90 ש״ח, מעודכן ל־23.11.2026",
+          "url": "https://www.bankleumi.co.il/static-files/Commissions_Leumi/AmlotYechidimL.pdf",
+          "asOf": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "leumi-flyall-premium",
+      "issuerId": "leumi",
+      "issuerHe": "לאומי",
+      "bankHe": "לאומי",
+      "bankId": "leumi",
+      "nameHe": "FlyAll Premium",
+      "kind": "miles",
+      "profiles": [
+        "abroad"
+      ],
+      "monthlyFee": 24.9,
+      "year1MonthlyFee": 0,
+      "year1FeeCycles": 12,
+      "fxFeePct": 1.8,
+      "fxFeeYear1Pct": 1.0,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "feeNoteHe": "פטור מדמי כרטיס בשנה הראשונה לפי עמוד המוצר. מהשנה השנייה: 24.90 ש״ח לפי סעיף דיינרס FLYALL PREMIUM בתעריפון לאומי, מעודכן ל־23.11.2026. עמלת מט״ח שוטפת בחישוב: 1.8%; בשנה הראשונה 1%.",
+      "benefitsHe": [
+        "צבירה לפי עמוד המוצר: 1.2% בשנה הראשונה ו־1% מהשנה השנייה, למימוש באתר FlyAll. הערך לא הומר לשקלים בחישוב.",
+        "עמלת מט״ח: 1% בשנה הראשונה ו־1.8% מהשנה השנייה.",
+        "הטבת כניסה לטרקלין ASPIRE, לפי עמוד המוצר."
+      ],
+      "sources": [
+        {
+          "label": "בנק לאומי, עמוד כרטיסי אשראי — FlyAll Premium",
+          "url": "https://www.leumi.co.il/he/credit-cards",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון לאומי ליחידים, חלק 6 — דיינרס FLYALL PREMIUM 24.90 ש״ח, מעודכן ל־23.11.2026",
+          "url": "https://www.bankleumi.co.il/static-files/Commissions_Leumi/AmlotYechidimL.pdf",
+          "asOf": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "leumi-flycard",
+      "issuerId": "leumi",
+      "issuerHe": "לאומי",
+      "bankHe": "לאומי",
+      "bankId": "leumi",
+      "nameHe": "FlyCard",
+      "kind": "miles",
+      "profiles": [
+        "abroad"
+      ],
+      "monthlyFee": 19.9,
+      "fxFeePct": 2.5,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "feeNoteHe": "דמי כרטיס 19.90 ש״ח לפי תעריפון לאומי (FLYCARD), מעודכן ל־23.11.2026. עמלת מט״ח 2.5% לפי עמוד המוצר, במקום 3% שבתעריפון הכללי. משיכת מזומן בחו״ל לא פורטה בנפרד בעמוד המוצר.",
+      "benefitsHe": [
+        "צבירת נקודות הנוסע המתמיד: כל 5 ש״ח = 1 נקודה, וכל 10 ש״ח = 1 נקודה בענפים מוחרגים, בכפוף לתקנון FLYCARD. ערך הנקודות לא הומר לשקלים.",
+        "עמלת עסקאות במט״ח 2.5% לפי עמוד כרטיסי לאומי."
+      ],
+      "sources": [
+        {
+          "label": "בנק לאומי, עמוד כרטיסי אשראי — FlyCard",
+          "url": "https://www.leumi.co.il/he/credit-cards",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון לאומי ליחידים, חלק 6 — FLYCARD 19.90 ש״ח, מעודכן ל־23.11.2026",
+          "url": "https://www.bankleumi.co.il/static-files/Commissions_Leumi/AmlotYechidimL.pdf",
+          "asOf": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "leumi-first",
+      "issuerId": "leumi",
+      "issuerHe": "לאומי",
+      "bankHe": "לאומי",
+      "bankId": "leumi",
+      "nameHe": "First",
+      "kind": "miles",
+      "profiles": [
+        "abroad"
+      ],
+      "monthlyFee": 40.0,
+      "fxFeePct": 2.0,
+      "cashAbroadPct": 2.0,
+      "rewards": null,
+      "benefitsHe": [
+        "דמי כרטיס 40 ש״ח לחודש לפי תעריפון לאומי, מעודכן ל־23.11.2026. הטבת PAYBACK אינה חלה על FIRST.",
+        "עמלת עסקאות במט״ח 2% לפי התעריפון וגם לפי עמוד המוצר. משיכת מזומן בחו״ל: 2% לפי התעריפון.",
+        "צבירת נקודות הנוסע המתמיד כל 5 ש״ח = 1 נקודה, בכפוף לתקנון. ערך הנקודות לא הומר לשקלים."
+      ],
+      "sources": [
+        {
+          "label": "בנק לאומי, עמוד כרטיסי אשראי — First",
+          "url": "https://www.leumi.co.il/he/credit-cards",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון לאומי ליחידים, חלק 6 — FIRST 40 ש״ח ועמלת מט״ח 2%, מעודכן ל־23.11.2026",
+          "url": "https://www.bankleumi.co.il/static-files/Commissions_Leumi/AmlotYechidimL.pdf",
+          "asOf": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "leumi-hot",
+      "issuerId": "leumi",
+      "issuerHe": "לאומי",
+      "bankHe": "לאומי",
+      "bankId": "leumi",
+      "nameHe": "מועדון צרכנות הוט",
+      "kind": "club",
+      "profiles": [
+        "general",
+        "abroad"
+      ],
+      "monthlyFee": 0,
+      "fxFeePct": 1.0,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "eligibilityHe": "כרטיס מועדון הוט ללקוחות לאומי, לפי עמוד כרטיסי הבנק.",
+      "benefitsHe": [
+        "פטור מדמי כרטיס, לפי עמוד כרטיסי לאומי שנבדק ב־26.11.2026.",
+        "עמלת עסקאות במט״ח 1%, לפי אותו עמוד. משיכת מזומן בחו״ל לא פורטה שם.",
+        "הטבות מועדון הוט במעמד החיוב לא תומחו לשקלים בחישוב, כי אין שיעור החזר קבוע שפורסם."
+      ],
+      "sources": [
+        {
+          "label": "בנק לאומי, עמוד כרטיסי אשראי — מועדון צרכנות הוט",
+          "url": "https://www.leumi.co.il/he/credit-cards",
+          "asOf": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "hapoalim-isracard",
+      "issuerId": "hapoalim",
+      "issuerHe": "הפועלים",
+      "bankHe": "הפועלים",
+      "bankId": "hapoalim",
+      "nameHe": "ישראכרט (לשימוש בישראל בלבד)",
+      "kind": "standard",
+      "profiles": [
+        "general"
+      ],
+      "monthlyFee": 13.16,
+      "fxFeePct": null,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "feeTiersHe": "ביעד חיוב חודשי 5,000 ש״ח: הנחה 20% (10.52 ש״ח). ביעד 8,000 ש״ח: פטור מלא. לפי נספח כרטיסים בנקאיים, נכון ל־8.3.2026.",
+      "benefitsHe": [
+        "דמי כרטיס 13.16 ש״ח לחודש לפי תעריפון הפועלים, נכון ל־8.3.2026.",
+        "הכרטיס לשימוש בישראל בלבד לפי התעריפון; עמלת מט״ח לא נכללה בחישוב.",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה."
+      ],
+      "sources": [
+        {
+          "label": "תעריפון בנק הפועלים, נספח כרטיסים בנקאיים, נכון ל־8.3.2026",
+          "url": "https://www.bankhapoalim.co.il/sites/default/files/media/PDFS/Taarifon/united-2026.pdf",
+          "asOf": "2026-03-08"
+        }
+      ]
+    },
+    {
+      "id": "hapoalim-mastercard",
+      "issuerId": "hapoalim",
+      "issuerHe": "הפועלים",
+      "bankHe": "הפועלים",
+      "bankId": "hapoalim",
+      "nameHe": "מאסטרקארד / ויזה",
+      "kind": "standard",
+      "profiles": [
+        "general",
+        "abroad"
+      ],
+      "monthlyFee": 17.22,
+      "fxFeePct": 2.9,
+      "cashAbroadPct": 3.3,
+      "rewards": null,
+      "feeTiersHe": "ביעד חיוב חודשי 5,000 ש״ח: הנחה 20% (13.77 ש״ח למאסטרקארד). ביעד 10,000 ש״ח: פטור מלא. לפי נספח הוראות לכרטיסי חיוב, נכון ל־8.3.2026. אותו תעריף בסיס, 17.22 ש״ח, מופיע גם לכרטיס ויזה.",
+      "benefitsHe": [
+        "דמי כרטיס 17.22 ש״ח לחודש לפי תעריפון הפועלים, נכון ל־8.3.2026.",
+        "עמלת עסקאות במט״ח 2.90% (למעט אמקס ודיינרס). משיכת מזומן בחו״ל 3.30%, לפי אותו תעריפון.",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה."
+      ],
+      "sources": [
+        {
+          "label": "תעריפון בנק הפועלים, כרטיסי חיוב ועמלות מט״ח, נכון ל־8.3.2026",
+          "url": "https://www.bankhapoalim.co.il/sites/default/files/media/PDFS/Taarifon/united-2026.pdf",
+          "asOf": "2026-03-08"
+        }
+      ]
+    },
+    {
+      "id": "hapoalim-gold",
+      "issuerId": "hapoalim",
+      "issuerHe": "הפועלים",
+      "bankHe": "הפועלים",
+      "bankId": "hapoalim",
+      "nameHe": "גולד מאסטרקארד / ויזה זהב",
+      "kind": "standard",
+      "profiles": [
+        "general",
+        "abroad"
+      ],
+      "monthlyFee": 19.25,
+      "fxFeePct": 2.9,
+      "cashAbroadPct": 3.3,
+      "rewards": null,
+      "feeTiersHe": "ביעד 5,000 ש״ח: הנחה 20% (15.40 ש״ח). ביעד 10,000 ש״ח: פטור מלא, לפי נספח ההוראות נכון ל־8.3.2026.",
+      "benefitsHe": [
+        "דמי כרטיס 19.25 ש״ח לחודש לפי תעריפון הפועלים, נכון ל־8.3.2026.",
+        "עמלת עסקאות במט״ח 2.90%. משיכת מזומן בחו״ל 3.30%.",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה."
+      ],
+      "sources": [
+        {
+          "label": "תעריפון בנק הפועלים, נספח כרטיסים בנקאיים, נכון ל־8.3.2026",
+          "url": "https://www.bankhapoalim.co.il/sites/default/files/media/PDFS/Taarifon/united-2026.pdf",
+          "asOf": "2026-03-08"
+        }
+      ]
+    },
+    {
+      "id": "discount-cal-international",
+      "issuerId": "cal",
+      "issuerHe": "כאל",
+      "bankHe": "דיסקונט",
+      "bankId": "discount",
+      "nameHe": "כרטיס בינלאומי / בייסיק (כאל)",
+      "kind": "standard",
+      "profiles": [
+        "general",
+        "abroad"
+      ],
+      "monthlyFee": 19.8,
+      "fxFeePct": 3.0,
+      "cashAbroadPct": 3.0,
+      "rewards": null,
+      "benefitsHe": [
+        "דמי כרטיס 19.80 ש״ח לחודש לפי נספח ד׳(1) לתעריפון דיסקונט (כאל), בקובץ card_fees מנובמבר 2026. התעריף זהה לרוב סוגי ויזה, מאסטרקארד ודיינרס הרגילים.",
+        "עמלת עסקאות במט״ח 3% ומשיכת מזומן בחו״ל 3%, לפי חלק 6 של תעריפון דיסקונט (כאל).",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה. הבנק רשאי לגבות פחות מהתעריפון; בחישוב נספר התעריף המפורסם."
+      ],
+      "sources": [
+        {
+          "label": "תעריפון דיסקונט, נספח ד׳ — דמי כרטיסים כאל, נובמבר 2026",
+          "url": "https://www.discountbank.co.il/media/0pslrs4z/card_fees-11026.pdf",
+          "asOf": "2026-11"
+        },
+        {
+          "label": "תעריפון דיסקונט, חלק 6 כרטיסי חיוב כאל — עמלת מט״ח 3%",
+          "url": "https://www.discountbank.co.il/media/vcchd5np/ח6-כרטיסי-חיוב-12112026.pdf",
+          "asOf": "2026-11"
+        },
+        {
+          "label": "דף תעריפון עמלות, בנק דיסקונט",
+          "url": "https://www.discountbank.co.il/private/general-information/charges-tariff/",
+          "asOf": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "discount-debit",
+      "issuerId": "cal",
+      "issuerHe": "כאל",
+      "bankHe": "דיסקונט",
+      "bankId": "discount",
+      "nameHe": "חיוב מיידי בינלאומי",
+      "kind": "debit",
+      "profiles": [
+        "general"
+      ],
+      "monthlyFee": 7.0,
+      "fxFeePct": 3.0,
+      "cashAbroadPct": 3.0,
+      "rewards": null,
+      "benefitsHe": [
+        "דמי כרטיס 7 ש״ח לחודש, עמלה בפיקוח, לפי עמוד המוצר של דיסקונט ולפי נספח ד׳ בתעריפון.",
+        "עמלת מט״ח ומשיכת מזומן בחו״ל: 3% לפי חלק 6 של תעריפון דיסקונט (כאל).",
+        "אין הטבות מפתח דיסקונט בכרטיס חיוב מיידי, לפי עמוד המוצר."
+      ],
+      "sources": [
+        {
+          "label": "דיסקונט, עמוד כרטיס חיוב מיידי בינלאומי",
+          "url": "https://www.discountbank.co.il/private/credit-cards/types-of-credit-cards/charge/debit/",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון דיסקונט, נספח ד׳ — דביט 7 ש״ח, נובמבר 2026",
+          "url": "https://www.discountbank.co.il/media/0pslrs4z/card_fees-11026.pdf",
+          "asOf": "2026-11"
+        }
+      ]
+    },
+    {
+      "id": "discount-flycard",
+      "issuerId": "cal",
+      "issuerHe": "כאל",
+      "bankHe": "דיסקונט",
+      "bankId": "discount",
+      "nameHe": "FLY CARD מפתח דיסקונט",
+      "kind": "miles",
+      "profiles": [
+        "abroad"
+      ],
+      "monthlyFee": 17.9,
+      "fxFeePct": 2.5,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "feeNoteHe": "דמי כרטיס 17.90 ש״ח לפי עמוד המוצר וגם לפי נספח ד׳ (דיינרס Fly Card). הנחה של 50% לכרטיס השני באותו חשבון, לפי עמוד המוצר, לא נספרת בחישוב כרטיס בודד. משיכת מזומן בחו״ל לא פורטה בעמוד המוצר.",
+      "benefitsHe": [
+        "צבירת נקודות הנוסע המתמיד: 5 ש״ח = 1 נקודה, ו־10 ש״ח = 1 נקודה במוסדות מדינה, בכפוף לתקנון. ערך הנקודות לא הומר לשקלים.",
+        "עמלת עסקאות במט״ח מופחתת 2.5% לפי עמוד המוצר."
+      ],
+      "sources": [
+        {
+          "label": "דיסקונט, עמוד FLY CARD מפתח דיסקונט",
+          "url": "https://www.discountbank.co.il/private/credit-cards/types-of-credit-cards/diners/fly-card/",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון דיסקונט, נספח ד׳ — דיינרס Fly Card 17.90 ש״ח, נובמבר 2026",
+          "url": "https://www.discountbank.co.il/media/0pslrs4z/card_fees-11026.pdf",
+          "asOf": "2026-11"
+        }
+      ]
+    },
+    {
+      "id": "discount-flycard-premium",
+      "issuerId": "cal",
+      "issuerHe": "כאל",
+      "bankHe": "דיסקונט",
+      "bankId": "discount",
+      "nameHe": "FLY CARD PREMIUM מפתח דיסקונט",
+      "kind": "miles",
+      "profiles": [
+        "abroad"
+      ],
+      "monthlyFee": 34.9,
+      "fxFeePct": 1.8,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "benefitsHe": [
+        "דמי כרטיס 34.90 ש״ח לפי עמוד המוצר ונספח ד׳, נובמבר 2026.",
+        "צבירה: 4 ש״ח = 1 נקודה, 8 ש״ח במוסדות מדינה, 3 ש״ח בעסקאות מט״ח, בכפוף לתקנון. ערך הנקודות לא הומר לשקלים.",
+        "עמלת עסקאות במט״ח מופחתת 1.8% לפי עמוד המוצר."
+      ],
+      "sources": [
+        {
+          "label": "דיסקונט, עמוד FLY CARD PREMIUM מפתח דיסקונט",
+          "url": "https://www.discountbank.co.il/private/credit-cards/types-of-credit-cards/diners/fly-card/",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון דיסקונט, נספח ד׳ — Fly Card Premium 34.90 ש״ח, נובמבר 2026",
+          "url": "https://www.discountbank.co.il/media/0pslrs4z/card_fees-11026.pdf",
+          "asOf": "2026-11"
+        }
+      ]
+    },
+    {
+      "id": "discount-flyall",
+      "issuerId": "cal",
+      "issuerHe": "כאל",
+      "bankHe": "דיסקונט",
+      "bankId": "discount",
+      "nameHe": "FlyAll",
+      "kind": "miles",
+      "profiles": [
+        "abroad",
+        "general"
+      ],
+      "monthlyFee": 17.9,
+      "year1MonthlyFee": 0,
+      "year1FeeCycles": 12,
+      "fxFeePct": 3.0,
+      "fxFeeYear1Pct": 1.0,
+      "cashAbroadPct": 3.0,
+      "rewards": null,
+      "feeNoteHe": "פטור מדמי כרטיס בשנה הראשונה לפי עמוד המוצר. מהשנה השנייה: 17.90 ש״ח לפי נספח ד׳ (Fly All). עמלת מט״ח 1% בשנה הראשונה לפי עמוד המוצר; לאחר מכן לפי התעריפון, 3%. בחישוב השוטף נספרת עמלת התעריפון.",
+      "benefitsHe": [
+        "צבירה לפי עמוד המוצר: 1% בשנה הראשונה ו־0.75% מהשנה השנייה, למימוש באתר FlyAll. הערך לא הומר לשקלים בחישוב.",
+        "פטור מדמי כרטיס בשנה הראשונה. עמלת מט״ח 1% בשנה הראשונה."
+      ],
+      "sources": [
+        {
+          "label": "דיסקונט, עמוד FlyAll",
+          "url": "https://www.discountbank.co.il/private/credit-cards/types-of-credit-cards/fly-all/",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון דיסקונט, נספח ד׳ — Fly All 17.90 ש״ח, נובמבר 2026",
+          "url": "https://www.discountbank.co.il/media/0pslrs4z/card_fees-11026.pdf",
+          "asOf": "2026-11"
+        }
+      ]
+    },
+    {
+      "id": "discount-diners-extra-home",
+      "issuerId": "cal",
+      "issuerHe": "כאל",
+      "bankHe": "דיסקונט",
+      "bankId": "discount",
+      "nameHe": "Diners Extra Home מפתח דיסקונט",
+      "kind": "cashback",
+      "profiles": [
+        "general",
+        "cashback"
+      ],
+      "monthlyFee": 14.9,
+      "fxFeePct": 3.0,
+      "cashAbroadPct": 3.0,
+      "rewards": null,
+      "feeNoteHe": "עמוד המוצר מציין שללקוחות דיסקונט דמי הכרטיס הם 14.90 ש״ח לחודש, במקום 19.80 ש״ח שבתעריפון. בחישוב נספר התעריף שבעמוד המוצר. בתעריפון, השורה היא דיינרס פלטינום אקסטרה הום 19.80 ש״ח.",
+      "benefitsHe": [
+        "החזר 3% על חשבונות בית מפורטים בעמוד המוצר (חשמל, כבלים/לוויין, דלק, Super-Pharm, Be, סלקום TV), עד 84 ש״ח בחודש ועד 1,000 ש״ח בשנה, בכפוף לתקנון. אין שיעור החזר כללי על כל הקניות, ולכן ההחזר לא נכלל בחישוב האוטומטי.",
+        "נדרשת לפחות רכישה אחת בכרטיס בחודש כדי לקבל החזר באותו חודש, לפי עמוד המוצר."
+      ],
+      "sources": [
+        {
+          "label": "דיסקונט, עמוד Diners Extra Home",
+          "url": "https://www.discountbank.co.il/private/credit-cards/types-of-credit-cards/diners/extra/",
+          "asOf": "2026-11-26"
+        },
+        {
+          "label": "תעריפון דיסקונט, נספח ד׳ — דיינרס פלטינום אקסטרה הום 19.80 ש״ח, נובמבר 2026",
+          "url": "https://www.discountbank.co.il/media/0pslrs4z/card_fees-11026.pdf",
+          "asOf": "2026-11"
+        }
+      ]
+    },
+    {
+      "id": "mizrahi-isracard",
+      "issuerId": "isracard",
+      "issuerHe": "ישראכרט",
+      "bankHe": "מזרחי-טפחות",
+      "bankId": "mizrahi",
+      "nameHe": "ישראכרט (לשימוש בישראל בלבד)",
+      "kind": "standard",
+      "profiles": [
+        "general"
+      ],
+      "monthlyFee": 17.22,
+      "fxFeePct": null,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "feeTiersHe": "לפי נספח ד׳1, מעודכן ל־20.10.2026: דמי כרטיס 17.22 ש״ח, ופטור מלא ביעד שימושים חודשי של 8,500 ש״ח.",
+      "benefitsHe": [
+        "דמי כרטיס 17.22 ש״ח לחודש לפי נספח דמי כרטיס ישראכרט של מזרחי-טפחות, מעודכן ל־20.10.2026.",
+        "הכרטיס לשימוש בישראל בלבד לפי הנספח; עמלת מט״ח לא פורסמה בנספח זה ולכן לא נכללה בחישוב.",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה."
+      ],
+      "sources": [
+        {
+          "label": "מזרחי-טפחות, נספח ד׳1 דמי כרטיס ישראכרט, מעודכן ל־20.10.2026",
+          "url": "https://www.mizrahi-tefahot.co.il/media/kartisisracard.pdf",
+          "asOf": "2026-10-20"
+        },
+        {
+          "label": "דף תעריפון, בנק מזרחי-טפחות",
+          "url": "https://www.mizrahi-tefahot.co.il/interest-list/",
+          "asOf": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "mizrahi-mastercard",
+      "issuerId": "isracard",
+      "issuerHe": "ישראכרט",
+      "bankHe": "מזרחי-טפחות",
+      "bankId": "mizrahi",
+      "nameHe": "מאסטרקארד",
+      "kind": "standard",
+      "profiles": [
+        "general",
+        "abroad"
+      ],
+      "monthlyFee": 18.0,
+      "fxFeePct": null,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "feeTiersHe": "לפי נספח ד׳1, מעודכן ל־20.10.2026: 18 ש״ח; ביעד 5,000 ש״ח הנחה ל־14.56 ש״ח; ביעד 11,000 ש״ח פטור מלא.",
+      "benefitsHe": [
+        "דמי כרטיס 18 ש״ח לחודש לפי נספח דמי כרטיס ישראכרט של מזרחי-טפחות, מעודכן ל־20.10.2026.",
+        "עמלת מט״ח לא פורסמה בנספח דמי הכרטיס שנבדק, ולכן אינה נכללת בחישוב.",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה."
+      ],
+      "sources": [
+        {
+          "label": "מזרחי-טפחות, נספח ד׳1 דמי כרטיס ישראכרט, מעודכן ל־20.10.2026",
+          "url": "https://www.mizrahi-tefahot.co.il/media/kartisisracard.pdf",
+          "asOf": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "id": "mizrahi-cal-international",
+      "issuerId": "cal",
+      "issuerHe": "כאל",
+      "bankHe": "מזרחי-טפחות",
+      "bankId": "mizrahi",
+      "nameHe": "ויזה / מאסטרקארד בינלאומי (כאל)",
+      "kind": "standard",
+      "profiles": [
+        "general",
+        "abroad"
+      ],
+      "monthlyFee": 18.0,
+      "fxFeePct": null,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "benefitsHe": [
+        "דמי כרטיס 18 ש״ח לחודש לויזה בינלאומי ולמאסטרקארד בינלאומי, לפי נספח ד׳3 דמי כרטיס כ.א.ל של מזרחי-טפחות, מעודכן ל־1.10.2026.",
+        "עמלת מט״ח לא פורסמה בנספח דמי הכרטיס שנבדק, ולכן אינה נכללת בחישוב.",
+        "אין תוכנית החזר כספי כללית שפורסמה לכרטיס זה."
+      ],
+      "sources": [
+        {
+          "label": "מזרחי-טפחות, נספח ד׳3 דמי כרטיס כ.א.ל, מעודכן ל־1.10.2026",
+          "url": "https://www.mizrahi-tefahot.co.il/media/kartiscal.pdf",
+          "asOf": "2026-10-01"
+        },
+        {
+          "label": "דף תעריפון, בנק מזרחי-טפחות",
+          "url": "https://www.mizrahi-tefahot.co.il/interest-list/",
+          "asOf": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "cal-shufersal",
+      "issuerId": "cal",
+      "issuerHe": "כאל",
+      "nameHe": "שופרסל",
+      "kind": "club",
+      "profiles": [
+        "general"
+      ],
+      "monthlyFee": 12.9,
+      "clubMonthlyFee": 3.0,
+      "year1MonthlyFee": 0,
+      "year1ClubMonthlyFee": 0,
+      "year1FeeCycles": 12,
+      "fxFeePct": null,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "feeNoteHe": "דמי כרטיס 12.90 ש״ח לחודש בלי הנחות מחזור, ועוד 3 ש״ח דמי חבר מהשנה השנייה, לפי עמוד המוצר של כאל. בשנה הראשונה פטור משניהם. מסלול Shop&Fly: 15.90 ש״ח דמי כרטיס, לא נספר בחישוב ברירת המחדל. עמלת מט״ח לא פורטה בעמוד המוצר, ולכן לא נכללה.",
+      "benefitsHe": [
+        "הטבת SBOX: מוצר מוזל אחד על כל קנייה של 100 ש״ח בשופרסל. ההטבה לא תומחה לשקלים כי המחיר המוזל משתנה.",
+        "מתנת הצטרפות עד 600 ש״ח (100 ש״ח לחודש ל־6 חודשים, בכפוף למחזור 1,000 ש״ח בחודש ולתקנון) לא נספרת בחישוב השוטף.",
+        "כרטיס שני לבן/בת הזוג בפטור קבוע מדמי כרטיס, לפי עמוד המוצר, לא נספר בחישוב כרטיס בודד."
+      ],
+      "sources": [
+        {
+          "label": "כאל, עמוד כרטיס אשראי שופרסל",
+          "url": "https://www.cal-online.co.il/cards/shufersal/",
+          "asOf": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "isracard-hever",
+      "issuerId": "isracard",
+      "issuerHe": "ישראכרט",
+      "nameHe": "מועדון חבר",
+      "kind": "club",
+      "profiles": [
+        "general",
+        "abroad"
+      ],
+      "monthlyFee": 0,
+      "fxFeePct": 1.0,
+      "cashAbroadPct": null,
+      "rewards": null,
+      "eligibilityHe": "מיועד למשרתי קבע, גמלאי צה״ל, אנשי כוחות הביטחון ובני משפחותיהם, לפי עמוד המוצר של ישראכרט.",
+      "fxPromoHe": "מבצע 0% עמלת עסקאות במט״ח ל־30 יום, פעמיים בשנה, בכפוף לקוד הטבה ולתנאי העמוד. בחישוב השוטף נספרת עמלת 1% שפורסמה לכרטיס זה.",
+      "benefitsHe": [
+        "פטור קבוע מדמי כרטיס, לפי עמוד כרטיס אשראי מועדון חבר של ישראכרט שנבדק ב־26.11.2026.",
+        "עמלת עסקאות במט״ח 1% על רכישות בחו״ל ובאתרי אונליין בינלאומיים. ההטבה אינה כוללת משיכת מזומן במטבע חוץ; שיעור המשיכה לא פורט בעמוד ולכן לא נכלל.",
+        "הנחות בטעינת כרטיסים נטענים ובהטבות המועדון לא תומחו לשקלים, כי אין שיעור החזר כללי קבוע."
+      ],
+      "sources": [
+        {
+          "label": "ישראכרט, עמוד כרטיס אשראי מועדון חבר",
+          "url": "https://www.isracard.co.il/credit-cards/chever",
+          "asOf": "2026-11-26"
+        }
+      ]
     }
   ],
   "gaps": [
     "לא נמצא כרטיס ישראלי עם החזר בקריפטו ותנאים פומביים שאומתו ב-26.11.2026. כרטיסים זרים לא נכללו בלי אישור זמינות בישראל.",
-    "כרטיסי מועדון של רשתות (שופרסל, רמי לוי, Super-Pharm וכדומה) וכרטיסי בנקים (הפועלים, לאומי, דיסקונט, מזרחי) לא הוכנסו בלי תעריף והטבה ממקור רשמי שנבדק במלואם.",
     "דמי הכרטיס של CashCal Pro לאחר שנת הפטור לא הופיעו בעמוד המוצר הרשמי, ולכן חסרים בחישוב השוטף.",
-    "ערך נקודות תעופה ומועדונים לא הומר לשקלים."
+    "ערך נקודות תעופה, SBOX, הטבות מועדון והחזר Diners Extra Home על חשבונות בית מפורטים לא הומר לשקלים בחישוב האוטומטי.",
+    "לא נמצא עמוד מוצר רשמי לכרטיס מועדון דן אצל ישראכרט, כאל או מקס ב-26.11.2026, ולכן לא הוכנס כרטיס בשם זה.",
+    "לא נמצא כרטיס ממותג רשמי של מגה או יוחננוף בעמודי המנפיקים ב-26.11.2026. מסלול Super Payback של מקס אינו כרטיס מועדון של הרשתות האלה, ולא הוכנס בשמן.",
+    "נספח דמי כרטיס מקס של מזרחי-טפחות באתר הבנק נושא תאריך עדכון 2.1.2022, ולכן התעריפים שבו לא נעשה בהם שימוש כנתון נוכחי.",
+    "עמלת מט״ח לא פורסמה בנספחי דמי הכרטיס של מזרחי-טפחות שנבדקו, וגם לא בעמוד כרטיס שופרסל של כאל; בשורות אלה העמלה מסומנת כלא ידועה ואינה נכללת בחישוב."
   ]
 }

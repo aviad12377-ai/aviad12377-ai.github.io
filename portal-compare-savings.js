@@ -31,11 +31,25 @@
   }
   function uid(p) { return p + '-' + Math.random().toString(36).slice(2, 7); }
 
+  function stripBoiPlaceholder(main) {
+    if (!main) return;
+    var cards = main.querySelectorAll('section.card');
+    Array.prototype.forEach.call(cards, function (sec) {
+      if (sec.id === 'savings-compare' || (sec.querySelector && sec.querySelector('#savings-compare'))) return;
+      var text = sec.textContent || '';
+      if (/ממתין לנתוני ריביות הפיקדונות של בנק ישראל|גוף לדוגמה|Waiting for Bank of Israel deposit rates|Sample provider|Pendiente de tipos de depósito del Banco de Israel|Entidad de ejemplo/.test(text)) {
+        sec.parentNode && sec.parentNode.removeChild(sec);
+      }
+    });
+  }
+
+
   function render(main, data) {
     ensureCss();
     var wrap = h('div', { class: 'cmp-page', id: 'savings-compare' });
     var products = (data.deposits && data.deposits.products) || [];
-    var filters = { rateType: '', termId: '', liquidity: '', providerId: '', minAmount: null, maxAmount: null };
+    var filters = { rateType: '', termId: '', linkage: '', liquidity: '', providerId: '', minAmount: null, maxAmount: null };
+    var showAll = false;
     var amount = 100000;
 
     var form = h('div', { class: 'fields' });
@@ -55,8 +69,13 @@
       liqs[p.liquidity] = p.liquidity === 'high' ? 'נזיל יותר' : p.liquidity === 'medium' ? 'בינוני' : 'עד סוף התקופה';
       provs[p.providerId] = p.providerHe;
     });
+    var linkages = [
+      { v: 'unlinked', t: 'לא צמוד' },
+      { v: 'cpi', t: 'צמוד מדד' }
+    ];
     addSelect('סוג ריבית', 'rateType', Object.keys(types).map(function (k) { return { v: k, t: types[k] }; }));
     addSelect('תקופה', 'termId', Object.keys(terms).map(function (k) { return { v: k, t: terms[k] }; }));
+    addSelect('הצמדה', 'linkage', linkages);
     addSelect('נזילות', 'liquidity', Object.keys(liqs).map(function (k) { return { v: k, t: liqs[k] }; }));
     addSelect('בנק', 'providerId', Object.keys(provs).map(function (k) { return { v: k, t: provs[k] }; }));
     var aid = uid('amt'), minid = uid('min'), maxid = uid('max');
@@ -96,21 +115,40 @@
 
     function draw() {
       var Lib = window.CompareLib;
-      var list = Lib.filterDeposits(products, filters).slice();
-      list.sort(function (a, b) { return (b.ratePct || 0) - (a.ratePct || 0); });
+      var vis = Lib.visibleDeposits(products, filters, { limit: 20, showAll: showAll });
+      var list = vis.list;
       out.innerHTML = '';
+      var bar = h('div', { class: 'cmp-toolbar' });
+      var status = vis.total === 0
+        ? 'אין תוצאות לפי הסינון.'
+        : (vis.limited
+          ? ('מוצגים 20 המסלולים עם הריבית הממוצעת הגבוהה ביותר, מתוך ' + vis.total + ' לפי הסינון.')
+          : ('מוצגים ' + list.length + ' מסלולים' + (showAll && vis.total > 20 ? ' (כל התוצאות לפי הסינון)' : '') + '.'));
+      bar.appendChild(h('p', { class: 'help', id: 'deposit-count', text: status }));
+      if (vis.total > 20) {
+        var btn = h('button', {
+          type: 'button',
+          class: 'cmp-toggle',
+          id: 'deposit-show-all',
+          'aria-pressed': showAll ? 'true' : 'false',
+          text: showAll ? 'הצג 20 המובילים' : 'הצג את כל המסלולים'
+        });
+        btn.addEventListener('click', function () { showAll = !showAll; draw(); });
+        bar.appendChild(btn);
+      }
+      out.appendChild(bar);
       var tbl = document.createElement('table');
       tbl.className = 'cmp data';
       var cap = document.createElement('caption'); cap.className = 'sr-only'; cap.textContent = 'פיקדונות לפי ריבית ממוצעת';
       tbl.appendChild(cap);
       var thead = document.createElement('thead'), hr = document.createElement('tr');
-      ['בנק', 'סוג', 'תקופה', 'נזילות', 'ריבית ממוצעת', 'ממוצע מערכת', 'ריבית מוערכת על הסכום'].forEach(function (label) {
+      ['בנק', 'סוג', 'הצמדה', 'תקופה', 'נזילות', 'ריבית ממוצעת', 'ממוצע מערכת', 'ריבית מוערכת על הסכום'].forEach(function (label) {
         var th = document.createElement('th'); th.scope = 'col'; th.textContent = label; hr.appendChild(th);
       });
       thead.appendChild(hr); tbl.appendChild(thead);
       var tb = document.createElement('tbody');
       if (!list.length) {
-        var tr0 = document.createElement('tr'); var td0 = document.createElement('td'); td0.colSpan = 7; td0.textContent = 'אין תוצאות לפי הסינון.'; tr0.appendChild(td0); tb.appendChild(tr0);
+        var tr0 = document.createElement('tr'); var td0 = document.createElement('td'); td0.colSpan = 8; td0.textContent = 'אין תוצאות לפי הסינון.'; tr0.appendChild(td0); tb.appendChild(tr0);
       }
       list.forEach(function (p, i) {
         var tr = document.createElement('tr');
@@ -118,6 +156,7 @@
         function td(text, num) { var e = document.createElement('td'); if (num) e.className = 'num'; e.textContent = text; tr.appendChild(e); }
         td(p.providerHe);
         td(p.rateTypeHe);
+        td(p.linkage === 'cpi' ? 'צמוד מדד' : 'לא צמוד');
         td(p.termHe);
         td(p.liquidity === 'high' ? 'נזיל יותר' : p.liquidity === 'medium' ? 'בינוני' : 'עד סוף התקופה');
         td(pct(p.ratePct), true);
@@ -128,7 +167,7 @@
       });
       tbl.appendChild(tb);
       out.appendChild(h('div', { class: 'tbl-wrap' }, [tbl]));
-      out.appendChild(h('p', { class: 'help', text: 'מוצגים ' + list.length + ' מסלולים. הריבית המוערכת היא סכום × שיעור × אמצע התקופה / 365, בלי מס ובלי פירעון מוקדם. הערכה בלבד.' }));
+      out.appendChild(h('p', { class: 'help', text: 'ברירת המחדל היא 20 המסלולים עם הריבית הממוצעת הגבוהה ביותר לפי הסינון. הריבית המוערכת היא סכום × שיעור × אמצע התקופה / 365, בלי מס ובלי פירעון מוקדם. הערכה בלבד.' }));
     }
     draw();
     main.appendChild(wrap);
@@ -151,9 +190,15 @@
     if (page !== 'savings') return;
     var main = document.querySelector('#portal main') || document.querySelector('main');
     if (!main) { setTimeout(hook, 40); return; }
+    stripBoiPlaceholder(main);
     if (document.getElementById('savings-compare')) return;
     main.appendChild(h('h2', { class: 'sec-h', text: 'השוואת פיקדונות בשוק' }));
     boot(main);
+    var n = 0;
+    var id = setInterval(function () {
+      stripBoiPlaceholder(main);
+      if (++n > 24) clearInterval(id);
+    }, 50);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hook);
   else hook();

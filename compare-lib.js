@@ -440,8 +440,15 @@
     if (rw && rw.annualCapIls != null) rewards = Math.min(rewards, n(rw.annualCapIls));
     var feeMonthly = year === 1 && card.year1MonthlyFee != null ? n(card.year1MonthlyFee)
       : (card.monthlyFee != null ? n(card.monthlyFee) : 0);
+    if (year === 1) {
+      if (card.year1ClubMonthlyFee != null) feeMonthly += n(card.year1ClubMonthlyFee);
+    } else if (card.clubMonthlyFee != null) {
+      feeMonthly += n(card.clubMonthlyFee);
+    }
     var fees = feeMonthly * 12;
-    var fx = abroad * 12 * n(card.fxFeePct) / 100;
+    var fxPct = (year === 1 && card.fxFeeYear1Pct != null) ? card.fxFeeYear1Pct : card.fxFeePct;
+    var fxUnknown = fxPct == null;
+    var fx = fxUnknown ? 0 : abroad * 12 * n(fxPct) / 100;
     var net = rewards - fees - fx;
     return {
       card: card,
@@ -453,6 +460,7 @@
       fxCost: fx,
       net: net,
       feeUnknown: year !== 1 && card.monthlyFee == null,
+      fxUnknown: fxUnknown,
       rewardsUnknown: !rw,
       estimate: true
     };
@@ -490,6 +498,18 @@
     return a * r * (d / 365);
   }
 
+
+  function sortDepositsByRate(products) {
+    return (products || []).slice().sort(function (a, b) { return (n(b.ratePct) - n(a.ratePct)); });
+  }
+  function visibleDeposits(products, f, opts) {
+    opts = opts || {};
+    var list = sortDepositsByRate(filterDeposits(products, f));
+    var limit = opts.limit == null ? 20 : opts.limit;
+    if (opts.showAll || !limit) return { list: list, total: list.length, limited: false, hidden: 0 };
+    return { list: list.slice(0, limit), total: list.length, limited: list.length > limit, hidden: Math.max(0, list.length - limit) };
+  }
+
   var api = {
     n: n, nn: nn, round: round,
     monthlyNominal: monthlyNominal, monthlyEffective: monthlyEffective, effectiveFromNominal: effectiveFromNominal,
@@ -499,7 +519,7 @@
     parseCsvText: parseCsvText, rowsToSchedule: rowsToSchedule, parseAmortizationMatrixOrText: parseAmortizationMatrixOrText,
     extractPdfText: extractPdfText,
     rewardPctFor: rewardPctFor, cardAnnualValue: cardAnnualValue, rankCards: rankCards,
-    filterDeposits: filterDeposits, depositInterest: depositInterest
+    filterDeposits: filterDeposits, visibleDeposits: visibleDeposits, depositInterest: depositInterest
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.CompareLib = api;

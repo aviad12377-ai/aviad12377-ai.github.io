@@ -15,6 +15,7 @@ import json
 import os
 import re
 import sys
+from collections import Counter
 from datetime import datetime
 
 DISCLAIMER = "מידע בלבד, לא ייעוץ. מעקב בלבד, בלי המלצה לקנייה או למכירה."
@@ -63,6 +64,40 @@ def num(value):
         return float(s)
     except ValueError:
         return None
+
+
+
+US_EXCHANGES = {
+    "NMS", "NYQ", "NGM", "PCX", "BTS", "NYSE", "NASDAQ", "AMEX", "ASE", "PNK", "ASE", "NYS",
+}
+
+
+def last_us_close_from_prices(path: str) -> str | None:
+    """Return the session date of the latest US cash close in prices.json.
+
+    Uses regularMarketTime on US-listed equities/ETFs. Israeli (TASE) and
+    FX quotes are ignored, so a Thursday Israel session is not mistaken for
+    a US close (e.g. US Thanksgiving).
+    """
+    data = load_json(path)
+    if not isinstance(data, dict):
+        return None
+    quotes = data.get("quotes") or {}
+    dates: list[str] = []
+    skip = {"TASE", "TASE-MF", "TLV", "CCC", "CCY"}
+    for q in quotes.values():
+        if not isinstance(q, dict):
+            continue
+        ex = str(q.get("exchange") or "").upper()
+        if ex in skip or (ex not in US_EXCHANGES):
+            continue
+        raw = str(q.get("regularMarketTime") or "")
+        m = re.match(r"(\d{4}-\d{2}-\d{2})", raw)
+        if m:
+            dates.append(m.group(1))
+    if not dates:
+        return None
+    return Counter(dates).most_common(1)[0][0]
 
 
 def filters_from_summary(summary: dict) -> list[dict]:
@@ -131,7 +166,7 @@ def rows_from_csv(path: str, limit: int = 15) -> list[dict]:
         return rows
 
 
-def build(folder: str) -> dict:
+def build(folder: str, prices_path: str | None = None) -> dict:
     date = os.path.basename(folder).replace("radar-", "", 1)
     summary = load_json(os.path.join(folder, "summary.json")) or {}
     liquid = load_json(os.path.join(folder, "liquid_top15.json"))
@@ -147,7 +182,14 @@ def build(folder: str) -> dict:
     diff = load_json(os.path.join(folder, diffs[-1])) if diffs else {}
     counts = summary.get("counts") or {}
     source_url = summary.get("source_url") or "https://finviz.com/screener.ashx"
-    us_close = summary.get("us_close_date_assumed") or summary.get("us_close_date")
+    assumed = summary.get("us_close_date_assumed") or summary.get("us_close_date")
+    real = last_us_close_from_prices(prices_path) if prices_path else None
+    if real:
+        us_close = real
+        us_close_source = "prices.json regularMarketTime (US exchanges)"
+    else:
+        us_close = assumed
+        us_close_source = "summary.us_close_date_assumed (fallback; not verified against prices.json)"
     return {
         "date": date,
         "updated_at_israel": summary.get("scrape_time_israel") or f"{date} 09:30",
@@ -167,6 +209,7 @@ def build(folder: str) -> dict:
             "liquid": counts.get("liquid_count") or counts.get("liquid"),
         },
         "us_close_date": us_close,
+        "us_close_date_source": us_close_source,
         "compared_to": (diff or {}).get("compared_to"),
         "entered": (diff or {}).get("new_entries") or (diff or {}).get("entered") or [],
         "exited": (diff or {}).get("drops") or (diff or {}).get("exited") or [],
@@ -179,15 +222,17 @@ def main() -> None:
     ap.add_argument("--root", default="/workspace")
     ap.add_argument("--date")
     ap.add_argument("--out", default=os.path.join(os.path.dirname(__file__), "..", "data", "scanner.json"))
+    ap.add_argument("--prices", default=os.path.join(os.path.dirname(__file__), "..", "prices.json"),
+                    help="prices.json used to read the real last US cash close")
     args = ap.parse_args()
     folder = latest_dir(args.root, args.date)
-    data = build(folder)
+    data = build(folder, os.path.abspath(args.prices))
     out = os.path.abspath(args.out)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    print(f"exported {folder} -> {out} ({len(data.get('top') or [])} names, date {data['date']})")
+    print(f"exported {folder} -> {out} ({len(data.get('top') or [])} names, date {data['date']}, us_close {data.get('us_close_date')} from {data.get('us_close_date_source')})")
 
 
 if __name__ == "__main__":

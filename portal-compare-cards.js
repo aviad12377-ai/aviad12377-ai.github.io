@@ -93,12 +93,17 @@
         function td(text, num) { var e = document.createElement('td'); if (num) e.className = 'num'; e.textContent = text; tr.appendChild(e); }
         td(String(i + 1), true);
         var name = document.createElement('td');
-        name.appendChild(document.createTextNode(row.card.issuerHe + ' · ' + row.card.nameHe));
+        var c0 = row.card;
+        var title = (c0.bankHe && c0.bankHe !== c0.issuerHe) ? (c0.bankHe + ' · ' + c0.issuerHe + ' · ' + c0.nameHe) : (c0.issuerHe + ' · ' + c0.nameHe);
+        name.appendChild(document.createTextNode(title));
         if (row.feeUnknown) {
           var w = document.createElement('div'); w.className = 'warn-fee'; w.textContent = 'חסרים דמי כרטיס לאחר שנת הפטור'; name.appendChild(w);
         }
         if (row.rewardsUnknown) {
           var w2 = document.createElement('div'); w2.className = 'help'; w2.textContent = 'אין החזר כספי מחושב (נקודות או מועדון בלי ערך שקלי)'; name.appendChild(w2);
+        }
+        if (row.fxUnknown) {
+          var w3 = document.createElement('div'); w3.className = 'help'; w3.textContent = 'עמלת מט״ח לא פורסמה במקור הרשמי שנבדק, ולכן אינה נכללת בחישוב'; name.appendChild(w3);
         }
         tr.appendChild(name);
         td(money(row.rewards), true);
@@ -124,7 +129,7 @@
           ]);
         });
         out.appendChild(h('div', { class: 'card' }, [
-          h('h3', { class: 'card-title', text: c.issuerHe + ' · ' + c.nameHe }),
+          h('h3', { class: 'card-title', text: (c.bankHe && c.bankHe !== c.issuerHe ? c.bankHe + ' · ' : '') + c.issuerHe + ' · ' + c.nameHe }),
           h('p', { class: 'help', text: (c.feeNoteHe || '') + (c.fxPromoHe ? ' ' + c.fxPromoHe : '') }),
           bits.length ? h('ul', null, bits) : null
         ].concat(srcs)));

@@ -52,7 +52,8 @@
     "after_filters": 152,
     "liquid": 114
   },
-  "us_close_date": "2026-11-06 (Thu Nov 5 close)",
+  "us_close_date": "2026-11-25",
+  "us_close_date_source": "prices.json regularMarketTime (US exchanges)",
   "compared_to": "2026-11-06 scan (radar-2026-11-06)",
   "entered": [
     "WRBY",

@@ -20,3 +20,11 @@
   .cmp-page .cmp-rank-item{grid-template-columns:auto 1fr; }
   .cmp-page .cmp-rank-item .net{grid-column:1/-1;text-align:start}
 }
+
+.cmp-page .cmp-toolbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:8px 0}
+.cmp-page .cmp-toolbar .help{margin:0;flex:1 1 16rem}
+.cmp-page .cmp-toggle{
+  min-height:var(--tap,44px);min-width:var(--tap,44px);padding:8px 14px;
+  border-radius:var(--radius,12px);border:1px solid var(--line,#3a3a48);
+  background:var(--card,rgba(255,255,255,.06));color:inherit;font-size:14px;cursor:pointer}
+.cmp-page .cmp-toggle[aria-pressed="true"]{border-color:var(--primary,#8b5cf6)}
