@@ -341,7 +341,7 @@
       var vested = optVested(), all = o.tranches.reduce(function (s, t) { return s + t.n; }, 0);
       var gross = gain * vested, netShares = p > 0 ? Math.floor(vested * gain / p) : 0, tax = gross * 0.25;
       $('#ov').innerHTML = ils(gross);
-      $('#okv').innerHTML = '<div><span>הבשילו</span><b>' + n(vested) + ' / ' + n(all) + '</b></div><div><span>רווח לאופציה</span><b>' + ils(gain, true) + '</b></div><div><span>מניות במימוש נטו</span><b>' + n(netShares) + '</b></div><div><span>אחרי מס משוער</span><b>' + ils(gross - tax) + '</b></div>';
+      $('#okv').innerHTML = '<div><span>הבשילו</span><b>' + n(vested) + ' מתוך ' + n(all) + '</b></div><div><span>רווח לאופציה</span><b>' + ils(gain, true) + '</b></div><div><span>מניות במימוש נטו</span><b>' + n(netShares) + '</b></div><div><span>אחרי מס משוער</span><b>' + ils(gross - tax) + '</b></div>';
       $('#otl').innerHTML = o.tranches.map(function (t, i) {
         var done = new Date(t.vest) <= TODAY, next = !done && (i === 0 || new Date(o.tranches[i - 1].vest) <= TODAY);
         var dd = function (s) { return new Date(s).toLocaleDateString('he-IL'); };
@@ -417,7 +417,7 @@
       $('#fl').innerHTML = shown.length ? shown.map(function (f) {
         var on = picked.some(function (p) { return p.id === f.id; });
         var main_ = sort === 'fee' ? pct(f.feeAcc) : sort === 'sharpe' ? '<span class="num">' + NF2.format(f.sharpe || 0) + '</span>' : pct(f[sort == 'y5' ? 'c5' : sort] != null ? f[sort == 'y5' ? 'c5' : sort] : 0, true);
-        return '<div class="row" style="cursor:default"><span class="tx"><span class="t wrap">' + esc(f.name) + '</span><span class="s">דמי ניהול ' + pct(f.feeAcc) + ' · נכסים ' + n(f.assets >= 1000 ? f.assets / 1000 : f.assets) + (f.assets >= 1000 ? ' מיליארד ₪' : ' מיליון ₪') + '</span></span>' +
+        return '<div class="row" style="cursor:default"><span class="tx"><span class="t wrap">' + esc(f.name) + '</span><span class="s">דמי ניהול ' + pct(f.feeAcc) +  + '</span></span>' +
           '<span class="v"><b class="' + (sort === 'fee' ? '' : cls(f[sort] || 0)) + '">' + main_ + '</b><small class="muted">' + (sort === 'y5' ? 'מצטבר 5 שנים' : lbl) + '</small></span>' +
           '<button class="add" data-id="' + f.id + '" aria-pressed="' + on + '" aria-label="' + (on ? 'הסר מההשוואה: ' : 'הוסף להשוואה: ') + esc(f.name) + '">' + ic(on ? 'check' : 'plus') + '</button></div>';
       }).join('') + (list.length > limit ? '<button class="btn sec block" id="moreb" style="margin:8px 0">הצג עוד ' + Math.min(40, list.length - limit) + '</button>' : '') : '<div class="empty"><b>אין מסלולים מתאימים</b>נסה מסלול אחר או "כל המסלולים".</div>';
