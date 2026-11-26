@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T22:38:33Z",
+  "generatedAt": "2026-11-26T22:41:10Z",
   "quotes": {
     "1143700": {
       "price": 37.99,
@@ -12041,8 +12041,8 @@
     "5102132": {
       "price": 4.5028,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12054,8 +12054,8 @@
     "5103510": {
       "price": 1.5901,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12080,8 +12080,8 @@
     "5106562": {
       "price": 1.8678,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12093,8 +12093,8 @@
     "5107305": {
       "price": 1.36,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12106,8 +12106,8 @@
     "5107313": {
       "price": 1.5733,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12132,8 +12132,8 @@
     "5108279": {
       "price": 5.2503,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12145,8 +12145,8 @@
     "5108501": {
       "price": 3.8497,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12158,8 +12158,8 @@
     "5108519": {
       "price": 2.6936,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12171,8 +12171,8 @@
     "5109889": {
       "price": 4.0882,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12184,8 +12184,8 @@
     "5109897": {
       "price": 3.8169,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12210,8 +12210,8 @@
     "5111638": {
       "price": 1.6475,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12223,8 +12223,8 @@
     "5112404": {
       "price": 1.7224,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12236,8 +12236,8 @@
     "5114160": {
       "price": 2.0331,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12262,8 +12262,8 @@
     "5115258": {
       "price": 2.0314,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12275,8 +12275,8 @@
     "5115274": {
       "price": 1.7287,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12288,8 +12288,8 @@
     "5116082": {
       "price": 1.6268,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12301,8 +12301,8 @@
     "5116181": {
       "price": 1.3899,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12314,8 +12314,8 @@
     "5116629": {
       "price": 1.7124,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12327,8 +12327,8 @@
     "5116918": {
       "price": 1.5716,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12340,8 +12340,8 @@
     "5117445": {
       "price": 1.4972,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12353,8 +12353,8 @@
     "5117817": {
       "price": 1.2744,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12366,8 +12366,8 @@
     "5117866": {
       "price": 1.2792,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12392,8 +12392,8 @@
     "5118674": {
       "price": 1.7697,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12405,8 +12405,8 @@
     "5118997": {
       "price": 1.8167,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12418,8 +12418,8 @@
     "5119151": {
       "price": 1.365,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12431,8 +12431,8 @@
     "5119425": {
       "price": 1.511,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12483,8 +12483,8 @@
     "5119987": {
       "price": 4.0899,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12522,8 +12522,8 @@
     "5121405": {
       "price": 1.1678,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12535,8 +12535,8 @@
     "5121413": {
       "price": 1.1893,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12561,8 +12561,8 @@
     "5121686": {
       "price": 1.1435,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12613,8 +12613,8 @@
     "5122262": {
       "price": 1.345,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12626,8 +12626,8 @@
     "5122288": {
       "price": 3.6632,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12639,8 +12639,8 @@
     "5122320": {
       "price": 1.3364,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12665,8 +12665,8 @@
     "5122593": {
       "price": 1.8045,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12691,8 +12691,8 @@
     "5122635": {
       "price": 1.4601,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12704,8 +12704,8 @@
     "5122841": {
       "price": 1.1456,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12730,8 +12730,8 @@
     "5122973": {
       "price": 1.1465,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12743,8 +12743,8 @@
     "5123039": {
       "price": 1.3278,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12756,8 +12756,8 @@
     "5123260": {
       "price": 1.2895,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12769,8 +12769,8 @@
     "5123278": {
       "price": 1.3144,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12782,8 +12782,8 @@
     "5123344": {
       "price": 1.3136,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12795,8 +12795,8 @@
     "5123351": {
       "price": 1.5569,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12808,8 +12808,8 @@
     "5123369": {
       "price": 1.3172,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12821,8 +12821,8 @@
     "5123393": {
       "price": 1.146,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12847,8 +12847,8 @@
     "5123518": {
       "price": 1.3253,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12860,8 +12860,8 @@
     "5123542": {
       "price": 1.7219,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12899,8 +12899,8 @@
     "5123641": {
       "price": 1.4085,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12964,8 +12964,8 @@
     "5125265": {
       "price": 1.471,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12977,8 +12977,8 @@
     "5125331": {
       "price": 1.1726,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -12990,8 +12990,8 @@
     "5125349": {
       "price": 1.3129,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13003,8 +13003,8 @@
     "5125356": {
       "price": 1.2539,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13016,8 +13016,8 @@
     "5125364": {
       "price": 1.183,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13029,8 +13029,8 @@
     "5125372": {
       "price": 1.2847,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13107,8 +13107,8 @@
     "5125984": {
       "price": 1.2461,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13120,8 +13120,8 @@
     "5126479": {
       "price": 43.8275,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13133,8 +13133,8 @@
     "5126495": {
       "price": 16.4025,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13146,8 +13146,8 @@
     "5127006": {
       "price": 2.7871,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13198,8 +13198,8 @@
     "5127428": {
       "price": 3.0956,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13263,8 +13263,8 @@
     "5127709": {
       "price": 1.2247,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13276,8 +13276,8 @@
     "5127907": {
       "price": 1.2159,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13289,8 +13289,8 @@
     "5127980": {
       "price": 1.4479,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13354,8 +13354,8 @@
     "5128616": {
       "price": 2.6267,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13380,8 +13380,8 @@
     "5129069": {
       "price": 1.2039,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13432,8 +13432,8 @@
     "5129531": {
       "price": 1.2007,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13445,8 +13445,8 @@
     "5129549": {
       "price": 1.1963,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13471,8 +13471,8 @@
     "5129887": {
       "price": 2.6012,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13484,8 +13484,8 @@
     "5129978": {
       "price": 1.3125,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13497,8 +13497,8 @@
     "5130000": {
       "price": 1.1263,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13510,8 +13510,8 @@
     "5130083": {
       "price": 1.1468,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13523,8 +13523,8 @@
     "5130372": {
       "price": 1.5209,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13549,8 +13549,8 @@
     "5130513": {
       "price": 0.913,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13575,8 +13575,8 @@
     "5130596": {
       "price": 1.3936,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13588,8 +13588,8 @@
     "5130604": {
       "price": 2.6779,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13601,8 +13601,8 @@
     "5130620": {
       "price": 2.263,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13627,8 +13627,8 @@
     "5130893": {
       "price": 2.062,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13653,8 +13653,8 @@
     "5131222": {
       "price": 1.1174,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13692,8 +13692,8 @@
     "5131529": {
       "price": 1.3367,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13705,8 +13705,8 @@
     "5131727": {
       "price": 1.1655,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13718,8 +13718,8 @@
     "5131735": {
       "price": 1.2474,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13731,8 +13731,8 @@
     "5131867": {
       "price": 1.3036,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13744,8 +13744,8 @@
     "5131875": {
       "price": 1.1511,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13822,8 +13822,8 @@
     "5133202": {
       "price": 1.132,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13835,8 +13835,8 @@
     "5133210": {
       "price": 1.1509,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13900,8 +13900,8 @@
     "5133905": {
       "price": 1.1348,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13965,8 +13965,8 @@
     "5134713": {
       "price": 1.9229,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13978,8 +13978,8 @@
     "5134788": {
       "price": 1.1622,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -13991,8 +13991,8 @@
     "5134796": {
       "price": 1.1224,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14004,8 +14004,8 @@
     "5134853": {
       "price": 1.1764,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14017,8 +14017,8 @@
     "5135058": {
       "price": 1.7561,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14056,8 +14056,8 @@
     "5135165": {
       "price": 1.8663,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14082,8 +14082,8 @@
     "5135405": {
       "price": 1.1014,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14095,8 +14095,8 @@
     "5135413": {
       "price": 1.1344,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14108,8 +14108,8 @@
     "5135470": {
       "price": 1.8693,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14134,8 +14134,8 @@
     "5135520": {
       "price": 1.6726,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14147,8 +14147,8 @@
     "5135538": {
       "price": 1.2495,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14160,8 +14160,8 @@
     "5135546": {
       "price": 1.8453,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14173,8 +14173,8 @@
     "5135553": {
       "price": 1.1326,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14199,8 +14199,8 @@
     "5135884": {
       "price": 1.8896,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14212,8 +14212,8 @@
     "5135942": {
       "price": 1.1744,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14225,8 +14225,8 @@
     "5135975": {
       "price": 1.1342,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14251,8 +14251,8 @@
     "5136015": {
       "price": 1.8419,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14290,8 +14290,8 @@
     "5136288": {
       "price": 1.3899,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14303,8 +14303,8 @@
     "5136312": {
       "price": 1.1622,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14355,8 +14355,8 @@
     "5136825": {
       "price": 1.1932,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14381,8 +14381,8 @@
     "5137013": {
       "price": 44.7616,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14394,8 +14394,8 @@
     "5137047": {
       "price": 2.041,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14407,8 +14407,8 @@
     "5137054": {
       "price": 1.2157,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14485,8 +14485,8 @@
     "5137997": {
       "price": 1.1757,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14511,8 +14511,8 @@
     "5138169": {
       "price": 1.1518,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14537,8 +14537,8 @@
     "5138276": {
       "price": 1.123,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14550,8 +14550,8 @@
     "5138318": {
       "price": 1.1576,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14563,8 +14563,8 @@
     "5138342": {
       "price": 1.1629,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14576,8 +14576,8 @@
     "5138359": {
       "price": 1.167,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14654,8 +14654,8 @@
     "5138706": {
       "price": 1.1002,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14680,8 +14680,8 @@
     "5138920": {
       "price": 1.1987,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14693,8 +14693,8 @@
     "5138938": {
       "price": 1.1217,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14706,8 +14706,8 @@
     "5139027": {
       "price": 1.1568,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14732,8 +14732,8 @@
     "5139167": {
       "price": 1.0541,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14745,8 +14745,8 @@
     "5139175": {
       "price": 1.8393,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14771,8 +14771,8 @@
     "5139365": {
       "price": 1.55,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14797,8 +14797,8 @@
     "5139597": {
       "price": 1.0627,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14823,8 +14823,8 @@
     "5139936": {
       "price": 1.4023,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14836,8 +14836,8 @@
     "5139944": {
       "price": 1.3276,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14849,8 +14849,8 @@
     "5139951": {
       "price": 1.3555,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14875,8 +14875,8 @@
     "5140116": {
       "price": 1.0758,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14888,8 +14888,8 @@
     "5140124": {
       "price": 1.0702,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14914,8 +14914,8 @@
     "5140157": {
       "price": 1.2856,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14940,8 +14940,8 @@
     "5140199": {
       "price": 1.4903,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14979,8 +14979,8 @@
     "5140371": {
       "price": 1.0447,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -14992,8 +14992,8 @@
     "5140397": {
       "price": 1.4731,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15018,8 +15018,8 @@
     "5140447": {
       "price": 2.5555,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15057,8 +15057,8 @@
     "5140595": {
       "price": 1.0104,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15096,8 +15096,8 @@
     "5140892": {
       "price": 0.8925,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15109,8 +15109,8 @@
     "5140900": {
       "price": 1.057,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15135,8 +15135,8 @@
     "5141072": {
       "price": 1.074,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15187,8 +15187,8 @@
     "5141353": {
       "price": 1.0372,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15226,8 +15226,8 @@
     "5141908": {
       "price": 36.7552,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15239,8 +15239,8 @@
     "5141916": {
       "price": 0.903,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15252,8 +15252,8 @@
     "5141924": {
       "price": 1.0816,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15265,8 +15265,8 @@
     "5141981": {
       "price": 0.6884,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15330,8 +15330,8 @@
     "5142237": {
       "price": 0.5724,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15343,8 +15343,8 @@
     "5142245": {
       "price": 0.9984,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15395,8 +15395,8 @@
     "5142633": {
       "price": 0.8005,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15408,8 +15408,8 @@
     "5142690": {
       "price": 0.6963,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15421,8 +15421,8 @@
     "5142732": {
       "price": 1.0021,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15434,8 +15434,8 @@
     "5142740": {
       "price": 1.0003,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15447,8 +15447,8 @@
     "5142757": {
       "price": 0.9948,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15525,8 +15525,8 @@
     "5143227": {
       "price": 0.8806,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-25T12:00:00+02:00",
-      "navDate": "2026-11-25",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
       "previousClose": null,
       "exchange": "TASE-MF",
       "state": "closed",
@@ -15581,9 +15581,9 @@
       "state": "closed"
     },
     "ADA-USD": {
-      "price": 0.14929,
+      "price": 0.14925,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:01+00:00",
+      "regularMarketTime": "2026-11-26T22:39:50+00:00",
       "previousClose": 0.145763,
       "exchange": "CCC",
       "state": "open"
@@ -15741,17 +15741,17 @@
       "state": "closed"
     },
     "ATOM-USD": {
-      "price": 1.2178,
+      "price": 1.2156,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:12+00:00",
+      "regularMarketTime": "2026-11-26T22:39:48+00:00",
       "previousClose": 1.236665,
       "exchange": "CCC",
       "state": "open"
     },
     "AUDUSD=X": {
-      "price": 0.6636,
+      "price": 0.6634,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:35:47+00:00",
+      "regularMarketTime": "2026-11-26T22:39:47+00:00",
       "previousClose": 0.6629,
       "exchange": "CCY",
       "state": "open"
@@ -15759,7 +15759,7 @@
     "AVAX-USD": {
       "price": 6.608,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:36:57+00:00",
+      "regularMarketTime": "2026-11-26T22:39:35+00:00",
       "previousClose": 6.623868,
       "exchange": "CCC",
       "state": "open"
@@ -15821,9 +15821,9 @@
       "state": "closed"
     },
     "BCH-USD": {
-      "price": 209.99,
+      "price": 209.95,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:36:44+00:00",
+      "regularMarketTime": "2026-11-26T22:39:24+00:00",
       "previousClose": 205.64748,
       "exchange": "CCC",
       "state": "open"
@@ -15941,9 +15941,9 @@
       "state": "closed"
     },
     "BNB-USD": {
-      "price": 553.83,
+      "price": 553.63,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:36:33+00:00",
+      "regularMarketTime": "2026-11-26T22:39:19+00:00",
       "previousClose": 553.5615,
       "exchange": "CCC",
       "state": "open"
@@ -16029,9 +16029,9 @@
       "state": "closed"
     },
     "BTC-USD": {
-      "price": 60487.6,
+      "price": 60469.43,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:08+00:00",
+      "regularMarketTime": "2026-11-26T22:39:55+00:00",
       "previousClose": 60378.57,
       "exchange": "CCC",
       "state": "open"
@@ -16311,7 +16311,7 @@
     "DOGE-USD": {
       "price": 0.05648,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:36:58+00:00",
+      "regularMarketTime": "2026-11-26T22:39:24+00:00",
       "previousClose": 0.055969,
       "exchange": "CCC",
       "state": "open"
@@ -16325,9 +16325,9 @@
       "state": "closed"
     },
     "DOT-USD": {
-      "price": 0.6734,
+      "price": 0.6733,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:36:47+00:00",
+      "regularMarketTime": "2026-11-26T22:39:31+00:00",
       "previousClose": 0.658613,
       "exchange": "CCC",
       "state": "open"
@@ -16517,9 +16517,9 @@
       "state": "closed"
     },
     "ETH-USD": {
-      "price": 1694.18,
+      "price": 1694.0,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:11+00:00",
+      "regularMarketTime": "2026-11-26T22:39:54+00:00",
       "previousClose": 1690.7516,
       "exchange": "CCC",
       "state": "open"
@@ -16557,25 +16557,25 @@
       "state": "closed"
     },
     "EURGBP=X": {
-      "price": 0.8369,
+      "price": 0.8368,
       "currency": "GBP",
-      "regularMarketTime": "2026-11-26T22:37:04+00:00",
+      "regularMarketTime": "2026-11-26T22:39:49+00:00",
       "previousClose": 0.8366,
       "exchange": "CCY",
       "state": "open"
     },
     "EURILS=X": {
-      "price": 3.6299,
+      "price": 3.6196,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T22:36:47+00:00",
+      "regularMarketTime": "2026-11-26T22:39:46+00:00",
       "previousClose": 3.6857,
       "exchange": "CCY",
       "state": "open"
     },
     "EURUSD=X": {
-      "price": 1.0973,
+      "price": 1.0976,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:36:47+00:00",
+      "regularMarketTime": "2026-11-26T22:39:47+00:00",
       "previousClose": 1.0982,
       "exchange": "CCY",
       "state": "open"
@@ -16813,9 +16813,9 @@
       "state": "open"
     },
     "GBPUSD=X": {
-      "price": 1.3108,
+      "price": 1.3107,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:36:47+00:00",
+      "regularMarketTime": "2026-11-26T22:39:47+00:00",
       "previousClose": 1.3116,
       "exchange": "CCY",
       "state": "open"
@@ -17421,9 +17421,9 @@
       "state": "closed"
     },
     "LINK-USD": {
-      "price": 9.32,
+      "price": 9.322,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:02+00:00",
+      "regularMarketTime": "2026-11-26T22:39:52+00:00",
       "previousClose": 9.047612,
       "exchange": "CCC",
       "state": "open"
@@ -17493,9 +17493,9 @@
       "state": "closed"
     },
     "LTC-USD": {
-      "price": 44.052,
+      "price": 44.048,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:03+00:00",
+      "regularMarketTime": "2026-11-26T22:39:46+00:00",
       "previousClose": 42.72778,
       "exchange": "CCC",
       "state": "open"
@@ -17717,9 +17717,9 @@
       "state": "closed"
     },
     "NEAR-USD": {
-      "price": 3.0605,
+      "price": 3.0642,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:04+00:00",
+      "regularMarketTime": "2026-11-26T22:39:52+00:00",
       "previousClose": 3.048042,
       "exchange": "CCC",
       "state": "open"
@@ -18207,7 +18207,7 @@
     "SHIB-USD": {
       "price": 4e-06,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:13+00:00",
+      "regularMarketTime": "2026-11-26T22:39:22+00:00",
       "previousClose": 4e-06,
       "exchange": "CCC",
       "state": "open"
@@ -18301,9 +18301,9 @@
       "state": "closed"
     },
     "SOL-USD": {
-      "price": 71.09,
+      "price": 71.11,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:08+00:00",
+      "regularMarketTime": "2026-11-26T22:39:58+00:00",
       "previousClose": 70.39324,
       "exchange": "CCC",
       "state": "open"
@@ -18615,7 +18615,7 @@
     "TON-USD": {
       "price": 0.001515,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:35:05+00:00",
+      "regularMarketTime": "2026-11-26T22:38:03+00:00",
       "previousClose": 0.001488,
       "exchange": "CCC",
       "state": "open"
@@ -18637,9 +18637,9 @@
       "state": "closed"
     },
     "TRX-USD": {
-      "price": 0.303984,
+      "price": 0.303859,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:35:05+00:00",
+      "regularMarketTime": "2026-11-26T22:38:03+00:00",
       "previousClose": 0.303614,
       "exchange": "CCC",
       "state": "open"
@@ -18749,9 +18749,9 @@
       "state": "closed"
     },
     "USDCAD=X": {
-      "price": 1.4241,
+      "price": 1.4242,
       "currency": "CAD",
-      "regularMarketTime": "2026-11-26T22:37:03+00:00",
+      "regularMarketTime": "2026-11-26T22:39:48+00:00",
       "previousClose": 1.421,
       "exchange": "CCY",
       "state": "open"
@@ -18759,7 +18759,7 @@
     "USDCHF=X": {
       "price": 0.8338,
       "currency": "CHF",
-      "regularMarketTime": "2026-11-26T22:37:03+00:00",
+      "regularMarketTime": "2026-11-26T22:39:49+00:00",
       "previousClose": 0.8303,
       "exchange": "CCY",
       "state": "open"
@@ -18773,9 +18773,9 @@
       "state": "open"
     },
     "USDJPY=X": {
-      "price": 159.211,
+      "price": 159.215,
       "currency": "JPY",
-      "regularMarketTime": "2026-11-26T22:37:00+00:00",
+      "regularMarketTime": "2026-11-26T22:39:47+00:00",
       "previousClose": 159.123,
       "exchange": "CCY",
       "state": "open"
@@ -19317,9 +19317,9 @@
       "state": "closed"
     },
     "XLM-USD": {
-      "price": 0.1272,
+      "price": 0.127278,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:07+00:00",
+      "regularMarketTime": "2026-11-26T22:39:49+00:00",
       "previousClose": 0.127895,
       "exchange": "CCC",
       "state": "open"
@@ -19397,9 +19397,9 @@
       "state": "closed"
     },
     "XRP-USD": {
-      "price": 0.9473,
+      "price": 0.9471,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T22:37:08+00:00",
+      "regularMarketTime": "2026-11-26T22:39:57+00:00",
       "previousClose": 0.936943,
       "exchange": "CCC",
       "state": "open"
