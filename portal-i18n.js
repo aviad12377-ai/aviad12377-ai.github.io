@@ -51,7 +51,20 @@ he: {
   goal: 'יעד חיסכון', goal_amount: 'סכום היעד', goal_date: 'תאריך היעד', goal_base: 'נקודת התחלה', base_net: 'שווי נקי', base_liquid: 'נכסים נזילים', goal_ret: 'תשואה שנתית צפויה (%)',
   required_monthly: 'חיסכון חודשי נדרש', on_track: 'העודף החודשי מכסה את היעד', gap: 'חסר בכל חודש',
   goal_reached: 'היעד כבר הושג',
-  per_year: 'בשנה', open_page: 'לדף', fx_note: 'סכומים במטבע אחר מומרים לפי שערי המטבע שלמטה.'
+  per_year: 'בשנה', open_page: 'לדף', fx_note: 'סכומים במטבע אחר מומרים לפי שערי המטבע שלמטה.',
+  official_data: 'נתונים רשמיים', loading: 'טוען…', mine: 'שלי', provider: 'גוף מנהל', track: 'מסלול',
+  ret_ytd: 'מתחילת השנה', ret_3y_avg: 'ממוצע שנתי 3 שנים', ret_5y_avg: 'ממוצע שנתי 5 שנים',
+  assets_m: 'נכסים (מיליוני ש"ח)', std_dev: 'סטיית תקן',
+  tr_general: 'כללי', tr_age: 'תלוי גיל', tr_equity: 'מנייתי', tr_sp500: 'עוקב \u2066S&P 500\u2069', tr_bonds: 'אג"ח / שקלי', tr_halacha: 'הלכה', tr_other: 'אחר',
+  compare_pension: 'השוואה לקרנות פנסיה חדשות', compare_gemel: 'השוואה לקופות גמל', compare_hish: 'השוואה לקרנות השתלמות',
+  cmp_search: 'חיפוש', all_providers: 'כל הגופים', all_tracks: 'כל המסלולים', funds_none: 'לא נמצאו מסלולים מתאימים.',
+  funds_missing: 'נתוני ההשוואה עדיין לא זמינים. הם מתעדכנים פעם ביום מ־data.gov.il.',
+  funds_src: 'מקור: רשות שוק ההון, דרך data.gov.il, נתוני חודש',
+  past_returns: 'תשואות עבר אינן מבטיחות תשואות בעתיד. ההשוואה לפי שם המסלול ועשויה לכלול מסלולים לא זהים.',
+  not_advice: 'השוואת מידע כללי בלבד, לא ייעוץ השקעות או פנסיה.',
+  cmp_showing: 'מוצגים {n} מתוך {total}',
+  your_rank: '"{name}" במקום {rank} מתוך {of} במסלול {track}, לפי {metric}',
+  no_1y: 'אין בנתונים הרשמיים תשואה נגררת ל־12 חודשים; מוצגת תשואה מתחילת השנה.'
 },
 en: {
   ret_1y: 'Return 1y', ret_3y: 'Return 3y', ret_5y: 'Return 5y', annual_fee: 'Annual fee', fx_fee: 'FX fee', benefits: 'Benefits',
@@ -104,7 +117,20 @@ en: {
   goal: 'Savings goal', goal_amount: 'Goal amount', goal_date: 'Goal date', goal_base: 'Starting point', base_net: 'Net worth', base_liquid: 'Liquid assets', goal_ret: 'Expected annual return (%)',
   required_monthly: 'Required monthly saving', on_track: 'Your monthly surplus covers the goal', gap: 'Short each month',
   goal_reached: 'Goal already reached',
-  per_year: 'per year', open_page: 'Open', fx_note: 'Amounts in other currencies are converted using the rates below.'
+  per_year: 'per year', open_page: 'Open', fx_note: 'Amounts in other currencies are converted using the rates below.',
+  official_data: 'Official data', loading: 'Loading…', mine: 'Mine', provider: 'Provider', track: 'Track',
+  ret_ytd: 'YTD', ret_3y_avg: '3y avg / yr', ret_5y_avg: '5y avg / yr',
+  assets_m: 'Assets (₪m)', std_dev: 'Std. deviation',
+  tr_general: 'General', tr_age: 'Age-based', tr_equity: 'Equity', tr_sp500: '\u2066S&P 500\u2069 tracker', tr_bonds: 'Bonds / shekel', tr_halacha: 'Halacha', tr_other: 'Other',
+  compare_pension: 'Compare with new pension funds', compare_gemel: 'Compare with provident funds', compare_hish: 'Compare with study funds',
+  cmp_search: 'Search', all_providers: 'All providers', all_tracks: 'All tracks', funds_none: 'No matching tracks.',
+  funds_missing: 'Comparison data is not available yet. It updates daily from data.gov.il.',
+  funds_src: 'Source: Capital Market Authority via data.gov.il, month',
+  past_returns: 'Past returns do not guarantee future returns. Matching is by track name and may include non-identical tracks.',
+  not_advice: 'General information only, not investment or pension advice.',
+  cmp_showing: 'Showing {n} of {total}',
+  your_rank: '"{name}" ranks {rank} of {of} in the {track} track, by {metric}',
+  no_1y: 'The official file has no trailing 12-month return; year-to-date is shown instead.'
 },
 es: {
   ret_1y: 'Rent. 1 año', ret_3y: 'Rent. 3 años', ret_5y: 'Rent. 5 años', annual_fee: 'Cuota anual', fx_fee: 'Comisión de cambio', benefits: 'Beneficios',
@@ -157,6 +183,19 @@ es: {
   goal: 'Meta de ahorro', goal_amount: 'Importe meta', goal_date: 'Fecha meta', goal_base: 'Punto de partida', base_net: 'Patrimonio neto', base_liquid: 'Activos líquidos', goal_ret: 'Rentabilidad anual esperada (%)',
   required_monthly: 'Ahorro mensual necesario', on_track: 'Tu excedente mensual cubre la meta', gap: 'Falta cada mes',
   goal_reached: 'Meta ya alcanzada',
-  per_year: 'al año', open_page: 'Abrir', fx_note: 'Los importes en otras monedas se convierten con los tipos de abajo.'
+  per_year: 'al año', open_page: 'Abrir', fx_note: 'Los importes en otras monedas se convierten con los tipos de abajo.',
+  official_data: 'Datos oficiales', loading: 'Cargando…', mine: 'Mío', provider: 'Entidad', track: 'Ruta',
+  ret_ytd: 'En el año', ret_3y_avg: 'Media anual 3 años', ret_5y_avg: 'Media anual 5 años',
+  assets_m: 'Activos (₪ mill.)', std_dev: 'Desviación típica',
+  tr_general: 'General', tr_age: 'Según edad', tr_equity: 'Acciones', tr_sp500: 'Sigue el \u2066S&P 500\u2069', tr_bonds: 'Bonos / shekel', tr_halacha: 'Halajá', tr_other: 'Otro',
+  compare_pension: 'Comparar con fondos de pensiones nuevos', compare_gemel: 'Comparar con fondos de previsión', compare_hish: 'Comparar con fondos de estudios',
+  cmp_search: 'Buscar', all_providers: 'Todas las entidades', all_tracks: 'Todas las rutas', funds_none: 'No hay rutas coincidentes.',
+  funds_missing: 'Los datos de comparación aún no están disponibles. Se actualizan a diario desde data.gov.il.',
+  funds_src: 'Fuente: Autoridad del Mercado de Capitales vía data.gov.il, mes',
+  past_returns: 'Las rentabilidades pasadas no garantizan las futuras. La comparación se basa en el nombre de la ruta.',
+  not_advice: 'Solo información general, no asesoramiento de inversión ni de pensiones.',
+  cmp_showing: 'Se muestran {n} de {total}',
+  your_rank: '"{name}" ocupa el lugar {rank} de {of} en la ruta {track}, según {metric}',
+  no_1y: 'El archivo oficial no incluye la rentabilidad a 12 meses; se muestra la del año en curso.'
 }
 };

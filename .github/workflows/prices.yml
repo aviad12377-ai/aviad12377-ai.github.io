@@ -10,6 +10,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: repo-data-commits
+  cancel-in-progress: false
+
 jobs:
   fetch-prices:
     runs-on: ubuntu-latest
@@ -40,5 +44,6 @@ jobs:
             echo "No price or lookup changes"
           else
             git commit -m "chore: update prices.json and tase_securities.json"
+            git pull --rebase origin main
             git push
           fi

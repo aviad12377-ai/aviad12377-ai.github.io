@@ -828,6 +828,206 @@
     ]);
   }
 
+
+  /* ---------- public fund statistics (funds.json, daily from data.gov.il) ---------- */
+  var fundsP = null;
+  var FUND_SRC = { gemelnet: 'https://data.gov.il/dataset/gemelnet', pensianet: 'https://data.gov.il/dataset/pensyanet', bituachnet: 'https://data.gov.il/dataset/bituachnet' };
+  function loadFunds() {
+    if (!fundsP) fundsP = fetchJSON('funds.json?d=' + new Date().toISOString().slice(0, 10), 20000).catch(function () { fundsP = null; return null; });
+    return fundsP;
+  }
+  function trackOf(name, sub, spec) {
+    var s = String(name || '') + ' ' + String(sub || '') + ' ' + String(spec || '');
+    if (/s&p|500/i.test(s)) return 'tr_sp500';
+    if (/הלכ/.test(s)) return 'tr_halacha';
+    if (/לבני|גיל|\d\d\s*-\s*\d\d|ומעלה|ומטה|מדרגות/.test(s)) return 'tr_age';
+    if (/אג["״]?ח|אשראי|כספי|שקלי|ממשלתי/.test(s)) return 'tr_bonds';
+    if (/מניות/.test(s)) return 'tr_equity';
+    if (/כללי/.test(s)) return 'tr_general';
+    return 'tr_other';
+  }
+  function periodLabel(p) { p = String(p || ''); return p.length === 6 ? p.slice(4) + '/' + p.slice(0, 4) : p; }
+  function foldCmp(s) { return String(s || '').replace(/[״"'׳]/g, '').replace(/[-–]/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase(); }
+  function providerOf(f) { return f.mgr || f.parent || ''; }
+  function matchMine(label, funds) {
+    var q = foldCmp(label);
+    if (q.length < 2) return null;
+    var toks = q.split(' ').filter(function (x) { return x.length >= 2; });
+    var exact = null, contains = null, tokenHit = null, tokenScore = 0;
+    funds.forEach(function (f) {
+      if (f._synthetic) return;
+      var hay = foldCmp(f.name || '');
+      if (hay === q) exact = f;
+      else if (hay.indexOf(q) >= 0 || (q.length >= 6 && q.indexOf(hay) >= 0)) { if (!contains || hay.length < foldCmp(contains.name).length) contains = f; }
+      else if (toks.length && toks.every(function (t) { return hay.indexOf(t) >= 0; }) && toks.length > tokenScore) { tokenScore = toks.length; tokenHit = f; }
+    });
+    return exact || contains || tokenHit;
+  }
+  function mineFrom(rows) {
+    return (rows || []).filter(function (r) { return r && foldCmp(r.name).length >= 2; }).map(function (r) {
+      return { label: r.name, track: trackOf(r.name, '', ''), feeAcc: nn(r.feeBal), feeDep: nn(r.feeDep) };
+    });
+  }
+  // cfg: { title, sets: [[setName, classificationRegex]], tracks: [...], mine: [{label, track, feeAcc, feeDep}] }
+  function fundsCompare(cfg) {
+    var search = h('input', { type: 'search', 'aria-label': t('cmp_search'), placeholder: t('cmp_search') });
+    var trackSel = h('select', { 'aria-label': t('track') });
+    var provSel = h('select', { 'aria-label': t('provider') });
+    var rankEl = h('p', { class: 'help' });
+    var tblHost = h('div', { class: 'tbl-wrap' });
+    var meta = h('div');
+    var filters = h('div', { class: 'toolbar filters' }, [
+      h('div', { class: 'field', style: 'flex:1 1 160px' }, [h('label', { text: t('cmp_search') }), search]),
+      h('div', { class: 'field', style: 'flex:1 1 130px' }, [h('label', { text: t('track') }), trackSel]),
+      h('div', { class: 'field', style: 'flex:1 1 130px' }, [h('label', { text: t('provider') }), provSel])
+    ]);
+    var sortKey = 'y5', sortDir = -1, all = [], mineHits = [];
+    var TRACKS = cfg.tracks || [];
+    var COLS = [
+      { k: 'name', label: t('provider_track') },
+      { k: 'provider', label: t('provider') },
+      { k: 'track', label: t('track') },
+      { k: 'feeAcc', label: t('fee_bal'), num: true, d: 2, pct: true },
+      { k: 'feeDep', label: t('fee_dep'), num: true, d: 2, pct: true },
+      { k: 'ytd', label: t('ret_ytd'), num: true, d: 1, pct: true },
+      { k: 'y3', label: t('ret_3y_avg'), num: true, d: 1, pct: true },
+      { k: 'y5', label: t('ret_5y_avg'), num: true, d: 1, pct: true },
+      { k: 'sd', label: t('std_dev'), num: true, d: 1, pct: true },
+      { k: 'assets', label: t('assets_m'), num: true, d: 0 }
+    ];
+    function val(f, k) {
+      if (k === 'name') return f.name || '';
+      if (k === 'provider') return providerOf(f);
+      if (k === 'track') return t(f._track);
+      return nn(f[k]);
+    }
+    function cmp(a, b) {
+      var va = val(a, sortKey), vb = val(b, sortKey);
+      if (typeof va === 'number' || typeof vb === 'number') {
+        if (va === null || va === undefined) return 1;
+        if (vb === null || vb === undefined) return -1;
+        return (va - vb) * sortDir;
+      }
+      return String(va).localeCompare(String(vb), 'he') * sortDir;
+    }
+    function fmtCell(col, f) {
+      if (!col.num) return val(f, col.k) || '—';
+      var v = nn(f[col.k]);
+      if (v === null) return '—';
+      return col.pct ? pct(v, col.d) : fmt(v, col.d);
+    }
+    function fillSelects(presetTrack) {
+      var tracksPresent = {}, provs = {};
+      all.forEach(function (f) { tracksPresent[f._track] = (tracksPresent[f._track] || 0) + 1; var p = providerOf(f); if (p) provs[p] = true; });
+      var curT = trackSel.value, curP = provSel.value;
+      trackSel.innerHTML = '';
+      trackSel.appendChild(h('option', { value: '', text: t('all_tracks') }));
+      var seen = {};
+      TRACKS.concat(Object.keys(tracksPresent)).forEach(function (k) {
+        if (seen[k] || !tracksPresent[k]) return;
+        seen[k] = true;
+        trackSel.appendChild(h('option', { value: k, text: t(k) + ' (' + tracksPresent[k] + ')' }));
+      });
+      if (curT && tracksPresent[curT]) trackSel.value = curT;
+      else if (!curT && presetTrack && tracksPresent[presetTrack]) trackSel.value = presetTrack;
+      provSel.innerHTML = '';
+      provSel.appendChild(h('option', { value: '', text: t('all_providers') }));
+      Object.keys(provs).sort(function (a, b) { return a.localeCompare(b, 'he'); }).forEach(function (p) {
+        provSel.appendChild(h('option', { value: p, text: p }));
+      });
+      if (curP && provs[curP]) provSel.value = curP;
+    }
+    function renderTable() {
+      var rows = all.filter(function (f) {
+        if (trackSel.value && f._track !== trackSel.value) return false;
+        if (provSel.value && providerOf(f) !== provSel.value) return false;
+        var q = foldCmp(search.value);
+        if (!q) return true;
+        var hay = foldCmp([f.name, f.mgr, f.parent, f.id, f.sub, f.spec].join(' '));
+        return q.split(' ').every(function (tok) { return !tok || hay.indexOf(tok) >= 0; });
+      }).slice().sort(cmp);
+      tblHost.innerHTML = '';
+      var head = h('tr', null, COLS.map(function (c) {
+        var arrow = sortKey === c.k ? (sortDir > 0 ? ' ↑' : ' ↓') : '';
+        return h('th', { class: (c.num ? 'num ' : '') + 'sortable' + (c.k === 'name' ? ' name' : ''), text: c.label + arrow, onclick: function () {
+          if (sortKey === c.k) sortDir = -sortDir;
+          else { sortKey = c.k; sortDir = c.num ? -1 : 1; }
+          renderTable();
+        } });
+      }));
+      var body = rows.length ? rows.map(function (f) {
+        return h('tr', { class: f._mine ? 'mine' : null }, COLS.map(function (c) {
+          return h('td', { class: (c.num ? 'num' : '') + (c.k === 'name' ? ' name' : ''), text: fmtCell(c, f) });
+        }));
+      }) : [h('tr', { class: 'placeholder' }, [h('td', { colspan: String(COLS.length), text: t('funds_none') })])];
+      tblHost.appendChild(h('table', { class: 'cmp data' }, [h('thead', null, [head]), h('tbody', null, body)]));
+      var parts = [t('cmp_showing').replace('{n}', String(rows.length)).replace('{total}', String(all.filter(function (f) { return !f._synthetic; }).length))];
+      var metricKey = (sortKey === 'ytd' || sortKey === 'y3' || sortKey === 'y5' || sortKey === 'sd') ? sortKey : 'y5';
+      var metricLabel = { ytd: t('ret_ytd'), y3: t('ret_3y_avg'), y5: t('ret_5y_avg'), sd: t('std_dev') }[metricKey];
+      mineHits.forEach(function (m) {
+        if (m.fund._synthetic) return;
+        var peers = all.filter(function (f) { return !f._synthetic && f._track === m.fund._track && nn(f[metricKey]) !== null; }).slice().sort(function (a, b) {
+          var dir = metricKey === 'sd' ? 1 : -1;
+          return ((nn(a[metricKey]) === null ? 99 : a[metricKey]) - (nn(b[metricKey]) === null ? 99 : b[metricKey])) * dir * -1;
+        });
+        // higher return is better (desc); lower sd is better (asc)
+        if (metricKey === 'sd') peers.sort(function (a, b) { return (nn(a.sd) === null ? 99 : a.sd) - (nn(b.sd) === null ? 99 : b.sd); });
+        else peers.sort(function (a, b) { return (nn(b[metricKey]) === null ? -99 : b[metricKey]) - (nn(a[metricKey]) === null ? -99 : a[metricKey]); });
+        var idx = -1;
+        peers.forEach(function (f, i) { if (f === m.fund) idx = i; });
+        if (idx >= 0) parts.push(t('your_rank').replace('{name}', m.label).replace('{rank}', String(idx + 1)).replace('{of}', String(peers.length)).replace('{track}', t(m.fund._track)).replace('{metric}', metricLabel));
+      });
+      rankEl.textContent = parts.join(' · ');
+    }
+    function draw(j) {
+      tblHost.innerHTML = ''; meta.innerHTML = ''; rankEl.textContent = '';
+      if (!j) { tblHost.appendChild(h('div', { class: 'notice amber', text: t('funds_missing') })); return; }
+      all = []; mineHits = [];
+      var periods = [], links = [];
+      cfg.sets.forEach(function (sp) {
+        var set = j.sets && j.sets[sp[0]]; if (!set) return;
+        periods.push(periodLabel(set.period));
+        if (FUND_SRC[sp[0]]) links.push({ href: FUND_SRC[sp[0]], text: sp[0] });
+        set.funds.forEach(function (f) {
+          if (!sp[1].test(f.cls || '')) return;
+          var row = {};
+          Object.keys(f).forEach(function (k) { row[k] = f[k]; });
+          row._set = sp[0];
+          row._track = trackOf(f.name, f.sub, f.spec);
+          all.push(row);
+        });
+      });
+      if (!all.length) { tblHost.appendChild(h('div', { class: 'notice amber', text: t('funds_missing') })); return; }
+      var preset = null;
+      (cfg.mine || []).forEach(function (m) {
+        var hit = matchMine(m.label, all);
+        if (hit) { hit._mine = true; mineHits.push({ label: m.label, fund: hit }); if (!preset) preset = hit._track; }
+        else {
+          var syn = { name: t('mine') + ': ' + m.label, _track: m.track || 'tr_other', feeAcc: m.feeAcc, feeDep: m.feeDep, _mine: true, _synthetic: true };
+          all.push(syn);
+          mineHits.push({ label: m.label, fund: syn });
+        }
+      });
+      fillSelects(preset);
+      var periodTxt = periods.filter(function (v, i, a) { return a.indexOf(v) === i; }).join(', ');
+      var srcLine = h('p', { class: 'help' });
+      srcLine.appendChild(document.createTextNode(t('funds_src') + ' ' + periodTxt + '. '));
+      links.forEach(function (L, i) {
+        if (i) srcLine.appendChild(document.createTextNode(', '));
+        srcLine.appendChild(h('a', { href: L.href, target: '_blank', rel: 'noopener noreferrer', text: L.text }));
+      });
+      meta.appendChild(srcLine);
+      meta.appendChild(h('p', { class: 'help', text: t('no_1y') + ' ' + t('past_returns') + ' ' + t('not_advice') }));
+      renderTable();
+    }
+    search.addEventListener('input', renderTable);
+    trackSel.addEventListener('change', renderTable);
+    provSel.addEventListener('change', renderTable);
+    tblHost.appendChild(h('div', { class: 'empty', text: t('loading') }));
+    loadFunds().then(draw);
+    return section(cfg.title || t('compare'), [filters, rankEl, tblHost, meta], h('span', { class: 'badge green', text: t('official_data') }));
+  }
+
   /* ---------- pages ---------- */
   var CUR_OPTS = [['ILS', '₪ ILS'], ['USD', '$ USD'], ['EUR', '€ EUR']];
   var pageRenderers = {
@@ -835,14 +1035,16 @@
       var tot = h('div'), box = h('div'), rows = data.pension.funds;
       var r = renderList(box, rows, fundSchema('pension', rows, tot));
       main.appendChild(section(t('my_balances'), [box, tot]));
-      main.appendChild(comparison({ cols: ['provider_track', 'kind', 'fee_dep', 'fee_bal', 'ret_1y', 'ret_3y', 'ret_5y'], source: 'TBD (e.g. Pensia-Net / Gemel-Net, Israel Capital Market Authority)' }));
+      var TR = ['tr_general', 'tr_age', 'tr_equity', 'tr_sp500', 'tr_bonds', 'tr_halacha', 'tr_other'];
+      main.appendChild(fundsCompare({ title: t('compare_pension'), sets: [['pensianet', /חדשות/]], tracks: TR, mine: mineFrom(rows.filter(function (x) { return !x.kind || x.kind === 'k_pension'; })) }));
+      main.appendChild(fundsCompare({ title: t('compare_gemel'), sets: [['gemelnet', /^תגמולים|^קופת גמל להשקעה$/]], tracks: TR, mine: mineFrom(rows.filter(function (x) { return x.kind === 'k_gemel' || x.kind === 'k_gemel_inv'; })) }));
       on('change', r.refresh);
     },
     hishtalmut: function (main) {
       var tot = h('div'), box = h('div'), rows = data.hishtalmut.funds;
       var r = renderList(box, rows, fundSchema('hishtalmut', rows, tot));
       main.appendChild(section(t('my_balances'), [box, tot, h('p', { class: 'help', text: t('hish_help') })]));
-      main.appendChild(comparison({ cols: ['provider_track', 'fee_bal', 'ret_1y', 'ret_3y', 'ret_5y'], source: 'TBD (e.g. Gemel-Net, Israel Capital Market Authority)' }));
+      main.appendChild(fundsCompare({ title: t('compare_hish'), sets: [['gemelnet', /השתלמות/]], tracks: ['tr_general', 'tr_equity', 'tr_sp500', 'tr_bonds', 'tr_halacha', 'tr_other'], mine: mineFrom(rows) }));
       on('change', r.refresh);
     },
     mortgage: function (main) {
