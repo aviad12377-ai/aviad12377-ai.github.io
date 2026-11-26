@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1e3a8a">
+<meta name="description" content="מחשבון אופציות לעובדים: מחיר מימוש אחרי דיבידנדים, רווח ברוטו ונטו, מימוש נטו למניות ושיתוף">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="אופציות">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231e3a8a'/%3E%3Cpath d='M12 46 L26 32 L36 40 L52 20' stroke='%2334d399' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>מחשבון אופציות לעובדים</title>
+<style>
+  :root {
+    --bg: #f4f6fa; --card: #ffffff; --card-alt: #f8fafc; --ink: #0f172a; --muted: #475569;
+    --line: #e2e8f0; --primary: #1d4ed8; --primary-dark: #1e3a8a; --primary-soft: #eff6ff;
+    --accent: #059669; --accent-soft: #ecfdf5; --warn: #b45309; --warn-soft: #fffbeb;
+    --danger: #b91c1c; --danger-soft: #fef2f2; --radius: 14px; --shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Heebo", Arial, sans-serif;
+    font-size: 15px; line-height: 1.5; overflow-x: hidden; font-variant-numeric: tabular-nums;
+    -webkit-text-size-adjust: 100%;
+  }
+  .app-wrap { max-width: 680px; margin: 0 auto; padding: 12px 12px 48px; width: 100%; }
+  .num { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+  .top-header { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: #fff; border-radius: var(--radius); padding: 14px 16px; margin-bottom: 12px; box-shadow: var(--shadow); }
+  .top-header h1 { margin: 0 0 2px; font-size: 19px; font-weight: 800; }
+  .top-header p { margin: 0; font-size: 13px; color: #dbeafe; }
+  .mode-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; background: #e2e8f0; padding: 4px; border-radius: 12px; margin-bottom: 12px; }
+  .mode-tab { border: none; background: transparent; color: var(--muted); font-weight: 700; font-size: 13px; padding: 9px 4px; border-radius: 9px; cursor: pointer; text-align: center; line-height: 1.25; font-family: inherit; }
+  .mode-tab small { display: block; font-size: 11px; font-weight: 600; }
+  .mode-tab.active { background: #fff; color: var(--primary-dark); box-shadow: 0 1px 4px rgba(15, 23, 42, 0.12); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; margin-bottom: 12px; box-shadow: var(--shadow); min-width: 0; }
+  .card-title { margin: 0 0 10px; font-size: 16px; font-weight: 800; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .badge { font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); white-space: nowrap; }
+  .badge.green { background: var(--accent-soft); color: var(--accent); }
+  .badge.amber { background: var(--warn-soft); color: var(--warn); }
+  .stock-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .stock-row select { flex: 1 1 180px; min-width: 0; }
+  .custom-row { display: flex; gap: 6px; margin-top: 8px; }
+  .custom-row input { flex: 1; min-width: 0; direction: ltr; text-align: left; text-transform: uppercase; }
+  select, input[type="number"], input[type="text"] {
+    padding: 8px; border: 1.5px solid #cbd5e1; border-radius: 9px; font-size: 16px; font-family: inherit;
+    font-weight: 700; color: var(--ink); background: #fff; font-variant-numeric: tabular-nums; max-width: 100%;
+  }
+  input[type="number"] { width: 118px; text-align: center; direction: ltr; }
+  input[type="range"] { width: 100%; accent-color: var(--primary); height: 24px; cursor: pointer; margin: 2px 0; }
+  .live-box { display: flex; justify-content: space-between; align-items: center; gap: 10px; background: var(--card-alt); border: 1px solid var(--line); border-radius: 10px; padding: 10px; margin-top: 10px; flex-wrap: wrap; }
+  .live-price { font-size: 22px; font-weight: 800; }
+  .live-meta { font-size: 11.5px; color: var(--muted); }
+  .live-meta.err { color: var(--danger); }
+  .sticky-kpi { position: sticky; top: 6px; z-index: 30; background: #fff; border: 1.5px solid #bfdbfe; border-radius: var(--radius); padding: 10px; margin-bottom: 12px; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.10); }
+  .kpi-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .kpi-box { background: var(--card-alt); border: 1px solid var(--line); border-radius: 10px; padding: 7px 9px; min-width: 0; }
+  .kpi-box.strike { background: var(--primary-soft); border-color: #93c5fd; }
+  .kpi-box.net { background: var(--accent-soft); border-color: #6ee7b7; }
+  .kpi-label { font-size: 11.5px; color: var(--muted); font-weight: 600; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .kpi-value { font-size: 16px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: right; }
+  .kpi-box.strike .kpi-value { color: var(--primary-dark); }
+  .kpi-box.net .kpi-value { color: var(--accent); }
+  .kpi-sub { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .btn { border: 1px solid var(--line); background: #fff; color: var(--ink); font-weight: 700; font-size: 13px; padding: 9px 12px; border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; flex: 1 1 auto; min-width: 120px; font-family: inherit; }
+  .btn:disabled { opacity: .55; cursor: default; }
+  .btn-sm { min-width: 0; flex: 0 0 auto; padding: 6px 10px; font-size: 12px; }
+  .btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+  .btn-whatsapp { background: #16a34a; color: #fff; border-color: #16a34a; }
+  .btn-soft { background: var(--primary-soft); color: var(--primary-dark); border-color: #bfdbfe; }
+  .control-group { margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px dashed var(--line); }
+  .control-group:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .control-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .control-label { font-weight: 700; font-size: 14px; min-width: 0; }
+  .control-help { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .sell-tools { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+  .tranches-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .tranche-card { background: var(--card-alt); border: 1px solid var(--line); border-radius: 10px; padding: 9px; min-width: 0; }
+  .tranche-card input[type="number"] { width: 100%; }
+  .tranche-title { font-size: 12.5px; font-weight: 800; }
+  .tranche-sub { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .masked-val { display: none; font-weight: 800; color: var(--muted); letter-spacing: 2px; padding: 8px 0; text-align: center; }
+  body.is-masked .tranche-card input { display: none; }
+  body.is-masked .masked-val { display: block; }
+  @media (max-width: 480px) {
+    .tranches-grid { grid-template-columns: 1fr; }
+    .tranche-card { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .tranche-card input[type="number"] { width: 118px; flex-shrink: 0; }
+    .tranche-sub { margin-bottom: 0; }
+  }
+  .result-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); gap: 10px; }
+  .result-row:last-of-type { border-bottom: none; }
+  .result-name { font-size: 13.5px; color: var(--muted); font-weight: 600; min-width: 0; }
+  .result-name small { display: block; font-size: 11.5px; font-weight: 500; }
+  .result-val { font-size: 14.5px; font-weight: 800; white-space: nowrap; }
+  .result-val.positive { color: var(--accent); }
+  .result-val.primary { color: var(--primary-dark); }
+  .result-row.secondary .result-name, .result-row.secondary .result-val { font-size: 12.5px; color: var(--muted); }
+  .tbl-wrap { overflow-x: auto; margin-top: 10px; }
+  table.tranches { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.tranches th, table.tranches td { padding: 7px 4px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
+  table.tranches th { color: var(--muted); font-weight: 700; font-size: 11.5px; }
+  table.tranches td:first-child, table.tranches th:first-child { text-align: right; }
+  table.tranches tfoot td { font-weight: 800; border-bottom: none; }
+  .notice { border-radius: 12px; padding: 10px 12px; font-size: 13px; margin-bottom: 12px; border: 1px solid; }
+  .notice.blue { background: var(--primary-soft); border-color: #93c5fd; color: #1e3a8a; }
+  .notice.amber { background: var(--warn-soft); border-color: #fcd34d; color: #78350f; }
+  .notice.red { background: var(--danger-soft); border-color: #fca5a5; color: var(--danger); }
+  .share-box { background: var(--card-alt); border: 1px solid var(--line); border-radius: 10px; padding: 10px; margin-bottom: 12px; }
+  .share-link-row { display: flex; gap: 6px; margin-top: 6px; }
+  .share-link-row input { flex: 1; min-width: 0; font-size: 12px; direction: ltr; text-align: left; }
+  .guide-step { background: var(--card-alt); border: 1px solid var(--line); border-radius: 11px; padding: 11px 12px; margin-bottom: 10px; }
+  .guide-step h4 { margin: 0 0 4px; font-size: 14px; font-weight: 800; color: var(--primary-dark); }
+  .guide-step p { margin: 0; font-size: 13px; }
+  .toast { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%) translateY(90px); background: #0f172a; color: #fff; padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; z-index: 100; opacity: 0; transition: all .25s ease; max-width: 92vw; text-align: center; }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .masked { letter-spacing: 2px; color: var(--muted) !important; }
+  .hidden { display: none !important; }
+  .footer-note { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+</style>
+</head>
+<body>
+<div class="app-wrap">
+  <header class="top-header">
+    <h1 id="app-title">מחשבון אופציות לעובדים</h1>
+    <p id="app-subtitle">מחיר מימוש אחרי דיבידנדים, רווח נטו, מימוש נטו למניות ושיתוף</p>
+  </header>
+
+  <nav class="mode-tabs" aria-label="בחירת מצב">
+    <button type="button" class="mode-tab" id="tab-public" data-view="public">מחשבון ציבורי<small>(מתחיל ב־0)</small></button>
+    <button type="button" class="mode-tab" id="tab-private" data-view="private">המחשבון האישי<small>(הנתונים שלי)</small></button>
+    <button type="button" class="mode-tab" id="tab-guide" data-view="guide">מדריך והסבר<small>(מה מציבים איפה)</small></button>
+  </nav>
+
+  <div id="calc-workspace">
+    <section class="card" aria-label="בחירת מניה">
+      <h2 class="card-title"><span>מניה ושער חי</span><span class="badge" id="mode-badge">מצב ציבורי</span></h2>
+      <div class="stock-row">
+        <label for="stock-select" class="control-label">מניה:</label>
+        <select id="stock-select" aria-label="בחירת מניה"></select>
+      </div>
+      <div class="custom-row hidden" id="custom-row">
+        <input type="text" id="custom-ticker" placeholder="למשל MSFT או POLI.TA" aria-label="טיקר חופשי" autocomplete="off" autocapitalize="characters" spellcheck="false">
+        <button type="button" class="btn btn-soft btn-sm" id="btn-custom-load">טען</button>
+      </div>
+      <div class="control-help hidden" id="custom-help">מניה בבורסת תל אביב: מוסיפים ‎.TA לסימול (למשל POLI.TA).</div>
+      <div class="live-box">
+        <div style="min-width:0">
+          <div class="live-meta">שער שוק חי (לתצוגה בלבד)</div>
+          <div class="live-price num" id="live-price">—</div>
+          <div class="live-meta" id="live-meta">טרם נמשך שער</div>
+        </div>
+        <button type="button" class="btn btn-soft btn-sm" id="btn-refresh">רענן שער</button>
+      </div>
+    </section>
+
+    <section class="sticky-kpi" aria-label="סיכום מהיר">
+      <div class="kpi-grid">
+        <div class="kpi-box strike">
+          <span class="kpi-label">מחיר מימוש מעודכן</span>
+          <div class="kpi-value num" id="kpi-adj-strike">—</div>
+          <div class="kpi-sub" id="kpi-strike-sub">הפחתת דיבידנד: —</div>
+        </div>
+        <div class="kpi-box net">
+          <span class="kpi-label">רווח נטו משוער (אחרי מס)</span>
+          <div class="kpi-value num" id="kpi-net">—</div>
+          <div class="kpi-sub" id="kpi-gross-sub">ברוטו: —</div>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-label">סה"כ אופציות בחישוב</span>
+          <div class="kpi-value num" id="kpi-total-opts">0</div>
+          <div class="kpi-sub" id="kpi-spread-sub">מרווח למניה: —</div>
+        </div>
+        <div class="kpi-box">
+          <span class="kpi-label">מניות נטו למימוש (סעיף 12)</span>
+          <div class="kpi-value num" id="kpi-net-shares">—</div>
+          <div class="kpi-sub" id="kpi-tax-sub">מס מוערך: 25%</div>
+        </div>
+      </div>
+    </section>
+
+    <div id="mode-banner" class="notice blue"></div>
+    <div id="state-notice" class="notice amber hidden" role="status"></div>
+
+    <div class="toolbar">
+      <button type="button" class="btn btn-whatsapp" id="btn-whatsapp">שלח סיכום בוואטסאפ</button>
+      <button type="button" class="btn btn-primary" id="btn-copy-summary">העתק סיכום וקישור</button>
+      <button type="button" class="btn btn-soft" id="btn-reset">איפוס ערכי בסיס</button>
+      <button type="button" class="btn hidden" id="btn-mask">הסתר כמויות אישיות</button>
+    </div>
+
+    <div class="share-box">
+      <div style="font-size:12.5px;font-weight:700;">קישור ישיר לשיתוף (שומר את הפרמטרים, בלי נתונים אישיים כשהכמויות מוסתרות):</div>
+      <div class="share-link-row">
+        <input type="text" id="share-url" readonly aria-label="קישור לשיתוף">
+        <button type="button" class="btn btn-soft btn-sm" id="btn-copy-link">העתק לינק</button>
+      </div>
+      <div class="control-help hidden" id="share-note"></div>
+    </div>
+
+    <section class="card">
+      <h2 class="card-title"><span>1. שער מכירה, מחיר מימוש ודיבידנדים</span></h2>
+      <div class="control-group">
+        <div class="control-top">
+          <label class="control-label" for="sell-num">שער מכירה מתוכנן (<span class="cur-sym">₪</span>)</label>
+          <input type="number" id="sell-num" inputmode="decimal" min="0" step="0.01">
+        </div>
+        <input type="range" id="sell-range" min="0" max="160" step="0.01" aria-label="שער מכירה מתוכנן">
+        <div class="sell-tools">
+          <span class="control-help" id="sell-status" style="margin:0">—</span>
+        </div>
+        <div class="control-help">בנוסחת המימוש נטו (B) זה שער הנעילה בבורסה ביום המסחר שלפני המימוש. כאן מזינים את השער שאתה מצפה לו.</div>
+        <div class="sell-tools" style="margin-top:0">
+          <button type="button" class="btn btn-soft btn-sm hidden" id="btn-sell-live">חזור לשער החי</button>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="control-top">
+          <label class="control-label" for="strike-num">מחיר מימוש בסיס (<span class="cur-sym">₪</span>)</label>
+          <input type="number" id="strike-num" inputmode="decimal" min="0" step="0.0001">
+        </div>
+        <input type="range" id="strike-range" min="0" max="160" step="0.01" aria-label="מחיר מימוש בסיס">
+        <div class="control-help" id="strike-help">מחיר המימוש מכתב ההקצאה, לפני הפחתת דיבידנדים.</div>
+      </div>
+      <div class="control-group">
+        <div class="control-top">
+          <label class="control-label" for="div-num">צפי דיבידנד שנתי למניה (<span class="cur-sym">₪</span>)</label>
+          <input type="number" id="div-num" inputmode="decimal" min="0" step="0.05">
+        </div>
+        <input type="range" id="div-range" min="0" max="10" step="0.05" aria-label="דיבידנד שנתי">
+        <div class="control-help" id="div-help">בתוכניות שבהן הדיבידנד מפחית את מחיר המימוש. אם לא רלוונטי, השאר 0.</div>
+      </div>
+      <div class="control-group">
+        <div class="control-top">
+          <label class="control-label" for="years-num">תקופת המתנה עד המימוש (שנים)</label>
+          <input type="number" id="years-num" inputmode="decimal" min="0" step="0.25">
+        </div>
+        <input type="range" id="years-range" min="0" max="6" step="0.25" aria-label="שנים">
+      </div>
+      <div class="control-group">
+        <div class="control-top">
+          <label class="control-label" for="tax-num">שיעור מס משוער (%)</label>
+          <input type="number" id="tax-num" inputmode="decimal" min="0" max="100" step="1">
+        </div>
+        <input type="range" id="tax-range" min="0" max="60" step="1" aria-label="שיעור מס">
+        <div class="control-help">ברירת מחדל 25% (מסלול 102 הוני, בכפוף לתנאי המסלול).</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title"><span>2. כמות אופציות לפי חבילות</span><span class="badge green num" id="tranches-sum-badge">סה"כ: 0</span></h2>
+      <div class="tranches-grid">
+        <div class="tranche-card"><div><div class="tranche-title">חבילה 1 <span class="badge hidden" id="t1-vest"></span></div><div class="tranche-sub" id="t1-sub">שכבה ראשונה</div></div><input type="number" id="t1-num" inputmode="numeric" min="0" step="1" aria-label="כמות חבילה 1"><div class="masked-val">***</div></div>
+        <div class="tranche-card"><div><div class="tranche-title">חבילה 2 <span class="badge hidden" id="t2-vest"></span></div><div class="tranche-sub" id="t2-sub">תוספת שנייה</div></div><input type="number" id="t2-num" inputmode="numeric" min="0" step="1" aria-label="כמות חבילה 2"><div class="masked-val">***</div></div>
+        <div class="tranche-card"><div><div class="tranche-title">חבילה 3 <span class="badge hidden" id="t3-vest"></span></div><div class="tranche-sub" id="t3-sub">תוספת שלישית</div></div><input type="number" id="t3-num" inputmode="numeric" min="0" step="1" aria-label="כמות חבילה 3"><div class="masked-val">***</div></div>
+      </div>
+      <p class="control-help hidden" id="tranche-note">מועדי ההבשלה והפקיעה לפי נספח ג' בכתב ההקצאה של לאומי (הענקה 1.6.2026). כל חבילה פוקעת 36 חודשים אחרי מועד ההבשלה שלה. המועדים והתנאים עשויים להיות שונים בין עובדים, בדוק בהסכם שלך.</p>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title"><span>3. פירוט החישוב</span><span class="badge amber">סימולציה</span></h2>
+      <div class="result-row"><span class="result-name">מחיר מימוש בסיס</span><span class="result-val num" id="res-base-strike">—</span></div>
+      <div class="result-row"><span class="result-name">התאמה לדיבידנדים (הערכה)<small id="res-div-formula">דיבידנד שנתי × שנים</small></span><span class="result-val num primary" id="res-div-reduction">—</span></div>
+      <div class="result-row"><span class="result-name">מחיר מימוש מעודכן<small>לא יורד מתחת ל־0</small></span><span class="result-val num primary" id="res-eff-strike">—</span></div>
+      <div class="result-row"><span class="result-name">שער מכירה מתוכנן</span><span class="result-val num" id="res-sell">—</span></div>
+      <div class="result-row"><span class="result-name">רווח למניה<small>שער מכירה פחות מחיר מימוש מעודכן</small></span><span class="result-val num" id="res-spread">—</span></div>
+      <div class="result-row"><span class="result-name">רווח ברוטו כולל (לפני מס)</span><span class="result-val num" id="res-gross">—</span></div>
+      <div class="result-row"><span class="result-name">מס משוער</span><span class="result-val num" id="res-tax">—</span></div>
+      <div class="result-row"><span class="result-name">רווח נטו משוער (אחרי מס)</span><span class="result-val num positive" id="res-net">—</span></div>
+      <div class="result-row"><span class="result-name">מניות נטו למימוש<small>סעיף 12: (A×B − A×C) ÷ B. A כמות, B שער נעילה ביום שלפני המימוש, C מחיר מימוש מעודכן. סעיף 16: לא מוקצים שברי מניות, שבר קטן מ־0.5 מעוגל למטה ו־0.5 ומעלה למעלה</small></span><span class="result-val num" id="res-net-shares">—</span></div>
+      <div class="result-row secondary" id="row-live-compare"><span class="result-name">להשוואה: רווח נטו לפי השער החי</span><span class="result-val num" id="res-live-net">—</span></div>
+
+      <div class="tbl-wrap">
+        <table class="tranches" aria-label="פירוט לפי חבילות">
+          <thead><tr><th>חבילה</th><th>כמות</th><th>ברוטו</th><th>נטו</th><th>מניות נטו</th></tr></thead>
+          <tbody id="tranche-tbody"></tbody>
+          <tfoot><tr id="tranche-tfoot"></tr></tfoot>
+        </table>
+      </div>
+      <p class="control-help">מניות הנטו בכל חבילה מעוגלות בנפרד, ולכן הסכום שלהן עשוי להיות שונה ב־1 מהשורה הכוללת.</p>
+      <p class="footer-note">*המחשבון הוא כלי סימולציה והמחשה בלבד ואינו מהווה ייעוץ השקעות, ייעוץ מס או ייעוץ משפטי. כל מימוש, חסימה או פקיעה כפופים להסכם ההקצאה ולכללי הנאמן. השער החי מגיע מ־Yahoo Finance דרך שירות ציבורי חינמי, עשוי להיות מעוכב (בבורסת תל אביב כ־20 דקות) ואינו מובטח.</p>
+    </section>
+  </div>
+
+  <section id="guide-workspace" class="card hidden">
+    <h2 class="card-title"><span>מדריך: מה מציבים איפה</span><span class="badge">הסבר</span></h2>
+    <div class="guide-step"><h4>1. ציבורי מול אישי</h4><p>המחשבון הציבורי נפתח עם 0 אופציות, כדי שאפשר לשלוח אותו לחבר'ה בלי לחשוף נתונים. המחשבון האישי טוען את הכמויות שלך, ויש בו כפתור להסתרת כל המספרים שנגזרים מהכמות.</p></div>
+    <div class="guide-step"><h4>2. מניה ושער חי</h4><p>בוחרים מניה מהרשימה או מקלידים טיקר. השער החי נמשך אוטומטית ומוצג לצפייה בלבד, עם המקור והשעה. אם המשיכה נכשלת, פשוט מקלידים שער מכירה ידנית.</p></div>
+    <div class="guide-step"><h4>3. שער מכירה מתוכנן</h4><p>כל החישוב נעשה לפי שער המכירה המתוכנן. הוא מתחיל בשער החי ומתעדכן איתו עד שמשנים אותו ידנית. "חזור לשער החי" מחזיר אותו לשער החי.</p></div>
+    <div class="guide-step"><h4>4. מחיר מימוש ודיבידנדים</h4><p>בלאומי מחיר המימוש המקורי נקבע בסעיף 10 בכתב ההקצאה: סכום קבוע בש"ח, לא צמוד למדד או למטבע, לפי שער הנעילה ביום המסחר שלפני אישור ההענקה בדירקטוריון. הוא מותאם לדיבידנדים לפי התוכנית, וההסכם עצמו לא מפרט את הנוסחה. לכן במחשבון ההתאמה היא הערכה בלבד: דיבידנד שנתי × מספר שנים, ולא יורדת מתחת ל־0. ברירת המחדל 69.2744 כבר כוללת התאמה לדיבידנדים.</p></div>
+    <div class="guide-step"><h4>5. מס ומניות נטו</h4><p>לפי סעיף 12 המימוש בלאומי הוא במנגנון נטו בלבד. המס מחושב על הרווח הברוטו. מניות הנטו מחושבות לפי <span class="num">(A×B − A×C) ÷ B</span>: A כמות האופציות, B שער הנעילה בבורסה ביום המסחר שלפני המימוש, C מחיר המימוש המעודכן. לפי סעיף 16 לא מוקצים שברי מניות: שבר קטן מ־0.5 מעוגל למטה, 0.5 ומעלה למעלה.</p></div>
+    <div class="guide-step"><h4>6. הבשלה, פקיעה ועזיבה (לאומי)</h4><p>לפי נספח ג': הענקה ב־1.6.2026. חבילה 1 מבשילה במועד ההענקה (1.6.2026), חבילה 2 שנה אחריו (1.6.2027) וחבילה 3 שנתיים אחריו (1.6.2028). כל חבילה פוקעת 36 חודשים אחרי ההבשלה שלה: 1.6.2029, 1.6.2030, 1.6.2031. לפי סעיף 11, בעזיבת הבנק אופציות שלא הבשילו פוקעות (למעט חריגים), ואופציות שהבשילו אפשר לממש תוך 180 יום (בכפוף למגבלות סעיף 102). המועדים והתנאים עשויים להיות שונים בין עובדים, בדוק בהסכם שלך.</p></div>
+    <div class="toolbar" style="margin:12px 0 0;"><button type="button" class="btn btn-primary" id="btn-guide-back">חזור למחשבון</button></div>
+  </section>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ===== הגדרות ===== */
+  // כתובת האתר המפורסם. כשהמחשבון מוטמע ב-Google Sites אי אפשר לדעת את כתובת הדף, אז אם תמלא כאן את הכתובת הציבורית, הקישורים ששולחים יפנו אליה.
+  var PUBLIC_URL = '';
+
+  var STOCKS = {
+    'LUMI.TA': { name: 'בנק לאומי', currency: 'ILS' },
+    'NVDA':    { name: 'NVIDIA',     currency: 'USD' },
+    'INTC':    { name: 'Intel',      currency: 'USD' },
+    'AAPL':    { name: 'Apple',      currency: 'USD' }
+  };
+  var LEUMI = 'LUMI.TA';
+  var STORAGE_KEY = 'options-calc-v5-private';  // נתונים אישיים נשמרים רק במכשיר הזה
+  var LEUMI_BASE = { sell: 75.22, strike: 69.2744, div: 2.0, years: 1.5 };
+  // נספח ג' (לאומי): מועדי הבשלה ופקיעה לכל חבילה. הכמויות לא נשמרות בקוד.
+  var LEUMI_VESTING = [
+    { vest: [2026, 6, 1], expire: [2029, 6, 1] },
+    { vest: [2027, 6, 1], expire: [2030, 6, 1] },
+    { vest: [2028, 6, 1], expire: [2031, 6, 1] }
+  ];
+  var GENERIC_SUBS = ['שכבה ראשונה', 'תוספת שנייה', 'תוספת שלישית'];
+  var DEFAULT_TAX = 25;
+  var CUR = { ILS: '₪', USD: '$', EUR: '€', GBP: '£' };
+  var FIELDS = ['sell', 'strike', 'div', 'years', 'tax', 't1', 't2', 't3'];
+
+  /* ===== מצב ===== */
+  var state = {
+    view: 'public',        // public | private | guide
+    mode: 'public',        // public | private (מצב החישוב האחרון)
+    symbol: LEUMI,
+    masked: false,
+    data: { public: {}, private: {} },  // data[mode][symbol] = ערכים
+    live: {}               // live[symbol] = { price, currency, time, source, name }
+  };
+
+  function defaultsFor(mode, symbol) {
+    var isLeumi = symbol === LEUMI;
+    return {
+      sell: isLeumi ? LEUMI_BASE.sell : null,
+      sellEdited: false,
+      strike: isLeumi ? LEUMI_BASE.strike : null,
+      div: isLeumi ? LEUMI_BASE.div : 0,
+      years: isLeumi ? LEUMI_BASE.years : 0,
+      tax: DEFAULT_TAX,
+      t1: 0, t2: 0, t3: 0
+    };
+  }
+  function cur() {
+    var bucket = state.data[state.mode];
+    if (!bucket[state.symbol]) bucket[state.symbol] = defaultsFor(state.mode, state.symbol);
+    return bucket[state.symbol];
+  }
+  function stockInfo(symbol) {
+    var s = STOCKS[symbol];
+    if (s) return s;
+    var lv = state.live[symbol];
+    return { name: (lv && lv.name) || symbol, currency: (lv && lv.currency) || (/\.TA$/i.test(symbol) ? 'ILS' : 'USD'), custom: true };
+  }
+  function isMasked() { return state.mode === 'private' && state.masked; }
+
+  /* ===== עזרים ===== */
+  var $ = function (id) { return document.getElementById(id); };
+  function fmtNum(n, d) {
+    d = d || 0;
+    var v = Number.isFinite(n) ? n : 0;
+    return v.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+  }
+  function money(n, d, currency) {
+    if (n === null || n === undefined || !Number.isFinite(n)) return '—';
+    currency = currency || stockInfo(state.symbol).currency;
+    var sym = CUR[currency];
+    var s = fmtNum(Math.abs(n), d);
+    var sign = n < 0 ? '-' : '';
+    return sym ? sign + sym + s : sign + s + ' ' + currency;
+  }
+  function roundClause16(val) {
+    if (!Number.isFinite(val) || val <= 0) return 0;
+    var fl = Math.floor(val);
+    return (val - fl) >= 0.5 ? fl + 1 : fl;
+  }
+  function num(v) { var x = parseFloat(v); return Number.isFinite(x) ? x : null; }
+  function showToast(msg) {
+    var el = $('toast');
+    el.textContent = msg; el.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(function () { el.classList.remove('show'); }, 2600);
+  }
+
+  /* ===== חישוב ===== */
+  function computeModel(sellOverride) {
+    var v = cur();
+    var sell = sellOverride !== undefined ? sellOverride : v.sell;
+    var base = v.strike;
+    var divRed = Math.max(0, v.div || 0) * Math.max(0, v.years || 0);
+    var eff = base === null ? null : Math.max(0, base - divRed);
+    var actualRed = base === null ? null : base - eff;
+    var taxRate = Math.min(100, Math.max(0, v.tax || 0)) / 100;
+    var q = [v.t1, v.t2, v.t3].map(function (x) { return Math.max(0, Math.floor(x || 0)); });
+    var total = q[0] + q[1] + q[2];
+    var ready = sell !== null && sell > 0 && eff !== null;
+    var spread = ready ? Math.max(0, sell - eff) : null;
+    function calc(qty) {
+      if (!ready) return { qty: qty, gross: null, tax: null, net: null, shares: null };
+      var gross = qty * spread;                          // = q*P - q*K
+      var tax = gross * taxRate;
+      return { qty: qty, gross: gross, tax: tax, net: gross - tax, shares: roundClause16(gross / sell) }; // סעיף 12 + 16
+    }
+    return {
+      sell: sell, baseStrike: base, divReduction: actualRed, rawDivReduction: divRed, effStrike: eff,
+      taxRate: taxRate, totalOpts: total, ready: ready, spread: spread,
+      outOfMoney: ready && sell <= eff,
+      total: calc(total), tranches: q.map(calc)
+    };
+  }
+
+  /* ===== ממשק: מצב ותצוגה (פונקציה אחת לאתחול ולמעבר) ===== */
+  function applyModeUI() {
+    ['public', 'private', 'guide'].forEach(function (k) {
+      var tab = $('tab-' + k);
+      tab.classList.toggle('active', state.view === k);
+      tab.setAttribute('aria-pressed', state.view === k ? 'true' : 'false');
+    });
+    $('calc-workspace').classList.toggle('hidden', state.view === 'guide');
+    $('guide-workspace').classList.toggle('hidden', state.view !== 'guide');
+    var banner = $('mode-banner');
+    if (state.mode === 'private') {
+      banner.className = 'notice amber';
+      banner.innerHTML = '<strong>המחשבון האישי שלך.</strong> מה שתזין כאן נשמר <strong>רק במכשיר הזה</strong> ונטען אוטומטית בפעם הבאה. כשמישהו לידך, לחץ על <strong>הסתר כמויות אישיות</strong>.';
+      $('mode-badge').textContent = 'מצב אישי';
+    } else {
+      banner.className = 'notice blue';
+      banner.innerHTML = '<strong>מצב ציבורי לשיתוף:</strong> מתחיל ב־<strong>0 אופציות</strong> כדי לא לחשוף נתונים אישיים. כל אחד מזין את הכמות שלו.';
+      $('mode-badge').textContent = 'מצב ציבורי';
+    }
+    $('btn-mask').classList.toggle('hidden', state.mode !== 'private');
+    $('btn-mask').textContent = state.masked ? 'הצג כמויות אישיות' : 'הסתר כמויות אישיות';
+    document.body.classList.toggle('is-masked', isMasked());
+  }
+
+  function applyTrancheLabels() {
+    var isLeumi = state.symbol === LEUMI;
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    function d(a) { return new Date(a[0], a[1] - 1, a[2]); }
+    function f(a) { return a[2] + '.' + a[1] + '.' + a[0]; }
+    [0, 1, 2].forEach(function (i) {
+      var sub = $('t' + (i + 1) + '-sub'), badge = $('t' + (i + 1) + '-vest');
+      if (!isLeumi) { sub.textContent = GENERIC_SUBS[i]; badge.className = 'badge hidden'; return; }
+      var v = LEUMI_VESTING[i];
+      sub.textContent = 'הבשלה ' + f(v.vest) + ' · פקיעה ' + f(v.expire);
+      var vested = today >= d(v.vest), expired = today >= d(v.expire);
+      badge.textContent = expired ? 'פקעה' : (vested ? 'הבשילה' : 'טרם הבשילה');
+      badge.className = 'badge ' + (vested && !expired ? 'green' : 'amber');
+    });
+    $('tranche-note').classList.toggle('hidden', !isLeumi);
+    $('strike-help').textContent = isLeumi
+      ? 'המחיר המקורי נקבע בסעיף 10 בכתב ההקצאה (סכום קבוע בש"ח, לא צמוד) ומותאם לדיבידנדים לפי התוכנית. ברירת המחדל 69.2744 כבר כוללת התאמה לדיבידנדים.'
+      : 'מחיר המימוש מכתב ההקצאה, לפני הפחתת דיבידנדים.';
+    $('div-help').textContent = isLeumi
+      ? 'התאמה לדיבידנדים לפי התוכנית. ההסכם לא מפרט נוסחה, ולכן זו הערכה: דיבידנד שנתי × שנים.'
+      : 'בתוכניות שבהן הדיבידנד מפחית את מחיר המימוש. אם לא רלוונטי, השאר 0.';
+  }
+
+  function applyStockUI() {
+    applyTrancheLabels();
+    var info = stockInfo(state.symbol);
+    var sym = CUR[info.currency] || info.currency;
+    var sel = $('stock-select');
+    sel.value = STOCKS[state.symbol] ? state.symbol : '__custom';
+    var isCustom = sel.value === '__custom';
+    $('custom-row').classList.toggle('hidden', !isCustom);
+    $('custom-help').classList.toggle('hidden', !isCustom);
+    if (isCustom && document.activeElement !== $('custom-ticker')) $('custom-ticker').value = state.symbol === '__none' ? '' : state.symbol;
+    Array.prototype.forEach.call(document.querySelectorAll('.cur-sym'), function (el) { el.textContent = sym; });
+    var label = info.name + (info.name !== state.symbol ? ' (' + state.symbol + ')' : '');
+    $('app-title').textContent = 'מחשבון אופציות לעובדים · ' + info.name;
+    $('app-subtitle').textContent = label + ' · מטבע: ' + sym;
+    document.title = 'מחשבון אופציות · ' + info.name;
+    renderLive();
+  }
+
+  function setRange(id, val, ref) {
+    var r = $(id);
+    if (!r) return;
+    if (ref !== undefined) {
+      var max = Math.max(10, Math.ceil((ref || 0) * 2.2));
+      r.max = String(max);
+    }
+    if (val === null || val === undefined) return;
+    r.value = String(Math.min(parseFloat(r.max), Math.max(parseFloat(r.min), val)));
+  }
+
+  function writeInputs() {
+    var v = cur();
+    var ref = (state.live[state.symbol] && state.live[state.symbol].price) || v.sell || v.strike || 50;
+    FIELDS.forEach(function (k) {
+      var el = $(k + '-num');
+      if (el && document.activeElement !== el) el.value = (v[k] === null || v[k] === undefined) ? '' : String(+(+v[k]).toFixed(6));
+    });
+    setRange('sell-range', v.sell, ref);
+    setRange('strike-range', v.strike, ref);
+    setRange('div-range', v.div);
+    setRange('years-range', v.years);
+    setRange('tax-range', v.tax);
+  }
+
+  function setText(id, txt, maskedFlag) {
+    var el = $(id);
+    el.textContent = txt;
+    el.classList.toggle('masked', !!maskedFlag);
+  }
+
+  function renderLive() {
+    var lv = state.live[state.symbol];
+    var meta = $('live-meta');
+    meta.classList.remove('err');
+    if (lv && lv.price) {
+      $('live-price').textContent = money(lv.price, 2, lv.currency);
+      var t = lv.time ? new Date(lv.time * 1000).toLocaleString('he-IL', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '';
+      meta.textContent = 'מקור: ' + lv.source + (t ? ' · עדכון בבורסה: ' + t : '') + (lv.converted ? ' · הומר מאגורות לשקלים' : '');
+    } else {
+      $('live-price').textContent = '—';
+      if (lv && lv.error) { meta.textContent = lv.error; meta.classList.add('err'); }
+      else if (lv && lv.loading) meta.textContent = 'מושך שער…';
+      else meta.textContent = 'טרם נמשך שער';
+    }
+    $('btn-refresh').disabled = !!(lv && lv.loading);
+    $('btn-refresh').textContent = (lv && lv.loading) ? 'מושך…' : 'רענן שער';
+  }
+
+  function render() {
+    var v = cur();
+    var m = computeModel();
+    var masked = isMasked();
+    var M = '***';
+    var lv = state.live[state.symbol];
+    var hasLive = !!(lv && lv.price);
+
+    // KPI ופרטים לא תלויי כמות
+    setText('kpi-adj-strike', money(m.effStrike, 2));
+    setText('kpi-strike-sub', 'הפחתת דיבידנד: ' + (m.divReduction === null ? '—' : '\u2066-' + money(m.divReduction, 2) + '\u2069'));
+    setText('kpi-spread-sub', 'מרווח למניה: ' + money(m.spread, 2));
+    setText('kpi-tax-sub', 'מס מוערך: ' + fmtNum(m.taxRate * 100, m.taxRate * 100 % 1 ? 1 : 0) + '%');
+    setText('res-base-strike', money(m.baseStrike, 4));
+    $('res-div-formula').textContent = (state.symbol === LEUMI ? 'לפי התוכנית; הערכה: ' : 'הערכה: ') + fmtNum(v.div || 0, 2) + ' × ' + fmtNum(v.years || 0, 2) + ' שנים' + (m.baseStrike !== null && m.rawDivReduction > m.baseStrike ? ' (מוגבל עד מחיר מימוש 0)' : '');
+    setText('res-div-reduction', m.divReduction === null ? '—' : '-' + money(m.divReduction, 2));
+    setText('res-eff-strike', money(m.effStrike, 4));
+    setText('res-sell', money(m.sell, 2));
+    setText('res-spread', money(m.spread, 4));
+
+    // תלויי כמות
+    var T = m.total;
+    setText('kpi-total-opts', masked ? M : fmtNum(m.totalOpts), masked);
+    $('tranches-sum-badge').textContent = 'סה"כ: ' + (masked ? M : fmtNum(m.totalOpts));
+    setText('kpi-net', masked ? M : money(T.net, 0), masked);
+    setText('kpi-gross-sub', 'ברוטו: ' + (masked ? M : money(T.gross, 0)));
+    setText('kpi-net-shares', masked ? M : (T.shares === null ? '—' : fmtNum(T.shares)), masked);
+    setText('res-gross', masked ? M : money(T.gross, 0), masked);
+    setText('res-tax', masked ? M : money(T.tax, 0), masked);
+    setText('res-net', masked ? M : money(T.net, 0), masked);
+    setText('res-net-shares', masked ? M : (T.shares === null ? '—' : fmtNum(T.shares) + ' מניות'), masked);
+
+    // השוואה לשער החי
+    var row = $('row-live-compare');
+    var showCompare = hasLive && v.sellEdited;
+    row.classList.toggle('hidden', !showCompare);
+    if (showCompare) {
+      var ml = computeModel(lv.price);
+      setText('res-live-net', masked ? M : money(ml.total.net, 0) + ' (בשער ' + money(lv.price, 2) + ')', masked);
+    }
+
+    // טבלת חבילות
+    var rows = m.tranches.map(function (t, i) {
+      return '<tr><td>חבילה ' + (i + 1) + '</td>' + cells(t) + '</tr>';
+    }).join('');
+    $('tranche-tbody').innerHTML = rows;
+    $('tranche-tfoot').innerHTML = '<td>סה"כ</td>' + cells(T);
+    function cells(t) {
+      if (masked) return '<td class="masked">***</td><td class="masked">***</td><td class="masked">***</td><td class="masked">***</td>';
+      return '<td class="num">' + fmtNum(t.qty) + '</td><td class="num">' + money(t.gross, 0) + '</td><td class="num">' + money(t.net, 0) + '</td><td class="num">' + (t.shares === null ? '—' : fmtNum(t.shares)) + '</td>';
+    }
+
+    // מצב שער מכירה
+    var st = $('sell-status');
+    if (v.sell === null) st.textContent = 'הזן שער מכירה, או לחץ "רענן שער".';
+    else if (!v.sellEdited && hasLive) st.textContent = 'מסונכרן לשער החי';
+    else if (!v.sellEdited) st.textContent = state.symbol === LEUMI ? 'ערך בסיס (75.22), עד שיימשך שער חי' : 'ערך ידני';
+    else st.textContent = 'נקבע ידנית' + (hasLive ? ' · שער חי: ' + money(lv.price, 2) : '');
+    $('btn-sell-live').classList.toggle('hidden', !(hasLive && v.sellEdited));
+
+    // הודעת מצב
+    var n = $('state-notice');
+    var msg = '', cls = 'notice amber';
+    if (m.baseStrike === null) msg = 'הזן את מחיר המימוש מכתב ההקצאה כדי לראות חישוב.';
+    else if (m.sell === null || !(m.sell > 0)) msg = 'הזן שער מכירה מתוכנן (או לחץ "רענן שער").';
+    else if (m.outOfMoney) { msg = 'שער המכירה (' + money(m.sell, 2) + ') נמוך ממחיר המימוש המעודכן (' + money(m.effStrike, 2) + ') או שווה לו. האופציות מחוץ לכסף ואין רווח במימוש.'; cls = 'notice red'; }
+    else if (m.totalOpts === 0 && !masked) msg = 'הזן את כמות האופציות שלך בסעיף 2 כדי לראות רווח ומניות נטו. בינתיים מוצג רק הרווח למניה: ' + money(m.spread, 2) + '.';
+    n.className = cls + (msg ? '' : ' hidden');
+    n.textContent = msg;
+
+    updateShareUI();
+    if (state.mode === 'private') savePrivate();
+  }
+
+  /* ===== שמירה מקומית (מצב אישי בלבד) ===== */
+  function savePrivate() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, symbol: state.symbol, data: state.data.private })); } catch (e) {}
+  }
+  function loadPrivate() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      var obj = JSON.parse(raw);
+      if (!obj || typeof obj.data !== 'object') return;
+      Object.keys(obj.data).forEach(function (sym) {
+        var src = obj.data[sym], d = defaultsFor('private', sym);
+        if (!src || typeof src !== 'object') return;
+        FIELDS.forEach(function (k) {
+          if (src[k] === null && (k === 'sell' || k === 'strike')) d[k] = null;
+          else if (Number.isFinite(src[k]) && src[k] >= 0) d[k] = src[k];
+        });
+        d.sellEdited = !!src.sellEdited;
+        state.data.private[sym] = d;
+      });
+      state.privateSymbol = typeof obj.symbol === 'string' ? obj.symbol : null;
+    } catch (e) {}
+  }
+
+  /* ===== קלט ===== */
+  function onNumInput(key) {
+    var el = $(key + '-num');
+    var val = num(el.value);
+    var v = cur();
+    if (val !== null && val < 0) val = 0;
+    if (key === 'sell') v.sellEdited = true;
+    if ((key === 'sell' || key === 'strike') ) v[key] = val;
+    else v[key] = val === null ? 0 : val;
+    if (key === 't1' || key === 't2' || key === 't3') v[key] = Math.floor(v[key]);
+    var ref = (state.live[state.symbol] && state.live[state.symbol].price) || v.sell || v.strike || 50;
+    setRange(key + '-range', v[key], (key === 'sell' || key === 'strike') ? ref : undefined);
+    render();
+  }
+  function onRangeInput(key) {
+    var v = cur();
+    var val = num($(key + '-range').value);
+    if (key === 'sell') v.sellEdited = true;
+    v[key] = val;
+    $(key + '-num').value = String(val);
+    render();
+  }
+
+  /* ===== שער חי ===== */
+  // Yahoo Finance לא מחזיר כותרות CORS, ולכן מדפדפן הוא עובד בעיקר דרך שירות ציבורי חינמי (allorigins). מנסים כמה מסלולים במקביל ולוקחים את הראשון שמצליח.
+  function quoteRoutes(symbol) {
+    var path = '/v8/finance/chart/' + encodeURIComponent(symbol) + '?range=1d&interval=1d';
+    var y = 'https://query1.finance.yahoo.com' + path, y2 = 'https://query2.finance.yahoo.com' + path;
+    return [
+      { name: 'Yahoo Finance', url: y },
+      { name: 'Yahoo Finance דרך allorigins.win', url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent(y) },
+      { name: 'Yahoo Finance דרך allorigins.win', url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent(y2) },
+      { name: 'Yahoo Finance דרך codetabs', url: 'https://api.codetabs.com/v1/proxy/?quest=' + encodeURIComponent(y) }
+    ];
+  }
+  function parseYahoo(json) {
+    var r = json && json.chart && json.chart.result && json.chart.result[0];
+    var meta = r && r.meta;
+    if (!meta || !Number.isFinite(meta.regularMarketPrice) || meta.regularMarketPrice <= 0) throw new Error('no price');
+    var price = meta.regularMarketPrice, currency = meta.currency || 'USD', converted = false;
+    if (currency === 'ILA') { price = price / 100; currency = 'ILS'; converted = true; }   // ת"א: אגורות → שקלים
+    else if (currency === 'GBp' || currency === 'GBX') { price = price / 100; currency = 'GBP'; converted = true; }
+    return { price: price, currency: currency, converted: converted, time: meta.regularMarketTime || null, name: meta.shortName || meta.longName || null, symbol: meta.symbol };
+  }
+  function fetchQuote(symbol) {
+    var controllers = [];
+    var attempts = quoteRoutes(symbol).map(function (route) {
+      var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      controllers.push(ctrl);
+      var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 25000);
+      return fetch(route.url, { signal: ctrl ? ctrl.signal : undefined, cache: 'no-store' })
+        .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+        .then(function (j) { clearTimeout(timer); var q = parseYahoo(j); q.source = route.name; return q; })
+        .catch(function (e) { clearTimeout(timer); throw e; });
+    });
+    return anyOf(attempts).then(function (q) {
+      controllers.forEach(function (c) { if (c) try { c.abort(); } catch (e) {} });
+      return q;
+    });
+  }
+  function anyOf(promises) {
+    return new Promise(function (resolve, reject) {
+      var left = promises.length;
+      if (!left) reject(new Error('none'));
+      promises.forEach(function (p) { p.then(resolve, function () { if (--left === 0) reject(new Error('all failed')); }); });
+    });
+  }
+  function refreshLive(symbol, silent, retry) {
+    symbol = symbol || state.symbol;
+    if (!symbol || symbol === '__none') return;
+    var prev = state.live[symbol] || {};
+    state.live[symbol] = Object.assign({}, prev, { loading: true, error: null });
+    if (symbol === state.symbol) renderLive();
+    return fetchQuote(symbol).then(function (q) {
+      state.live[symbol] = Object.assign(q, { loading: false });
+      ['public', 'private'].forEach(function (mode) {
+        var d = state.data[mode][symbol];
+        if (d && !d.sellEdited) d.sell = +q.price.toFixed(4);
+      });
+      if (symbol === state.symbol) { applyStockUI(); writeInputs(); render(); }
+      if (!silent) showToast('השער עודכן: ' + money(q.price, 2, q.currency));
+    }).catch(function () {
+      if (!retry) { return new Promise(function (r) { setTimeout(r, 2500); }).then(function () { return refreshLive(symbol, silent, true); }); }
+      state.live[symbol] = Object.assign({}, prev, { loading: false, error: 'לא הצלחתי למשוך שער חי' + (prev.price ? ' (מוצג השער האחרון)' : '') + '. אפשר להזין שער מכירה ידנית.' });
+      if (prev.price) state.live[symbol].price = prev.price;
+      if (symbol === state.symbol) { renderLive(); render(); }
+    });
+  }
+
+  /* ===== מעבר מצב / מניה ===== */
+  function setView(view) {
+    if (view === 'guide') { state.view = 'guide'; applyModeUI(); return; }
+    state.view = view; state.mode = view;
+    if (view === 'public') state.masked = false;
+    var d = cur();
+    var lv = state.live[state.symbol];
+    if (lv && lv.price && !d.sellEdited) d.sell = +lv.price.toFixed(4);
+    applyModeUI(); applyStockUI(); writeInputs(); render();
+  }
+  function setStock(symbol) {
+    state.symbol = symbol;
+    var d = cur();
+    var lv = state.live[symbol];
+    if (lv && lv.price && !d.sellEdited) d.sell = +lv.price.toFixed(4);
+    applyStockUI(); writeInputs(); render();
+    if (!lv || (!lv.price && !lv.loading)) refreshLive(symbol, true);
+  }
+  function resetCurrent() {
+    if (state.mode === 'private' && !window.confirm('לאפס את הנתונים האישיים של המניה הזאת? הנתונים השמורים במכשיר יימחקו.')) return;
+    var d = defaultsFor(state.mode, state.symbol);
+    var lv = state.live[state.symbol];
+    if (lv && lv.price) d.sell = +lv.price.toFixed(4);
+    state.data[state.mode][state.symbol] = d;
+    writeInputs(); render(); showToast('הערכים אופסו לערכי הבסיס');
+  }
+
+  /* ===== שיתוף ===== */
+  function linkContext() {
+    var inFrame = false;
+    try { inFrame = window.self !== window.top; } catch (e) { inFrame = true; }
+    var proto = location.protocol;
+    var host = location.hostname || '';
+    if (PUBLIC_URL) return { base: PUBLIC_URL.split('#')[0], ok: true };
+    if (proto === 'file:') return { base: null, ok: false, note: 'הקישור יעבוד רק אחרי שהקובץ יפורסם באתר. כרגע הוא פתוח מהמחשב.' };
+    if (proto !== 'http:' && proto !== 'https:') return { base: null, ok: false, note: 'אין כתובת ציבורית לדף הזה, ולכן לא נוצר קישור.' };
+    if (inFrame || /googleusercontent\.com$/.test(host)) return { base: null, ok: false, note: 'המחשבון מוטמע בתוך אתר ואין לו כתובת משלו. לקישור, שלחו את כתובת האתר עצמו.' };
+    return { base: location.href.split('#')[0], ok: true };
+  }
+  function buildLink() {
+    var ctx = linkContext();
+    if (!ctx.ok) return { url: null, note: ctx.note };
+    var v = cur();
+    var hideQty = state.mode === 'private' && state.masked;
+    var p = new URLSearchParams();
+    p.set('s', state.symbol);
+    if (v.sell !== null && v.sellEdited) p.set('sell', String(v.sell));
+    if (v.strike !== null) p.set('strike', String(v.strike));
+    p.set('div', String(v.div || 0));
+    p.set('years', String(v.years || 0));
+    p.set('tax', String(v.tax));
+    ['t1', 't2', 't3'].forEach(function (k) { p.set(k, String(hideQty ? 0 : (v[k] || 0))); });
+    return { url: ctx.base + '#' + p.toString(), note: null };
+  }
+  function updateShareUI() {
+    var l = buildLink();
+    $('share-url').value = l.url || '';
+    $('share-url').placeholder = l.url ? '' : 'אין קישור זמין';
+    $('btn-copy-link').disabled = !l.url;
+    $('share-note').textContent = l.note || '';
+    $('share-note').classList.toggle('hidden', !l.note);
+  }
+  function buildShareText() {
+    var m = computeModel();
+    var info = stockInfo(state.symbol);
+    var hide = isMasked();
+    var lv = state.live[state.symbol];
+    var T = m.total;
+    var lines = ['מחשבון אופציות לעובדים: ' + info.name + (info.name !== state.symbol ? ' (' + state.symbol + ')' : '')];
+    lines.push('• שער מכירה מתוכנן: ' + money(m.sell, 2));
+    if (lv && lv.price) lines.push('• שער חי: ' + money(lv.price, 2, lv.currency));
+    lines.push('• מחיר מימוש: ' + money(m.baseStrike, 4) + ', אחרי דיבידנד: ' + money(m.effStrike, 4));
+    lines.push('• רווח למניה: ' + money(m.spread, 2));
+    if (m.outOfMoney) lines.push('• מחוץ לכסף, אין רווח במימוש');
+    if (hide) lines.push('• כמות ורווח: מוסתרים');
+    else if (m.totalOpts > 0) {
+      lines.push('• כמות אופציות: ' + fmtNum(m.totalOpts));
+      lines.push('• ברוטו: ' + money(T.gross, 0) + ' | מס ' + fmtNum(m.taxRate * 100) + '%: ' + money(T.tax, 0) + ' | נטו: ' + money(T.net, 0));
+      lines.push('• מניות נטו למימוש (סעיף 12): ' + (T.shares === null ? '—' : fmtNum(T.shares)));
+    }
+    var l = buildLink();
+    lines.push(l.url ? 'קישור למחשבון: ' + l.url : '(' + l.note + ')');
+    lines.push('סימולציה בלבד, לא ייעוץ.');
+    return lines.join('\n');
+  }
+  function copyText(text, ok) {
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select();
+      var done = false;
+      try { done = document.execCommand('copy'); } catch (e) { done = false; }
+      document.body.removeChild(ta);
+      showToast(done ? ok : 'הדפדפן חסם העתקה. סמן את הטקסט והעתק ידנית.');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { showToast(ok); }, fallback);
+    } else fallback();
+  }
+  function shareWhatsApp() {
+    var url = 'https://wa.me/?text=' + encodeURIComponent(buildShareText());
+    var w = null;
+    try { w = window.open(url, '_blank', 'noopener'); } catch (e) { w = null; }
+    if (!w) {
+      var a = document.createElement('a');
+      a.href = url; a.target = '_blank'; a.rel = 'noopener';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    }
+  }
+
+  /* ===== טעינה מקישור ===== */
+  // קישור משותף נפתח תמיד במצב ציבורי, ורק הערכים שבקישור חלים. הכמויות האישיות לעולם לא נטענות מקישור.
+  function loadFromHash() {
+    var h = location.hash ? location.hash.slice(1) : '';
+    if (!h) return false;
+    var p = new URLSearchParams(h);
+    var known = ['s', 'm'].concat(FIELDS).some(function (k) { return p.has(k); });
+    if (!known) return false;
+    var sym = (p.get('s') || LEUMI).toUpperCase().replace(/[^A-Z0-9.\-^=]/g, '').slice(0, 15) || LEUMI;
+    var d = defaultsFor('public', sym);   // בסיס ציבורי בלבד: כמויות 0. רק מה שבקישור משנה אותו
+    FIELDS.forEach(function (k) {
+      var key = k === 'sell' && !p.has('sell') && p.has('spot') ? 'spot' : k;  // תאימות לקישורי v4
+      if (p.has(key)) {
+        var val = num(p.get(key));
+        if (val !== null && val >= 0) d[k] = (k[0] === 't') ? Math.floor(val) : val;
+      }
+    });
+    if (p.has('sell') || p.has('spot')) d.sellEdited = true;
+    state.mode = 'public'; state.view = 'public'; state.symbol = sym;
+    state.data.public[sym] = d;
+    return true;
+  }
+
+  /* ===== חיבור אירועים ===== */
+  function bind() {
+    $('tab-public').addEventListener('click', function () { setView('public'); });
+    $('tab-private').addEventListener('click', function () { setView('private'); });
+    $('tab-guide').addEventListener('click', function () { setView('guide'); });
+    $('btn-guide-back').addEventListener('click', function () { setView(state.mode); });
+    FIELDS.forEach(function (k) {
+      var n = $(k + '-num'), r = $(k + '-range');
+      if (n) n.addEventListener('input', function () { onNumInput(k); });
+      if (n) n.addEventListener('blur', function () { writeInputs(); });
+      if (r) r.addEventListener('input', function () { onRangeInput(k); });
+    });
+    $('btn-sell-live').addEventListener('click', function () {
+      var lv = state.live[state.symbol];
+      if (!lv || !lv.price) return;
+      var v = cur(); v.sell = +lv.price.toFixed(4); v.sellEdited = false;
+      writeInputs(); render(); showToast('שער המכירה חזר לשער החי');
+    });
+    $('btn-refresh').addEventListener('click', function () { refreshLive(state.symbol, false); });
+    $('stock-select').addEventListener('change', function (e) {
+      if (e.target.value === '__custom') {
+        $('custom-row').classList.remove('hidden'); $('custom-help').classList.remove('hidden');
+        $('custom-ticker').value = ''; $('custom-ticker').focus();
+      } else setStock(e.target.value);
+    });
+    function loadCustom() {
+      var t = $('custom-ticker').value.trim().toUpperCase().replace(/[^A-Z0-9.\-^=]/g, '').slice(0, 15);
+      if (!t) { showToast('הקלד טיקר, למשל MSFT'); return; }
+      setStock(t);
+    }
+    $('btn-custom-load').addEventListener('click', loadCustom);
+    $('custom-ticker').addEventListener('keydown', function (e) { if (e.key === 'Enter') loadCustom(); });
+    $('btn-reset').addEventListener('click', resetCurrent);
+    $('btn-mask').addEventListener('click', function () {
+      state.masked = !state.masked; applyModeUI(); render();
+      showToast(state.masked ? 'הכמויות האישיות הוסתרו' : 'הכמויות האישיות מוצגות');
+    });
+    $('btn-whatsapp').addEventListener('click', shareWhatsApp);
+    $('btn-copy-summary').addEventListener('click', function () { copyText(buildShareText(), 'הסיכום הועתק'); });
+    $('btn-copy-link').addEventListener('click', function () { var l = buildLink(); if (l.url) copyText(l.url, 'הקישור הועתק'); });
+  }
+
+  function buildStockSelect() {
+    var sel = $('stock-select');
+    var html = Object.keys(STOCKS).map(function (s) {
+      var i = STOCKS[s];
+      return '<option value="' + s + '">' + i.name + ' · ' + s + ' (' + CUR[i.currency] + ')</option>';
+    }).join('');
+    sel.innerHTML = html + '<option value="__custom">טיקר אחר…</option>';
+  }
+
+  function registerSW() {
+    var top = false;
+    try { top = window.self === window.top; } catch (e) { top = false; }
+    if (!top || !('serviceWorker' in navigator)) return;
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') return;
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  }
+
+  /* ===== אתחול ===== */
+  function init() {
+    buildStockSelect();
+    loadPrivate();
+    loadFromHash();
+    bind();
+    applyModeUI();
+    applyStockUI();
+    writeInputs();
+    render();
+    refreshLive(state.symbol, true);
+    registerSW();
+  }
+
+  // חשיפה לבדיקות בלבד
+  window.__optionsCalc = { state: state, computeModel: computeModel, roundClause16: roundClause16, buildShareText: buildShareText, buildLink: buildLink, setView: setView, setStock: setStock, parseYahoo: parseYahoo, refreshLive: refreshLive };
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+</script>
+</body>
+</html>
