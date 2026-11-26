@@ -256,18 +256,13 @@
     var skinRgb = [(cheekL.rgb[0] + cheekR.rgb[0]) / 2, (cheekL.rgb[1] + cheekR.rgb[1]) / 2, (cheekL.rgb[2] + cheekR.rgb[2]) / 2];
     var skinL = lum(skinRgb);
 
+    // Hair: a thin band just above the hairline, plus volume at the sides of the forehead.
     var fh = lm(face, I.forehead);
-    var chin = lm(face, I.chin);
-    var faceW = Math.max(0.12, Math.abs(lm(face, I.rCheek).x - lm(face, I.lCheek).x));
-    var faceH = Math.max(0.16, Math.abs(chin.y - fh.y));
-    function pxRad(frac) { return Math.max(3, frac * faceW * w); }
-
-    // Hair: thin band just above the hairline and volume at the temples, in face units (not image units).
-    var hairTop = sampleBox(ctx, w, h, (fh.x - 0.55 * faceW) * w, Math.max(0, (fh.y - 0.28 * faceH) * h), 1.1 * faceW * w, 0.22 * faceH * h);
-    var hairL = sampleAround(ctx, w, h, lm(face, I.lTemple).x - 0.12 * faceW, Math.min(fh.y, lm(face, I.lTemple).y) - 0.08 * faceH, pxRad(0.12));
-    var hairR = sampleAround(ctx, w, h, lm(face, I.rTemple).x + 0.12 * faceW, Math.min(fh.y, lm(face, I.rTemple).y) - 0.08 * faceH, pxRad(0.12));
-    var hairCrownL = sampleAround(ctx, w, h, fh.x - 0.32 * faceW, fh.y - 0.12 * faceH, pxRad(0.1));
-    var hairCrownR = sampleAround(ctx, w, h, fh.x + 0.32 * faceW, fh.y - 0.12 * faceH, pxRad(0.1));
+    var hairTop = sampleBox(ctx, w, h, (fh.x - 0.16) * w, Math.max(0, (fh.y - 0.09) * h), 0.32 * w, 0.07 * h);
+    var hairL = sampleAround(ctx, w, h, lm(face, I.lTemple).x - 0.04, Math.min(fh.y, lm(face, I.lTemple).y) - 0.02, 9);
+    var hairR = sampleAround(ctx, w, h, lm(face, I.rTemple).x + 0.04, Math.min(fh.y, lm(face, I.rTemple).y) - 0.02, 9);
+    var hairCrownL = sampleAround(ctx, w, h, fh.x - 0.14, fh.y - 0.04, 8);
+    var hairCrownR = sampleAround(ctx, w, h, fh.x + 0.14, fh.y - 0.04, 8);
     function unlikeSkin(s) {
       var d = Math.sqrt(dist2(s.rgb, skinRgb));
       if (d <= 32) return false;
@@ -277,7 +272,11 @@
       return false;
     }
     var hairCand = [hairTop, hairL, hairR, hairCrownL, hairCrownR].filter(unlikeSkin);
+    // Near-black samples next to a light scalp are usually background, not hair.
     var darkHair = hairCand.filter(function (s) { return lum(s.rgb) < skinL - 0.1; });
+    if (darkHair.length && lum(hairTop.rgb) > skinL - 0.05) {
+      darkHair = darkHair.filter(function (s) { return lum(s.rgb) > 0.12; });
+    }
     var useHair = darkHair.length ? darkHair : hairCand;
     var hairRgb = (useHair[0] || hairTop).rgb;
     if (useHair.length) {
@@ -291,10 +290,11 @@
     notes.hairVar = Math.round(hairTop.var);
     notes.hairCands = hairCand.length;
 
-    // Length: samples just outside the cheeks, face-relative, colour-matched to hair (avoids jackets).
-    var sideL = sampleBox(ctx, w, h, (lm(face, I.lCheek).x - 0.35 * faceW) * w, (lm(face, I.lCheek).y - 0.08 * faceH) * h, 0.28 * faceW * w, 0.30 * faceH * h);
-    var sideR = sampleBox(ctx, w, h, (lm(face, I.rCheek).x + 0.07 * faceW) * w, (lm(face, I.rCheek).y - 0.08 * faceH) * h, 0.28 * faceW * w, 0.30 * faceH * h);
-    function hairish(s) { return unlikeSkin(s) && Math.sqrt(dist2(s.rgb, hairRgb)) < 50; }
+    // Length: just outside the cheeks, colour-matched to hair, some texture (avoids flat jackets / backdrops).
+    var chin = lm(face, I.chin);
+    var sideL = sampleBox(ctx, w, h, (lm(face, I.lCheek).x - 0.13) * w, (lm(face, I.lCheek).y - 0.02) * h, 0.09 * w, 0.08 * h);
+    var sideR = sampleBox(ctx, w, h, lm(face, I.rCheek).x * w + 2, (lm(face, I.rCheek).y - 0.02) * h, 0.09 * w, 0.08 * h);
+    function hairish(s) { return unlikeSkin(s) && Math.sqrt(dist2(s.rgb, hairRgb)) < 50 && s.var > 8; }
     var longHits = (hairish(sideL) ? 1 : 0) + (hairish(sideR) ? 1 : 0);
     var hairStyle = 'short';
     if (baldScore) hairStyle = 'bald';
@@ -306,10 +306,10 @@
     }
     notes.longHits = longHits;
 
-    // Beard: share of clearly-darker-than-skin pixels on the chin and jaws (face-relative boxes).
+    // Beard: inward jaw + chin, share of clearly darker pixels.
     var lipY = lm(face, I.loLip).y;
     var beardY = lipY + (chin.y - lipY) * 0.45;
-    var chinBox = { x: (chin.x - 0.35 * faceW) * w, y: beardY * h, bw: 0.70 * faceW * w, bh: Math.max(6, (chin.y - beardY) * h) };
+    var chinBox = { x: (chin.x - 0.10) * w, y: beardY * h, bw: 0.20 * w, bh: Math.max(6, (chin.y - beardY) * h) };
     var lJaw = lm(face, I.lJaw), rJaw = lm(face, I.rJaw);
     var fracL = darkFraction(ctx, w, h, lJaw.x * w, lJaw.y * h, Math.max(6, (chin.x - lJaw.x) * 0.55 * w), Math.max(6, (chin.y - lJaw.y) * 0.8 * h), skinL - 0.20);
     var fracR = darkFraction(ctx, w, h, (rJaw.x - (rJaw.x - chin.x) * 0.55) * w, rJaw.y * h, Math.max(6, (rJaw.x - chin.x) * 0.55 * w), Math.max(6, (chin.y - rJaw.y) * 0.8 * h), skinL - 0.20);
@@ -318,33 +318,34 @@
     var chinS = sampleBox(ctx, w, h, chinBox.x, chinBox.y, chinBox.bw, chinBox.bh);
     var beardDark = skinL - lum(chinS.rgb);
     var beard = 'none';
-    if (beardFrac > 0.40 || (beardFrac > 0.28 && beardDark > 0.16)) beard = 'full';
-    else if (beardFrac > 0.20) beard = 'stubble';
+    if (beardFrac > 0.45 || (beardFrac > 0.32 && beardDark > 0.16)) beard = 'full';
+    else if (beardFrac > 0.32) beard = 'stubble';
     notes.beardDark = Math.round(beardDark * 100) / 100;
     notes.beardFrac = Math.round(beardFrac * 100) / 100;
 
-    // Glasses: offsets in face units; require a dark bridge, or a dark top rim plus edge energy.
+    // Glasses: several offsets outside the eye corners + a sample between brow and eye.
     var lOut = lm(face, I.lEyeOut), rOut = lm(face, I.rEyeOut);
     var lIn = lm(face, I.lEyeIn), rIn = lm(face, I.rEyeIn);
     var bridge = mid(lIn, rIn);
-    var rimDark = 0, oi, offs = [0.08, 0.14, 0.20];
+    var rimDark = 0, oi;
+    var offs = [0.02, 0.035, 0.05];
     for (oi = 0; oi < offs.length; oi++) {
-      var rL = sampleAround(ctx, w, h, lOut.x - offs[oi] * faceW, lOut.y, pxRad(0.06));
-      var rR = sampleAround(ctx, w, h, rOut.x + offs[oi] * faceW, rOut.y, pxRad(0.06));
+      var rL = sampleAround(ctx, w, h, lOut.x - offs[oi], lOut.y, 4);
+      var rR = sampleAround(ctx, w, h, rOut.x + offs[oi], rOut.y, 4);
       var d = (skinL - lum(rL.rgb)) + (skinL - lum(rR.rgb));
       if (d > rimDark) rimDark = d;
     }
     var topYL = lm(face, I.lEyeUp).y * 0.7 + lm(face, I.lBrowIn).y * 0.3;
     var topYR = lm(face, I.rEyeUp).y * 0.7 + lm(face, I.rBrowIn).y * 0.3;
-    var topL = sampleAround(ctx, w, h, mid(lm(face, I.lBrowIn), lm(face, I.lEyeIn)).x, topYL, pxRad(0.05));
-    var topR = sampleAround(ctx, w, h, mid(lm(face, I.rBrowIn), lm(face, I.rEyeIn)).x, topYR, pxRad(0.05));
+    var topL = sampleAround(ctx, w, h, mid(lm(face, I.lBrowIn), lm(face, I.lEyeIn)).x, topYL, 3);
+    var topR = sampleAround(ctx, w, h, mid(lm(face, I.rBrowIn), lm(face, I.rEyeIn)).x, topYR, 3);
     var topDark = (skinL - lum(topL.rgb)) + (skinL - lum(topR.rgb));
-    var br = sampleAround(ctx, w, h, bridge.x, bridge.y - 0.04 * faceH, pxRad(0.05));
-    var eyeBand = sampleBox(ctx, w, h, lOut.x * w, (Math.min(lOut.y, rOut.y) - 0.10 * faceH) * h, (rOut.x - lOut.x) * w, 0.28 * faceH * h);
+    var br = sampleAround(ctx, w, h, bridge.x, bridge.y - 0.01, 4);
+    var eyeBand = sampleBox(ctx, w, h, lOut.x * w, (Math.min(lOut.y, rOut.y) - 0.03) * h, (rOut.x - lOut.x) * w, 0.08 * h);
     var bridgeDark = skinL - lum(br.rgb);
     var glasses = 'none';
     if ((rimDark > 0.10 && bridgeDark > 0.08) || (rimDark > 0.10 && topDark > 0.12 && eyeBand.var > 36)) {
-      var bandRatio = ((rOut.x - lOut.x) * w) / Math.max(8, 0.28 * faceH * h);
+      var bandRatio = ((rOut.x - lOut.x) * w) / Math.max(8, 0.08 * h);
       glasses = bandRatio > 3.6 ? 'square' : 'round';
     }
     notes.rimDark = Math.round(rimDark * 100) / 100;
@@ -640,26 +641,6 @@
     detectImage: detectImage,
     detectFile: function (file) { return loadFile(file).then(detectImage); },
     lastDetection: function () { return lastDetection; },
-    debugDetect: function (img) {
-      var pack = imageToCanvas(img);
-      return getLandmarker().then(function (lmkr) {
-        var res = lmkr.detect(pack.canvas);
-        var face = res && res.faceLandmarks && res.faceLandmarks[0];
-        var out = face ? detectFromLandmarks(pack.ctx, pack.w, pack.h, face) : detectFallback(pack.ctx, pack.w, pack.h);
-        var ctx = pack.ctx;
-        if (face) {
-          ctx.strokeStyle = '#00ff88'; ctx.lineWidth = 1;
-          for (var i = 0; i < face.length; i++) {
-            ctx.fillStyle = i === 10 || i === 152 || i === 33 || i === 263 || i === 234 || i === 454 ? '#ff3366' : '#00ff88';
-            ctx.fillRect(face[i].x * pack.w - 1, face[i].y * pack.h - 1, 2, 2);
-          }
-        }
-        out.overlay = pack.canvas.toDataURL('image/jpeg', 0.85);
-        out.canvasSize = { w: pack.w, h: pack.h };
-        wipe(pack);
-        return out;
-      });
-    },
     defaults: defaults,
     svg: svgString
   };
