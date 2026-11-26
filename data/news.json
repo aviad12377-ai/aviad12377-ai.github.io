@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-26T23:29+02:00",
+  "updated": "2026-11-26T23:47+02:00",
   "disclaimer": "מידע בלבד, לא ייעוץ",
   "items": [
     {
       "id": "funds-monthly-202610",
       "kind": "funds",
-      "time": "2026-11-26T23:29+02:00",
+      "time": "2026-11-26T23:25+02:00",
       "title": "תשואות אוקטובר 2026: המובילים במסלולים הכללי, המנייתי, S&P 500 והאג״ח",
       "summary": "סיכום תשואות אוקטובר 2026 בקרנות השתלמות, פנסיה וגמל, לפי מסלול, מתוך הפרסום הרשמי בגמל נט ובפנסיה נט. הממוצעים חשבוניים, וההשוואה היא מול החודש הקודם ול־12 חודשים. מידע בלבד, לא ייעוץ.",
       "source": "גמל נט, פנסיה נט ורשות שוק ההון (data.gov.il)",
@@ -1376,21 +1376,6 @@
       ]
     },
     {
-      "id": "rss-themarker-markets-a59981c367ea84a7",
-      "kind": "rss",
-      "time": "2026-11-26T16:30+02:00",
-      "title": "האם הודעת ה–SMS כדרך לאישור עסקות אשראי עתידה להיעלם?",
-      "summary": "ל–TheMarker נודע שהפיקוח על הבנקים דורש מהבנקים ומחברות כרטיסי האשראי לשקול פתרונות חלופיים ■ באירופה כבר מזמן יש פתרונות אחרים ומאובטחים יותר ■ השינוי כנראה לא יקרה מהר ולא יפתור את מגפת ההונאות — לשם כך צריך התערבות ממשלתית",
-      "source": "TheMarker",
-      "lang": "he",
-      "links": [
-        {
-          "title": "TheMarker",
-          "url": "https://www.themarker.com/markets/2026-11-26/ty-article/.premium/000001a2-1744-d22a-a1bb-17670dae0000"
-        }
-      ]
-    },
-    {
       "id": "rss-bbc-business-f531ef89d617102a",
       "kind": "rss",
       "time": "2026-11-26T16:28+02:00",
@@ -1438,7 +1423,7 @@
     {
       "id": "digest-2026-11-26-open",
       "kind": "digest",
-      "time": "2026-11-26T15:49+02:00",
+      "time": "2026-11-26T15:59+02:00",
       "title": "וול סטריט סגורה לחג ההודיה, אירופה עולה 1.6% אחרי ריכוך המכסים, ת״א 125 מזנק 3%",
       "summary": "ת״א 35 עולה 2.56% ל־3,889.50 ות״א 125 עולה 3.08% (15:44, במסחר), על רקע הערכות גוברות להקמת ממשלה. מדדי הבנייה והנדל״ן עולים כ־5% עד 6%, ומניות השבבים הדואליות טאואר, קמטק ונובה עולות 6% עד 7.5%. הדולר יורד 1.25% ל־3.308 שקלים. אין היום מסחר במניות ובאג״ח בארה״ב בגלל חג ההודיה, אבל החוזים נסחרים בעליות: חוזה S&P 500 עולה 0.80% וחוזה נאסד״ק 100 עולה 0.85%. אחרי שמשרד הסחר האמריקאי הודיע שיגביל את המכסים החדשים לשיעורים שסוכמו בהסכמי סחר, כמו 15% לאיחוד האירופי, סטוקס 600 עולה 1.61% ודאקס 2.01%, בהובלת הבנקים והטכנולוגיה. הנפט, הזהב והביטקוין עולים כ־1% כל אחד, ובמחזורים דלים.",
       "source": "דסק השוק",
@@ -1466,145 +1451,106 @@
         {
           "group": "ישראל",
           "name": "ת״א 35",
-          "value": 3889.5,
           "display": "3,889.50",
-          "change_pct": 2.56,
           "change_text": "+2.56%",
           "dir": "up",
-          "note": "15:44",
-          "status": "במסחר"
+          "note": "15:44"
         },
         {
           "group": "ישראל",
           "name": "ת״א 125",
-          "value": 3816.09,
           "display": "3,816.09",
-          "change_pct": 3.08,
           "change_text": "+3.08%",
           "dir": "up",
-          "note": "15:44",
-          "status": "במסחר"
+          "note": "15:44"
         },
         {
           "group": "ישראל",
           "name": "תל בונד 60",
-          "value": null,
-          "display": null,
-          "change_pct": null,
-          "change_text": null,
+          "display": "—",
+          "change_text": "—",
           "dir": "level",
-          "note": "במסחר, 15:44",
-          "status": null
+          "note": null
         },
         {
           "group": "ישראל",
           "name": "דולר/שקל",
-          "value": 3.308,
           "display": "3.308",
-          "change_pct": -1.25,
           "change_text": "−1.25%",
           "dir": "down",
-          "note": "15:59",
-          "status": "במסחר"
+          "note": "15:59"
         },
         {
           "group": "ישראל",
           "name": "10 שנים ישראל",
-          "value": null,
-          "display": null,
-          "change_pct": null,
-          "change_text": null,
+          "display": "—",
+          "change_text": "—",
           "dir": "level",
-          "note": "במסחר, 15:44",
-          "status": null
+          "note": null
         },
         {
           "group": "עולם",
           "name": "חוזה S&P 500",
-          "value": 7253.0,
           "display": "7,253.00",
-          "change_pct": 0.8,
           "change_text": "+0.80%",
           "dir": "up",
-          "note": "15:49",
-          "status": "במסחר"
+          "note": null
         },
         {
           "group": "עולם",
           "name": "חוזה נאסד״ק 100",
-          "value": 26323.25,
           "display": "26,323.25",
-          "change_pct": 0.85,
           "change_text": "+0.85%",
           "dir": "up",
-          "note": "15:49",
-          "status": "במסחר"
+          "note": null
         },
         {
           "group": "עולם",
           "name": "חוזה דאו",
-          "value": 50506.0,
           "display": "50,506",
-          "change_pct": 0.55,
           "change_text": "+0.55%",
           "dir": "up",
-          "note": "15:49",
-          "status": "במסחר"
+          "note": null
         },
         {
           "group": "עולם",
           "name": "נפט WTI, לחבית",
-          "value": 84.51,
           "display": "84.51 דולר",
-          "change_pct": 0.99,
           "change_text": "+0.99%",
           "dir": "up",
-          "note": "15:49",
-          "status": "במסחר"
+          "note": null
         },
         {
           "group": "עולם",
           "name": "10 שנים ארה״ב",
-          "value": 4.864,
           "display": "4.864%",
-          "change_pct": null,
           "change_text": "נעילה 25.11",
           "dir": "level",
-          "note": "15:49",
-          "status": "במסחר"
+          "note": null
         },
         {
           "group": "עולם",
           "name": "סטוקס 600",
-          "value": 636.1,
           "display": "636.10",
-          "change_pct": 1.61,
           "change_text": "+1.61%",
           "dir": "up",
-          "note": "15:49",
-          "status": "במסחר"
+          "note": null
         },
         {
           "group": "עולם",
           "name": "זהב, לאונקיה",
-          "value": 3569.7,
           "display": "3,569.70 דולר",
-          "change_pct": 0.96,
           "change_text": "+0.96%",
           "dir": "up",
-          "note": "15:49",
-          "status": "במסחר"
+          "note": null
         },
         {
           "group": "עולם",
           "name": "ביטקוין",
-          "value": 60788.0,
           "display": "60,788 דולר",
-          "change_pct": 1.32,
           "change_text": "+1.32%",
           "dir": "up",
-          "note": "15:49",
-          "status": "במסחר"
+          "note": null
         }
       ],
       "calendar": [
@@ -1661,21 +1607,6 @@
       ]
     },
     {
-      "id": "rss-themarker-markets-1edb6c1c123bd459",
-      "kind": "rss",
-      "time": "2026-11-26T13:30+02:00",
-      "title": "ההכנסות זינקו ב-172%: נופר אנרג'י עוברת לרווח - והמניה טסה ב-20%",
-      "summary": "הכנסות חברת האנרגיה המתחדשת שבשליטת עופר ינאי זינקו ל-294 מיליון שקל ברבעון השלישי, והרווח הנקי הסתכם ב-84 מיליון שקל ■ לצד המהלכים להכנסת שותפים לפעילות בישראל ובאירופה, מסמנת נופר מנוע צמיחה חדש בתחום חוות השרתים ■ המניה מזנקת",
-      "source": "TheMarker",
-      "lang": "he",
-      "links": [
-        {
-          "title": "TheMarker",
-          "url": "https://www.themarker.com/markets/2026-11-26/ty-article/.premium/000001a2-1792-d809-adef-7ffef65f0000"
-        }
-      ]
-    },
-    {
       "id": "rss-bbc-business-29fa7f2a51a892cd",
       "kind": "rss",
       "time": "2026-11-26T13:21+02:00",
@@ -1691,9 +1622,24 @@
       ]
     },
     {
+      "id": "rss-cnbc-markets-6c879c3828f00e1c",
+      "kind": "rss",
+      "time": "2026-11-26T09:30+02:00",
+      "title": "Robots could be doing household chores in just 1-2 years, Chinese EV firm says",
+      "summary": "Xpeng Co-President Brian Gu shared his humanoid robot predictions with CNBC in an interview Thursday.",
+      "source": "CNBC",
+      "lang": "en",
+      "links": [
+        {
+          "title": "CNBC",
+          "url": "https://www.cnbc.com/2026/11/26/china-ev-xpeng-humanoid-robots-household-chores.html"
+        }
+      ]
+    },
+    {
       "id": "digest-2026-11-26-asia",
       "kind": "digest",
-      "time": "2026-11-26T12:00+02:00",
+      "time": "2026-11-26T07:55+02:00",
       "title": "אסיה מתאוששת אחרי המכסים המרוככים: טאייוואן נעלה בעלייה של 2.5%, הניקיי כ־1.8% והקוספי כ־1.4%",
       "summary": "ת״א 35 נעל אתמול בירידה של 1.42% ל־3,792.38, בהובלת מניות השבבים והבנקים. הדולר יציב הבוקר סביב 3.36 שקלים, אחרי שזינק אתמול ל־3.39 שקלים. פעילות המט״ח מוגבלת היום בגלל החג בארה״ב, והבורסה בתל אביב נסחרת כרגיל. אחרי שמונה ימי ירידות, אסיה עולה הבוקר: הצעת המכסים של ממשל טראמפ על 14 שותפות סחר התבררה כמתונה מהחשש, המכסים לא יתווספו לאלה שהוטלו ביולי וצפויים לחול רק בפברואר או במרץ. בנוסף, וול סטריט מחקה אתמול את רוב הירידות החדות של תחילת היום. בקוריאה הבנק המרכזי העלה את הריבית ל־3.25%. היום וול סטריט סגורה לחג ההודיה, ומחר יום מסחר מקוצר.",
       "source": "דסק השוק",
@@ -1725,145 +1671,106 @@
         {
           "group": "ישראל",
           "name": "ת״א 35",
-          "value": 3792.38,
           "display": "3,792.38",
-          "change_pct": -1.42,
           "change_text": "−1.42%",
           "dir": "down",
-          "note": "נעילה 25.11",
-          "status": "נעילה"
+          "note": "נעילה 25.11"
         },
         {
           "group": "ישראל",
           "name": "ת״א 125",
-          "value": 3702.15,
           "display": "3,702.15",
-          "change_pct": -1.21,
           "change_text": "−1.21%",
           "dir": "down",
-          "note": "נעילה 25.11",
-          "status": "נעילה"
+          "note": "נעילה 25.11"
         },
         {
           "group": "ישראל",
           "name": "תל בונד 60",
-          "value": 423.53,
           "display": "423.53",
-          "change_pct": -0.16,
           "change_text": "−0.16%",
           "dir": "down",
-          "note": "נעילה 25.11",
-          "status": "נעילה"
+          "note": "נעילה 25.11"
         },
         {
           "group": "ישראל",
           "name": "דולר/שקל",
-          "value": 3.36,
           "display": "3.36",
-          "change_pct": null,
-          "change_text": null,
+          "change_text": "—",
           "dir": "flat",
-          "note": "בוקר",
-          "status": "במסחר"
+          "note": "בוקר"
         },
         {
           "group": "ישראל",
           "name": "10 שנים ישראל",
-          "value": null,
-          "display": null,
-          "change_pct": null,
-          "change_text": null,
+          "display": "—",
+          "change_text": "—",
           "dir": "level",
-          "note": "—",
-          "status": null
+          "note": "—"
         },
         {
           "group": "עולם",
           "name": "טאייוואן",
-          "value": 39151.81,
           "display": "39,151.81",
-          "change_pct": 2.5,
           "change_text": "+2.50%",
           "dir": "up",
-          "note": "נעילה",
-          "status": "נעילה"
+          "note": "נעילה"
         },
         {
           "group": "עולם",
           "name": "קוספי",
-          "value": 4765.0,
           "display": "4,765",
-          "change_pct": 1.4,
           "change_text": "+1.4%",
           "dir": "up",
-          "note": "מסחר",
-          "status": "במסחר"
+          "note": "מסחר"
         },
         {
           "group": "עולם",
           "name": "ניקיי",
-          "value": 58046.25,
           "display": "58,046.25",
-          "change_pct": 1.81,
           "change_text": "+1.81%",
           "dir": "up",
-          "note": "מסחר",
-          "status": "במסחר"
+          "note": "מסחר"
         },
         {
           "group": "עולם",
           "name": "הנג סנג",
-          "value": 22373.81,
           "display": "22,373.81",
-          "change_pct": 1.86,
           "change_text": "+1.86%",
           "dir": "up",
-          "note": "חצי יום",
-          "status": "במסחר"
+          "note": "חצי יום"
         },
         {
           "group": "עולם",
           "name": "חוזה S&P 500",
-          "value": null,
-          "display": null,
-          "change_pct": 0.7,
+          "display": "—",
           "change_text": "+0.7%",
           "dir": "up",
-          "note": "בקירוב",
-          "status": null
+          "note": "בקירוב"
         },
         {
           "group": "עולם",
           "name": "נפט WTI, לחבית",
-          "value": 84.1,
           "display": "84.10 דולר",
-          "change_pct": 0.3,
           "change_text": "+0.3%",
           "dir": "up",
-          "note": "בקירוב",
-          "status": "בקירוב"
+          "note": "בקירוב"
         },
         {
           "group": "עולם",
           "name": "זהב, לאונקיה",
-          "value": 3600.0,
           "display": "3,600 דולר",
-          "change_pct": 0.6,
           "change_text": "+0.6%",
           "dir": "up",
-          "note": "בקירוב",
-          "status": "בקירוב"
+          "note": "בקירוב"
         },
         {
           "group": "עולם",
           "name": "ביטקוין",
-          "value": 60900.0,
           "display": "60,900 דולר",
-          "change_pct": 1.2,
           "change_text": "+1.2%",
           "dir": "up",
-          "note": "בקירוב",
-          "status": "בקירוב"
+          "note": "בקירוב"
         }
       ],
       "calendar": [
@@ -1886,111 +1793,6 @@
         {
           "time": "מחר",
           "event": "וול סטריט נסחרת במסחר מקוצר ונועלת ב־20:00"
-        }
-      ]
-    },
-    {
-      "id": "rss-themarker-markets-f57c1a225bcb8e63",
-      "kind": "rss",
-      "time": "2026-11-26T11:23+02:00",
-      "title": "דוניץ מתמזגת עם דן נדל\"ן לחברה בשווי של כ–3 מיליארד שקל",
-      "summary": "שתי החברות הודיעו רשמית על המיזוג לאחר כמה חודשים של משא ומתן ■ במסגרת המיזוג, דוניץ תקצה לדן נדל\"ן 33% ממניותיה וכן תשלום מזומן של כ–30–50 מיליון שקל וחבילת אופציות",
-      "source": "TheMarker",
-      "lang": "he",
-      "links": [
-        {
-          "title": "TheMarker",
-          "url": "https://www.themarker.com/markets/2026-11-26/ty-article/.premium/000001a2-1728-d809-adef-7fec6fcf0000"
-        }
-      ]
-    },
-    {
-      "id": "rss-themarker-markets-e3ad9870bbb43104",
-      "kind": "rss",
-      "time": "2026-11-26T10:42+02:00",
-      "title": "דוראל: ההכנסות זינקו ב-65% ל-625 מיליון שקל, אך ההפסדים נמשכים",
-      "summary": "קבוצת האנרגיה המתחדשת סיכמה את תשעת החודשים הראשונים של 2026 בהפסד של 146 מיליון שקל ■ במקביל, החברה מקדמת הקמת חוות שרתים בישראל, בארה\"ב ובפולין – ורוכשת סוללות לפני התייקרות היצוא מסין",
-      "source": "TheMarker",
-      "lang": "he",
-      "links": [
-        {
-          "title": "TheMarker",
-          "url": "https://www.themarker.com/markets/2026-11-26/ty-article/.premium/000001a2-16ea-d22a-a1bb-17eb8e870000"
-        }
-      ]
-    },
-    {
-      "id": "rss-themarker-markets-079bbc8fc402b6b4",
-      "kind": "rss",
-      "time": "2026-11-26T10:08+02:00",
-      "title": "בדרך לממשלה חדשה? הבורסה ננעלה בעליות חדות — ת\"א 90 קפץ ביותר מ-5%, מדד הבנייה זינק ב-8%",
-      "summary": "ת\"א 90 התחזק ב–5.2%, מדד הבנקים עלה ב–2.1% ומדד הביטוח עלה ב–3.7% ■ מוקדם יותר צייץ יו\"ר ישראל ביתנו, אביגדור ליברמן, כי \"ממשלת השינוי קורמת עור וגידים\", ומפלגות ישר והדמוקרטים הודיעו כי גיבשו הסכם קואליציוני",
-      "source": "TheMarker",
-      "lang": "he",
-      "links": [
-        {
-          "title": "TheMarker",
-          "url": "https://www.themarker.com/markets/2026-11-26/ty-article-live/000001a2-16de-d62f-a5ff-dfdf65590000"
-        }
-      ]
-    },
-    {
-      "id": "rss-themarker-markets-cac43cdf5d27fa5c",
-      "kind": "rss",
-      "time": "2026-11-26T09:58+02:00",
-      "title": "ישראל קנדה מכרה דירות ב-5.5 מיליון שקל בממוצע, פעילות המלונות העבירה אותה להפסד",
-      "summary": "חרף הקיפאון בשוק היוקרה, ישראל קנדה מכרה 401 דירות מתחילת השנה ב-2.2 מיליארד שקל ■ אולם זינוק של 43% בעלויות תפעול המלונות והשלכות המלחמה עם איראן העבירו את החברה של רוזן וטוכמאייר להפסד של 96 מיליון שקל בינואר-ספטמבר ■ בעקבות המיזוג עם אקרו תיפרד ישראל קנדה מ-40 עובדים",
-      "source": "TheMarker",
-      "lang": "he",
-      "links": [
-        {
-          "title": "TheMarker",
-          "url": "https://www.themarker.com/markets/2026-11-26/ty-article/000001a2-1662-d809-adef-7feec9df0000"
-        }
-      ]
-    },
-    {
-      "id": "rss-cnbc-markets-6c879c3828f00e1c",
-      "kind": "rss",
-      "time": "2026-11-26T09:30+02:00",
-      "title": "Robots could be doing household chores in just 1-2 years, Chinese EV firm says",
-      "summary": "Xpeng Co-President Brian Gu shared his humanoid robot predictions with CNBC in an interview Thursday.",
-      "source": "CNBC",
-      "lang": "en",
-      "links": [
-        {
-          "title": "CNBC",
-          "url": "https://www.cnbc.com/2026/11/26/china-ev-xpeng-humanoid-robots-household-chores.html"
-        }
-      ]
-    },
-    {
-      "id": "rss-themarker-markets-6fe9fec32e6c48d2",
-      "kind": "rss",
-      "time": "2026-11-26T09:29+02:00",
-      "title": "שופרסל בעוד רבעון חלש: המכירות ירדו, הרווח הנקי צנח ב-22%",
-      "summary": "שופרסל סיימה את הרבעון השלישי של 2026 עם רווח נקי של 132 מיליון שקל ■ הרווח התפעולי נפל ב-15%, מ-222 מיליון שקל ברבעון השלישי בשנה שעברה, ל-189 מיליון שקל ברבעון הנוכחי ■ לצד פרסום הדו\"חות, שופרסל השיקה את המותג \"היפר נטו\" שיכלול 20 סניפים חדשים",
-      "source": "TheMarker",
-      "lang": "he",
-      "links": [
-        {
-          "title": "TheMarker",
-          "url": "https://www.themarker.com/markets/2026-11-26/ty-article/.premium/000001a2-16be-d0a2-afb7-56bfaf930000"
-        }
-      ]
-    },
-    {
-      "id": "rss-themarker-markets-92f7ad87b97cfaaf",
-      "kind": "rss",
-      "time": "2026-11-26T09:09+02:00",
-      "title": "בלי סוכנים: ביטוח ישיר הפסידה הכי פחות — ובוחנת רכישת אחזקה בסוכנות ביטוח",
-      "summary": "ביטוח ישיר סיכמה את תשעת החודשים הראשונים של 2026 עם רווח כולל לאחר מס של 288 מיליון שקל ■ מגזרי חיסכון ארוך טווח ובבריאות רשמו ירידה, לעומת זאת בביטוח כללי רשמה החברה רווח כולל של 102.5 מיליון שקל ■ לאור התוצאות, ביטוח ישיר תחלק דיווידנד של 60 מיליון שקל",
-      "source": "TheMarker",
-      "lang": "he",
-      "links": [
-        {
-          "title": "TheMarker",
-          "url": "https://www.themarker.com/markets/2026-11-26/ty-article/.premium/000001a2-167a-d0a2-afb7-567b25890000"
         }
       ]
     },
