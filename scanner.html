@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0d10">
+<meta name="description" content="סורק מניות למעקב בלבד. מידע בלבד, לא ייעוץ.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="stylesheet" href="portal.css">
+<link rel="stylesheet" href="scanner.css">
+<title>סורק מניות</title>
+</head>
+<body data-page="scanner">
+<div id="app" class="app-wrap">
+  <header class="top-header">
+    <h1>סורק מניות</h1>
+    <p>תוצאות הסריקה היומית, למעקב בלבד</p>
+  </header>
+  <p class="notice amber" role="note">מידע בלבד, לא ייעוץ. זו רשימת מעקב ציבורית, בלי המלצה לקנייה או למכירה ובלי גודל פוזיציה.</p>
+  <p id="scanner-status" class="stamp" role="status" aria-live="polite"></p>
+  <div id="scanner-root"></div>
+  <footer class="site-footer">
+    <a href="index.html">חזרה לסיכום</a>
+    <a href="news.html">חדשות שוק</a>
+    <a href="privacy.html">פרטיות</a>
+    <a href="support.html">תמיכה</a>
+    <span>מידע בלבד, לא ייעוץ</span>
+  </footer>
+</div>
+<noscript><p style="padding:16px;font-size:16px">כדי לראות את הסורק צריך להפעיל JavaScript בדפדפן.</p></noscript>
+<script src="portal-tools-nav.js"></script>
+<script src="portal-nav.js"></script>
+<script src="scripts/scanner.js"></script>
+</body>
+</html>

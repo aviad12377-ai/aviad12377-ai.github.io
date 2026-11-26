@@ -1,0 +1,51 @@
+name: Update news feed
+
+on:
+  schedule:
+    - cron: "12 * * * *"   # hourly, 12 minutes past the hour
+  workflow_dispatch:
+  push:
+    paths:
+      - "funds.json"
+      - "scripts/fetch_rss_news.py"
+      - "scripts/generate_fund_article.py"
+      - "scripts/news_util.py"
+      - ".github/workflows/news.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-data-commits
+  cancel-in-progress: false
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pull public market RSS into data/news.json
+        continue-on-error: true
+        timeout-minutes: 5
+        run: python3 scripts/fetch_rss_news.py --out data/news.json
+
+      - name: Generate monthly fund-returns article when funds.json has a published month
+        continue-on-error: true
+        timeout-minutes: 3
+        run: python3 scripts/generate_fund_article.py --funds funds.json --out data/news.json
+
+      - name: Commit data/news.json if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p data
+          git add data/news.json
+          if git diff --cached --quiet; then
+            echo "No news changes"
+          else
+            git commit -m "chore: update data/news.json"
+            git pull --rebase origin main
+            git push
+          fi

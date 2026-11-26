@@ -22,7 +22,9 @@
     chat: 'M4 5h16v11H8l-4 4z',
     shield: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z',
     bulb: 'M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9V16h7v-2.1A6 6 0 0 0 12 3z',
-    gear: 'M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19 12l2-1-1-3-2 .3-1.3-1.3L17 5l-3-1-1 2h-2L10 4 7 5l.3 2L6 8.3 4 8l-1 3 2 1v0l-2 1 1 3 2-.3 1.3 1.3L7 19l3 1 1-2h2l1 2 3-1-.3-2 1.3-1.3 2 .3 1-3z'
+    gear: 'M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19 12l2-1-1-3-2 .3-1.3-1.3L17 5l-3-1-1 2h-2L10 4 7 5l.3 2L6 8.3 4 8l-1 3 2 1v0l-2 1 1 3 2-.3 1.3 1.3L7 19l3 1 1-2h2l1 2 3-1-.3-2 1.3-1.3 2 .3 1-3z',
+    news: 'M4 4h12a2 2 0 0 1 2 2v14l-4-2-4 2-4-2-4 2V6a2 2 0 0 1 2-2zM8 8h8M8 12h8M8 16h5',
+    scan: 'M4 7V5a1 1 0 0 1 1-1h2M4 17v2a1 1 0 0 0 1 2h2M20 7V5a1 1 0 0 0-1-1h-2M20 17v2a1 1 0 0 1-1 2h-2M7 12h10M12 8v8'
   }, window.PORTAL_ICONS || {});
   var base = [
     { id: 'home', href: 'index.html', label: { he: 'בית', en: 'Home', es: 'Inicio' }, icon: 'home', tab: true },
@@ -38,7 +40,9 @@
     { id: 'mortgage', href: 'mortgage.html', label: { he: 'משכנתא', en: 'Mortgage', es: 'Hipoteca' }, icon: 'house', group: 'debts', parent: 'loans' },
     { id: 'cards', href: 'cards.html', label: { he: 'כרטיסי אשראי', en: 'Credit cards', es: 'Tarjetas' }, icon: 'card', group: 'debts', parent: 'loans' },
     { id: 'support', href: 'support.html', label: { he: 'בקשות ותמיכה', en: 'Support', es: 'Soporte' }, icon: 'chat', group: 'account', parent: 'me' },
-    { id: 'privacy', href: 'privacy.html', label: { he: 'פרטיות', en: 'Privacy', es: 'Privacidad' }, icon: 'shield', group: 'account', parent: 'me' }
+    { id: 'privacy', href: 'privacy.html', label: { he: 'פרטיות', en: 'Privacy', es: 'Privacidad' }, icon: 'shield', group: 'account', parent: 'me' },
+    { id: 'news', href: 'news.html', label: { he: 'חדשות', en: 'News', es: 'Noticias' }, icon: 'news', group: 'tools', parent: 'home' },
+    { id: 'scanner', href: 'scanner.html', label: { he: 'סורק', en: 'Scanner', es: 'Escáner' }, icon: 'scan', group: 'tools', parent: 'home' }
   ];
   var extra = window.PORTAL_NAV || [];
   var seen = {}; window.PORTAL_NAV = base.concat(extra).filter(function (e) { if (!e || !e.id || seen[e.id]) return false; seen[e.id] = 1; return true; });

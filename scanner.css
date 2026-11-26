@@ -1,0 +1,27 @@
+/* Scoped styles for scanner.html. Tokens come from portal.css (dark dashboard). */
+.scan-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.scan-kpi{background:var(--card);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:12px}
+.scan-kpi .k{display:block;font-size:14px;color:var(--muted);font-weight:700}
+.scan-kpi .v{display:block;font-size:18px;font-weight:800}
+.scan-filters{margin:0;padding:0 0 0 18px}
+.scan-filters li{margin:4px 0;font-size:16px}
+.scan-chiprow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.scan-chip{display:inline-flex;align-items:center;min-height:36px;padding:4px 10px;border-radius:999px;background:var(--primary-soft);color:var(--primary-dark);font-weight:700;font-size:14px}
+.scan-chip.out{background:var(--danger-soft);color:#fecaca}
+.scan-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scan-table{width:100%;border-collapse:collapse;font-size:15px;min-width:640px}
+.scan-table caption{caption-side:top;text-align:start;font-weight:800;padding:6px 0 10px;font-size:16px}
+.scan-table th,.scan-table td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:start;white-space:nowrap}
+.scan-table th{font-size:14px;color:var(--muted);position:sticky;top:0;background:var(--card-solid)}
+.scan-table td.tk{font-weight:800}
+.scan-cards{display:none}
+.scan-card{background:var(--card);border:1px solid var(--glass-border);border-radius:var(--radius);padding:14px;margin-bottom:10px}
+.scan-card h3{margin:0 0 4px;font-size:18px}
+.scan-card .co{color:var(--muted);font-size:14px;margin-bottom:8px}
+.scan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.scan-grid span{display:block;font-size:13px;color:var(--muted);font-weight:700}
+.scan-grid b{display:block;font-size:16px;font-weight:800}
+@media (max-width:700px){
+  .scan-table-wrap{display:none}
+  .scan-cards{display:block}
+}
