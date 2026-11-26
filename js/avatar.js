@@ -13,7 +13,7 @@
   var SKIN = ['#f9dcc4', '#f1c27d', '#e0ac69', '#c68642', '#8d5524', '#5c3a21', '#3b2314'];
   var HAIR = ['#1b1b1f', '#2c1a10', '#4a3022', '#7b4a2b', '#b07a45', '#d9b26f', '#f3e5ab', '#a8a8b0', '#c2462f'];
   var STYLES = ['short', 'side', 'long', 'curly', 'bald'];
-  var BEARDS = ['none', 'stubble', 'full'];
+  var BEARDS = ['none', 'stubble', 'mustache', 'full'];
   var GLASSES = ['none', 'round', 'square'];
   var BROWS = ['thin', 'medium', 'thick'];
   var FACES = ['oval', 'round', 'long', 'wide'];
@@ -28,7 +28,7 @@
       hair: 'תסרוקת', hairColor: 'צבע שיער', skin: 'גוון עור', beard: 'זקן', glasses: 'משקפיים', brows: 'גבות', face: 'צורת פנים',
       reset: 'איפוס לברירת מחדל', hint: 'אם הזיהוי לא מדויק, בחרו ידנית:',
       styles: { short: 'קצר', side: 'צד', long: 'ארוך', curly: 'מתולתל', bald: 'קירח' },
-      beards: { none: 'בלי', stubble: 'זיפים', full: 'מלא' },
+      beards: { none: 'בלי', stubble: 'זיפים', mustache: 'שפם', full: 'מלא' },
       glassesN: { none: 'בלי', round: 'עגולים', square: 'מרובעים' },
       browsN: { thin: 'דקות', medium: 'בינוניות', thick: 'עבות' },
       faces: { oval: 'סגלגל', round: 'עגול', long: 'מאורך', wide: 'רחב' }
@@ -42,7 +42,7 @@
       hair: 'Hair style', hairColor: 'Hair colour', skin: 'Skin tone', beard: 'Beard', glasses: 'Glasses', brows: 'Eyebrows', face: 'Face shape',
       reset: 'Reset', hint: 'If detection is off, pick the features by hand:',
       styles: { short: 'Short', side: 'Side', long: 'Long', curly: 'Curly', bald: 'Bald' },
-      beards: { none: 'None', stubble: 'Stubble', full: 'Full' },
+      beards: { none: 'None', stubble: 'Stubble', mustache: 'Mustache', full: 'Full' },
       glassesN: { none: 'None', round: 'Round', square: 'Square' },
       browsN: { thin: 'Thin', medium: 'Medium', thick: 'Thick' },
       faces: { oval: 'Oval', round: 'Round', long: 'Long', wide: 'Wide' }
@@ -156,6 +156,7 @@
     var beard = {
       none: '',
       stubble: '<path d="M' + (60 - shape.rx + 6) + ' 70c2 18 12 26 ' + (shape.rx - 6) + ' 26s' + (shape.rx - 8) + '-8 ' + (shape.rx - 6) + '-26c-4 9-11 12-' + (shape.rx - 6) + ' 12s-18-3-' + (shape.rx - 6) + '-12z" fill="' + hr + '" opacity=".38"/>',
+      mustache: '<path d="M44 72c5 7 9 8 16 2 7 6 11 5 16-2-6 9-11 12-16 12s-10-3-16-12z" fill="' + hrD + '"/>',
       full: '<path d="M' + (60 - shape.rx + 4) + ' 66c0 22 12 34 ' + (shape.rx - 4) + ' 34s' + (shape.rx - 4) + '-12 ' + (shape.rx - 4) + '-34c-4 12-12 16-' + (shape.rx - 4) + ' 16s-20-4-' + (shape.rx - 4) + '-16z" fill="' + hrD + '"/><path d="M52 80c4 2 12 2 16 0" stroke="' + skD + '" stroke-width="2" fill="none"/>'
     };
     var gl = {
@@ -240,13 +241,63 @@
   function mid(a, b) { return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }; }
   function lm(face, i) { return face[i] || { x: 0.5, y: 0.5 }; }
 
+  function clipBox(w, h, x, y, bw, bh) {
+    x = Math.max(0, Math.min(w - 1, Math.round(x))); y = Math.max(0, Math.min(h - 1, Math.round(y)));
+    bw = Math.max(1, Math.min(w - x, Math.round(bw))); bh = Math.max(1, Math.min(h - y, Math.round(bh)));
+    return { x: x, y: y, bw: bw, bh: bh };
+  }
+  function edgeDensity(ctx, w, h, x, y, bw, bh) {
+    var b = clipBox(w, h, x, y, bw, bh);
+    var d = ctx.getImageData(b.x, b.y, b.bw, b.bh).data, iw = b.bw, sum = 0, n = 0;
+    function Lp(xx, yy) { var i = (yy * iw + xx) * 4; return 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2]; }
+    for (var yy = 1; yy < b.bh - 1; yy++) {
+      for (var xx = 1; xx < b.bw - 1; xx++) {
+        sum += Math.abs(Lp(xx + 1, yy) - Lp(xx - 1, yy)) + Math.abs(Lp(xx, yy + 1) - Lp(xx, yy - 1));
+        n++;
+      }
+    }
+    return n ? sum / n : 0;
+  }
+  function regionScan(ctx, w, h, x, y, bw, bh, keep) {
+    var b = clipBox(w, h, x, y, bw, bh);
+    var d = ctx.getImageData(b.x, b.y, b.bw, b.bh).data;
+    var r = 0, g = 0, bl = 0, c = 0, k = 0, vsum = 0, prev = null;
+    for (var i = 0; i < d.length; i += 4) {
+      if (d[i + 3] < 40) continue;
+      var rgb = [d[i], d[i + 1], d[i + 2]];
+      c++;
+      if (!keep(rgb)) continue;
+      k++;
+      r += rgb[0]; g += rgb[1]; bl += rgb[2];
+      if (prev) vsum += Math.abs(rgb[0] - prev[0]) + Math.abs(rgb[1] - prev[1]) + Math.abs(rgb[2] - prev[2]);
+      prev = rgb;
+    }
+    return { rgb: k ? [r / k, g / k, bl / k] : [128, 128, 128], n: c, hits: k, frac: c ? k / c : 0, var: k > 1 ? vsum / k : 0 };
+  }
+  function nearestHair(rgb) {
+    var L = lum(rgb), S = sat(rgb);
+    var dark = ['#1b1b1f', '#2c1a10', '#4a3022'];
+    var brown = ['#7b4a2b', '#b07a45'];
+    var blond = ['#d9b26f', '#f3e5ab'];
+    var grey = ['#a8a8b0'];
+    var red = ['#c2462f'];
+    var pool;
+    // Dark hair must stay in the dark/brown set — never snap to the grey swatch.
+    if (L < 0.30) pool = dark;
+    else if (S < 0.14 && L >= 0.40) pool = L > 0.72 ? blond.concat(grey) : grey;
+    else if (S > 0.35 && rgb[0] > rgb[1] + 20 && rgb[0] > rgb[2] + 20) pool = red.concat(brown);
+    else if (L < 0.46) pool = dark.concat(brown);
+    else pool = brown.concat(blond);
+    return nearest(rgb, pool);
+  }
+
   /* MediaPipe Face Mesh useful indices */
   var I = {
     forehead: 10, chin: 152, lCheek: 234, rCheek: 454, lTemple: 127, rTemple: 356,
     lEar: 93, rEar: 323, nose: 1, lMouth: 61, rMouth: 291, upLip: 13, loLip: 14,
     lBrowIn: 55, lBrowOut: 46, rBrowIn: 285, rBrowOut: 276,
     lEyeOut: 33, rEyeOut: 263, lEyeIn: 133, rEyeIn: 362, lEyeUp: 159, rEyeUp: 386,
-    lJaw: 172, rJaw: 397
+    lJaw: 172, rJaw: 397, philtrum: 164, noseBase: 94, mustacheL: 36, mustacheR: 266
   };
 
   function detectFromLandmarks(ctx, w, h, face) {
@@ -256,104 +307,144 @@
     var skinRgb = [(cheekL.rgb[0] + cheekR.rgb[0]) / 2, (cheekL.rgb[1] + cheekR.rgb[1]) / 2, (cheekL.rgb[2] + cheekR.rgb[2]) / 2];
     var skinL = lum(skinRgb);
 
-    // Hair: a thin band just above the hairline, plus volume at the sides of the forehead.
     var fh = lm(face, I.forehead);
-    var hairTop = sampleBox(ctx, w, h, (fh.x - 0.16) * w, Math.max(0, (fh.y - 0.09) * h), 0.32 * w, 0.07 * h);
-    var hairL = sampleAround(ctx, w, h, lm(face, I.lTemple).x - 0.04, Math.min(fh.y, lm(face, I.lTemple).y) - 0.02, 9);
-    var hairR = sampleAround(ctx, w, h, lm(face, I.rTemple).x + 0.04, Math.min(fh.y, lm(face, I.rTemple).y) - 0.02, 9);
-    var hairCrownL = sampleAround(ctx, w, h, fh.x - 0.14, fh.y - 0.04, 8);
-    var hairCrownR = sampleAround(ctx, w, h, fh.x + 0.14, fh.y - 0.04, 8);
-    function unlikeSkin(s) {
-      var d = Math.sqrt(dist2(s.rgb, skinRgb));
-      if (d <= 32) return false;
-      var L = lum(s.rgb);
-      if (L < skinL - 0.07) return true;
-      if (sat(s.rgb) < 0.25 && Math.abs(L - skinL) > 0.08) return true;
+    var chin = lm(face, I.chin);
+    var faceW = Math.max(0.12, Math.abs(lm(face, I.rCheek).x - lm(face, I.lCheek).x));
+    var faceH = Math.max(0.16, Math.abs(chin.y - fh.y));
+    var lEar = lm(face, I.lEar), rEar = lm(face, I.rEar);
+
+    // Backdrop from corners and mid-sides, so a dark studio wall is not counted as hair.
+    var bgSamples = [
+      sampleBox(ctx, w, h, 0, 0, Math.max(8, 0.12 * w), Math.max(8, 0.12 * h)),
+      sampleBox(ctx, w, h, w * 0.88, 0, Math.max(8, 0.12 * w), Math.max(8, 0.12 * h)),
+      sampleBox(ctx, w, h, 0, h * 0.40, Math.max(8, 0.10 * w), Math.max(8, 0.12 * h)),
+      sampleBox(ctx, w, h, w * 0.88, h * 0.40, Math.max(8, 0.10 * w), Math.max(8, 0.12 * h))
+    ];
+    var bgRgb = [(bgSamples[0].rgb[0] + bgSamples[1].rgb[0]) / 2, (bgSamples[0].rgb[1] + bgSamples[1].rgb[1]) / 2, (bgSamples[0].rgb[2] + bgSamples[1].rgb[2]) / 2];
+    function nearBg(rgb) {
+      for (var bi = 0; bi < bgSamples.length; bi++) {
+        if (Math.sqrt(dist2(rgb, bgSamples[bi].rgb)) <= 36) return true;
+      }
       return false;
     }
-    var hairCand = [hairTop, hairL, hairR, hairCrownL, hairCrownR].filter(unlikeSkin);
-    // Near-black samples next to a light scalp are usually background, not hair.
-    var darkHair = hairCand.filter(function (s) { return lum(s.rgb) < skinL - 0.1; });
-    if (darkHair.length && lum(hairTop.rgb) > skinL - 0.05) {
-      darkHair = darkHair.filter(function (s) { return lum(s.rgb) > 0.12; });
+
+    function isHairPx(rgb) {
+      var vsSkin = Math.sqrt(dist2(rgb, skinRgb));
+      if (vsSkin <= 30) return false;
+      if (nearBg(rgb) && vsSkin > 30) return false;
+      var L = lum(rgb), S = sat(rgb);
+      if (L < skinL - 0.07) return true;
+      if (S < 0.22 && Math.abs(L - skinL) > 0.10) return true;
+      return false;
     }
-    var useHair = darkHair.length ? darkHair : hairCand;
-    var hairRgb = (useHair[0] || hairTop).rgb;
-    if (useHair.length) {
-      hairRgb = [0, 0, 0];
-      for (var hi = 0; hi < useHair.length; hi++) { hairRgb[0] += useHair[hi].rgb[0]; hairRgb[1] += useHair[hi].rgb[1]; hairRgb[2] += useHair[hi].rgb[2]; }
-      hairRgb = [hairRgb[0] / useHair.length, hairRgb[1] / useHair.length, hairRgb[2] / useHair.length];
+
+    // Hair colour: pixels in a scalp band just above the forehead and at the temples, excluding skin and backdrop.
+    var scalp = regionScan(ctx, w, h, (fh.x - 0.55 * faceW) * w, Math.max(0, (fh.y - 0.28 * faceH) * h), 1.1 * faceW * w, 0.24 * faceH * h, isHairPx);
+    var templeL = regionScan(ctx, w, h, (lm(face, I.lTemple).x - 0.22 * faceW) * w, (lm(face, I.lTemple).y - 0.16 * faceH) * h, 0.22 * faceW * w, 0.28 * faceH * h, isHairPx);
+    var templeR = regionScan(ctx, w, h, lm(face, I.rTemple).x * w, (lm(face, I.rTemple).y - 0.16 * faceH) * h, 0.22 * faceW * w, 0.28 * faceH * h, isHairPx);
+    var hairHits = scalp.hits + templeL.hits + templeR.hits;
+    var hairRgb = scalp.hits ? scalp.rgb : (templeL.hits ? templeL.rgb : (templeR.hits ? templeR.rgb : scalp.rgb));
+    if (hairHits) {
+      var wr = scalp.hits + templeL.hits + templeR.hits;
+      hairRgb = [
+        (scalp.rgb[0] * scalp.hits + templeL.rgb[0] * templeL.hits + templeR.rgb[0] * templeR.hits) / wr,
+        (scalp.rgb[1] * scalp.hits + templeL.rgb[1] * templeL.hits + templeR.rgb[1] * templeR.hits) / wr,
+        (scalp.rgb[2] * scalp.hits + templeL.rgb[2] * templeL.hits + templeR.rgb[2] * templeR.hits) / wr
+      ];
+    }
+    // If a darker hair cluster exists (typical pigmented hair), ignore bright window/backdrop pixels that would pull the colour to grey.
+    var darkScalp = regionScan(ctx, w, h, (fh.x - 0.55 * faceW) * w, Math.max(0, (fh.y - 0.28 * faceH) * h), 1.1 * faceW * w, 0.24 * faceH * h, function (rgb) { return isHairPx(rgb) && lum(rgb) < 0.34; });
+    var darkT = regionScan(ctx, w, h, (lm(face, I.lTemple).x - 0.22 * faceW) * w, (lm(face, I.lTemple).y - 0.16 * faceH) * h, 0.22 * faceW * w, 0.28 * faceH * h, function (rgb) { return isHairPx(rgb) && lum(rgb) < 0.34; });
+    var darkU = regionScan(ctx, w, h, lm(face, I.rTemple).x * w, (lm(face, I.rTemple).y - 0.16 * faceH) * h, 0.22 * faceW * w, 0.28 * faceH * h, function (rgb) { return isHairPx(rgb) && lum(rgb) < 0.34; });
+    var darkHits = darkScalp.hits + darkT.hits + darkU.hits;
+    if ((darkT.hits + darkU.hits) >= 12 || (darkHits >= 24 && darkHits >= hairHits * 0.35)) {
+      var dw = darkHits;
+      hairRgb = [
+        (darkScalp.rgb[0] * darkScalp.hits + darkT.rgb[0] * darkT.hits + darkU.rgb[0] * darkU.hits) / dw,
+        (darkScalp.rgb[1] * darkScalp.hits + darkT.rgb[1] * darkT.hits + darkU.rgb[1] * darkU.hits) / dw,
+        (darkScalp.rgb[2] * darkScalp.hits + darkT.rgb[2] * darkT.hits + darkU.rgb[2] * darkU.hits) / dw
+      ];
     }
     var hairVsSkin = Math.sqrt(dist2(hairRgb, skinRgb));
-    var baldScore = hairCand.length === 0;
+    var vsBgHair = Math.sqrt(dist2(hairRgb, bgRgb));
+    var baldScore = hairHits < 18 || (scalp.frac < 0.12 && templeL.frac + templeR.frac < 0.12) || vsBgHair < 28;
     notes.hairVsSkin = Math.round(hairVsSkin);
-    notes.hairVar = Math.round(hairTop.var);
-    notes.hairCands = hairCand.length;
+    notes.hairHits = hairHits;
+    notes.darkHits = darkHits;
+    notes.scalpFrac = Math.round(scalp.frac * 100) / 100;
 
-    // Length: just outside the cheeks, colour-matched to hair, some texture (avoids flat jackets / backdrops).
-    var chin = lm(face, I.chin);
-    var sideL = sampleBox(ctx, w, h, (lm(face, I.lCheek).x - 0.13) * w, (lm(face, I.lCheek).y - 0.02) * h, 0.09 * w, 0.08 * h);
-    var sideR = sampleBox(ctx, w, h, lm(face, I.rCheek).x * w + 2, (lm(face, I.rCheek).y - 0.02) * h, 0.09 * w, 0.08 * h);
-    function hairish(s) { return unlikeSkin(s) && Math.sqrt(dist2(s.rgb, hairRgb)) < 50 && s.var > 8; }
-    var longHits = (hairish(sideL) ? 1 : 0) + (hairish(sideR) ? 1 : 0);
+    // Length: hair-coloured mask just below the ears (neck), not the jacket/torso.
+    function isLengthHair(rgb) { return isHairPx(rgb) && Math.sqrt(dist2(rgb, hairRgb)) < 36 && Math.abs(lum(rgb) - lum(hairRgb)) < 0.14; }
+    var belowH = 0.42 * faceH * h;
+    var belowW = 0.22 * faceW * w;
+    var belowL = regionScan(ctx, w, h, (lEar.x - 0.20 * faceW) * w, lEar.y * h + 2, belowW, belowH, baldScore ? function () { return false; } : isLengthHair);
+    var belowR = regionScan(ctx, w, h, rEar.x * w, rEar.y * h + 2, belowW, belowH, baldScore ? function () { return false; } : isLengthHair);
+    var longFrac = (belowL.frac + belowR.frac) / 2;
     var hairStyle = 'short';
     if (baldScore) hairStyle = 'bald';
-    else if (longHits >= 2) hairStyle = 'long';
-    else if (hairTop.var > 42) hairStyle = 'curly';
-    else {
-      var asym = Math.sqrt(dist2(hairL.rgb, hairR.rgb));
-      if (asym > 40 && (unlikeSkin(hairL) !== unlikeSkin(hairR))) hairStyle = 'side';
+    else if (longFrac >= 0.24 && belowL.frac >= 0.16 && belowR.frac >= 0.16) hairStyle = 'long';
+    else if (Math.abs(templeL.frac - templeR.frac) > 0.22 && Math.max(templeL.frac, templeR.frac) > 0.28) hairStyle = 'side';
+    notes.longFrac = Math.round(longFrac * 100) / 100;
+    notes.belowL = Math.round(belowL.frac * 100) / 100;
+    notes.belowR = Math.round(belowR.frac * 100) / 100;
+
+    // Beard / mustache: coverage + texture variance on the philtrum vs chin and jaws.
+    // Include grey/white whiskers (desaturated, not merely darker than skin).
+    var hairIsGrey = sat(hairRgb) < 0.18 && lum(hairRgb) > 0.35;
+    function isBeardPx(rgb) {
+      var L = lum(rgb);
+      if (L < skinL - 0.16) return true;
+      if (hairIsGrey && sat(rgb) < 0.22 && Math.sqrt(dist2(rgb, skinRgb)) > 28 && Math.abs(L - skinL) > 0.06) return true;
+      return false;
     }
-    notes.longHits = longHits;
-
-    // Beard: inward jaw + chin, share of clearly darker pixels.
-    var lipY = lm(face, I.loLip).y;
-    var beardY = lipY + (chin.y - lipY) * 0.45;
-    var chinBox = { x: (chin.x - 0.10) * w, y: beardY * h, bw: 0.20 * w, bh: Math.max(6, (chin.y - beardY) * h) };
+    var upLip = lm(face, I.upLip), loLip = lm(face, I.loLip);
+    var noseB = lm(face, I.noseBase);
+    var mY0 = Math.min(noseB.y, lm(face, I.philtrum).y);
+    var mBox = regionScan(ctx, w, h, (lm(face, I.lMouth).x) * w, mY0 * h, Math.max(8, (lm(face, I.rMouth).x - lm(face, I.lMouth).x) * w), Math.max(6, (upLip.y - mY0) * h), isBeardPx);
+    var beardY = loLip.y + (chin.y - loLip.y) * 0.40;
+    var chinBox = regionScan(ctx, w, h, (chin.x - 0.32 * faceW) * w, beardY * h, 0.64 * faceW * w, Math.max(6, (chin.y - beardY) * h), isBeardPx);
     var lJaw = lm(face, I.lJaw), rJaw = lm(face, I.rJaw);
-    var fracL = darkFraction(ctx, w, h, lJaw.x * w, lJaw.y * h, Math.max(6, (chin.x - lJaw.x) * 0.55 * w), Math.max(6, (chin.y - lJaw.y) * 0.8 * h), skinL - 0.20);
-    var fracR = darkFraction(ctx, w, h, (rJaw.x - (rJaw.x - chin.x) * 0.55) * w, rJaw.y * h, Math.max(6, (rJaw.x - chin.x) * 0.55 * w), Math.max(6, (chin.y - rJaw.y) * 0.8 * h), skinL - 0.20);
-    var fracC = darkFraction(ctx, w, h, chinBox.x, chinBox.y, chinBox.bw, chinBox.bh, skinL - 0.20);
-    var beardFrac = (fracL + fracR + fracC) / 3;
-    var chinS = sampleBox(ctx, w, h, chinBox.x, chinBox.y, chinBox.bw, chinBox.bh);
-    var beardDark = skinL - lum(chinS.rgb);
+    var jawL = regionScan(ctx, w, h, lJaw.x * w, lJaw.y * h, Math.max(6, (chin.x - lJaw.x) * 0.55 * w), Math.max(6, (chin.y - lJaw.y) * 0.75 * h), isBeardPx);
+    var jawR = regionScan(ctx, w, h, (rJaw.x - (rJaw.x - chin.x) * 0.55) * w, rJaw.y * h, Math.max(6, (rJaw.x - chin.x) * 0.55 * w), Math.max(6, (chin.y - rJaw.y) * 0.75 * h), isBeardPx);
+    var jawFrac = (jawL.frac + jawR.frac) / 2;
+    var chinVar = chinBox.var;
     var beard = 'none';
-    if (beardFrac > 0.45 || (beardFrac > 0.32 && beardDark > 0.16)) beard = 'full';
-    else if (beardFrac > 0.32) beard = 'stubble';
-    notes.beardDark = Math.round(beardDark * 100) / 100;
-    notes.beardFrac = Math.round(beardFrac * 100) / 100;
+    if (chinBox.frac > 0.48 && jawFrac > 0.40 && chinVar >= 14) beard = 'full';
+    else if (mBox.frac > 0.35 && mBox.frac + 0.02 >= chinBox.frac && chinBox.frac < 0.36) beard = 'mustache';
+    else if (chinBox.frac > 0.28 && jawFrac > 0.28 && chinVar > 16) beard = 'stubble';
+    notes.beardChin = Math.round(chinBox.frac * 100) / 100;
+    notes.beardJaw = Math.round(jawFrac * 100) / 100;
+    notes.mustache = Math.round(mBox.frac * 100) / 100;
+    notes.chinVar = Math.round(chinVar);
 
-    // Glasses: several offsets outside the eye corners + a sample between brow and eye.
+    // Glasses: edge density in both eye regions plus a nose-bridge band, vs cheek baseline.
     var lOut = lm(face, I.lEyeOut), rOut = lm(face, I.rEyeOut);
     var lIn = lm(face, I.lEyeIn), rIn = lm(face, I.rEyeIn);
-    var bridge = mid(lIn, rIn);
-    var rimDark = 0, oi;
-    var offs = [0.02, 0.035, 0.05];
-    for (oi = 0; oi < offs.length; oi++) {
-      var rL = sampleAround(ctx, w, h, lOut.x - offs[oi], lOut.y, 4);
-      var rR = sampleAround(ctx, w, h, rOut.x + offs[oi], rOut.y, 4);
-      var d = (skinL - lum(rL.rgb)) + (skinL - lum(rR.rgb));
-      if (d > rimDark) rimDark = d;
-    }
-    var topYL = lm(face, I.lEyeUp).y * 0.7 + lm(face, I.lBrowIn).y * 0.3;
-    var topYR = lm(face, I.rEyeUp).y * 0.7 + lm(face, I.rBrowIn).y * 0.3;
-    var topL = sampleAround(ctx, w, h, mid(lm(face, I.lBrowIn), lm(face, I.lEyeIn)).x, topYL, 3);
-    var topR = sampleAround(ctx, w, h, mid(lm(face, I.rBrowIn), lm(face, I.rEyeIn)).x, topYR, 3);
-    var topDark = (skinL - lum(topL.rgb)) + (skinL - lum(topR.rgb));
-    var br = sampleAround(ctx, w, h, bridge.x, bridge.y - 0.01, 4);
-    var eyeBand = sampleBox(ctx, w, h, lOut.x * w, (Math.min(lOut.y, rOut.y) - 0.03) * h, (rOut.x - lOut.x) * w, 0.08 * h);
-    var bridgeDark = skinL - lum(br.rgb);
+    var lUp = lm(face, I.lEyeUp), rUp = lm(face, I.rEyeUp);
+    var padX = 0.16 * faceW, padY = 0.12 * faceH;
+    var eL = edgeDensity(ctx, w, h, (Math.min(lOut.x, lIn.x) - padX) * w, (lUp.y - padY) * h, (Math.abs(lOut.x - lIn.x) + 2 * padX) * w, (padY + 0.18 * faceH) * h);
+    var eR = edgeDensity(ctx, w, h, (Math.min(rOut.x, rIn.x) - padX) * w, (rUp.y - padY) * h, (Math.abs(rOut.x - rIn.x) + 2 * padX) * w, (padY + 0.18 * faceH) * h);
+    var brX0 = Math.min(lIn.x, rIn.x);
+    var brX1 = Math.max(lIn.x, rIn.x);
+    var brY = (lIn.y + rIn.y) / 2;
+    var eBr = edgeDensity(ctx, w, h, brX0 * w, (brY - 0.08 * faceH) * h, Math.max(6, (brX1 - brX0) * w), 0.16 * faceH * h);
+    var eCheek = (edgeDensity(ctx, w, h, (lm(face, I.lCheek).x - 0.08 * faceW) * w, (lm(face, I.lCheek).y - 0.08 * faceH) * h, 0.18 * faceW * w, 0.18 * faceH * h)
+      + edgeDensity(ctx, w, h, (lm(face, I.rCheek).x - 0.10 * faceW) * w, (lm(face, I.rCheek).y - 0.08 * faceH) * h, 0.18 * faceW * w, 0.18 * faceH * h)) / 2;
+    var base = Math.max(6, eCheek);
+    var bothEyes = eL > base * 1.22 && eR > base * 1.22;
+    var oneStrong = Math.max(eL, eR) > base * 1.35 && Math.min(eL, eR) > base * 0.70;
+    var bridgeHit = eBr > base * 1.18;
     var glasses = 'none';
-    if ((rimDark > 0.10 && bridgeDark > 0.08) || (rimDark > 0.10 && topDark > 0.12 && eyeBand.var > 36)) {
-      var bandRatio = ((rOut.x - lOut.x) * w) / Math.max(8, 0.08 * h);
+    if ((bothEyes && bridgeHit) || (oneStrong && bridgeHit)) {
+      var bandRatio = ((rOut.x - lOut.x) * w) / Math.max(8, 0.28 * faceH * h);
       glasses = bandRatio > 3.6 ? 'square' : 'round';
     }
-    notes.rimDark = Math.round(rimDark * 100) / 100;
-    notes.bridgeDark = Math.round(bridgeDark * 100) / 100;
-    notes.topDark = Math.round(topDark * 100) / 100;
-    notes.eyeVar = Math.round(eyeBand.var);
+    notes.eL = Math.round(eL);
+    notes.eR = Math.round(eR);
+    notes.eBr = Math.round(eBr);
+    notes.eCheek = Math.round(eCheek);
 
-        // Brows thickness: distance brow-to-eye and darkness
+            // Brows thickness: distance brow-to-eye and darkness
     var browL = sampleAround(ctx, w, h, mid(lm(face, I.lBrowIn), lm(face, I.lBrowOut)).x, mid(lm(face, I.lBrowIn), lm(face, I.lBrowOut)).y, 5);
     var browGap = Math.abs(lm(face, I.lBrowIn).y - lm(face, I.lEyeUp).y);
     var brows = 'medium';
@@ -370,8 +461,7 @@
     else if (ratio < 0.72) face = 'long';
     notes.ratio = Math.round(ratio * 100) / 100;
 
-    var hairColor = baldScore ? nearest(skinRgb, SKIN) : nearest(hairRgb, HAIR);
-    if (baldScore) hairColor = nearest(hairRgb[0] < skinRgb[0] - 15 ? hairRgb : [40, 30, 24], HAIR);
+    var hairColor = baldScore ? nearestHair(hairHits ? hairRgb : [40, 30, 24]) : nearestHair(hairRgb);
 
     return {
       params: {
