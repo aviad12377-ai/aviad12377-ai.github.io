@@ -62,3 +62,18 @@ table.cmp tr.neg-row td{color:var(--danger,#f87171);font-weight:800}
 .t13-file:focus-visible+.t13-file-btn{outline:3px solid var(--primary-dark,#c4b5fd);outline-offset:2px}
 .t13-file-name{font-size:16px;color:var(--muted,#b4b4c0);word-break:break-all}
 .t13-shot-prev img{max-width:100%;max-height:240px;border-radius:var(--radius-sm,14px);margin-top:8px;border:1px solid var(--glass-border,rgba(255,255,255,.1))}
+.t13-rgrid{display:grid;grid-template-columns:1fr;gap:0 12px}
+@media (min-width:700px){.t13-rgrid{grid-template-columns:1fr 1fr}}
+.t13-rtitle{font-size:22px;margin:4px 0}
+.t13-report .t13-list li{padding:6px 0}
+@media print{
+  @page{size:A4;margin:12mm}
+  body[data-page=report]{background:#fff!important;color:#000!important}
+  body[data-page=report] *{background:transparent!important;box-shadow:none!important;color:#000!important;backdrop-filter:none!important}
+  body[data-page=report] .topbar,body[data-page=report] .portal-bar,body[data-page=report] .tabbar,body[data-page=report] .site-footer,body[data-page=report] .no-print,body[data-page=report] .top-header,body[data-page=report] #toast,body[data-page=report] .portal-subnav{display:none!important}
+  body[data-page=report] .app-wrap{max-width:none;padding:0!important}
+  body[data-page=report] .card{border:1px solid #bbb!important;border-radius:8px;padding:8px 10px;margin-bottom:8px;break-inside:avoid}
+  body[data-page=report] .t13,body[data-page=report] .t13 li,body[data-page=report] .t13 p{font-size:11pt}
+  body[data-page=report] .t13-rgrid{grid-template-columns:1fr 1fr}
+  body[data-page=report] .neg{color:#b00!important}body[data-page=report] .pos{color:#060!important}
+}

@@ -2,7 +2,7 @@
    Sections live in their own localStorage keys and sync to portal_docs rows of the same section name when signed in. */
 (function () {
   'use strict';
-  var SECTIONS = { goals: 'portal-goals-v1', subscriptions: 'portal-subs-v1', debts: 'portal-debts-v1', actions: 'portal-actions-v1', networth_history: 'portal-networth-v1', cashflow: 'portal-cashflow-v1', retirement: 'portal-retirement-v1' };
+  var SECTIONS = { goals: 'portal-goals-v1', subscriptions: 'portal-subs-v1', debts: 'portal-debts-v1', actions: 'portal-actions-v1', networth_history: 'portal-networth-v1', cashflow: 'portal-cashflow-v1', retirement: 'portal-retirement-v1', tax: 'portal-tax-v1' };
   var META = 'portal-plan-sync-v1';
   var CUR_SIGN = { ILS: '₪', USD: '$', EUR: '€', GBP: '£' };
   var CURS = ['ILS', 'USD', 'EUR', 'GBP'];
@@ -18,6 +18,8 @@
     { id: 'actions', href: 'actions.html', label: { he: 'צעדים לחיסכון בדמי ניהול', en: 'Fee actions', es: 'Comisiones' }, icon: 'bulb', group: 'tools', parent: 'wealth' },
     { id: 'cashflow', href: 'cashflow.html', label: { he: 'תחזית תזרים ל־12 חודשים', en: 'Cash-flow forecast', es: 'Flujo de caja' }, icon: 'pie', group: 'tools', parent: 'budget' },
     { id: 'retirement', href: 'retirement.html', label: { he: 'תחזית פרישה', en: 'Retirement', es: 'Jubilación' }, icon: 'umbrella', group: 'wealth', parent: 'wealth' },
+    { id: 'tax', href: 'tax.html', label: { he: 'מס הכנסה: נקודות זיכוי והחזר', en: 'Income tax helper', es: 'Impuestos' }, icon: 'shield', group: 'tools', parent: 'budget' },
+    { id: 'report', href: 'report.html', label: { he: 'דוח כספי להדפסה', en: 'Printable report', es: 'Informe' }, icon: 'chart', group: 'tools', parent: 'home' },
     { id: 'feedback', href: 'feedback.html', label: { he: 'משוב ודיווח על תקלה', en: 'Feedback', es: 'Comentarios' }, icon: 'chat', group: 'account', parent: 'me' }
   ];
   var nav = window.PORTAL_NAV = window.PORTAL_NAV || [];
