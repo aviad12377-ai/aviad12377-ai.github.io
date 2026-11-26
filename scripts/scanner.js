@@ -73,127 +73,146 @@
     return el("div", {}, [el("span", { text: label }), el("b", { class: cls || "num", text: value })]);
   }
 
+  // plain-Hebrew labels with one-line explanations (used in cards, table headers and the glossary)
+  var LBL = {
+    cap: ["שווי שוק", "כמה כל החברה שווה בבורסה"],
+    pe: ["מכפיל רווח", "מחיר המניה חלקי הרווח למניה בשנה האחרונה"],
+    fwd: ["מכפיל רווח צפוי", "כמו מכפיל רווח, לפי תחזית הרווח לשנה הבאה"],
+    peg: ["PEG", "מכפיל הרווח חלקי קצב צמיחת הרווח. מתחת ל־1 נחשב זול ביחס לצמיחה"],
+    short: ["שורט (%)", "איזה חלק מהמניות הזמינות למסחר מושאל למכירה בחסר"],
+    dtc: ["ימים לכיסוי", "כמה ימי מסחר ממוצעים צריך כדי שכל השורטיסטים יסגרו את הפוזיציה"],
+    price: ["מחיר ($)", "מחיר הסגירה האחרון"],
+    chg: ["שינוי יומי", "השינוי ביום המסחר האחרון"],
+    month: ["שינוי בחודש", "השינוי בחודש האחרון"],
+    earn: ["דוחות", "מועד הדוחות האחרון או הקרוב"]
+  };
+  function lbl(k) { return LBL[k][0]; }
+  function shortPct(row) { return row.short_float_pct == null ? "—" : fmtNum(row.short_float_pct, 1) + "%"; }
+
+  function card(row, i, big) {
+    var key = el("div", { class: "scan-grid" }, [
+      metric(lbl("short"), shortPct(row)),
+      metric(lbl("peg"), fmtNum(row.peg, 2)),
+      metric(lbl("price"), fmtNum(row.price, 2)),
+      metric(lbl("chg"), fmtPct(row.change_pct), pctClass(row.change_pct))
+    ]);
+    var more = el("details", { class: "scan-more" }, [
+      el("summary", { text: "עוד נתונים" }),
+      el("div", { class: "scan-grid" }, [
+        metric(lbl("cap"), fmtCap(row)), metric(lbl("pe"), fmtNum(row.pe, 2)), metric(lbl("fwd"), fmtNum(row.fwd_pe, 2)),
+        metric(lbl("dtc"), fmtNum(row.days_to_cover, 1)), metric(lbl("month"), fmtPct(row.perf_month_pct), pctClass(row.perf_month_pct)), metric(lbl("earn"), row.earnings || "—", "")
+      ])
+    ]);
+    return el("article", { class: "scan-card" + (big ? " top3" : "") }, [
+      el("div", { class: "scan-card-head" }, [
+        el("span", { class: "scan-rank", text: String(row.rank || i + 1) }),
+        el("div", {}, [el("h3", { dir: "ltr", text: row.ticker || "" }), el("div", { class: "co", text: [row.company, row.sector].filter(Boolean).join(" · ") })])
+      ]),
+      key, more
+    ]);
+  }
+
   function render(data) {
     root.textContent = "";
-    var kpis = el("div", { class: "scan-kpis" });
-    var counts = data.counts || {};
-    [
-      ["תאריך סריקה", data.date || "—", ""],
-      ["נמצאו במסך", fmtNum(counts.raw, 0), "num"],
-      ["עברו סינון", fmtNum(counts.after_filters, 0), "num"],
-      ["נזילים", fmtNum(counts.liquid, 0), "num"]
-    ].forEach(function (row) {
-      kpis.appendChild(el("div", { class: "scan-kpi" }, [
-        el("span", { class: "k", text: row[0] }),
-        el("span", { class: "v " + row[2], text: String(row[1]) })
-      ]));
-    });
-    root.appendChild(kpis);
+    var top = data.top || [], counts = data.counts || {};
 
-    var meta = el("section", { class: "card" }, [
-      el("h2", { class: "card-title", text: "מסננים קבועים" }),
-      el("p", { class: "help", text: data.update_schedule || "מתעדכן בימי חול בבוקר, לפי נתוני הסגירה בארה״ב." })
+    // 1. one primary action
+    root.appendChild(el("div", { class: "toolbar scan-cta" }, [
+      el("a", { class: "btn btn-primary", href: "#short-list", text: "לרשימה של היום (" + top.length + ")" })
+    ]));
+
+    // 2. top 3 first
+    if (top.length) {
+      var t3 = el("section", { class: "card", "aria-labelledby": "scan-top3" }, [
+        el("h2", { class: "card-title", id: "scan-top3", text: "שלוש הבולטות היום" }),
+        el("p", { class: "help", text: "המניות עם השורט הגבוה ביותר מתוך אלה שעברו את כל המסננים. מעקב בלבד, לא המלצה." })
+      ]);
+      var g = el("div", { class: "scan-top3" });
+      top.slice(0, 3).forEach(function (r, i) { g.appendChild(card(r, i, true)); });
+      t3.appendChild(g);
+      root.appendChild(t3);
+    }
+
+    // 3. what changed, short
+    if ((data.entered && data.entered.length) || (data.exited && data.exited.length)) {
+      var row = el("div", { class: "scan-chiprow", "aria-label": "שינויים מול הסריקה הקודמת" });
+      (data.entered || []).forEach(function (t) { row.appendChild(el("span", { class: "scan-chip", text: "נכנסה " + t })); });
+      (data.exited || []).forEach(function (t) { row.appendChild(el("span", { class: "scan-chip out", text: "יצאה " + t })); });
+      root.appendChild(el("section", { class: "card" }, [
+        el("h2", { class: "card-title", text: "מה השתנה מאתמול" }),
+        data.compared_to ? el("p", { class: "help", text: "בהשוואה ל" + comparedLabel(data.compared_to) }) : null, row
+      ]));
+    }
+
+    // 4. full short list: cards on mobile, table with sticky ticker column on desktop
+    var list = el("section", { class: "card", id: "short-list", tabindex: "-1" }, [
+      el("h2", { class: "card-title", text: "הרשימה הקצרה" }),
+      el("p", { class: "help", text: "ממוין לפי השורט מהמניות הסחירות, אחרי כל המסננים ובדיקת הנזילות." })
     ]);
+    if (!top.length) {
+      list.appendChild(el("p", { class: "empty", text: "אין רשימה לתאריך הזה. הסריקה הבאה בבוקר יום החול הקרוב." }));
+    } else {
+      var cols = [["#", null], [ "סימול", null], ["חברה", null], [lbl("cap"), "cap"], [lbl("pe"), "pe"], [lbl("fwd"), "fwd"], ["PEG", "peg"], [lbl("short"), "short"], [lbl("dtc"), "dtc"], [lbl("price"), "price"], [lbl("chg"), "chg"]];
+      var table = el("table", { class: "scan-table" });
+      table.appendChild(el("caption", { class: "sr-only", text: "רשימת המעקב של הסורק, " + (data.date || "") }));
+      table.appendChild(el("thead", {}, [el("tr", {}, cols.map(function (c) { return el("th", { scope: "col", title: c[1] ? LBL[c[1]][1] : null, text: c[0] }); }))]));
+      var tb = el("tbody");
+      top.forEach(function (row, i) {
+        tb.appendChild(el("tr", {}, [
+          el("td", { class: "num", text: String(row.rank || i + 1) }),
+          el("th", { scope: "row", class: "tk", dir: "ltr", text: row.ticker || "" }),
+          el("td", { text: row.company || "" }),
+          el("td", { class: "num", text: fmtCap(row) }),
+          el("td", { class: "num", text: fmtNum(row.pe, 2) }),
+          el("td", { class: "num", text: fmtNum(row.fwd_pe, 2) }),
+          el("td", { class: "num", text: fmtNum(row.peg, 2) }),
+          el("td", { class: "num", text: shortPct(row) }),
+          el("td", { class: "num", text: fmtNum(row.days_to_cover, 1) }),
+          el("td", { class: "num", text: fmtNum(row.price, 2) }),
+          el("td", { class: pctClass(row.change_pct), text: fmtPct(row.change_pct) })
+        ]));
+      });
+      table.appendChild(tb);
+      list.appendChild(el("div", { class: "scan-table-wrap", tabindex: "0", "aria-label": "טבלה, אפשר לגלול לצדדים" }, [table]));
+      var cards = el("div", { class: "scan-cards" });
+      top.forEach(function (r, i) { cards.appendChild(card(r, i, false)); });
+      list.appendChild(cards);
+    }
+    root.appendChild(list);
+
+    // 5. method, filters, counts and glossary: collapsed
+    var how = el("details", { class: "card scan-how" }, [el("summary", { text: "איך הרשימה נבנית ומה המונחים אומרים" })]);
+    var kpis = el("div", { class: "scan-kpis" });
+    [["תאריך סריקה", data.date || "—", ""], ["נמצאו במסך", fmtNum(counts.raw, 0), "num"], ["עברו את המסננים", fmtNum(counts.after_filters, 0), "num"], ["נזילות מספיק", fmtNum(counts.liquid, 0), "num"]].forEach(function (r) {
+      kpis.appendChild(el("div", { class: "scan-kpi" }, [el("span", { class: "k", text: r[0] }), el("span", { class: "v " + r[2], text: String(r[1]) })]));
+    });
+    how.appendChild(kpis);
+    how.appendChild(el("h3", { text: "מסננים קבועים" }));
+    how.appendChild(el("p", { class: "help", text: data.update_schedule || "מתעדכן בימי חול בבוקר, לפי נתוני הסגירה בארה״ב." }));
     var ul = el("ul", { class: "scan-filters" });
     (data.filters || []).forEach(function (f) { ul.appendChild(el("li", { text: f.label || f.field || "" })); });
     if (data.liquidity_rule && data.liquidity_rule.label) ul.appendChild(el("li", { text: data.liquidity_rule.label }));
-    meta.appendChild(ul);
+    how.appendChild(ul);
     var close = closeDate(data);
-    if (close) meta.appendChild(el("p", { class: "stamp", text: "סגירת ארה״ב ששימשה בסריקה: " + close }));
+    if (close) how.appendChild(el("p", { class: "stamp", text: "סגירת ארה״ב ששימשה בסריקה: " + close }));
     if (data.source && data.source.screener) {
       var src = "מקור הסינון: " + data.source.screener;
       if (data.source.short_interest) src += ". שורט: " + data.source.short_interest + ".";
-      meta.appendChild(el("p", { class: "stamp", text: src }));
-      if (data.source.url) {
-        meta.appendChild(el("p", {}, [el("a", { href: data.source.url, target: "_blank", rel: "noopener noreferrer", text: "פתיחת המסך ב-Finviz" })]));
-      }
+      how.appendChild(el("p", { class: "stamp", text: src }));
+      if (data.source.url) how.appendChild(el("p", {}, [el("a", { href: data.source.url, target: "_blank", rel: "noopener noreferrer", text: "פתיחת המסך ב־Finviz" })]));
     }
-    root.appendChild(meta);
+    how.appendChild(el("h3", { text: "מילון מונחים" }));
+    var dl = el("dl", { class: "scan-gloss" });
+    Object.keys(LBL).forEach(function (k) { dl.appendChild(el("dt", { text: LBL[k][0] })); dl.appendChild(el("dd", { text: LBL[k][1] })); });
+    how.appendChild(dl);
+    root.appendChild(how);
 
-    if ((data.entered && data.entered.length) || (data.exited && data.exited.length) || data.compared_to) {
-      var ch = el("section", { class: "card" }, [
-        el("h2", { class: "card-title", text: "שינויים מול הסריקה הקודמת" }),
-        data.compared_to ? el("p", { class: "help", text: "השוואה אל: " + comparedLabel(data.compared_to) }) : null
-      ]);
-      var row = el("div", { class: "scan-chiprow" });
-      (data.entered || []).forEach(function (t) { row.appendChild(el("span", { class: "scan-chip", text: "נכנס " + t })); });
-      (data.exited || []).forEach(function (t) { row.appendChild(el("span", { class: "scan-chip out", text: "יצא " + t })); });
-      if (!row.childNodes.length) ch.appendChild(el("p", { class: "empty", text: "אין כניסות או יציאות ברשימה הקצרה." }));
-      else ch.appendChild(row);
-      root.appendChild(ch);
-    }
-
-    var top = data.top || [];
-    var list = el("section", { class: "card" }, [
-      el("h2", { class: "card-title", text: "הרשימה הקצרה" }),
-      el("p", { class: "help", text: "מיון לפי שיעור השורט מהפלואט, אחרי הסינון והנזילות. מעקב בלבד." })
-    ]);
-    if (!top.length) {
-      list.appendChild(el("p", { class: "empty", text: "אין רשימה להצגה לתאריך הזה." }));
-      root.appendChild(list);
-      return;
-    }
-
-    var table = el("table", { class: "scan-table" });
-    table.appendChild(el("caption", { class: "sr-only", text: "רשימת המעקב של הסורק, " + (data.date || "") }));
-    table.appendChild(el("thead", {}, [el("tr", {}, [
-      el("th", { scope: "col", text: "#" }),
-      el("th", { scope: "col", text: "סימול" }),
-      el("th", { scope: "col", text: "חברה" }),
-      el("th", { scope: "col", text: "שווי" }),
-      el("th", { scope: "col", text: "מכפיל" }),
-      el("th", { scope: "col", text: "קדימה" }),
-      el("th", { scope: "col", text: "PEG" }),
-      el("th", { scope: "col", text: "שורט %" }),
-      el("th", { scope: "col", text: "ימים לכיסוי" }),
-      el("th", { scope: "col", text: "מחיר" }),
-      el("th", { scope: "col", text: "שינוי" })
-    ])]));
-    var tb = el("tbody");
-    top.forEach(function (row, i) {
-      tb.appendChild(el("tr", {}, [
-        el("td", { class: "num", text: String(row.rank || i + 1) }),
-        el("td", { class: "tk", text: row.ticker || "" }),
-        el("td", { text: row.company || "" }),
-        el("td", { class: "num", text: fmtCap(row) }),
-        el("td", { class: "num", text: fmtNum(row.pe, 2) }),
-        el("td", { class: "num", text: fmtNum(row.fwd_pe, 2) }),
-        el("td", { class: "num", text: fmtNum(row.peg, 2) }),
-        el("td", { class: "num", text: row.short_float_pct == null ? "—" : fmtNum(row.short_float_pct, 2) + "%" }),
-        el("td", { class: "num", text: fmtNum(row.days_to_cover, 2) }),
-        el("td", { class: "num", text: fmtNum(row.price, 2) }),
-        el("td", { class: pctClass(row.change_pct), text: fmtPct(row.change_pct) })
-      ]));
-    });
-    table.appendChild(tb);
-    list.appendChild(el("div", { class: "scan-table-wrap" }, [table]));
-
-    var cards = el("div", { class: "scan-cards" });
-    top.forEach(function (row, i) {
-      cards.appendChild(el("article", { class: "scan-card" }, [
-        el("h3", { text: (row.rank || i + 1) + ". " + (row.ticker || "") }),
-        el("div", { class: "co", text: [row.company, row.sector, row.country].filter(Boolean).join(" · ") }),
-        el("div", { class: "scan-grid" }, [
-          metric("שווי שוק", fmtCap(row)),
-          metric("מחיר", fmtNum(row.price, 2)),
-          metric("שינוי", fmtPct(row.change_pct), pctClass(row.change_pct)),
-          metric("חודש", fmtPct(row.perf_month_pct), pctClass(row.perf_month_pct)),
-          metric("מכפיל", fmtNum(row.pe, 2)),
-          metric("מכפיל קדימה", fmtNum(row.fwd_pe, 2)),
-          metric("PEG", fmtNum(row.peg, 2)),
-          metric("שורט מהפלואט", row.short_float_pct == null ? "—" : fmtNum(row.short_float_pct, 2) + "%"),
-          metric("ימים לכיסוי", fmtNum(row.days_to_cover, 2)),
-          metric("דוחות", row.earnings || "—", "")
-        ])
-      ]));
-    });
-    list.appendChild(cards);
-    list.appendChild(el("p", { class: "footer-note", text: data.disclaimer || "מידע בלבד, לא ייעוץ." }));
-    root.appendChild(list);
-    setStatus((data.updated_at_israel ? "זמן הסריקה: " + data.updated_at_israel + ". " : "") + (data.disclaimer || "מידע בלבד, לא ייעוץ."));
+    root.appendChild(el("p", { class: "footer-note", text: data.disclaimer || "מידע בלבד, לא ייעוץ." }));
+    setStatus(data.updated_at_israel ? "זמן הסריקה: " + data.updated_at_israel : "");
   }
 
   setStatus("טוען את הסריקה…");
+  root.appendChild(el("div", { class: "skel", role: "status", "aria-label": "טוען" }, [el("div", { class: "skel-row" }), el("div", { class: "skel-row" }), el("div", { class: "skel-row" })]));
   fetch("data/scanner.json", { cache: "no-store" })
     .then(function (res) {
       if (!res.ok) throw new Error("http " + res.status);
