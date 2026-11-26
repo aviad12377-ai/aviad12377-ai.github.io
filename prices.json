@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T18:48:44Z",
+  "generatedAt": "2026-11-26T19:01:01Z",
   "quotes": {
     "AAPL": {
       "price": 355.58,
@@ -386,9 +386,9 @@
       "state": "closed"
     },
     "EURILS=X": {
-      "price": 3.6387,
+      "price": 3.6388,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T18:48:02+00:00",
+      "regularMarketTime": "2026-11-26T19:00:25+00:00",
       "previousClose": 3.6857,
       "exchange": "CCY",
       "state": "open"
@@ -396,7 +396,7 @@
     "EURUSD=X": {
       "price": 1.0973,
       "currency": "USD",
-      "regularMarketTime": "2026-11-26T18:48:43+00:00",
+      "regularMarketTime": "2026-11-26T19:00:43+00:00",
       "previousClose": 1.0982,
       "exchange": "CCY",
       "state": "open"
@@ -514,9 +514,9 @@
       "state": "closed"
     },
     "ILS=X": {
-      "price": 3.3174,
+      "price": 3.3173,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-26T18:48:28+00:00",
+      "regularMarketTime": "2026-11-26T18:59:58+00:00",
       "previousClose": 3.3519,
       "exchange": "CCY",
       "state": "open"
