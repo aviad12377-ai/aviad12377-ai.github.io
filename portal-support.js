@@ -8,7 +8,7 @@
       sp_title: 'כותרת קצרה', sp_symbol: 'סימול או שם הנייר (למשל VOO, או מספר נייר בבורסה בתל אביב)', sp_body: 'פרטים', sp_email: 'אימייל לתשובה (לא חובה)', sp_shot: 'צילום מסך (לא חובה)',
       sp_shot_help: 'התמונה מוקטנת במכשיר לפני השליחה. כדאי להסתיר מספרים אישיים לפני הצילום.', sp_send: 'שליחת הבקשה', sp_sent: 'הבקשה נשלחה. אפשר לעקוב אחריה למטה.',
       sp_need: 'צריך לכתוב כותרת, סימול או פרטים.', sp_rate: 'נשלחו יותר מדי בקשות בזמן קצר. נסה/י שוב מאוחר יותר.', sp_mine: 'הבקשות שלי', sp_none: 'אין עדיין בקשות מהמכשיר או מהחשבון הזה.', sp_reply: 'תשובה',
-      sp_backend: 'שליחת בקשות תהיה זמינה אחרי חיבור השרת (ראו מדריך ההתקנה).', sp_shot_bad: 'לא הצלחנו לקרוא את התמונה.',
+      sp_backend: 'שליחת בקשות תהיה זמינה אחרי חיבור השרת (ראו מדריך ההתקנה).', sp_shot_bad: 'לא הצלחנו לקרוא את התמונה.', sp_shot_alt: 'צילום מסך שצורף לבקשה',
       st_new: 'חדש', st_in_progress: 'בטיפול', st_done: 'בוצע', st_rejected: 'נדחה', st_contacted: 'נוצר קשר', st_closed: 'סגור',
       admin_title: 'מרכז ניהול', admin_sub: 'בקשות משתמשים ולידים (גלוי רק למנהלים)', ad_signin: 'כדי להיכנס למרכז הניהול צריך להתחבר עם חשבון מנהל.', ad_denied: 'אין לחשבון הזה הרשאת ניהול.',
       ad_requests: 'בקשות', ad_leads: 'לידים (בקשות לשיחה עם בעל רישיון)', ad_all: 'הכול', ad_filter_type: 'סוג', ad_filter_status: 'סטטוס', ad_refresh: 'רענון',
@@ -31,7 +31,7 @@
       sp_title: 'Short title', sp_symbol: 'Symbol or name (e.g. VOO, or a TASE security number)', sp_body: 'Details', sp_email: 'Email for a reply (optional)', sp_shot: 'Screenshot (optional)',
       sp_shot_help: 'The image is downscaled on your device before sending. Hide personal numbers first.', sp_send: 'Send request', sp_sent: 'Request sent. Track it below.',
       sp_need: 'Please write a title, symbol or details.', sp_rate: 'Too many requests in a short time. Try again later.', sp_mine: 'My requests', sp_none: 'No requests from this device or account yet.', sp_reply: 'Reply',
-      sp_backend: 'Sending requests will be available once the server is connected (see the setup guide).', sp_shot_bad: 'Could not read the image.',
+      sp_backend: 'Sending requests will be available once the server is connected (see the setup guide).', sp_shot_bad: 'Could not read the image.', sp_shot_alt: 'Screenshot attached to the request',
       st_new: 'New', st_in_progress: 'In progress', st_done: 'Done', st_rejected: 'Rejected', st_contacted: 'Contacted', st_closed: 'Closed',
       admin_title: 'Control centre', admin_sub: 'User requests and leads (admins only)', ad_signin: 'Sign in with an admin account to open the control centre.', ad_denied: 'This account has no admin rights.',
       ad_requests: 'Requests', ad_leads: 'Leads (asked to talk to a licensed agent)', ad_all: 'All', ad_filter_type: 'Type', ad_filter_status: 'Status', ad_refresh: 'Refresh',
@@ -54,7 +54,7 @@
       sp_title: 'Título corto', sp_symbol: 'Símbolo o nombre (p. ej. VOO o número de valor de la TASE)', sp_body: 'Detalles', sp_email: 'Correo para responder (opcional)', sp_shot: 'Captura (opcional)',
       sp_shot_help: 'La imagen se reduce en tu dispositivo antes de enviarla. Oculta números personales.', sp_send: 'Enviar', sp_sent: 'Solicitud enviada. Síguela abajo.',
       sp_need: 'Escribe un título, símbolo o detalles.', sp_rate: 'Demasiadas solicitudes en poco tiempo. Inténtalo más tarde.', sp_mine: 'Mis solicitudes', sp_none: 'Aún no hay solicitudes desde este dispositivo o cuenta.', sp_reply: 'Respuesta',
-      sp_backend: 'El envío estará disponible cuando se conecte el servidor (ver la guía).', sp_shot_bad: 'No se pudo leer la imagen.',
+      sp_backend: 'El envío estará disponible cuando se conecte el servidor (ver la guía).', sp_shot_bad: 'No se pudo leer la imagen.', sp_shot_alt: 'Captura adjunta a la solicitud',
       st_new: 'Nueva', st_in_progress: 'En curso', st_done: 'Hecha', st_rejected: 'Rechazada', st_contacted: 'Contactado', st_closed: 'Cerrado',
       admin_title: 'Centro de control', admin_sub: 'Solicitudes y contactos (solo administradores)', ad_signin: 'Entra con una cuenta de administrador.', ad_denied: 'Esta cuenta no tiene permisos de administración.',
       ad_requests: 'Solicitudes', ad_leads: 'Contactos (quieren hablar con un agente con licencia)', ad_all: 'Todo', ad_filter_type: 'Tipo', ad_filter_status: 'Estado', ad_refresh: 'Actualizar',
@@ -125,7 +125,7 @@
     file.addEventListener('change', function () {
       shot = null; prev.innerHTML = '';
       if (!file.files[0]) return;
-      shrinkImage(file.files[0]).then(function (d) { shot = d; prev.appendChild(h('img', { src: d, alt: '' })); }, function () { toast(t('sp_shot_bad')); file.value = ''; });
+      shrinkImage(file.files[0]).then(function (d) { shot = d; prev.appendChild(h('img', { src: d, alt: t('sp_shot_alt') })); }, function () { toast(t('sp_shot_bad')); file.value = ''; });
     });
     var btn = h('button', { type: 'submit', class: 'btn btn-primary', id: 'req-send', text: t('sp_send') });
     var form = h('form', { class: 'form-grid', id: 'req-form' }, [field(t('sp_type'), typeSel), field(t('sp_title'), title), symWrap, field(t('sp_body'), body), field(t('sp_email'), email),
@@ -198,7 +198,7 @@
           save.disabled = true;
           C().admin.updateRequest(r.id, { status: st.value, internal: internal.value, reply: reply.value }).then(function () { toast(t('ad_saved')); }, function (e) { toast(t('send_fail') + ': ' + e.message); }).then(function () { save.disabled = false; });
         } });
-        var img = r.screenshot && /^data:image\/(jpeg|png|webp);base64,/.test(r.screenshot) ? h('img', { src: r.screenshot, alt: '', class: 'shot' }) : null;
+        var img = r.screenshot && /^data:image\/(jpeg|png|webp);base64,/.test(r.screenshot) ? h('img', { src: r.screenshot, alt: t('sp_shot_alt'), class: 'shot' }) : null;
         return h('details', { class: 'req-item admin' }, [
           h('summary', null, [h('strong', { text: r.title || r.symbol || '—' }), ' ', statusChip(r.status), h('span', { class: 'help', text: ' · ' + t('sp_t_' + r.type) + ' · ' + dt(r.created_at) })]),
           r.symbol ? h('p', { dir: 'ltr', text: r.symbol }) : null,

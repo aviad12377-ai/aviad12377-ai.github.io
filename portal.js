@@ -810,7 +810,7 @@
     return h('div', { class: 'totals' }, items.map(function (x) { return h('div', { class: 'tot' + (x[2] ? ' ' + x[2] : '') }, [h('span', { class: 'k', text: x[0] }), h('span', { class: 'v num', text: x[1] })]); }));
   }
   function comparison(cfg) {
-    var head = h('tr', null, cfg.cols.map(function (c) { return h('th', { text: t(c) || c }); }));
+    var head = h('tr', null, cfg.cols.map(function (c) { return h('th', { scope: 'col', text: t(c) || c }); }));
     var body = [1, 2, 3].map(function (i) {
       return h('tr', { class: 'placeholder' }, cfg.cols.map(function (c, j) { return h('td', { text: j === 0 ? t('placeholder_row') + ' ' + i : '—' }); }));
     });
@@ -1111,7 +1111,7 @@
       tblHost.innerHTML = '';
       var head = h('tr', null, COLS.map(function (c) {
         var arrow = sortKey === c.k ? (sortDir > 0 ? ' ↑' : ' ↓') : '';
-        return h('th', { class: (c.num ? 'num ' : '') + 'sortable' + (c.k === 'name' ? ' name' : ''), text: c.label + arrow, onclick: function () {
+        return h('th', { scope: 'col', class: (c.num ? 'num ' : '') + 'sortable' + (c.k === 'name' ? ' name' : ''), text: c.label + arrow, onclick: function () {
           if (sortKey === c.k) sortDir = -sortDir;
           else { sortKey = c.k; sortDir = c.num ? -1 : 1; }
           renderTable();
@@ -1245,8 +1245,9 @@
   function table(cols, rows, opts) {
     opts = opts || {};
     if (!rows.length) return h('div', { class: 'empty', text: opts.empty || t('none') });
-    return h('div', { class: 'tbl-wrap' }, [h('table', { class: 'cmp data' }, [
-      h('thead', null, [h('tr', null, cols.map(function (c) { return h('th', { text: c[0] }); }))]),
+    return h('div', { class: 'tbl-wrap', tabindex: '0' }, [h('table', { class: 'cmp data' }, [
+      opts.caption ? h('caption', { class: 'sr-only', text: opts.caption }) : null,
+      h('thead', null, [h('tr', null, cols.map(function (c) { return h('th', { scope: 'col', text: c[0] }); }))]),
       h('tbody', null, rows.map(function (r) { return h('tr', { class: opts.rowClass ? opts.rowClass(r) : null }, cols.map(function (c) { var v = c[1](r); return h('td', { class: c[2] || null }, [v === null || v === undefined ? '—' : typeof v === 'object' ? v : String(v)]); })); }))
     ])]);
   }
@@ -1259,7 +1260,7 @@
   function editLink(anchor) { return h('div', { class: 'toolbar' }, [h('a', { class: 'btn btn-primary btn-sm', href: 'me.html#' + anchor, text: t('edit_in_me') })]); }
   function compareBox(cfg) {
     // cfg: { title, cols:[labels], mine:[[cells]], sameTrack:boolean, otherTracks:[names], source }
-    var head = h('tr', null, cfg.cols.map(function (c) { return h('th', { text: c }); }));
+    var head = h('tr', null, cfg.cols.map(function (c) { return h('th', { scope: 'col', text: c }); }));
     var rows = [];
     (cfg.mine || []).forEach(function (r) { rows.push(h('tr', { class: 'mine' }, r.map(function (c, i) { return h('td', { text: c === null || c === undefined ? '—' : String(c) }); }))); });
     if (cfg.sameTrack) rows.push(h('tr', { class: 'grp' }, [h('td', { colspan: cfg.cols.length, text: t('cmp_same_track') })]));
@@ -1940,7 +1941,7 @@
             }
           });
           pfLists.push(l);
-          pfWrap.appendChild(h('div', { class: 'row-card', style: 'background:#fff' }, [h('div', { class: 'portfolio-head' }, [h('strong', { text: t('portfolio') + ':' }), nameIn, h('button', { type: 'button', class: 'btn btn-danger btn-sm', text: t('del_portfolio'), onclick: function () { if (!p.rows.length || confirm(t('del_portfolio') + '?')) { data.savings.portfolios.splice(pi, 1); changed(); drawPf(); } } })]), box]));
+          pfWrap.appendChild(h('div', { class: 'row-card' }, [h('div', { class: 'portfolio-head' }, [h('strong', { text: t('portfolio') + ':' }), nameIn, h('button', { type: 'button', class: 'btn btn-danger btn-sm', text: t('del_portfolio'), onclick: function () { if (!p.rows.length || confirm(t('del_portfolio') + '?')) { data.savings.portfolios.splice(pi, 1); changed(); drawPf(); } } })]), box]));
         });
       }
       drawPf();

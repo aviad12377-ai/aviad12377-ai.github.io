@@ -321,8 +321,11 @@ body[data-page=options] .ticker-search,body[data-page=options] input,body[data-p
 body[data-page=options] .btn{background:rgba(255,255,255,.07);color:var(--ink);border-color:var(--glass-border);font-size:15px;min-height:var(--tap)}
 body[data-page=options] .btn-primary{background:var(--grad);color:#fff}
 body[data-page=options] .btn-soft{background:var(--primary-soft);color:#e9e3ff}
-body[data-page=options] .btn-whatsapp{background:#16a34a;color:#fff}
+body[data-page=options] .btn-whatsapp{background:#15803d;color:#fff}
 body[data-page=options] .portal-brand{color:var(--ink);font-size:17px}
 body[data-page=options] .badge{font-size:13px}
 body[data-page=options] .toast{background:#26262f}
 body[data-page=options] small,body[data-page=options] .help{font-size:14px}
+/* v8.1: keep numbers readable inside RTL text */
+.hero .big,.tile .v,.delta,.coin{unicode-bidi:isolate}
+.tbl-wrap:focus-visible{outline:2px solid #8b7bff;outline-offset:2px}
