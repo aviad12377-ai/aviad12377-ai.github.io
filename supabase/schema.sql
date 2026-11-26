@@ -14,7 +14,7 @@ create extension if not exists pgcrypto with schema extensions;
 -- 1. per-user portal documents (one JSON doc per user per section, versioned)
 create table if not exists public.portal_docs (
   user_id    uuid        not null default auth.uid() references auth.users(id) on delete cascade,
-  section    text        not null check (section in ('data', 'settings', 'options')),
+  section    text        not null check (section in ('data', 'settings', 'options', 'goals', 'subscriptions', 'debts', 'actions', 'assets', 'networth_history')),
   doc        jsonb       not null,
   version    integer     not null default 1,
   updated_at timestamptz not null default now(),
@@ -271,3 +271,23 @@ grant execute on function public.peer_compare() to authenticated;
 
 -- 7. YOUR ADMIN E-MAIL (edit, then run). Lower-case only.
 insert into public.admins (email) values ('replace-with-your-gmail@gmail.com') on conflict do nothing;
+
+-- feedback form (feedback.html): visitors may only INSERT; nobody can read rows through the site (admins read them in the dashboard)
+create table if not exists public.portal_feedback (
+  id bigint generated always as identity primary key,
+  created_at timestamptz not null default now(),
+  kind text not null check (kind in ('bug','idea','question')),
+  page text not null default '' check (char_length(page) <= 120),
+  body text not null check (char_length(body) between 3 and 4000),
+  email text check (email is null or (char_length(email) <= 200 and email ~* '^[^@\s]+@[^@\s]+\.[^@\s]+$')),
+  user_id uuid default auth.uid() references auth.users(id) on delete set null,
+  status text not null default 'new' check (status in ('new','seen','done'))
+);
+alter table public.portal_feedback enable row level security;
+alter table public.portal_feedback force row level security;
+revoke all on public.portal_feedback from anon, authenticated;
+grant insert (kind, page, body, email) on public.portal_feedback to anon, authenticated;
+drop policy if exists portal_feedback_insert_anon on public.portal_feedback;
+drop policy if exists portal_feedback_insert_auth on public.portal_feedback;
+create policy portal_feedback_insert_anon on public.portal_feedback for insert to anon with check (user_id is null and status = 'new');
+create policy portal_feedback_insert_auth on public.portal_feedback for insert to authenticated with check ((user_id is null or user_id = (select auth.uid())) and status = 'new');

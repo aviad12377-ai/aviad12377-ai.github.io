@@ -42,7 +42,17 @@
     { id: 'support', href: 'support.html', label: { he: 'בקשות ותמיכה', en: 'Support', es: 'Soporte' }, icon: 'chat', group: 'account', parent: 'me' },
     { id: 'privacy', href: 'privacy.html', label: { he: 'פרטיות', en: 'Privacy', es: 'Privacidad' }, icon: 'shield', group: 'account', parent: 'me' },
     { id: 'news', href: 'news.html', label: { he: 'חדשות', en: 'News', es: 'Noticias' }, icon: 'news', group: 'tools', parent: 'home' },
-    { id: 'scanner', href: 'scanner.html', label: { he: 'סורק', en: 'Scanner', es: 'Escáner' }, icon: 'scan', group: 'tools', parent: 'home' }
+    { id: 'scanner', href: 'scanner.html', label: { he: 'סורק', en: 'Scanner', es: 'Escáner' }, icon: 'scan', group: 'tools', parent: 'home' },
+    // pages owned by other workers, listed here too so every page's "עוד" sheet shows them
+    { id: 'networth', href: 'networth.html', label: { he: 'הון לאורך זמן', en: 'Net worth history', es: 'Patrimonio' }, icon: 'chart', group: 'wealth', parent: 'wealth' },
+    { id: 'assets', href: 'assets.html', label: { he: 'נכסים: דירה, רכב, קרקע', en: 'Property & car', es: 'Bienes' }, icon: 'house', group: 'wealth', parent: 'wealth' },
+    { id: 'goals', href: 'goals.html', label: { he: 'קרן חירום ויעדים', en: 'Goals', es: 'Metas' }, icon: 'piggy', group: 'tools', parent: 'budget' },
+    { id: 'subscriptions', href: 'subscriptions.html', label: { he: 'מנויים וחיובים', en: 'Subscriptions', es: 'Suscripciones' }, icon: 'card', group: 'tools', parent: 'budget' },
+    { id: 'debts-planner', href: 'debts-planner.html', label: { he: 'תכנון החזר חובות', en: 'Debt payoff', es: 'Pago de deudas' }, icon: 'swap', group: 'debts', parent: 'loans' },
+    { id: 'actions', href: 'actions.html', label: { he: 'צעדים לחיסכון בדמי ניהול', en: 'Fee actions', es: 'Comisiones' }, icon: 'bulb', group: 'tools', parent: 'wealth' },
+    { id: 'feedback', href: 'feedback.html', label: { he: 'משוב ודיווח על תקלה', en: 'Feedback', es: 'Comentarios' }, icon: 'chat', group: 'account', parent: 'me' },
+    { id: 'compare-cards', href: 'compare-cards.html', label: { he: 'השוואת כרטיסים', en: 'Compare cards', es: 'Comparar tarjetas' }, icon: 'card', group: 'debts', parent: 'loans' },
+    { id: 'compare-savings', href: 'compare-savings.html', label: { he: 'השוואת פיקדונות', en: 'Compare deposits', es: 'Comparar depósitos' }, icon: 'piggy', group: 'wealth', parent: 'wealth' }
   ];
   var extra = window.PORTAL_NAV || [];
   var seen = {}; window.PORTAL_NAV = base.concat(extra).filter(function (e) { if (!e || !e.id || seen[e.id]) return false; seen[e.id] = 1; return true; });
