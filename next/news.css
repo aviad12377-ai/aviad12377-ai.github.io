@@ -1,0 +1,58 @@
+/* News + heatmap + header/profile avatar slots for /next/. Does not edit app.css. */
+
+.nw-tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.nw-tool{display:flex;align-items:center;gap:12px;padding:12px;min-height:64px;margin:0}
+.nw-tool .ic{width:40px;height:40px;border-radius:999px;display:grid;place-items:center;background:var(--primary-soft);color:var(--primary);flex:none}
+.nw-tool .ic svg{width:22px;height:22px}
+.nw-tool .tx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.nw-tool b{font-size:16px;font-weight:700}
+.nw-tool .muted{font-size:14px}
+@media (min-width:720px){.nw-tools{grid-template-columns:1fr 1fr 1fr 1fr}}
+
+.nw-grp{margin:16px 0 8px;font-size:14px;font-weight:700;color:var(--muted)}
+.nw-idx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (min-width:720px){.nw-idx{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.nw-idx .c{background:var(--surface-2);border-radius:14px;padding:12px;min-height:72px;display:flex;flex-direction:column;gap:2px}
+.nw-idx .k{font-size:14px;color:var(--muted)}
+.nw-idx .v{font-size:18px;font-weight:700}
+.nw-idx .d{font-size:14px;font-weight:700}
+.nw-idx .n{font-size:14px;color:var(--muted)}
+.nw-verdict{font-size:16px;font-weight:600;margin:8px 0}
+
+.nw-fig{margin:12px 0 0}
+.nw-fig figcaption{font-size:14px;color:var(--muted);margin:0 0 8px}
+.nw-chart{width:100%;height:auto;display:block}
+.nw-chart text{font-size:11px;fill:var(--muted)}
+.nw-grid{stroke:var(--line);stroke-width:1}
+.nw-base{stroke:var(--muted);stroke-dasharray:4 4;stroke-width:1}
+.nw-legend{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:8px;font-size:14px}
+.nw-legend i{display:inline-block;width:10px;height:10px;border-radius:999px;margin-inline-end:6px}
+
+.nw-bars{display:flex;flex-direction:column;gap:8px}
+.nw-bars .r{display:grid;grid-template-columns:minmax(80px,1.2fr) 1fr auto;gap:8px;align-items:center;min-height:44px;font-size:16px}
+.nw-bars .tr{height:10px;background:var(--surface-2);border-radius:999px;overflow:hidden;direction:ltr}
+.nw-bars i{display:block;height:100%;border-radius:999px}
+.nw-bars i.up{background:#16A34A}
+.nw-bars i.down{background:#DC2626}
+
+.nw-movers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.nw-movers ul{list-style:none;margin:0;padding:0}
+.nw-movers li{display:flex;justify-content:space-between;gap:8px;min-height:44px;align-items:center;font-size:16px;border-bottom:1px solid var(--line)}
+.nw-tbl{overflow-x:auto}
+.nw-tbl table{width:100%;border-collapse:collapse;font-size:16px}
+.nw-tbl th,.nw-tbl td{padding:10px 8px;text-align:start;border-bottom:1px solid var(--line)}
+.nw-tbl .num{text-align:end;font-variant-numeric:tabular-nums}
+
+.nw-hm-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px}
+@media (min-width:600px){.nw-hm-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:960px){.nw-hm-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.nw-hm-tile{min-height:76px;border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;justify-content:space-between;color:var(--ink)}
+.nw-hm-tile .nm{font-size:15px;font-weight:700;line-height:1.25}
+.nw-hm-tile .sym{font-size:14px;opacity:.8}
+.nw-hm-tile .chg{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:6px}
+
+/* Header / profile avatar: SVG must fill the 36/56 circle, not the 24px iconbtn rule. */
+.appbar a[href="#/me"] .avatar{overflow:hidden;background:var(--surface-2);padding:0}
+.appbar a[href="#/me"] .avatar svg{width:36px !important;height:36px !important;display:block}
+#me-avatar{overflow:hidden;border-radius:999px;background:var(--surface-2);padding:0;flex:none}
+#me-avatar svg{width:56px;height:56px;display:block}
