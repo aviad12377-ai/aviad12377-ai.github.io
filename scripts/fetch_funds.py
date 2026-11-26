@@ -6,7 +6,7 @@ Datasets (Israel Capital Market Authority, published on data.gov.il CKAN):
   bituachnet (insurance savings policies)          resource c6c62cc7-fe02-4b18-8f3e-813abfbb4647  "נתוני הביטוח נט לשנים 2024-היום"
 Only the latest REPORT_PERIOD of each dataset is kept for the statistics. "monthly" adds MONTHLY_YIELD (%) per track (FUND_ID)
 for the last MONTHS periods, used by the site to roll a balance forward per track. Standard library only. Public data, no keys."""
-import json, sys, time, urllib.parse, urllib.request, datetime
+import html, json, sys, time, urllib.parse, urllib.request, datetime
 
 API = 'https://data.gov.il/api/3/action/datastore_search'
 SETS = {
@@ -34,6 +34,11 @@ def get(params, tries=3):
             print('retry', i, e, file=sys.stderr); time.sleep(3 * (i + 1))
     raise RuntimeError('failed: ' + url)
 
+def clean(v):
+    # the source sometimes has a broken '&' ("S1;P500") or HTML entities
+    if not isinstance(v, str): return v
+    return html.unescape(v.replace('S1;P', 'S&P')).strip()
+
 def fetch(rid):
     latest = get({'resource_id': rid, 'limit': 1, 'sort': 'REPORT_PERIOD desc', 'fields': 'REPORT_PERIOD'})['records'][0]['REPORT_PERIOD']
     out, offset = [], 0
@@ -41,7 +46,7 @@ def fetch(rid):
         res = get({'resource_id': rid, 'limit': 1000, 'offset': offset, 'filters': json.dumps({'REPORT_PERIOD': latest})})
         recs = res['records']
         for r in recs:
-            o = {SHORT[k]: r.get(k) for k in KEEP if r.get(k) not in (None, '')}
+            o = {SHORT[k]: clean(r.get(k)) for k in KEEP if r.get(k) not in (None, '')}
             out.append(o)
         offset += len(recs)
         if not recs or offset >= res.get('total', 0): break

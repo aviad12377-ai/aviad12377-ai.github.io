@@ -118,7 +118,15 @@
     var title = h('input', { id: 'req-title', maxlength: '200' }), symbol = h('input', { id: 'req-symbol', maxlength: '100', dir: 'ltr' }), body = h('textarea', { id: 'req-body', rows: '5', maxlength: '5000' });
     var email = h('input', { id: 'req-email', type: 'email', maxlength: '200', dir: 'ltr', autocomplete: 'email' });
     var hp = h('input', { id: 'req-website', name: 'website', tabindex: '-1', autocomplete: 'off' });
-    var file = h('input', { id: 'req-shot', type: 'file', accept: 'image/*' }), prev = h('div', { class: 'shot-prev' });
+    var file = h('input', { id: 'req-shot', type: 'file', accept: 'image/*', style: 'position:absolute;width:1px;height:1px;opacity:0;overflow:hidden' }), prev = h('div', { class: 'shot-prev' });
+    // Hebrew-labelled picker instead of the browser's own (English) file button
+    var fileName = h('span', { id: 'req-shot-name', style: 'font-size:16px;color:var(--muted);word-break:break-all', text: P().lang() === 'he' ? 'לא נבחר קובץ' : P().lang() === 'es' ? 'Ningún archivo' : 'No file chosen' });
+    var fileBtn = h('span', { 'aria-hidden': 'true', class: 'btn btn-soft', style: 'min-height:44px;cursor:pointer', text: P().lang() === 'he' ? 'בחירת קובץ' : P().lang() === 'es' ? 'Elegir archivo' : 'Choose file' });
+    file.setAttribute('aria-describedby', 'req-shot-name');
+    file.addEventListener('focus', function () { fileBtn.style.outline = '3px solid var(--primary-dark)'; fileBtn.style.outlineOffset = '2px'; });
+    file.addEventListener('blur', function () { fileBtn.style.outline = ''; });
+    file.addEventListener('change', function () { fileName.textContent = file.files[0] ? file.files[0].name : (P().lang() === 'he' ? 'לא נבחר קובץ' : 'No file chosen'); });
+    var fileRow = h('div', { style: 'display:flex;align-items:center;gap:10px;flex-wrap:wrap;position:relative' }, [file, fileBtn, fileName]);
     var symWrap = field(t('sp_symbol'), symbol);
     function syncType() { symWrap.style.display = typeSel.value === 'ticker' ? '' : 'none'; }
     typeSel.addEventListener('change', syncType); syncType();
@@ -129,7 +137,7 @@
     });
     var btn = h('button', { type: 'submit', class: 'btn btn-primary', id: 'req-send', text: t('sp_send') });
     var form = h('form', { class: 'form-grid', id: 'req-form' }, [field(t('sp_type'), typeSel), field(t('sp_title'), title), symWrap, field(t('sp_body'), body), field(t('sp_email'), email),
-      field(t('sp_shot'), file, t('sp_shot_help')), prev, h('div', { class: 'hp', 'aria-hidden': 'true' }, [h('label', null, ['Website', hp])]), h('div', { class: 'toolbar' }, [btn])]);
+      field(t('sp_shot'), fileRow, t('sp_shot_help')), prev, h('div', { class: 'hp', 'aria-hidden': 'true' }, [h('label', null, ['Website', hp])]), h('div', { class: 'toolbar' }, [btn])]);
     var notice = cloudOn() ? null : h('div', { class: 'notice amber', id: 'backend-missing', text: t('sp_backend') });
     if (!cloudOn()) btn.disabled = true;
     form.addEventListener('submit', function (ev) {
@@ -138,7 +146,7 @@
       if ((title.value + body.value + symbol.value).trim().length < 3) { toast(t('sp_need')); return; }
       btn.disabled = true;
       C().submitRequest({ type: typeSel.value, title: title.value.trim(), body: body.value.trim(), symbol: typeSel.value === 'ticker' ? symbol.value.trim() : '', email: email.value.trim(), screenshot: shot, page: ref, hp: hp.value, elapsed: Date.now() - started })
-        .then(function () { toast(t('sp_sent')); form.reset(); shot = null; prev.innerHTML = ''; syncType(); loadMine(); },
+        .then(function () { toast(t('sp_sent')); form.reset(); shot = null; prev.innerHTML = ''; fileName.textContent = P().lang() === 'he' ? 'לא נבחר קובץ' : 'No file chosen'; syncType(); loadMine(); },
           function (e) { toast(/rate/.test(e.message) ? t('sp_rate') : t('send_fail') + ': ' + e.message); })
         .then(function () { btn.disabled = false; });
     });

@@ -50,7 +50,7 @@
   function hasContent(section, obj) {
     if (!obj || typeof obj !== 'object') return false;
     if (section === 'settings') return false;
-    if (section === 'options') return !!(obj.data && Object.keys(obj.data).length);
+    if (section === 'options') return !!((obj.data && Object.keys(obj.data).length) || (obj.esop && Array.isArray(obj.esop.grants) && obj.esop.grants.length));
     var found = false;
     (function walk(o) { if (found || !o || typeof o !== 'object') return; if (Array.isArray(o)) { if (o.length) found = true; return; } Object.keys(o).forEach(function (k) { walk(o[k]); }); })(obj);
     return found;

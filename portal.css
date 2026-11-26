@@ -329,3 +329,21 @@ body[data-page=options] small,body[data-page=options] .help{font-size:14px}
 /* v8.1: keep numbers readable inside RTL text */
 .hero .big,.tile .v,.delta,.coin{unicode-bidi:isolate}
 .tbl-wrap:focus-visible{outline:2px solid #8b7bff;outline-offset:2px}
+/* v8.3 QA: 44px tap targets and readable secondary text on phones */
+#cur-coin,.topbar .coin,.coin.small{min-width:44px;min-height:44px;width:44px;height:44px}
+.topbar select,.portal-settings select{min-height:44px}
+.site-footer{font-size:15px;gap:4px 8px}
+.site-footer a,.site-footer span{display:inline-flex;align-items:center;min-height:44px;padding:0 8px}
+.empty,.help,.fx-line,.footer-note,.stamp,.notice{font-size:16px}
+.field label,.out .k,.tot .k{font-size:15px}
+input[type=range]{min-height:44px}
+input[type=checkbox],input[type=radio]{width:24px;height:24px}
+.field.check{min-height:44px;align-items:center}
+.esop h3{font-size:17px;margin:16px 0 8px} .esop h4{font-size:15px;margin:10px 0 6px;color:var(--muted)}
+.esop .totals .tot.big .v{font-size:26px}
+body[data-page=options] input[type=range]{height:44px}
+body[data-page=options] input[type=checkbox],body[data-page=options] input[type=radio]{width:24px;height:24px}
+body[data-page=options] .hint,body[data-page=options] .help,body[data-page=options] small{font-size:15px}
+.chip,.chips a{min-height:44px;display:inline-flex;align-items:center}
+.portal-brand,.portal-subnav a,.subnav a{min-height:44px;display:inline-flex;align-items:center}
+input[type=file]{min-height:44px;font-size:16px}

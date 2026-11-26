@@ -876,7 +876,7 @@
 
   /* ===== שמירה מקומית (מצב אישי בלבד) ===== */
   function savePrivate() {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 1, symbol: state.symbol, data: state.data.private })); } catch (e) {}
+    try { var prev = {}; try { prev = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; } catch (x) {} var outDoc = { v: 1, symbol: state.symbol, data: state.data.private }; if (prev.esop) outDoc.esop = prev.esop; /* keep the personal-page options log */ localStorage.setItem(STORAGE_KEY, JSON.stringify(outDoc)); } catch (e) {}
   }
   function loadPrivate() {
     try {

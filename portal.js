@@ -532,6 +532,8 @@
       return { valueILS: v, costILS: c, pl: v - c, plPct: c ? (v - c) / c * 100 : null, missing: missing };
     },
     options: function () {
+      // the employee-options log on the personal page (grants, vesting, dividends, sales) wins over the calculator inputs
+      if (window.PortalEsop) { var es = null; try { es = window.PortalEsop.summary(); } catch (e) {} if (es) return es.map(function (x) { x.netILS = x.net === null ? null : toILS(x.net, x.currency); return x; }); }
       var o = readJSON(OPTIONS_KEY); if (!o || !o.data) return null;
       var items = [];
       Object.keys(o.data).forEach(function (sym) {
@@ -938,9 +940,12 @@
 
   /* ---------- public fund statistics (funds.json, daily from data.gov.il) ---------- */
   var fundsP = null;
-  var FUND_SRC = { gemelnet: 'https://data.gov.il/dataset/gemelnet', pensianet: 'https://data.gov.il/dataset/pensyanet', bituachnet: 'https://data.gov.il/dataset/bituachnet' };
+  var FUND_SRC = { gemelnet: 'https://gemelnet.cma.gov.il/', pensianet: 'https://pensyanet.cma.gov.il/', bituachnet: 'https://bituachnet.cma.gov.il/' };
+  var FUND_SRC_NAME = { gemelnet: 'src_gemelnet', pensianet: 'src_pensianet', bituachnet: 'src_bituachnet' };
+  // data.gov.il text sometimes arrives with a broken '&' ("S1;P500", "&amp;"): repair every string once on load
+  function fixFundText(o) { if (typeof o === 'string') return o.replace(/S1;P/g, 'S&P').replace(/&amp;/g, '&').replace(/&quot;/g, '"'); if (Array.isArray(o)) return o.map(fixFundText); if (o && typeof o === 'object') { Object.keys(o).forEach(function (k) { o[k] = fixFundText(o[k]); }); } return o; }
   function loadFunds() {
-    if (!fundsP) fundsP = fetchJSON('funds.json?d=' + new Date().toISOString().slice(0, 10), 20000).catch(function () { fundsP = null; return null; });
+    if (!fundsP) fundsP = fetchJSON('funds.json?d=' + new Date().toISOString().slice(0, 10), 20000).then(fixFundText).catch(function () { fundsP = null; return null; });
     return fundsP;
   }
   var FUNDS = null; // loaded funds.json, for track lists and monthly returns
@@ -1149,7 +1154,7 @@
       cfg.sets.forEach(function (sp) {
         var set = j.sets && j.sets[sp[0]]; if (!set) return;
         periods.push(periodLabel(set.period));
-        if (FUND_SRC[sp[0]]) links.push({ href: FUND_SRC[sp[0]], text: sp[0] });
+        if (FUND_SRC[sp[0]]) links.push({ href: FUND_SRC[sp[0]], text: t(FUND_SRC_NAME[sp[0]]) });
         set.funds.forEach(function (f) {
           if (!sp[1].test(f.cls || '')) return;
           var row = {};
@@ -1395,7 +1400,6 @@
       main.appendChild(section(t('cash_title'), [box]));
       main.appendChild(section(t('bank_accounts'), [bankBox]));
       main.appendChild(section(t('standing_title'), [stBox]));
-      main.appendChild(compareBox({ title: t('compare_deposits'), cols: [t('bank'), t('kind'), t('rate'), t('months')], sameTrack: true, otherTracks: ['c_deposit', 'c_mmf', 'c_savings'], mine: data.savings.cash.map(function (r) { return [t('mine') + ': ' + (r.name || ''), t(r.kind || 'c_checking'), pct(n(r.rate), 2), '—']; }), source: t('src_boi_deposits') }));
       main.appendChild(recBox); main.appendChild(fxCard());
       function draw() {
         box.innerHTML = '';
@@ -1523,7 +1527,6 @@
       var box = h('div'), txBox = h('div'), recBox = h('div');
       main.appendChild(section(t('my_balances'), [box]));
       main.appendChild(section(t('card_tx_title'), [txBox]));
-      main.appendChild(compareBox({ cols: [t('card_name'), t('annual_fee'), t('fx_fee'), t('benefits')], sameTrack: false, otherTracks: ['cc_cashback', 'cc_nofee', 'cc_travel'], mine: data.cards.cards.map(function (c) { return [t('mine') + ': ' + (c.name || ''), c.annualFee === undefined || c.annualFee === null ? '—' : disp(n(c.annualFee)), c.fxFee === undefined || c.fxFee === null ? '—' : pct(n(c.fxFee), 2), '—']; }), source: t('src_tbd') }));
       main.appendChild(recBox);
       function draw() {
         var rows = data.cards.cards;
@@ -1624,6 +1627,7 @@
       }
       function drawActions() {
         actBox.innerHTML = '';
+        if (window.PortalInsights) { try { window.PortalInsights.mount(actBox, { max: 5, heading: false }); return; } catch (e) { console.error(e); actBox.innerHTML = ''; } }
         var pen = fundRows('pension').filter(function (r) { return r.type === 'pension' && r.balance > 0; }), hish = fundRows('hishtalmut').filter(function (r) { return r.balance > 0; });
         var acts = [];
         if (pen.length > 1 || hish.length > 1) acts.push(['act_merge', 'act_merge_txt', 'pension.html', 'swap']);
@@ -1904,9 +1908,10 @@
     main.appendChild(gate); main.appendChild(body);
     function build() {
       body.innerHTML = '';
-      var idx = [['maslaka', 'maslaka_upload_title'], ['pension', 'nav_pension'], ['hishtalmut', 'nav_hishtalmut'], ['cash', 'cash_title'], ['standing', 'standing_title'], ['portfolios', 'portfolios_title'], ['j-trades', 'j_trades'], ['j-bank', 'j_bank'], ['mortgage', 'nav_mortgage'], ['loans', 'nav_loans'], ['cards', 'nav_cards'], ['j-cards', 'j_cards'], ['budget', 'nav_budget'], ['assets', 'other_assets'], ['goal', 'goal'], ['peer', 'peer_title'], ['guide', 'guide_title']];
+      var idx = [['maslaka', 'maslaka_upload_title'], ['pension', 'nav_pension'], ['hishtalmut', 'nav_hishtalmut'], ['cash', 'cash_title'], ['standing', 'standing_title'], ['portfolios', 'portfolios_title'], ['j-trades', 'j_trades'], ['j-bank', 'j_bank'], ['mortgage', 'nav_mortgage'], ['loans', 'nav_loans'], ['cards', 'nav_cards'], ['j-cards', 'j_cards'], ['budget', 'nav_budget'], ['esop', 'esop_title'], ['land', 'land_title'], ['assets', 'other_assets'], ['goal', 'goal'], ['peer', 'peer_title'], ['guide', 'guide_title']];
       if (window.PortalAvatar) body.appendChild(anchor('avatar', section(window.PortalAvatar.title(), [window.PortalAvatar.studio(function (v) { return disp(v); })])));
       body.appendChild(anchor('top', section(t('me_index'), [h('div', { class: 'chips' }, idx.map(function (x) { return h('a', { class: 'chip', href: '#' + x[0], text: t(x[1]) }); }))])));
+      if (window.PortalEsop) { var es = window.PortalEsop.render({ h: h, money: money, fmtDate: fmtDate, toast: toast }); body.appendChild(anchor('esop', section(window.PortalEsop.title, [es.el]))); on('quotes', es.refresh); }
       body.appendChild(anchor('maslaka', maslakaUpload()));
       [['pension', 'pension'], ['hishtalmut', 'hishtalmut']].forEach(function (x) { var box = h('div'); renderList(box, data[x[0]].funds, fundSchema(x[0])); body.appendChild(anchor(x[0], section(t('manual_funds') + ' · ' + t('nav_' + x[0]), [h('p', { class: 'help', text: t('manual_funds_help') }), box]))); });
       var cashBox = h('div'); renderList(cashBox, data.savings.cash, { fields: [{ k: 'name', type: 'text', label: 'name' }, { k: 'kind', type: 'select', label: 'kind', options: opts(['c_checking', 'c_savings', 'c_deposit', 'c_mmf']) }, { k: 'balance', type: 'number', label: 'balance' }, { k: 'currency', type: 'select', label: 'row_currency', options: CUR_OPTS }, { k: 'rate', type: 'number', label: 'rate' }, { k: 'maturity', type: 'date', label: 'maturity' }] });
@@ -1960,7 +1965,33 @@
       renderList(iBox, data.home.income, { fields: [{ k: 'name', type: 'text', label: 'name' }, { k: 'amount', type: 'number', label: 'amount' }] });
       renderList(eBox, data.home.expenses, { fields: [{ k: 'category', type: 'select', label: 'category', options: opts(['e_housing', 'e_food', 'e_car', 'e_insurance', 'e_telecom', 'e_leisure', 'e_other']) }, { k: 'name', type: 'text', label: 'name' }, { k: 'amount', type: 'number', label: 'amount' }] });
       body.appendChild(anchor('budget', section(t('nav_budget'), [h('h3', { class: 'card-title', style: 'font-size:14px', text: t('income') }), iBox, h('h3', { class: 'card-title', style: 'font-size:14px', text: t('expenses') }), eBox, checkPref(data.home, 'includeMortgagePmt', 'incl_mortgage_pmt')])));
-      var aBox = h('div'); renderList(aBox, data.home.assets, { fields: [{ k: 'name', type: 'text', label: 'name' }, { k: 'type', type: 'select', label: 'kind', options: opts(['a_realestate', 'a_crypto', 'a_car', 'a_business', 'a_other']) }, { k: 'value', type: 'number', label: 'value' }, { k: 'currency', type: 'select', label: 'row_currency', options: CUR_OPTS }, { k: 'liquid', type: 'check', label: 'liquid_flag', def: false }] });
+      // real estate and other assets are two views of the same list (data.home.assets), so assets.html and net worth see both
+      var isRE = function (r) { return r && r.type === 'a_realestate'; };
+      var reRows = data.home.assets.filter(isRE), otherRows = data.home.assets.filter(function (r) { return !isRE(r); });
+      var syncAssets = function () { var all = data.home.assets; all.length = 0; reRows.concat(otherRows).forEach(function (r) { all.push(r); }); };
+      var reTot = h('div'), reBox = h('div');
+      var reList = renderList(reBox, reRows, {
+        fields: [{ k: 'name', type: 'text', label: 'name' }, { k: 'sub', type: 'select', label: 'kind', options: [['land', t('k_land')], ['home', t('k_home')]] }, { k: 'location', type: 'text', label: 'location' },
+          { k: 'area', type: 'number', label: 'area_m2', min: 0 }, { k: 'purchase', type: 'number', label: 'purchase_price', min: 0 }, { k: 'value', type: 'number', label: 'current_value', min: 0 },
+          { k: 'currency', type: 'select', label: 'row_currency', options: [['ILS', '₪ ILS'], ['USD', '$ USD']] }, { k: 'valuedAt', type: 'date', label: 'valued_at' }],
+        outputs: function (r) {
+          var cur = r.currency || 'ILS', v = nn(r.value), a = nn(r.area), p = nn(r.purchase), out = [];
+          out.push([t('per_m2'), v !== null && a > 0 ? money(v / a, cur, 0) : '—']);
+          if (v !== null && p > 0) out.push([t('since_buy'), money(v - p, cur, 0) + ' (' + pct((v - p) / p * 100) + ')', v >= p ? 'pos' : 'neg']);
+          if (v !== null && cur !== settings.currency) out.push([t('current_value'), disp(toILS(v, cur), 0)]);
+          return out;
+        },
+        totals: function () {
+          reRows.forEach(function (r) { r.type = 'a_realestate'; if (!r.sub) r.sub = 'land'; if (!r.currency) r.currency = 'ILS'; if (r.liquid === undefined) r.liquid = false; });
+          syncAssets();
+          var sum = 0, miss = 0; reRows.forEach(function (r) { var x = toILS(nn(r.value), r.currency || 'ILS'); if (nn(r.value) === null) return; if (x === null) miss++; else sum += x; });
+          reTot.innerHTML = ''; reTot.appendChild(totalsBox([[t('land_total'), disp(sum, 0), 'big']]));
+          if (miss) reTot.appendChild(h('p', { class: 'help', text: t('missing_rate') }));
+        }
+      });
+      on('quotes', reList.refresh);
+      body.appendChild(anchor('land', section(t('land_title'), [h('p', { class: 'help', text: t('land_help') }), reTot, reBox])));
+      var aBox = h('div'); renderList(aBox, otherRows, { fields: [{ k: 'name', type: 'text', label: 'name' }, { k: 'type', type: 'select', label: 'kind', options: opts(['a_crypto', 'a_car', 'a_business', 'a_other']) }, { k: 'value', type: 'number', label: 'value' }, { k: 'currency', type: 'select', label: 'row_currency', options: CUR_OPTS }, { k: 'liquid', type: 'check', label: 'liquid_flag', def: false }], totals: syncAssets });
       body.appendChild(anchor('assets', section(t('other_assets'), [aBox])));
       var g = data.home.goal;
       body.appendChild(anchor('goal', section(t('goal'), [h('div', { class: 'fields' }, [fieldInput(g, { k: 'amount', type: 'number', label: 'goal_amount' }, changed), fieldInput(g, { k: 'date', type: 'date', label: 'goal_date' }, changed), fieldInput(g, { k: 'base', type: 'select', label: 'goal_base', options: [['net', t('base_net')], ['liquid', t('base_liquid')]] }, changed), fieldInput(g, { k: 'ret', type: 'number', label: 'goal_ret' }, changed)])])));
