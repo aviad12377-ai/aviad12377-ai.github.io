@@ -1,0 +1,50 @@
+/* Planning pages (goals, assets, subscriptions, debts planner, net worth history, action cards).
+   Uses the shared design tokens when present; the fallbacks keep the pages readable before the redesign lands. */
+.t13{font-size:16px;line-height:1.55}
+.t13 .help,.t13 .empty,.t13 p,.t13 li,.t13 .field label,.t13 .out .k,.t13 .tot .k,.t13 .badge,.t13 table.cmp,.t13 table.cmp th{font-size:16px}
+.t13 .field label{font-weight:700}
+.t13 input[type=text],.t13 input[type=number],.t13 input[type=date],.t13 select,.t13 textarea{min-height:44px;font-size:16px;width:100%}
+.t13 textarea{padding:8px;border-radius:9px;border:1.5px solid var(--line,#cbd5e1);background:var(--card,#fff);color:var(--ink,#0f172a);font-family:inherit;resize:vertical}
+.t13 .btn{min-height:44px;min-width:44px;font-size:16px;padding:8px 14px}
+.t13 .field.check{min-height:44px}
+.t13 .field.check input{width:24px;height:24px}
+.t13 a{min-height:24px}
+.t13 :focus-visible,.t13 a:focus-visible,.t13 button:focus-visible{outline:3px solid var(--focus,#818cf8);outline-offset:2px;border-radius:8px}
+.t13 .fields{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.t13 .tot .v{font-size:20px}
+.t13 .tot.big .v{font-size:26px}
+.t13 .out .v{font-size:17px}
+.t13-bar{height:12px;border-radius:999px;background:var(--line,#e2e8f0);overflow:hidden;margin:8px 0 4px}
+.t13-bar>span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent-2,#6366f1),var(--accent-3,#3b82f6))}
+.t13-bar.ok>span{background:linear-gradient(90deg,#10b981,#34d399)}
+.t13-bar.bad>span{background:linear-gradient(90deg,#f59e0b,#f97316)}
+.t13-status{display:inline-block;padding:4px 12px;border-radius:999px;font-weight:800;font-size:16px}
+.t13-status.ok{background:rgba(16,185,129,.16);color:#059669}
+.t13-status.bad{background:rgba(245,158,11,.18);color:#b45309}
+.t13-status.done{background:rgba(99,102,241,.16);color:#4f46e5}
+.t13-chart{width:100%;height:auto;display:block;margin:6px 0}
+.t13-chart text{font-size:13px;fill:var(--muted,#64748b);font-family:inherit}
+.t13-chart .grid{stroke:var(--line,#e2e8f0);stroke-width:1}
+.t13-chart .line{fill:none;stroke:url(#t13-grad);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.t13-chart .area{fill:url(#t13-fill)}
+.t13-chart .dot{fill:var(--accent-3,#3b82f6)}
+.t13-seg{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+.t13-seg button[aria-pressed=true]{background:var(--primary,#4f46e5);color:#fff;border-color:transparent}
+.t13-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:8px 0}
+.t13-cal .dow{text-align:center;font-weight:700;color:var(--muted,#64748b);font-size:16px}
+.t13-cal .d{min-height:44px;border-radius:10px;border:1px solid var(--line,#e2e8f0);padding:3px;text-align:center;font-size:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:transparent}
+.t13-cal .d.has{background:rgba(99,102,241,.14);border-color:rgba(99,102,241,.5);font-weight:800}
+.t13-cal .d.today{outline:2px solid var(--accent-3,#3b82f6)}
+.t13-cal .d .n{font-size:12px;line-height:1}
+.t13-list{list-style:none;margin:0;padding:0}
+.t13-list li{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line,#e2e8f0);flex-wrap:wrap}
+.t13-list li:last-child{border-bottom:0}
+.t13-big{font-size:28px;font-weight:800;margin:4px 0}
+.t13-cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.t13-cmp .tot.win{outline:2px solid #10b981}
+.t13-note{font-size:16px;color:var(--muted,#64748b);margin:8px 0 0}
+.t13-hub{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.t13-hub a{display:flex;align-items:center;min-height:56px;padding:10px 12px;border-radius:12px;border:1px solid var(--line,#e2e8f0);text-decoration:none;color:inherit;font-weight:700}
+.t13 details summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:700}
+.t13-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.t13 .field.wide{grid-column:1/-1}
