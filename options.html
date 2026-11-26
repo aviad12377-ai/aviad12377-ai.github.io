@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1e3a8a">
+<meta name="theme-color" content="#0d0d10">
 <meta name="description" content="מחשבון אופציות: מחיר מימוש אחרי דיבידנדים, רווח ברוטו ונטו, מימוש נטו למניות ושיתוף">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -160,13 +160,12 @@
   .portal-subnav a.active { background: var(--primary-dark); border-color: var(--primary-dark); color: #fff; }
   .portal-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 </style>
+<link rel="stylesheet" href="portal.css">
 </head>
-<body>
+<body data-page="options">
+<noscript><p style="padding:16px;font-size:16px">כדי להשתמש באתר צריך להפעיל JavaScript בדפדפן.</p></noscript>
 <div class="app-wrap">
   <div class="portal-bar"><a class="portal-brand" href="index.html">פורטל היתרות</a><span id="account-slot"></span></div>
-  <nav class="portal-nav" aria-label="פורטל היתרות">
-    <a href="index.html">סיכום</a><a href="wealth.html" class="active">חיסכון, השקעות ופנסיה</a><a href="mortgage.html">משכנתא</a><a href="loans.html">הלוואות</a><a href="cards.html">כרטיסי אשראי</a><a href="budget.html">תקציב</a><a href="me.html">האזור האישי</a>
-  </nav>
   <nav class="portal-subnav" aria-label="חיסכון, השקעות ופנסיה">
     <a href="pension.html">פנסיה וגמל</a><a href="hishtalmut.html">קרן השתלמות</a><a href="savings.html">חסכונות ופיקדונות</a><a href="portfolio.html">תיק השקעות</a><a href="options.html" class="active" aria-current="page">מחשבון אופציות</a>
   </nav>
@@ -1400,6 +1399,8 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
 </script>
+<script src="portal-nav.js"></script>
+<script>window.PortalNav && window.PortalNav.mount("options");</script>
 <script src="auth-config.js"></script>
 <script src="portal-cloud.js"></script>
 </body>

@@ -3,7 +3,7 @@
   'use strict';
   var DATA_KEY = 'portal-data-v1', SETTINGS_KEY = 'portal-settings-v1', QUOTES_KEY = 'portal-quotes-v1', OPTIONS_KEY = 'options-calc-v5-private';
   var I18N = window.PORTAL_I18N;
-  var CUR = { ILS: '₪', USD: '$', EUR: '€' };
+  var CUR = { ILS: '₪', USD: '$', EUR: '€', GBP: '£' };
   // Main nav. 'wealth' is a category hub with its own sub-pages (pension, hishtalmut, savings, portfolio, options).
   var NAV = [
     ['home', 'index.html', 'nav_home'], ['wealth', 'wealth.html', 'nav_wealth'], ['mortgage', 'mortgage.html', 'nav_mortgage'],
@@ -20,12 +20,13 @@
       pension: { funds: [] }, hishtalmut: { funds: [] }, mortgage: { tracks: [] }, cards: { cards: [] },
       home: { assets: [], loans: [], income: [], expenses: [], includeOptions: true, includeMortgagePmt: true, includeCards: true,
               goal: { amount: null, date: '', base: 'net', ret: 0 } },
-      fx: { USD: null, EUR: null },
+      fx: { USD: null, EUR: null, GBP: null },
       maslaka: { products: [], files: [], reportDate: '', importedAt: '', include: true },
       journals: { bank: [], trades: [], cardTx: [], includeBank: true, includeTrades: true },
       // Bank of Israel average mortgage rates by track, Oct 2026 (TamInt010 as quoted by hosech.co.il, checked 26.11.2026). User-editable.
       insights: { boi: { t_prime: 4.18, t_fixed_unlinked: 4.81, t_var_unlinked: 4.53, t_var_linked: 3.35, t_fixed_linked: 3.33, t_other: null }, boiDate: '2026-10', refiFee: null, refiCost: null, consolidationRate: null },
-      prefs: { peerOptIn: false, ageBand: '' }
+      prefs: { peerOptIn: false, ageBand: '' },
+      history: [] // [[YYYY-MM-DD, net worth ILS]] one point per day, for the home sparkline
     };
   }
   function merge(base, src) {
@@ -94,7 +95,7 @@
   function fmtDate(d) { return d ? d.getDate() + '.' + (d.getMonth() + 1) + '.' + d.getFullYear() : '—'; }
 
   /* ---------- FX and quotes ---------- */
-  var FX_SYM = { USD: 'ILS=X', EUR: 'EURILS=X' };
+  var FX_SYM = { USD: 'ILS=X', EUR: 'EURILS=X', GBP: 'GBPILS=X' };
   var PENDING_KEY = 'portal-pending-tickers-v1';
   var CRYPTO_COINS = [
     { code: 'BTC', symbol: 'BTC-USD', gecko: 'bitcoin', binance: 'BTCUSDT', he: 'ביטקוין', en: 'Bitcoin', es: 'Bitcoin' },
@@ -343,7 +344,7 @@
     });
   }
   function fromFx(symbols) {
-    var need = symbols.filter(function (s) { return s === 'ILS=X' || s === 'EURILS=X'; });
+    var need = symbols.filter(function (s) { return s === 'ILS=X' || s === 'EURILS=X' || s === 'GBPILS=X'; });
     if (!need.length) return Promise.reject(new Error('no fx'));
     var routes = [
       need.indexOf('ILS=X') >= 0 ? fetchJSON('https://api.frankfurter.dev/v1/latest?from=USD&to=ILS', 6000).then(function (j) {
@@ -356,6 +357,12 @@
         var px = j && j.rates && j.rates.ILS, out = {};
         if (!(px > 0)) throw new Error('empty');
         out['EURILS=X'] = normQuote('EURILS=X', { price: px, currency: 'ILS', regularMarketTime: j.date ? Date.parse(j.date + 'T00:00:00Z') / 1000 : null }, 'Frankfurter');
+        return out;
+      }) : Promise.reject(),
+      need.indexOf('GBPILS=X') >= 0 ? fetchJSON('https://api.frankfurter.dev/v1/latest?from=GBP&to=ILS', 6000).then(function (j) {
+        var px = j && j.rates && j.rates.ILS, out = {};
+        if (!(px > 0)) throw new Error('empty');
+        out['GBPILS=X'] = normQuote('GBPILS=X', { price: px, currency: 'ILS', regularMarketTime: j.date ? Date.parse(j.date + 'T00:00:00Z') / 1000 : null }, 'Frankfurter');
         return out;
       }) : Promise.reject()
     ];
@@ -396,7 +403,7 @@
   }
   var fetching = false;
   function collectHoldingSymbols(extra) {
-    var syms = ['ILS=X', 'EURILS=X'];
+    var syms = ['ILS=X', 'EURILS=X', 'GBPILS=X'];
     try { var oc = readJSON(OPTIONS_KEY); if (oc && oc.data) Object.keys(oc.data).forEach(function (k) { if (k && k !== '__none' && syms.indexOf(k) < 0) syms.push(k); }); } catch (e) {}
     data.savings.portfolios.forEach(function (p) {
       (p.rows || []).forEach(function (r) {
@@ -816,7 +823,7 @@
     var box = h('div');
     function draw() {
       box.innerHTML = '';
-      ['USD', 'EUR'].forEach(function (cur) {
+      ['USD', 'EUR', 'GBP'].forEach(function (cur) {
         var q = quotes[FX_SYM[cur]], inp = h('input', { type: 'number', step: 'any', inputmode: 'decimal', placeholder: q ? String(+q.price.toFixed(4)) : '', 'aria-label': t('fx_manual') + ' ' + cur });
         inp.value = data.fx[cur] === null || data.fx[cur] === undefined ? '' : data.fx[cur];
         inp.style.maxWidth = '120px';
@@ -835,25 +842,41 @@
   }
 
   /* ---------- chrome: bar, nav, backup ---------- */
+  function svgIcon(key) { return window.PortalNav ? window.PortalNav.icon(key) : document.createElement('span'); }
+  function greeting() { var hr = new Date().getHours(); return t(hr < 5 ? 'greet_night' : hr < 12 ? 'greet_morning' : hr < 17 ? 'greet_noon' : hr < 21 ? 'greet_evening' : 'greet_night'); }
+  function coinFor(c, cls) { return h('span', { class: 'coin' + (cls ? ' ' + cls : ''), 'aria-hidden': 'true', text: CUR[c] || c }); }
+  function currencyPicker(btn) {
+    var pop = h('div', { class: 'coin-pop', role: 'dialog', 'aria-modal': 'true', 'aria-label': t('currency') });
+    function close() { pop.remove(); btn.focus(); }
+    var sheet = h('div', { class: 'sheet', role: 'radiogroup', 'aria-label': t('currency') }, ['ILS', 'USD', 'EUR', 'GBP'].map(function (c) {
+      return h('button', { type: 'button', class: 'opt', role: 'radio', 'aria-checked': settings.currency === c ? 'true' : 'false', 'aria-label': c, onclick: function () {
+        settings.currency = c; writeJSON(SETTINGS_KEY, settings); btn.textContent = CUR[c]; btn.setAttribute('aria-label', t('currency') + ': ' + c); close(); emit('change'); refreshQuotes(null, true);
+      } }, [coinFor(c, 'small'), h('span', { text: c })]);
+    }));
+    pop.appendChild(sheet);
+    pop.addEventListener('click', function (e) { if (e.target === pop) close(); });
+    pop.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    document.body.appendChild(pop);
+    var cur = sheet.querySelector('[aria-checked=true]') || sheet.firstChild; cur.focus();
+  }
   function chrome(page) {
     var html = document.documentElement;
     html.lang = settings.lang; html.dir = settings.lang === 'he' ? 'rtl' : 'ltr';
-    var langSel = h('select', { 'aria-label': t('lang') }, [['he', 'עברית'], ['en', 'English'], ['es', 'Español']].map(function (o) { return h('option', { value: o[0], text: o[1] }); }));
+    var langSel = h('select', { 'aria-label': t('lang'), class: 'lang-sel' }, [['he', 'עב'], ['en', 'EN'], ['es', 'ES']].map(function (o) { return h('option', { value: o[0], text: o[1] }); }));
     langSel.value = settings.lang;
     langSel.addEventListener('change', function () { settings.lang = langSel.value; writeJSON(SETTINGS_KEY, settings); saveNow(); location.reload(); });
-    var curSel = h('select', { 'aria-label': t('currency') }, ['ILS', 'USD', 'EUR'].map(function (c) { return h('option', { value: c, text: CUR[c] + ' ' + c }); }));
-    curSel.value = settings.currency;
-    curSel.addEventListener('change', function () { settings.currency = curSel.value; writeJSON(SETTINGS_KEY, settings); emit('change'); });
-    var bar = h('div', { class: 'portal-bar' }, [h('a', { class: 'portal-brand', href: 'index.html', text: t('brand') }), h('div', { class: 'portal-settings' }, [h('span', { id: 'account-slot' }), langSel, curSel])]);
+    var coin = h('button', { type: 'button', class: 'coin', id: 'cur-coin', 'aria-haspopup': 'dialog', 'aria-label': t('currency') + ': ' + settings.currency, text: CUR[settings.currency] || '₪' });
+    coin.addEventListener('click', function () { currencyPicker(coin); });
+    var av = h('a', { class: 'who', href: 'me.html#avatar', 'aria-label': t('avatar_open') }, [h('span', { class: 'avatar-btn', id: 'avatar-slot' }), h('span', { class: 'greet', text: greeting() })]);
+    var bar = h('div', { class: 'portal-bar topbar' }, [av, h('div', { class: 'portal-settings tools' }, [h('span', { id: 'account-slot' }), langSel, coin])]);
+    var out = [bar];
     var inWealth = page === 'wealth' || WEALTH_SUB.some(function (x) { return x[0] === page; });
-    var nav = h('nav', { class: 'portal-nav', 'aria-label': t('brand') }, NAV.map(function (p) {
-      var act = p[0] === page || (p[0] === 'wealth' && inWealth);
-      return h('a', { href: p[1], class: act ? 'active' : null, 'aria-current': p[0] === page ? 'page' : null, text: t(p[2]) });
-    }));
-    var out = [bar, nav];
     if (inWealth) out.push(h('nav', { class: 'portal-subnav', 'aria-label': t('nav_wealth') }, WEALTH_SUB.map(function (p) {
       return h('a', { href: p[1], class: p[0] === page ? 'active' : null, 'aria-current': p[0] === page ? 'page' : null, text: t(p[2]) });
     })));
+    if (window.PortalNav) window.PortalNav.mount(page);
+    var mountAv = function () { if (window.PortalAvatar) window.PortalAvatar.mount(document.getElementById('avatar-slot')); };
+    setTimeout(mountAv, 0); on('change', mountAv); on('quotes', mountAv);
     return out;
   }
   function download(name, text) {
@@ -1211,7 +1234,7 @@
     ]);
   }
   /* ---------- read-only building blocks ---------- */
-  var CUR_OPTS = [['ILS', '₪ ILS'], ['USD', '$ USD'], ['EUR', '€ EUR']];
+  var CUR_OPTS = [['ILS', '₪ ILS'], ['USD', '$ USD'], ['EUR', '€ EUR'], ['GBP', '£ GBP']];
   // Fee references. Legal caps: Supervision of Financial Services (Provident Funds) (Management Fees) Regulations 2012, regs. 2-3.
   // Pension default funds: up to 1% of deposits + 0.22% of savings (Capital Market Authority tender, published 25.9.2024, in force 1.11.2024).
   var FEE_REF = {
@@ -1551,7 +1574,64 @@
     home: function (main) {
       if (/(^|[#&])(s|strike|sell|spot|t1)=/.test(location.hash)) { location.replace('options.html' + location.hash); return; }
       var sumBox = h('div'), donutBox = h('div'), catBox = h('div'), optBox = h('div'), insBox = h('div'), peerBox = h('div');
+      var heroBox = h('div', { class: 'hero', 'aria-live': 'polite' }), pillBox = h('div', { class: 'pills', role: 'list' }), tileBox = h('div', { class: 'tiles' }), actBox = h('div');
+      main.appendChild(heroBox); main.appendChild(pillBox); main.appendChild(tileBox); fundsLoaded();
+      main.appendChild(h('h2', { class: 'sec-h', text: t('actions_title') })); main.appendChild(actBox);
       main.appendChild(section(t('net_worth'), [sumBox, editLink('top')]));
+      var pillSel = 'all';
+      function drawHero(s) {
+        heroBox.innerHTML = '';
+        var hist = recordHistory(s), first = null, cutoff = new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10);
+        hist.forEach(function (p) { if (!first && p[0] >= cutoff) first = p; });
+        heroBox.appendChild(h('p', { class: 'big num', text: disp(s.net) }));
+        heroBox.appendChild(h('p', { class: 'sub', text: t('net_worth') }));
+        if (first && hist.length > 1 && first[1]) {
+          var d = s.net - first[1], pc = d / Math.abs(first[1]) * 100;
+          heroBox.appendChild(h('div', { class: 'delta ' + (d >= 0 ? 'pos' : 'neg') }, [h('span', { 'aria-hidden': 'true', text: d >= 0 ? '↑ ' : '↓ ' }), h('span', { class: 'num', text: (d >= 0 ? '+' : '') + pct(pc, 2) + ' (' + disp(d) + ')' }), h('span', { style: 'color:var(--muted);font-weight:400', text: ' · ' + t('since') + ' ' + fmtDate(parseDate(first[0])) })]));
+        } else heroBox.appendChild(h('div', { class: 'help', text: t('spark_soon') }));
+        heroBox.appendChild(sparkline(hist.map(function (p) { return p[1]; })));
+      }
+      function tileData(s) {
+        var stocks = { v: 0, c: 0 }, crypto = { v: 0, c: 0 };
+        data.savings.portfolios.forEach(function (p) {
+          var isC = /קריפטו|crypto|cripto/i.test(p.name || '');
+          (p.rows || []).forEach(function (r) { var x = calc.portfolioRow(r); if (x.valueILS === null) return; var b = (isC || r.kind === 'crypto') ? crypto : stocks; b.v += x.valueILS; if (x.costILS) b.c += x.costILS; });
+        });
+        function est(kind) { var v = 0, base = 0, any = false; data[kind].funds.forEach(function (r) { var e = estimateFund(r); base += n(r.balance); if (e.status === 'ok') { any = true; v += e.value; } else v += n(r.balance); }); return { v: v, base: base, any: any }; }
+        var pe = est('pension'), hi = est('hishtalmut');
+        if (data.maslaka.include !== false) data.maslaka.products.forEach(function (p) { if (!(n(p.balance) > 0)) return; if (p.type === 'hishtalmut') { hi.v += n(p.balance); hi.base += n(p.balance); } else { pe.v += n(p.balance); pe.base += n(p.balance); } });
+        return [
+          { id: 'stocks', k: t('tile_stocks'), v: stocks.v, d: stocks.c ? (stocks.v - stocks.c) / stocks.c * 100 : null, href: 'portfolio.html', icon: 'chart', cls: 't1' },
+          { id: 'crypto', k: t('tile_crypto'), v: crypto.v, d: crypto.c ? (crypto.v - crypto.c) / crypto.c * 100 : null, href: 'portfolio.html', icon: '₿', cls: 't2' },
+          { id: 'pension', k: t('nav_pension'), v: pe.v, d: pe.any && pe.base ? (pe.v - pe.base) / pe.base * 100 : null, href: 'pension.html', icon: 'umbrella', cls: 't3' },
+          { id: 'hish', k: t('nav_hishtalmut'), v: hi.v, d: hi.any && hi.base ? (hi.v - hi.base) / hi.base * 100 : null, href: 'hishtalmut.html', icon: 'grad', cls: 't4' }
+        ];
+      }
+      function drawTiles(s) {
+        var td = tileData(s);
+        pillBox.innerHTML = '';
+        [['all', t('pill_all'), '']].concat(td.map(function (x) { return [x.id, x.k, x.icon]; })).forEach(function (p) {
+          var b = h('button', { type: 'button', class: 'pill' + (pillSel === p[0] ? ' on' : ''), role: 'listitem', 'aria-pressed': pillSel === p[0] ? 'true' : 'false', onclick: function () { pillSel = p[0]; drawTiles(s); } }, [p[2] ? (p[2].length > 2 ? svgIcon(p[2]) : h('i', { 'aria-hidden': 'true', text: p[2] })) : null, h('span', { text: p[1] })]);
+          pillBox.appendChild(b);
+        });
+        tileBox.innerHTML = '';
+        td.filter(function (x) { return pillSel === 'all' || pillSel === x.id; }).forEach(function (x) {
+          tileBox.appendChild(h('a', { class: 'tile ' + x.cls, href: x.href }, [h('span', { class: 'k', text: x.k }), h('span', { class: 'v num', text: disp(x.v) }),
+            x.d === null ? h('span', { class: 'd', style: 'color:var(--muted)', text: '—' }) : h('span', { class: 'd num ' + (x.d >= 0 ? 'pos' : 'neg'), text: (x.d >= 0 ? '↑ +' : '↓ ') + pct(x.d, 2) }),
+            h('span', { class: 'ico', 'aria-hidden': 'true' }, [x.icon.length > 2 ? svgIcon(x.icon) : h('span', { style: 'font-size:22px;font-weight:800;color:#c4b5fd', text: x.icon })])]));
+        });
+      }
+      function drawActions() {
+        actBox.innerHTML = '';
+        var pen = fundRows('pension').filter(function (r) { return r.type === 'pension' && r.balance > 0; }), hish = fundRows('hishtalmut').filter(function (r) { return r.balance > 0; });
+        var acts = [];
+        if (pen.length > 1 || hish.length > 1) acts.push(['act_merge', 'act_merge_txt', 'pension.html', 'swap']);
+        if (pen.some(function (r) { return (r.feeDep !== null && r.feeDep > 1) || (r.feeAcc !== null && r.feeAcc > 0.22); }) || hish.some(function (r) { return r.feeAcc !== null && r.feeAcc > 0.6; })) acts.push(['act_fees', 'act_fees_txt', 'pension.html', 'pie']);
+        if (data.pension.funds.concat(data.hishtalmut.funds).some(function (r) { return nn(r.balance) !== null && !r.trackId; })) acts.push(['act_track', 'act_track_txt', 'me.html#pension', 'chart']);
+        if (!data.home.goal.amount) acts.push(['act_goal', 'act_goal_txt', 'me.html#goal', 'key']);
+        if (!acts.length) acts.push(['act_ok', 'act_ok_txt', 'wealth.html', 'shield']);
+        acts.forEach(function (a) { actBox.appendChild(h('a', { class: 'action', href: a[2] }, [h('span', { class: 'ai', 'aria-hidden': 'true' }, [svgIcon(a[3])]), h('span', { class: 'at' }, [h('strong', { text: t(a[0]) }), h('span', { text: t(a[1]) })]), h('span', { class: 'chev', 'aria-hidden': 'true', text: settings.lang === 'he' ? '‹' : '›' })])); });
+      }
       main.appendChild(section(t('breakdown'), [donutBox, catBox]));
       var optChk = h('input', { type: 'checkbox', id: 'incl-opt' }); optChk.checked = data.home.includeOptions !== false;
       optChk.addEventListener('change', function () { data.home.includeOptions = optChk.checked; changed(); });
@@ -1562,6 +1642,7 @@
       main.appendChild(fxCard());
       function draw() {
         var s = calc.summary();
+        drawHero(s); drawTiles(s); drawActions();
         sumBox.innerHTML = '';
         sumBox.appendChild(totalsBox([[t('net_worth'), disp(s.net), 'big'], [t('assets_total'), disp(s.assets)], [t('liab_total'), disp(-s.liabs)], [t('liquid'), disp(s.liquid)], [t('locked'), disp(s.locked)], [t('illiquid'), disp(s.illiquid)], [t('surplus'), disp(s.surplus)], [t('savings_rate'), pct(s.savingsRate)]]));
         if (s.missing) sumBox.appendChild(h('div', { class: 'notice amber', style: 'margin-top:8px', text: t('missing_rate') + ': ' + s.missing }));
@@ -1608,6 +1689,32 @@
       if (stale) refreshQuotes(null, true);
     }
   };
+  function recordHistory(s) {
+    if (!Array.isArray(data.history)) data.history = [];
+    var hist = data.history, day = new Date().toISOString().slice(0, 10);
+    if (!s.missing && Number.isFinite(s.net) && (s.net !== 0 || hist.length)) {
+      var last = hist[hist.length - 1];
+      if (!last || last[0] !== day) { hist.push([day, Math.round(s.net)]); if (hist.length > 400) hist.splice(0, hist.length - 400); save(); }
+      else if (Math.abs(last[1] - s.net) > Math.max(1, Math.abs(s.net) * 0.001)) { last[1] = Math.round(s.net); save(); }
+    }
+    return hist;
+  }
+  function sparkline(vals) {
+    var NS = 'http://www.w3.org/2000/svg', W = 320, H = 84, svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); svg.setAttribute('class', 'spark'); svg.setAttribute('preserveAspectRatio', 'none'); svg.setAttribute('aria-hidden', 'true');
+    if (vals.length < 2) vals = vals.length ? [vals[0], vals[0]] : [0, 0];
+    var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals), rg = mx - mn || 1;
+    var pts = vals.map(function (v, i) { return [(i / (vals.length - 1)) * (W - 8) + 4, H - 8 - (v - mn) / rg * (H - 20)]; });
+    if (document.documentElement.dir === 'rtl') { /* time runs left→right like the mockup */ }
+    var id = 'sg' + uid(), defs = document.createElementNS(NS, 'defs');
+    defs.innerHTML = '<linearGradient id="' + id + '" x1="0" x2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#3b82f6"/></linearGradient><linearGradient id="' + id + 'f" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#6366f1" stop-opacity=".35"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></linearGradient>';
+    svg.appendChild(defs);
+    var d = pts.map(function (p, i) { return (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' ');
+    var area = document.createElementNS(NS, 'path'); area.setAttribute('d', d + ' L' + pts[pts.length - 1][0] + ' ' + H + ' L' + pts[0][0] + ' ' + H + ' Z'); area.setAttribute('fill', 'url(#' + id + 'f)'); svg.appendChild(area);
+    var line = document.createElementNS(NS, 'path'); line.setAttribute('d', d); line.setAttribute('fill', 'none'); line.setAttribute('stroke', 'url(#' + id + ')'); line.setAttribute('stroke-width', '3'); line.setAttribute('stroke-linecap', 'round'); line.setAttribute('vector-effect', 'non-scaling-stroke'); svg.appendChild(line);
+    var dot = document.createElementNS(NS, 'circle'), lp = pts[pts.length - 1]; dot.setAttribute('cx', lp[0]); dot.setAttribute('cy', lp[1]); dot.setAttribute('r', '4.5'); dot.setAttribute('fill', '#60a5fa'); svg.appendChild(dot);
+    return svg;
+  }
   /* ---------- me.html: the single input hub ---------- */
   function fundSchema(kind) {
     var fields = [{ k: 'name', type: 'text', label: 'provider_track' }];
@@ -1797,6 +1904,7 @@
     function build() {
       body.innerHTML = '';
       var idx = [['maslaka', 'maslaka_upload_title'], ['pension', 'nav_pension'], ['hishtalmut', 'nav_hishtalmut'], ['cash', 'cash_title'], ['standing', 'standing_title'], ['portfolios', 'portfolios_title'], ['j-trades', 'j_trades'], ['j-bank', 'j_bank'], ['mortgage', 'nav_mortgage'], ['loans', 'nav_loans'], ['cards', 'nav_cards'], ['j-cards', 'j_cards'], ['budget', 'nav_budget'], ['assets', 'other_assets'], ['goal', 'goal'], ['peer', 'peer_title'], ['guide', 'guide_title']];
+      if (window.PortalAvatar) body.appendChild(anchor('avatar', section(window.PortalAvatar.title(), [window.PortalAvatar.studio(function (v) { return disp(v); })])));
       body.appendChild(anchor('top', section(t('me_index'), [h('div', { class: 'chips' }, idx.map(function (x) { return h('a', { class: 'chip', href: '#' + x[0], text: t(x[1]) }); }))])));
       body.appendChild(anchor('maslaka', maslakaUpload()));
       [['pension', 'pension'], ['hishtalmut', 'hishtalmut']].forEach(function (x) { var box = h('div'); renderList(box, data[x[0]].funds, fundSchema(x[0])); body.appendChild(anchor(x[0], section(t('manual_funds') + ' · ' + t('nav_' + x[0]), [h('p', { class: 'help', text: t('manual_funds_help') }), box]))); });
@@ -1909,7 +2017,7 @@
     var EXT = window.PORTAL_PAGES || {};
     if (EXT[page]) titles[page] = EXT[page].title;
     var tt = titles[page] || titles.home;
-    root.appendChild(h('header', { class: 'top-header' }, [h('h1', { text: t(tt[0]) }), h('p', { text: t(tt[1]) })]));
+    root.appendChild(h('header', { class: 'top-header' + (page === 'home' ? ' sr-only' : '') }, [h('h1', { text: t(tt[0]) }), h('p', { text: t(tt[1]) })]));
     document.title = t(tt[0]) + ' · ' + t('brand');
     var main = h('main'); root.appendChild(main);
     (EXT[page] ? EXT[page].render : (pageRenderers[page] || pageRenderers.home))(main);
