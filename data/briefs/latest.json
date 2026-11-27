@@ -1,156 +1,169 @@
 {
- "id": "2026-11-26-close",
- "slot": "close",
+ "id": "2026-11-27-us_open",
+ "slot": "us_open",
  "kind": "daily",
- "edition": "סגירת המסחר",
- "time": "2026-11-26T23:20+02:00",
- "date": "26.11.2026",
- "day": "חמישי",
- "title": "ת״א 35 ננעל בעלייה של 2.34%; וול סטריט לא נסחרה היום; הדולר נחלש ל־3.312 שקלים",
- "summary": "ת״א 35 ננעל בעלייה של 2.34% ב־3,881.27 ות״א 125 ננעל בעלייה של 2.95% ב־3,811.27 (בנעילה, 17:24). בת״א 35 בולטות בעליות דוראל אנרגיה (+7.66%), טאואר (+7.62%), קמטק (+6.33%) ובירידות אל על (−3.81%), ניו-מד אנרג'י (−2.38%), דלק קבוצה (−2.35%). דולר/שקל יורד 1.08% ל־3.312 שקלים. הבורסות בניו יורק לא נסחרו היום. בנעילה האחרונה (25.11) S&P 500 ננעל בירידה של 0.25% ב־7,182.78, נאסד״ק ננעל בירידה של 0.62% ב־23,585.80…",
+ "edition": "פתיחת וול סטריט",
+ "time": "2026-11-27T16:51+02:00",
+ "date": "27.11.2026",
+ "day": "שישי",
+ "title": "S&P 500 עולה 0.75%, נאסד״ק +0.87%; ת״א 35 ננעל בעלייה של 1.54%; הדולר נחלש ל־3.330 שקלים",
+ "summary": "ת״א 35 ננעל בעלייה של 1.54% ב־3,941.20 ות״א 125 ננעל בעלייה של 1.77% ב־3,878.69 (בנעילה, 13:44). בת״א 35 בולטות בעליות נקסט ויז'ן (+5.38%), אנלייט אנרגיה (+5.16%), דוראל אנרגיה (+4.55%) ובירידות בזק (−1.86%), איי.סי.אל (−1.54%), טבע (−1.53%). דולר/שקל יורד 1.44% ל־3.330 שקלים. S&P 500 עולה 0.75% ל־7,236.44, נאסד״ק עולה 0.87% ל־23,791.83 ודאו ג׳ונס עולה 0.71% ל־50,537.37 (במסחר). ראסל 2000 עולה 1.07% ל־2,732.91…",
  "stories": [
   {
    "title": "תל אביב",
-   "text": "ת״א 35 ננעל בעלייה של 2.34% ב־3,881.27 ות״א 125 ננעל בעלייה של 2.95% ב־3,811.27 (בנעילה, 17:24). בת״א 35 בולטות בעליות דוראל אנרגיה (+7.66%), טאואר (+7.62%), קמטק (+6.33%) ובירידות אל על (−3.81%), ניו-מד אנרג'י (−2.38%), דלק קבוצה (−2.35%). דולר/שקל יורד 1.08% ל־3.312 שקלים."
+   "text": "ת״א 35 ננעל בעלייה של 1.54% ב־3,941.20 ות״א 125 ננעל בעלייה של 1.77% ב־3,878.69 (בנעילה, 13:44). בת״א 35 בולטות בעליות נקסט ויז'ן (+5.38%), אנלייט אנרגיה (+5.16%), דוראל אנרגיה (+4.55%) ובירידות בזק (−1.86%), איי.סי.אל (−1.54%), טבע (−1.53%). דולר/שקל יורד 1.44% ל־3.330 שקלים."
   },
   {
    "title": "וול סטריט",
-   "text": "הבורסות בניו יורק לא נסחרו היום. בנעילה האחרונה (25.11) S&P 500 ננעל בירידה של 0.25% ב־7,182.78, נאסד״ק ננעל בירידה של 0.62% ב־23,585.80 ודאו ג׳ונס ננעל בעלייה של 0.33% ב־50,182.95."
+   "text": "S&P 500 עולה 0.75% ל־7,236.44, נאסד״ק עולה 0.87% ל־23,791.83 ודאו ג׳ונס עולה 0.71% ל־50,537.37 (במסחר). ראסל 2000 עולה 1.07% ל־2,732.91 ומדד הפחד VIX יורד 0.11% ל־26.77. ב־S&P 100 בולטות בעליות Dell (+4.32%), Tesla (+3.53%), Arista Networks (+2.61%) ובירידות Sandisk (−16.11%), Palo Alto Networks (−1.90%), Altria (−1.80%)."
+  },
+  {
+   "title": "אירופה",
+   "text": "סטוקס 600 עולה 0.83% ל־642.26 ודאקס עולה 0.45% ל־25,328.94."
   },
   {
    "title": "אג״ח ומטבעות",
-   "text": "תשואת 10 שנים בארה״ב ירדה ב־6 נקודות בסיס ל־4.85% ואירו/שקל יורד 1.16% ל־3.631 שקלים."
+   "text": "תשואת 10 שנים בארה״ב עלתה ב־4 נקודות בסיס ל־4.89% ואירו/שקל יורד 1.42% ל־3.647 שקלים."
   },
   {
    "title": "סחורות וקריפטו",
-   "text": "נפט WTI ננעל בעלייה של 1.47% ב־84.91 דולר לחבית, זהב ננעל בעלייה של 1.63% ב־3,593.4 דולר לאונקיה וביטקוין עולה 0.24% ל־60,522 דולר."
+   "text": "נפט WTI עולה 0.49% ל־84.09 דולר לחבית, זהב מזנק 3.45% ל־3,657.9 דולר לאונקיה וביטקוין יורד 1.91% ל־59,339 דולר."
   }
  ],
  "indices": [
   {
    "group": "ישראל",
    "name": "ת״א 35",
-   "display": "3,881.27",
-   "change_text": "+2.34%",
+   "display": "3,941.20",
+   "change_text": "+1.54%",
    "dir": "up",
-   "note": "17:24",
+   "note": "13:44",
    "live": false
   },
   {
    "group": "ישראל",
    "name": "ת״א 125",
-   "display": "3,811.27",
-   "change_text": "+2.95%",
+   "display": "3,878.69",
+   "change_text": "+1.77%",
    "dir": "up",
-   "note": "17:31",
+   "note": "13:44",
    "live": false
   },
   {
    "group": "ישראל",
    "name": "דולר/שקל",
-   "display": "3.312",
-   "change_text": "−1.08%",
+   "display": "3.330",
+   "change_text": "−1.44%",
    "dir": "down",
-   "note": "00:00",
+   "note": "16:51",
    "live": true
   },
   {
    "group": "ישראל",
    "name": "אירו/שקל",
-   "display": "3.631",
-   "change_text": "−1.16%",
+   "display": "3.647",
+   "change_text": "−1.42%",
    "dir": "down",
-   "note": "00:16",
+   "note": "16:51",
    "live": true
   },
   {
    "group": "ארה״ב",
    "name": "S&P 500",
-   "display": "7,182.78",
-   "change_text": "−0.25%",
-   "dir": "down",
-   "note": "25.11",
-   "live": false
+   "display": "7,236.44",
+   "change_text": "+0.75%",
+   "dir": "up",
+   "note": "16:51",
+   "live": true
   },
   {
    "group": "ארה״ב",
    "name": "נאסד״ק",
-   "display": "23,585.80",
-   "change_text": "−0.62%",
-   "dir": "down",
-   "note": "25.11",
-   "live": false
+   "display": "23,791.83",
+   "change_text": "+0.87%",
+   "dir": "up",
+   "note": "16:51",
+   "live": true
   },
   {
    "group": "ארה״ב",
    "name": "דאו ג׳ונס",
-   "display": "50,182.95",
-   "change_text": "+0.33%",
+   "display": "50,537.37",
+   "change_text": "+0.71%",
    "dir": "up",
-   "note": "25.11",
-   "live": false
+   "note": "16:51",
+   "live": true
   },
   {
    "group": "ארה״ב",
    "name": "ראסל 2000",
-   "display": "2,704.06",
-   "change_text": "+0.71%",
+   "display": "2,732.91",
+   "change_text": "+1.07%",
    "dir": "up",
-   "note": "25.11",
-   "live": false
+   "note": "16:36",
+   "live": true
   },
   {
    "group": "ארה״ב",
    "name": "מדד הפחד VIX",
-   "display": "26.80",
-   "change_text": "−5.27%",
+   "display": "26.77",
+   "change_text": "−0.11%",
    "dir": "down",
-   "note": "18:30",
-   "live": false
+   "note": "16:36",
+   "live": true
+  },
+  {
+   "group": "ארה״ב",
+   "name": "חוזה S&P 500",
+   "display": "7,246.25",
+   "change_text": "+0.70%",
+   "dir": "up",
+   "note": "16:41",
+   "live": true
   },
   {
    "group": "אירופה ואסיה",
    "name": "סטוקס 600",
-   "display": "636.98",
-   "change_text": "+1.75%",
+   "display": "642.26",
+   "change_text": "+0.83%",
    "dir": "up",
-   "note": "19:00",
-   "live": false
+   "note": "16:36",
+   "live": true
   },
   {
    "group": "אג״ח",
    "name": "תשואת 10 שנים בארה״ב",
-   "display": "4.85%",
-   "change_text": "−6 נ״ב",
-   "dir": "down",
-   "note": "25.11",
+   "display": "4.89%",
+   "change_text": "+4 נ״ב",
+   "dir": "up",
+   "note": "16:36",
    "live": false
   },
   {
    "group": "סחורות וקריפטו",
    "name": "נפט WTI",
-   "display": "84.91",
-   "change_text": "+1.47%",
+   "display": "84.09",
+   "change_text": "+0.49%",
    "dir": "up",
-   "note": "21:29",
-   "live": false
+   "note": "16:41",
+   "live": true
   },
   {
    "group": "סחורות וקריפטו",
    "name": "זהב",
-   "display": "3,593.4",
-   "change_text": "+1.63%",
+   "display": "3,657.9",
+   "change_text": "+3.45%",
    "dir": "up",
-   "note": "21:29",
-   "live": false
+   "note": "16:41",
+   "live": true
   },
   {
    "group": "סחורות וקריפטו",
    "name": "ביטקוין",
-   "display": "60,522",
-   "change_text": "+0.24%",
-   "dir": "up",
-   "note": "00:19",
+   "display": "59,339",
+   "change_text": "−1.91%",
+   "dir": "down",
+   "note": "16:51",
    "live": true
   }
  ],
@@ -158,68 +171,112 @@
   "il": {
    "up": [
     {
+     "sym": "NXSN",
+     "name": "נקסט ויז'ן",
+     "chg": 5.38
+    },
+    {
+     "sym": "ENLT",
+     "name": "אנלייט אנרגיה",
+     "chg": 5.16
+    },
+    {
      "sym": "DORL",
      "name": "דוראל אנרגיה",
-     "chg": 7.66
-    },
-    {
-     "sym": "TSEM",
-     "name": "טאואר",
-     "chg": 7.62
-    },
-    {
-     "sym": "CAMT",
-     "name": "קמטק",
-     "chg": 6.33
+     "chg": 4.55
     }
    ],
    "down": [
     {
-     "sym": "ELAL",
-     "name": "אל על",
-     "chg": -3.81
+     "sym": "BEZQ",
+     "name": "בזק",
+     "chg": -1.86
     },
     {
-     "sym": "NWMD",
-     "name": "ניו-מד אנרג'י",
-     "chg": -2.38
+     "sym": "ICL",
+     "name": "איי.סי.אל",
+     "chg": -1.54
     },
     {
-     "sym": "DLEKG",
-     "name": "דלק קבוצה",
-     "chg": -2.35
+     "sym": "TEVA",
+     "name": "טבע",
+     "chg": -1.53
     }
    ]
   },
   "us": {
-   "up": [],
-   "down": []
+   "up": [
+    {
+     "sym": "DELL",
+     "name": "Dell",
+     "chg": 4.32
+    },
+    {
+     "sym": "TSLA",
+     "name": "Tesla",
+     "chg": 3.53
+    },
+    {
+     "sym": "ANET",
+     "name": "Arista Networks",
+     "chg": 2.61
+    }
+   ],
+   "down": [
+    {
+     "sym": "SNDK",
+     "name": "Sandisk",
+     "chg": -16.11
+    },
+    {
+     "sym": "PANW",
+     "name": "Palo Alto Networks",
+     "chg": -1.9
+    },
+    {
+     "sym": "MO",
+     "name": "Altria",
+     "chg": -1.8
+    }
+   ]
   }
  },
  "calendar": [],
  "headlines": [
   {
-   "title": "אפקט אנבידיה: איך זה כשמנכ\"ל אחד עוזב",
-   "source": "ynet כלכלה",
-   "url": "https://www.ynet.co.il/economy/article/yokra14969895",
+   "title": "עליות שערים חדות בחוזים בניו יורק; גם אירופה ירוקה",
+   "source": "גלובס",
+   "url": "https://www.globes.co.il/news/article.aspx?did=1001565316#utm_source=RSS",
    "lang": "he"
   },
   {
-   "title": "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
+   "title": "הבורסה ננעלה בעליות חדות; ת\"א 35 הוסיף כ-4% בראלי של יומיים",
+   "source": "גלובס",
+   "url": "https://www.globes.co.il/news/article.aspx?did=1001565247#utm_source=RSS",
+   "lang": "he"
+  },
+  {
+   "title": "הנשיא טראמפ: \"דיברתי עם נתניהו. אם נעשה משהו, בוודאות נתקוף את הר המכוש\"",
+   "source": "גלובס",
+   "url": "https://www.globes.co.il/news/article.aspx?did=1001565315#utm_source=RSS",
+   "lang": "he"
+  },
+  {
+   "title": "Week Ahead for FX, Bonds: Key Labor Data in Focus Ahead of Fed’s December Rate Decision",
+   "source": "WSJ",
+   "url": "https://www.wsj.com/finance/investing/week-ahead-for-fx-bonds-key-labor-data-in-focus-ahead-of-feds-december-rate-decision-52cad754?mod=rss_markets_main",
+   "lang": "en"
+  },
+  {
+   "title": "Budget airline Norse Atlantic files for bankruptcy in Europe after failing to secure funding",
    "source": "CNBC",
-   "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html",
+   "url": "https://www.cnbc.com/2026/11/27/norse-atlantic-bankruptcy-fuel-costs.html",
    "lang": "en"
   },
   {
-   "title": "Crypto on notice as hawkish Fed risks December ‘meltdown’",
-   "source": "Cointelegraph",
-   "url": "https://cointelegraph.com/markets/crypto-hawkish-fed-risks-december-meltdown?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "lang": "en"
-  },
-  {
-   "title": "Japanese Yen: Tokyo CPI eyed as BoJ hawk flags tightening – Scotiabank",
-   "source": "FXStreet",
-   "url": "https://www.fxstreet.com/news/japanese-yen-tokyo-cpi-eyed-as-boj-hawk-flags-tightening-scotiabank-202611262049",
+   "title": "Nvidia’s stock has tumbled 27% over one chaotic month. The next big test lies in the week ahead",
+   "source": "MarketWatch",
+   "url": "https://www.marketwatch.com/story/nvidias-stock-has-tumbled-27-over-one-chaotic-month-the-next-big-test-lies-in-the-week-ahead-06449777?mod=mw_rss_topstories",
    "lang": "en"
   }
  ],
