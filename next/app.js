@@ -323,7 +323,7 @@
     var swap = function () { render(path); window.scrollTo(0, kind === 'back' && scrollMem[path] ? scrollMem[path] : 0); };
     lastPath = path;
     if (prev != null && document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var vt = document.startViewTransition(swap); vt.finished.then(focusTitle, focusTitle);
+      var vt = document.startViewTransition(swap); vt.ready.catch(function () {}); vt.finished.then(focusTitle, focusTitle);
     } else { swap(); if (prev != null) focusTitle(); }
   }
   function focusTitle() { var h = $('#main'); if (h) h.focus({ preventScroll: true }); }
