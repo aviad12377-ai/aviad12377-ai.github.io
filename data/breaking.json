@@ -1,9 +1,24 @@
 {
- "updated": "2026-11-27T19:26+02:00",
+ "updated": "2026-11-28T00:21+02:00",
  "new": [
-  "ed33cc63de6769"
+  "mv-7087e3e8476d"
  ],
  "items": [
+  {
+   "id": "mv-7087e3e8476d",
+   "title": "דולר/שקל צונח 1.7% (−1.66%)",
+   "snippet": "תנועה חריגה במסחר היום. הרמה האחרונה: 3.32.",
+   "url": "https://aviad12377-ai.github.io/briefs.html",
+   "source": "מבזקי השוק",
+   "lang": "he",
+   "cats": [
+    "il"
+   ],
+   "time": "2026-11-28T00:09+02:00",
+   "score": 99,
+   "also": [],
+   "flagged": "2026-11-28T00:21+02:00"
+  },
   {
    "id": "ed33cc63de6769",
    "title": "These stocks soared the most during a wild week highlighted by Huang’s return to Nvidia",
