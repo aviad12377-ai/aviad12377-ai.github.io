@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T16:51+02:00",
+ "updated": "2026-11-27T19:26+02:00",
  "disclaimer": "כותרות ותקצירים קצרים מאתרי החדשות, עם קישור לכתבה המלאה. מידע בלבד, לא ייעוץ.",
  "sources": [
   "AP",
@@ -64,7 +64,7 @@
    "id": "bizportal",
    "source": "ביזפורטל",
    "ok": true,
-   "count": 17,
+   "count": 16,
    "error": null
   },
   {
@@ -238,10 +238,10 @@
  ],
  "items": [
   {
-   "id": "7ba05f4f123ce6",
-   "title": "US Storm Triggers East Coast Power Outages",
-   "snippet": "More than 500,000 homes and businesses along the East Coast are without power after an explosive storm uprooted trees in parts of New York City and inundated commuter rail lines in New Jersey on Than…",
-   "url": "https://www.bloomberg.com/news/videos/2026-11-27/us-storm-triggers-east-coast-power-outages-video",
+   "id": "7cc47caacade2a",
+   "title": "Hong Kong Is Selling The City It Used To Be (Video)",
+   "snippet": "",
+   "url": "https://www.bloomberg.com/news/videos/2026-11-27/hong-kong-is-selling-the-city-it-used-to-be-video",
    "source": "Bloomberg",
    "feed": "bloomberg-markets",
    "lang": "en",
@@ -249,13 +249,397 @@
     "us",
     "stocks"
    ],
-   "time": "2026-11-27T16:47+02:00",
+   "time": "2026-11-27T19:23+02:00",
+   "score": 0
+  },
+  {
+   "id": "4b27393995a3a2",
+   "title": "Anterix (ATEX) Stock Is Up 9.7% Today Without Company News",
+   "snippet": "On Friday, Nov. 27, the stock rose 9.7% without company-specific news, as the broader market rallied",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/anterix-atex-stock-9-7-171515553.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T19:15+02:00",
+   "score": 0
+  },
+  {
+   "id": "513abc4cc43ca7",
+   "title": "Flowco (FLOC) Stock Is Up 6.3% Today as Energy Stocks and Market Rally",
+   "snippet": "Flowco Holdings shares rose 6.3% on Friday, Nov. 27, along with the broader market and oil-services peers, without company-specific news.",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/flowco-floc-stock-6-3-171515711.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T19:15+02:00",
+   "score": 0
+  },
+  {
+   "id": "a0022578a326f2",
+   "title": "Columbus McKinnon (CMCO) Stock Is Up 8.6% Today in Broad Market Rally",
+   "snippet": "Columbus McKinnon shares rose 8.6% on Friday, Nov. 27, as the S&P 500 gained 1.5% and industrial peers rose, without company-specific news.",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/columbus-mckinnon-cmco-stock-8-171509187.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T19:15+02:00",
+   "score": 0
+  },
+  {
+   "id": "74fb6a5352bf9c",
+   "title": "T1 Energy (TE) Stock Is Up 21.4% Today Without Company News",
+   "snippet": "On Friday, Nov. 27, T1 Energy shares rose 21.4% without company-specific news as the broader market rallied.",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/t1-energy-te-stock-21-171519888.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T19:15+02:00",
+   "score": 0
+  },
+  {
+   "id": "17ed700188d364",
+   "title": "Inside China’s $4 Billion Secondhand Luxury Boom",
+   "snippet": "Watch WSJ’s Hannah Miao explore one of China’s biggest resale megastores to understand what’s behind the country’s shifting consumer habits.",
+   "url": "https://www.wsj.com/world/china/inside-chinas-4-billion-secondhand-luxury-boom-cfa3dc5c?mod=rss_markets_main",
+   "source": "WSJ",
+   "feed": "wsj-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T19:12+02:00",
+   "score": 0
+  },
+  {
+   "id": "467332f359159d",
+   "title": "Take Five: A December to remember",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/take-five-a-december-to-remember-5053153",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-27T19:12+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "bca0c46076d278",
+   "title": "Regeneron Pharmaceuticals stock hits 52-week high at $991.85",
+   "snippet": "",
+   "url": "https://www.investing.com/news/company-news/regeneron-pharmaceuticals-stock-hits-52week-high-at-99185-93CH-5053743",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:10+02:00",
+   "score": 0
+  },
+  {
+   "id": "088b742b1f0e6b",
+   "title": "Jazz wins approval of Ziihera for gastroesophageal cancer in UK",
+   "snippet": "",
+   "url": "https://seekingalpha.com/news/4677067-jazz-wins-approval-ziihera-gastroesophageal-cancer-uk?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+   "source": "Seeking Alpha",
+   "feed": "seekingalpha",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:10+02:00",
+   "score": 0
+  },
+  {
+   "id": "adc8b7b69a187a",
+   "title": "עליות שערים בבורסות וול סטריט; נעילה ירוקה באירופה",
+   "snippet": "יום המסחר בשווקים הגלובליים נפתח ברגל ימין, לקראת חזרתה של הבורסה בניו יורק מחופשה לרגל חג ההודיה • המסחר בארה\"ב יתנהל היום במתכונת מקוצרת ויינעל בשעה 20:00 שעון ישראל",
+   "url": "https://www.globes.co.il/news/article.aspx?did=1001565316#utm_source=RSS",
+   "source": "גלובס",
+   "feed": "globes-news",
+   "lang": "he",
+   "cats": [
+    "il",
+    "us"
+   ],
+   "time": "2026-11-27T19:09+02:00",
+   "score": 0
+  },
+  {
+   "id": "92528fe01b7dd5",
+   "title": "U.K. stocks higher at close of trade; Investing.com United Kingdom 100 up 0.77%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/uk-stocks-higher-at-close-of-trade-investingcom-united-kingdom-100-up-077-5053741",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:08+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "f1b63c5acb98e2",
+   "title": "Spain stocks higher at close of trade; IBEX 35 up 1.72%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/spain-stocks-higher-at-close-of-trade-ibex-35-up-172-5053740",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:08+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "a99d746d383c2f",
+   "title": "Portugal stocks higher at close of trade; PSI up 1.20%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/portugal-stocks-higher-at-close-of-trade-psi-up-120-5053739",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:07+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "ef8cd30433de4e",
+   "title": "Netherlands stocks higher at close of trade; AEX up 1.24%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/netherlands-stocks-higher-at-close-of-trade-aex-up-124-5053738",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:07+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "28e7d47ab5e4f9",
+   "title": "Italy stocks higher at close of trade; Investing.com Italy 40 up 1.84%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/italy-stocks-higher-at-close-of-trade-investingcom-italy-40-up-184-5053737",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:07+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "5fca42c24fff65",
+   "title": "Germany stocks higher at close of trade; DAX up 0.86%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/germany-stocks-higher-at-close-of-trade-dax-up-086-5053736",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:06+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "7e51f5f253e307",
+   "title": "France stocks higher at close of trade; CAC 40 up 0.58%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/france-stocks-higher-at-close-of-trade-cac-40-up-058-5053735",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:05+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "b9ce76e56df8d3",
+   "title": "Belgium stocks higher at close of trade; BEL 20 up 1.07%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/belgium-stocks-higher-at-close-of-trade-bel-20-up-107-5053734",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:05+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "79170caf3ae559",
+   "title": "12 days of sardines and Croc charms: Are Advent calendars getting out of control?",
+   "snippet": "Luxury Advent calendars in particular — which can run hundreds of dollars — have seen a spike in sales. Here’s why.",
+   "url": "https://www.marketwatch.com/story/12-days-of-sardines-and-croc-charms-are-advent-calendars-getting-out-of-control-81f24548?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "feed": "mw-top",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T19:04+02:00",
+   "score": 0
+  },
+  {
+   "id": "c5501599a32f16",
+   "title": "Stocks Rally at End of a Week of Wild Swings",
+   "snippet": "Volatility has buffeted investors in an eventful but holiday-shortened series of trading sessions.",
+   "url": "https://www.nytimes.com/2026/11/27/business/stocks-tech-stocks-ai.html",
+   "source": "New York Times",
+   "feed": "nyt-business",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T19:03+02:00",
+   "score": 0
+  },
+  {
+   "id": "1f472ff7056ca9",
+   "title": "Black Friday 2026: Shoppers Try to Cut Back, Hunt for Deals",
+   "snippet": "Black Friday spending is projected to rise in 2026 as wary shoppers stock up early on essentials and lean into deals. Bloomberg’s Annie Bang reports. (Source: Bloomberg)",
+   "url": "https://www.bloomberg.com/news/videos/2026-11-27/black-friday-2026-shoppers-cut-back-hunt-for-deals-video",
+   "source": "Bloomberg",
+   "feed": "bloomberg-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T19:02+02:00",
+   "score": 0
+  },
+  {
+   "id": "3cc3580f2b37db",
+   "title": "It’s Boom Times for Old TV Shows. New TV, Not So Much.",
+   "snippet": "Fewer original series, decision fatigue and a desire for comfort have viewers escaping to the past.",
+   "url": "https://www.nytimes.com/2026/11/27/business/media/old-tv-shows-mad-men.html",
+   "source": "New York Times",
+   "feed": "nyt-business",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T19:02+02:00",
+   "score": 0
+  },
+  {
+   "id": "beaa0eed47216c",
+   "title": "הנשיא טראמפ: \"דיברתי עם נתניהו. אם נעשה משהו, בוודאות נתקוף את הר המכוש\"",
+   "snippet": "טראמפ אמר שהוא שוחח עם נתניהו בימים האחרונים, והוסיף כי \"יהיה נחמד לעשות עסקה\" • בשיחת טלפון עם חיילים אמריקאיים, הצהיר: \"הניצחון באיראן נמצא בהישג ידינו\" • ירדן ביבס קרא לקיבוץ ניר עוז לעצור ולבחון…",
+   "url": "https://www.globes.co.il/news/article.aspx?did=1001565315#utm_source=RSS",
+   "source": "גלובס",
+   "feed": "globes-news",
+   "lang": "he",
+   "cats": [
+    "il"
+   ],
+   "time": "2026-11-27T19:00+02:00",
+   "score": 0
+  },
+  {
+   "id": "47794db7f52107",
+   "title": "Sweden stocks higher at close of trade; OMX Stockholm 30 up 1.42%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/sweden-stocks-higher-at-close-of-trade-omx-stockholm-30-up-142-5053731",
+   "source": "Investing.com",
+   "feed": "investing-stocks",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:00+02:00",
+   "score": 0
+  },
+  {
+   "id": "36e03f924ec720",
+   "title": "Finland stocks higher at close of trade; OMX Helsinki 25 up 1.09%",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/finland-stocks-higher-at-close-of-trade-omx-helsinki-25-up-109-5053730",
+   "source": "Investing.com",
+   "feed": "investing-stocks",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:00+02:00",
+   "score": 0
+  },
+  {
+   "id": "da2aa0582a9df1",
+   "title": "China cabinet calls for greater role by ’national team’ investors to steady sinking markets",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/china-to-strengthen-defense-against-imported-risks-in-capital-markets-5053016",
+   "source": "Investing.com",
+   "feed": "investing-econ",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T19:00+02:00",
+   "score": 1,
+   "also": [
+    "Reuters"
+   ]
+  },
+  {
+   "id": "d12119ca3192d2",
+   "title": "Dutch drugmaker Lundbeck reportedly eyeing deals in psychedelic space",
+   "snippet": "",
+   "url": "https://seekingalpha.com/news/4677070-psychedelic-stocks-gain-lundbeck-eyes-deals?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+   "source": "Seeking Alpha",
+   "feed": "seekingalpha",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T19:00+02:00",
    "score": 0
   },
   {
    "id": "4b16a7df3c3e72",
-   "title": "Tech Stocks Jump as Investors Take Break From AI Jitters",
-   "snippet": "Shares rebounded at the start of a shorter trading session, with all three major indexes poised to end the week strong.",
+   "title": "Tech Stocks Jump as Investors Take a Break From AI Jitters",
+   "snippet": "Shares are rebounding in a shortened trading session, with all three major indexes poised to end the week strong.",
    "url": "https://www.wsj.com/finance/stocks/stocks-poised-to-end-week-strong-as-investors-take-break-from-ai-jitters-ce6b2846?mod=rss_markets_main",
    "source": "WSJ",
    "feed": "wsj-markets",
@@ -264,21 +648,649 @@
     "us",
     "stocks"
    ],
-   "time": "2026-11-27T16:46+02:00",
+   "time": "2026-11-27T18:55+02:00",
    "score": 0
   },
   {
-   "id": "42c136d036e07f",
-   "title": "Major owner sells $142,448 in Legacy Housing stock",
+   "id": "a19b92c4fb0e0e",
+   "title": "Dynacor Group declares CAD 0.0133 dividend",
    "snippet": "",
-   "url": "https://www.investing.com/news/insider-trading-news/major-owner-sells-142448-in-legacy-housing-stock-93CH-5053602",
-   "source": "Investing.com",
-   "feed": "investing-news",
+   "url": "https://seekingalpha.com/news/4677071-dynacor-group-declares-cad-0_0133-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+   "source": "Seeking Alpha",
+   "feed": "seekingalpha",
    "lang": "en",
    "cats": [
     "stocks"
    ],
-   "time": "2026-11-27T16:45+02:00",
+   "time": "2026-11-27T18:55+02:00",
+   "score": 0
+  },
+  {
+   "id": "d546df02c0779e",
+   "title": "Stocks hit the sales early: S&P 500 up 1.5% on Black Friday",
+   "snippet": "",
+   "url": "https://seekingalpha.com/news/4677069-stocks-hit-the-sales-early-sp-500-up-15-on-black-friday?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+   "source": "Seeking Alpha",
+   "feed": "seekingalpha",
+   "lang": "en",
+   "cats": [
+    "stocks",
+    "us"
+   ],
+   "time": "2026-11-27T18:55+02:00",
+   "score": 0
+  },
+  {
+   "id": "582e22e18df007",
+   "title": "Brazilian markets rally after Lula taps Bradesco chairman for finance chief",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/brazilian-markets-rally-after-lula-taps-bradesco-chairman-for-finance-chief-5053727",
+   "source": "Investing.com",
+   "feed": "investing-econ",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T18:54+02:00",
+   "score": 0
+  },
+  {
+   "id": "0895f3cd421ee3",
+   "title": "Midday Need to Know: Brazil stocks surge, SK Hynix boosts buybacks & more",
+   "snippet": "",
+   "url": "https://seekingalpha.com/news/4677068-midday-need-to-know-brazil-stocks-surge-sk-hynix-boosts-buybacks-more?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+   "source": "Seeking Alpha",
+   "feed": "seekingalpha",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T18:50+02:00",
+   "score": 5
+  },
+  {
+   "id": "3db1d4707da5dd",
+   "title": "Anthropic Shares Jump After Volatile First Week Since IPO",
+   "snippet": "Anthropic PBC shares climbed above their $83 initial public offering price as the artificial intelligence lab looked to end its first calendar week on the Nasdaq after its record-setting debut on a p…",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/anthropic-shares-jump-after-volatile-first-week-since-record-ipo",
+   "source": "Bloomberg",
+   "feed": "bloomberg-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:49+02:00",
+   "score": 0
+  },
+  {
+   "id": "130427c6dceddc",
+   "title": "Dual AI Growth Catalysts Position Advanced Micro Devices (AMD) for Revenue Acceleration",
+   "snippet": "Baron Capital, an investment management company, released its third-quarter 2026 investor letter for its “Baron Opportunity Fund”. The letter can be downloaded here. The fund rose 0.77% (Institutiona…",
+   "url": "https://finance.yahoo.com/technology/ai/articles/dual-ai-growth-catalysts-position-164930131.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:49+02:00",
+   "score": 0
+  },
+  {
+   "id": "6b6701802b5b7f",
+   "title": "Bitcoin price drops below $59K as Anthropic joins tech stock rebound",
+   "snippet": "Bitcoin price volatility returned at the Wall Street open as BTC/USD dropped to local lows of $58,700 while stocks and gold headed higher.",
+   "url": "https://cointelegraph.com/markets/bitcoin-price-below-59k-anthropic-tech-stock-rebound?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+   "source": "Cointelegraph",
+   "feed": "cointelegraph",
+   "lang": "en",
+   "cats": [
+    "crypto",
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:48+02:00",
+   "score": 0
+  },
+  {
+   "id": "d0e53a39e6cd1e",
+   "title": "Skyworks (SWKS) Stock Is Up 6.5% Today Along With Chip Rally",
+   "snippet": "On Friday, Nov. 27, Skyworks rose 6.5% as chip stocks rallied, without company-specific news",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/skyworks-swks-stock-6-5-164537166.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:45+02:00",
+   "score": 0
+  },
+  {
+   "id": "b295fce6008c59",
+   "title": "Bladex (BLX) Stock Is Up 4.4% Today as Latin America Names Rally",
+   "snippet": "Bladex shares rose 4.4% on Friday, Nov. 27, without company-specific news, as the broader market and Latin America-linked stocks rallied.",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/bladex-blx-stock-4-4-164536104.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:45+02:00",
+   "score": 0
+  },
+  {
+   "id": "981346e1e3fdc5",
+   "title": "Tronox (TROX) Stock Is Up 12.3% Today Without Company News",
+   "snippet": "Tronox shares rose 12.3% on Friday, Nov. 27, as the market rallied, with no company-specific news behind the move.",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/tronox-trox-stock-12-3-164534724.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:45+02:00",
+   "score": 0
+  },
+  {
+   "id": "080886a2b9524d",
+   "title": "Mentari Therapeutics (MTRI) Stock Is Up 11.2% Today Without Company News",
+   "snippet": "Mentari Therapeutics shares rose 11.2% on Friday, Nov. 27, without company-specific news, as the S&P 500 gained 1.2%.",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/mentari-therapeutics-mtri-stock-11-164526890.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:45+02:00",
+   "score": 0
+  },
+  {
+   "id": "b112bbcf6ac88f",
+   "title": "10 Cheap Stocks With Explosive Growth Potential Heading into 2027",
+   "snippet": "US stocks fell back on November 25 after a sharp rally earlier in the week. The Dow Jones Industrial Average rose 0.3%, while the S&P 500 fell 0.2% and the Nasdaq Composite fell about 0.6%. Chip stoc…",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/10-cheap-stocks-explosive-growth-164412420.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:44+02:00",
+   "score": 0
+  },
+  {
+   "id": "b7d0d91b8afe38",
+   "title": "UK Steel Sector Says UK-EU Agreement Gives Rivals Unfair Edge",
+   "snippet": "Britain’s steel sector wants the government to reverse part of its recent deal with the European Union, which it says gives the bloc’s steel exporters an unfair advantage over their UK peers.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/uk-steel-sector-says-uk-eu-agreement-gives-rivals-unfair-edge",
+   "source": "Bloomberg",
+   "feed": "bloomberg-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:43+02:00",
+   "score": 0
+  },
+  {
+   "id": "be559a07447be3",
+   "title": "AI shopping agents are having a moment, but Amazon and a growing number of sites threaten to stunt their growth",
+   "snippet": "AI shopping agents from OpenAI, Meta, Google and Instinct promise to help users shop, but they're hitting roadblocks at Amazon and other retailers.",
+   "url": "https://www.cnbc.com/2026/11/27/ai-shopping-agents-retailer-blocks.html",
+   "source": "CNBC",
+   "feed": "cnbc-top",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T18:43+02:00",
+   "score": 4
+  },
+  {
+   "id": "c9bef9460fd5c5",
+   "title": "Baron Fund Reestablishes Position in ServiceNow (NOW) Following Attractive Valuation Pullback",
+   "snippet": "Baron Capital, an investment management company, released its third-quarter 2026 investor letter for its “Baron Opportunity Fund”. The letter can be downloaded here. The fund rose 0.77% (Institutiona…",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/baron-fund-reestablishes-position-servicenow-164101736.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:41+02:00",
+   "score": 0
+  },
+  {
+   "id": "8eba258e526860",
+   "title": "AI shopping gains ground as Salesforce sees Black Friday sales hitting $83B",
+   "snippet": "",
+   "url": "https://seekingalpha.com/news/4677065-ai-shopping-gains-ground-as-salesforce-sees-black-friday-sales-hitting-83b?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+   "source": "Seeking Alpha",
+   "feed": "seekingalpha",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T18:41+02:00",
+   "score": 0
+  },
+  {
+   "id": "caefb96ad2f0f2",
+   "title": "Colombia Peso Stumbles as Mounting Risks Test Carry-Fueled Rally",
+   "snippet": "The Colombian peso is headed for its worst month in more than four years as a toxic mix of trouble at home and abroad takes the shine off one of the year’s most resilient currencies.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/colombia-peso-stumbles-as-mounting-risks-test-carry-fueled-rally",
+   "source": "Bloomberg",
+   "feed": "bloomberg-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:37+02:00",
+   "score": 6
+  },
+  {
+   "id": "29a7a4af80593d",
+   "title": "Ten consumer staples stocks with the biggest gains over the past month",
+   "snippet": "",
+   "url": "https://seekingalpha.com/news/4677066-ten-consumer-staples-stocks-with-the-biggest-gains-over-the-past-month?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
+   "source": "Seeking Alpha",
+   "feed": "seekingalpha",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T18:34+02:00",
+   "score": 0
+  },
+  {
+   "id": "66b0ad2405ca39",
+   "title": "הסכין של גרמניה הנאצית: הכירו את מטוס הקרב הכי קטלני בהיסטוריה",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5iTS1yOENLUVQ5R0RrNUxBRV9WVGYyazhkaGhrcnJadjNCZmNvN1EwSXFrUWpZYWQ1TEhYLXY5Q3g4Qk94WmVOSEZnLTJybjl3eFNzZFpiZVhfZDY0dXh4Vm1pbVdjVTQxRmVJ?oc=5",
+   "source": "כלכליסט",
+   "feed": "calcalist",
+   "lang": "he",
+   "cats": [
+    "il",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:32+02:00",
+   "score": 0
+  },
+  {
+   "id": "a526888a84ec11",
+   "title": "U.S. goods trade deficit widens as AI boom drives imports to record high",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/us-goods-trade-deficit-widens-as-ai-boom-drives-imports-to-record-high-5053710",
+   "source": "Investing.com",
+   "feed": "investing-econ",
+   "lang": "en",
+   "cats": [
+    "macro",
+    "us"
+   ],
+   "time": "2026-11-27T18:32+02:00",
+   "score": 5
+  },
+  {
+   "id": "adb5285d617612",
+   "title": "Bloom Energy Corporation (BE) is Positioned for Margin Expansion",
+   "snippet": "Baron Capital, an investment management company, released its third-quarter 2026 investor letter for its “Baron Opportunity Fund”. The letter can be downloaded here. The fund rose 0.77% (Institutiona…",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/bloom-energy-corporation-positioned-margin-163255806.html?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T18:32+02:00",
+   "score": 0
+  },
+  {
+   "id": "f0c318c989b0e3",
+   "title": "Euro-Zone Inflation Is Seen Weaker for First Time in Five Months",
+   "snippet": "Euro-zone inflation is likely to have slowed for the first time in five months, but not enough to derail another interest-rate increase.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/euro-zone-inflation-is-seen-weaker-for-first-time-in-five-months",
+   "source": "Bloomberg",
+   "feed": "bloomberg-econ",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T18:18+02:00",
+   "score": 0
+  },
+  {
+   "id": "877ee0ed517283",
+   "title": "US tech stocks rise in latest market swing",
+   "snippet": "All-powerful AI trade has been eclipsed by wild moves in a market struggling to price future earnings",
+   "url": "https://www.ft.com/content/b80e6259-dca8-4da3-962d-402106a3cd81?syn-25a6b1a6=1",
+   "source": "Financial Times",
+   "feed": "ft-markets",
+   "lang": "en",
+   "cats": [
+    "stocks",
+    "us"
+   ],
+   "time": "2026-11-27T18:16+02:00",
+   "score": 0
+  },
+  {
+   "id": "1a9ab6a5bc7c46",
+   "title": "A 66-year-old nurse is facing down retirement with just $500 saved. Who’s to blame?",
+   "snippet": "“Retirement is a financial status, not an age.”",
+   "url": "https://www.marketwatch.com/story/a-66-year-old-nurse-faces-retirement-with-just-500-saved-whos-to-blame-4249a0fd?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "feed": "mw-top",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T18:00+02:00",
+   "score": 0
+  },
+  {
+   "id": "01a1f84990df37",
+   "title": "Explainer-What is China’s ’national team’ and can it stop the stock market slide?",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/explainerwhat-is-chinas-national-team-and-can-it-stop-the-stock-market-slide-5053434",
+   "source": "Investing.com",
+   "feed": "investing-econ",
+   "lang": "en",
+   "cats": [
+    "macro",
+    "stocks"
+   ],
+   "time": "2026-11-27T17:54+02:00",
+   "score": 0
+  },
+  {
+   "id": "42acc906691362",
+   "title": "Trump demands probe into 'record setting error' after third-quarter GDP data gets massive revision higher",
+   "snippet": "President Donald Trump on Thursday deemed the latest gross domestic product revision a mistake, claiming that it should be \"immediately investigated.\"",
+   "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html",
+   "source": "CNBC",
+   "feed": "cnbc-top",
+   "lang": "en",
+   "cats": [
+    "us",
+    "macro"
+   ],
+   "time": "2026-11-27T17:52+02:00",
+   "score": 6
+  },
+  {
+   "id": "ed33cc63de6769",
+   "title": "These stocks soared the most during a wild week highlighted by Huang’s return to Nvidia",
+   "snippet": "Nvidia’s stock soared this week, but was still down nearly 28% for November and 21% for 2026.",
+   "url": "https://www.marketwatch.com/story/these-stocks-soared-the-most-during-a-wild-week-highlighted-by-huangs-return-to-nvidia-578b3f9a?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "feed": "mw-top",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T17:52+02:00",
+   "score": 8
+  },
+  {
+   "id": "91120e3415dc64",
+   "title": "'The Traitors' ended with a $246,300 prize—here's who won and what they told us about spending it",
+   "snippet": "Winning prize money can come with some big financial decisions, including how much to set aside for taxes.",
+   "url": "https://www.cnbc.com/make-it/2026/11/27/the-traitors-ends-with-246300-prize-heres-how-much-goes-to-taxes.html",
+   "source": "CNBC",
+   "feed": "cnbc-top",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T17:49+02:00",
+   "score": 0
+  },
+  {
+   "id": "100ec27084512e",
+   "title": "Who is Luiz Carlos Trabuco, the banker Lula tapped to steer Brazil's economy?",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbTNzd0lxMGdXNVJXMjhta2cwLWlxT1pHWkV3a0dUUC1iTGlKakQtckh4SHVqY3BKYkFvekFLMXJKbnVneGJHd0RpcjJnMjRVbk9TQnNaYTloQnRQX3NFRFZTSU1vQlEyYWhlSG9FX29DaE9ZejUtRWd5NGE2V2lFYkhUeWdCZzFJYVNEcm9qcnZNLWZzcjRwNU1oVTVhNlo4Ul9jQ1M1QkRjX3Btc3hCcTh3SEtZU1BYMndsTQ?oc=5",
+   "source": "Reuters",
+   "feed": "reuters",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-27T17:48+02:00",
+   "score": 0
+  },
+  {
+   "id": "e2c27a27566689",
+   "title": "I’ve been married for 58 years. It’s ‘our’ money, not ‘his’ and ‘hers.’ Why do so many couples keep their finances separate?",
+   "snippet": "“My wife stopped working outside the home in 1970.”",
+   "url": "https://www.marketwatch.com/story/ive-been-married-for-58-years-its-our-money-not-his-and-hers-why-dont-others-feel-the-same-c5745889?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "feed": "mw-top",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T17:45+02:00",
+   "score": 0
+  },
+  {
+   "id": "ca2639f2d9998c",
+   "title": "The Shopping Mall Experience Is Coming Back, Telsey Says",
+   "snippet": "Dana Telsey of Telsey Advisory Group expects holiday sales to rise 5% to 5.5% this year, down from 6.9% last year. But she says it will still be a strong year for retailers. She speaks on \"Bloomberg…",
+   "url": "https://www.bloomberg.com/news/videos/2026-11-27/the-shopping-mall-experience-is-coming-back-telsey-says-video",
+   "source": "Bloomberg",
+   "feed": "bloomberg-econ",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T17:44+02:00",
+   "score": 0
+  },
+  {
+   "id": "06e0a123fa64b2",
+   "title": "Rains Ease El Niño Crop Fears in Brazil’s Top Soybean Region",
+   "snippet": "A sea of vigorous, leafy green plants deep inside Brazil’s top soybean region is easing fears that El Niño would bring crop losses to the world’s top producer.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/rains-ease-el-nino-crop-fears-in-brazil-s-top-soybean-region",
+   "source": "Bloomberg",
+   "feed": "bloomberg-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T17:42+02:00",
+   "score": 0
+  },
+  {
+   "id": "3fc29027d0844a",
+   "title": "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
+   "snippet": "“He explained that he wasn’t trying to hide the payment, but his former wife lost her job in a medical billing company.”",
+   "url": "https://www.marketwatch.com/story/my-husband-secretly-sends-his-ex-wife-1-500-a-month-after-she-lost-her-job-we-have-2-4-million-saved-has-he-lied-by-omission-ede1972a?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "feed": "mw-top",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T17:30+02:00",
+   "score": 0
+  },
+  {
+   "id": "bed3f5141f3ad9",
+   "title": "Private-Equity Firms Have a Surprising New Source for Debt: the Nordic Bond Market",
+   "snippet": "Fast closings and minimal paperwork make Scandinavian financing an unexpectedly attractive alternative to the U.S.",
+   "url": "https://www.wsj.com/finance/investing/private-equity-firms-have-a-surprising-new-source-for-debt-the-nordic-bond-market-24163a71?mod=rss_markets_main",
+   "source": "WSJ",
+   "feed": "wsj-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T17:30+02:00",
+   "score": 0
+  },
+  {
+   "id": "fa23cb3b42351b",
+   "title": "Black Friday Deals and Holiday Sales Are Big Money for Influencers",
+   "snippet": "A growing part of a brand’s Black Friday and Cyber Monday marketing strategy rests on paying top dollar for social media influencers to post videos.",
+   "url": "https://www.nytimes.com/2026/11/27/business/influencers-black-friday-deals-holiday-shopping.html",
+   "source": "New York Times",
+   "feed": "nyt-business",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T17:29+02:00",
+   "score": 0
+  },
+  {
+   "id": "20efc6af94d3aa",
+   "title": "Holiday Deals Are Tempting. Here’s How to Avoid Buyer’s Remorse.",
+   "snippet": "Some deals are too good to be true. Experts suggest doing the math, making lists and avoiding using “buy now, pay later” platforms to make purchases.",
+   "url": "https://www.nytimes.com/2026/11/27/business/holiday-shopping-deals-spending.html",
+   "source": "New York Times",
+   "feed": "nyt-business",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T17:29+02:00",
+   "score": 0
+  },
+  {
+   "id": "510c16eeda513b",
+   "title": "רשת KFC בישראל תימכר ב-2.7 מיליון שקל",
+   "snippet": "לאחר שנקלעה לחובות, רשת המזון המהיר קנטאקי פרייד צ'יקן בישראל צפויה להימכר בסכום של 2.7 מיליון שקל ל\"א.א.א. שיווק מזון בע\"מ\" • בתחילת החודש אישר בית המשפט לנאמני החברה לפרסם הזמנה להגשת הצעות לרכישת…",
+   "url": "https://www.globes.co.il/news/article.aspx?did=1001565323#utm_source=RSS",
+   "source": "גלובס",
+   "feed": "globes-news",
+   "lang": "he",
+   "cats": [
+    "il"
+   ],
+   "time": "2026-11-27T17:18+02:00",
+   "score": 0
+  },
+  {
+   "id": "4890af13bb91b0",
+   "title": "Risk-sensitive currencies rise on tech rebound, dollar set for weekly gain",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/dollar-lingers-near-22month-peak-as-ai-worries-simmer-5052803",
+   "source": "Investing.com",
+   "feed": "investing-econ",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T17:18+02:00",
+   "score": 1,
+   "also": [
+    "Reuters"
+   ]
+  },
+  {
+   "id": "8de3d592cb4da5",
+   "title": "Climate Talks Imploded, but the ‘Age of Electricity’ Rolls On, Energy Chief Says",
+   "snippet": "Fatih Birol, head of the International Energy Agency, said that market forces, data centers and energy security are driving the clean transition anyway.",
+   "url": "https://www.nytimes.com/2026/11/27/business/fatih-birol-iea-cop31-electrification.html",
+   "source": "New York Times",
+   "feed": "nyt-business",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T17:18+02:00",
+   "score": 0
+  },
+  {
+   "id": "32209234b24d69",
+   "title": "Zelenskyy urges the US to pressure Putin, calling Trump’s ‘my friend’ remark strange",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZHZncjd6TjJOQy1tZVlWUVowZ0hBY2NWMjN2d1k3WXdzUlB4VUdlbl9kMDdLTnZ2bzY5eGlZUGFNSEQxYVNCaVNRYWlBTkZneUxoZm5ub1Q2MVd3QjFza1BJWWhiWEQ2Tk1aUE1jVlByV0h6NldmUC1NOUQ5WW5ka3pqdUFwaXI1SEd4VzNzUGNoZ2c5WG5Yd3dFeWpyY0taN3c?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T17:05+02:00",
+   "score": 0
+  },
+  {
+   "id": "907023e7d7a157",
+   "title": "My friends play ‘credit-card roulette’ to see who pays for dinner — but one ‘winner’ still Venmoed me afterward. Should I say something?",
+   "snippet": "‘I was stunned! I’ve lost my fair share, and won my fair share, and truly believe it all evens out over time.’",
+   "url": "https://www.marketwatch.com/story/my-friends-play-credit-card-roulette-to-see-who-pays-for-dinner-but-one-winner-still-venmoed-me-afterward-should-i-say-something-0a657eee?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "feed": "mw-top",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T17:04+02:00",
+   "score": 0
+  },
+  {
+   "id": "16a240a4eae1a7",
+   "title": "Artificial intelligence usage is exploding, yet spending is stalling. Why a foundational rule of economics is breaking.",
+   "snippet": "For frontier model lab developers, the increased consumption of AI tokens (the means by which they get paid for their compute) is a positive. However, they don’t seem to be generating revenues from i…",
+   "url": "https://www.marketwatch.com/story/artificial-intelligence-usage-is-exploding-yet-spending-is-stalling-why-a-foundational-rule-of-economics-is-breaking-9c7ad4b3?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "feed": "mw-top",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T17:01+02:00",
+   "score": 2
+  },
+  {
+   "id": "afd5c2884709cd",
+   "title": "Nvidia’s stock has tumbled 28% over one chaotic month. The next big test lies in the week ahead",
+   "snippet": "Jensen Huang faces tough questions from Congress this week. Good luck pinning him down, one analyst says.",
+   "url": "https://www.marketwatch.com/story/nvidias-stock-has-tumbled-27-over-one-chaotic-month-the-next-big-test-lies-in-the-week-ahead-06449777?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "feed": "mw-top",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T16:56+02:00",
+   "score": 8
+  },
+  {
+   "id": "54e5a63ed7a622",
+   "title": "Shell’s Arc Deal Helps Lift Foreign Investment in Canada to Two-Year High",
+   "snippet": "Foreign direct investment in Canada rose to its highest quarterly level in more than two years, driven by outlays into the country’s energy and mining sectors.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/shell-s-arc-deal-helps-lift-foreign-investment-in-canada-to-two-year-high",
+   "source": "Bloomberg",
+   "feed": "bloomberg-econ",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T16:55+02:00",
    "score": 0
   },
   {
@@ -294,108 +1306,6 @@
    ],
    "time": "2026-11-27T16:44+02:00",
    "score": 0
-  },
-  {
-   "id": "c5501599a32f16",
-   "title": "Stocks Rally at End of a Week of Wild Swings",
-   "snippet": "Volatility has buffeted investors in an eventful but holiday-shortened series of trading sessions.",
-   "url": "https://www.nytimes.com/2026/11/27/business/stocks-tech-stocks-ai.html",
-   "source": "New York Times",
-   "feed": "nyt-business",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T16:44+02:00",
-   "score": 0
-  },
-  {
-   "id": "c58b7166588d9a",
-   "title": "Brazilian stocks surge as Bradesco chairman named finance minister",
-   "snippet": "",
-   "url": "https://seekingalpha.com/news/4677039-brazilian-stocks-surge-as-bradesco-chairman-named-finance-minister?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-   "source": "Seeking Alpha",
-   "feed": "seekingalpha",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:44+02:00",
-   "score": 5
-  },
-  {
-   "id": "6a6e467705f15e",
-   "title": "Why is SanDisk stock rallying today?",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/why-is-sandisk-stock-rallying-today-93CH-5053600",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:43+02:00",
-   "score": 0,
-   "also": []
-  },
-  {
-   "id": "9656d545497236",
-   "title": "Canada’s TSX futures climb as Bay Street eyes three-day winning streak",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/canadas-tsx-futures-climb-as-bay-street-eyes-threeday-winning-streak-5053439",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T16:42+02:00",
-   "score": 0,
-   "also": []
-  },
-  {
-   "id": "7909dad466b6b3",
-   "title": "Harley Davidson stock hits 52-week high at 34.85 USD",
-   "snippet": "",
-   "url": "https://www.investing.com/news/company-news/harley-davidson-stock-hits-52week-high-at-3485-usd-93CH-5053597",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:41+02:00",
-   "score": 0
-  },
-  {
-   "id": "6bbe71637287b1",
-   "title": "SA analyst upgrades/downgrades: NVDA, MSFT, GOOG, SNDK",
-   "snippet": "",
-   "url": "https://seekingalpha.com/news/4677045-sa-analyst-upgrades-downgrades-nvda-msft-goog-sndk?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-   "source": "Seeking Alpha",
-   "feed": "seekingalpha",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:41+02:00",
-   "score": 4
-  },
-  {
-   "id": "afd5c2884709cd",
-   "title": "Nvidia’s stock has tumbled 27% over one chaotic month. The next big test lies in the week ahead",
-   "snippet": "Jensen Huang faces tough questions from Congress this week. Good luck pinning him down, one analyst says.",
-   "url": "https://www.marketwatch.com/story/nvidias-stock-has-tumbled-27-over-one-chaotic-month-the-next-big-test-lies-in-the-week-ahead-06449777?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "feed": "mw-top",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T16:40+02:00",
-   "score": 8
   },
   {
    "id": "6a2bc1542f1419",
@@ -414,209 +1324,6 @@
    "score": 0
   },
   {
-   "id": "877ee0ed517283",
-   "title": "US tech stocks rise in latest market swing",
-   "snippet": "All-powerful AI trade has been eclipsed by wild moves in a market struggling to price future earnings",
-   "url": "https://www.ft.com/content/b80e6259-dca8-4da3-962d-402106a3cd81?syn-25a6b1a6=1",
-   "source": "Financial Times",
-   "feed": "ft-markets",
-   "lang": "en",
-   "cats": [
-    "stocks",
-    "us"
-   ],
-   "time": "2026-11-27T16:38+02:00",
-   "score": 0
-  },
-  {
-   "id": "26c82d5f884d21",
-   "title": "Chile’s antitrust authority seeks $80 million Apple fine over iOS",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/chiles-antitrust-authority-seeks-80-million-apple-fine-over-ios-5053595",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T16:36+02:00",
-   "score": 3,
-   "also": []
-  },
-  {
-   "id": "bfecf4f3d8fb1d",
-   "title": "Cosmos Health plans Athens facility expansion for Cana unit",
-   "snippet": "",
-   "url": "https://www.investing.com/news/company-news/cosmos-health-plans-athens-facility-expansion-for-cana-unit-93CH-5053594",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T16:36+02:00",
-   "score": 0
-  },
-  {
-   "id": "fe7c5bdb77d2b3",
-   "title": "lululemon supply chain hits 33% renewable electricity in 2025",
-   "snippet": "",
-   "url": "https://www.investing.com/news/company-news/lululemon-supply-chain-hits-33-renewable-electricity-in-2025-93CH-5053593",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T16:36+02:00",
-   "score": 0
-  },
-  {
-   "id": "89a9cf9cf71a50",
-   "title": "US stocks open higher as battered AI shares claw back losses",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/us-stocks-open-higher-as-battered-ai-shares-claw-back-losses-5053592",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T16:36+02:00",
-   "score": 0,
-   "also": []
-  },
-  {
-   "id": "e8765ad9ef74e2",
-   "title": "30 large-cap stocks flashing Strong Buy rating",
-   "snippet": "",
-   "url": "https://seekingalpha.com/news/4676456-30-large-cap-stocks-flashing-strong-buy-rating?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-   "source": "Seeking Alpha",
-   "feed": "seekingalpha",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:35+02:00",
-   "score": 0
-  },
-  {
-   "id": "a940c8c2a74128",
-   "title": "Compass Diversified Holdings stock hits 52-week high at 13.58 USD",
-   "snippet": "",
-   "url": "https://www.investing.com/news/company-news/compass-diversified-holdings-stock-hits-52week-high-at-1358-usd-93CH-5053591",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:34+02:00",
-   "score": 0
-  },
-  {
-   "id": "edb5e4e9b8e593",
-   "title": "Has silver fallen too far? UBS sees buying opportunity after sharp selloff",
-   "snippet": "",
-   "url": "https://www.investing.com/news/commodities-news/has-silver-fallen-too-far-ubs-sees-buying-opportunity-after-sharp-selloff-5053590",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T16:34+02:00",
-   "score": 5
-  },
-  {
-   "id": "6fe2bdd3d3ec65",
-   "title": "Wall Street firmly in green as it looks to end volatile week on a high",
-   "snippet": "",
-   "url": "https://seekingalpha.com/news/4676974-sp500-nasdaq-dow-jones-outlook-stock-market?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-   "source": "Seeking Alpha",
-   "feed": "seekingalpha",
-   "lang": "en",
-   "cats": [
-    "stocks",
-    "us"
-   ],
-   "time": "2026-11-27T16:34+02:00",
-   "score": 0
-  },
-  {
-   "id": "71750900247a60",
-   "title": "Nvidia Pares Gains on Blackwell Report; Altria Lower | Stock Movers",
-   "snippet": "Today's biggest winners and losers in the stock market. On this episode of Stock Movers: - Nvidia (NVDA) shares are higher even though news broke this morning that a pair of Chinese firms installed N…",
-   "url": "https://www.bloomberg.com/news/videos/2026-11-27/nvidia-pares-gains-altria-moves-lower-stock-movers-video",
-   "source": "Bloomberg",
-   "feed": "bloomberg-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T16:33+02:00",
-   "score": 4
-  },
-  {
-   "id": "484d4a27dac877",
-   "title": "Faraday Future announces about $41M investment in FF EAI Robotics Ecosystem",
-   "snippet": "",
-   "url": "https://seekingalpha.com/news/4677034-faraday-future-announces-about-41m-investment-in-ff-eai-robotics-ecosystem?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-   "source": "Seeking Alpha",
-   "feed": "seekingalpha",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:33+02:00",
-   "score": 0
-  },
-  {
-   "id": "adc8b7b69a187a",
-   "title": "עליות שערים בבורסות וול סטריט; גם אירופה ירוקה",
-   "snippet": "יום המסחר בשווקים הגלובליים נפתח ברגל ימין, לקראת חזרתה של הבורסה בניו יורק מחופשה לרגל חג ההודיה • המסחר בארה\"ב יתנהל היום במתכונת מקוצרת ויינעל בשעה 20:00 שעון ישראל",
-   "url": "https://www.globes.co.il/news/article.aspx?did=1001565316#utm_source=RSS",
-   "source": "גלובס",
-   "feed": "globes-news",
-   "lang": "he",
-   "cats": [
-    "il",
-    "us"
-   ],
-   "time": "2026-11-27T16:32+02:00",
-   "score": 0
-  },
-  {
-   "id": "9ae871e26357bf",
-   "title": "Sound Enhanced Fixed Income ETF declares $0.04 dividend",
-   "snippet": "",
-   "url": "https://seekingalpha.com/news/4677044-sound-enhanced-fixed-income-etf-declares-0_04-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-   "source": "Seeking Alpha",
-   "feed": "seekingalpha",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:32+02:00",
-   "score": 0
-  },
-  {
-   "id": "52a22ebd43f987",
-   "title": "Thornburg Core Plus Bond ETF declares $0.0405 dividend",
-   "snippet": "",
-   "url": "https://seekingalpha.com/news/4677043-thornburg-core-plus-bond-etf-declares-0_0405-dividend?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news",
-   "source": "Seeking Alpha",
-   "feed": "seekingalpha",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:26+02:00",
-   "score": 0
-  },
-  {
    "id": "cb5b0e642bb947",
    "title": "How much more are richest Americans spending on the holidays compared to everyone else?",
    "snippet": "Most households are getting “squeezed by rising costs of everyday goods,” according to Teneo, but upper-income households “are showing resilience.”",
@@ -631,109 +1338,6 @@
    "score": 0
   },
   {
-   "id": "4dd9b5490e4afa",
-   "title": "10 Best Strong Buy Stocks to Buy and Hold For the Next 5 Years",
-   "snippet": "The S&P 500 fell 3.7% on Friday, November 20, its seventh straight losing session and its longest losing streak since the pandemic crash, according to Jared Blikre, global markets and data editor at…",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/10-best-strong-buy-stocks-142359236.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T16:23+02:00",
-   "score": 5,
-   "also": []
-  },
-  {
-   "id": "ecffd4d8824825",
-   "title": "S&P 500 Investors Make Surprising Shift as Tech Stocks Sink",
-   "snippet": "A familiar investment strategy is suddenly gaining fresh appeal.",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-investors-surprising-shift-142353935.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T16:23+02:00",
-   "score": 0
-  },
-  {
-   "id": "4d6743d54c3dce",
-   "title": "Power Outages, Flood Risks Linger After Storm Wallops East Coast",
-   "snippet": "More than 500,000 homes and businesses along the East Coast are without power after an explosive storm uprooted trees in Queens and inundated commuter rail lines in New Jersey on Thanksgiving Day.",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-27/dangerous-nor-easter-storm-triggers-widespread-power-outages",
-   "source": "Bloomberg",
-   "feed": "bloomberg-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T16:20+02:00",
-   "score": 0
-  },
-  {
-   "id": "8a1e9d35748ffe",
-   "title": "Nvidia halts server shipments to four Southeast Asian countries, FT reports",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/nvidia-halts-server-shipments-to-four-southeast-asian-countries-ft-reports-5053574",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:18+02:00",
-   "score": 3
-  },
-  {
-   "id": "1b5f5a52441fd3",
-   "title": "Explainer-Black Friday test for retailers as tight budgets meet AI-savvy shoppers",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/explainerblack-friday-test-for-retailers-as-tight-budgets-meet-aisavvy-shoppers-5053309",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:18+02:00",
-   "score": 0
-  },
-  {
-   "id": "71f926e7f8b51e",
-   "title": "Has PepsiCo Become A Different Stock To Own?",
-   "snippet": "Today's big story: Anthropic Broke Its $83 IPO Price. What Did Facebook Do Next.",
-   "url": "https://www.trefis.com/stock/pep/articles/629392/has-pepsico-become-a-different-stock-to-own/2026-11-27?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T16:16+02:00",
-   "score": 0
-  },
-  {
-   "id": "af5635209f6616",
-   "title": "European shares extend rally, but bruising November leaves AI scars",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/european-shares-extend-rally-but-bruising-november-leaves-ai-scars-5053023",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:13+02:00",
-   "score": 0
-  },
-  {
    "id": "bd73a3d1907a43",
    "title": "EU leaders fail to break $1.7 trillion budget deadlock as political pressure mounts",
    "snippet": "EU leaders failed to break a deadlock over the bloc’s budget, with talks set to resume in December as a key deadline looms.",
@@ -745,20 +1349,6 @@
     "us"
    ],
    "time": "2026-11-27T16:12+02:00",
-   "score": 0
-  },
-  {
-   "id": "bc093f147a952d",
-   "title": "Thursday insider buys and sells: eBay, Williams Companies and more",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/thursday-insider-buys-and-sells-ebay-williams-companies-and-more-93CH-5053556",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T16:01+02:00",
    "score": 0
   },
   {
@@ -785,21 +1375,6 @@
    "lang": "en",
    "cats": [
     "macro",
-    "stocks"
-   ],
-   "time": "2026-11-27T16:00+02:00",
-   "score": 0
-  },
-  {
-   "id": "76d1c549ea67d4",
-   "title": "PagSeguro (PAGS) Stock Jumps 12.4% Premarket Without Company News",
-   "snippet": "On Friday, Nov. 27, PagSeguro shares rose 12.4% in premarket trading without company-specific news.",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/pagseguro-pags-stock-jumps-12-140018611.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
     "stocks"
    ],
    "time": "2026-11-27T16:00+02:00",
@@ -833,20 +1408,6 @@
    ],
    "time": "2026-11-27T15:58+02:00",
    "score": 10
-  },
-  {
-   "id": "958015630aa9eb",
-   "title": "BLACK FRIDAY ENDS SOON: ONLY HOURS TO GO to secure 60% off InvestingPro",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/black-friday-ends-soon-only-hours-to-go-to-secure-60-off-investingpro-5053549",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T15:56+02:00",
-   "score": 0
   },
   {
    "id": "aabaebc36af542",
@@ -906,50 +1467,6 @@
    "score": 0
   },
   {
-   "id": "8d68968f9abc51",
-   "title": "Photos: Macy’s Thanksgiving Day Parade History and Wacky Moments",
-   "snippet": "It isn’t always easy to keep New York City’s Thanksgiving parade on track. Here’s a look back at notable moments and mishaps.",
-   "url": "https://www.nytimes.com/2026/11/26/nyregion/macys-thanksgiving-parade-history-timeline.html",
-   "source": "New York Times",
-   "feed": "nyt-business",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T15:40+02:00",
-   "score": 0
-  },
-  {
-   "id": "82c14309c5e51c",
-   "title": "Poland Warns on Tech Debt Flood Before 2027 Eurobond Sales",
-   "snippet": "Poland is planning to tap international markets in early 2027 even as it warned of a flood of corporate borrowing clamoring for investor attention.",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-27/poland-warns-on-tech-debt-flood-before-2027-eurobond-sales",
-   "source": "Bloomberg",
-   "feed": "bloomberg-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:36+02:00",
-   "score": 0
-  },
-  {
-   "id": "d98d59ce56bf07",
-   "title": "As the AI Storm Rages, Are UK and Europe Markets a Haven For Investors? Live Q&A",
-   "snippet": "Bloomberg reporters take your questions about UK and European markets in a Live Q&A on Tuesday, December 1 at 1 p.m. GMT",
-   "url": "https://www.bloomberg.com/sessions/2026-12-01/live-q-amp-a-are-uk-and-european-markets-a-haven-from-the-ai-storm",
-   "source": "Bloomberg",
-   "feed": "bloomberg-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:35+02:00",
-   "score": 0
-  },
-  {
    "id": "2e3fd7d58f27ea",
    "title": "US Goods-Trade Deficit Widens for Fourth Straight Month",
    "snippet": "The US merchandise-trade deficit widened in October for a fourth straight month as capital goods imports rose to a fresh record.",
@@ -979,22 +1496,6 @@
    "score": 0
   },
   {
-   "id": "0acafbbc1b88d3",
-   "title": "Bank Indonesia Says 2027 Focus to Be on Stability, Inflation",
-   "snippet": "Bank Indonesia will stay focused on stability next year as it pursues monetary policy that keeps inflation within its target range, while confronting sustained pressure on the rupiah.",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-27/bank-indonesia-says-policy-focus-on-stability-inflation-in-2027",
-   "source": "Bloomberg",
-   "feed": "bloomberg-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks",
-    "macro"
-   ],
-   "time": "2026-11-27T15:31+02:00",
-   "score": 0
-  },
-  {
    "id": "eba2a9bbbd7d6e",
    "title": "ECB’s Nagel Signals Need for Another Rate Hike in December",
    "snippet": "Stubborn inflation means the European Central Bank will probably have to raise interest rates again next month, according to Governing Council member Joachim Nagel.",
@@ -1006,35 +1507,6 @@
     "macro"
    ],
    "time": "2026-11-27T15:31+02:00",
-   "score": 0
-  },
-  {
-   "id": "fbce4b069dff08",
-   "title": "Renters are now a national political constituency that can influence elections",
-   "snippet": "Renters backed Democrats 61% to 31% in the midterms, a 30-point margin, according to YouGov.",
-   "url": "https://www.marketwatch.com/story/renters-are-now-a-national-political-constituency-that-can-influence-elections-8f028445?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "feed": "mw-top",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T15:30+02:00",
-   "score": 0
-  },
-  {
-   "id": "77af7167059e76",
-   "title": "Vera Therapeutics (VERA) Stock Jumps 16.4% Premarket: No Company News",
-   "snippet": "Vera Therapeutics shares rose 16.4% in premarket trading on Friday, Nov. 27, without company-specific news, as stock futures rallied.",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/vera-therapeutics-vera-stock-jumps-133018816.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:30+02:00",
    "score": 0
   },
   {
@@ -1079,20 +1551,6 @@
    ],
    "time": "2026-11-27T15:26+02:00",
    "score": 0
-  },
-  {
-   "id": "1553dd1e241137",
-   "title": "New-home sales just hit a 2026 high as builders dangle low mortgages and Black Friday deals",
-   "snippet": "Sales of newly built homes surged to the highest level of the year in October, as home builders offered aggressive discounts to buyers.",
-   "url": "https://www.marketwatch.com/story/new-home-sales-just-hit-a-2026-high-as-builders-dangle-low-mortgages-and-black-friday-deals-291a3b62?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "feed": "mw-top",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T15:22+02:00",
-   "score": 5
   },
   {
    "id": "ff77d24aefc0d4",
@@ -1171,21 +1629,6 @@
    "score": 5
   },
   {
-   "id": "2e4fe7b8d4dc9a",
-   "title": "2 ETFs to Watch for Outsized Volume on Regional Banks & Corporate Bonds",
-   "snippet": "Regional bank and corporate bond ETFs record trading volumes over six times their averages, signaling a surge in investor activity worth watching.",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/2-etfs-watch-outsized-volume-131800239.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:18+02:00",
-   "score": 5
-  },
-  {
    "id": "a20cf3afd61f89",
    "title": "New car prices are at a record high. Here's where to look for deals",
    "snippet": "While the average price of a new car hit $51,109 in October, according to Kelley Blue Book, many buyers are spending far less on their purchase. Here's how.",
@@ -1198,124 +1641,6 @@
    ],
    "time": "2026-11-27T15:15+02:00",
    "score": 6
-  },
-  {
-   "id": "6c3ea997da1ea7",
-   "title": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
-   "snippet": "Why did a futurist with Huang’s prescient vision build a company where all roads lead to him?",
-   "url": "https://www.marketwatch.com/story/we-are-living-in-perilous-times-if-nvidias-jensen-huang-dictates-your-401-k-balance-e0942d1e?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "feed": "mw-top",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T15:15+02:00",
-   "score": 3
-  },
-  {
-   "id": "ce0daea6548ac9",
-   "title": "Inter (INTR) Stock Jumps 14.5% Premarket: Latin American Stocks Rally",
-   "snippet": "Inter & Co shares rose 14.5% in premarket trading on Friday, Nov. 27, without company-specific news, as Latin American stocks rallied.",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/inter-intr-stock-jumps-14-131533340.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:15+02:00",
-   "score": 0
-  },
-  {
-   "id": "1d41989c9944c4",
-   "title": "El Niño, Flooding Put Squeeze on South African Fruit Producers",
-   "snippet": "South Africa’s high-value fruit exports are under pressure due to adverse weather ranging from winter floods to heat waves linked to the El Niño weather phenomenon, with growers cutting harvest forec…",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-27/el-nino-flooding-put-squeeze-on-south-african-fruit-producers",
-   "source": "Bloomberg",
-   "feed": "bloomberg-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:13+02:00",
-   "score": 0
-  },
-  {
-   "id": "ddcf0266256544",
-   "title": "SOAR AI Rises 19% Despite Incurring Q3 Loss, Revenues Soar Y/Y",
-   "snippet": "SOAR incurs a Q3 loss per share despite 245% revenue growth fueled by Vaunt subscriptions, while financing hurdles cloud its AI infrastructure expansion.",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/soar-ai-rises-19-despite-131100748.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:11+02:00",
-   "score": 5
-  },
-  {
-   "id": "f880577aa7f682",
-   "title": "Stock Futures Rise as Wall Street Heads for Weekly Gains",
-   "snippet": "US equity futures were tracking in the green on Friday, with Wall Street on course to end a holiday-",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/stock-futures-rise-wall-street-130854779.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:08+02:00",
-   "score": 0
-  },
-  {
-   "id": "7fd041f4ab1712",
-   "title": "US Equity Futures Climb Pre-Bell as Traders Prepare to Wind Down Volatile Holiday Week",
-   "snippet": "US equity futures were higher pre-bell Friday as traders prepared to wrap up a volatile trading week",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-futures-climb-pre-130855972.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:08+02:00",
-   "score": 0
-  },
-  {
-   "id": "89a2a71d468496",
-   "title": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
-   "snippet": "Futures rose on Thanksgiving after a wild market session, with the Nasdaq rallying off lows and Anthropic reversing higher.",
-   "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T15:06+02:00",
-   "score": 0
-  },
-  {
-   "id": "6fdadcdc395448",
-   "title": "It’s not just you: Durable goods are getting less reliable, from sputtering cars to glitching smart TVs",
-   "snippet": "A wide swath of consumer products are becoming less reliable and durable, even as their prices rise, research shows.",
-   "url": "https://www.cnbc.com/make-it/2026/11/27/durable-goods-reliability-cars-appliances-tvs.html",
-   "source": "CNBC",
-   "feed": "cnbc-top",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T15:05+02:00",
-   "score": 0
   },
   {
    "id": "f33d956d284811",
@@ -1333,20 +1658,6 @@
    "score": 0
   },
   {
-   "id": "68288cf9dadb8b",
-   "title": "ECB rate hikes not enough to hit 2% inflation target, official says",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/ecb-rate-hikes-not-enough-to-hit-2-inflation-target-official-says-5053475",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro"
-   ],
-   "time": "2026-11-27T15:02+02:00",
-   "score": 0
-  },
-  {
    "id": "bed453d149ae7e",
    "title": "Spain’s election could pull Madrid closer to Trump’s Washington",
    "snippet": "Spanish voters head to the polls on Sunday for a snap election that could bring socialist Prime Minister Pedro Sánchez's eight years in power to an end.",
@@ -1358,20 +1669,6 @@
     "us"
    ],
    "time": "2026-11-27T15:00+02:00",
-   "score": 0
-  },
-  {
-   "id": "d257e831267548",
-   "title": "German unemployment rises more than expected in November",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/german-unemployment-rises-more-than-expected-in-november-5053161",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro"
-   ],
-   "time": "2026-11-27T14:54+02:00",
    "score": 0
   },
   {
@@ -1403,65 +1700,6 @@
     "stocks"
    ],
    "time": "2026-11-27T14:48+02:00",
-   "score": 0
-  },
-  {
-   "id": "da2aa0582a9df1",
-   "title": "China cabinet calls for greater role by ’national team’ investors to steady sinking markets",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/china-to-strengthen-defense-against-imported-risks-in-capital-markets-5053016",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro"
-   ],
-   "time": "2026-11-27T14:48+02:00",
-   "score": 1,
-   "also": [
-    "Reuters"
-   ]
-  },
-  {
-   "id": "beaa0eed47216c",
-   "title": "הנשיא טראמפ: \"דיברתי עם נתניהו. אם נעשה משהו, בוודאות נתקוף את הר המכוש\"",
-   "snippet": "טראמפ אמר שהוא שוחח עם נתניהו בימים האחרונים, והוסיף כי \"יהיה נחמד לעשות עסקה\" • בשיחת טלפון עם חיילים אמריקאיים, הצהיר: \"הניצחון באיראן נמצא בהישג ידינו\" • דיווח בעזה: יעד התקיפה הלילה בעזה הוא בנו…",
-   "url": "https://www.globes.co.il/news/article.aspx?did=1001565315#utm_source=RSS",
-   "source": "גלובס",
-   "feed": "globes-news",
-   "lang": "he",
-   "cats": [
-    "il"
-   ],
-   "time": "2026-11-27T14:47+02:00",
-   "score": 5
-  },
-  {
-   "id": "4812b6da7a8136",
-   "title": "How to spot Black Friday shopping scams like ‘bogus boutiques’ and AI-generated product images",
-   "snippet": "AI tools have made it even easier for scammers to create fake storefronts and misleading product listings.",
-   "url": "https://www.marketwatch.com/story/how-to-spot-bogus-boutiques-and-other-black-friday-shopping-scams-86cc182d?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "feed": "mw-top",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T14:42+02:00",
-   "score": 0
-  },
-  {
-   "id": "4890af13bb91b0",
-   "title": "Dollar set for flat week, still close to 22-month peak",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/dollar-lingers-near-22month-peak-as-ai-worries-simmer-5052803",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro"
-   ],
-   "time": "2026-11-27T14:42+02:00",
    "score": 0
   },
   {
@@ -1508,18 +1746,18 @@
    "score": 0
   },
   {
-   "id": "b247247a2f596a",
-   "title": "A 10% cap on credit-card interest rates? Holiday shoppers shouldn’t bank on it.",
-   "snippet": "As Americans prepare to pull out their credit cards for the holiday shopping season, President Donald Trump is saying he’s up for capping the interest rates they’re paying on their cards.",
-   "url": "https://www.marketwatch.com/story/trump-is-open-to-capping-credit-card-interest-rates-but-holiday-shoppers-shouldnt-bank-on-it-yet-34260705?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "feed": "mw-top",
+   "id": "910f2c4509bf94",
+   "title": "Republicans rethink tariffs, giving Democrats an opening to challenge Trump",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPOXJMNWlyS1R4eWNOblA5OEJ4eFktZUlZY3c3eGNMNjJ3MzNKWWR6b0xSdzIxOHh2Wm5WbEhlLTY3YlN2THhUVVV3VVpoc3AwdVBhR1M2V0ZudTR5Nlhac0hVQUV1UXh4YmU4ODlxZ0FhVDI5SUtwUlloN2dOR05lWjkzQXpMX29KM3Z0c0YwV18zUTZOWDRBZ1BR?oc=5",
+   "source": "AP",
+   "feed": "ap",
    "lang": "en",
    "cats": [
-    "us"
+    "macro"
    ],
-   "time": "2026-11-27T14:29+02:00",
-   "score": 0
+   "time": "2026-11-27T14:30+02:00",
+   "score": 5
   },
   {
    "id": "646a2d6ccaf8fd",
@@ -1533,36 +1771,6 @@
     "il"
    ],
    "time": "2026-11-27T14:28+02:00",
-   "score": 0
-  },
-  {
-   "id": "01a1f84990df37",
-   "title": "Explainer-What is China’s ’national team’ and can it stop the stock market slide?",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/explainerwhat-is-chinas-national-team-and-can-it-stop-the-stock-market-slide-5053434",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro",
-    "stocks"
-   ],
-   "time": "2026-11-27T14:24+02:00",
-   "score": 0
-  },
-  {
-   "id": "2144f29d90f9c4",
-   "title": "‘My life is in the stock market’: Recent volatility is shaking up holiday spending plans for these shoppers",
-   "snippet": "Consumers are adapting their year-end spending plans amid a shaky stock market.",
-   "url": "https://www.marketwatch.com/story/my-life-is-in-the-stock-market-recent-volatility-is-shaking-up-holiday-spending-plans-for-these-shoppers-bd9485b3?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "feed": "mw-top",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T14:22+02:00",
    "score": 0
   },
   {
@@ -1594,18 +1802,18 @@
    "score": 0
   },
   {
-   "id": "3fc29027d0844a",
-   "title": "My husband secretly sends his ex-wife $1,500 a month after she lost her job. We have $2.4 million saved. Has he lied by omission?",
-   "snippet": "“He explained that he wasn’t trying to hide the payment, but his former wife lost her job in a medical billing company.”",
-   "url": "https://www.marketwatch.com/story/my-husband-secretly-sends-his-ex-wife-1-500-a-month-after-she-lost-her-job-we-have-2-4-million-saved-has-he-lied-by-omission-ede1972a?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "feed": "mw-top",
+   "id": "5f98877ac2315d",
+   "title": "French politician who stood up to Bush over the invasion of Iraq is back to stop Le Pen",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPM3VVVVBIV1cyVWpzRnk1Z0s4TXE3cG1iTktySldaMGc3N1ZiV1BxLUJXdTlZcTd3R3k1bmE4b2ZXd3pZOE5NZUR3Q2FOMTBySEhVbXhQWHpKLU5ybExlaGc0ajU1MDFEa3YyYmI1WTR1dmZxdV8tc0YyUk1NemM2bFF1T2d1N2psR29UVWt5MUJNQ2dkV1lEVHROLW1tZw?oc=5",
+   "source": "AP",
+   "feed": "ap",
    "lang": "en",
    "cats": [
-    "us"
+    "world"
    ],
    "time": "2026-11-27T14:15+02:00",
-   "score": 0
+   "score": 6
   },
   {
    "id": "193f2d7bc7c5c2",
@@ -1669,23 +1877,6 @@
    "score": 0
   },
   {
-   "id": "a55eed02c7da2c",
-   "title": "France in technical recession after quarterly revisions",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/french-economy-contracts-more-than-expected-in-third-quarter-5053113",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro"
-   ],
-   "time": "2026-11-27T13:54+02:00",
-   "score": 1,
-   "also": [
-    "Reuters"
-   ]
-  },
-  {
    "id": "4112e326f37222",
    "title": "הבורסה ננעלה בעליות חדות; ת\"א 35 הוסיף כ-4% בראלי של יומיים",
    "snippet": "מדד ת\"א 35 קפץ בכ-1.5%, ת\"א 90 הוסיף 2.5% • המסחר התנהל על רקע הסנטימנט החיובי בשווקים בעולם וההתקדמות לעבר הרכבת ממשלה בישראל • מניות הטכנולוגיה קפצו על רקע זינוק של קרוב ל-3% בחוזים על הנאסד\"ק • על…",
@@ -1699,8 +1890,21 @@
     "us"
    ],
    "time": "2026-11-27T13:53+02:00",
-   "score": 6,
-   "also": []
+   "score": 6
+  },
+  {
+   "id": "05129bd440a2ba",
+   "title": "France in technical recession after quarterly revisions",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQTER0b3otWTRCSmNQXzlVUXVMamtxeGxHV3BMQkVoRnBLTkhsYnFIdXdySXRYNUR4RWxBVU82Mk5oVDl1U2lNaTJ3U3FaVnpLUFM2UDZvSU92VERNcVBaOUtpVVpkek9vTFhZWG52TUQxUDNFVWs1UVZJQVpuM05SOGFQN29nblhlb19NeW9KYVM5OWlDV3NycXJkTG9Zc3d1Zm92VGNLaWlCN2It?oc=5",
+   "source": "Reuters",
+   "feed": "reuters",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T13:50+02:00",
+   "score": 0
   },
   {
    "id": "7fdbc16bd7bbf8",
@@ -1719,32 +1923,17 @@
   },
   {
    "id": "31d356f5154395",
-   "title": "Live updates: Bitcoin dips below $60,000 as Nasdaq 100 gives up most of its early gains",
-   "snippet": "Nasdaq 100 futures rose 3% ahead of Friday’s shortened U.S. trading session, with some AI cloud stocks up double-digit percentages.",
+   "title": "Live updates: Bitcoin's Thanksgiving gains prove fleeting",
+   "snippet": "Stocks are broadly higher, but bitcoin has slipped back near $60,000, reversing a turkey day advance.",
    "url": "https://www.coindesk.com/tech/2026/11/27/live-news-bitcoin-rebounds-above-usd61-000-as-ai-stocks-lead-premarket-gains",
    "source": "CoinDesk",
    "feed": "coindesk",
    "lang": "en",
    "cats": [
     "crypto",
-    "us",
     "stocks"
    ],
    "time": "2026-11-27T13:34+02:00",
-   "score": 0
-  },
-  {
-   "id": "32209234b24d69",
-   "title": "Zelenskyy urges the US to pressure Putin, calling Trump’s ‘my friend’ remark strange",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZHZncjd6TjJOQy1tZVlWUVowZ0hBY2NWMjN2d1k3WXdzUlB4VUdlbl9kMDdLTnZ2bzY5eGlZUGFNSEQxYVNCaVNRYWlBTkZneUxoZm5ub1Q2MVd3QjFza1BJWWhiWEQ2Tk1aUE1jVlByV0h6NldmUC1NOUQ5WW5ka3pqdUFwaXI1SEd4VzNzUGNoZ2c5WG5Yd3dFeWpyY0taN3c?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T13:22+02:00",
    "score": 0
   },
   {
@@ -1777,6 +1966,21 @@
    "score": 3
   },
   {
+   "id": "2d2de802015c2e",
+   "title": "Altria’s Interest in Imperial May Affect Its AB InBev Stake",
+   "snippet": "A possible three-way deal to reshape the global tobacco industry may spill over into another business whose products are sometimes consumed alongside cigarettes — beer.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/altria-s-interest-in-imperial-may-also-affect-its-ab-inbev-stake",
+   "source": "Bloomberg",
+   "feed": "bloomberg-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T13:14+02:00",
+   "score": 0
+  },
+  {
    "id": "43a894b947770d",
    "title": "Bitcoin supply metric hits 11-year low as new ‘capitulation’ signal arrives",
    "snippet": "The seven-day moving average of Bitcoin’s supply profit/loss ratio hit an 11-year low as BTC price losses month-to-date remain near 20%.",
@@ -1791,20 +1995,6 @@
    "score": 0
   },
   {
-   "id": "5f98877ac2315d",
-   "title": "French politician who stood up to Bush over the invasion of Iraq is back to stop Le Pen",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPM3VVVVBIV1cyVWpzRnk1Z0s4TXE3cG1iTktySldaMGc3N1ZiV1BxLUJXdTlZcTd3R3k1bmE4b2ZXd3pZOE5NZUR3Q2FOMTBySEhVbXhQWHpKLU5ybExlaGc0ajU1MDFEa3YyYmI1WTR1dmZxdV8tc0YyUk1NemM2bFF1T2d1N2psR29UVWt5MUJNQ2dkV1lEVHROLW1tZw?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T13:09+02:00",
-   "score": 6
-  },
-  {
    "id": "19a9e586938b4d",
    "title": "Injective asks SEC to allow order books for tokenized stock trading",
    "snippet": "The regulator's rules favor one type of blockchain trading system, leaving platforms built on Injective out, the developer said. It wants the SEC to open stock trading to order-book systems.",
@@ -1817,20 +2007,6 @@
     "stocks"
    ],
    "time": "2026-11-27T13:07+02:00",
-   "score": 0
-  },
-  {
-   "id": "1ec01ac5fbce0d",
-   "title": "NFL’s Thanksgiving tripleheader has impressive comebacks and fantastic finishes",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNzE3Y1FKQUtPS3pDQ2ROU1BiV1pCc2o4bzRBQ2sxZVo5ekN3RE1lYUxBanJUX2QweGd4eXR4cFQ2d2lQd01tZ0R0R0kwV0d1TnBKMFZic0VFb0V6WXA5OHNVNXpFb0Y0WXlGMTFsUnV0WU1ERDBYZkhiNkxLajd4Z25DMUs4Smt3MlhneEY0MWJBQVRXanVIdTRDMG13bkRO?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T13:00+02:00",
    "score": 0
   },
   {
@@ -1939,20 +2115,6 @@
    "score": 0
   },
   {
-   "id": "de9f5cf989d1ca",
-   "title": "Global equity funds log biggest weekly outflow in 14 months",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPWTZpU3RzSnllQi1jd3N1NUlfSFBGN2NkaW8yYWI3QV9GNTlpVWc1VWxkTnVJS2FKbnVUckJ6VGhVUHlEQ2FaNWRNdFkxbFh3UTdncUI5WVA2ZGhFOFdYQ3BoTExrNXhBb01lNFdVQm8zY05jV2twSnRxYzRaOGlzTFdR?oc=5",
-   "source": "Reuters",
-   "feed": "reuters",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T12:25+02:00",
-   "score": 0
-  },
-  {
    "id": "be24defa2d7050",
    "title": "92 Labour MPs call for Rosebank oilfield to be rejected",
    "snippet": "Letter addressed to prime minister says approving the project would ‘permanently damage our climate credentials’",
@@ -1996,21 +2158,6 @@
    "score": 3
   },
   {
-   "id": "81dbf5b046185f",
-   "title": "Dubai’s Benchmark Stock Index Erases Wartime Losses as Banks, Property Shares Rise",
-   "snippet": "The index surpassed its closing level on Feb. 27, the last trading session before the war began. It has has gained nearly 14% so far this month.",
-   "url": "https://www.wsj.com/finance/stocks/dubais-benchmark-stock-index-erases-wartime-losses-as-banks-property-shares-rise-8b5a7a52?mod=rss_markets_main",
-   "source": "WSJ",
-   "feed": "wsj-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T12:16+02:00",
-   "score": 5
-  },
-  {
    "id": "2daf792aa39d9b",
    "title": "My self-care ritual is a meal at a fancy restaurant - on my own",
    "snippet": "Solo-dining is being embraced as a self-care trend and it's reshaping the restaurant industry.",
@@ -2022,20 +2169,6 @@
     "world"
    ],
    "time": "2026-11-27T12:10+02:00",
-   "score": 0
-  },
-  {
-   "id": "20efc6af94d3aa",
-   "title": "Holiday Deals Are Tempting. Here’s How to Avoid Buyer’s Remorse.",
-   "snippet": "Some deals are too good to be true. Experts suggest doing the math, making lists and avoiding using “buy now, pay later” platforms to make purchases.",
-   "url": "https://www.nytimes.com/2026/11/27/business/holiday-shopping-deals-spending.html",
-   "source": "New York Times",
-   "feed": "nyt-business",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T12:03+02:00",
    "score": 0
   },
   {
@@ -2083,25 +2216,10 @@
    "score": 0
   },
   {
-   "id": "90be706003942a",
-   "title": "European Workers’ AI Use on Par With That of US Peers, ECB Says",
-   "snippet": "Euro-area workers are turning to artificial intelligence at a similar rate as their peers in the US, though obstacles remain to reaping more of the technology’s benefits, according to European Centra…",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-27/european-workers-ai-use-on-par-with-that-of-us-peers-ecb-says",
-   "source": "Bloomberg",
-   "feed": "bloomberg-econ",
-   "lang": "en",
-   "cats": [
-    "macro",
-    "us"
-   ],
-   "time": "2026-11-27T12:00+02:00",
-   "score": 0
-  },
-  {
-   "id": "cede1a89ea730b",
+   "id": "25fc56e2a3e906",
    "title": "48 Hours in Tokyo With an Airline Pilot",
    "snippet": "A Boeing 787 pilot visits some favorite restaurants, a Snoopy museum and a tranquil shrine.",
-   "url": "https://www.nytimes.com/2026/11/27/travel/48-hours-in-tokyo-with-an-airline-pilot.html",
+   "url": "https://www.nytimes.com/2026/11/27/travel/48-hours-tokyo-layover.html",
    "source": "New York Times",
    "feed": "nyt-business",
    "lang": "en",
@@ -2167,20 +2285,6 @@
     "stocks"
    ],
    "time": "2026-11-27T11:49+02:00",
-   "score": 0
-  },
-  {
-   "id": "edc3a63b506444",
-   "title": "Zambia Pauses Rate Cuts as Kwacha Slide Threatens Inflation",
-   "snippet": "Zambia’s central bank kept interest rates unchanged as new inflation pressures emerge from a slump in the currency and a super El Niño.",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-27/zambia-s-central-bank-holds-key-rate-as-inflation-risk-grow",
-   "source": "Bloomberg",
-   "feed": "bloomberg-econ",
-   "lang": "en",
-   "cats": [
-    "macro"
-   ],
-   "time": "2026-11-27T11:25+02:00",
    "score": 0
   },
   {
@@ -2276,8 +2380,8 @@
   },
   {
    "id": "698d0206c23c95",
-   "title": "Nasdaq Futures Rally as Traders Pile Into Battered AI Stocks",
-   "snippet": "US stock futures rose, indicating the market is poised to rebound as dip buyers scoop up beaten down technology shares.",
+   "title": "US Stocks Rebound as Traders Pile Into Battered Tech Shares",
+   "snippet": "US stocks rallied Friday, capping a week of whiplash as dip buyers scooped up some beaten down technology shares despite lingering worries about the sustainability of the artificial-intelligence boom.",
    "url": "https://www.bloomberg.com/news/articles/2026-11-27/us-stocks-set-to-bounce-as-risk-appetite-returns-after-holiday",
    "source": "Bloomberg",
    "feed": "bloomberg-markets",
@@ -2302,20 +2406,6 @@
    ],
    "time": "2026-11-27T09:47+02:00",
    "score": 0
-  },
-  {
-   "id": "3a46594a83e7a0",
-   "title": "Inflation Slows Much More Than Expected in France and Spain",
-   "snippet": "Inflation in France and Spain slowed much more than anticipated as energy pressures eased, offering some relief to the European Central Bank as it weighs raising interest rates further.",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-27/french-inflation-slows-much-more-than-expected-as-energy-eases",
-   "source": "Bloomberg",
-   "feed": "bloomberg-econ",
-   "lang": "en",
-   "cats": [
-    "macro"
-   ],
-   "time": "2026-11-27T09:45+02:00",
-   "score": 6
   },
   {
    "id": "7b429c150c0b7d",
@@ -2488,20 +2578,6 @@
    "score": 0
   },
   {
-   "id": "a8068d47050779",
-   "title": "Indonesia considers subsidised fuel price hike as fiscal pressure mounts, sources say",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPQ3FHY0lKeGNiU2dYNEtfT1JlNFBqZDZVUFMwNHJ0WUI2MllTNF84dFprX1hYcG1oZThOeVoya0VXcnZWS2E0MnBXdUtqaXUzRGg2RGw2RHVmeG42VERkUkl5Y2dIRkF3VjUyeHI2XzlxclN1Nmc2ZjBEZUU5SFNId0FCVEdYVmxPWHBzNlVqeWZsQm9SRHE0eU5TSjNyMll1ZTJzSEp5NUtHMHhJWmg3N1pKTl9fdlBQcEtlRUYzcEpTUmZRbjRMSw?oc=5",
-   "source": "Reuters",
-   "feed": "reuters",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T07:48+02:00",
-   "score": 0
-  },
-  {
    "id": "4f06d3d89e2c88",
    "title": "Morning Bid: Is this a dead turkey bounce?",
    "snippet": "",
@@ -2645,6 +2721,20 @@
    "score": 0
   },
   {
+   "id": "fb502f1dd931a7",
+   "title": "זה רכב משתלם. למי שמוכן להתפשר על תא מטען קטן",
+   "snippet": "הדגם החדש של \"בת החסות\" הסינית של סטלנטיס, ליפמוטור B10 פלאג־אין, מגיע לישראל בתמחור אגרסיבי, עם מערכת הנעה מצוינת ותא נוסעים מרווח ומאובזר • אבל העיצוב נחבא אל הכלים, תא המטען קטן והממשק הדיגיטלי מצ…",
+   "url": "https://www.globes.co.il/news/article.aspx?did=1001565196#utm_source=RSS",
+   "source": "גלובס",
+   "feed": "globes-news",
+   "lang": "he",
+   "cats": [
+    "il"
+   ],
+   "time": "2026-11-27T07:00+02:00",
+   "score": 0
+  },
+  {
    "id": "5d6649d68c3ac2",
    "title": "Kirkland & Ellis under fire from private equity backers over sell-to-yourself deals",
    "snippet": "Lawyers say contracts for so-called continuation vehicles remove investors’ right to sue in event of dispute",
@@ -2732,10 +2822,10 @@
    "score": 0
   },
   {
-   "id": "37620164aa3677",
-   "title": "Copper Surges the Most in 10 Months as Risk Appetite Returns",
-   "snippet": "Copper surged the most since January, extending its rebound from an 11-month low as risk appetite returned after a rout fueled by concerns over the AI trade.",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-27/copper-rebounds-from-11-month-low-on-return-of-risk-appetite",
+   "id": "593fef890aa7d9",
+   "title": "Emerging-Market Stocks Eye Best Week Since June on Tech Rebound",
+   "snippet": "Emerging-market stocks are heading for their biggest weekly gain since June as investors pile back into technology shares following a recent selloff, capping a volatile week across global markets.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/em-asia-stocks-set-for-weekly-gain-as-markets-regain-footing",
    "source": "Bloomberg",
    "feed": "bloomberg-markets",
    "lang": "en",
@@ -2747,44 +2837,31 @@
    "score": 6
   },
   {
-   "id": "e189e02017e427",
-   "title": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’",
-   "snippet": "Iran's foreign minister Abbas Araghchi said \"The incident is suspicious and looks like a precooked recipe for war.\"",
-   "url": "https://www.cnbc.com/2026/11/27/us-iran-war-trump-hormuz-italian-killed-trump.html",
-   "source": "CNBC",
-   "feed": "cnbc-top",
+   "id": "42493f62779b7b",
+   "title": "Treasuries Fall as Haven Demand Ebbs Amid Stocks Rebound",
+   "snippet": "US Treasuries fell as the market reopened after the Thanksgiving holiday, with gains in equities damping demand for haven assets.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/treasuries-retreat-as-gains-in-equities-sap-demand-for-havens",
+   "source": "Bloomberg",
+   "feed": "bloomberg-markets",
    "lang": "en",
    "cats": [
-    "us"
+    "us",
+    "stocks",
+    "macro"
    ],
-   "time": "2026-11-27T05:30+02:00",
-   "score": 6
-  },
-  {
-   "id": "35b3200f27dccc",
-   "title": "Nvidia Halts Sales to Southeast Asia as U.S. Tightens China Restrictions",
-   "snippet": "The shipping halt, which hit four countries, follows a new U.S. rule that would require licenses for companies in the countries to buy advanced A.I. chips.",
-   "url": "https://www.nytimes.com/2026/11/26/business/nvidia-southeast-asia-sales.html",
-   "source": "New York Times",
-   "feed": "nyt-business",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T04:45+02:00",
-   "score": 3
+   "time": "2026-11-27T04:43+02:00",
+   "score": 0
   },
   {
    "id": "c1e9c12dcb567a",
-   "title": "US futures rally on AI rebound after bruising month, Treasuries dip",
+   "title": "Global markets rally as end of bruising month approaches",
    "snippet": "",
    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOeDB1T1E2SVA0LVpuZFR6d2d5dWFobkEwdkN5aFVmZUZKN1pSVWExbEJzWlZhV0tKcklRQ09yZlFTZklkLTBNSGFwbHBfbHR2SWZoQTdXcWtFdEViWGdQamN2a0JjWjZ4M0Mydmlpc1lrQUdYaFBNVkFBdTQ4djVpbjZrRQ?oc=5",
    "source": "Reuters",
    "feed": "reuters",
    "lang": "en",
    "cats": [
-    "macro",
-    "us"
+    "world"
    ],
    "time": "2026-11-27T04:01+02:00",
    "score": 0
@@ -2832,6 +2909,20 @@
    "score": 0
   },
   {
+   "id": "e774cf4b693ec3",
+   "title": "Argentina bans its central bank from printing money for the government",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNTkVQY1JFc2tERmJpZi1UX1ByaEtYMGp2MGlJeDJocHpPLVd2SkhhakxJLXEtek0tSFk3ZHp0N2tBLW9JYng1TW1vN1ZCazkwYVFxMjVuLTVlbm9hQm1PbEMybFZLVC1yNmI1X3V5dTcxbGdWX0tRWmdicjE1elFZdjB3eDBaLXlGdUN2YTRDcXA2a1ROaFB5X2FJeld3SmFObnZibzcwYVZPS3dPeEdiLTVjckZjR1NOVVNLMV9Gbzk?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T02:35+02:00",
+   "score": 0
+  },
+  {
    "id": "f794f55756f30b",
    "title": "Privacy coins face diverging fortunes as KuCoin moves to drop Monero",
    "snippet": "As KuCoin joins exchanges dropping Monero ahead of new EU restrictions, Grayscale argues that Zcash’s privacy design sets it apart.",
@@ -2860,10 +2951,10 @@
    "score": 0
   },
   {
-   "id": "c1cbb820fe2c1f",
-   "title": "‘Dollar Storm:’ Greenback on Track for Longest Winning Run Since 2024",
-   "snippet": "The dollar is poised for its longest monthly winning streak in two years as a rupture in the artificial intelligence trade and rising interest rates spur demand for safe-haven assets.",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-26/-dollar-storm-greenback-on-track-for-longest-winning-run-since-2024",
+   "id": "fdab6b3a342728",
+   "title": "Gold Rises as Rebound in Tech Stocks Helps Revive Risk Appetite",
+   "snippet": "Gold rose as a rally in stocks helped the precious metal recover from a rout that sent prices to a 15-month low.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-26/gold-steadies-as-fed-rate-path-and-ai-stocks-frame-volatile-week",
    "source": "Bloomberg",
    "feed": "bloomberg-markets",
    "lang": "en",
@@ -2871,7 +2962,7 @@
     "us",
     "stocks"
    ],
-   "time": "2026-11-27T01:44+02:00",
+   "time": "2026-11-27T01:53+02:00",
    "score": 0
   },
   {
@@ -2917,21 +3008,6 @@
    "score": 3
   },
   {
-   "id": "c95c4dc77f216f",
-   "title": "Latest Oil Market News and Analysis for Nov. 27",
-   "snippet": "Oil headed for its first weekly gain this month, as escalating attacks on energy infrastructure and tankers in the Middle East raised concerns about disruptions to supply.",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-26/latest-oil-market-news-and-analysis-for-nov-27",
-   "source": "Bloomberg",
-   "feed": "bloomberg-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T01:05+02:00",
-   "score": 0
-  },
-  {
    "id": "5855e5c747d7aa",
    "title": "‘Very racist’ Netflix SBF series, BitMart’s $319M shortfall: Asia Express",
    "snippet": "Netflix’s The Altruist has been slammed for its ‘very racist’ portrayal of CZ. BitMart reportedly has a $319.5 million shortfall and just $1.9M in liquid assets.",
@@ -2947,8 +3023,8 @@
   },
   {
    "id": "b51577621cce65",
-   "title": "In Gilt Market ‘Surprise,’ ICE Backs Away From Futures Changes",
-   "snippet": "Global exchange operator Intercontinental Exchange Inc. has decided not to go ahead with planned technical changes to its UK bond futures, disappointing some traders who hoped the adjustments would r…",
+   "title": "ICE Backs Away From Gilt Futures Change in Surprise to Market",
+   "snippet": "Global exchange operator Intercontinental Exchange Inc. has backed away from changes to its UK bond futures it floated last week, surprising traders and disappointing those who had hoped the adjustme…",
    "url": "https://www.bloomberg.com/news/articles/2026-11-26/ice-maintains-flagship-gilt-futures-design-after-market-feedback",
    "source": "Bloomberg",
    "feed": "bloomberg-econ",
@@ -2990,31 +3066,18 @@
   },
   {
    "id": "f880bcd402f8ee",
-   "title": "Stocks Rise at End of Wild Week in AI-Trade Bounce: Markets Wrap",
-   "snippet": "Wall Street is wrapping up a chaotic week with stocks rising as a rebound in the artificial-intelligence trade gathered pace, reducing demand for bonds.",
+   "title": "S&P 500 Eyes Best Week Since April 2025 on AI Jump: Markets Wrap",
+   "snippet": "Wall Street is wrapping up a chaotic week with stocks climbing as a rebound in the artificial-intelligence trade gathered pace, reducing demand for Treasuries and haven currencies.",
    "url": "https://www.bloomberg.com/news/articles/2026-11-26/asian-stock-futures-signal-gains-oil-climbs-again-markets-wrap",
    "source": "Bloomberg",
    "feed": "bloomberg-markets",
    "lang": "en",
    "cats": [
     "us",
-    "stocks"
+    "stocks",
+    "macro"
    ],
    "time": "2026-11-26T23:59+02:00",
-   "score": 0
-  },
-  {
-   "id": "18f624df6d8345",
-   "title": "BNB Chain details new layer-1 for trading, private finance and AI",
-   "snippet": "The proposed network will operate alongside BNB Smart Chain and retain BNB as its native token, with a public testnet targeted for the first quarter of 2027.",
-   "url": "https://cointelegraph.com/news/bnb-chain-details-new-layer-1-trading-private-finance-ai?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-   "source": "Cointelegraph",
-   "feed": "cointelegraph",
-   "lang": "en",
-   "cats": [
-    "crypto"
-   ],
-   "time": "2026-11-26T23:42+02:00",
    "score": 0
   },
   {
@@ -3031,21 +3094,6 @@
    ],
    "time": "2026-11-26T23:17+02:00",
    "score": 0
-  },
-  {
-   "id": "42acc906691362",
-   "title": "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
-   "snippet": "President Donald Trump on Thursday deemed the latest gross domestic product revision a mistake, claiming that it should be \"immediately investigated.\"",
-   "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html",
-   "source": "CNBC",
-   "feed": "cnbc-top",
-   "lang": "en",
-   "cats": [
-    "us",
-    "macro"
-   ],
-   "time": "2026-11-26T23:13+02:00",
-   "score": 6
   },
   {
    "id": "e87740066aa3ad",
@@ -3265,6 +3313,20 @@
    "score": 0
   },
   {
+   "id": "f3a3552a60ea64",
+   "title": "The Macy's Thanksgiving parade is postponed. What happens to its expansive roster of performers?",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQemZKUW1ScjhtaU1uYmdNXzZ1eXJXN1VSTlN5MXRnTk5BZ2MxdWJsVmVSZ2VWRFNCbHVzcDhiTFlNOTE4REJ1V1VKNzl5aHJjS19kZE11dGVvTlZCdDc0REJZaFlxQXR2LVpRTlhDeUd2WVZTdHZOZWdjMk9oQ0NCSEM1NWp6TGw5MGVXWEtKekNBS0tpVGxjUmJRdmdaQU9a?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-26T20:59+02:00",
+   "score": 0
+  },
+  {
    "id": "8224a305099674",
    "title": "Turkey's capital markets catch cold from funds crisis",
    "snippet": "",
@@ -3380,21 +3442,6 @@
    ],
    "time": "2026-11-26T19:21+02:00",
    "score": 0
-  },
-  {
-   "id": "f1d25ec0242cdd",
-   "title": "Trump’s Latest Tariffs Revive Focus on Pressuring China",
-   "snippet": "President Trump sent a message to trading partners across Asia, many of which depend on trade and investment from both the United States and China, that he is ready to escalate tariffs.",
-   "url": "https://www.nytimes.com/2026/11/26/business/trump-tariffs-asia.html",
-   "source": "New York Times",
-   "feed": "nyt-business",
-   "lang": "en",
-   "cats": [
-    "us",
-    "macro"
-   ],
-   "time": "2026-11-26T19:03+02:00",
-   "score": 4
   },
   {
    "id": "02162572745439",
@@ -3732,20 +3779,6 @@
    "score": 4
   },
   {
-   "id": "108a0705d52004",
-   "title": "Judge blocks FCC from early license review for ABC, which network says has had a chilling effect",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQbGg0cWJHckhVdmhyb3U0YXNWLTFhdmw5OHdYM2t2bVVMSzdENnNtaU94MlZfYkZ0R0htTVU2czd6LTQ2Z2tfREVyOEZLeWhaMmY0OXl5RldKREVraWtxc0ducXJNc1NuNzc4WWtKZjM3X0F5cGlvSGVBZlUza1JxTS1pNDRHaVJObE9YdTZNellnRjJjV3hN?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-26T15:30+02:00",
-   "score": 0
-  },
-  {
    "id": "ef3890d5b18e98",
    "title": "121 רשויות ביקשו שינוי חריג בצווי הארנונה ל-2027",
    "snippet": "",
@@ -3773,6 +3806,21 @@
     "stocks"
    ],
    "time": "2026-11-26T15:08+02:00",
+   "score": 0
+  },
+  {
+   "id": "b11c54458a894f",
+   "title": "ביטוח ישיר בוחנת הקמת חברה מנהלת בתחום החיסכון",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9NcWtrNTM4eGFMNUJ6NHMzbTBZLW16cUhwWG44dnh2dG9oVE1XaTNzVTQtczFidm9HX0hFenFOU0Z1ZWlWeVcyVndEMmViTkJnbVB0YzZmNWpsQmVnVUdLVVpYbGdMOXd4R1piV1lnTFA?oc=5",
+   "source": "ביזפורטל",
+   "feed": "bizportal",
+   "lang": "he",
+   "cats": [
+    "il",
+    "stocks"
+   ],
+   "time": "2026-11-26T14:46+02:00",
    "score": 0
   },
   {
@@ -3879,10 +3927,10 @@
    "score": 0
   },
   {
-   "id": "2edf454423063b",
-   "title": "עובד אנבידיה עם חבילת אופציות מתגרש - כמה עובר לגרושה?",
+   "id": "a1885804fb29b0",
+   "title": "BST הכפילה את הרווח ברבעון; שילמה להפניקס 52.5 מיליון שקל על ההנפקה",
    "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0wZWY0d3VCNUxLYThXOFE2R0pGZ1YxTVltSkhPWlQyY01Qb0IwVXdmaTJXWjcwak94WnJtYzg2cHF5XzBjVTh0QWNSa2NPWm1HM2N0dE1KTWVDcmVFd3NfNTBNdUJMU1VqXzc5RkdDLXA5Ukh1QV9xYzZn?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9qdm1mOTF6N0VmemFQTDJqbkFNYnltS3RGVDAwLXlxQnNPWjBCSzA1ZXlWQWNLdHBIUmFpdGF4TndLR24ySGZrOWIwcHkyUU1pUG1ubXlHSHh1WTlCaWNBeEU1Zk5Cak5pTFlXY0Jn?oc=5",
    "source": "ביזפורטל",
    "feed": "bizportal",
    "lang": "he",
@@ -3890,8 +3938,8 @@
     "il",
     "stocks"
    ],
-   "time": "2026-11-26T13:34+02:00",
-   "score": 3
+   "time": "2026-11-26T13:45+02:00",
+   "score": 0
   },
   {
    "id": "3adcb02430b652",
@@ -3951,36 +3999,6 @@
    ],
    "time": "2026-11-26T12:48+02:00",
    "score": 0
-  },
-  {
-   "id": "b7374b986297c5",
-   "title": "China and other US trading partners hit back at Trump’s new tariff plans",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVWQ3MnMzTlQ5Y2lUTW9RTzloTmp3MmtycjBUbmZUOTExYWNsVmlXX1JmLVJGYUYyRjNHSGV1b2hzLWhWclNBRDRZb2hyQ2UxSE9tYktjUTBKR2VDU2w1YlZlU0xaZ0JSMlQ1ZzhwMEJpSVk5N05XbHhnNi1ESktvTVNGNlZpMkNjX0dUNHdvLWJ2YTVqeDFv?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "macro",
-    "us"
-   ],
-   "time": "2026-11-26T12:38+02:00",
-   "score": 5
-  },
-  {
-   "id": "740c906c653d31",
-   "title": "עמיר שיווק מתקרבת למיליארד שקל הכנסות - והרווח הנקי מזנק ב-74% ברבעון",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5wU2FKaE1sWDRza1JCUWhmTk9JNHhMYXloWUpnY1AtQ1NTVHZPVlhUekt4S1dCV043MnRrWnJVeVJaaGVfTEd3SVhWX3pCb2lTSXpoZ2ZVVGdVOHJzSGdsWDRUeTVQVGd0SHJjNF85NTk?oc=5",
-   "source": "ביזפורטל",
-   "feed": "bizportal",
-   "lang": "he",
-   "cats": [
-    "il",
-    "stocks"
-   ],
-   "time": "2026-11-26T12:03+02:00",
-   "score": 8
   },
   {
    "id": "00e66fdfe60727",
@@ -4506,18 +4524,17 @@
    "score": 4
   },
   {
-   "id": "5e4ed412b8a3a7",
-   "title": "The Other Nvidia Romance With an Executive at a Company Linked to China",
-   "snippet": "Nvidia’s sales chief dated a Super Micro executive for years. Now they have married and her former company has been linked to chip smuggling.",
-   "url": "https://www.wsj.com/finance/stocks/nvidia-china-executive-affair-jay-puri-cenly-chen-a42d733b?mod=rss_markets_main",
-   "source": "WSJ",
-   "feed": "wsj-markets",
+   "id": "49de679a907505",
+   "title": "Almost 2,000 migrants arrive on Spain’s Canary Islands in a single day, breaking a record",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa3Jzb2VHSk9lV2k4UlRIWXRJdHBSUzE5a2JjYjc0dWVIRlpmY0dmVjNCSGk5MktVREE1UnNXaHZEb2c2bUFBeV9Oa0tuR2JwYU1rYzdJYXNSVEt3dEJ3cHhnNzZxaFE2YjRJM1FISE0zQlNzWHhQMHRmaW10cGNxamJabUExME9sSFpqMHJpc19kTm9X?oc=5",
+   "source": "AP",
+   "feed": "ap",
    "lang": "en",
    "cats": [
-    "us",
-    "stocks"
+    "world"
    ],
-   "time": "2026-11-26T04:00+02:00",
+   "time": "2026-11-26T03:45+02:00",
    "score": 3
   },
   {
@@ -4533,6 +4550,20 @@
     "stocks"
    ],
    "time": "2026-11-26T03:35+02:00",
+   "score": 0
+  },
+  {
+   "id": "e8b9a8de98f4a4",
+   "title": "A postponed Macy’s Thanksgiving Day Parade to celebrate a milestone with Blue Hippo and Bluey",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORm14bFpCNEQ3SVZfb1VRZEpuWGw3dXpPVjZYRS1zTFJvU2Q2cEZBMGVJNGNOZjVQMGtPTzJWeXo0WldmV0xzN0hjV2djWlRYMThidUZleHVNVTYxcFdBLW94UllVbG9jd0xQMTlyQ3FOdkNIQnpoODhsZmlsUFVEVXUwYzE4MFVaRDl0MGx4NWxLVTNMeXAtd0ZR?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-26T03:23+02:00",
    "score": 0
   },
   {
@@ -4605,21 +4636,6 @@
     "us"
    ],
    "time": "2026-11-26T00:06+02:00",
-   "score": 0
-  },
-  {
-   "id": "ae5ea5f14c419d",
-   "title": "תאת מגייסת 139 מיליון דולר ממוסדיים בישראל בדיסקאונט של כ-7%",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBEbTRJYkdhRWZnZF9NOWQzOTZ0QzFPZy0zdl9zc3hJSWRfQmw5Z2hJbVJFRFNFNGdqcmVBbTJfdEYyd1MyT2VlY0dnZ2RTQUxXeXd4N0o5MEh2U2NQOHFXdjlKbmgzZURRcVFJMWlWZkw?oc=5",
-   "source": "ביזפורטל",
-   "feed": "bizportal",
-   "lang": "he",
-   "cats": [
-    "il",
-    "stocks"
-   ],
-   "time": "2026-11-26T00:05+02:00",
    "score": 0
   },
   {
@@ -4798,20 +4814,6 @@
    "score": 0
   },
   {
-   "id": "e29a7cd8bf5563",
-   "title": "Libyan army vows retaliation after 2 naval officers die of wounds from Ukrainian drone attack",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYlhQMFFISGFSRC1TVkJtS2FtWXl1anZubHJfTnY1VzdiaG5fV2J3MGlWZk84RWUtQUQtRG1DR3Z2b2swWjdacE8zRG1xcHFHN0p3Q25GX3dMTHByRTBnSGl6dHBkcDQxZHF3VF8tMmVLVG5jRm50aGtndHBhWEFaUkFaaVJoZkp1aW8zMDFpVlZlODhqeXhwVG1TV0VNd2Frb2ZsUmg1R0wyb2VxclNscVVRMzc?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-25T18:26+02:00",
-   "score": 0
-  },
-  {
    "id": "2cc4905160a26e",
    "title": "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
    "snippet": "U.S. consumers face higher food, travel and gift costs in 2026 as inflation and Iran-war energy shocks pressure holiday budgets.",
@@ -4840,20 +4842,6 @@
    ],
    "time": "2026-11-25T17:00+02:00",
    "score": 3
-  },
-  {
-   "id": "94ff84c8a1a15c",
-   "title": "Libyan officers die after Ukrainian strike, a highway fire in Egypt kills 30, and other Mideast news",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxONEtNTlFzQUotcXU1N1VCaXBGY0pYWnlqLWVfQ0F3WVl4YkdGMXBIZzdOczlFaFNnUUdZclhRVVlxNE5yVjhzektQSDh0YmRtaGVGQWk3UmNMbUljUjNmZ3NDMTh2dUhlNDdKMzBydnRGZ09EelN2anNjNTcyWkN5OTZkR25TUllOWjZ5SVhoVDJwZ245Q01lSVozd2dfdjRoRFhYTXo3LWtaaTgwanR2eURrMnY2ZEt5?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-25T16:56+02:00",
-   "score": 0
   },
   {
    "id": "14388290e95ccd",
@@ -5129,20 +5117,6 @@
     "stocks"
    ],
    "time": "2026-11-25T07:21+02:00",
-   "score": 0
-  },
-  {
-   "id": "283e94ea1d9bf7",
-   "title": "ההמלצות לרכש ביטחוני: פחות פטור ממכרז, יותר \"מוצרי מדף\" ואתר שופינג ליחידות צה\"ל",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5qNW1ERFZockpIQl9zRTNWdWVpNVRVOGtOTERlTXMyNEtDbWhkSWtaRXVNTFZKM01ZY1pOLXM5VzdVZEVXbmdXUzRyT3RNT3BOZUpDa2M0bWNibU5YaDRHSXpsZzhqc28w?oc=5",
-   "source": "כלכליסט",
-   "feed": "calcalist",
-   "lang": "he",
-   "cats": [
-    "il"
-   ],
-   "time": "2026-11-25T06:00+02:00",
    "score": 0
   },
   {

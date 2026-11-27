@@ -1,9 +1,25 @@
 {
- "updated": "2026-11-27T16:51+02:00",
+ "updated": "2026-11-27T19:26+02:00",
  "new": [
-  "0c3b3cbf809a75"
+  "ed33cc63de6769"
  ],
  "items": [
+  {
+   "id": "ed33cc63de6769",
+   "title": "These stocks soared the most during a wild week highlighted by Huang’s return to Nvidia",
+   "snippet": "Nvidia’s stock soared this week, but was still down nearly 28% for November and 21% for 2026.",
+   "url": "https://www.marketwatch.com/story/these-stocks-soared-the-most-during-a-wild-week-highlighted-by-huangs-return-to-nvidia-578b3f9a?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T17:52+02:00",
+   "score": 8,
+   "also": [],
+   "flagged": "2026-11-27T19:26+02:00"
+  },
   {
    "id": "mv-7d6504e37710",
    "title": "דולר/שקל צונח 1.5% (−1.54%)",
