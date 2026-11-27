@@ -1,5 +1,71 @@
 {
- "updated": "2026-11-27T00:16+02:00",
- "new": [],
- "items": []
+ "updated": "2026-11-27T06:29+02:00",
+ "new": [
+  "mv-a820eeae0c73",
+  "mv-3d6c61b0832c",
+  "2babc45809000f",
+  "28d3b99d360c4e"
+ ],
+ "items": [
+  {
+   "id": "mv-a820eeae0c73",
+   "title": "דולר/שקל צונח 2.4% (−2.40%)",
+   "snippet": "תנועה חריגה במסחר היום. הרמה האחרונה: 3.30.",
+   "url": "https://aviad12377-ai.github.io/briefs.html",
+   "source": "מבזקי השוק",
+   "lang": "he",
+   "cats": [
+    "il"
+   ],
+   "time": "2026-11-27T06:29+02:00",
+   "score": 99,
+   "also": [],
+   "flagged": "2026-11-27T06:29+02:00"
+  },
+  {
+   "id": "mv-3d6c61b0832c",
+   "title": "זהב מזנק 3.5% (+3.51%)",
+   "snippet": "תנועה חריגה במסחר היום. הרמה האחרונה: 3,659.90.",
+   "url": "https://aviad12377-ai.github.io/briefs.html",
+   "source": "מבזקי השוק",
+   "lang": "he",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T06:19+02:00",
+   "score": 99,
+   "also": [],
+   "flagged": "2026-11-27T06:29+02:00"
+  },
+  {
+   "id": "2babc45809000f",
+   "title": "Singapore yet to confirm if Nvidia has halted advanced chip shipments- deputy PM",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/singapore-yet-to-confirm-if-nvidia-has-halted-advanced-chip-shipments-deputy-pm-5052834",
+   "source": "Investing.com",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-27T05:44+02:00",
+   "score": 8,
+   "also": [],
+   "flagged": "2026-11-27T06:29+02:00"
+  },
+  {
+   "id": "28d3b99d360c4e",
+   "title": "Japan Tobacco shares surge on report of Imperial Brands takeover",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/japan-tobacco-shares-surge-on-report-of-imperial-brands-takeover-5052817",
+   "source": "Investing.com",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-27T04:22+02:00",
+   "score": 8,
+   "also": [],
+   "flagged": "2026-11-27T06:29+02:00"
+  }
+ ]
 }
