@@ -5,6 +5,8 @@
    tab: true = one of the 5 bottom-bar slots (keep it at 5), group: 'wealth' | 'debts' | 'tools' | 'account' for the "עוד" sheet,
    parent: id of the tab that should light up while on this page. */
 (function () {
+  // same colour scheme choice as the new shell (/next/): light, dark, or follow the device
+  try { var th = localStorage.getItem('v2-theme'); if (th === 'light' || th === 'dark') document.documentElement.setAttribute('data-theme', th); } catch (e) {}
   window.PORTAL_ICONS = Object.assign({
     home: 'M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z',
     wallet: 'M3 7h15a3 3 0 0 1 3 3v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM3 7l12-4v4M16.5 14h.01',
@@ -71,8 +73,23 @@
 
   /* ---------- bottom tab bar + "more" sheet, usable by any page (with or without portal.js) ---------- */
   var UI = { he: { more: 'עוד', main: 'ניווט ראשי', lang: 'שפה', soon: 'בקרוב' }, en: { more: 'More', main: 'Main navigation', lang: 'Language', soon: 'Soon' }, es: { more: 'Más', main: 'Navegación principal', lang: 'Idioma', soon: 'Pronto' } };
-  var TAB_ORDER = ['home', 'wealth', 'portfolio', 'loans', 'me'];
-  function tabs() { return window.PORTAL_NAV.filter(function (e) { return e.tab; }).sort(function (a, b) { var x = TAB_ORDER.indexOf(a.id), y = TAB_ORDER.indexOf(b.id); return (x < 0 ? 99 : x) - (y < 0 ? 99 : y); }); }
+  // the bottom bar is the same five sections as the new shell, so the whole site reads as one product
+  var SHELL_TABS = [
+    { id: 'home', href: 'next/#/', label: { he: 'בית', en: 'Home', es: 'Inicio' }, icon: 'home' },
+    { id: 'savings', href: 'next/#/savings', label: { he: 'חסכונות', en: 'Savings', es: 'Ahorros' }, icon: 'piggy' },
+    { id: 'invest', href: 'next/#/invest', label: { he: 'השקעות', en: 'Invest', es: 'Inversión' }, icon: 'chart' },
+    { id: 'compare', href: 'next/#/compare', label: { he: 'השוואות', en: 'Compare', es: 'Comparar' }, icon: 'swap' },
+    { id: 'news', href: 'next/#/news', label: { he: 'חדשות', en: 'News', es: 'Noticias' }, icon: 'news' }
+  ];
+  var TAB_GROUP = { wealth: 'wealth', portfolio: 'wealth', loans: 'debts', me: 'account' };
+  function shellTab(page, me) {
+    if (page === 'home') return 'home';
+    if (/^compare-/.test(page)) return 'compare';
+    if (page === 'portfolio' || page === 'options' || page === 'scanner') return 'invest';
+    if (page === 'news' || page === 'briefs' || page === 'heatmap' || page === 'alerts') return 'news';
+    var root = me ? (me.tab ? me.id : me.parent) : '';
+    return root === 'wealth' ? 'savings' : '';
+  }
   function fixParents() { window.PORTAL_NAV.forEach(function (e) { if (e && (e.parent === 'budget' || e.parent === 'subscriptions')) e.parent = 'home'; if (e && (e.id === 'budget' || e.id === 'subscriptions')) { e.soon = true; e.tab = false; e.group = 'tools'; } }); }
   function lang() { try { var l = JSON.parse(localStorage.getItem('portal-settings-v1') || '{}').lang; return UI[l] ? l : 'he'; } catch (e) { return 'he'; } }
   function el(tag, attrs, kids) {
@@ -90,7 +107,7 @@
     var l = lang(), groups = window.PORTAL_NAV_GROUPS;
     var wrap = el('div', { class: 'more-sheet', role: 'dialog', 'aria-modal': 'true', 'aria-label': UI[l].more }), sheet = el('div', { class: 'sheet' });
     Object.keys(groups).forEach(function (g) {
-      var items = window.PORTAL_NAV.filter(function (e) { return !e.tab && (e.group || 'tools') === g; });
+      var items = window.PORTAL_NAV.filter(function (e) { return e.id !== 'home' && (e.group || TAB_GROUP[e.id] || 'tools') === g; });
       if (!items.length) return;
       sheet.appendChild(el('h2', { text: groups[g][l] || groups[g].he }));
       items.sort(function (a, b) { return (a.soon ? 1 : 0) - (b.soon ? 1 : 0); }).forEach(function (e) {
@@ -113,10 +130,11 @@
     if (document.querySelector('.tabbar')) return;
     page = page || (document.body && document.body.getAttribute('data-page')) || '';
     fixParents();
-    var me = window.PORTAL_NAV.filter(function (e) { return e.id === page; })[0], lit = me ? (me.tab ? me.id : me.parent) : null;
-    var bar = el('nav', { class: 'tabbar', 'aria-label': UI[lang()].main }, tabs().slice(0, 5).map(function (e) {
-      return el('a', { href: e.href, class: e.id === lit ? 'on' : null, 'aria-current': e.id === page ? 'page' : null }, [icon(e.icon), el('span', { text: label(e) })]);
+    var me = window.PORTAL_NAV.filter(function (e) { return e.id === page; })[0], lit = shellTab(page, me);
+    var bar = el('nav', { class: 'tabbar', 'aria-label': UI[lang()].main }, SHELL_TABS.map(function (e) {
+      return el('a', { href: e.href, class: e.id === lit ? 'on' : null }, [icon(e.icon), el('span', { text: label(e) })]);
     }));
+    try { var tc = document.querySelector('meta[name="theme-color"]'), bg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim(); if (tc && bg) tc.setAttribute('content', bg); } catch (e) {}
     var more = el('button', { type: 'button', id: 'tab-more', class: lit ? null : 'on', 'aria-haspopup': 'dialog', 'aria-expanded': 'false' }, [icon('more'), el('span', { text: UI[lang()].more })]);
     more.addEventListener('click', function () { more.setAttribute('aria-expanded', 'true'); moreSheet(page, more); });
     bar.appendChild(more);

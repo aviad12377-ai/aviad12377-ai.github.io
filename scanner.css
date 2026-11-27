@@ -7,7 +7,7 @@
 .scan-filters li{margin:4px 0;font-size:16px}
 .scan-chiprow{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
 .scan-chip{display:inline-flex;align-items:center;min-height:36px;padding:4px 10px;border-radius:999px;background:var(--primary-soft);color:var(--primary-dark);font-weight:700;font-size:14px}
-.scan-chip.out{background:var(--danger-soft);color:#fecaca}
+.scan-chip.out{background:var(--danger-soft);color:var(--danger)}
 .scan-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .scan-table{width:100%;border-collapse:collapse;font-size:15px;min-width:640px}
 .scan-table caption{caption-side:top;text-align:start;font-weight:800;padding:6px 0 10px;font-size:16px}
@@ -32,7 +32,7 @@
 @media (min-width:760px){.scan-top3{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .scan-card-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}
 .scan-rank{flex:0 0 36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;background:var(--primary-soft);color:var(--primary-dark)}
-.scan-card.top3{background:linear-gradient(160deg,rgba(124,92,255,.16),rgba(59,130,246,.08));}
+.scan-card.top3{background:linear-gradient(160deg,var(--primary-soft),var(--primary-soft));}
 .scan-card h3{font-size:20px}
 .scan-card .co{font-size:15px;margin:0}
 .scan-grid span{font-size:14px}
