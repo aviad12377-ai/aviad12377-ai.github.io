@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:21+02:00",
+ "updated": "2026-11-28T00:48+02:00",
  "disclaimer": "כותרות ותקצירים קצרים מאתרי החדשות, עם קישור לכתבה המלאה. מידע בלבד, לא ייעוץ.",
  "sources": [
   "AP",
@@ -64,7 +64,7 @@
    "id": "bizportal",
    "source": "ביזפורטל",
    "ok": true,
-   "count": 14,
+   "count": 13,
    "error": null
   },
   {
@@ -238,6 +238,179 @@
  ],
  "items": [
   {
+   "id": "320abcab3a19d1",
+   "title": "HeartSciences to exchange $3.3 million in debt for Class A common stock after merger",
+   "snippet": "",
+   "url": "https://www.investing.com/news/sec-filings/heartsciences-to-exchange-33-million-in-debt-for-class-a-common-stock-after-merger-93CH-5053961",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T00:44+02:00",
+   "score": 3
+  },
+  {
+   "id": "152e34bc2a4da1",
+   "title": "S&P lifts South Africa ratings on improving fiscal position",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/sp-lifts-south-africa-ratings-on-improving-fiscal-position-5053922",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-28T00:42+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "d4222aed22370f",
+   "title": "Olenox Industries issues unregistered shares for board fees, acquisition, and services",
+   "snippet": "",
+   "url": "https://www.investing.com/news/sec-filings/olenox-industries-issues-unregistered-shares-for-board-fees-acquisition-and-services-93CH-5053960",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T00:40+02:00",
+   "score": 3
+  },
+  {
+   "id": "bff4e7fca128e4",
+   "title": "Silver Bow Mining reaches proposed $799,799 EPA settlement for Superfund site",
+   "snippet": "",
+   "url": "https://www.investing.com/news/sec-filings/silver-bow-mining-reaches-proposed-799799-epa-settlement-for-superfund-site-93CH-5053959",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-28T00:36+02:00",
+   "score": 0
+  },
+  {
+   "id": "a8c48533625283",
+   "title": "iQSTEL receives Nasdaq notice on minimum bid price requirement",
+   "snippet": "",
+   "url": "https://www.investing.com/news/sec-filings/iqstel-receives-nasdaq-notice-on-minimum-bid-price-requirement-93CH-5053957",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-28T00:32+02:00",
+   "score": 0
+  },
+  {
+   "id": "1dec5bd596a499",
+   "title": "IES Holdings CEO buys $41,150 in common stock",
+   "snippet": "",
+   "url": "https://www.investing.com/news/insider-trading-news/ies-holdings-ceo-buys-41150-in-common-stock-93CH-5053955",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T00:30+02:00",
+   "score": 0
+  },
+  {
+   "id": "a92b0c5d71fb1c",
+   "title": "Jailed Brazil Beach Soccer Star Drawn Into Russia-US Spy Dispute",
+   "snippet": "A Brazilian beach soccer star has become an unlikely bargaining chip in a dispute over an alleged Russian spy who has been sought by both Moscow and Washington.",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-27/jailed-brazil-beach-soccer-star-drawn-into-russia-us-spy-dispute",
+   "source": "Bloomberg",
+   "feed": "bloomberg-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-28T00:29+02:00",
+   "score": 0
+  },
+  {
+   "id": "7ce76caa48ee31",
+   "title": "Viatris director W. Don Cornwell to retire from board effective December 1",
+   "snippet": "",
+   "url": "https://www.investing.com/news/sec-filings/viatris-director-w-don-cornwell-to-retire-from-board-effective-december-1-93CH-5053945",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-28T00:29+02:00",
+   "score": 0
+  },
+  {
+   "id": "c1e1ffe2546bf9",
+   "title": "Miller Industries regains NYSE compliance after audit committee change",
+   "snippet": "",
+   "url": "https://www.investing.com/news/sec-filings/miller-industries-regains-nyse-compliance-after-audit-committee-change-93CH-5053944",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-28T00:25+02:00",
+   "score": 0
+  },
+  {
+   "id": "5978f0d7734543",
+   "title": "Glass Lewis backs Vail Resorts board in proxy fight with activist Oasis",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/glass-lewis-backs-vail-resorts-board-in-proxy-fight-with-activist-oasis-5053937",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-28T00:24+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "c9e526b63e99fc",
+   "title": "Volatile stock market confronts jobs data, rate view as next tests",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/sliding-stock-market-confronts-jobs-data-rate-view-as-next-tests-5053316",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T00:24+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "4a0c3a96b1f5ef",
+   "title": "Wall Street ends higher as battered AI stocks gain in volatile week",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/wall-st-futures-surge-as-investors-return-from-holiday-5053052",
+   "source": "Investing.com",
+   "feed": "investing-stocks",
+   "lang": "en",
+   "cats": [
+    "stocks",
+    "us"
+   ],
+   "time": "2026-11-28T00:18+02:00",
+   "score": 0
+  },
+  {
    "id": "c22a923e6444bf",
    "title": "How to Live Calmly, Despite Stock Market Whiplash",
    "snippet": "Nvidia has been down, up, and down again, and the market has followed. But there’s no need for long-term, diversified investors to alter their course, our columnist says.",
@@ -282,6 +455,20 @@
    "score": 0
   },
   {
+   "id": "d184d50875c996",
+   "title": "Brazil central bank to offer $2 billion in dollar auctions Monday",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/brazil-central-bank-to-offer-2-billion-in-dollar-auctions-monday-93CH-5053913",
+   "source": "Investing.com",
+   "feed": "investing-econ",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T23:53+02:00",
+   "score": 0
+  },
+  {
    "id": "146fc5a4d3c720",
    "title": "Even the price of toys is on the rise. How Americans are scaling back holiday plans",
    "snippet": "U.S. consumers face higher food, travel and gift costs in 2026 as inflation and Iran-war energy shocks pressure holiday budgets.",
@@ -297,69 +484,12 @@
    "score": 5
   },
   {
-   "id": "26163f183b7634",
-   "title": "enCore Energy receives Nasdaq notice for minimum bid price non-compliance",
-   "snippet": "",
-   "url": "https://www.investing.com/news/sec-filings/encore-energy-receives-nasdaq-notice-for-minimum-bid-price-noncompliance-93CH-5053899",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T23:41+02:00",
-   "score": 0
-  },
-  {
-   "id": "2681bf1aef78f4",
-   "title": "Longeveron appoints CEO Paul Lehr to board and approves retention bonus",
-   "snippet": "",
-   "url": "https://www.investing.com/news/sec-filings/longeveron-appoints-ceo-paul-lehr-to-board-and-approves-retention-bonus-93CH-5053891",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T23:36+02:00",
-   "score": 0
-  },
-  {
-   "id": "cfce455add5900",
-   "title": "IPST faces Nasdaq delisting risk over missing quarterly report",
-   "snippet": "",
-   "url": "https://www.investing.com/news/company-news/ipst-faces-nasdaq-delisting-risk-over-missing-quarterly-report-93CH-5053890",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-27T23:36+02:00",
-   "score": 0
-  },
-  {
-   "id": "0f682f13260b42",
+   "id": "1865062aa0354c",
    "title": "Why is Strategy stock gaining today?",
    "snippet": "",
    "url": "https://www.investing.com/news/stock-market-news/why-is-strategy-stock-gaining-today-93CH-5053886",
    "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T23:31+02:00",
-   "score": 0,
-   "also": []
-  },
-  {
-   "id": "7579e2dd8511aa",
-   "title": "Skydance director Gerald Cardinale buys $149,882 in stock",
-   "snippet": "",
-   "url": "https://www.investing.com/news/insider-trading-news/skydance-director-gerald-cardinale-buys-149882-in-stock-93CH-5053885",
-   "source": "Investing.com",
-   "feed": "investing-news",
+   "feed": "investing-stocks",
    "lang": "en",
    "cats": [
     "stocks"
@@ -368,66 +498,49 @@
    "score": 0
   },
   {
-   "id": "aa17f74c3eb5c8",
-   "title": "Cantor Equity Partners V schedules annual general meeting for December 29",
-   "snippet": "",
-   "url": "https://www.investing.com/news/sec-filings/cantor-equity-partners-v-schedules-annual-general-meeting-for-december-29-93CH-5053884",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T23:30+02:00",
-   "score": 0,
-   "also": []
-  },
-  {
-   "id": "da9225a44f30bb",
+   "id": "4e6688fcabf15c",
    "title": "Mexico stocks higher at close of trade; S&P/BMV IPC up 1.93%",
    "snippet": "",
    "url": "https://www.investing.com/news/stock-market-news/mexico-stocks-higher-at-close-of-trade-spbmv-ipc-up-193-5053883",
    "source": "Investing.com",
-   "feed": "investing-news",
+   "feed": "investing-stocks",
    "lang": "en",
    "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T23:30+02:00",
-   "score": 0,
-   "also": []
-  },
-  {
-   "id": "77a2fe2a3abeb6",
-   "title": "S&P revises France outlook to ’negative’ on mounting budget pressures, weak growth",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/sp-revises-france-outlook-to-negative-on-mounting-budget-pressures-weak-growth-5053881",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
+    "stocks",
     "us"
    ],
    "time": "2026-11-27T23:30+02:00",
-   "score": 0,
-   "also": []
+   "score": 0
   },
   {
-   "id": "296614e76195e7",
+   "id": "e5df2a813fea16",
    "title": "Canada stocks higher at close of trade; S&P/TSX Composite up 1.20%",
    "snippet": "",
    "url": "https://www.investing.com/news/stock-market-news/canada-stocks-higher-at-close-of-trade-sptsx-composite-up-120-5053880",
    "source": "Investing.com",
-   "feed": "investing-news",
+   "feed": "investing-stocks",
    "lang": "en",
    "cats": [
-    "us",
-    "stocks"
+    "stocks",
+    "us"
    ],
    "time": "2026-11-27T23:30+02:00",
-   "score": 0,
-   "also": []
+   "score": 0
+  },
+  {
+   "id": "299fb967d7f48c",
+   "title": "S&P revises France outlook to ’negative’ on mounting budget pressures, weak growth",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/sp-revises-france-outlook-to-negative-on-mounting-budget-pressures-weak-growth-5053881",
+   "source": "Investing.com",
+   "feed": "investing-econ",
+   "lang": "en",
+   "cats": [
+    "macro",
+    "us"
+   ],
+   "time": "2026-11-27T23:30+02:00",
+   "score": 0
   },
   {
    "id": "c9ed6165421e10",
@@ -533,7 +646,7 @@
   {
    "id": "4b16a7df3c3e72",
    "title": "Tech Stocks Jump as Investors Take a Break From AI Jitters",
-   "snippet": "Nasdaq finished its best week since April, while the Dow and S&P also ended the week strong.",
+   "snippet": "The Nasdaq composite finished its best week since April, while the Dow and S&P 500 also ended the week strong.",
    "url": "https://www.wsj.com/finance/stocks/stocks-poised-to-end-week-strong-as-investors-take-break-from-ai-jitters-ce6b2846?mod=rss_markets_main",
    "source": "WSJ",
    "feed": "wsj-markets",
@@ -739,34 +852,6 @@
    "score": 0
   },
   {
-   "id": "226c3782e8ddd3",
-   "title": "Market Swings Spooked Retail Traders—And Lifted CME Group Up 18%",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/market-swings-spooked-retail-tradersand-lifted-cme-group-up-18-5053438",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T22:11+02:00",
-   "score": 0
-  },
-  {
-   "id": "cdb9749152f327",
-   "title": "AI Chip Stocks Swung Wildly—While Warren Buffett’s Apple Climbed 26%",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/ai-chip-stocks-swung-wildlywhile-warren-buffetts-apple-climbed-26-5053436",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-27T22:11+02:00",
-   "score": 3
-  },
-  {
    "id": "877ee0ed517283",
    "title": "US tech stocks rise in latest market swing",
    "snippet": "All-powerful AI trade has been eclipsed by wild moves in a market struggling to price future earnings",
@@ -823,6 +908,20 @@
     "stocks"
    ],
    "time": "2026-11-27T21:41+02:00",
+   "score": 0
+  },
+  {
+   "id": "32209234b24d69",
+   "title": "Zelenskyy urges US to pressure Putin and questions Trump’s reference to Putin as a ‘friend’",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZHZncjd6TjJOQy1tZVlWUVowZ0hBY2NWMjN2d1k3WXdzUlB4VUdlbl9kMDdLTnZ2bzY5eGlZUGFNSEQxYVNCaVNRYWlBTkZneUxoZm5ub1Q2MVd3QjFza1BJWWhiWEQ2Tk1aUE1jVlByV0h6NldmUC1NOUQ5WW5ka3pqdUFwaXI1SEd4VzNzUGNoZ2c5WG5Yd3dFeWpyY0taN3c?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-27T21:33+02:00",
    "score": 0
   },
   {
@@ -1073,21 +1172,6 @@
    "lang": "en",
    "cats": [
     "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T20:24+02:00",
-   "score": 0
-  },
-  {
-   "id": "7e426f908ffb32",
-   "title": "Volatile stock market confronts jobs data, rate view as next tests",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/sliding-stock-market-confronts-jobs-data-rate-view-as-next-tests-5053316",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro",
     "stocks"
    ],
    "time": "2026-11-27T20:24+02:00",
@@ -1431,24 +1515,10 @@
    "score": 5
   },
   {
-   "id": "a3822424ff4eb3",
-   "title": "Death toll in Pakistan building collapse rises to 8 with about 10 missing",
+   "id": "912441f4f7afc7",
+   "title": "האמריקאים הוציאו 7.1 מיליארד דולר בקניות אונליין בחג ההודיה",
    "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQQVdFOTRHX1VCZDE1Qkl5RVAxT2pFNS1ZcHI1blh2dzJVdUt6M3lBZWdxWFJYYkNjWDgweTQ5T2VCa0hQa2plLWE5R0lDMm5rZXB5TEJrVklrWU05U3ZweGVjTXgxQTF5VW5ybmx2ZVZVZHNVZm92RzBxcHkyVDRwNHphU25WZHhPNndScEpyc3duX1lvUEdaNTB3?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T18:23+02:00",
-   "score": 5
-  },
-  {
-   "id": "4b945b21311d8d",
-   "title": "מניית אנתרופיק חזרה מעל מחיר ההנפקה עם זינוק של כ-9%",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82U3VGbTlBR1c4eW9VNmlzWWlZYVcxcERYVVFyckhpcjNHVTJFVXQ3bjNiT1dfNUxhM3B0cWN0c3d3cVVLQlRBNkxmZlhYRjNRQTZ3U1BJY2ZSa3ZFcEtVZ2d1bjV2QVZDYkpkVA?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5HZ3c4MEZ5OS12QW15Rk9VeVFsSV93SjBrQW96dkVva1NxVE1VMjI0aVV4RGlQRkdzbmVQN0ZJekxEemdsbjB2T0ltT2VnSkc1RVRwazllZ29kMWxQaC12Ty1xX1ViTVpncUhqUVVUdm0?oc=5",
    "source": "ביזפורטל",
    "feed": "bizportal",
    "lang": "he",
@@ -1456,8 +1526,8 @@
     "il",
     "stocks"
    ],
-   "time": "2026-11-27T18:18+02:00",
-   "score": 0
+   "time": "2026-11-27T18:31+02:00",
+   "score": 3
   },
   {
    "id": "f0c318c989b0e3",
@@ -1500,21 +1570,6 @@
     "us"
    ],
    "time": "2026-11-27T18:00+02:00",
-   "score": 0
-  },
-  {
-   "id": "01a1f84990df37",
-   "title": "Explainer-What is China’s ’national team’ and can it stop the stock market slide?",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/explainerwhat-is-chinas-national-team-and-can-it-stop-the-stock-market-slide-5053434",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro",
-    "stocks"
-   ],
-   "time": "2026-11-27T17:54+02:00",
    "score": 0
   },
   {
@@ -1803,20 +1858,6 @@
    "score": 0
   },
   {
-   "id": "2bc0358f941a9d",
-   "title": "Taiwan’s economy expected to grow at its fastest rate in nearly 50 years due to AI demand",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/taiwans-economy-expected-to-grow-at-its-fastest-rate-in-nearly-50-years-due-to-ai-demand-5053540",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro"
-   ],
-   "time": "2026-11-27T15:48+02:00",
-   "score": 0
-  },
-  {
    "id": "da6b0695385970",
    "title": "Binance to launch tokenized IPO program after regulatory approval: Yi He",
    "snippet": "Binance is hiring for equity capital markets roles, including an analyst to develop tokenized equity products and assess prospective issuers.",
@@ -2020,6 +2061,20 @@
    ],
    "time": "2026-11-27T14:32+02:00",
    "score": 0
+  },
+  {
+   "id": "910f2c4509bf94",
+   "title": "Republicans rethink tariffs, giving Democrats an opening to challenge Trump",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPOXJMNWlyS1R4eWNOblA5OEJ4eFktZUlZY3c3eGNMNjJ3MzNKWWR6b0xSdzIxOHh2Wm5WbEhlLTY3YlN2THhUVVV3VVpoc3AwdVBhR1M2V0ZudTR5Nlhac0hVQUV1UXh4YmU4ODlxZ0FhVDI5SUtwUlloN2dOR05lWjkzQXpMX29KM3Z0c0YwV18zUTZOWDRBZ1BR?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T14:30+02:00",
+   "score": 5
   },
   {
    "id": "646a2d6ccaf8fd",
@@ -3110,21 +3165,6 @@
    "score": 0
   },
   {
-   "id": "fdab6b3a342728",
-   "title": "Gold Rises as Rebound in Tech Stocks Helps Revive Risk Appetite",
-   "snippet": "Gold rose as a rally in stocks helped the precious metal recover from a rout that sent bullion prices to a 15-month low.",
-   "url": "https://www.bloomberg.com/news/articles/2026-11-26/gold-steadies-as-fed-rate-path-and-ai-stocks-frame-volatile-week",
-   "source": "Bloomberg",
-   "feed": "bloomberg-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T01:53+02:00",
-   "score": 0
-  },
-  {
    "id": "c1cbb820fe2c1f",
    "title": "‘Dollar Storm:’ Greenback on Track for Longest Winning Run Since 2024",
    "snippet": "The dollar climbed toward its longest monthly winning streak in two years as a rupture in the artificial intelligence trade and rising interest rates spur demand for safe-haven assets.",
@@ -3194,6 +3234,20 @@
     "stocks"
    ],
    "time": "2026-11-27T01:05+02:00",
+   "score": 0
+  },
+  {
+   "id": "e774cf4b693ec3",
+   "title": "Argentina bans its central bank from printing money for the government",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNTkVQY1JFc2tERmJpZi1UX1ByaEtYMGp2MGlJeDJocHpPLVd2SkhhakxJLXEtek0tSFk3ZHp0N2tBLW9JYng1TW1vN1ZCazkwYVFxMjVuLTVlbm9hQm1PbEMybFZLVC1yNmI1X3V5dTcxbGdWX0tRWmdicjE1elFZdjB3eDBaLXlGdUN2YTRDcXA2a1ROaFB5X2FJeld3SmFObnZibzcwYVZPS3dPeEdiLTVjckZjR1NOVVNLMV9Gbzk?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-27T00:21+02:00",
    "score": 0
   },
   {
@@ -3295,20 +3349,6 @@
    "cats": [
     "il",
     "stocks"
-   ],
-   "time": "2026-11-26T23:04+02:00",
-   "score": 0
-  },
-  {
-   "id": "94a14feae65b79",
-   "title": "NBA Scores & Daily News | NBA Stats, Scores & News Today",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiP0FVX3lxTFBwMFNyak8wbjBIcmRoX2hyLUNMU3o2NzFoa3UtTFl4UUFQU18tWnVzUWxhZGsxRS1IRXFWdWhoVQ?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
    ],
    "time": "2026-11-26T23:04+02:00",
    "score": 0
@@ -3633,20 +3673,6 @@
    "score": 0
   },
   {
-   "id": "ac045498bb4061",
-   "title": "Trump calls the pre-election GDP figures 'fake' and demands an investigation of Commerce Department",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSWs0NUw0T1MxU0FFajZoSzUzQ2tCblZyZGhDc25mSVpXV0NpczlfWHpwaWdaUEE0T3lFSXdhYl9oUVZ3cTV1ei01aXprNTBoYUJCbG02THdJeGVISENOWjdrVzJpb2pxZEI5aU94VmFCTWU4ckR5MjFjZ2JDMzFibl9WVGZ2Q09PeVo5LXc1WQ?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "macro"
-   ],
-   "time": "2026-11-26T18:55+02:00",
-   "score": 6
-  },
-  {
    "id": "02162572745439",
    "title": "בורוסת אירופה ננעלו בעליות חדות",
    "snippet": "בורסת פרנקפורט זינקה במעל 2% • קרב על ענקית הטבק הבריטית: אלטריה ו-Japan Tobacco שוקלות לרכוש את אימפריאל ברנדס • פבלו הרננדס דה קוס, נגיד הבנק המרכזי של ספרד לשעבר צפוי להתמנות לנשיא הבנק המרכזי האי…",
@@ -3924,6 +3950,21 @@
    "score": 0
   },
   {
+   "id": "b7374b986297c5",
+   "title": "China and other US trading partners hit back at Trump’s new tariff plans",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVWQ3MnMzTlQ5Y2lUTW9RTzloTmp3MmtycjBUbmZUOTExYWNsVmlXX1JmLVJGYUYyRjNHSGV1b2hzLWhWclNBRDRZb2hyQ2UxSE9tYktjUTBKR2VDU2w1YlZlU0xaZ0JSMlQ1ZzhwMEJpSVk5N05XbHhnNi1ESktvTVNGNlZpMkNjX0dUNHdvLWJ2YTVqeDFv?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "macro",
+    "us"
+   ],
+   "time": "2026-11-26T16:13+02:00",
+   "score": 5
+  },
+  {
    "id": "5b7b6e14c027a4",
    "title": "Millions of people to see average monthly mortgage payments rise by £100",
    "snippet": "More people face higher mortgage repayments when they roll off a fixed deal than previously estimated.",
@@ -3965,6 +4006,20 @@
    ],
    "time": "2026-11-26T15:40+02:00",
    "score": 4
+  },
+  {
+   "id": "d2e3260d97fdad",
+   "title": "Trump heads to Arizona next week for a high-stakes expansion of TSMC's computer chip factories",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPbVFCZEVvMWJxMnFTWE96SjlweXVka0V5WC1FVTF4R0IzX3lpODRfTzM5dDhfSWNrRS1iNXdzRWJZME1odmRCY2JMUXJMOENabjBUNzJKMS1lYW5SN1A2bTRrU2hOTXpOUEszSEQ2aTZMeG95VXNMVFltUzNJWHNxbVpKZnAwOFVMQk1KNVFyRFJ4NmctZUMzYw?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-26T15:32+02:00",
+   "score": 0
   },
   {
    "id": "ef3890d5b18e98",
@@ -4010,20 +4065,6 @@
    ],
    "time": "2026-11-26T14:46+02:00",
    "score": 4
-  },
-  {
-   "id": "10bc43f94ed603",
-   "title": "J.P. Morgan sees Indian stocks rise further in 2027 after 'great comeback' of 2026",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQWRmQXRtWGtJcjVxUnJtb3JhWHItaTMtanZUcll1emlBaUFzZU1Eay11ZV9neGRlVnRKMXlMNDVnTDkwMDdjeHVMcUJhRldlUnVzZy11Q2ZYT05Mb3ZZWGRYSDFKT0dtM0t4Z2IweGpmZDZKR2pOSjRHSW5KRE1JQXpWX1VBRlpWTDgtdllpNFprV3RjTUYwWkZFSGo4cEJ3dDlaeUNYU0s4dm9DYUNhWV9qdGRfTUFqUkpDaA?oc=5",
-   "source": "Reuters",
-   "feed": "reuters",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-26T14:37+02:00",
-   "score": 0
   },
   {
    "id": "814aa4db8ccb06",
@@ -4129,21 +4170,6 @@
    "score": 0
   },
   {
-   "id": "8e5ea026fffa9d",
-   "title": "יבואנית אביזרי רכב תשלם 60 אלף שקל לעובד שפוטר",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ETjF4UjBRRXN3bFNFSWkzeGtJMkEtUE9FSWpMcWt0eEhna0xoeTRkZ0dwZDRHTm54U2kzVVliM1FLS1N5d3JlY1NGaDdGcDhFQ2RlbkFKZ1l6d056WFBNaDFEZXNpNHc?oc=5",
-   "source": "ביזפורטל",
-   "feed": "bizportal",
-   "lang": "he",
-   "cats": [
-    "il",
-    "stocks"
-   ],
-   "time": "2026-11-26T13:22+02:00",
-   "score": 0
-  },
-  {
    "id": "dd8c9a1e544909",
    "title": "Drivers over 70 face eye tests every three years under new plans",
    "snippet": "The changes could see drivers over 70 stripped of licences if they do not meet standards.",
@@ -4171,20 +4197,6 @@
    ],
    "time": "2026-11-26T12:48+02:00",
    "score": 0
-  },
-  {
-   "id": "fc9fee2045c398",
-   "title": "Moment pier in San Francisco collapses in heavy waves caused by King Tides",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQWWtlUjNnYmQxT3JGbDctRXE0b3FfWHFRTWVtUU1MSmhFdkVRV1lJM0ozbmN2dkxaQWVlUnNXQWVWWExqU2NwTWFDSEpxYTJlVGFNNEFQbThWU1ZlRVpTSG5wcFNocGpNTGdnWllpRlJ4YktsUUJkUjlNUTBFWk0ybmlQSjBWQ2pKTDQyUjBwU0RLa0ViOXcwZ29nV3Y4WDdiUWh1LUhDQ09vSGhRN2NiR1kxQkFsUE5MX1BFWk9nNE9ZT09pUXFfemNHWm8?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-26T12:15+02:00",
-   "score": 5
   },
   {
    "id": "00e66fdfe60727",
@@ -4226,20 +4238,6 @@
    "cats": [
     "il",
     "stocks"
-   ],
-   "time": "2026-11-26T11:47+02:00",
-   "score": 0
-  },
-  {
-   "id": "da52d3b2a737b8",
-   "title": "Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNN2V2OUxYWk12T2E3d0g5SFVQNDA2LW9qdkNtZDZJdmVtelh4amRUNEtNYXNfN1hraG9KcnhnSFlpbmZ5TXlpSkVrVVgxa3lMaUpydlRyeHVGREN5aGpUN1BDUEJpYnE1dC1lTGh3OHR1UWkzZVJpMkdPaEkzd1padXdRYnNrQXBJYnlaVEc1bVVVUQ?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
    ],
    "time": "2026-11-26T11:47+02:00",
    "score": 0
@@ -4580,6 +4578,20 @@
    "score": 0
   },
   {
+   "id": "d1cfe9cf38a481",
+   "title": "Spain's economic gains miss voters' wallets as Sanchez seeks reelection",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOWEdmb0FVbUFfbnQyOXFueWFINm1CTGVQMFFkMXlCRUhXejVjM29FZFhLeG5rcVc1bTRwcGFHbWJUbWFqajA1cHI4bWhTTHNyWk1GaWN2WDVnbGVaajc3bHo3dnBFWWdNLXRXSU1IeGlqNTA4VW9wM1RVRTJQWWxZQmt5MklOT3BXLXJjLVFxZmdoRTFyVTc4cktlMlhReDNpd1JJaFJhemQ1c1RoelBkYV96TjJMZw?oc=5",
+   "source": "Reuters",
+   "feed": "reuters",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-26T07:03+02:00",
+   "score": 0
+  },
+  {
    "id": "9a9203b90484d4",
    "title": "Mexico’s most powerful cartels adapt as arrests and leadership battles reshape their ranks",
    "snippet": "",
@@ -4667,18 +4679,18 @@
    "score": 0
   },
   {
-   "id": "83fe29255f9597",
-   "title": "Ábrego García, a Salvadoran mistakenly deported by US, goes to Spain but hopes to return after Trump",
+   "id": "fd97db851ef336",
+   "title": "US-led consortium agrees to acquire assets from Russian oil company Lukoil",
    "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOTUg0MWh1LW9tMEdseW5mY3VPeXM3TTByTVljMmR6ZjBiU3EwWE9FbWhndnRyT2xmMXV1MF9jM003RHZpWEJIODdUNFU5ZkFzRmRnVTlyU2l4OFBycWp4bDlrUjdYdzJHVEI3YkZMWWFmX09kSndiQVFCLUNHSkNIVHRQMElaLTgtSzdLM2U4Y3Zjc2g3OXJXcHlmTHVvb0FDRk82X1RTQWFEUQ?oc=5",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdVlVRi1aTHJHaEhQZkh0QmdYSk1IVkQ3bGc4Z21ZdUFhUFROZWE2QnYxVFM5OFd6WEZTMDlsNkViemFlSzRoU2RVRmdTUGZCbnZqTWhWZHg4M1JlWWtQN1JQNDhqa2prbWkzQ25sMjBNa2paR1cteEkxa1NreHZkRElfR2JFZTdYajR0QlFfcnZYNi0yTW5sb0ZDcEljR1pUaGVJMg?oc=5",
    "source": "AP",
    "feed": "ap",
    "lang": "en",
    "cats": [
     "us"
    ],
-   "time": "2026-11-26T03:51+02:00",
-   "score": 0
+   "time": "2026-11-26T04:10+02:00",
+   "score": 4
   },
   {
    "id": "5fa8791d106471",
@@ -4693,20 +4705,6 @@
     "stocks"
    ],
    "time": "2026-11-26T03:35+02:00",
-   "score": 0
-  },
-  {
-   "id": "e8b9a8de98f4a4",
-   "title": "A postponed Macy’s Thanksgiving Day Parade to celebrate a milestone with Blue Hippo and Bluey",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORm14bFpCNEQ3SVZfb1VRZEpuWGw3dXpPVjZYRS1zTFJvU2Q2cEZBMGVJNGNOZjVQMGtPTzJWeXo0WldmV0xzN0hjV2djWlRYMThidUZleHVNVTYxcFdBLW94UllVbG9jd0xQMTlyQ3FOdkNIQnpoODhsZmlsUFVEVXUwYzE4MFVaRDl0MGx4NWxLVTNMeXAtd0ZR?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-26T03:23+02:00",
    "score": 0
   },
   {
@@ -4737,6 +4735,20 @@
    ],
    "time": "2026-11-26T02:28+02:00",
    "score": 10
+  },
+  {
+   "id": "192a80cb70ab06",
+   "title": "FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUmh3LVh3RnFNUW5hVjJWcXlzOERNTTloeEdIbnRiRGVSV1B4UzJaWVhudzNvS0Q4YlRvN1pUTThRVjhka1JpYUFBWC1RWW1hYnFxT3RxM0VoMERWRmlJdmd4LXJJR0F5S083cThjNDFWay1zRWVPcmRUeXR5WWVuQ01ObUVGRVZBOGFzTDdobUxMUQ?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-26T01:42+02:00",
+   "score": 0
   },
   {
    "id": "3a0a66e559c080",
