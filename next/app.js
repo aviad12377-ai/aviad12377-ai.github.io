@@ -121,7 +121,7 @@
     return '../' + href.replace(/^\.\//, '');
   }
   function recordHistory(net, missing) {
-    if (!signedIn() || !window.Portal || missing || !Number.isFinite(net)) return;
+    if (!window.Portal || missing || !Number.isFinite(net)) return;
     var hist = Portal.data.history;
     if (!Array.isArray(hist)) Portal.data.history = hist = [];
     var day = new Date().toISOString().slice(0, 10), last = hist[hist.length - 1];
@@ -234,13 +234,28 @@
       options: options, standing: standing, realEstate: re[0] || null, realEstateList: re, debts: s.liabs, goals: goals, steps: steps, cats: s.cats
     };
   }
-  function snap() { return signedIn() ? realSnap() : demoSnap(); }
+  function snap() { return (signedIn() || hasLocalData()) ? realSnap() : demoSnap(); }
   function demoBadge(sn) { return sn.demo ? DEMO : ''; }
   function localBanner() {
     if (signedIn() || !hasLocalData()) return '';
-    return '<div class="banner" role="status">יש נתונים במכשיר הזה. נכנסים לחשבון כדי לראות אותם כאן, לא את נתוני הדוגמה. <button type="button" id="banner-signin">כניסה</button></div>';
+    try { if (sessionStorage.getItem('next-local-note') === '1') return ''; } catch (e) {}
+    return '<div class="banner" role="status"><span>הנתונים שלך שמורים במכשיר הזה בלבד. כניסה לחשבון שומרת אותם גם בענן.</span><span class="banner-acts"><button type="button" id="banner-signin">כניסה</button><button type="button" id="banner-hide" aria-label="סגירת ההודעה">סגירה</button></span></div>';
   }
-  function bindBanner() { var b = $('#banner-signin'); if (b && window.PortalCloud) b.addEventListener('click', function () { PortalCloud.openDialog(); }); }
+  function bindBanner() {
+    var b = $('#banner-signin'); if (b && window.PortalCloud) b.addEventListener('click', function () { PortalCloud.openDialog(); });
+    var x = $('#banner-hide'); if (x) x.addEventListener('click', function () { try { sessionStorage.setItem('next-local-note', '1'); } catch (e) {} var el = x.closest('.banner'); if (el) el.remove(); });
+  }
+  function welcome(S) {
+    if (!S.demo) return '';
+    return '<section class="welcome" aria-labelledby="wl-h"><h2 id="wl-h">כל הכסף שלך במקום אחד</h2>' +
+      '<p>פנסיה, חסכונות, השקעות, משכנתא והלוואות בתמונה אחת, עם השוואה לנתונים הרשמיים.</p>' +
+      '<ul class="wl-points"><li>' + ic('shield') + '<span>בלי סיסמאות לבנק. מזינים יתרה ביד או טוענים את קובץ המסלקה הפנסיונית.</span></li>' +
+      '<li>' + ic('key') + '<span>הנתונים נשמרים במכשיר שלך. חשבון הוא רשות, לגיבוי ולמעבר בין מכשירים.</span></li>' +
+      '<li>' + ic('bank') + '<span>מקורות רשמיים: בנק ישראל ורשות שוק ההון, עם תאריך העדכון ליד כל נתון.</span></li></ul>' +
+      '<div class="wl-acts"><a class="btn pri" href="../me.html#maslaka">הזנת הנתונים שלי</a><a class="btn sec" href="#/compare">השוואות בלי הרשמה</a></div>' +
+      '<p class="help">מידע בלבד, לא ייעוץ. <a href="#/about">איך זה עובד ומאיפה הנתונים</a></p></section>' +
+      '<h2 class="sec">כך זה נראה, עם נתוני דוגמה</h2>';
+  }
 
   /* ---------- shell ---------- */
   var TABS = [
@@ -265,6 +280,7 @@
       '<span id="account-slot"></span>' +
       '<a class="iconbtn" href="#/news/alerts" aria-label="התראות">' + ic('bell') + '</a>' +
       '<a class="iconbtn" href="#/me" aria-label="האזור האישי"><span class="avatar" aria-hidden="true">' + initial + '</span></a>';
+    document.title = (current() === '/' ? '' : title + ' · ') + 'הכסף שלי';
     try { window.dispatchEvent(new Event('portal-chrome')); } catch (e) {}
     requestAnimationFrame(paintAvatar);
   }
@@ -409,7 +425,7 @@
       return step(String(i + 1), tn[0], tn[1], it.t, it.s, it.href);
     }).join('') || '<p class="muted">אין כרגע צעדים דחופים.</p>';
     main().innerHTML =
-      localBanner() +
+      localBanner() + welcome(S) +
       '<div class="grid2"><div class="stack">' +
       '<section class="hero" aria-labelledby="nw-l"><div class="lbl" id="nw-l">שווי נקי ' + demoBadge(S) + '</div>' +
       '<div class="big" id="nw">' + ils(nw) + '</div><div class="chg" id="nwchg"></div>' +
@@ -419,7 +435,7 @@
       '</div><div class="stack">' +
       '<section class="card" aria-labelledby="st-h"><div class="card-h"><h2 id="st-h">הצעדים הבאים</h2>' + demoBadge(S) + '</div>' + stepsHtml + '</section>' +
       '<section aria-labelledby="br-h"><h2 class="sec" id="br-h">הסקירה האחרונה של הדסק</h2><div id="brief"><div class="card"><div class="skel h"></div><div class="skel l"></div><div class="skel l" style="width:80%"></div></div></div></section>' +
-      '<section aria-labelledby="mk-h"><h2 class="sec" id="mk-h">שווקים</h2><div class="mkts" id="mkts">' + Array(4).join('<div class="mkt"><div class="skel l" style="width:60%"></div><div class="skel h"></div></div>') + '</div></section>' +
+      '<section aria-labelledby="mk-h"><h2 class="sec" id="mk-h">שווקים</h2><div class="mkts" id="mkts" tabindex="0" role="group" aria-label="מדדים ושערים">' + Array(4).join('<div class="mkt"><div class="skel l" style="width:60%"></div><div class="skel h"></div></div>') + '</div></section>' +
       '</div></div>';
     bindBanner();
     var cur = Math.min(12, Math.max(1, vals.length - 1));
@@ -489,13 +505,13 @@
     main().innerHTML =
       localBanner() +
       '<section class="hero"><div class="lbl">כל החסכונות ' + demoBadge(S) + '</div><div class="big">' + ils(tot) + '</div>' +
-      (mgain ? '<div class="chg"><span class="gain">▲ ' + ils(mgain) + '</span> <span class="muted">החודש</span></div>' : '<div class="chg muted">יתרות שנשמרו בחשבון</div>') +
+      (mgain ? '<div class="chg"><span class="gain">▲ ' + ils(mgain) + '</span> <span class="muted">החודש</span></div>' : '<div class="chg muted">' + (signedIn() ? 'יתרות שנשמרו בחשבון' : 'יתרות שנשמרו במכשיר') + '</div>') +
       feeLine(accounts) + '</section>' +
       (accounts.length ? ('<section class="card" style="margin-top:12px"><div class="alloc" role="img" aria-label="חלוקת החסכונות">' + accounts.map(function (a, i) { return '<i style="width:' + (tot ? (a.bal / tot * 100).toFixed(1) : 0) + '%;background:' + a.color + ';animation-delay:' + i * 60 + 'ms"></i>'; }).join('') + '</div>' +
       '<div class="list">' + accounts.map(function (a) {
         return '<button class="row" data-acc="' + a.id + '"><span class="ic" style="background:color-mix(in srgb,' + a.color + ' 15%,transparent);color:' + a.color + '">' + ic(a.ic) + '</span><span class="tx"><span class="t">' + esc(a.name) + '</span><span class="s">' + esc(a.sub) + (a.flag ? ' · <b class="loss">דמי ניהול גבוהים</b>' : '') + '</span></span><span class="v"><b>' + ils(a.bal) + '</b>' + (a.m ? '<small class="' + cls(a.m) + '">' + pct(a.m, true) + '</small>' : '') + '</span>' + ic('chev').replace('<svg', '<svg class="chev"') + '</button>';
       }).join('') + '</div></section>') : '<section class="card empty" style="margin-top:12px"><b>עוד אין חסכונות רשומים</b>אחרי הכניסה יופיעו הקרנות והפיקדונות שלך.</section>') +
-      '<h2 class="sec">יעדים</h2><section class="card">' + ((S.goals && S.goals.length) ? S.goals.map(function (g) { var pr = g.tgt ? Math.min(100, g.cur / g.tgt * 100) : 0; return '<div style="padding:6px 0"><div style="display:flex;justify-content:space-between;gap:8px"><b>' + esc(g.name) + '</b><span class="muted">' + ils(g.cur) + ' מתוך ' + ils(g.tgt) + '</span></div><div class="prog" aria-label="' + Math.round(pr) + ' אחוז"><i style="width:' + pr + '%"></i></div></div>'; }).join('') : '<p class="muted">עדיין אין יעדים. אפשר להוסיף ב<a href="../goals.html">עמוד היעדים</a>.</p>') + '</section>' +
+      '<h2 class="sec">יעדים</h2><section class="card">' + ((S.goals && S.goals.length) ? S.goals.map(function (g) { var pr = g.tgt ? Math.min(100, g.cur / g.tgt * 100) : 0; return '<div style="padding:6px 0"><div style="display:flex;justify-content:space-between;gap:8px"><b>' + esc(g.name) + '</b><span class="muted">' + ils(g.cur) + ' מתוך ' + ils(g.tgt) + '</span></div><div class="prog" role="img" aria-label="' + Math.round(pr) + ' אחוז"><i style="width:' + pr + '%"></i></div></div>'; }).join('') : '<p class="muted">עדיין אין יעדים. אפשר להוסיף ב<a href="../goals.html">עמוד היעדים</a>.</p>') + '</section>' +
       '<h2 class="sec">כלים</h2><div class="tiles">' +
         tile('#/compare/funds?type=pension', 'השוואת קרנות', 'מצא מסלול זול יותר') +
         tile('../retirement.html', 'תחזית פנסיה', 'כמה תקבל בפרישה') +
@@ -541,7 +557,7 @@
       var optCard = opt ? ('<a class="card cardlink" href="#/invest/options" style="margin-top:12px;display:block"><div class="card-h"><h2>אופציות עובדים</h2>' + ic('chev').replace('<svg', '<svg class="chev" style="width:20px;height:20px;color:var(--muted)"') + '</div>' +
           '<div class="kv"><div><span>שווי הבשילו</span><b>' + ils(oi) + '</b></div><div><span>שווי כל המנות</span><b>' + ils(oa) + '</b></div></div><div class="prog"><i style="width:' + (opt.total ? (opt.vested / opt.total * 100) : 0) + '%"></i></div><div class="muted" style="font-size:14px">' + n(opt.vested) + ' מתוך ' + n(opt.total) + ' ניתנות למימוש ' + demoBadge(S) + '</div></a>') : '<a class="card cardlink" href="#/invest/options" style="margin-top:12px;display:block"><div class="card-h"><h2>אופציות עובדים</h2>' + ic('chev').replace('<svg', '<svg class="chev" style="width:20px;height:20px;color:var(--muted)"') + '</div><p class="muted" style="margin:0">אין מענקים רשומים עדיין.</p></a>';
       $('#inv').innerHTML =
-        '<section class="hero"><div class="lbl">תיק ההשקעות ' + demoBadge(S) + '</div><div class="big">' + ils(pv) + '</div><div class="chg">' + (pc ? '<span class="' + cls(g) + '">' + arrow(g) + ' ' + ils(g) + ' (' + pct(g / pc * 100, true) + ')</span> <span class="muted">מאז הקנייה</span>' : '<span class="muted">מחירים חיים מהשוק</span>') + '</div>' + (S.demo ? '<p class="help">מחירים אמיתיים מהשוק · כמויות לדוגמה</p>' : '') + '</section>' +
+        '<section class="hero"><div class="lbl">תיק ההשקעות ' + demoBadge(S) + '</div><div class="big">' + ils(pv) + '</div><div class="chg">' + (pc ? '<span class="' + cls(g) + '">' + arrow(g) + ' ' + ils(g) + ' (' + pct(g / pc * 100, true) + ')</span> <span class="muted">מאז הקנייה</span>' : '<span class="muted">שערים מתעדכנים מהשוק</span>') + '</div>' + (S.demo ? '<p class="help">מחירים אמיתיים מהשוק · כמויות לדוגמה</p>' : '') + '</section>' +
         '<section class="card" style="margin-top:12px"><div class="card-h"><h2>אחזקות</h2><a class="more" href="../portfolio.html">ניהול ‹</a></div><div class="list">' + holdHtml + '</div></section>' +
         optCard + stBlock +
         '<h2 class="sec">נכסים נוספים</h2><section class="card"><div class="list">' + assetRows +
@@ -585,7 +601,7 @@
     drawBar('אופציות עובדים', true);
     var S = snap(), o = S.options;
     if (!o) {
-      main().innerHTML = localBanner() + '<section class="card empty"><b>אין עדיין מענקי אופציות</b>אפשר לרשום אותם ב<a href="../options.html">יומן האופציות</a>. הנתונים נשמרים בחשבון שלך.</section>';
+      main().innerHTML = localBanner() + '<section class="card empty"><b>אין עדיין מענקי אופציות</b>אפשר לרשום אותם ב<a href="../options.html">יומן האופציות</a>. ' + (signedIn() ? 'הנתונים נשמרים בחשבון שלך.' : 'הנתונים נשמרים במכשיר שלך.') + '</section>';
       bindBanner();
       return;
     }
@@ -860,15 +876,15 @@
     var theme = localStorage.getItem('v2-theme') || 'auto';
     var in_ = signedIn(), u = in_ && PortalCloud.user;
     var name = greetName() || (u && u.email) || 'אורח';
-    var sub = in_ ? ((u && u.email) || 'מחובר') : (hasLocalData() ? 'יש נתונים במכשיר · נכנסים לחשבון כדי לראות אותם כאן' : 'בלי כניסה מוצגים נתוני דוגמה');
+    var sub = in_ ? ((u && u.email) || 'מחובר') : (hasLocalData() ? 'הנתונים שמורים במכשיר הזה בלבד' : 'עוד אין נתונים. עד שמזינים, מוצגים נתוני דוגמה');
     var initial = String(name).trim().charAt(0).toUpperCase();
     main().innerHTML =
       '<section class="card" style="display:flex;align-items:center;gap:14px"><span id="me-avatar"><span class="avatar" style="width:56px;height:56px;font-size:24px">' + esc(initial) + '</span></span><div style="flex:1;min-width:0"><b style="font-size:18px">' + esc(name) + '</b><div class="muted" style="font-size:15px">' + esc(sub) + '</div></div>' +
       (in_ ? '<button type="button" class="btn sec" id="me-account">החשבון</button>' : '<button type="button" class="btn pri" id="me-signin">כניסה</button>') + '</section>' +
       '<h2 class="sec">כלים</h2><section class="card"><div class="list">' +
-      [['../report.html', 'doc', 'דוח פיננסי אישי', 'עמוד אחד להדפסה או PDF'], ['../tax.html', 'calc', 'עוזר מס', 'נקודות זיכוי, החזר ומס על אופציות'], ['../retirement.html', 'umbrella', 'תחזית פנסיה', 'גבוה, בינוני ונמוך'], ['../avatar.html', 'target', 'האווטאר שלי', 'מותאם לפי סלפי, בדפדפן בלבד']].map(rowLink).join('') + '</div></section>' +
+      [['../report.html', 'doc', 'דוח פיננסי אישי', 'עמוד אחד להדפסה או PDF'], ['../tax.html', 'calc', 'עוזר מס', 'נקודות זיכוי, החזר ומס על אופציות'], ['../retirement.html', 'umbrella', 'תחזית פנסיה', 'גבוה, בינוני ונמוך'], ['../avatar.html', 'target', 'האווטאר שלי', 'מותאם לפי סלפי, בדפדפן בלבד'], ['#/tools', 'plus', 'כל הכלים', 'הזנת נתונים, תכנון ומחשבונים']].map(rowLink).join('') + '</div></section>' +
       '<h2 class="sec">תצוגה</h2><section class="card"><div class="seg" id="th" role="group" aria-label="ערכת צבעים"><button data-v="auto" aria-pressed="' + (theme === 'auto') + '">לפי המכשיר</button><button data-v="light" aria-pressed="' + (theme === 'light') + '">בהיר</button><button data-v="dark" aria-pressed="' + (theme === 'dark') + '">כהה</button></div></section>' +
-      '<h2 class="sec">עזרה</h2><section class="card"><div class="list">' + [['../feedback.html', 'chat', 'שלח משוב', 'מה לשפר'], ['../privacy.html', 'shield', 'פרטיות', 'מה נשמר ואיפה'], ['../index.html', 'home', 'לגרסה הנוכחית של האתר', '']].map(rowLink).join('') + '</div></section>' +
+      '<h2 class="sec">עזרה</h2><section class="card"><div class="list">' + [['../feedback.html', 'chat', 'שלח משוב', 'מה לשפר'], ['#/about', 'info', 'איך זה עובד ומאיפה הנתונים', 'מקורות רשמיים ותאריכי עדכון'], ['../privacy.html', 'shield', 'פרטיות', 'מה נשמר ואיפה'], ['#/terms', 'doc', 'תנאי שימוש', ''], ['#/accessibility', 'check', 'הצהרת נגישות', ''], ['../index.html?classic=1', 'home', 'לתצוגה הקודמת של האתר', '']].map(rowLink).join('') + '</div></section>' +
       '<p class="help soon" style="text-align:center">בקרוב: מעקב הוצאות ומינויים</p>';
     segmented($('#th'), function (v) { localStorage.setItem('v2-theme', v); applyTheme(); });
     var si = $('#me-signin') || $('#me-account');
@@ -883,7 +899,7 @@
     route: route, replaceRoute: replaceRoute, go: go, drawBar: drawBar, drawTabs: drawTabs, main: main,
     $: $, $$: $$, ic: ic, esc: esc, ils: ils, pct: pct, n: n, cls: cls, arrow: arrow, rel: rel, load: load,
     toast: toast, openSheet: openSheet, closeSheet: closeSheet, signedIn: signedIn, snap: snap, ext: ext,
-    DEMO: DEMO, greetTitle: greetTitle, paintAvatar: paintAvatar, chart: chart, segmented: segmented
+    DEMO: DEMO, greetTitle: greetTitle, paintAvatar: paintAvatar, chart: chart, segmented: segmented, rowLink: rowLink, hasLocalData: hasLocalData
   };
 
   /* boot: wait for cloud session; defer siblings (news.js, avatar-next.js, extras.js) run before DOMContentLoaded */

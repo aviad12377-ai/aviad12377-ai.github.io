@@ -820,7 +820,7 @@
       return h('tr', { class: 'placeholder' }, cfg.cols.map(function (c, j) { return h('td', { text: j === 0 ? t('placeholder_row') + ' ' + i : '—' }); }));
     });
     return section(t('compare'), [
-      h('div', { class: 'tbl-wrap' }, [h('table', { class: 'cmp' }, [h('thead', null, [head]), h('tbody', null, body)])]),
+      h('div', { class: 'tbl-wrap', tabindex: '0' }, [h('table', { class: 'cmp' }, [h('thead', null, [head]), h('tbody', null, body)])]),
       h('p', { class: 'help', text: t('cmp_source') + ': ' + cfg.source })
     ], h('span', { class: 'badge amber', text: t('placeholder_badge') }));
   }
@@ -1045,7 +1045,7 @@
     var trackSel = h('select', { 'aria-label': t('track') });
     var provSel = h('select', { 'aria-label': t('provider') });
     var rankEl = h('p', { class: 'help' });
-    var tblHost = h('div', { class: 'tbl-wrap' });
+    var tblHost = h('div', { class: 'tbl-wrap', tabindex: '0' });
     var meta = h('div');
     var filters = h('div', { class: 'toolbar filters' }, [
       h('div', { class: 'field', style: 'flex:1 1 160px' }, [h('label', { text: t('cmp_search') }), search]),
@@ -1279,7 +1279,7 @@
       cfg.otherTracks.forEach(function (nm) { rows.push(h('tr', { class: 'placeholder' }, cfg.cols.map(function (c, j) { return h('td', { text: j === 0 ? t(nm) : '—' }); }))); });
     }
     return section(cfg.title || t('compare'), [
-      h('div', { class: 'tbl-wrap' }, [h('table', { class: 'cmp' }, [h('thead', null, [head]), h('tbody', null, rows)])]),
+      h('div', { class: 'tbl-wrap', tabindex: '0' }, [h('table', { class: 'cmp' }, [h('thead', null, [head]), h('tbody', null, rows)])]),
       h('p', { class: 'help', text: t('cmp_source') + ': ' + cfg.source })
     ], h('span', { class: 'badge amber', text: t('placeholder_badge') }));
   }
@@ -1590,7 +1590,7 @@
     home: function (main) {
       if (/(^|[#&])(s|strike|sell|spot|t1)=/.test(location.hash)) { location.replace('options.html' + location.hash); return; }
       var sumBox = h('div'), donutBox = h('div'), catBox = h('div'), optBox = h('div'), insBox = h('div'), peerBox = h('div');
-      var heroBox = h('div', { class: 'hero', 'aria-live': 'polite' }), pillBox = h('div', { class: 'pills', role: 'list' }), tileBox = h('div', { class: 'tiles' }), actBox = h('div');
+      var heroBox = h('div', { class: 'hero', 'aria-live': 'polite' }), pillBox = h('div', { class: 'pills', role: 'group' }), tileBox = h('div', { class: 'tiles' }), actBox = h('div');
       main.appendChild(heroBox); main.appendChild(pillBox); main.appendChild(tileBox); fundsLoaded();
       main.appendChild(h('h2', { class: 'sec-h', text: t('actions_title') })); main.appendChild(actBox);
       main.appendChild(section(t('net_worth'), [sumBox, editLink('top')]));
@@ -1631,7 +1631,7 @@
         var td = tileData(s);
         pillBox.innerHTML = '';
         [['all', t('pill_all'), '']].concat(td.map(function (x) { return [x.id, x.k, x.icon]; })).forEach(function (p) {
-          var b = h('button', { type: 'button', class: 'pill' + (pillSel === p[0] ? ' on' : ''), role: 'listitem', 'aria-pressed': pillSel === p[0] ? 'true' : 'false', onclick: function () { pillSel = p[0]; drawTiles(s); } }, [p[2] ? (p[2].length > 2 ? svgIcon(p[2]) : h('i', { 'aria-hidden': 'true', text: p[2] })) : null, h('span', { text: p[1] })]);
+          var b = h('button', { type: 'button', class: 'pill' + (pillSel === p[0] ? ' on' : ''), 'aria-pressed': pillSel === p[0] ? 'true' : 'false', onclick: function () { pillSel = p[0]; drawTiles(s); } }, [p[2] ? (p[2].length > 2 ? svgIcon(p[2]) : h('i', { 'aria-hidden': 'true', text: p[2] })) : null, h('span', { text: p[1] })]);
           pillBox.appendChild(b);
         });
         tileBox.innerHTML = '';
