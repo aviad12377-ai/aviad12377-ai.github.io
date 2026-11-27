@@ -78,8 +78,11 @@
     return '<div class="nc-kv">' + pairs.map(function (p) { return '<span>' + p[0] + '</span><span>' + p[1] + '</span>'; }).join('') + '</div>';
   }
   function scrollTop() {
-    var box = document.getElementById('nc-top') || document.getElementById('nc-focus');
-    if (box && box.scrollIntoView) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    requestAnimationFrame(function () {
+      var box = document.getElementById('nc-top') || document.getElementById('nc-focus');
+      if (!box) return;
+      window.scrollTo(0, Math.max(0, box.getBoundingClientRect().top + window.scrollY - 68));
+    });
   }
 
   var MORTGAGE_TYPES = [
@@ -431,7 +434,7 @@
         return { html: '<div class="nc-item"><b>' + name + ' · ' + label + '</b><p class="help">יש להזין יתרה, ריבית וחודשים שנותרו.</p></div>', net: null, title: name, value: '—', sub: 'חסרים נתונים' };
       }
       var sum = summarize(tr);
-      var marketTxt = '—', newPmt = null, feeTxt = '—', net = null, note = '';
+      var marketTxt = '—', newPmt = null, feeTxt = '—', feeNum = 0, net = null, note = '';
       if (tr.type === 't_consumer') {
         var cm = Lib().consumerMarketRate(rates, tr.months);
         if (cm && cm.averagePct != null) {
@@ -439,6 +442,7 @@
           marketTxt = rate(api, cm.averagePct);
           newPmt = neu.pmt;
           var fee = 60 + extraCosts;
+          feeNum = fee;
           feeTxt = money(api, fee);
           net = sum.totalPaid - neu.totalPaid - fee;
           note = 'אשראי לא לדיור. בלי עמלת היוון מחושבת, רק עמלה תפעולית של 60 ₪.';
@@ -452,8 +456,9 @@
           marketTxt = rate(api, ref.marketPct);
           newPmt = ref.newPmt;
           feeTxt = ref.fee ? money(api, ref.fee.total) : '—';
+          feeNum = (ref.fee ? Number(ref.fee.total) || 0 : 0) + extraCosts;
           net = ref.netSaving;
-          note = (ref.marketLabel || '') + (ref.fee && ref.fee.notes && ref.fee.notes.length ? ' ' + ref.fee.notes.join(' ') : '');
+          note = (ref.marketLabel || '').replace(/\s*\([a-z0-9_]+\)/i, '.') + (ref.fee && ref.fee.notes && ref.fee.notes.length ? ' ' + ref.fee.notes.join(' ') : '');
         } else note = 'לא פורסם ממוצע מתאים למסלול הזה.';
       }
       var pairs = [
@@ -464,6 +469,8 @@
         ['עמלת יציאה משוערת', feeTxt],
         ['חיסכון נטו משוער', net == null ? '—' : money(api, net)]
       ];
+      var monthly = newPmt != null ? sum.pmt - newPmt : 0;
+      if (feeNum > 0 && monthly > 0 && net != null && net > 0) pairs.push(['העלות חוזרת אחרי', 'כ־' + api.n(Math.ceil(feeNum / monthly)) + ' חודשים']);
       if (sum.cpiSched) pairs.push(['עלות עם האינפלציה שהוזנה', money(api, sum.cpiSched.totalPaid)]);
       if (kind === 'loan' && sum.implied != null) pairs.splice(1, 0, ['ריבית מחושבת מההחזר', rate(api, sum.implied)]);
       return {
