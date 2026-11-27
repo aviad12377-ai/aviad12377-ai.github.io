@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T19:54:31Z",
+  "generatedAt": "2026-11-27T21:42:07Z",
   "quotes": {
     "1143700": {
       "price": 37.99,
@@ -12155,6 +12155,19 @@
       "source": "fair.co.il",
       "buyAgorot": 324.4
     },
+    "5100300": {
+      "price": 1.1775,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 117.75,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 117.75
+    },
     "5100318": {
       "price": 1.8556,
       "currency": "ILS",
@@ -12310,6 +12323,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 127.98
+    },
+    "5100953": {
+      "price": 1.2478,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 124.78,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 124.78
     },
     "5100961": {
       "price": 1.4605,
@@ -13143,6 +13169,19 @@
       "source": "fair.co.il",
       "buyAgorot": 149.87
     },
+    "5103726": {
+      "price": 1.1629,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 116.29,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 116.29
+    },
     "5103759": {
       "price": 3.5299,
       "currency": "ILS",
@@ -13298,6 +13337,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 204.86
+    },
+    "5104518": {
+      "price": 2.5201,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 252.01,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 252.01
     },
     "5104666": {
       "price": 2.0665,
@@ -14443,6 +14495,19 @@
       "source": "fair.co.il",
       "buyAgorot": 198.19
     },
+    "5108857": {
+      "price": 0.7371,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 73.71,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 73.71
+    },
     "5108865": {
       "price": 4.8974,
       "currency": "ILS",
@@ -14585,6 +14650,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 175.71
+    },
+    "5109418": {
+      "price": 2.3671,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 236.71,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 236.71
     },
     "5109558": {
       "price": 1.787,
@@ -15522,6 +15600,19 @@
       "source": "fair.co.il",
       "buyAgorot": 262.81
     },
+    "5112487": {
+      "price": 1.7593,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 175.93,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 175.93
+    },
     "5112560": {
       "price": 1.7548,
       "currency": "ILS",
@@ -16016,6 +16107,19 @@
       "source": "fair.co.il",
       "buyAgorot": 888.69
     },
+    "5113998": {
+      "price": 8.6753,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 867.53,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 867.53
+    },
     "5114020": {
       "price": 1.8081,
       "currency": "ILS",
@@ -16093,6 +16197,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 136.34
+    },
+    "5114228": {
+      "price": 1.9633,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 196.33,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 196.33
     },
     "5114236": {
       "price": 2.052,
@@ -16185,6 +16302,19 @@
       "source": "fair.co.il",
       "buyAgorot": 139.48
     },
+    "5114491": {
+      "price": 1.8364,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 183.64,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 183.64
+    },
     "5114558": {
       "price": 1.3171,
       "currency": "ILS",
@@ -16249,6 +16379,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 230.86
+    },
+    "5114657": {
+      "price": 3.3582,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 335.82,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 335.82
     },
     "5114749": {
       "price": 1.4689,
@@ -16627,6 +16770,19 @@
       "source": "fair.co.il",
       "buyAgorot": 124.54
     },
+    "5115472": {
+      "price": 1.13,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 113.0,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 113.0
+    },
     "5115498": {
       "price": 1.4516,
       "currency": "ILS",
@@ -16848,6 +17004,32 @@
       "source": "fair.co.il",
       "buyAgorot": 528.95
     },
+    "5115811": {
+      "price": 1.5133,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 151.33,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 151.33
+    },
+    "5115837": {
+      "price": 1.1257,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 112.57,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 112.57
+    },
     "5115886": {
       "price": 1.6564,
       "currency": "ILS",
@@ -17042,6 +17224,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 138.99
+    },
+    "5116470": {
+      "price": 1.54,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 154.0,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 154.0
     },
     "5116488": {
       "price": 2.028,
@@ -17432,6 +17627,32 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 153.34
+    },
+    "5117346": {
+      "price": 1.654,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 165.4,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 165.4
+    },
+    "5117379": {
+      "price": 1.181,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 118.1,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 118.1
     },
     "5117429": {
       "price": 1.2856,
@@ -17927,6 +18148,19 @@
       "source": "fair.co.il",
       "buyAgorot": 145.74
     },
+    "5118146": {
+      "price": 3.4167,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 341.67,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 341.67
+    },
     "5118179": {
       "price": 1.3173,
       "currency": "ILS",
@@ -18056,6 +18290,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 164.59
+    },
+    "5118393": {
+      "price": 1.2832,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 128.32,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 128.32
     },
     "5118419": {
       "price": 5.0233,
@@ -18213,6 +18460,19 @@
       "source": "fair.co.il",
       "buyAgorot": 122.82
     },
+    "5118666": {
+      "price": 1.2,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 120.0,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 120.0
+    },
     "5118674": {
       "price": 1.7697,
       "currency": "ILS",
@@ -18251,6 +18511,45 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 155.43
+    },
+    "5118724": {
+      "price": 1.6094,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 160.94,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 160.94
+    },
+    "5118740": {
+      "price": 4.1292,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 412.92,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 412.92
+    },
+    "5118757": {
+      "price": 1.2168,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 121.68,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 121.68
     },
     "5118765": {
       "price": 1.5454,
@@ -18642,6 +18941,32 @@
       "source": "fair.co.il",
       "buyAgorot": 140.84
     },
+    "5119375": {
+      "price": 1.3026,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 130.26,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 130.26
+    },
+    "5119383": {
+      "price": 1.1956,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 119.56,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 119.56
+    },
     "5119409": {
       "price": 11.9411,
       "currency": "ILS",
@@ -19032,6 +19357,19 @@
       "source": "fair.co.il",
       "buyAgorot": 159.87
     },
+    "5120464": {
+      "price": 1.3089,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 130.89,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 130.89
+    },
     "5120514": {
       "price": 13.4789,
       "currency": "ILS",
@@ -19044,6 +19382,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 1348.02
+    },
+    "5120522": {
+      "price": 5.6407,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 564.07,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 564.07
     },
     "5120563": {
       "price": 1.3115,
@@ -19434,6 +19785,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 276.01
+    },
+    "5121322": {
+      "price": 2.5107,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 251.07,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 251.07
     },
     "5121330": {
       "price": 1.6615,
@@ -20449,6 +20813,45 @@
       "source": "fair.co.il",
       "buyAgorot": 152.27
     },
+    "5123153": {
+      "price": 2.4825,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 248.25,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 248.25
+    },
+    "5123161": {
+      "price": 3.2369,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 323.69,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 323.69
+    },
+    "5123179": {
+      "price": 4.9593,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 495.93,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 495.93
+    },
     "5123211": {
       "price": 1.9241,
       "currency": "ILS",
@@ -21125,6 +21528,45 @@
       "source": "fair.co.il",
       "buyAgorot": 175.29
     },
+    "5124409": {
+      "price": 1.4557,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 145.57,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 145.57
+    },
+    "5124417": {
+      "price": 1.3722,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 137.22,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 137.22
+    },
+    "5124425": {
+      "price": 1.2763,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 127.63,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 127.63
+    },
     "5124466": {
       "price": 1.5081,
       "currency": "ILS",
@@ -21189,6 +21631,58 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 407.2
+    },
+    "5124532": {
+      "price": 3.9157,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 391.57,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 391.57
+    },
+    "5124557": {
+      "price": 1.862,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 186.2,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 186.46
+    },
+    "5124573": {
+      "price": 2.6063,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 260.63,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 260.63
+    },
+    "5124581": {
+      "price": 2.5945,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 259.45,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 259.45
     },
     "5124615": {
       "price": 1.6071,
@@ -21437,6 +21931,19 @@
       "source": "fair.co.il",
       "buyAgorot": 160.72
     },
+    "5125067": {
+      "price": 1.3173,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 131.73,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 131.73
+    },
     "5125109": {
       "price": 1.552,
       "currency": "ILS",
@@ -21592,6 +22099,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 167.16
+    },
+    "5125323": {
+      "price": 1.187,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 118.7,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 118.7
     },
     "5125331": {
       "price": 1.1726,
@@ -22607,6 +23127,32 @@
       "source": "fair.co.il",
       "buyAgorot": 134.74
     },
+    "5127055": {
+      "price": 2.0736,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 207.36,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 207.4
+    },
+    "5127063": {
+      "price": 2.5706,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 257.06,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 257.06
+    },
     "5127089": {
       "price": 2.4817,
       "currency": "USD",
@@ -22619,6 +23165,45 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 248.17
+    },
+    "5127105": {
+      "price": 1.2415,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 124.15,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 124.15
+    },
+    "5127121": {
+      "price": 1.6329,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 163.29,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 163.29
+    },
+    "5127139": {
+      "price": 1.5022,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 150.22,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 150.22
     },
     "5127147": {
       "price": 2.2268,
@@ -22723,6 +23308,32 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 218.55
+    },
+    "5127287": {
+      "price": 1.7449,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 174.49,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 174.54
+    },
+    "5127329": {
+      "price": 6.7684,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 676.84,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 676.89
     },
     "5127360": {
       "price": 1.2774,
@@ -22893,6 +23504,19 @@
       "source": "fair.co.il",
       "buyAgorot": 484.52
     },
+    "5127584": {
+      "price": 3.2795,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 327.95,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 327.95
+    },
     "5127592": {
       "price": 1.6307,
       "currency": "ILS",
@@ -22905,6 +23529,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 163.07
+    },
+    "5127600": {
+      "price": 2.1492,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 214.92,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 214.99
     },
     "5127642": {
       "price": 1.6665,
@@ -23113,6 +23750,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 121.59
+    },
+    "5127915": {
+      "price": 2.4069,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 240.69,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 240.69
     },
     "5127923": {
       "price": 1.3762,
@@ -23673,6 +24323,45 @@
       "source": "fair.co.il",
       "buyAgorot": 132.06
     },
+    "5128756": {
+      "price": 1.9248,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 192.48,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 192.54
+    },
+    "5128772": {
+      "price": 1.2091,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 120.91,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 120.91
+    },
+    "5128814": {
+      "price": 1.8172,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 181.72,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 181.72
+    },
     "5128848": {
       "price": 1.5566,
       "currency": "ILS",
@@ -23738,6 +24427,19 @@
       "source": "fair.co.il",
       "buyAgorot": 365.44
     },
+    "5128939": {
+      "price": 2.4226,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 242.26,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 242.26
+    },
     "5128947": {
       "price": 4.494,
       "currency": "ILS",
@@ -23763,6 +24465,45 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 286.97
+    },
+    "5128970": {
+      "price": 2.7559,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 275.59,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 275.59
+    },
+    "5128988": {
+      "price": 2.59,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 259.0,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 259.01
+    },
+    "5128996": {
+      "price": 1.8981,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 189.81,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 189.81
     },
     "5129002": {
       "price": 1.2206,
@@ -23906,6 +24647,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 336.15
+    },
+    "5129184": {
+      "price": 1.4069,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 140.69,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 140.69
     },
     "5129192": {
       "price": 1.0867,
@@ -24075,6 +24829,32 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 128.12
+    },
+    "5129374": {
+      "price": 1.5809,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 158.09,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 158.12
+    },
+    "5129382": {
+      "price": 1.1991,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 119.91,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 119.91
     },
     "5129408": {
       "price": 11.9113,
@@ -24543,6 +25323,71 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 121.7
+    },
+    "5130133": {
+      "price": 43.9998,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 4399.98,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 4399.98
+    },
+    "5130141": {
+      "price": 42.2892,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 4228.92,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 4228.92
+    },
+    "5130158": {
+      "price": 42.5268,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 4252.68,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 4252.68
+    },
+    "5130166": {
+      "price": 48.1526,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 4815.26,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 4815.26
+    },
+    "5130174": {
+      "price": 44.4905,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 4449.05,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 4449.05
     },
     "5130182": {
       "price": 1.708,
@@ -25103,6 +25948,32 @@
       "source": "fair.co.il",
       "buyAgorot": 214.78
     },
+    "5130828": {
+      "price": 1.1694,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 116.94,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 116.94
+    },
+    "5130836": {
+      "price": 1.1713,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 117.13,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 117.13
+    },
     "5130851": {
       "price": 2.5995,
       "currency": "USD",
@@ -25375,6 +26246,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 122.1
+    },
+    "5131198": {
+      "price": 2.4997,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 249.97,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 249.97
     },
     "5131206": {
       "price": 59.9468,
@@ -25675,6 +26559,19 @@
       "source": "fair.co.il",
       "buyAgorot": 133.67
     },
+    "5131537": {
+      "price": 0.4712,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 47.12,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 47.13
+    },
     "5131545": {
       "price": 1.3536,
       "currency": "ILS",
@@ -25869,6 +26766,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 147.93
+    },
+    "5131768": {
+      "price": 1.7398,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 173.98,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 174.06
     },
     "5131792": {
       "price": 1.0309,
@@ -26260,6 +27170,19 @@
       "source": "fair.co.il",
       "buyAgorot": 220.66
     },
+    "5132162": {
+      "price": 2.1883,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 218.83,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 218.86
+    },
     "5132204": {
       "price": 1.3588,
       "currency": "ILS",
@@ -26520,6 +27443,32 @@
       "source": "fair.co.il",
       "buyAgorot": 169.94
     },
+    "5132535": {
+      "price": 1.209,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 120.9,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 120.9
+    },
+    "5132568": {
+      "price": 1.2854,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 128.54,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 128.54
+    },
     "5132592": {
       "price": 1.2344,
       "currency": "USD",
@@ -26636,6 +27585,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 141.51
+    },
+    "5132923": {
+      "price": 0.3493,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 34.93,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 34.93
     },
     "5132931": {
       "price": 1.199,
@@ -26884,6 +27846,19 @@
       "source": "fair.co.il",
       "buyAgorot": 148.48
     },
+    "5133335": {
+      "price": 0.8091,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 80.91,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 80.91
+    },
     "5133343": {
       "price": 1.2834,
       "currency": "ILS",
@@ -26896,6 +27871,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 128.34
+    },
+    "5133376": {
+      "price": 1.1857,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 118.57,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 118.57
     },
     "5133384": {
       "price": 1.3592,
@@ -26975,6 +27963,19 @@
       "source": "fair.co.il",
       "buyAgorot": 346.23
     },
+    "5133541": {
+      "price": 1.1396,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 113.96,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 113.96
+    },
     "5133574": {
       "price": 1.5967,
       "currency": "ILS",
@@ -26987,6 +27988,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 159.67
+    },
+    "5133582": {
+      "price": 4.4225,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 442.25,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 442.25
     },
     "5133608": {
       "price": 1.2566,
@@ -27065,6 +28079,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 126.66
+    },
+    "5133681": {
+      "price": 1.5354,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 153.54,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 153.54
     },
     "5133699": {
       "price": 1.9608,
@@ -27703,6 +28730,19 @@
       "source": "fair.co.il",
       "buyAgorot": 178.76
     },
+    "5134390": {
+      "price": 1.1352,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 113.52,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 113.52
+    },
     "5134416": {
       "price": 1.2913,
       "currency": "ILS",
@@ -27754,6 +28794,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 131.92
+    },
+    "5134465": {
+      "price": 1.3311,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 133.11,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 133.11
     },
     "5134473": {
       "price": 1.2193,
@@ -27819,6 +28872,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 157.8
+    },
+    "5134556": {
+      "price": 1.6478,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 164.78,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 164.81
     },
     "5134564": {
       "price": 3.2324,
@@ -28223,6 +29289,19 @@
       "source": "fair.co.il",
       "buyAgorot": 175.61
     },
+    "5135074": {
+      "price": 2.2569,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 225.69,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 225.69
+    },
     "5135090": {
       "price": 1.5579,
       "currency": "USD",
@@ -28274,6 +29353,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 142.27
+    },
+    "5135140": {
+      "price": 1.1656,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 116.56,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 116.56
     },
     "5135157": {
       "price": 1.8467,
@@ -28860,6 +29952,19 @@
       "source": "fair.co.il",
       "buyAgorot": 173.45
     },
+    "5135819": {
+      "price": 1.2009,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 120.09,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 120.09
+    },
     "5135835": {
       "price": 1.0253,
       "currency": "ILS",
@@ -28963,6 +30068,32 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 184.19
+    },
+    "5136023": {
+      "price": 1.1806,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 118.06,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 118.06
+    },
+    "5136031": {
+      "price": 1.1758,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 117.58,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 117.58
     },
     "5136056": {
       "price": 168.2213,
@@ -29080,6 +30211,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 194.78
+    },
+    "5136171": {
+      "price": 1.4899,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 148.99,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 148.99
     },
     "5136189": {
       "price": 1.3753,
@@ -29757,6 +30901,19 @@
       "source": "fair.co.il",
       "buyAgorot": 116.48
     },
+    "5136916": {
+      "price": 1.2197,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 121.97,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 121.97
+    },
     "5136924": {
       "price": 1.0141,
       "currency": "ILS",
@@ -29809,6 +30966,19 @@
       "source": "fair.co.il",
       "buyAgorot": 120.09
     },
+    "5136965": {
+      "price": 1.1941,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 119.41,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 119.41
+    },
     "5136981": {
       "price": 1.2996,
       "currency": "ILS",
@@ -29821,6 +30991,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 129.96
+    },
+    "5136999": {
+      "price": 1.0573,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 105.73,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 105.73
     },
     "5137013": {
       "price": 44.7616,
@@ -30043,6 +31226,19 @@
       "source": "fair.co.il",
       "buyAgorot": 119.97
     },
+    "5137229": {
+      "price": 1.1331,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 113.31,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 113.31
+    },
     "5137237": {
       "price": 1.4909,
       "currency": "ILS",
@@ -30146,6 +31342,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 99.98
+    },
+    "5137328": {
+      "price": 1.1689,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 116.89,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 116.89
     },
     "5137336": {
       "price": 1.497,
@@ -30420,6 +31629,19 @@
       "source": "fair.co.il",
       "buyAgorot": 113.37
     },
+    "5137666": {
+      "price": 1.4732,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 147.32,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 147.32
+    },
     "5137682": {
       "price": 1.3551,
       "currency": "ILS",
@@ -30549,6 +31771,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 104.59
+    },
+    "5137781": {
+      "price": 1.0376,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 103.76,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 103.76
     },
     "5137799": {
       "price": 1.1921,
@@ -30862,6 +32097,19 @@
       "source": "fair.co.il",
       "buyAgorot": 115.97
     },
+    "5138086": {
+      "price": 1.1691,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 116.91,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 116.91
+    },
     "5138094": {
       "price": 1.1232,
       "currency": "ILS",
@@ -31083,6 +32331,19 @@
       "source": "fair.co.il",
       "buyAgorot": 113.01
     },
+    "5138334": {
+      "price": 1.0916,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 109.16,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 109.16
+    },
     "5138342": {
       "price": 1.1629,
       "currency": "ILS",
@@ -31109,6 +32370,19 @@
       "source": "fair.co.il",
       "buyAgorot": 116.7
     },
+    "5138383": {
+      "price": 1.2851,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 128.51,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 128.51
+    },
     "5138391": {
       "price": 1.1383,
       "currency": "ILS",
@@ -31134,6 +32408,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 167.65
+    },
+    "5138417": {
+      "price": 1.1638,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 116.38,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 116.38
     },
     "5138425": {
       "price": 1.1591,
@@ -31225,6 +32512,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 106.94
+    },
+    "5138490": {
+      "price": 1.2081,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 120.81,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 120.81
     },
     "5138524": {
       "price": 1.3009,
@@ -31342,6 +32642,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 139.45
+    },
+    "5138623": {
+      "price": 0.5894,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 58.94,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 58.94
     },
     "5138631": {
       "price": 1.2518,
@@ -31486,6 +32799,19 @@
       "source": "fair.co.il",
       "buyAgorot": 145.88
     },
+    "5138755": {
+      "price": 0.8348,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 83.48,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 83.54
+    },
     "5138763": {
       "price": 1.1023,
       "currency": "ILS",
@@ -31524,6 +32850,45 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 124.32
+    },
+    "5138797": {
+      "price": 1.0345,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 103.45,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 103.45
+    },
+    "5138805": {
+      "price": 1.1828,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 118.28,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 118.28
+    },
+    "5138813": {
+      "price": 1.9226,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 192.26,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 192.26
     },
     "5138821": {
       "price": 1.0877,
@@ -31837,6 +33202,32 @@
       "source": "fair.co.il",
       "buyAgorot": 108.26
     },
+    "5139084": {
+      "price": 1.4609,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 146.09,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 146.13
+    },
+    "5139092": {
+      "price": 1.1139,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 111.39,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 111.39
+    },
     "5139100": {
       "price": 1.1737,
       "currency": "ILS",
@@ -31953,6 +33344,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 185.18
+    },
+    "5139191": {
+      "price": 412.6653,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 41266.53,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 41266.53
     },
     "5139209": {
       "price": 1.7844,
@@ -32487,6 +33891,19 @@
       "source": "fair.co.il",
       "buyAgorot": 122.41
     },
+    "5139720": {
+      "price": 1.1999,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 119.99,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 119.99
+    },
     "5139738": {
       "price": 1.454,
       "currency": "ILS",
@@ -32512,6 +33929,45 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 107.48
+    },
+    "5139761": {
+      "price": 1.0743,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 107.43,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 107.43
+    },
+    "5139779": {
+      "price": 1.0908,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 109.08,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 109.08
+    },
+    "5139787": {
+      "price": 0.5925,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 59.25,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 59.25
     },
     "5139811": {
       "price": 1.119,
@@ -32564,6 +34020,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 57.33
+    },
+    "5139852": {
+      "price": 1.3961,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 139.61,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 139.61
     },
     "5139860": {
       "price": 1.8043,
@@ -32733,6 +34202,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 265.09
+    },
+    "5140025": {
+      "price": 498.246,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 49824.6,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 49824.6
     },
     "5140033": {
       "price": 1.0601,
@@ -32915,6 +34397,45 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 132.26
+    },
+    "5140231": {
+      "price": 1.0948,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 109.48,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 109.48
+    },
+    "5140249": {
+      "price": 1.076,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 107.6,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 107.6
+    },
+    "5140256": {
+      "price": 1.0875,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 108.75,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 108.75
     },
     "5140272": {
       "price": 1.1449,
@@ -33110,6 +34631,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 255.55
+    },
+    "5140454": {
+      "price": 0.8911,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 89.11,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 89.11
     },
     "5140462": {
       "price": 1.0633,
@@ -33332,6 +34866,19 @@
       "source": "fair.co.il",
       "buyAgorot": 109.0
     },
+    "5140637": {
+      "price": 1.0313,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 103.13,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 103.13
+    },
     "5140645": {
       "price": 1.1932,
       "currency": "ILS",
@@ -33435,6 +34982,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 110.25
+    },
+    "5140736": {
+      "price": 1.1599,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 115.99,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 115.99
     },
     "5140744": {
       "price": 1.0309,
@@ -33695,6 +35255,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 114.78
+    },
+    "5140975": {
+      "price": 1.1923,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 119.23,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 119.23
     },
     "5140983": {
       "price": 1.6526,
@@ -34203,6 +35776,19 @@
       "source": "fair.co.il",
       "buyAgorot": 108.72
     },
+    "5141429": {
+      "price": 1.043,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 104.3,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 104.3
+    },
     "5141437": {
       "price": 0.7231,
       "currency": "ILS",
@@ -34398,6 +35984,45 @@
       "source": "fair.co.il",
       "buyAgorot": 101.65
     },
+    "5141585": {
+      "price": 1.0116,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 101.16,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 101.16
+    },
+    "5141593": {
+      "price": 1.0567,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 105.67,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 105.67
+    },
+    "5141601": {
+      "price": 1.0099,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 100.99,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 100.99
+    },
     "5141619": {
       "price": 1.0802,
       "currency": "ILS",
@@ -34410,6 +36035,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 108.02
+    },
+    "5141627": {
+      "price": 0.8201,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 82.01,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 82.04
     },
     "5141635": {
       "price": 1.0196,
@@ -34463,6 +36101,32 @@
       "source": "fair.co.il",
       "buyAgorot": 98.2
     },
+    "5141676": {
+      "price": 1.0848,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 108.48,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 108.49
+    },
+    "5141684": {
+      "price": 1.0112,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 101.12,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 101.15
+    },
     "5141692": {
       "price": 1.0357,
       "currency": "ILS",
@@ -34475,6 +36139,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 103.67
+    },
+    "5141718": {
+      "price": 0.7123,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 71.23,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 71.25
     },
     "5141726": {
       "price": 0.5555,
@@ -34619,6 +36296,19 @@
       "source": "fair.co.il",
       "buyAgorot": 113.61
     },
+    "5141833": {
+      "price": 1.0426,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 104.26,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 104.26
+    },
     "5141841": {
       "price": 2.9371,
       "currency": "ILS",
@@ -34670,6 +36360,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 100.75
+    },
+    "5141882": {
+      "price": 0.8042,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 80.42,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 80.42
     },
     "5141890": {
       "price": 1.0372,
@@ -34852,6 +36555,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 76.76
+    },
+    "5142039": {
+      "price": 0.8092,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 80.92,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 80.92
     },
     "5142047": {
       "price": 0.9137,
@@ -35464,6 +37180,71 @@
       "source": "fair.co.il",
       "buyAgorot": 90.51
     },
+    "5142575": {
+      "price": 0.7072,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 70.72,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 70.73
+    },
+    "5142591": {
+      "price": 0.8272,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 82.72,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 82.72
+    },
+    "5142609": {
+      "price": 0.8396,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 83.96,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 83.96
+    },
+    "5142617": {
+      "price": 0.9241,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 92.41,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 92.41
+    },
+    "5142625": {
+      "price": 0.7978,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 79.78,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 79.78
+    },
     "5142633": {
       "price": 0.8005,
       "currency": "ILS",
@@ -35476,6 +37257,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 80.05
+    },
+    "5142641": {
+      "price": 1.0402,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 104.02,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 104.05
     },
     "5142658": {
       "price": 0.9074,
@@ -36101,6 +37895,19 @@
       "source": "fair.co.il",
       "buyAgorot": 56.59
     },
+    "5143276": {
+      "price": 0.8669,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 86.69,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 86.69
+    },
     "5143292": {
       "price": 0.982,
       "currency": "ILS",
@@ -36126,6 +37933,19 @@
       "factor": 100.0,
       "source": "fair.co.il",
       "buyAgorot": 99.53
+    },
+    "5143326": {
+      "price": 0.591,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 59.1,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 59.1
     },
     "5143334": {
       "price": 0.9704,
@@ -36257,6 +38077,19 @@
       "source": "fair.co.il",
       "buyAgorot": 98.36
     },
+    "5143441": {
+      "price": 1.0299,
+      "currency": "ILS",
+      "regularMarketTime": "2026-11-26T12:00:00+02:00",
+      "navDate": "2026-11-26",
+      "previousClose": null,
+      "exchange": "TASE-MF",
+      "state": "closed",
+      "agorot": 102.99,
+      "factor": 100.0,
+      "source": "fair.co.il",
+      "buyAgorot": 102.99
+    },
     "5231030": {
       "price": 88.2902,
       "currency": "ILS",
@@ -36342,9 +38175,9 @@
       "state": "closed"
     },
     "ADA-USD": {
-      "price": 0.1492,
+      "price": 0.14897,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:52:54+00:00",
+      "regularMarketTime": "2026-11-27T21:40:27+00:00",
       "previousClose": 0.148392,
       "exchange": "CCC",
       "state": "open"
@@ -36502,9 +38335,9 @@
       "state": "closed"
     },
     "ATOM-USD": {
-      "price": 1.2259,
+      "price": 1.2338,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:52:59+00:00",
+      "regularMarketTime": "2026-11-27T21:40:42+00:00",
       "previousClose": 1.2159,
       "exchange": "CCC",
       "state": "open"
@@ -36512,15 +38345,15 @@
     "AUDUSD=X": {
       "price": 0.665,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:51:43+00:00",
+      "regularMarketTime": "2026-11-27T21:39:45+00:00",
       "previousClose": 0.6634,
       "exchange": "CCY",
       "state": "open"
     },
     "AVAX-USD": {
-      "price": 6.651,
+      "price": 6.625,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:06+00:00",
+      "regularMarketTime": "2026-11-27T21:40:47+00:00",
       "previousClose": 6.584017,
       "exchange": "CCC",
       "state": "open"
@@ -36582,9 +38415,9 @@
       "state": "closed"
     },
     "BCH-USD": {
-      "price": 206.94,
+      "price": 206.5,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:03+00:00",
+      "regularMarketTime": "2026-11-27T21:40:42+00:00",
       "previousClose": 209.5855,
       "exchange": "CCC",
       "state": "open"
@@ -36702,9 +38535,9 @@
       "state": "closed"
     },
     "BNB-USD": {
-      "price": 553.28,
+      "price": 553.0,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:12+00:00",
+      "regularMarketTime": "2026-11-27T21:40:41+00:00",
       "previousClose": 553.16327,
       "exchange": "CCC",
       "state": "open"
@@ -36790,9 +38623,9 @@
       "state": "closed"
     },
     "BTC-USD": {
-      "price": 59827.41,
+      "price": 59782.15,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:11+00:00",
+      "regularMarketTime": "2026-11-27T21:40:48+00:00",
       "previousClose": 60495.95,
       "exchange": "CCC",
       "state": "open"
@@ -37049,7 +38882,7 @@
       "price": 45.66,
       "currency": "USD",
       "regularMarketTime": "2026-11-27T13:00:00-05:00",
-      "previousClose": 45.14912,
+      "previousClose": 45.1491,
       "exchange": "PCX",
       "state": "closed"
     },
@@ -37070,9 +38903,9 @@
       "state": "closed"
     },
     "DOGE-USD": {
-      "price": 0.05778,
+      "price": 0.05762,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:07+00:00",
+      "regularMarketTime": "2026-11-27T21:40:26+00:00",
       "previousClose": 0.056385,
       "exchange": "CCC",
       "state": "open"
@@ -37086,9 +38919,9 @@
       "state": "closed"
     },
     "DOT-USD": {
-      "price": 0.6677,
+      "price": 0.6666,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:04+00:00",
+      "regularMarketTime": "2026-11-27T21:40:27+00:00",
       "previousClose": 0.671856,
       "exchange": "CCC",
       "state": "open"
@@ -37278,9 +39111,9 @@
       "state": "closed"
     },
     "ETH-USD": {
-      "price": 1669.59,
+      "price": 1663.87,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:08+00:00",
+      "regularMarketTime": "2026-11-27T21:40:46+00:00",
       "previousClose": 1687.7498,
       "exchange": "CCC",
       "state": "open"
@@ -37318,25 +39151,25 @@
       "state": "closed"
     },
     "EURGBP=X": {
-      "price": 0.8351,
+      "price": 0.8349,
       "currency": "GBP",
-      "regularMarketTime": "2026-11-27T19:53:00+00:00",
+      "regularMarketTime": "2026-11-27T21:40:40+00:00",
       "previousClose": 0.837,
       "exchange": "CCY",
       "state": "open"
     },
     "EURILS=X": {
-      "price": 3.6342,
+      "price": 3.6357,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-27T19:52:55+00:00",
+      "regularMarketTime": "2026-11-27T21:40:37+00:00",
       "previousClose": 3.6201,
       "exchange": "CCY",
       "state": "open"
     },
     "EURUSD=X": {
-      "price": 1.0939,
+      "price": 1.0935,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:52:43+00:00",
+      "regularMarketTime": "2026-11-27T21:39:45+00:00",
       "previousClose": 1.0975,
       "exchange": "CCY",
       "state": "open"
@@ -37566,9 +39399,9 @@
       "state": "closed"
     },
     "GBPILS=X": {
-      "price": 4.3582,
+      "price": 4.3577,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-27T19:51:43+00:00",
+      "regularMarketTime": "2026-11-27T21:36:45+00:00",
       "previousClose": 4.3358,
       "exchange": "CCY",
       "state": "open"
@@ -37576,7 +39409,7 @@
     "GBPUSD=X": {
       "price": 1.3094,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:52:43+00:00",
+      "regularMarketTime": "2026-11-27T21:39:45+00:00",
       "previousClose": 1.3111,
       "exchange": "CCY",
       "state": "open"
@@ -37902,9 +39735,9 @@
       "state": "closed"
     },
     "ILS=X": {
-      "price": 3.3244,
+      "price": 3.3236,
       "currency": "ILS",
-      "regularMarketTime": "2026-11-27T19:53:01+00:00",
+      "regularMarketTime": "2026-11-27T21:40:00+00:00",
       "previousClose": 3.3124,
       "exchange": "CCY",
       "state": "open"
@@ -38182,9 +40015,9 @@
       "state": "closed"
     },
     "LINK-USD": {
-      "price": 9.371,
+      "price": 9.337,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:09+00:00",
+      "regularMarketTime": "2026-11-27T21:40:45+00:00",
       "previousClose": 9.27011,
       "exchange": "CCC",
       "state": "open"
@@ -38254,9 +40087,9 @@
       "state": "closed"
     },
     "LTC-USD": {
-      "price": 43.957,
+      "price": 44.33,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:05+00:00",
+      "regularMarketTime": "2026-11-27T21:40:43+00:00",
       "previousClose": 43.82077,
       "exchange": "CCC",
       "state": "open"
@@ -38478,9 +40311,9 @@
       "state": "closed"
     },
     "NEAR-USD": {
-      "price": 3.0468,
+      "price": 3.037,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:10+00:00",
+      "regularMarketTime": "2026-11-27T21:40:43+00:00",
       "previousClose": 3.044531,
       "exchange": "CCC",
       "state": "open"
@@ -38968,7 +40801,7 @@
     "SHIB-USD": {
       "price": 4e-06,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:52:54+00:00",
+      "regularMarketTime": "2026-11-27T21:40:42+00:00",
       "previousClose": 4e-06,
       "exchange": "CCC",
       "state": "open"
@@ -39062,9 +40895,9 @@
       "state": "closed"
     },
     "SOL-USD": {
-      "price": 72.0,
+      "price": 71.88,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:12+00:00",
+      "regularMarketTime": "2026-11-27T21:40:45+00:00",
       "previousClose": 70.9306,
       "exchange": "CCC",
       "state": "open"
@@ -39376,7 +41209,7 @@
     "TON-USD": {
       "price": 0.001537,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:51:03+00:00",
+      "regularMarketTime": "2026-11-27T21:39:03+00:00",
       "previousClose": 0.001515,
       "exchange": "CCC",
       "state": "open"
@@ -39398,9 +41231,9 @@
       "state": "closed"
     },
     "TRX-USD": {
-      "price": 0.30052,
+      "price": 0.300503,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:51:03+00:00",
+      "regularMarketTime": "2026-11-27T21:39:03+00:00",
       "previousClose": 0.303666,
       "exchange": "CCC",
       "state": "open"
@@ -39510,33 +41343,33 @@
       "state": "closed"
     },
     "USDCAD=X": {
-      "price": 1.4249,
+      "price": 1.4248,
       "currency": "CAD",
-      "regularMarketTime": "2026-11-27T19:53:01+00:00",
+      "regularMarketTime": "2026-11-27T21:40:40+00:00",
       "previousClose": 1.4241,
       "exchange": "CCY",
       "state": "open"
     },
     "USDCHF=X": {
-      "price": 0.8362,
+      "price": 0.8361,
       "currency": "CHF",
-      "regularMarketTime": "2026-11-27T19:53:01+00:00",
+      "regularMarketTime": "2026-11-27T21:40:40+00:00",
       "previousClose": 0.8336,
       "exchange": "CCY",
       "state": "open"
     },
     "USDCNY=X": {
-      "price": 6.6537,
+      "price": 6.6449,
       "currency": "CNY",
-      "regularMarketTime": "2026-11-27T19:51:38+00:00",
+      "regularMarketTime": "2026-11-27T21:32:40+00:00",
       "previousClose": 6.6592,
       "exchange": "CCY",
       "state": "open"
     },
     "USDJPY=X": {
-      "price": 159.56,
+      "price": 159.563,
       "currency": "JPY",
-      "regularMarketTime": "2026-11-27T19:53:01+00:00",
+      "regularMarketTime": "2026-11-27T21:40:41+00:00",
       "previousClose": 159.226,
       "exchange": "CCY",
       "state": "open"
@@ -40078,9 +41911,9 @@
       "state": "closed"
     },
     "XLM-USD": {
-      "price": 0.126981,
+      "price": 0.126432,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:08+00:00",
+      "regularMarketTime": "2026-11-27T21:40:41+00:00",
       "previousClose": 0.126692,
       "exchange": "CCC",
       "state": "open"
@@ -40158,9 +41991,9 @@
       "state": "closed"
     },
     "XRP-USD": {
-      "price": 0.9488,
+      "price": 0.9485,
       "currency": "USD",
-      "regularMarketTime": "2026-11-27T19:53:12+00:00",
+      "regularMarketTime": "2026-11-27T21:40:43+00:00",
       "previousClose": 0.942926,
       "exchange": "CCC",
       "state": "open"
