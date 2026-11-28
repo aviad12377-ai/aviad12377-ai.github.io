@@ -292,4 +292,25 @@ html[data-nav="tab"]::view-transition-new(root){animation:fadeIn 200ms ease both
 
 .banner{background:var(--primary-soft);color:var(--ink);border-radius:14px;padding:12px 14px;font-size:15px;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
 .banner button,.banner .linkish{font-weight:700;color:var(--primary);background:none;border:0;cursor:pointer;min-height:44px;font-size:15px}
-.soon{opacity:.7}
+.soon{opacity:1}
+
+/* welcome for a first-time visitor, tools index, text pages */
+.banner-acts{display:flex;gap:4px;flex:none}
+.welcome{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:20px 18px;margin-bottom:8px}
+.welcome h2{font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-.01em;margin:0 0 6px}
+.welcome>p{margin:0 0 12px;font-size:16px;color:var(--muted)}
+.wl-points{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:10px}
+.wl-points li{display:flex;gap:10px;align-items:flex-start;font-size:16px}
+.wl-points svg{width:24px;height:24px;flex:none;color:var(--primary);margin-top:1px}
+.wl-acts{display:flex;gap:10px;flex-wrap:wrap}
+.wl-acts .btn{margin:0;flex:1 1 150px;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;min-height:48px}
+.welcome .help{margin:12px 0 0}
+.prose{font-size:16px;line-height:1.65}
+.prose h2{font-size:19px;margin:20px 0 6px}
+.prose h2:first-child{margin-top:0}
+.prose p{margin:0 0 10px}
+.prose ul{margin:0 0 10px;padding-inline-start:20px}
+.prose li{margin-bottom:6px}
+.prose a{display:inline-block;min-height:24px}
+.src-list{display:grid;gap:0}
+.src-list .row .s{white-space:normal}

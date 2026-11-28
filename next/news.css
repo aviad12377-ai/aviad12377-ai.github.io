@@ -48,7 +48,7 @@
 @media (min-width:960px){.nw-hm-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 .nw-hm-tile{min-height:76px;border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;justify-content:space-between;color:var(--ink)}
 .nw-hm-tile .nm{font-size:15px;font-weight:700;line-height:1.25}
-.nw-hm-tile .sym{font-size:14px;opacity:.8}
+.nw-hm-tile .sym{font-size:14px}
 .nw-hm-tile .chg{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;margin-top:6px}
 
 /* Header / profile avatar: SVG must fill the 36/56 circle, not the 24px iconbtn rule. */

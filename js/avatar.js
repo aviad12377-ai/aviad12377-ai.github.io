@@ -633,7 +633,7 @@
     root.classList.add('av-studio');
     var preview = el('div', { class: 'av-preview', 'aria-hidden': 'false' });
     var status = el('p', { class: 'av-status', role: 'status', 'aria-live': 'polite' });
-    var file = el('input', { type: 'file', accept: 'image/*', capture: 'user', class: 'av-hidden', id: 'av-file-input' });
+    var file = el('input', { type: 'file', accept: 'image/*', capture: 'user', class: 'av-hidden', id: 'av-file-input', 'aria-label': 'בחירת תמונה' });
 
     function setStatus(kind, text) { status.className = 'av-status' + (kind ? ' ' + kind : ''); status.textContent = text || ''; }
     function redraw() { preview.innerHTML = svgString(p); }

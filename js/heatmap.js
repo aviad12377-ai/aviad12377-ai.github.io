@@ -27,8 +27,9 @@
     if (x == null || !isFinite(x)) return 'flat';
     var mag = Math.min(1, Math.abs(x) / 6);
     var t = 0.28 + mag * 0.62;
-    if (x >= 0) return 'background:rgba(74,222,128,' + t + ')';
-    return 'background:rgba(248,113,113,' + t + ')';
+    // opaque tint (hue mixed into white) so the dark tile text keeps its contrast in the light and the dark scheme
+    var c = x >= 0 ? [74, 222, 128] : [248, 113, 113];
+    return 'background:rgb(' + c.map(function (v) { return Math.round(255 + (v - 255) * t); }).join(',') + ')';
   }
   function clock(iso) {
     if (!iso) return '';

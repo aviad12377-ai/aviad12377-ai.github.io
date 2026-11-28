@@ -361,7 +361,8 @@
       if (x == null || !isFinite(x)) return '';
       var mag = Math.min(1, Math.abs(x) / 6);
       var t = 0.22 + mag * 0.55;
-      return x >= 0 ? 'background:rgba(22,163,74,' + t + ')' : 'background:rgba(220,38,38,' + t + ')';
+      var c = x >= 0 ? [22, 163, 74] : [220, 38, 38];
+      return 'color:#12151C;background:rgb(' + c.map(function (v) { return Math.round(255 + (v - 255) * t); }).join(',') + ')';
     }
     function clock(iso) {
       if (!iso) return '';
