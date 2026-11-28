@@ -41,7 +41,10 @@
     ext: 'M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5',
     radar: 'M12 12l6-6M12 21a9 9 0 1 1 9-9M12 17a5 5 0 1 1 5-5',
     close: 'M6 6l12 12M18 6L6 18',
-    info: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5M12 8h.01'
+    info: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5M12 8h.01',
+    card: 'M3 6h18v12H3zM3 10h18M7 15h3',
+    percent: 'M19 5L5 19M7.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM16.5 18a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z',
+    grid: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z'
   };
   function ic(k) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + IC[k] + '"/></svg>'; }
 
@@ -416,6 +419,7 @@
     drawBar(greetTitle());
     var S = snap(), nw = S.net;
     var hist = (S.hist && S.hist.length) ? S.hist.slice() : [[new Date().toISOString().slice(0, 10), nw]];
+    var flat = hist.length < 2;
     if (hist.length === 1) hist = [hist[0], hist[0]];
     var vals = hist.map(function (pt) { return Array.isArray(pt) ? pt[1] : pt; });
     var dates = hist.map(function (pt) { return Array.isArray(pt) ? pt[0] : ''; });
@@ -427,10 +431,12 @@
     main().innerHTML =
       localBanner() + welcome(S) +
       '<div class="grid2"><div class="stack">' +
-      '<section class="hero" aria-labelledby="nw-l"><div class="lbl" id="nw-l">שווי נקי ' + demoBadge(S) + '</div>' +
+      '<section class="hero' + (flat ? ' nochart' : '') + '" aria-labelledby="nw-l"><div class="lbl" id="nw-l">שווי נקי ' + demoBadge(S) + '</div>' +
       '<div class="big" id="nw">' + ils(nw) + '</div><div class="chg" id="nwchg"></div>' +
+      (flat ? '<p class="hero-note">מעקב השווי לאורך זמן מתחיל מהיום. הגרף יתמלא בכל כניסה.</p>' : '') +
       '<div class="chart" id="nwc"></div>' +
-      '<div class="periods" role="group" aria-label="תקופה">' + [['1', 'חודש'], ['6', '6 חודשים'], ['12', 'שנה'], ['36', '3 שנים']].map(function (pt, i) { return '<button class="chip" data-p="' + pt[0] + '" aria-pressed="' + (i === 2) + '">' + pt[1] + '</button>'; }).join('') + '</div></section>' +
+      '<div class="periods" role="group" aria-label="תקופה">' + [['1', 'חודש'], ['6', '6 חודשים'], ['12', 'שנה'], ['36', '3 שנים']].map(function (pt, i) { return '<button class="chip" data-p="' + pt[0] + '" aria-pressed="' + (i === 2) + '">' + pt[1] + '</button>'; }).join('') + '</div>' + heroStats(S) + '</section>' +
+      quickActions() +
       '<section class="card" aria-labelledby="al-h"><div class="card-h"><h2 id="al-h">איפה הכסף שלך</h2><a class="more" href="#/savings">הכול ‹</a></div>' + allocBlock(S) + '</section>' +
       '</div><div class="stack">' +
       '<section class="card" aria-labelledby="st-h"><div class="card-h"><h2 id="st-h">הצעדים הבאים</h2>' + demoBadge(S) + '</div>' + stepsHtml + '</section>' +
@@ -465,6 +471,21 @@
     loadPrices().then(drawMkts, drawMkts);
   });
 
+  function heroStats(S) {
+    var liabs = Number(S.debts) || 0, assets = S.summary && Number.isFinite(S.summary.assets) ? S.summary.assets : (Number(S.net) || 0) + liabs;
+    if (!(assets > 0) && !(liabs > 0)) return '';
+    return '<div class="hero-stats"><div><span>נכסים</span><b>' + ils(assets) + '</b></div><div><span>התחייבויות</span><b>' + ils(liabs) + '</b></div></div>';
+  }
+  function quickActions() {
+    return '<nav class="quick" aria-label="פעולות מהירות">' + [['../me.html#maslaka', 'plus', 'הוספת נתונים'], ['#/compare', 'swap', 'השוואות'], ['#/tools', 'grid', 'כל הכלים'], ['../report.html', 'doc', 'דוח אישי']].map(function (q) {
+      return '<a href="' + q[0] + '"><span class="qi">' + ic(q[1]) + '</span><span>' + q[2] + '</span></a>';
+    }).join('') + '</nav>';
+  }
+  function compactIls(v) {
+    if (v >= 1e6) return [NF2.format(v / 1e6), 'מיליון ₪'];
+    if (v >= 1e3) return [NF0.format(Math.round(v / 1e3)), 'אלף ₪'];
+    return [NF0.format(Math.round(v)), '₪'];
+  }
   function step(nm, bg, fg, t, s, href) { return '<a class="step" href="' + href + '"><span class="dot" style="background:' + bg + ';color:' + fg + '">' + nm + '</span><span><span class="t">' + t + '</span><span class="s">' + s + '</span></span></a>'; }
   function allocBlock(S) {
     S = S || snap();
@@ -483,8 +504,16 @@
     }
     var tot = parts.reduce(function (s, pt) { return s + pt[1]; }, 0);
     if (!tot) return '<p class="muted">עוד אין נכסים רשומים. אחרי הכניסה יופיעו החשבונות שלך.</p>';
-    return '<div class="alloc" role="img" aria-label="חלוקת נכסים">' + parts.map(function (pt, i) { return '<i style="width:' + (pt[1] / tot * 100).toFixed(1) + '%;background:' + pt[2] + ';animation-delay:' + i * 60 + 'ms"></i>'; }).join('') + '</div>' +
-      '<div class="legend">' + parts.map(function (pt) { return '<span><i style="background:' + pt[2] + '"></i>' + pt[0] + ' <span class="num">' + Math.round(pt[1] / tot * 100) + '%</span></span>'; }).join('') + '</div>';
+    var acc = 0, cmp = compactIls(tot);
+    var rings = parts.map(function (pt) {
+      var share = pt[1] / tot * 100, seg = '<circle cx="21" cy="21" r="15.915" fill="none" stroke="' + pt[2] + '" stroke-width="5.2" stroke-dasharray="' + Math.max(0, share - 0.8).toFixed(2) + ' ' + (100 - Math.max(0, share - 0.8)).toFixed(2) + '" stroke-dashoffset="' + (25 - acc).toFixed(2) + '"/>';
+      acc += share; return seg;
+    }).join('');
+    return '<div class="donut-wrap"><div class="donut"><svg viewBox="0 0 42 42" role="img" aria-label="חלוקת נכסים">' + rings + '</svg>' +
+      '<div class="donut-c"><b class="num">' + cmp[0] + '</b><span>' + cmp[1] + '</span></div></div>' +
+      '<ul class="alloc-list">' + parts.map(function (pt) {
+        return '<li><i style="background:' + pt[2] + '"></i><span class="nm">' + pt[0] + '<small>' + ils(pt[1]) + '</small></span><b class="num">' + Math.round(pt[1] / tot * 100) + '%</b></li>';
+      }).join('') + '</ul></div>';
   }
   function drawMkts() {
     var el = $('#mkts'); if (!el) return;
@@ -682,12 +711,13 @@
       ['#/compare/funds?type=gemel', 'piggy', 'קופות גמל להשקעה', 'כולל מסלולי S&P 500'],
       ['#/compare/savings', 'bank', 'פיקדונות וריביות', 'ריבית ממוצעת בכל בנק'],
       ['#/compare/mortgage', 'house', 'מחזור משכנתא', 'האם כדאי למחזר ובכמה תחסוך'],
-      ['#/compare/cards', 'key', 'כרטיסי אשראי', 'עמלות והטבות'],
-      ['#/compare/loans', 'bank', 'הלוואות', 'ריביות ממוצעות והשוואה']
+      ['#/compare/cards', 'card', 'כרטיסי אשראי', 'עמלות והטבות'],
+      ['#/compare/loans', 'percent', 'הלוואות', 'הריבית שלך מול הממוצע']
     ];
-    main().innerHTML = '<p class="muted" style="margin:4px 4px 12px">נתונים רשמיים, מתעדכנים אוטומטית. מידע בלבד, לא ייעוץ.</p><section class="card"><div class="list">' + items.map(function (it) {
-      return '<a class="row" href="' + it[0] + '"><span class="ic">' + ic(it[1]) + '</span><span class="tx"><span class="t">' + it[2] + '</span><span class="s">' + it[3] + '</span></span>' + ic('chev').replace('<svg', '<svg class="chev"') + '</a>';
-    }).join('') + '</div></section>';
+    var tints = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c2)', 'var(--c4)', 'var(--c1)', 'var(--c5)'];
+    main().innerHTML = '<p class="lead">משווים את התנאים שלך לנתונים הרשמיים של בנק ישראל ורשות שוק ההון. מידע בלבד, לא ייעוץ.</p><div class="hub">' + items.map(function (it, i) {
+      return '<a href="' + it[0] + '"' + (i === 0 ? ' class="wide"' : '') + ' style="--tc:' + tints[i] + '"><span class="ic">' + ic(it[1]) + '</span><span class="tx"><span class="t">' + it[2] + '</span><span class="s">' + it[3] + '</span></span></a>';
+    }).join('') + '</div><p class="help" style="text-align:center;margin-top:16px"><a href="#/about">מאיפה הנתונים ומתי עודכנו</a></p>';
   });
 
   /* --- COMPARE funds flow (real data) --- */
