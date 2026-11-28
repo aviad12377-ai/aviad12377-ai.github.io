@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-27T21:42:07Z",
-  "source": "Wikidata SPARQL: items with P414 = Tel Aviv Stock Exchange (Q1507974). Security numbers derived from Israeli ISINs. Official TASE APIs were not reachable without a key (HTTP 403 / Data Hub). data.gov.il has no matching dataset. Mutual-fund NAVs: funder.co.il (primary, official daily price); Fair public pages as fallback.",
+  "generatedAt": "2026-11-28T02:33:03Z",
+  "source": "Wikidata SPARQL: items with P414 = Tel Aviv Stock Exchange (Q1507974). Security numbers derived from Israeli ISINs. Official TASE APIs were not reachable without a key (HTTP 403 / Data Hub). data.gov.il has no matching dataset.",
   "count": 3190,
   "withSecurityNumber": 2646,
   "withYahooSymbol": 305,
