@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:48+02:00",
+ "updated": "2026-11-28T06:22+02:00",
  "disclaimer": "כותרות ותקצירים קצרים מאתרי החדשות, עם קישור לכתבה המלאה. מידע בלבד, לא ייעוץ.",
  "sources": [
   "AP",
@@ -64,7 +64,7 @@
    "id": "bizportal",
    "source": "ביזפורטל",
    "ok": true,
-   "count": 13,
+   "count": 14,
    "error": null
   },
   {
@@ -238,6 +238,151 @@
  ],
  "items": [
   {
+   "id": "a92e49002f1ed6",
+   "title": "DoorDash president sells $2.63 million in company stock",
+   "snippet": "",
+   "url": "https://www.investing.com/news/insider-trading-news/doordash-president-sells-263-million-in-company-stock-93CH-5054138",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T06:01+02:00",
+   "score": 0
+  },
+  {
+   "id": "1dbdc934b8c58a",
+   "title": "Turtle Creek sells $361,612 in JELD-WEN Holding shares",
+   "snippet": "",
+   "url": "https://www.investing.com/news/insider-trading-news/turtle-creek-sells-361612-in-jeldwen-holding-shares-93CH-5054137",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T06:01+02:00",
+   "score": 0
+  },
+  {
+   "id": "9da7c456e9a50a",
+   "title": "Solaris energy infrastructure director buys $32,351 in stock",
+   "snippet": "",
+   "url": "https://www.investing.com/news/insider-trading-news/solaris-energy-infrastructure-director-buys-32351-in-stock-93CH-5054135",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T06:01+02:00",
+   "score": 0
+  },
+  {
+   "id": "3913d49fa4f5d5",
+   "title": "Cognizant CEO Ravi Kumar sells $503,281 in company stock",
+   "snippet": "",
+   "url": "https://www.investing.com/news/insider-trading-news/cognizant-ceo-ravi-kumar-sells-503281-in-company-stock-93CH-5054134",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T06:00+02:00",
+   "score": 0
+  },
+  {
+   "id": "9bc953f234ab52",
+   "title": "U.S. bars internet bandwidth provider RETN over national security risks",
+   "snippet": "",
+   "url": "https://www.investing.com/news/economy-news/us-bars-internet-bandwidth-provider-retn-over-national-security-risks-5054129",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "us"
+   ],
+   "time": "2026-11-28T05:42+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "83e4238688c9b4",
+   "title": "Eversource Energy CFO sells $196k in company shares",
+   "snippet": "",
+   "url": "https://www.investing.com/news/insider-trading-news/eversource-energy-cfo-sells-196k-in-company-shares-93CH-5054122",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T05:16+02:00",
+   "score": 0
+  },
+  {
+   "id": "188094d57fd5a1",
+   "title": "Nvidia Stock Has Swung 5% or More in a Single Day 5 Times in November. Here's How Big a Position I Think Makes Sense.",
+   "snippet": "The chip giant's profits more than doubled last quarter, but its stock shed over a quarter of its value in November.",
+   "url": "https://www.fool.com/investing/2026/11/27/nvidia-stock-has-swung-5-or-more-in-a-single-day-5-times-in-november-here-s-how-big-a-position-i-think-makes-sense/?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-28T05:13+02:00",
+   "score": 3
+  },
+  {
+   "id": "9a04d73e7fe089",
+   "title": "Are recent outages bad for software?",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/are-recent-outages-bad-for-software-5054117",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-28T05:09+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
+   "id": "5c61d54b927984",
+   "title": "China Import Logistics Fell 0.6% in January-October, Xinhua Says",
+   "snippet": "China’s import logistics demand contracted further in the first 10 months of the year, extending a slowdown from 9.6% growth in January-February, Xinhua News Agency reported, citing figures from the…",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-28/china-import-logistics-fell-0-6-in-january-october-xinhua-says",
+   "source": "Bloomberg",
+   "feed": "bloomberg-markets",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-28T05:01+02:00",
+   "score": 0
+  },
+  {
+   "id": "5978f0d7734543",
+   "title": "Glass Lewis backs Vail Resorts board in proxy fight with activist Oasis",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/glass-lewis-backs-vail-resorts-board-in-proxy-fight-with-activist-oasis-5053937",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-28T04:42+02:00",
+   "score": 0,
+   "also": []
+  },
+  {
    "id": "15bf98b2ef2b1a",
    "title": "The Federal Reserve sends a troubling signal to S&P 500 investors",
    "snippet": "The Fed is sending a message to stock investors, and Wall Street is starting to listen.",
@@ -254,62 +399,62 @@
    "score": 0
   },
   {
-   "id": "b8132079e90572",
-   "title": "Entergy executive Daniel Falstad sells $499,535 in company stock",
+   "id": "0675c25ea7999a",
+   "title": "Global fashion brands shift orders from Bangladesh to India amid unrest",
    "snippet": "",
-   "url": "https://www.investing.com/news/insider-trading-news/entergy-executive-daniel-falstad-sells-499535-in-company-stock-93CH-5054100",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-28T04:30+02:00",
-   "score": 0
-  },
-  {
-   "id": "c5113724eeecb4",
-   "title": "Enovis officer Laura Lee Singleton sells $9,666 in stock",
-   "snippet": "",
-   "url": "https://www.investing.com/news/insider-trading-news/enovis-officer-laura-lee-singleton-sells-9666-in-stock-93CH-5054099",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-28T04:30+02:00",
-   "score": 0
-  },
-  {
-   "id": "894e9dfab17faa",
-   "title": "American Airlines jets clip wings on taxiway at Reagan National Airport",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/american-airlines-jets-clip-wings-on-taxiway-at-reagan-national-airport-5054097",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "us"
-   ],
-   "time": "2026-11-28T04:20+02:00",
-   "score": 0,
-   "also": []
-  },
-  {
-   "id": "0289813e0c3def",
-   "title": "THE INSANE SAVINGS ARE ENDING! InvestingPro for less than $1.9/week",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/the-insane-savings-are-ending-investingpro-for-less-than-19week-5054096",
+   "url": "https://www.investing.com/news/economic-indicators/exclusiveglobal-brands-shift-hundreds-of-millions-in-orders-from-bangladesh-to-india-amid-unrest-5053134",
    "source": "Investing.com",
    "feed": "investing-news",
    "lang": "en",
    "cats": [
     "world"
    ],
-   "time": "2026-11-28T04:17+02:00",
+   "time": "2026-11-28T04:36+02:00",
+   "score": 0
+  },
+  {
+   "id": "94c498b7f0669a",
+   "title": "AI stocks rebound: Catch the next move with AI picks at 60% off, Black Friday only",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/ai-stocks-rebound-catch-the-next-move-with-ai-picks-at-60-off-black-friday-only-5054103",
+   "source": "Investing.com",
+   "feed": "investing-news",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T04:34+02:00",
    "score": 0,
    "also": []
+  },
+  {
+   "id": "c81f13eb17da10",
+   "title": "American Airlines jets clip wings on taxiway at Reagan National Airport",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/american-airlines-jets-clip-wings-on-taxiway-at-reagan-national-airport-5054097",
+   "source": "Investing.com",
+   "feed": "investing-stocks",
+   "lang": "en",
+   "cats": [
+    "stocks",
+    "us"
+   ],
+   "time": "2026-11-28T04:20+02:00",
+   "score": 0
+  },
+  {
+   "id": "59bc36203af7d8",
+   "title": "THE INSANE SAVINGS ARE ENDING! InvestingPro for less than $1.9/week",
+   "snippet": "",
+   "url": "https://www.investing.com/news/stock-market-news/the-insane-savings-are-ending-investingpro-for-less-than-19week-5054096",
+   "source": "Investing.com",
+   "feed": "investing-stocks",
+   "lang": "en",
+   "cats": [
+    "stocks"
+   ],
+   "time": "2026-11-28T04:17+02:00",
+   "score": 0
   },
   {
    "id": "252cc88e2a24a8",
@@ -327,17 +472,18 @@
    "score": 0
   },
   {
-   "id": "d51b9d2551bef2",
-   "title": "IES Holdings director David B. Gendell buys $653,000 in stock",
-   "snippet": "",
-   "url": "https://www.investing.com/news/insider-trading-news/ies-holdings-director-david-b-gendell-buys-653000-in-stock-93CH-5054090",
-   "source": "Investing.com",
-   "feed": "investing-news",
+   "id": "c34432103d75f6",
+   "title": "Wall Street stages major comeback during Thanksgiving-shortened trading week",
+   "snippet": "Wall Street staged a strong comeback as the S&P 500 posted its largest weekly gain in more than a year, with investors returning to battered AI stocks.",
+   "url": "https://www.foxbusiness.com/markets/wall-street-stages-major-comeback-thanksgiving-shortened-trading-week?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
    "lang": "en",
    "cats": [
+    "us",
     "stocks"
    ],
-   "time": "2026-11-28T03:45+02:00",
+   "time": "2026-11-28T04:00+02:00",
    "score": 0
   },
   {
@@ -356,75 +502,32 @@
    "score": 0
   },
   {
-   "id": "3d2f8dc55e4016",
+   "id": "28e20d5f4eaee6",
    "title": "ECB officials signal further rate hikes as inflation remains elevated",
    "snippet": "",
    "url": "https://www.investing.com/news/stock-market-news/ecb-officials-signal-further-rate-hikes-as-inflation-remains-elevated-5054086",
    "source": "Investing.com",
-   "feed": "investing-news",
+   "feed": "investing-stocks",
    "lang": "en",
    "cats": [
+    "stocks",
     "macro"
    ],
    "time": "2026-11-28T03:40+02:00",
-   "score": 0,
-   "also": []
+   "score": 0
   },
   {
-   "id": "4ea7868aa8d6cf",
+   "id": "d1d769e93994ec",
    "title": "China’s premium puffer jacket push meets consumer resistance",
    "snippet": "",
    "url": "https://www.investing.com/news/stock-market-news/chinas-premium-puffer-jacketpush-meets-consumer-resistance-5054071",
    "source": "Investing.com",
-   "feed": "investing-news",
+   "feed": "investing-stocks",
    "lang": "en",
    "cats": [
-    "world"
+    "stocks"
    ],
    "time": "2026-11-28T03:18+02:00",
-   "score": 0,
-   "also": []
-  },
-  {
-   "id": "a4c5ca41885c1c",
-   "title": "Cathie Wood’s ARK buys SPCX stock, trims SHOP and ILMN",
-   "snippet": "",
-   "url": "https://www.investing.com/news/company-news/cathie-woods-ark-buys-spcx-stock-trims-shop-and-ilmn-93CH-5054079",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-28T03:17+02:00",
-   "score": 0
-  },
-  {
-   "id": "806183261c627e",
-   "title": "Tyler Technologies executive sells $1.3 million in stock",
-   "snippet": "",
-   "url": "https://www.investing.com/news/insider-trading-news/tyler-technologies-executive-sells-13-million-in-stock-93CH-5054078",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-28T03:16+02:00",
-   "score": 0
-  },
-  {
-   "id": "6931260e3c37e4",
-   "title": "StubHub officer Mark Streams sells $60,000 in company stock",
-   "snippet": "",
-   "url": "https://www.investing.com/news/insider-trading-news/stubhub-officer-mark-streams-sells-60000-in-company-stock-93CH-5054076",
-   "source": "Investing.com",
-   "feed": "investing-news",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-28T03:16+02:00",
    "score": 0
   },
   {
@@ -531,20 +634,6 @@
    "score": 0
   },
   {
-   "id": "138ec11f6f9948",
-   "title": "2027 smartphone market outlook: Apple to outperform as shipments fall 5%",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/2027-smartphone-market-outlook-apple-to-outperform-as-shipments-fall-5-5054028",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-28T02:03+02:00",
-   "score": 3
-  },
-  {
    "id": "99a9341cc8518f",
    "title": "I’m in my 70s and buying a new BMW X1. Should I put my only son on the title?",
    "snippet": "“Given my age, I never make a major new purchase without thinking about the future.”",
@@ -574,17 +663,17 @@
    "score": 0
   },
   {
-   "id": "d57ef69ccd88b1",
-   "title": "Grupo Aeroportuario del Pacifico completes FIBRA GAP IPO at Ps. 7.82B",
+   "id": "0bdc035b058adb",
+   "title": "QB Brock Purdy to miss the 49ers’ game vs. the Seahawks. Mac Jones will start in his place",
    "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/grupo-aeroportuario-del-pacifico-completes-fibra-gap-ipo-at-ps-782b-432SI-5054018",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUm9SOFVZQVRzYjVYM1VEblNrWE5RWFVvTUszSXRFaFVfVU9VUWpHcndpM3k5NlZFak80bTl3THpvMmt3S0Z6MHprMDBLMFdDcXhOUlE2dGd0RmZBdTBHOHRrdlFTUkJIRGlSaGk3c1VNamoxM0dZcWJTQllfMG13LXlJVm4tME9ralFVeEFRU3pjSFJNN2xWNGlZck5OQ2VLVkRoaEN3?oc=5",
+   "source": "AP",
+   "feed": "ap",
    "lang": "en",
    "cats": [
-    "stocks"
+    "world"
    ],
-   "time": "2026-11-28T01:58+02:00",
+   "time": "2026-11-28T01:38+02:00",
    "score": 0
   },
   {
@@ -630,6 +719,20 @@
    "score": 0
   },
   {
+   "id": "352767065faa09",
+   "title": "Music",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9FQWF3bmRaX2NPTlZiaFhIZ2JhTFVUYXdDcjZnRWMzT2RHQkRVbzJLSlZZQ0VXSmY4Nk5HS2lYZzRvQQ?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-28T01:10+02:00",
+   "score": 0
+  },
+  {
    "id": "1ef1f38c2b5f85",
    "title": "Vujcic and Kocher Hint at More ECB Rate Hiking, Kurier Reports",
    "snippet": "European Central Bank Vice President Boris Vujcic and Governing Council member Martin Kocher suggested monetary policy will need to be tightened further, according to a joint interview in Kurier.",
@@ -641,6 +744,20 @@
     "macro"
    ],
    "time": "2026-11-28T00:49+02:00",
+   "score": 0
+  },
+  {
+   "id": "9d22bffccd036a",
+   "title": "Army deems lead azide detonation a success but criticism lingers over notification",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPR0EtR1JfYXg0UHhDSHFDWWtYcXE4eWFIcjhydk1IbVZjQUh4VjItVmYtQ3J1SzBQQ0JqcUlrcVBoODlTeHNPTUdpdmxKVHlycUU1NVFFc1BGMWxFS2NYOXlpU3dObXpiZ3ZYQ1RrYTdWc2tmREtqTXNNVWxkZG9aa1hMOGZDLVU?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-28T00:45+02:00",
    "score": 0
   },
   {
@@ -659,6 +776,20 @@
    "score": 0
   },
   {
+   "id": "a72ba3007c3eb6",
+   "title": "Prosecutors ask for 25 years for Canadian man who sold products used by 93 people to kill themselves",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZFlRemwwVjRCSWxINm9PY0lLdUZiZmFNNHloM0VrQTRSRE9qYjFBWmpRNkxBc01EeEtBMzFQYTRWdkxONFNQaXQ2X2F6aEtHZWxVVnl3VFpOSnBGMEt2T21jRVVjX25wd2RZM2hxWE1CbWNMbGZCMElFVnJQRWYyQThJRDdEMkUxUDQxcGRLdVdJUjBfN3NoMHJtSGJKMHY0SUozZ1JZSQ?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-28T00:40+02:00",
+   "score": 0
+  },
+  {
    "id": "a92b0c5d71fb1c",
    "title": "Jailed Brazil Beach Soccer Star Drawn Into Russia-US Spy Dispute",
    "snippet": "A Brazilian beach soccer star has become an unlikely bargaining chip in a dispute over an alleged Russian spy who has been sought by both Moscow and Washington.",
@@ -671,20 +802,6 @@
     "stocks"
    ],
    "time": "2026-11-28T00:29+02:00",
-   "score": 0
-  },
-  {
-   "id": "6cbb430803f9c5",
-   "title": "Glass Lewis backs Vail Resorts board in proxy fight with activist Oasis",
-   "snippet": "",
-   "url": "https://www.investing.com/news/stock-market-news/glass-lewis-backs-vail-resorts-board-in-proxy-fight-with-activist-oasis-5053937",
-   "source": "Investing.com",
-   "feed": "investing-stocks",
-   "lang": "en",
-   "cats": [
-    "stocks"
-   ],
-   "time": "2026-11-28T00:24+02:00",
    "score": 0
   },
   {
@@ -761,20 +878,6 @@
    "score": 0
   },
   {
-   "id": "deb4449352f0d0",
-   "title": "Protesters take to the streets in Puerto Rico’s capital as standard of living deteriorates",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPR21NNThLZkZqM2NyR2lSUTM1aFZBYnNXajdabGhzVEIxUERNczdUNUZ6WVVmX0Q4dGZrZ0dBUjlZYlUwSC1PcjFGblB6LWo2dlk4TUxjb0hJSmtFN05sZ0RRbV9WclhIWXJUZFRVckhfOUF4bDlSeG1XWTJuWmRiUU5Mckx3RXdxbE8yV2Y4MXJxWEduU3I2aVRaRDc3QldfbGYzaXZPT2k?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T23:57+02:00",
-   "score": 0
-  },
-  {
    "id": "d184d50875c996",
    "title": "Brazil central bank to offer $2 billion in dollar auctions Monday",
    "snippet": "",
@@ -802,20 +905,6 @@
    ],
    "time": "2026-11-27T23:45+02:00",
    "score": 5
-  },
-  {
-   "id": "352767065faa09",
-   "title": "Music",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9FQWF3bmRaX2NPTlZiaFhIZ2JhTFVUYXdDcjZnRWMzT2RHQkRVbzJLSlZZQ0VXSmY4Nk5HS2lYZzRvQQ?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T23:35+02:00",
-   "score": 0
   },
   {
    "id": "299fb967d7f48c",
@@ -984,6 +1073,21 @@
    "score": 0
   },
   {
+   "id": "bbb27e4793ee60",
+   "title": "Take This Quick Test to See How Much You Could Lose if the Stock Market Returns to 'Normal'",
+   "snippet": "The S&P 500 has had a whale of a decade so far. What happens if the artificial, AI-driven, mega-cap momentum finally exhausts itself?",
+   "url": "https://www.barchart.com/story/news/9037341/take-this-quick-test-to-see-how-much-you-could-lose-if-the-stock-market-returns-to-normal?.tsrc=rss",
+   "source": "Yahoo Finance",
+   "feed": "yahoo-spx",
+   "lang": "en",
+   "cats": [
+    "us",
+    "stocks"
+   ],
+   "time": "2026-11-27T23:09+02:00",
+   "score": 0
+  },
+  {
    "id": "086f7dc3cbef04",
    "title": "Nigeria Seeks to Boost Remittances to $1.5 Billion by 2027",
    "snippet": "Nigeria’s central bank aims to increase remittances from citizens living abroad by 50% next year to boost its foreign-exchange reserves.",
@@ -1086,20 +1190,6 @@
    "score": 0
   },
   {
-   "id": "9d22bffccd036a",
-   "title": "Army deems lead azide detonation a success but criticism lingers over notification",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPR0EtR1JfYXg0UHhDSHFDWWtYcXE4eWFIcjhydk1IbVZjQUh4VjItVmYtQ3J1SzBQQ0JqcUlrcVBoODlTeHNPTUdpdmxKVHlycUU1NVFFc1BGMWxFS2NYOXlpU3dObXpiZ3ZYQ1RrYTdWc2tmREtqTXNNVWxkZG9aa1hMOGZDLVU?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T22:06+02:00",
-   "score": 0
-  },
-  {
    "id": "457c61ef206f0a",
    "title": "Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest",
    "snippet": "Medicare Advantage is starting to lose its all-in-one benefit.",
@@ -1127,21 +1217,6 @@
    ],
    "time": "2026-11-27T21:54+02:00",
    "score": 3
-  },
-  {
-   "id": "cbe62aa6656138",
-   "title": "What Is The One Risk Facing Visa Stock Now?",
-   "snippet": "Today's big story: Anthropic Broke Its $83 IPO Price. What Did Facebook Do Next.",
-   "url": "https://www.trefis.com/stock/v/articles/629359/what-is-the-one-risk-facing-visa-stock-now/2026-11-27?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T21:41+02:00",
-   "score": 0
   },
   {
    "id": "c886793da51859",
@@ -1233,21 +1308,6 @@
    "score": 0
   },
   {
-   "id": "c0fa8f6a677c0b",
-   "title": "Stock Market Today: Indexes Log Best Thanksgiving Week In 18 Years",
-   "snippet": "The Dow Jones index and the Nasdaq composite rose in Friday's post-Thanksgiving session. Anthropic, SpaceX and Tesla gain.",
-   "url": "https://finance.yahoo.com/m/86a4597f-ee47-3048-ae92-1a56fa4711e5/stock-market-today%3A-indexes.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T21:10+02:00",
-   "score": 3
-  },
-  {
    "id": "0866b4c6c25388",
    "title": "Energy Fuels gains 11% as peers and the broader market rise",
    "snippet": "",
@@ -1333,35 +1393,6 @@
     "stocks"
    ],
    "time": "2026-11-27T20:39+02:00",
-   "score": 0
-  },
-  {
-   "id": "d8dd5c93803914",
-   "title": "US Equity Indexes Rise as Jensen Huang's Return to Nvidia Guardrails AI Trade While Investors Slice Growth Exposure This Week",
-   "snippet": "US equity indexes rose as Jensen Huang's reinstatement as Nvidia's (NVDA) chief executive officer he",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-rise-jensen-183902792.html?.tsrc=rss",
-   "source": "Yahoo Finance",
-   "feed": "yahoo-spx",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T20:39+02:00",
-   "score": 3
-  },
-  {
-   "id": "3511f0931092aa",
-   "title": "UN rapporteur Albanese in limbo at airport after being denied entry to Costa Rica",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOdlRmdDBtejlXRFZPSmJEeDhaNzNFN3lIWnVDLUN3MEpJWVlPTVVVOGZlSFZabWdJd1REMW14c0tEa0VMcEhEdzZDUjZXWF9NdHp1M2QtMDBtYUl5ekxmRU42bmFpQ280Tnd0Q25XZ1ZNV0NsN2JjNVRCQ2pZMFpIaUhzdGZMb3Yxc0xQOXhBdVhsUjBPa0MzcjlmdEI5M1JKLXhhdThR?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-27T20:38+02:00",
    "score": 0
   },
   {
@@ -1687,21 +1718,6 @@
    ],
    "time": "2026-11-27T18:32+02:00",
    "score": 0
-  },
-  {
-   "id": "a526888a84ec11",
-   "title": "U.S. goods trade deficit widens as AI boom drives imports to record high",
-   "snippet": "",
-   "url": "https://www.investing.com/news/economy-news/us-goods-trade-deficit-widens-as-ai-boom-drives-imports-to-record-high-5053710",
-   "source": "Investing.com",
-   "feed": "investing-econ",
-   "lang": "en",
-   "cats": [
-    "macro",
-    "us"
-   ],
-   "time": "2026-11-27T18:32+02:00",
-   "score": 5
   },
   {
    "id": "912441f4f7afc7",
@@ -2429,6 +2445,20 @@
     "stocks"
    ],
    "time": "2026-11-27T13:07+02:00",
+   "score": 0
+  },
+  {
+   "id": "1ec01ac5fbce0d",
+   "title": "NFL’s Thanksgiving tripleheader has impressive comebacks and fantastic finishes",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNzE3Y1FKQUtPS3pDQ2ROU1BiV1pCc2o4bzRBQ2sxZVo5ekN3RE1lYUxBanJUX2QweGd4eXR4cFQ2d2lQd01tZ0R0R0kwV0d1TnBKMFZic0VFb0V6WXA5OHNVNXpFb0Y0WXlGMTFsUnV0WU1ERDBYZkhiNkxLajd4Z25DMUs4Smt3MlhneEY0MWJBQVRXanVIdTRDMG13bkRO?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-27T13:00+02:00",
    "score": 0
   },
   {
@@ -3327,6 +3357,20 @@
    "score": 0
   },
   {
+   "id": "1edff94d3ecfd4",
+   "title": "Test results from samples taken after Iowa lead detonation are expected soon, EPA says",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQMWlYeHdzd0JEX3VIeUo5dlZNN21aV0FsMjBROW5SQzlMenBiS0tkb1lIS294cGZGbjZ6V25pTlhOT0xHZzZ3Um5oQVZEdk9jYXNpdFFweXV3MFktel9IVDhiUDJFajFhcHFIcFRpSWwwWGJCbXFBZ0UzUk1jb2k4QjhsNjBtWE90NmplUGhHdU5Bdw?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "world"
+   ],
+   "time": "2026-11-27T01:46+02:00",
+   "score": 0
+  },
+  {
    "id": "f1cf4af3ac2ecb",
    "title": "Tokyo core inflation at 16-month high, bolsters case for BOJ hike",
    "snippet": "",
@@ -3469,21 +3513,6 @@
     "macro"
    ],
    "time": "2026-11-26T23:12+02:00",
-   "score": 0
-  },
-  {
-   "id": "38d2287437e11b",
-   "title": "שופרסל שיפרה את הרווחיות הגולמית, אבל הרווח הנקי נשחק ב-21%",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5zeURUMmtDQTFxdHFINDZBWmlYVmszVzNlSTdIRDVCZVZkV3dudkc4THpkemhRX0JtNm5JZWNRUkk0cGFacFp2aVI0LTVKZFJ3bzJwcWVwTUcyYkhaUDE0aXhVTjZPRV9DUnRac00xZXA?oc=5",
-   "source": "ביזפורטל",
-   "feed": "bizportal",
-   "lang": "he",
-   "cats": [
-    "il",
-    "stocks"
-   ],
-   "time": "2026-11-26T23:04+02:00",
    "score": 0
   },
   {
@@ -3777,6 +3806,22 @@
    "score": 0
   },
   {
+   "id": "caa2678065fab1",
+   "title": "הפד נוטה להעלות ריבית בדצמבר, גם אחרי גל הירידות במניות ה-AI",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9YRDlhMWNfeDRjUDhEOW92S3NVNGFlUUZXQllPN2tRZmloNVNWSVhPOThmZjRNdXJKZ1loaFBVZF9uSHRzY3BHeEtXU3FVOXVvODZOVXIwOWRBaFZCTVF4cGMtZ1pUS3AyQ1ZlNXpZbUM?oc=5",
+   "source": "ביזפורטל",
+   "feed": "bizportal",
+   "lang": "he",
+   "cats": [
+    "il",
+    "stocks",
+    "macro"
+   ],
+   "time": "2026-11-26T19:00+02:00",
+   "score": 0
+  },
+  {
    "id": "02162572745439",
    "title": "בורוסת אירופה ננעלו בעליות חדות",
    "snippet": "בורסת פרנקפורט זינקה במעל 2% • קרב על ענקית הטבק הבריטית: אלטריה ו-Japan Tobacco שוקלות לרכוש את אימפריאל ברנדס • פבלו הרננדס דה קוס, נגיד הבנק המרכזי של ספרד לשעבר צפוי להתמנות לנשיא הבנק המרכזי האי…",
@@ -3819,6 +3864,20 @@
     "il"
    ],
    "time": "2026-11-26T18:25+02:00",
+   "score": 0
+  },
+  {
+   "id": "175bc692fc3f01",
+   "title": "ECB turns to crisis veteran De Cos as new strains loom",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPazQ1LXNCQnNXd2lVdDExZDdCQVFxV2NwTmluQ1FXU2wzUkN5REwxYWVzdFdOVS1LN1ZrcEllQ0lleGdic2VHai1VTldNOS1TTXAyQVpiWmhKbXhLaTI3eFNNQnRNMzlFZUpUamI4R0VqS2pBY2NwQkItUm1MeHhacldyQ3FiUm1tUmVzdEM4ZTJndHpteFY2LUthU18weTdMdTZN?oc=5",
+   "source": "Reuters",
+   "feed": "reuters",
+   "lang": "en",
+   "cats": [
+    "macro"
+   ],
+   "time": "2026-11-26T18:24+02:00",
    "score": 0
   },
   {
@@ -3880,20 +3939,6 @@
    ],
    "time": "2026-11-26T17:50+02:00",
    "score": 4
-  },
-  {
-   "id": "bfbfdfb63880f5",
-   "title": "Zelenskyy warns of imminent major Russian attack on Ukraine’s power grid",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQR3dNRHNDWkJtLWk2U1poUUJkTjNwb2lHcXZweUN1d3ZNRDRkZ0FsRU5adXNVRzcxWVVvbGE2ZTBYRzZDUlhPa3IwT3JlMlpzS055Z0Rqb3R0RTdHQkwwVXlzSXhXamVNU2c4cS1iQTZoREZicHZKUmVGRHNKQlQ1QjNGMnNWdm1lcWk1Nk9MZ1FJNmRtRjNmZEJB?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-26T17:50+02:00",
-   "score": 6
   },
   {
    "id": "b5975e93525514",
@@ -4054,21 +4099,6 @@
    "score": 0
   },
   {
-   "id": "b7374b986297c5",
-   "title": "China and other US trading partners hit back at Trump’s new tariff plans",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVWQ3MnMzTlQ5Y2lUTW9RTzloTmp3MmtycjBUbmZUOTExYWNsVmlXX1JmLVJGYUYyRjNHSGV1b2hzLWhWclNBRDRZb2hyQ2UxSE9tYktjUTBKR2VDU2w1YlZlU0xaZ0JSMlQ1ZzhwMEJpSVk5N05XbHhnNi1ESktvTVNGNlZpMkNjX0dUNHdvLWJ2YTVqeDFv?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "macro",
-    "us"
-   ],
-   "time": "2026-11-26T16:13+02:00",
-   "score": 5
-  },
-  {
    "id": "5b7b6e14c027a4",
    "title": "Millions of people to see average monthly mortgage payments rise by £100",
    "snippet": "More people face higher mortgage repayments when they roll off a fixed deal than previously estimated.",
@@ -4217,20 +4247,6 @@
    "score": 0
   },
   {
-   "id": "694d91c2a7c72d",
-   "title": "Necessities join gifts in Black Friday shopping carts as AI and higher costs steer spending",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxON2owWWh6dEFmYm4tT1lvMDBDbkI1dS1rZEoydHEzeHA5cjgwei11aWlyNVFya21QU3V5ZG8zTjNpYld2YWNTdVZabWo2cUsxTmZnQUZGTXozSThuaUpPWDIxRXpKQ1pQN3VSQVFWcnVDekFSb3ZFT2I3UF81NS0yOVpPWGw4ZmptMXRLdGthNlhLTjhPR0QwZ0dPYw?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-26T14:12+02:00",
-   "score": 0
-  },
-  {
    "id": "f1b3d0274f0e75",
    "title": "FIFA says it has been victim of a cyberattack accessing ‘personal and business information’",
    "snippet": "",
@@ -4274,6 +4290,21 @@
    "score": 0
   },
   {
+   "id": "8e5ea026fffa9d",
+   "title": "יבואנית אביזרי רכב תשלם 60 אלף שקל לעובד שפוטר",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ETjF4UjBRRXN3bFNFSWkzeGtJMkEtUE9FSWpMcWt0eEhna0xoeTRkZ0dwZDRHTm54U2kzVVliM1FLS1N5d3JlY1NGaDdGcDhFQ2RlbkFKZ1l6d056WFBNaDFEZXNpNHc?oc=5",
+   "source": "ביזפורטל",
+   "feed": "bizportal",
+   "lang": "he",
+   "cats": [
+    "il",
+    "stocks"
+   ],
+   "time": "2026-11-26T13:22+02:00",
+   "score": 0
+  },
+  {
    "id": "dd8c9a1e544909",
    "title": "Drivers over 70 face eye tests every three years under new plans",
    "snippet": "The changes could see drivers over 70 stripped of licences if they do not meet standards.",
@@ -4301,6 +4332,21 @@
    ],
    "time": "2026-11-26T12:48+02:00",
    "score": 0
+  },
+  {
+   "id": "b7374b986297c5",
+   "title": "China and other US trading partners hit back at Trump’s new tariff plans",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVWQ3MnMzTlQ5Y2lUTW9RTzloTmp3MmtycjBUbmZUOTExYWNsVmlXX1JmLVJGYUYyRjNHSGV1b2hzLWhWclNBRDRZb2hyQ2UxSE9tYktjUTBKR2VDU2w1YlZlU0xaZ0JSMlQ1ZzhwMEJpSVk5N05XbHhnNi1ESktvTVNGNlZpMkNjX0dUNHdvLWJ2YTVqeDFv?oc=5",
+   "source": "AP",
+   "feed": "ap",
+   "lang": "en",
+   "cats": [
+    "macro",
+    "us"
+   ],
+   "time": "2026-11-26T12:38+02:00",
+   "score": 5
   },
   {
    "id": "00e66fdfe60727",
@@ -4449,21 +4495,6 @@
    "score": 0
   },
   {
-   "id": "722fab5b2dd4df",
-   "title": "המיזוג הענק יוצא לפועל: דוניץ אלעד רוכשת את דן נדל\"ן - שתקבל שליש ממניותיה",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vV3B3WE1fMmhMY0lvdFhoa2xPVEFUQ2FJMGZXVmNoQVdpMGxlaHRTdUJJYXNlWm5qend1aS1rMDFRdWtYRkR5OWxkSGE5aUtpMldhVWNxWEVId09rM1A2MDV3?oc=5",
-   "source": "כלכליסט",
-   "feed": "calcalist",
-   "lang": "he",
-   "cats": [
-    "il",
-    "stocks"
-   ],
-   "time": "2026-11-26T10:39+02:00",
-   "score": 3
-  },
-  {
    "id": "33e7ac7c8d8efd",
    "title": "Poundland collapses putting 11,000 jobs at risk",
    "snippet": "The discount chain has fallen into administration after its owners failed to find a buyer.",
@@ -4519,20 +4550,6 @@
    ],
    "time": "2026-11-26T09:58+02:00",
    "score": 8
-  },
-  {
-   "id": "14b0e27d9ecfae",
-   "title": "Sierra Leone sees steep decline in maternal mortality, but barriers to care persist",
-   "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOblRsZHVhbWJ3c25FMnRldk9pYnJYV3JkT1dZVTNYTnQ2WVRwdkNFN0NwSXFZZlhCbk9KRUtGejdRbEVYQVFjSEJwbjBJRzU3a2lYRVcwVGVXcFV5VWhfZGpNRVpOaHZuSHVKQTdIR3FpTWgtV3BBSG1BaXBELUNXTVExZzhPZXRwVTNNUG0zcTFNVXY1LWc?oc=5",
-   "source": "AP",
-   "feed": "ap",
-   "lang": "en",
-   "cats": [
-    "world"
-   ],
-   "time": "2026-11-26T09:33+02:00",
-   "score": 0
   },
   {
    "id": "52f50fc3a4d8f6",
@@ -4710,19 +4727,18 @@
    "score": 0
   },
   {
-   "id": "f24b11a8faebd8",
-   "title": "Singapore 'very disappointed' over new tariffs, urges US to reconsider",
+   "id": "f5ea9cfebe0f8a",
+   "title": "What to know about Taiwan’s local elections and why they matter to China",
    "snippet": "",
-   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOVTBhUG5wa3oyMWZJSVhaWlo3V0hiVjlsUlN6bXRXTVdpUmVlaWFzSkFOVEF0UEc4cTJESV9CVDZiSzdvVV9tS2JOQVU0X3BPdDdXejYzM2VPWnF6UjNLMmI4ZndCa2w2WXdwTVRQaGFSZ0pfY3FFdXRhMllLVVowdWJIblU3dEUtZi1XU0Jrc1J2NS10LUFLTnNZS0o0bnB6eGlRSGVLWHJnV08xem9YV1FNMA?oc=5",
-   "source": "Reuters",
-   "feed": "reuters",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQkJtZkJkd3k1QWVRN1AyYU9YZUtNWG4wRndpSThLaHVoUUYyLWYySUVRbXlVTFdNVHZZdkFxNkoyOEhJVWJudHI4Y2FzUVA4b1kwclljQi1CVkFuSUxfaDVCSXoxeXF4YklYTXUtckpSWEFkOTdwM18xdjJNWHFHM0dhRHVBXzRsZElucnRjdWRONkJjcGYyeFFsSGE?oc=5",
+   "source": "AP",
+   "feed": "ap",
    "lang": "en",
    "cats": [
-    "macro",
-    "us"
+    "world"
    ],
-   "time": "2026-11-26T06:11+02:00",
-   "score": 5
+   "time": "2026-11-26T07:02+02:00",
+   "score": 0
   },
   {
    "id": "5f0d44b738da21",
@@ -4766,21 +4782,6 @@
     "stocks"
    ],
    "time": "2026-11-26T05:27+02:00",
-   "score": 5
-  },
-  {
-   "id": "4aa57e9fd11e2c",
-   "title": "How Saks Is Reclaiming Luxury as Exemplar Luxury Group",
-   "snippet": "Bloomberg’s Romaine Bostick reports on how Exemplar Luxury Group, formerly known as Saks Global, is reinventing itself for a fresh start in luxury since emerging from bankruptcy earlier this year. Ex…",
-   "url": "https://www.bloomberg.com/news/videos/2026-11-25/how-saks-is-reclaiming-luxury-as-exemplar-luxury-group-video",
-   "source": "Bloomberg",
-   "feed": "bloomberg-markets",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-26T01:18+02:00",
    "score": 5
   },
   {
@@ -5189,6 +5190,20 @@
     "stocks"
    ],
    "time": "2026-11-25T07:21+02:00",
+   "score": 0
+  },
+  {
+   "id": "283e94ea1d9bf7",
+   "title": "ההמלצות לרכש ביטחוני: פחות פטור ממכרז, יותר \"מוצרי מדף\" ואתר שופינג ליחידות צה\"ל",
+   "snippet": "",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5qNW1ERFZockpIQl9zRTNWdWVpNVRVOGtOTERlTXMyNEtDbWhkSWtaRXVNTFZKM01ZY1pOLXM5VzdVZEVXbmdXUzRyT3RNT3BOZUpDa2M0bWNibU5YaDRHSXpsZzhqc28w?oc=5",
+   "source": "כלכליסט",
+   "feed": "calcalist",
+   "lang": "he",
+   "cats": [
+    "il"
+   ],
+   "time": "2026-11-25T06:00+02:00",
    "score": 0
   },
   {
