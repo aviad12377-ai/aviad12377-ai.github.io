@@ -111,7 +111,7 @@
     return '<div class="card empty"><b>' + esc(title) + '</b>' + esc(text) + (href ? '<a href="' + esc(href) + '">' + esc(label) + '</a>' : '') + '</div>';
   }
 
-  var COLORS = ['#4F46E5', '#0EA5A4', '#16A34A', '#D97706', '#DC2626'];
+  var COLORS = ['#3B6FD4', '#0EA5A4', '#16A34A', '#D97706', '#DC2626'];
   function pctTxt(x) { return (x > 0 ? '+' : x < 0 ? '−' : '') + Math.abs(x).toFixed(2) + '%'; }
 
   function lineChartSvg(c) {
