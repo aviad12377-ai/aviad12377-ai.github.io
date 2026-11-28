@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-28T01:26+02:00",
+  "updated": "2026-11-28T09:44+02:00",
   "disclaimer": "מידע בלבד, לא ייעוץ",
   "items": [
     {
       "id": "funds-monthly-202610",
       "kind": "funds",
-      "time": "2026-11-28T01:26+02:00",
+      "time": "2026-11-28T09:44+02:00",
       "title": "תשואות אוקטובר 2026: המובילים במסלולים הכללי, המנייתי, S&P 500 והאג״ח",
       "summary": "סיכום תשואות אוקטובר 2026 בקרנות השתלמות, פנסיה וגמל, לפי מסלול, מתוך הפרסום הרשמי בגמל נט ובפנסיה נט. הממוצעים חשבוניים, וההשוואה היא מול החודש הקודם ול־12 חודשים. מידע בלבד, לא ייעוץ.",
       "source": "גמל נט, פנסיה נט ורשות שוק ההון (data.gov.il)",
@@ -1106,6 +1106,51 @@
       ]
     },
     {
+      "id": "rss-yahoo-spx-936cc86aceab716a",
+      "kind": "rss",
+      "time": "2026-11-28T04:37+02:00",
+      "title": "The Federal Reserve sends a troubling signal to S&P 500 investors",
+      "summary": "The Fed is sending a message to stock investors, and Wall Street is starting to listen.",
+      "source": "Yahoo Finance",
+      "lang": "en",
+      "links": [
+        {
+          "title": "Yahoo Finance",
+          "url": "https://www.thestreet.com/investing/stocks/the-federal-reserve-sends-a-troubling-signal-to-sp-500-investors?.tsrc=rss"
+        }
+      ]
+    },
+    {
+      "id": "rss-yahoo-spx-048f56f4711cb686",
+      "kind": "rss",
+      "time": "2026-11-27T23:29+02:00",
+      "title": "S&P 500, Nasdaq End Best Week In Over A Year As AI Optimism Makes Comeback — VZ, ANT, ADBE, TSLA In Focus",
+      "summary": "Meanwhile, the Dow Jones index recorded its best week since October 2022.",
+      "source": "Yahoo Finance",
+      "lang": "en",
+      "links": [
+        {
+          "title": "Yahoo Finance",
+          "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-best-week-in-over-a-year-as-ai-optimism-makes-comeback/cNb6EtcR9VK?.tsrc=rss"
+        }
+      ]
+    },
+    {
+      "id": "rss-yahoo-spx-5845bcc0b3e20de9",
+      "kind": "rss",
+      "time": "2026-11-27T23:09+02:00",
+      "title": "Take This Quick Test to See How Much You Could Lose if the Stock Market Returns to 'Normal'",
+      "summary": "The S&P 500 has had a whale of a decade so far. What happens if the artificial, AI-driven, mega-cap momentum finally exhausts itself?",
+      "source": "Yahoo Finance",
+      "lang": "en",
+      "links": [
+        {
+          "title": "Yahoo Finance",
+          "url": "https://www.barchart.com/story/news/9037341/take-this-quick-test-to-see-how-much-you-could-lose-if-the-stock-market-returns-to-normal?.tsrc=rss"
+        }
+      ]
+    },
+    {
       "id": "rss-yahoo-spx-92456b0c5df3655f",
       "kind": "rss",
       "time": "2026-11-27T21:54+02:00",
@@ -1121,17 +1166,17 @@
       ]
     },
     {
-      "id": "rss-yahoo-spx-15f54fe5b866057c",
+      "id": "rss-yahoo-spx-ba805693576ee38b",
       "kind": "rss",
-      "time": "2026-11-27T21:41+02:00",
-      "title": "What Is The One Risk Facing Visa Stock Now?",
-      "summary": "Today's big story: Anthropic Broke Its $83 IPO Price. What Did Facebook Do Next.",
+      "time": "2026-11-27T21:33+02:00",
+      "title": "Stocks Settle Sharply Higher as Chipmakers and AI Stocks Rebound",
+      "summary": "The S&P 500 Index ($SPX ) (SPY ) closed up +1.60% on Friday, the Dow Jones Industrial Average ($DOWI ) (DIA ) closed up +1.18%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) closed up +2.61%. December E-mini S&P futures (ESZ26 ) rose +1.57%, and December E-mini Nasdaq futures...",
       "source": "Yahoo Finance",
       "lang": "en",
       "links": [
         {
           "title": "Yahoo Finance",
-          "url": "https://www.trefis.com/stock/v/articles/629359/what-is-the-one-risk-facing-visa-stock-now/2026-11-27?.tsrc=rss"
+          "url": "https://www.barchart.com/story/news/9036669/stocks-settle-sharply-higher-as-chipmakers-and-ai-stocks-rebound?.tsrc=rss"
         }
       ]
     },
@@ -1177,51 +1222,6 @@
         {
           "title": "Yahoo Finance",
           "url": "https://finance.yahoo.com/technology/ai/articles/trump-ai-gambit-fuels-wild-184336528.html?.tsrc=rss"
-        }
-      ]
-    },
-    {
-      "id": "rss-yahoo-spx-ee13ee1158215192",
-      "kind": "rss",
-      "time": "2026-11-27T20:39+02:00",
-      "title": "US Equity Indexes Rise as Jensen Huang's Return to Nvidia Guardrails AI Trade While Investors Slice Growth Exposure This Week",
-      "summary": "US equity indexes rose as Jensen Huang's reinstatement as Nvidia's (NVDA) chief executive officer he",
-      "source": "Yahoo Finance",
-      "lang": "en",
-      "links": [
-        {
-          "title": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-rise-jensen-183902792.html?.tsrc=rss"
-        }
-      ]
-    },
-    {
-      "id": "rss-yahoo-spx-c6147de5262a48a7",
-      "kind": "rss",
-      "time": "2026-11-27T20:39+02:00",
-      "title": "S&P 500 Posts Year's Largest Weekly Gain Led by Materials, Technology",
-      "summary": "The Standard & Poor's 500 index rose 5.6% this week as the materials and technology sectors led a br",
-      "source": "Yahoo Finance",
-      "lang": "en",
-      "links": [
-        {
-          "title": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/p-500-posts-apos-largest-183955223.html?.tsrc=rss"
-        }
-      ]
-    },
-    {
-      "id": "rss-yahoo-spx-ec458778865398ef",
-      "kind": "rss",
-      "time": "2026-11-27T20:18+02:00",
-      "title": "Stocks Wrap Up Best Thanksgiving Week in Nearly 20 Years",
-      "summary": "Black Friday is a day for bargain hunting and investors were all in.",
-      "source": "Yahoo Finance",
-      "lang": "en",
-      "links": [
-        {
-          "title": "Yahoo Finance",
-          "url": "https://finance.yahoo.com/m/9d2f272a-50a9-3cc9-a48e-5e5329282ac3/stocks-wrap-up-best.html?.tsrc=rss"
         }
       ]
     },
