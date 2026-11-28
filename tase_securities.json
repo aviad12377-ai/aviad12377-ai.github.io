@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-28T09:27:54Z",
+  "generatedAt": "2026-11-28T10:55:42Z",
   "source": "Wikidata SPARQL: items with P414 = Tel Aviv Stock Exchange (Q1507974). Security numbers derived from Israeli ISINs. Official TASE APIs were not reachable without a key (HTTP 403 / Data Hub). data.gov.il has no matching dataset.",
-  "count": 3190,
+  "count": 3191,
   "withSecurityNumber": 2646,
-  "withYahooSymbol": 305,
+  "withYahooSymbol": 306,
   "securities": [
     {
       "id": "5125984",
@@ -24681,6 +24681,15 @@
       "symbol": "NICE.TA",
       "ticker": "NICE",
       "isin": "IL0002730112",
+      "type": "stock"
+    },
+    {
+      "id": null,
+      "he": "נייס מערכות",
+      "en": "Nice Ltd",
+      "symbol": "NICE.TA",
+      "ticker": "NICE",
+      "isin": "US6536561086",
       "type": "stock"
     },
     {
