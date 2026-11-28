@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:22+02:00",
+ "updated": "2026-11-28T15:31+02:00",
  "new": [],
  "items": [
   {
@@ -78,87 +78,6 @@
    "score": 8,
    "also": [],
    "flagged": "2026-11-27T16:16+02:00"
-  },
-  {
-   "id": "adc8b7b69a187a",
-   "title": "עליות שערים חדות בחוזים בניו יורק; גם אירופה ירוקה",
-   "snippet": "יום המסחר בשווקים הגלובליים נפתח ברגל ימין, לקראת חזרתה של הבורסה בניו יורק מחופשה לרגל חג ההודיה • החוזים על הנאסד\"ק מזנקים בכ-2.5%, אנתרופיק ואנבידיה מטפסות, מדד השבבים מוסיף מעל 4% במסחר המוקדם •…",
-   "url": "https://www.globes.co.il/news/article.aspx?did=1001565316#utm_source=RSS",
-   "source": "גלובס",
-   "lang": "he",
-   "cats": [
-    "il",
-    "us"
-   ],
-   "time": "2026-11-27T14:57+02:00",
-   "score": 9,
-   "also": [],
-   "flagged": "2026-11-27T16:16+02:00"
-  },
-  {
-   "id": "76cb44f983f318",
-   "title": "Week Ahead for FX, Bonds: Key Labor Data in Focus Ahead of Fed’s December Rate Decision",
-   "snippet": "U.S. labor market data, including the key nonfarm payrolls report, will be in focus in the week starting Nov. 30.",
-   "url": "https://www.wsj.com/finance/investing/week-ahead-for-fx-bonds-key-labor-data-in-focus-ahead-of-feds-december-rate-decision-52cad754?mod=rss_markets_main",
-   "source": "WSJ",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks",
-    "macro"
-   ],
-   "time": "2026-11-27T14:51+02:00",
-   "score": 11,
-   "also": [],
-   "flagged": "2026-11-27T16:16+02:00"
-  },
-  {
-   "id": "afd5c2884709cd",
-   "title": "Nvidia’s stock has tumbled 27% over one chaotic month. The next big test lies in the week ahead",
-   "snippet": "Jensen Huang faces tough questions from Congress this week. Good luck pinning him down, one analyst says.",
-   "url": "https://www.marketwatch.com/story/nvidias-stock-has-tumbled-27-over-one-chaotic-month-the-next-big-test-lies-in-the-week-ahead-06449777?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "lang": "en",
-   "cats": [
-    "us",
-    "stocks"
-   ],
-   "time": "2026-11-27T14:29+02:00",
-   "score": 8,
-   "also": [],
-   "flagged": "2026-11-27T16:16+02:00"
-  },
-  {
-   "id": "0c3b3cbf809a75",
-   "title": "עליות שערים חדות בחוזים בניו יורק; גם אירופה ירוקה",
-   "snippet": "יום המסחר בשווקים הגלובליים נפתח ברגל ימין, לקראת חזרתה של הבורסה בניו יורק מחופשה לרגל חג ההודיה • החוזים על הנאסד\"ק מזנקים בכ-2.5%, אנתרופיק ואנבידיה מטפסות, מדד השבבים מוסיף 4% במסחר המוקדם • המסח…",
-   "url": "https://www.globes.co.il/news/article.aspx?did=1001565316#utm_source=RSS",
-   "source": "גלובס",
-   "lang": "he",
-   "cats": [
-    "il",
-    "stocks",
-    "us"
-   ],
-   "time": "2026-11-27T12:55+02:00",
-   "score": 9,
-   "also": [],
-   "flagged": "2026-11-27T16:51+02:00"
-  },
-  {
-   "id": "mv-a820eeae0c73",
-   "title": "דולר/שקל צונח 2.4% (−2.40%)",
-   "snippet": "תנועה חריגה במסחר היום. הרמה האחרונה: 3.30.",
-   "url": "https://aviad12377-ai.github.io/briefs.html",
-   "source": "מבזקי השוק",
-   "lang": "he",
-   "cats": [
-    "il"
-   ],
-   "time": "2026-11-27T06:29+02:00",
-   "score": 99,
-   "also": [],
-   "flagged": "2026-11-27T06:29+02:00"
   }
  ]
 }
